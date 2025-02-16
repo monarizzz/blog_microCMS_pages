@@ -1,0 +1,44 @@
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.card {
+  background-color: #1e1e1e;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 14px;
+  color: #888888;
+  margin-left: 15px;
+}
+
+.text {
+  margin: 5px 0 0;
+  color: #bbbbbb;
+  display: -webkit-box; /* 必須 */
+  -webkit-box-orient: vertical; /* 必須 */
+  -webkit-line-clamp: 3; /* 行数を制限 */
+  overflow: hidden;
+}
+
+.text img,
+.text div[style] {
+  display: none;
+}
