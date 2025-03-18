@@ -1,13 +1,17 @@
 import { client } from "../../../libs/client";
 import Link from "next/link";
 import styles from "./blog.module.css";
+import dayjs from "dayjs";
+import TagButton from "@/components/tag/TagButton";
 
 export async function getStaticProps(context) {
   const blogId = context.params.blogId;
   const data = await client.get({ endpoint: "blog", contentId: blogId });
+  const categoryData = await client.get({ endpoint: "categories" });
   return {
     props: {
       blog: data,
+      category: categoryData.contents,
     },
   };
 }
@@ -21,20 +25,29 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Home({ blog }) {
+export default function Home({ blog, category }) {
   return (
     <div className={styles.container}>
+      <h2 className={styles.title}>{blog.title}</h2>
+      {TagButton({ category })}
+      <span className={styles.date}>
+        {dayjs(blog.publishedAt).format("YYYY/MM/DD HH:mm")}
+      </span>
       <div className={styles.card}>
-        <h2 className={styles.title}>{blog.title}</h2>
         <div
           className={styles.article}
           dangerouslySetInnerHTML={{
-            __html: `${blog.body}`,
+            __html: blog.body,
           }}
         />
-        <Link href="/">
-          <span className={styles.link}>← 記事一覧に戻る</span>
+        <Link href="/" className={styles.link}>
+          <span>← 記事一覧に戻る</span>
         </Link>
+        <span className={styles.date}>
+          {blog.publishedAt != blog.revisedAt
+            ? dayjs(blog.revisedAt).format("YYYY/MM/DD HH:mm") + " " + "更新"
+            : null}
+        </span>
       </div>
     </div>
   );

@@ -1,7 +1,11 @@
+import Link from "next/link";
+
 export default function Layout({ children }) {
   return (
     <>
-      <header>エンジニアブログ</header>
+      <header>
+        <Link href="/">ブログ</Link>
+      </header>
       <main>{children}</main>
     </>
   );

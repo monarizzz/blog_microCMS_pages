@@ -12,28 +12,25 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+  :body {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  :header {
+    background-color: #1e1e1e;
+  }
 }
 
 body {
-  background-color: #121212;
-  color: #ffffff;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
+
 header {
-  background-color: #1e1e1e;
+  background-color: #e9e9e9; /*仮置き */
   padding: 20px;
   text-align: center;
   font-size: 24px;
   font-weight: bold;
-}
-
-h2 {
-  margin: 0;
-  font-size: 20px;
-}
-p {
-  margin: 5px 0 0;
-  color: #bbbbbb;
 }
