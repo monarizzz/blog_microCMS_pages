@@ -7,49 +7,54 @@ import { resolve } from "path";
 import { useEffect } from "react";
 import { Blog } from "@/infra/microCMS/schema/blog";
 
-export async function getStaticProps() {
-  const categoryData = await client.getList<Blog>({ endpoint: "categories" });
+export async function getServerSideProps() {
+  const categoryData = await client.getList({ endpoint: "categories" });
+  const categoryIds = categoryData.contents.map((category) => {
+    return category.id;
+  });
 
-  const blogDataByC1i23mx3nnd4 = await client.getList({
-    endpoint: "blog",
-    queries: { limit: 3, filters: "categories[contains]71i23mx3nnd4" },
+  const promises = categoryIds.map((categoryId) => {
+    return client.getList({
+      endpoint: "blog",
+      queries: { limit: 3, filters: `categories[contains]${categoryId}` },
+    });
   });
-  const blogDataBy3nh90zdxu2aj = await client.getList({
-    endpoint: "blog",
-    queries: { limit: 3, filters: "categories[contains]3nh90zdxu2aj" },
-  });
-  const blogDataBy6ww6y6noq2b = await client.getList({
-    endpoint: "blog",
-    queries: { limit: 3, filters: "categories[contains]6ww6y6noq2b" },
+
+  const blogListByCategory = await Promise.all(promises);
+
+  const blogListObject = categoryData.contents.map((category, index) => {
+    return {
+      name: category.name,
+      blogList: blogListByCategory[index],
+    };
   });
   return {
     props: {
       category: categoryData.contents,
-      blog: blogDataByC1i23mx3nnd4.contents,
-      blog1: blogDataBy3nh90zdxu2aj.contents,
-      blog2: blogDataBy6ww6y6noq2b.contents,
+      blogListObject,
     },
   };
 }
 
-export default function Home({ blog, category }) {
+export default function Home({ category, blogListObject }) {
+  console.log(category);
   return (
     <div className={styles.container}>
       <div className={styles.title}>タグページ</div>
       <div className={styles.tagButton}>{TagButton({ category })}</div>
-      {blog.map((blog) => BlogCard({ blog }))}
       {/* {useRouter().query["id"] ? <div>filter</div> : null} */}
+
+      {blogListObject.map((categories, index: string) => (
+        <>
+          <div key={index}>
+            <div>{categories.name}</div>
+            {categories.blogList.contents.map((blog) => BlogCard({ blog }))}
+          </div>
+        </>
+      ))}
     </div>
   );
 }
-// export function BlogListGroup({ blog, category }) {
-//   return category
-//     .slice()
-//     .reverse()
-//     .map((category) => (
-//     //  BlogList
-//     ));
-// }
 
 {
   /* <div key={category.id}>

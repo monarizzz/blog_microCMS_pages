@@ -1,21 +1,20 @@
 import Link from "next/link";
 import styles from "./TagButton.module.css";
+import { CategoryArray } from "@/infra/microCMS/schema/CategoryArray";
+import { Category } from "@/infra/microCMS/schema/Category";
 
-export default function TagButton({ category }) {
+export default function TagButton({ category }: CategoryArray) {
   return (
     <>
-      {category
-        .slice()
-        .reverse()
-        .map((category) => (
-          <Link
-            href={`../tag/tag/?id=${category.id}`}
-            className={styles.tag}
-            key={category.name}
-          >
-            {category.name}
-          </Link>
-        ))}
+      {category.slice().map((category: Category) => (
+        <Link
+          href={`../tag/tag/?id=${category.id}`}
+          className={styles.tag}
+          key={category.name}
+        >
+          {category.name}
+        </Link>
+      ))}
     </>
   );
 }
