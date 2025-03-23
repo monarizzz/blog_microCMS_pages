@@ -3,7 +3,7 @@ import styles from "./BlogCard.module.css";
 import RelativeDate from "../../date/RelativeDate";
 import "dayjs/locale/ja";
 
-export default function BlogCard({ blog }) {
+const BlogCard = ({ blog }) => {
   return (
     <div className={styles.card}>
       <Link href={`/blog/${blog.id}`}>
@@ -18,4 +18,6 @@ export default function BlogCard({ blog }) {
       </Link>
     </div>
   );
-}
+};
+
+export default BlogCard;
