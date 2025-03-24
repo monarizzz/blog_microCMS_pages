@@ -1,6 +1,6 @@
 import { client } from "../../libs/client";
 import styles from "./index.module.css";
-import BlogCard from "../components/page/Index/BlogCard";
+import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import { Blog } from "@/infra/microCMS/schema/blog";
 
 export async function getStaticProps() {

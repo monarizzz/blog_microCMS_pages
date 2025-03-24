@@ -1,8 +1,8 @@
 import { client } from "../../../libs/client";
 import Link from "next/link";
-import styles from "./blog.module.css";
+import styles from "./articlePage.module.css";
 import dayjs from "dayjs";
-import TagButton from "@/components/tag/TagButton";
+import TagButton from "@/commons/tag/TagButton/TagButton";
 
 export async function getStaticProps(context) {
   const blogId = context.params.blogId;
@@ -18,7 +18,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   const data = await client.get({ endpoint: "blog" });
-  const paths = data.contents.map((content) => `/blog/${content.id}`);
+  const paths = data.contents.map((content) => `/articlePage/${content.id}`);
   return {
     paths,
     fallback: false,
