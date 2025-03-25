@@ -25,7 +25,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Home({ blog, category }) {
+export default function ArticlePage({ blog, category }) {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{blog.title}</h2>

@@ -36,7 +36,7 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Home({ category, blogListObject }) {
+export default function TagPage({ category, blogListObject }) {
   console.log(category);
   return (
     <div className={styles.container}>

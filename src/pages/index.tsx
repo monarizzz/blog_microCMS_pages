@@ -13,7 +13,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ blog }) {
+export default function HomePage({ blog }) {
   return (
     <div className={styles.container}>
       <div className={styles.title}>ホーム</div>
