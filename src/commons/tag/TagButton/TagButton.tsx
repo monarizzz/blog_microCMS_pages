@@ -8,7 +8,7 @@ export default function TagButton({ category }: CategoryArray) {
     <>
       {category.slice().map((category: Category) => (
         <Link
-          href={`../tag/tag/?id=${category.id}`}
+          href={`./../tagPage/tagPage/?id=${category.id}`}
           className={styles.tag}
           key={category.name}
         >

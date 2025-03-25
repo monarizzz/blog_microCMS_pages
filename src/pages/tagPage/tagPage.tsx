@@ -1,8 +1,8 @@
 import { client } from "../../../libs/client";
-import styles from "./tag.module.css";
+import styles from "./tagPage.module.css";
 import { useRouter } from "next/router";
-import TagButton from "../../components/tag/TagButton";
-import BlogCard from "@/components/page/Index/BlogCard";
+import TagButton from "@/commons/tag/TagButton/TagButton";
+import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import { resolve } from "path";
 import { useEffect } from "react";
 import { Blog } from "@/infra/microCMS/schema/blog";
@@ -44,6 +44,7 @@ export default function Home({ category, blogListObject }) {
       <div className={styles.tagButton}>{TagButton({ category })}</div>
       {/* {useRouter().query["id"] ? <div>filter</div> : null} */}
 
+      {/* 後でここを「features/blog/BlogListByCategories/ BlogListByCategories.tsx」に記述する */}
       {blogListObject.map((categories, index: string) => (
         <>
           <div key={index}>
