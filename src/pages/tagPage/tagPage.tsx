@@ -36,7 +36,7 @@ export const getServerSideProps = async () => {
   };
 };
 
-export default function TagPage({ category, blogListObject }) {
+const TagPage = ({ category, blogListObject }) => {
   console.log(category);
   return (
     <div className={styles.container}>
@@ -55,7 +55,8 @@ export default function TagPage({ category, blogListObject }) {
       ))}
     </div>
   );
-}
+};
+export default TagPage;
 
 {
   /* <div key={category.id}>

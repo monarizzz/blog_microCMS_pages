@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./articlePage.module.css";
 import dayjs from "dayjs";
 import TagButton from "@/commons/tag/TagButton/TagButton";
+import { Blog } from "@/infra/microCMS/schema/blog";
 
 export const getServerSideProps = async (context) => {
   const articlePageId = context.params.articlePageId;
@@ -16,7 +17,7 @@ export const getServerSideProps = async (context) => {
   };
 };
 
-export default function ArticlePage({ blog, category }) {
+const ArticlePage = ({ blog, category }) => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{blog.title}</h2>
@@ -42,4 +43,6 @@ export default function ArticlePage({ blog, category }) {
       </div>
     </div>
   );
-}
+};
+
+export default ArticlePage;
