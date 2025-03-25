@@ -17,7 +17,7 @@ export const getServerSideProps = async (context) => {
   };
 };
 
-const ArticlePage = ({ blog, category }) => {
+const ArticlePage = ({ blog: Blog, category }) => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{blog.title}</h2>

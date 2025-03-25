@@ -6,5 +6,5 @@ export type Blog = {
   revisedAt: string;
   categories: [id: string];
   title: string;
-  body: any;
+  body: string;
 };

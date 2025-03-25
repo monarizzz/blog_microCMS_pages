@@ -5,7 +5,7 @@ import TagButton from "@/commons/tag/TagButton/TagButton";
 import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import { resolve } from "path";
 import { useEffect } from "react";
-import { Blog } from "@/infra/microCMS/schema/Blog";
+import { Blog } from "@/infra/microCMS/schema/blog";
 
 export const getServerSideProps = async () => {
   const categoryData = await client.getList({ endpoint: "categories" });
