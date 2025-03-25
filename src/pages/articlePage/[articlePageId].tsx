@@ -4,7 +4,7 @@ import styles from "./articlePage.module.css";
 import dayjs from "dayjs";
 import TagButton from "@/commons/tag/TagButton/TagButton";
 
-export async function getStaticProps(context) {
+export const getServerSideProps = async (context) => {
   const articlePageId = context.params.articlePageId;
   const data = await client.get({ endpoint: "blog", contentId: articlePageId });
   const categoryData = await client.get({ endpoint: "categories" });
@@ -14,16 +14,7 @@ export async function getStaticProps(context) {
       category: categoryData.contents,
     },
   };
-}
-
-export async function getStaticPaths() {
-  const data = await client.get({ endpoint: "blog" });
-  const paths = data.contents.map((content) => `/articlePage/${content.id}`);
-  return {
-    paths,
-    fallback: false,
-  };
-}
+};
 
 export default function ArticlePage({ blog, category }) {
   return (

@@ -7,7 +7,7 @@ import { resolve } from "path";
 import { useEffect } from "react";
 import { Blog } from "@/infra/microCMS/schema/blog";
 
-export async function getServerSideProps() {
+export const getServerSideProps = async () => {
   const categoryData = await client.getList({ endpoint: "categories" });
   const categoryIds = categoryData.contents.map((category) => {
     return category.id;
@@ -34,7 +34,7 @@ export async function getServerSideProps() {
       blogListObject,
     },
   };
-}
+};
 
 export default function TagPage({ category, blogListObject }) {
   console.log(category);
