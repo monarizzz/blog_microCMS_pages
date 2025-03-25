@@ -5,8 +5,8 @@ import dayjs from "dayjs";
 import TagButton from "@/commons/tag/TagButton/TagButton";
 
 export async function getStaticProps(context) {
-  const blogId = context.params.blogId;
-  const data = await client.get({ endpoint: "blog", contentId: blogId });
+  const articlePageId = context.params.articlePageId;
+  const data = await client.get({ endpoint: "blog", contentId: articlePageId });
   const categoryData = await client.get({ endpoint: "categories" });
   return {
     props: {
