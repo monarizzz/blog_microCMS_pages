@@ -1,7 +1,7 @@
 import { client } from "../../libs/client";
 import styles from "./index.module.css";
 import BlogCard from "@/commons/blog/BlogCard/BlogCard";
-import { Blog } from "@/infra/microCMS/schema/blog";
+import { Blog } from "@/infra/microCMS/schema/Blog";
 
 export const getServerSideProps = async () => {
   const data = await client.getList<Blog>({
