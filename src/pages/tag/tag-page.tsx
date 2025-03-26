@@ -5,6 +5,7 @@ import { Blog } from "@/infra/microCMS/schema/blog";
 import BlogListByCategories from "@/features/blog/BlogListByCategories/BlogListByCategories";
 import { useRouter } from "next/router";
 import Commonlayout from "@/commons/layout/Layout/CommonLayout";
+import TagMain from "@/commons/tag/TagMain/TagMain";
 
 export const getServerSideProps = async () => {
   const categoryData = await client.getList({ endpoint: "categories" });
@@ -36,19 +37,7 @@ export const getServerSideProps = async () => {
 };
 
 const TagPage = ({ category, blogListObject }) => {
-  return (
-    <Commonlayout>
-      <div className={styles.container}>
-        <div className={styles.title}>タグページ</div>
-        <div className={styles.tagButton}>{TagButton({ category })}</div>
-        {useRouter().query["id"] ? (
-          <div>filter</div> // クエリにidがある場合の処理をかく
-        ) : (
-          BlogListByCategories({ category, blogListObject })
-        )}
-      </div>
-    </Commonlayout>
-  );
+  return TagMain({ category, blogListObject });
 };
 export default TagPage;
 
