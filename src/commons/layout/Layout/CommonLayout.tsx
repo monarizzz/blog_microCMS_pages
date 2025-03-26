@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Layout({ children }) {
+export default function Commonlayout({ children }) {
   return (
     <>
       <header>

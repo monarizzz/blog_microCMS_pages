@@ -1,5 +1,6 @@
 import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import styles from "./HomePageMain.module.css";
+import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 
 type Props = {
   blog: any;
@@ -7,10 +8,12 @@ type Props = {
 
 const HomeMain: React.FC<Props> = ({ blog }) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.title}>ホーム</div>
-      {blog.map((blog) => BlogCard({ blog }))}
-    </div>
+    <Commonlayout>
+      <div className={styles.container}>
+        <div className={styles.title}>ホーム</div>
+        {blog.map((blog) => BlogCard({ blog }))}
+      </div>
+    </Commonlayout>
   );
 };
 
