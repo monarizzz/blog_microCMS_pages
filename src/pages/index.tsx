@@ -1,4 +1,4 @@
-import HomeMain from "@/features/blog/home/HomeMain/HomeMain";
+import HomeMain from "@/features/blog/home/HomePageMain/HomePageMain";
 import { client } from "../../libs/client";
 import { Blog } from "@/infra/microCMS/schema/blog";
 
