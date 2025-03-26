@@ -1,5 +1,5 @@
 import BlogCard from "@/commons/blog/BlogCard/BlogCard";
-import styles from "./HomeMain.module.css";
+import styles from "./HomePageMain.module.css";
 
 type Props = {
   blog: any;
