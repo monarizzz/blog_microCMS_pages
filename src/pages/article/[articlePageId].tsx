@@ -2,10 +2,11 @@ import { client } from "../../../libs/client";
 import { Blog } from "@/infra/microCMS/schema/blog";
 import { NextPage } from "next";
 import ArticlePageMain from "@/features/blog/article/ArticlePageMain/ArticliePageMain";
+import { CategoryArray } from "@/infra/microCMS/schema/categoryArray";
 
 type Props = {
   blog: Blog;
-  category: any;
+  category: CategoryArray;
 };
 
 export const getServerSideProps = async (context) => {

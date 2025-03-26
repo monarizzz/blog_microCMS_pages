@@ -2,6 +2,10 @@ import HomeMain from "@/features/blog/home/HomePageMain/HomePageMain";
 import { client } from "../../libs/client";
 import { Blog } from "@/infra/microCMS/schema/blog";
 
+type Props = {
+  blog: Blog;
+};
+
 export const getServerSideProps = async () => {
   const data = await client.getList<Blog>({
     endpoint: "blog",
@@ -14,7 +18,7 @@ export const getServerSideProps = async () => {
   };
 };
 
-const HomePage = ({ blog }) => {
+const HomePage: React.FC<Props> = ({ blog }) => {
   return <HomeMain blog={blog} />;
 };
 

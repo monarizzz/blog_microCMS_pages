@@ -1,8 +1,9 @@
 import { client } from "../../../libs/client";
-import styles from "./tagPage.module.css";
+import styles from "./tag-page.module.css";
 import TagButton from "@/commons/tag/TagButton/TagButton";
-import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import { Blog } from "@/infra/microCMS/schema/blog";
+import BlogListByCategories from "@/features/blog/BlogListByCategories/BlogListByCategories";
+import { useRouter } from "next/router";
 
 export const getServerSideProps = async () => {
   const categoryData = await client.getList({ endpoint: "categories" });
@@ -34,22 +35,15 @@ export const getServerSideProps = async () => {
 };
 
 const TagPage = ({ category, blogListObject }) => {
-  console.log(category);
   return (
     <div className={styles.container}>
       <div className={styles.title}>タグページ</div>
       <div className={styles.tagButton}>{TagButton({ category })}</div>
-      {/* {useRouter().query["id"] ? <div>filter</div> : null} */}
-
-      {/* 後でここを「features/blog/BlogListByCategories/ BlogListByCategories.tsx」に記述する */}
-      {blogListObject.map((categories, index: string) => (
-        <>
-          <div key={index}>
-            <div>{categories.name}</div>
-            {categories.blogList.contents.map((blog) => BlogCard({ blog }))}
-          </div>
-        </>
-      ))}
+      {useRouter().query["id"] ? (
+        <div>filter</div> // クエリにidがある場合の処理をかく
+      ) : (
+        BlogListByCategories({ category, blogListObject })
+      )}
     </div>
   );
 };
@@ -83,16 +77,4 @@ export default TagPage;
 //       )}
 //     </div>
 //   ));
-// }
-
-// API のフィルター
-// const data = await client.get({
-//   endpoint: "blog",
-//   queries: { limit: 3, filters: "categories[contains]" + categoryData.id },
-// });
-// return {
-//   props: {
-//     blog: data.contents
-//   },
-// };
 // }
