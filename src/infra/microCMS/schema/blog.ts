@@ -4,7 +4,7 @@ export type Blog = {
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
-  categories: [id: string];
+  categories: string[];
   title: string;
   body: string;
 };

@@ -6,7 +6,7 @@ import "dayjs/locale/ja";
 const BlogCard = ({ blog }) => {
   return (
     <div className={styles.card}>
-      <Link href={`/articlePage/${blog.id}`}>
+      <Link href={`./article/${blog.id}`}>
         <span className={styles.title}>{blog.title}</span>
         <span className={styles.date}>{RelativeDate(blog.publishedAt)} </span>
         <div

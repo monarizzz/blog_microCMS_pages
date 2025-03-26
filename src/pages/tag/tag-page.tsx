@@ -1,10 +1,7 @@
 import { client } from "../../../libs/client";
 import styles from "./tagPage.module.css";
-import { useRouter } from "next/router";
 import TagButton from "@/commons/tag/TagButton/TagButton";
 import BlogCard from "@/commons/blog/BlogCard/BlogCard";
-import { resolve } from "path";
-import { useEffect } from "react";
 import { Blog } from "@/infra/microCMS/schema/blog";
 
 export const getServerSideProps = async () => {

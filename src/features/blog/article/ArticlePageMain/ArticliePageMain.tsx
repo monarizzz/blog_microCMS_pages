@@ -1,23 +1,14 @@
-import { client } from "../../../libs/client";
-import Link from "next/link";
-import styles from "./articlePage.module.css";
-import dayjs from "dayjs";
 import TagButton from "@/commons/tag/TagButton/TagButton";
-import { Blog } from "@/infra/microCMS/schema/blog";
+import styles from "./ArticlePage.module.css";
+import dayjs from "dayjs";
+import Link from "next/link";
 
-export const getServerSideProps = async (context) => {
-  const articlePageId = context.params.articlePageId;
-  const data = await client.get({ endpoint: "blog", contentId: articlePageId });
-  const categoryData = await client.get({ endpoint: "categories" });
-  return {
-    props: {
-      blog: data,
-      category: categoryData.contents,
-    },
-  };
+type Props = {
+  blog: any;
+  category: any;
 };
 
-const ArticlePage = ({ blog: Blog, category }) => {
+const ArticlePageMain: React.FC<Props> = ({ blog, category }) => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{blog.title}</h2>
@@ -45,4 +36,4 @@ const ArticlePage = ({ blog: Blog, category }) => {
   );
 };
 
-export default ArticlePage;
+export default ArticlePageMain;
