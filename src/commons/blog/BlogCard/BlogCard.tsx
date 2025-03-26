@@ -1,12 +1,14 @@
 import Link from "next/link";
 import styles from "./BlogCard.module.css";
-import RelativeDate from "../../date/RelativeDate";
+import RelativeDate from "../../date/RelativeDate/RelativeDate";
 import "dayjs/locale/ja";
+
+type Props = {};
 
 const BlogCard = ({ blog }) => {
   return (
     <div className={styles.card}>
-      <Link href={`./article/${blog.id}`}>
+      <Link href={`/article/${blog.id}`}>
         <span className={styles.title}>{blog.title}</span>
         <span className={styles.date}>{RelativeDate(blog.publishedAt)} </span>
         <div
