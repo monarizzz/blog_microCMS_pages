@@ -2,9 +2,10 @@ import HomeMain from "@/features/blog/home/HomePageMain/HomePageMain";
 import { client } from "../../libs/client";
 import { Blog } from "@/infra/microCMS/schema/blog";
 import { NextPage } from "next";
+import { BlogList } from "@/infra/microCMS/schema/blogList";
 
 type Props = {
-  blog: Blog;
+  blog: BlogList;
 };
 
 export const getServerSideProps = async () => {
