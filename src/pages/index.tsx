@@ -1,7 +1,10 @@
+import HomeMain from "@/features/blog/home/HomePageMain/HomePageMain";
 import { client } from "../../libs/client";
-import styles from "./index.module.css";
-import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import { Blog } from "@/infra/microCMS/schema/blog";
+
+type Props = {
+  blog: Blog;
+};
 
 export const getServerSideProps = async () => {
   const data = await client.getList<Blog>({
@@ -15,13 +18,8 @@ export const getServerSideProps = async () => {
   };
 };
 
-const HomePage = ({ blog }) => {
-  return (
-    <div className={styles.container}>
-      <div className={styles.title}>ホーム</div>
-      {blog.map((blog) => BlogCard({ blog }))}
-    </div>
-  );
+const HomePage: React.FC<Props> = ({ blog }) => {
+  return <HomeMain blog={blog} />;
 };
 
 export default HomePage;
