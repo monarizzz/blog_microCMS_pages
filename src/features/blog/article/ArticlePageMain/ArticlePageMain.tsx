@@ -5,7 +5,7 @@ import Link from "next/link";
 import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import { NextPage } from "next";
 import { Blog } from "@/infra/microCMS/schema/blog";
-import { CategoryId } from "@/infra/microCMS/schema/CategoryId";
+import { CategoryId } from "@/infra/microCMS/schema/categoryId";
 
 type Props = {
   blog: Blog;

@@ -2,7 +2,7 @@ import { client } from "../../../libs/client";
 import { Blog } from "@/infra/microCMS/schema/blog";
 import { NextPage } from "next";
 import ArticlePageMain from "@/features/blog/article/ArticlePageMain/ArticlePageMain";
-import { CategoryId } from "@/infra/microCMS/schema/CategoryId";
+import { CategoryId } from "@/infra/microCMS/schema/categoryId";
 
 type Props = {
   blog: Blog;
