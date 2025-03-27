@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./TagButton.module.css";
-import { CategoryArray } from "@/infra/microCMS/schema/CategoryArray";
+import { CategoryArray } from "@/infra/microCMS/schema/categoryArray";
 import { Category } from "@/infra/microCMS/schema/category";
 
 export default function TagButton({ category }: CategoryArray) {
