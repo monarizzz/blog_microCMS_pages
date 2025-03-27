@@ -2,10 +2,10 @@ import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import styles from "./HomePageMain.module.css";
 import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import { NextPage } from "next";
-import { Blog } from "@/infra/microCMS/schema/blog";
+import { BlogList } from "@/infra/microCMS/schema/blogList";
 
 type Props = {
-  blog: Blog[];
+  blog: BlogList;
 };
 
 const HomeMain: NextPage<Props> = ({ blog }) => {
