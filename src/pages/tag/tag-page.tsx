@@ -1,6 +1,14 @@
 import { client } from "../../../libs/client";
 import { Blog } from "@/infra/microCMS/schema/blog";
 import TagMain from "@/commons/tag/TagMain/TagMain";
+import { NextPage } from "next";
+import { CategoryId } from "@/infra/microCMS/schema/CategoryId";
+
+type Props = {
+  blog: Blog;
+  category: CategoryId;
+  blogListObject: any;
+};
 
 export const getServerSideProps = async () => {
   const categoryData = await client.getList({ endpoint: "categories" });
@@ -31,7 +39,7 @@ export const getServerSideProps = async () => {
   };
 };
 
-const TagPage = ({ category, blogListObject }) => {
+const TagPage: NextPage<Props> = ({ category, blogListObject }) => {
   return TagMain({ category, blogListObject });
 };
 export default TagPage;

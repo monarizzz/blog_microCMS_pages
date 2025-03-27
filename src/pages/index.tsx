@@ -1,6 +1,7 @@
 import HomeMain from "@/features/blog/home/HomePageMain/HomePageMain";
 import { client } from "../../libs/client";
 import { Blog } from "@/infra/microCMS/schema/blog";
+import { NextPage } from "next";
 
 type Props = {
   blog: Blog;
@@ -18,7 +19,7 @@ export const getServerSideProps = async () => {
   };
 };
 
-const HomePage: React.FC<Props> = ({ blog }) => {
+const HomePage: NextPage<Props> = ({ blog }) => {
   return <HomeMain blog={blog} />;
 };
 
