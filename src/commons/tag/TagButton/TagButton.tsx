@@ -1,14 +1,18 @@
 import Link from "next/link";
 import styles from "./TagButton.module.css";
-import { CategoryArray } from "@/infra/microCMS/schema/CategoryArray";
-import { Category } from "@/infra/microCMS/schema/category";
+import { NextPage } from "next";
+import { CategoryList } from "@/infra/microCMS/schema/categoryList";
 
-export default function TagButton({ category }: CategoryArray) {
+type Props = {
+  category: CategoryList;
+};
+
+const TagButton: NextPage<Props> = ({ category }) => {
   return (
     <>
-      {category.slice().map((category: Category) => (
+      {category.slice().map((category) => (
         <Link
-          href={`./../tag/tag-page/?id=${category.id}`}
+          href={`../article/recent/tag?id=${category.id}`}
           className={styles.tag}
           key={category.name}
         >
@@ -17,4 +21,6 @@ export default function TagButton({ category }: CategoryArray) {
       ))}
     </>
   );
-}
+};
+
+export default TagButton;

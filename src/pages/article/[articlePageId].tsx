@@ -1,18 +1,20 @@
-import { client } from "../../../libs/client";
+import { client } from "../../libs/microCMS/utils/client";
 import { Blog } from "@/infra/microCMS/schema/blog";
 import { NextPage } from "next";
-import ArticlePageMain from "@/features/blog/article/ArticlePageMain/ArticliePageMain";
-import { CategoryArray } from "@/infra/microCMS/schema/categoryArray";
+import ArticlePageMain from "@/features/blog/article/ArticlePageMain/ArticlePageMain";
+import { CategoryList } from "@/infra/microCMS/schema/categoryList";
 
 type Props = {
   blog: Blog;
-  category: CategoryArray;
+  category: CategoryList;
 };
 
 export const getServerSideProps = async (context) => {
   const articlePageId = context.params.articlePageId;
   const data = await client.get({ endpoint: "blog", contentId: articlePageId });
   const categoryData = await client.get({ endpoint: "categories" });
+
+  console.log(categoryData.contents);
   return {
     props: {
       blog: data,

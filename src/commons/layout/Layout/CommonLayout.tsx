@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Commonlayout({ children }) {
+const Commonlayout = ({ children }) => {
   return (
     <>
       <header>
@@ -9,4 +9,6 @@ export default function Commonlayout({ children }) {
       <main>{children}</main>
     </>
   );
-}
+};
+
+export default Commonlayout;
