@@ -1,13 +1,14 @@
 import Link from "next/link";
 import styles from "./TagButton.module.css";
-import { Category } from "@/infra/microCMS/schema/Category/category";
 import { NextPage } from "next";
+import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 
 export type Props = {
-  category: any;
+  category: CategoryList;
 };
 
 const TagButton: NextPage<Props> = ({ category }) => {
+  console.log(category);
   return (
     <>
       {category.slice().map((category) => (
