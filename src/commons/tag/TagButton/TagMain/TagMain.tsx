@@ -3,7 +3,7 @@ import styles from "./TagMain.module.css";
 import TagButton from "../TagButton";
 import { useRouter } from "next/router";
 import BlogListByCategories from "@/features/blog/BlogListByCategories/BlogListByCategories";
-import { CategoryList } from "@/infra/microCMS/schema/categoryList";
+import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { NextPage } from "next";
 
 type Props = {
