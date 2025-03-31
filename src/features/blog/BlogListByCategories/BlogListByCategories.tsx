@@ -1,6 +1,6 @@
 import BlogCard from "@/commons/blog/BlogCard/BlogCard";
-import { BlogList } from "@/infra/microCMS/schema/blogList";
-import { CategoryList } from "@/infra/microCMS/schema/categoryList";
+import { BlogList } from "@/infra/microCMS/schema/Blog/blogList";
+import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { NextPage } from "next";
 
 type Props = {

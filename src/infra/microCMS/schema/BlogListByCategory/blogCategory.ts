@@ -1,4 +1,4 @@
-import { BlogList } from "./blogList";
+import { BlogList } from "../Blog/blogList";
 
 export type BlogCategory = {
   name: string;

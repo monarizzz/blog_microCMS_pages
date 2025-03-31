@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./BlogCard.module.css";
 import RelativeDate from "../../date/RelativeDate/RelativeDate";
 import "dayjs/locale/ja";
-import { Blog } from "@/infra/microCMS/schema/blog";
+import { Blog } from "@/infra/microCMS/schema/Blog/blog";
 import { NextPage } from "next";
 
 type Props = {

@@ -4,8 +4,8 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import { NextPage } from "next";
-import { Blog } from "@/infra/microCMS/schema/blog";
-import { CategoryList } from "@/infra/microCMS/schema/categoryList";
+import { Blog } from "@/infra/microCMS/schema/Blog/blog";
+import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 
 type Props = {
   blog: Blog;

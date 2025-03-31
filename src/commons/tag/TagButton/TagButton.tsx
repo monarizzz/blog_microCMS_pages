@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styles from "./TagButton.module.css";
-import { CategoryArray } from "@/infra/microCMS/schema/categoryArray";
-import { Category } from "@/infra/microCMS/schema/category";
+import { Category } from "@/infra/microCMS/schema/Category/category";
 import { NextPage } from "next";
 
 export type Props = {

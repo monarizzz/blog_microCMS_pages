@@ -1,8 +1,8 @@
 import HomeMain from "@/features/blog/home/HomePageMain/HomePageMain";
 import { client } from "../libs/microCMS/utils/client";
-import { Blog } from "@/infra/microCMS/schema/blog";
+import { Blog } from "@/infra/microCMS/schema/Blog/blog";
 import { NextPage } from "next";
-import { BlogList } from "@/infra/microCMS/schema/blogList";
+import { BlogList } from "@/infra/microCMS/schema/Blog/blogList";
 
 type Props = {
   blog: BlogList;

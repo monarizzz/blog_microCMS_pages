@@ -2,7 +2,7 @@ import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import styles from "./HomePageMain.module.css";
 import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import { NextPage } from "next";
-import { BlogList } from "@/infra/microCMS/schema/blogList";
+import { BlogList } from "@/infra/microCMS/schema/Blog/blogList";
 
 type Props = {
   blog: BlogList;

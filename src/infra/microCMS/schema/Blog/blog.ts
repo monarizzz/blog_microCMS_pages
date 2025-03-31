@@ -1,4 +1,4 @@
-import { Category } from "./category";
+import { Category } from "../Category/category";
 
 export type Blog = {
   id: string;
