@@ -1,15 +1,21 @@
 import BlogCard from "@/commons/blog/BlogCard/BlogCard";
+import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategoryList";
+import { NextPage } from "next";
 
-type Props = {};
+type Props = {
+  blogCategoryList: BlogCategoryList;
+};
 
-const BlogListByCategories = ({ category, blogListObject }) => {
+const BlogListByCategories: NextPage<Props> = ({ blogCategoryList }) => {
   return (
     <>
-      {blogListObject.map((categories, index: string) => (
+      {blogCategoryList.map((category, index) => (
         <>
           <div key={index}>
-            <div>{categories.name}</div>
-            {categories.blogList.contents.map((blog) => BlogCard({ blog }))}
+            <div>{category.name}</div>
+            {category.blogList.contents.map((blog, index) => (
+              <BlogCard key={blog.id} blog={blog} />
+            ))}
           </div>
         </>
       ))}

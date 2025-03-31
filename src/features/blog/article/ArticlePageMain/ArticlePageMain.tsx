@@ -3,18 +3,21 @@ import styles from "./ArticlePage.module.css";
 import dayjs from "dayjs";
 import Link from "next/link";
 import Commonlayout from "@/commons/layout/Layout/CommonLayout";
+import { NextPage } from "next";
+import { Blog } from "@/infra/microCMS/schema/Blog/blog";
+import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 
 type Props = {
-  blog: any;
-  category: any;
+  blog: Blog;
+  category: CategoryList;
 };
 
-const ArticlePageMain: React.FC<Props> = ({ blog, category }) => {
+const ArticlePageMain: NextPage<Props> = ({ blog, category }) => {
   return (
     <Commonlayout>
       <div className={styles.container}>
         <h2 className={styles.title}>{blog.title}</h2>
-        {TagButton({ category })}
+        <TagButton category={category} />
         <span className={styles.date}>
           {dayjs(blog.publishedAt).format("YYYY/MM/DD HH:mm")}
         </span>

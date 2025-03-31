@@ -1,6 +1,14 @@
-import { client } from "../../../libs/client";
-import { Blog } from "@/infra/microCMS/schema/blog";
-import TagMain from "@/commons/tag/TagMain/TagMain";
+import { client } from "../../../libs/microCMS/utils/client";
+import { Blog } from "@/infra/microCMS/schema/Blog/blog";
+import TagMain from "@/commons/tag/TagButton/TagMain/TagMain";
+import { NextPage } from "next";
+import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
+
+type Props = {
+  blog: Blog;
+  category: CategoryList;
+  blogCategoryList: any;
+};
 
 export const getServerSideProps = async () => {
   const categoryData = await client.getList({ endpoint: "categories" });
@@ -17,7 +25,7 @@ export const getServerSideProps = async () => {
 
   const blogListByCategory = await Promise.all(promises);
 
-  const blogListObject = categoryData.contents.map((category, index) => {
+  const blogCategoryList = categoryData.contents.map((category, index) => {
     return {
       name: category.name,
       blogList: blogListByCategory[index],
@@ -26,15 +34,18 @@ export const getServerSideProps = async () => {
   return {
     props: {
       category: categoryData.contents,
-      blogListObject,
+      blogCategoryList,
     },
   };
 };
 
-const TagPage = ({ category, blogListObject }) => {
-  return TagMain({ category, blogListObject });
+const ArticleRecentTagPage: NextPage<Props> = ({
+  category,
+  blogCategoryList,
+}) => {
+  return <TagMain category={category} blogCategoryList={blogCategoryList} />;
 };
-export default TagPage;
+export default ArticleRecentTagPage;
 
 {
   /* <div key={category.id}>
@@ -45,7 +56,7 @@ export default TagPage;
 >
   {category.name}
 </Link>
-{console.log(blog.categories)}
+
 {blog.categories ? <div>tag</div> : <div>none</div>}
 </div> */
 }

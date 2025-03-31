@@ -1,6 +1,12 @@
+import { NextPage } from "next";
 import Link from "next/link";
+import { ReactNode } from "react";
 
-export default function Commonlayout({ children }) {
+type Props = {
+  children: ReactNode;
+};
+
+const Commonlayout: NextPage<Props> = ({ children }) => {
   return (
     <>
       <header>
@@ -9,4 +15,6 @@ export default function Commonlayout({ children }) {
       <main>{children}</main>
     </>
   );
-}
+};
+
+export default Commonlayout;
