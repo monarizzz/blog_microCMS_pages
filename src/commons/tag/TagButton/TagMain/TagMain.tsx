@@ -5,13 +5,15 @@ import { useRouter } from "next/router";
 import BlogListByCategories from "@/features/blog/BlogListByCategories/BlogListByCategories";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { NextPage } from "next";
+import { BlogCategoryList } from "@/infra/microCMS/schema/BlogListByCategory/blogCategoryList";
 
 type Props = {
   category: CategoryList;
-  blogListObject: any;
+  blogListObject: BlogCategoryList;
 };
 
 const TagMain: NextPage<Props> = ({ category, blogListObject }) => {
+  console.log(blogListObject);
   return (
     <Commonlayout>
       <div className={styles.container}>
@@ -22,10 +24,7 @@ const TagMain: NextPage<Props> = ({ category, blogListObject }) => {
         {useRouter().query["id"] ? (
           <div>filter</div> // クエリにidがある場合の処理をかく
         ) : (
-          <BlogListByCategories
-            category={category}
-            blogListObject={blogListObject}
-          />
+          <BlogListByCategories blogListObject={blogListObject} />
         )}
       </div>
     </Commonlayout>

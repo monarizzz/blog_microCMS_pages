@@ -3,14 +3,10 @@ import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { NextPage } from "next";
 
 type Props = {
-  category: CategoryList;
   blogListObject: any;
 };
 
-const BlogListByCategories: NextPage<Props> = ({
-  category,
-  blogListObject,
-}) => {
+const BlogListByCategories: NextPage<Props> = ({ blogListObject }) => {
   return (
     <>
       {blogListObject.map((categories, index: string) => (
