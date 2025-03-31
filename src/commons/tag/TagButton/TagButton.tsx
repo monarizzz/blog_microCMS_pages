@@ -8,7 +8,6 @@ export type Props = {
 };
 
 const TagButton: NextPage<Props> = ({ category }) => {
-  console.log(category);
   return (
     <>
       {category.slice().map((category) => (

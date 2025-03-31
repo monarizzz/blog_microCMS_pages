@@ -13,7 +13,6 @@ type Props = {
 };
 
 const TagMain: NextPage<Props> = ({ category, blogCategoryList }) => {
-  console.log(blogCategoryList);
   return (
     <Commonlayout>
       <div className={styles.container}>
