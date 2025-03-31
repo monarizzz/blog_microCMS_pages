@@ -1,3 +1,3 @@
-import { CategoryId } from "./category";
+import { Category } from "./category";
 
-export type CategoryList = CategoryId[];
+export type CategoryList = Category[];

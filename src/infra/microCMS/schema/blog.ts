@@ -1,4 +1,4 @@
-import { CategoryId } from "./category";
+import { Category } from "./category";
 
 export type Blog = {
   id: string;
@@ -6,7 +6,7 @@ export type Blog = {
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
-  categories: CategoryId[];
+  categories: Category[];
   title: string;
   body: string;
 };

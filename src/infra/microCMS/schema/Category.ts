@@ -1,4 +1,4 @@
-export type CategoryId = {
+export type Category = {
   id: string;
   name: string;
 };
