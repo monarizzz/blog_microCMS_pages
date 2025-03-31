@@ -1,6 +1,12 @@
+import { NextPage } from "next";
 import Link from "next/link";
+import { ReactNode } from "react";
 
-const Commonlayout = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+const Commonlayout: NextPage<Props> = ({ children }) => {
   return (
     <>
       <header>
