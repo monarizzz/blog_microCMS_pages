@@ -2,5 +2,7 @@ import { BlogList } from "../Blog/blogList";
 
 export type BlogCategory = {
   name: string;
-  blogList: BlogList[];
+  blogList: {
+    contents: BlogList[];
+  };
 };

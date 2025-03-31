@@ -7,7 +7,7 @@ import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 type Props = {
   blog: Blog;
   category: CategoryList;
-  blogListObject: any;
+  blogCategoryList: any;
 };
 
 export const getServerSideProps = async () => {
@@ -25,7 +25,7 @@ export const getServerSideProps = async () => {
 
   const blogListByCategory = await Promise.all(promises);
 
-  const blogListObject = categoryData.contents.map((category, index) => {
+  const blogCategoryList = categoryData.contents.map((category, index) => {
     return {
       name: category.name,
       blogList: blogListByCategory[index],
@@ -34,17 +34,17 @@ export const getServerSideProps = async () => {
   return {
     props: {
       category: categoryData.contents,
-      blogListObject,
+      blogCategoryList,
     },
   };
 };
 
 const ArticleRecentTagPage: NextPage<Props> = ({
   category,
-  blogListObject,
+  blogCategoryList,
 }) => {
-  console.log(blogListObject);
-  return <TagMain category={category} blogListObject={blogListObject} />;
+  console.log(blogCategoryList);
+  return <TagMain category={category} blogCategoryList={blogCategoryList} />;
 };
 export default ArticleRecentTagPage;
 

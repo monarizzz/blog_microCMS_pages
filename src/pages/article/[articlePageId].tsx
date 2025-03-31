@@ -24,6 +24,7 @@ export const getServerSideProps = async (context) => {
 };
 
 const ArticlePage: NextPage<Props> = ({ blog, category }) => {
+  console.log(blog);
   return <ArticlePageMain blog={blog} category={category} />;
 };
 
