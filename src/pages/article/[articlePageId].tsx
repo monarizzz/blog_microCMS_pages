@@ -13,8 +13,6 @@ export const getServerSideProps = async (context) => {
   const articlePageId = context.params.articlePageId;
   const data = await client.get({ endpoint: "blog", contentId: articlePageId });
   const categoryData = await client.get({ endpoint: "categories" });
-
-  console.log(categoryData.contents);
   return {
     props: {
       blog: data,
@@ -24,7 +22,6 @@ export const getServerSideProps = async (context) => {
 };
 
 const ArticlePage: NextPage<Props> = ({ blog, category }) => {
-  console.log(blog);
   return <ArticlePageMain blog={blog} category={category} />;
 };
 

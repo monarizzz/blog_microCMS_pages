@@ -43,7 +43,6 @@ const ArticleRecentTagPage: NextPage<Props> = ({
   category,
   blogCategoryList,
 }) => {
-  console.log(blogCategoryList);
   return <TagMain category={category} blogCategoryList={blogCategoryList} />;
 };
 export default ArticleRecentTagPage;
@@ -57,7 +56,7 @@ export default ArticleRecentTagPage;
 >
   {category.name}
 </Link>
-{console.log(blog.categories)}
+
 {blog.categories ? <div>tag</div> : <div>none</div>}
 </div> */
 }
