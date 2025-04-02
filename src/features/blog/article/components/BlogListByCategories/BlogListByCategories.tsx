@@ -9,11 +9,11 @@ type Props = {
 const BlogListByCategories: NextPage<Props> = ({ blogCategoryList }) => {
   return (
     <>
-      {blogCategoryList.map((category, index) => (
+      {blogCategoryList.map((category) => (
         <>
-          <div key={index}>
+          <div key={category.id}>
             <div>{category.name}</div>
-            {category.blogList.contents.map((blog, index) => (
+            {category.blogList.contents.map((blog) => (
               <BlogCard key={blog.id} blog={blog} />
             ))}
           </div>
