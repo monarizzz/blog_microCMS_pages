@@ -1,4 +1,4 @@
-import HomeMain from "@/features/blog/home/HomePageMain/HomePageMain";
+import HomeMain from "@/features/blog/home/components/HomePageMain/HomePageMain";
 import { client } from "../libs/microCMS/utils/client";
 import { Blog } from "@/infra/microCMS/schema/Blog/blog";
 import { NextPage } from "next";
