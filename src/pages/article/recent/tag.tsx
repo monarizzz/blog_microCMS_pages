@@ -27,6 +27,7 @@ export const getServerSideProps = async () => {
 
   const blogCategoryList = categoryData.contents.map((category, index) => {
     return {
+      id: category.id,
       name: category.name,
       blogList: blogListByCategory[index],
     };
