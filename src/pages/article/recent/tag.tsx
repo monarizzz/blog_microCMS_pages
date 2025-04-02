@@ -3,11 +3,12 @@ import { Blog } from "@/infra/microCMS/schema/Blog/blog";
 import TagMain from "@/commons/tag/TagButton/TagMain/TagMain";
 import { NextPage } from "next";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
+import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategoryList";
 
 type Props = {
   blog: Blog;
   category: CategoryList;
-  blogCategoryList: any;
+  blogCategoryList: BlogCategoryList;
 };
 
 export const getServerSideProps = async () => {
