@@ -2,7 +2,7 @@ import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import styles from "./TagMain.module.css";
 import TagButton from "../TagButton";
 import { useRouter } from "next/router";
-import BlogListByCategories from "@/features/blog/BlogListByCategories/BlogListByCategories";
+import BlogListByCategories from "@/features/blog/article/components/BlogListByCategories/BlogListByCategories";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { NextPage } from "next";
 import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategoryList";

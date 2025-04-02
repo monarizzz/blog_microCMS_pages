@@ -1,7 +1,7 @@
 import { client } from "../../libs/microCMS/utils/client";
 import { Blog } from "@/infra/microCMS/schema/Blog/blog";
 import { GetServerSideProps, NextPage } from "next";
-import ArticlePageMain from "@/features/blog/article/ArticlePageMain/ArticlePageMain";
+import ArticlePageMain from "@/features/blog/article/components/ArticlePageMain/ArticlePageMain";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 
 type Props = {
