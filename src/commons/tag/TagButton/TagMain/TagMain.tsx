@@ -6,6 +6,7 @@ import BlogListByCategories from "@/features/blog/article/components/BlogListByC
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { NextPage } from "next";
 import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategoryList";
+import TagFilter from "@/features/blog/article/components/TagFilter/TagFilter";
 
 type Props = {
   category: CategoryList;
@@ -13,6 +14,7 @@ type Props = {
 };
 
 const TagMain: NextPage<Props> = ({ category, blogCategoryList }) => {
+  console.log(useRouter().query["id"]);
   return (
     <Commonlayout>
       <div className={styles.container}>
@@ -21,7 +23,7 @@ const TagMain: NextPage<Props> = ({ category, blogCategoryList }) => {
           <TagButton category={category} />
         </div>
         {useRouter().query["id"] ? (
-          <div>filter</div> // クエリにidがある場合の処理をかく
+          <TagFilter categoryID={`${useRouter().query["id"]}`} />
         ) : (
           <BlogListByCategories blogCategoryList={blogCategoryList} />
         )}
