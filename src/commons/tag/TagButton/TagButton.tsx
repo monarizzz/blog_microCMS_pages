@@ -12,7 +12,7 @@ const TagButton: NextPage<Props> = ({ category }) => {
     <>
       {category.slice().map((category) => (
         <Link
-          href={`./../article/recent/tag/?id=${category.id}`}
+          href={`/article/recent/tag/?id=${category.id}`}
           className={styles.tag}
           key={category.name}
         >
