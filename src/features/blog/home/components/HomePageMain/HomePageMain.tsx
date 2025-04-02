@@ -14,7 +14,7 @@ const HomeMain: NextPage<Props> = ({ blog }) => {
       <div className={styles.container}>
         <div className={styles.title}>ホーム</div>
         {blog.map((blog) => (
-          <BlogCard blog={blog} />
+          <BlogCard key={blog.id} blog={blog} />
         ))}
       </div>
     </Commonlayout>
