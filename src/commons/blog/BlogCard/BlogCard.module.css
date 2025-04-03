@@ -42,3 +42,10 @@
 .bodyText table {
   display: none;
 }
+
+.tag {
+  font-size: 13px;
+
+  color: #000000;
+  margin: 3px;
+}
