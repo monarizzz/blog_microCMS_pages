@@ -26,9 +26,16 @@ const TagMain: NextPage<Props> = ({ category, blogCategoryList }) => {
           <TagButton category={category} />
         </div>
         {useRouter().query["id"] ? (
-          <TagFilter queryID={queryID} blogCategoryList={blogCategoryList} />
+          <TagFilter
+            queryID={queryID}
+            blogCategoryList={blogCategoryList}
+            category={category}
+          />
         ) : (
-          <BlogListByCategories blogCategoryList={blogCategoryList} />
+          <BlogListByCategories
+            blogCategoryList={blogCategoryList}
+            category={category}
+          />
         )}
       </div>
     </Commonlayout>
