@@ -22,7 +22,9 @@ const BlogCard: NextPage<Props> = ({ blog, category }) => {
           {category.map((tag) =>
             blog.categories.map((articleCategory) =>
               tag.id == articleCategory.id ? (
-                <span className={styles.tag}>{tag.name}</span>
+                <span className={styles.tag} key={tag.id}>
+                  {tag.name}
+                </span>
               ) : null
             )
           )}
