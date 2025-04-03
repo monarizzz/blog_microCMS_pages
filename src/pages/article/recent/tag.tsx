@@ -48,33 +48,3 @@ const ArticleRecentTagPage: NextPage<Props> = ({
   return <TagMain category={category} blogCategoryList={blogCategoryList} />;
 };
 export default ArticleRecentTagPage;
-
-{
-  /* <div key={category.id}>
-<Link
-  href={`./tag/?id=${category.id}`}
-  className={styles.tag}
-  key={category.name}
->
-  {category.name}
-</Link>
-
-{blog.categories ? <div>tag</div> : <div>none</div>}
-</div> */
-}
-
-//  "blog.map((blog) => blogContents({ blog }))"
-// export function BlogListGroup({ blog, category }) {
-//   return blog.map((blog) => (
-//     <div>
-//       {blog.categories.length > 0 ? (
-//         blogContents({ blog })
-//       ) : (
-//         <>
-//           <div>タグ未設定</div>
-//           {blogContents({ blog })}
-//         </>
-//       )}
-//     </div>
-//   ));
-// }
