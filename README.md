@@ -1,8 +1,11 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+2025/04/03
 
-## Getting Started
+# blog_microCMS_pages
 
-First, run the development server:
+---
+
+Next.js と MicroCMS を使用したシンプルなブログです。
+Next.js を学ぶために作成しました。これからプログラミングを学習していく上で、技術的な学びやメモをまとめる用途として使用します。
 
 ```bash
 npm run dev
