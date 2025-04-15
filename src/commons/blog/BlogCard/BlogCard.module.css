@@ -1,31 +1,46 @@
 .card {
-  background-color: #ffffff;
-  /* background-color: #1e1e1e; */
-  padding: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  /* padding: 15px;
   margin: 20px 0;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-  border: solid 2px #ebebeb;
+  border: solid 2px #ebebeb; */
 }
 
 .card:hover {
-  background-color: #f9f9f9; /* うっすらグレー */
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-  margin: 0;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+.date {
+  display: block;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
 }
 
-.date {
-  font-size: 14px;
-  color: #888888;
-  margin-left: 15px;
+.tag {
+  background: #3b82f6;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .bodyText {
-  margin: 5px 0 0;
   display: -webkit-box; /* 必須 */
   -webkit-box-orient: vertical; /* 必須 */
   -webkit-line-clamp: 3; /* 行数を制限 */
@@ -33,19 +48,13 @@
 }
 
 .bodyText * {
-  font-size: 15px;
-  color: #000000;
+  color: #4b5563;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 
 .bodyText img,
 .bodyText div[style],
 .bodyText table {
   display: none;
-}
-
-.tag {
-  font-size: 13px;
-
-  color: #000000;
-  margin: 3px;
 }
