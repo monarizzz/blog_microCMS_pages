@@ -18,9 +18,11 @@ const HomeMain: NextPage<Props> = ({ blog, category }) => {
         <Link href={""} className={styles.title}>
           ホーム
         </Link>
-        {blog.map((blog) => (
-          <BlogCard key={blog.id} blog={blog} category={category} />
-        ))}
+        <div className={styles.blogList}>
+          {blog.map((blog) => (
+            <BlogCard key={blog.id} blog={blog} category={category} />
+          ))}
+        </div>
       </div>
     </CommonLayout>
   );
