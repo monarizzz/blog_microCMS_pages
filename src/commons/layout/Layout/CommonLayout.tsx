@@ -26,7 +26,7 @@ const Commonlayout: NextPage<Props> = ({ children }) => {
           </Link>
         </span>
       </div>
-      <main>{children}</main>
+      <>{children}</>
     </>
   );
 };

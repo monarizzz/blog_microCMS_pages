@@ -14,7 +14,7 @@
   text-align: right;
 }
 
-.title {
-  font-size: 20px;
-  font-weight: bold;
+.treeText {
+  font-size: 0.8em;
+  margin-right: 1em;
 }

@@ -7,6 +7,9 @@
   --font-weight-normal: normal;
   --font-weight-bold: bold;
 }
+.articleContentHeader {
+  margin-bottom: 1em;
+}
 
 .date {
   font-size: 0.9em;
@@ -15,29 +18,21 @@
   margin-bottom: 8px;
 }
 
-.title {
-  font-size: 26px;
-  text-align: center;
-  font-weight: bold;
-}
-
 .link {
   color: #198cff;
   text-decoration: none;
   margin: 10px;
 }
 
-.card {
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-  margin: 20px;
+.title {
+  font-size: 1.8em;
+  text-align: center;
+  font-weight: bold;
+  margin: 1em;
 }
 
-.article {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #000000;
+.articleContents {
+  margin-bottom: 2em;
 }
 
 /* .container {
@@ -56,6 +51,11 @@
   text-decoration: underline;
 }
 
+.article {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #000000;
+}
 /* h1からh5までのスタイル */
 .article h1,
 .article h2,
@@ -172,16 +172,18 @@
 
 .article p code {
   line-height: normal;
-  background: rgba(135, 131, 120, 0.15);
-  color: #eb5757;
+  background: rgb(234, 234, 234);
+  color: #c30000;
   border-radius: 4px;
   font-size: 85%;
   padding: 0.2em 0.4em;
 }
 .article div[data-filename="callout"] pre {
   background-color: #1e1e1e;
-  color: #dcdcdc;
-  padding: 1rem;
+  color: #d9d9d9;
+  padding: 1em;
+  margin-top: 2%;
+  margin-bottom: 2%;
   border-radius: 8px;
   overflow-x: auto;
   font-family: "Courier New", monospace;
@@ -200,4 +202,9 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.article hr {
+  margin-top: 1%;
+  margin-bottom: 1%;
 }

@@ -1,7 +1,7 @@
 .container {
   width: 80%;
   max-width: 1000px;
-  margin: 20px auto;
+  margin: 3em auto;
 }
 .blogList {
   display: grid;

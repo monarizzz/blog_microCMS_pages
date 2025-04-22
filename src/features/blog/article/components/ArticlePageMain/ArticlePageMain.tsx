@@ -16,28 +16,26 @@ const ArticlePageMain: NextPage<Props> = ({ blog, category }) => {
   return (
     <Commonlayout>
       <div className={styles.container}>
-        <TagButton category={category} />
-        <div className={styles.date}>
-          {dayjs(blog.publishedAt).format("YYYY/MM/DD HH:mm")}
+        <div className={styles.articleContentHeader}>
+          <div className={styles.date}>
+            {blog.publishedAt == blog.revisedAt
+              ? dayjs(blog.publishedAt).format("YYYY/MM/DD HH:mm")
+              : "最終更新：" + dayjs(blog.revisedAt).format("YYYY/MM/DD HH:mm")}
+          </div>
+          <div className={styles.title}>{blog.title}</div>
         </div>
-
-        <div className={styles.card}>
-          <h2 className={styles.title}>{blog.title}</h2>
+        <div className={styles.articleContents}>
           <div
             className={styles.article}
             dangerouslySetInnerHTML={{
               __html: blog.body,
             }}
           />
-          <Link href="/" className={styles.link}>
-            <span>← 記事一覧に戻る</span>
-          </Link>
-          <div className={styles.date}>
-            {blog.publishedAt != blog.revisedAt
-              ? dayjs(blog.revisedAt).format("YYYY/MM/DD HH:mm") + " " + "更新"
-              : null}
-          </div>
         </div>
+        <TagButton category={category} />
+        <Link href="/" className={styles.link}>
+          <div>← 記事一覧に戻る</div>
+        </Link>
       </div>
     </Commonlayout>
   );

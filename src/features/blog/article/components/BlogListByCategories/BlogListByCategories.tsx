@@ -14,10 +14,10 @@ const BlogListByCategories: NextPage<Props> = ({
   category,
 }) => {
   return (
-    <>
+    <div className={styles.blogGroup}>
       {blogCategoryList.map((blogCategory) => (
         <>
-          <div key={blogCategory.id}>
+          <div key={blogCategory.id} className={styles.BlogListByCategories}>
             <div className={styles.tag}>
               <span className={styles.tagName}>{blogCategory.name}</span>
             </div>
@@ -29,7 +29,7 @@ const BlogListByCategories: NextPage<Props> = ({
           </div>
         </>
       ))}
-    </>
+    </div>
   );
 };
 
