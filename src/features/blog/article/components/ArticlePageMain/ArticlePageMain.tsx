@@ -16,12 +16,13 @@ const ArticlePageMain: NextPage<Props> = ({ blog, category }) => {
   return (
     <Commonlayout>
       <div className={styles.container}>
-        <h2 className={styles.title}>{blog.title}</h2>
         <TagButton category={category} />
-        <span className={styles.date}>
+        <div className={styles.date}>
           {dayjs(blog.publishedAt).format("YYYY/MM/DD HH:mm")}
-        </span>
+        </div>
+
         <div className={styles.card}>
+          <h2 className={styles.title}>{blog.title}</h2>
           <div
             className={styles.article}
             dangerouslySetInnerHTML={{
@@ -31,11 +32,11 @@ const ArticlePageMain: NextPage<Props> = ({ blog, category }) => {
           <Link href="/" className={styles.link}>
             <span>← 記事一覧に戻る</span>
           </Link>
-          <span className={styles.date}>
+          <div className={styles.date}>
             {blog.publishedAt != blog.revisedAt
               ? dayjs(blog.revisedAt).format("YYYY/MM/DD HH:mm") + " " + "更新"
               : null}
-          </span>
+          </div>
         </div>
       </div>
     </Commonlayout>

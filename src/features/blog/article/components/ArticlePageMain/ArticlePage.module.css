@@ -8,18 +8,19 @@
   --font-weight-bold: bold;
 }
 
+.date {
+  font-size: 0.9em;
+  color: #888;
+  text-align: right;
+  margin-bottom: 8px;
+}
+
 .title {
   font-size: 26px;
   text-align: center;
   font-weight: bold;
 }
 
-.date {
-  font-size: 15px;
-  float: right;
-  color: #888888;
-  margin: 10px;
-}
 .link {
   color: #198cff;
   text-decoration: none;
@@ -39,10 +40,16 @@
   color: #000000;
 }
 
-.container {
+/* .container {
   width: 80%;
   max-width: 800px;
   margin: 20px auto;
+} */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
 .link:hover {
@@ -50,41 +57,32 @@
 }
 
 /* h1からh5までのスタイル */
-.article h1 {
-  font-size: 28px;
-  font-weight: bold;
-  margin-top: 40px;
-  margin-bottom: 16px;
-}
-
-.article h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 40px;
-  margin-bottom: 16px;
-}
-
-.article h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 40px;
-  margin-bottom: 16px;
-}
-
-.article h4 {
-  font-size: 14px;
-  font-weight: bold;
-  margin-top: 40px;
-  margin-bottom: 16px;
-}
-
+.article h1,
+.article h2,
+.article h3,
+.article h4,
 .article h5 {
-  font-size: 12px;
   font-weight: bold;
-  margin-top: 40px;
-  margin-bottom: 16px;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 
+.article h1 {
+  font-size: 1.75em;
+}
+.article h2 {
+  font-size: 1.5em;
+}
+.article h3 {
+  font-size: 1.25em;
+}
+.article h4 {
+  font-size: 0.875em;
+}
+.article h5 {
+  font-size: 0.75em;
+}
+/*
 .article p {
   font-size: 16px;
   margin-top: 8px;
@@ -202,29 +200,4 @@
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.tags-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px; /* タグ間の余白 */
-  justify-content: flex-end; /* 右寄せ */
-}
-
-.tag {
-  display: inline-block;
-  background-color: #e1e1e1; /* Zennのタグ背景色 */
-  color: #000000; /* 文字色 */
-  font-size: 0.875rem; /* 14px */
-  font-weight: 500;
-  padding: 4px 12px;
-  margin: 5px;
-  border-radius: 16px; /* 丸み */
-  border: 1px solid #7b7b7b;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.tag:hover {
-  background-color: #3f3f3f;
-  color: white;
 }

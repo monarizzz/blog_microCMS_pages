@@ -20,7 +20,7 @@ const TagMain: NextPage<Props> = ({ category, blogCategoryList }) => {
     <Commonlayout>
       <div className={styles.container}>
         <Link href={""} className={styles.title}>
-          タグページ
+          PRODUCT
         </Link>
         <div className={styles.tagButton}>
           <TagButton category={category} />
