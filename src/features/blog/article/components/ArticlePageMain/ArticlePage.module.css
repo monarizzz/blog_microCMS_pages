@@ -47,7 +47,7 @@
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 2em;
 }
 
 .link:hover {
@@ -55,8 +55,9 @@
 }
 
 .article {
-  font-size: 1em;
-  line-height: 1.6;
+  font-size: 1.1em;
+  letter-spacing: 0.05rem;
+  line-height: 2em;
   color: #000000;
 }
 /* h1からh5までのスタイル */
@@ -208,6 +209,6 @@
 }
 
 .article hr {
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
