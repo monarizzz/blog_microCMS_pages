@@ -18,7 +18,7 @@ const BlogListByCategories: NextPage<Props> = ({
       {blogCategoryList.map((blogCategory) => (
         <>
           <div key={blogCategory.id} className={styles.BlogListByCategories}>
-            <div className={styles.tag}>
+            <div>
               <span className={styles.tagName}>{blogCategory.name}</span>
             </div>
             <div className={styles.blogList}>
