@@ -17,11 +17,14 @@
   text-align: right;
   margin-bottom: 8px;
 }
-
+.tagGroup {
+  margin-bottom: 2em;
+}
 .link {
   color: #198cff;
   text-decoration: none;
-  margin: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
 }
 
 .title {

@@ -32,10 +32,12 @@ const ArticlePageMain: NextPage<Props> = ({ blog, category }) => {
             }}
           />
         </div>
-        <TagButton category={category} />
-        <Link href="/" className={styles.link}>
-          <div>← 記事一覧に戻る</div>
-        </Link>
+        <div className={styles.tagGroup}>
+          <TagButton category={category} />
+        </div>
+        <div className={styles.link}>
+          <Link href="/">← 記事一覧に戻る</Link>
+        </div>
       </div>
     </Commonlayout>
   );
