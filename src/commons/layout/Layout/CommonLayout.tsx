@@ -19,7 +19,7 @@ const Commonlayout: NextPage<Props> = ({ children }) => {
             <span className={styles.button}>HOME</span>
           </Link>
           <Link href="/article/recent/tag">
-            <span className={styles.button}>PRODUCT</span>
+            <span className={styles.button}>CATEGORY</span>
           </Link>
           <Link href="/about">
             <span className={styles.button}>ABOUT</span>

@@ -25,7 +25,7 @@ const TagMain: NextPage<Props> = ({ category, blogCategoryList }) => {
           </Link>
           <span className={styles.treeText}> / </span>
           <Link href={""} className={styles.treeTextProduct}>
-            <span className={styles.treeText}>PRODUCT</span>
+            <span className={styles.treeText}>CATEGORY</span>
           </Link>
         </div>
         <div className={styles.tagButton}>
