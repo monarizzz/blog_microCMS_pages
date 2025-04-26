@@ -18,9 +18,15 @@ const ArticlePageMain: NextPage<Props> = ({ blog, category }) => {
       <div className={styles.container}>
         <div className={styles.articleContentHeader}>
           <div className={styles.date}>
-            {blog.publishedAt == blog.revisedAt
-              ? dayjs(blog.publishedAt).format("YYYY/MM/DD HH:mm")
-              : "最終更新：" + dayjs(blog.revisedAt).format("YYYY/MM/DD HH:mm")}
+            <div className={styles.publishedDate}>
+              {dayjs(blog.publishedAt).format("YYYY/MM/DD HH:mm")}
+            </div>
+            {blog.publishedAt == blog.revisedAt ? null : (
+              <>
+                <span className={styles.updateIcon}></span>
+                {dayjs(blog.revisedAt).format("YYYY/MM/DD HH:mm")}
+              </>
+            )}
           </div>
           <div className={styles.title}>{blog.title}</div>
         </div>

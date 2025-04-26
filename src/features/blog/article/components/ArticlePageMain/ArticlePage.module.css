@@ -10,7 +10,51 @@
 .articleContentHeader {
   margin-bottom: 1em;
 }
+.publishedDate {
+  padding: 0%;
+}
 
+.updateIcon {
+  display: inline-block;
+  vertical-align: middle;
+  color: #888;
+  line-height: 1;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  transform: rotate(45deg);
+  margin-right: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.updateIcon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border: 0.1em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transform: rotate(-45deg);
+}
+
+.updateIcon::after {
+  content: "";
+  position: absolute;
+  top: 0.05em;
+  right: 50%;
+  width: 0.2em;
+  height: 0.2em;
+  border: 0.1em solid currentColor;
+  border-left: 0;
+  border-bottom: 0;
+  box-sizing: content-box;
+  transform: translateX(0.14142em) rotate(45deg);
+  transform-origin: top right;
+}
 .date {
   font-size: 0.9em;
   color: #888;
