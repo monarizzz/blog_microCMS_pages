@@ -3,7 +3,6 @@ import styles from "./HomePageMain.module.css";
 import CommonLayout from "@/commons/layout/Layout/CommonLayout";
 import { NextPage } from "next";
 import { BlogList } from "@/infra/microCMS/schema/Blog/blogList";
-import Link from "next/link";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 
 type Props = {
