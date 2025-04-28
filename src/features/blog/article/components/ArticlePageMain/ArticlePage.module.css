@@ -79,11 +79,12 @@
   font-size: 1.8em;
   text-align: center;
   font-weight: bold;
-  margin: 1em;
+  margin: 2em;
 }
 
 .articleContents {
   margin-bottom: 2em;
+  margin-right: 20%;
 }
 
 /* .container {
@@ -93,7 +94,7 @@
 } */
 
 .container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2em;
 }
