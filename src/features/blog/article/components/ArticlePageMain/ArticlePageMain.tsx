@@ -6,6 +6,8 @@ import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import { NextPage } from "next";
 import { Blog } from "@/infra/microCMS/schema/Blog/blog";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
+import renderToc from "@/libs/blog/renderToc/renderToc";
+import TableOfContents from "../TableOfContent/TableOfContent";
 
 type Props = {
   blog: Blog;
@@ -13,6 +15,7 @@ type Props = {
 };
 
 const ArticlePageMain: NextPage<Props> = ({ blog, category }) => {
+  const toc = renderToc(blog);
   return (
     <Commonlayout>
       <div className={styles.container}>
@@ -30,13 +33,18 @@ const ArticlePageMain: NextPage<Props> = ({ blog, category }) => {
           </div>
           <div className={styles.title}>{blog.title}</div>
         </div>
-        <div className={styles.articleContents}>
-          <div
-            className={styles.article}
-            dangerouslySetInnerHTML={{
-              __html: blog.body,
-            }}
-          />
+        <div className={styles.articleContainer}>
+          <div className={styles.articleContents}>
+            <div
+              className={styles.article}
+              dangerouslySetInnerHTML={{
+                __html: blog.body,
+              }}
+            />
+          </div>
+          <aside className={styles.toc}>
+            <TableOfContents toc={toc} />
+          </aside>
         </div>
         <div className={styles.tagGroup}>
           <TagButton category={category} />
