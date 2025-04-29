@@ -17,11 +17,10 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
     endpoint: "blog",
     contentId: `${articlePageId}`,
   });
-  const categoryData = await client.get({ endpoint: "categories" });
   return {
     props: {
       blog: data,
-      category: categoryData.contents,
+      category: data.categories,
     },
   };
 };

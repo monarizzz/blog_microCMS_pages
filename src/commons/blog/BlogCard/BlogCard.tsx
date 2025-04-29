@@ -16,8 +16,8 @@ const BlogCard: NextPage<Props> = ({ blog, category }) => {
   return (
     <div className={styles.card}>
       <Link href={`/article/${blog.id}`}>
-        <span className={styles.title}>{blog.title}</span>
-        <span className={styles.date}>{RelativeDate(publishedDate)} </span>
+        <div className={styles.title}>{blog.title}</div>
+        <div className={styles.date}>{RelativeDate(publishedDate)} </div>
         <>
           {category.map((tag) =>
             blog.categories.map((articleCategory) =>

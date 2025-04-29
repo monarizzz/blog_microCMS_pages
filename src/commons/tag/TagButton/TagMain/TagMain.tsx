@@ -19,9 +19,15 @@ const TagMain: NextPage<Props> = ({ category, blogCategoryList }) => {
   return (
     <Commonlayout>
       <div className={styles.container}>
-        <Link href={""} className={styles.title}>
-          タグページ
-        </Link>
+        <div className={styles.tree}>
+          <Link href="/">
+            <span className={styles.treeText}>🏠 HOME</span>
+          </Link>
+          <span className={styles.treeText}> / </span>
+          <Link href={""} className={styles.treeTextProduct}>
+            <span className={styles.treeText}>CATEGORY</span>
+          </Link>
+        </div>
         <div className={styles.tagButton}>
           <TagButton category={category} />
         </div>

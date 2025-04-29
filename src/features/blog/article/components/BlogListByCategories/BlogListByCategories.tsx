@@ -2,6 +2,7 @@ import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategoryList";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { NextPage } from "next";
+import styles from "@/features/blog/article/components/BlogListByCategories/BlogListCategories.module.css";
 
 type Props = {
   blogCategoryList: BlogCategoryList;
@@ -13,18 +14,22 @@ const BlogListByCategories: NextPage<Props> = ({
   category,
 }) => {
   return (
-    <>
+    <div className={styles.blogGroup}>
       {blogCategoryList.map((blogCategory) => (
         <>
-          <div key={blogCategory.id}>
-            <div>{blogCategory.name}</div>
-            {blogCategory.blogList.contents.map((blog) => (
-              <BlogCard key={blog.id} blog={blog} category={category} />
-            ))}
+          <div key={blogCategory.id} className={styles.BlogListByCategories}>
+            <div>
+              <span className={styles.tagName}>{blogCategory.name}</span>
+            </div>
+            <div className={styles.blogList}>
+              {blogCategory.blogList.contents.map((blog) => (
+                <BlogCard key={blog.id} blog={blog} category={category} />
+              ))}
+            </div>
           </div>
         </>
       ))}
-    </>
+    </div>
   );
 };
 

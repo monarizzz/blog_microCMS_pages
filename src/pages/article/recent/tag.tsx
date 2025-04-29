@@ -20,7 +20,7 @@ export const getServerSideProps = async () => {
   const promises = categoryIds.map((categoryId) => {
     return client.getList({
       endpoint: "blog",
-      queries: { limit: 3, filters: `categories[contains]${categoryId}` },
+      queries: { limit: 10, filters: `categories[contains]${categoryId}` },
     });
   });
 

@@ -26,11 +26,3 @@ body {
   margin: 0;
   padding: 0;
 }
-
-header {
-  background-color: #e9e9e9; /*仮置き */
-  padding: 20px;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-}
