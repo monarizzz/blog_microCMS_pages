@@ -18,9 +18,15 @@
 .publishedDate {
   padding: 0%;
 }
+
 .toc {
-  margin-left: 3em;
-  margin-top: 5em;
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .toc {
+    display: block;
+  }
 }
 
 .articleContainer {
@@ -97,8 +103,9 @@
 }
 
 .articleContents {
+  width: 100%;
   max-width: 800px;
-  padding-right: 3em;
+  padding: auto;
 }
 
 /* .container {
