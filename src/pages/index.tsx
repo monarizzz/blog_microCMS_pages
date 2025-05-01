@@ -1,21 +1,18 @@
 import HomeMain from "@/features/blog/home/components/HomePageMain/HomePageMain";
-import { client } from "../libs/microCMS/utils/client";
-import { Blog } from "@/infra/microCMS/schema/Blog/blog";
-import { NextPage } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import { BlogList } from "@/infra/microCMS/schema/Blog/blogList";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
+import { getBlogList } from "@/infra/microCMS/repositories/blog";
+import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
 
 type Props = {
   blog: BlogList;
   category: CategoryList;
 };
 
-export const getServerSideProps = async () => {
-  const data = await client.getList<Blog>({
-    endpoint: "blog",
-    queries: { limit: 15 },
-  });
-  const categoryData = await client.get({ endpoint: "categories" });
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const data = await getBlogList({ queries: { limit: 15 } });
+  const categoryData = await getCategoriesList({ queries: { limit: 10 } });
   return {
     props: {
       blog: data.contents,
