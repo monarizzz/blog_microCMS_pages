@@ -5,16 +5,49 @@
 ---
 
 Next.js と MicroCMS を使用したシンプルなブログです。
-Next.js を学ぶために作成しました。これからプログラミングを学習していく上で、技術的な学びやメモをまとめる用途として使用します。
+Next.js を学ぶために作成しました。これからプログラミングを学習していく上で、技術的な学びやメモをまとめる用途で使用します。
+
+# ディレクトリ構成
+
+---
 
 ```bash
+/blog_microcms_pages
+├─ .next
+├─ node_modules/
+├─ public/
+└─ src/             ここにページに関するファイルが入ります
+```
+
+## src
+
+---
+
+```bash
+/src
+├─ commons/
+├─ features/
+├─ infra/
+├─ libs/
+├─ pages/
+└─ styles/
+
+```
+
 npm run dev
+
 # or
+
 yarn dev
+
 # or
+
 pnpm dev
+
 # or
+
 bun dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -41,3 +74,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+```
