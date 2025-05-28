@@ -4,6 +4,8 @@
   padding: 1em;
   margin-top: 1em;
   width: 250px;
+  position: sticky;
+  top: 20px;
 }
 
 .TableOfContentsHead {

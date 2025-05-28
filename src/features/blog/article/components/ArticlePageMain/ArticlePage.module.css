@@ -105,15 +105,8 @@
 .articleContents {
   width: 100%;
   max-width: 800px;
-  padding: 2em;
+  padding: 1em;
 }
-
-/* .container {
-  width: 80%;
-  max-width: 800px;
-  margin: 20px auto;
-} */
-
 .article {
   font-size: 1.1em;
   line-height: 2em;
