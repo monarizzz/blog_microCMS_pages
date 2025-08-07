@@ -1,50 +1,48 @@
-
 # GEMINI.md
 
-This file provides guidance for the Gemini AI to assist with development in this project.
+このファイルは、Gemini AIがこのプロジェクトの開発を支援するためのガイダンスを提供します。
 
-## Project Overview
+## プロジェクト概要
 
-This project is a blog built with Next.js and microCMS. It fetches blog posts and categories from the microCMS API and renders them as static pages.
+このプロジェクトは、Next.jsとmicroCMSで構築されたブログです。microCMS APIからブログ記事やカテゴリを取得し、静的ページとして表示します。
 
-## Coding Style
+## コーディングスタイル
 
-- **Language:** TypeScript
-- **Formatting:** Follow the rules defined in `.eslintrc.mjs` and `prettier.config.js`. Code is automatically formatted on save.
-- **Naming Conventions:**
-    - **Components:** PascalCase (e.g., `BlogCard.tsx`)
-    - **Variables and Functions:** camelCase (e.g., `getBlogPosts`)
-    - **CSS Modules:** camelCase (e.g., `BlogCard.module.css`)
-    - **Files:** Use kebab-case for all files except for React components.
+- **言語:** TypeScript
+- **フォーマット:** `.eslintrc.mjs` と `prettier.config.js` で定義されたルールに従います。コードは保存時に自動的にフォーマットされます。
+- **命名規則:**
+    - **コンポーネント:** PascalCase (例: `BlogCard.tsx`)
+    - **変数と関数:** camelCase (例: `getBlogPosts`)
+    - **CSS Modules:** camelCase (例: `BlogCard.module.css`)
+    - **ファイル:** Reactコンポーネントを除き、すべてのファイルにkebab-caseを使用します。
 
-## Libraries and Frameworks
+## ライブラリとフレームワーク
 
-- **Framework:** [Next.js](https://nextjs.org/)
-- **UI Library:** [React](https://reactjs.org/)
-- **Styling:**
-    - [Tailwind CSS](https://tailwindcss.com/): For global styles and utility classes.
-    - [CSS Modules](https://github.com/css-modules/css-modules): For component-level styles.
-- **API Client:** [microCMS JS SDK](https://github.com/microcmsio/microcms-js-sdk) for fetching data from the microCMS headless CMS.
-- **HTML Parsing:** [Cheerio](https://cheerio.js.org/) for parsing HTML, especially for creating the table of contents.
-- **Date Formatting:** [Day.js](https://day.js.org/) for formatting dates.
+- **フレームワーク:** [Next.js](https://nextjs.org/)
+- **UIライブラリ:** [React](https://reactjs.org/)
+- **スタイリング:**
+    - [Tailwind CSS](https://tailwindcss.com/): グローバルスタイルとユーティリティクラスに使用します。
+    - [CSS Modules](https://github.com/css-modules/css-modules): コンポーネントレベルのスタイルに使用します。
+- **APIクライアント:** [microCMS JS SDK](https://github.com/microcmsio/microcms-js-sdk) を使用して、microCMSヘッドレスCMSからデータを取得します。
+- **HTMLパーサー:** [Cheerio](https://cheerio.js.org/) を使用してHTMLを解析します。特に目次作成に使用します。
+- **日付フォーマット:** [Day.js](https://day.js.org/) を使用して日付をフォーマットします。
 
-## Architecture
+## アーキテクチャ
 
-The project follows a directory structure that separates concerns into `src/commons`, `src/features`, `src/infra`, `src/libs`, and `src/pages`.
+このプロジェクトは、関心事を`src/commons`, `src/features`, `src/infra`, `src/libs`, `src/pages`に分離するディレクトリ構造に従います。
 
-- **`src/pages`**: Contains the main pages of the application, following Next.js's file-system based routing.
-- **`src/commons`**: Contains reusable components, layouts, and utility functions that are shared across the application.
-- **`src/features`**: Contains components and logic related to specific features of the application, such as the blog.
-- **`src/infra`**: Contains the infrastructure layer, which is responsible for communicating with external services like microCMS. This includes API clients and data repositories.
-- **`src/libs`**: Contains libraries and utility functions that are not specific to the application's domain.
+- **`src/pages`**: Next.jsのファイルシステムベースのルーティングに従い、アプリケーションのメインページを格納します。
+- **`src/commons`**: アプリケーション全体で共有される再利用可能なコンポーネント、レイアウト、ユーティリティ関数を格納します。
+- **`src/features`**: ブログなど、アプリケーションの特定の機能に関連するコンポーネントとロジックを格納します。
+- **`src/infra`**: microCMSのような外部サービスとの通信を担当するインフラストラクチャ層を格納します。これにはAPIクライアントやデータリポジトリが含まれます。
+- **`src/libs`**: アプリケーションのドメインに特化していないライブラリやユーティリティ関数を格納します。
 
-## How to get data from microCMS
+## microCMSからのデータ取得方法
 
-The project uses the `microcms-js-sdk` to fetch data from microCMS. The client is initialized in `src/libs/microCMS/utils/client.ts`.
+このプロジェクトでは、`microcms-js-sdk`を使用してmicroCMSからデータを取得します。クライアントは`src/libs/microCMS/utils/client.ts`で初期化されています。
 
-To fetch data, use the repository functions in `src/infra/microCMS/repositories`. For example, to get a list of blog posts, use the `getBlogs` function from `src/infra/microCMS/repositories/blog.ts`.
+データを取得するには、`src/infra/microCMS/repositories`にあるリポジトリ関数を使用します。例えば、ブログ記事のリストを取得するには、`src/infra/microCMS/repositories/blog.ts`の`getBlogs`関数を使用します。
 
-## Testing
+## テスト
 
-[Instructions on how to run tests will be added here.]
-
+[テストの実行方法に関する指示は、ここに追記予定です。]
