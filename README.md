@@ -1,43 +1,56 @@
-2025/04/03
-
 # blog_microCMS_pages
 
----
+Next.js と microCMS を使用して構築した、技術的な学びやメモを記録するためのブログです。
 
-Next.js と MicroCMS を使用したシンプルなブログです。
-Next.js を学ぶために作成しました。これからプログラミングを学習していく上で、技術的な学びやメモをまとめる用途として使用します。
+## 特徴
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **フレームワーク**: [Next.js](https://nextjs.org/) (App Router)
+- **ヘッドレス CMS**: [microCMS](https://microcms.io/)
+- **スタイリング**: [Tailwind CSS](https://tailwindcss.com/) & [CSS Modules](https://github.com/css-modules/css-modules)
+- **UI**: [React](https://reactjs.org/)
+- **API クライアント**: [microCMS JS SDK](https://github.com/microcmsio/microcms-js-sdk)
+
+## 環境構築と実行方法
+
+1. **リポジトリをクローン**
+
+   ```bash
+   git clone https://github.com/your-username/blog_microcms_pages.git
+   cd blog_microcms_pages
+   ```
+
+2. **依存関係をインストール**
+
+   ```bash
+   npm install
+   ```
+
+3. **環境変数を設定**
+   `.env.local.example` ファイルを参考に `.env.local` ファイルを作成し、microCMS の API キーなどを設定してください。
+
+   ```
+   MICROCMS_SERVICE_DOMAIN=your-service-domain
+   MICROCMS_API_KEY=your-api-key
+   ```
+
+4. **開発サーバーを起動**
+   ```bash
+   npm run dev
+   ```
+   [http://localhost:3000](http://localhost:3000) にアクセスすると、ブログが表示されます。
+
+## ディレクトリ構成
+
+このプロジェクトは、関心事を分離するディレクトリ構造を採用しています。
+
+```
+src
+├── commons/      # 共通コンポーネント、レイアウト
+├── features/     # 特定の機能（ブログなど）に関連するコンポーネント
+├── infra/        # microCMSとの連携
+├── libs/         # 汎用的なライブラリ
+├── pages/        # Next.jsのルーティング
+└── styles/       # グローバルなスタイル
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+詳細なアーキテクチャや開発の指針については、`GEMINI.md`を参照してください。
