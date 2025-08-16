@@ -1,5 +1,5 @@
 import HomeMain from "@/features/blog/home/components/HomePageMain/HomePageMain";
-import { GetServerSideProps, NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import { BlogList } from "@/infra/microCMS/schema/Blog/blogList";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
@@ -10,7 +10,7 @@ type Props = {
   category: CategoryList;
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const data = await getBlogList({ queries: { limit: 15 } });
   const categoryData = await getCategoriesList({ queries: { limit: 10 } });
   return {
