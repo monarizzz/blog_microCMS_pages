@@ -1,6 +1,6 @@
 import { Blog } from "@/infra/microCMS/schema/Blog/blog";
 import TagMain from "@/commons/tag/TagButton/TagMain/TagMain";
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategoryList";
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
@@ -12,7 +12,7 @@ type Props = {
   blogCategoryList: BlogCategoryList;
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const categoryData = await getCategoriesList({ queries: { limit: 10 } });
   const categoryIds = categoryData.contents.map((category) => {
     return category.id;
@@ -36,6 +36,7 @@ export const getServerSideProps = async () => {
       category: categoryData.contents,
       blogCategoryList,
     },
+    revalidate: 86400,
   };
 };
 
