@@ -18,6 +18,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       blog: data.contents,
       category: categoryData.contents,
     },
+    revalidate: 86400,
   };
 };
 
