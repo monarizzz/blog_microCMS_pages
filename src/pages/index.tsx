@@ -1,29 +1,42 @@
 import HomeMain from "@/features/blog/home/components/HomePageMain/HomePageMain";
 import { GetStaticProps, NextPage } from "next";
-import { BlogList } from "@/infra/microCMS/schema/Blog/blogList";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
+import * as cheerio from "cheerio";
+import { BlogWithPlainTextList } from "@/infra/microCMS/schema/Blog/blogWithPlainText";
 
 type Props = {
-  blog: BlogList;
+  blogsWithPlainText: BlogWithPlainTextList;
   category: CategoryList;
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const data = await getBlogList({ queries: { limit: 15 } });
   const categoryData = await getCategoriesList({ queries: { limit: 10 } });
+
+  const blogsWithPlainText = data.contents.map((blog) => {
+    const $ = cheerio.load(blog.body);
+    const plainText = $.text().slice(0, 150);
+    return {
+      ...blog,
+      plainTextBody: plainText,
+    };
+  });
+
   return {
     props: {
-      blog: data.contents,
+      blogsWithPlainText: blogsWithPlainText,
       category: categoryData.contents,
     },
     revalidate: 86400,
   };
 };
 
-const HomePage: NextPage<Props> = ({ blog, category }) => {
-  return <HomeMain blog={blog} category={category} />;
+const HomePage: NextPage<Props> = ({ blogsWithPlainText, category }) => {
+  return (
+    <HomeMain blogsWithPlainText={blogsWithPlainText} category={category} />
+  );
 };
 
 export default HomePage;
