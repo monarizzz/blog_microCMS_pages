@@ -2,22 +2,26 @@ import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import styles from "./HomePageMain.module.css";
 import CommonLayout from "@/commons/layout/Layout/CommonLayout";
 import { NextPage } from "next";
-import { BlogList } from "@/infra/microCMS/schema/Blog/blogList";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
+import { BlogWithPlainTextList } from "@/infra/microCMS/schema/Blog/blogWithPlainText";
 
 type Props = {
-  blog: BlogList;
+  blogsWithPlainText: BlogWithPlainTextList;
   category: CategoryList;
 };
 
-const HomeMain: NextPage<Props> = ({ blog, category }) => {
+const HomeMain: NextPage<Props> = ({ blogsWithPlainText, category }) => {
   return (
     <CommonLayout>
       <div className={styles.container}>
         <div className={styles.title}>一覧</div>
         <div className={styles.blogList}>
-          {blog.map((blog) => (
-            <BlogCard key={blog.id} blog={blog} category={category} />
+          {blogsWithPlainText.map((blogsWithPlainText) => (
+            <BlogCard
+              key={blogsWithPlainText.id}
+              blogsWithPlainText={blogsWithPlainText}
+              category={category}
+            />
           ))}
         </div>
       </div>

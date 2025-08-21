@@ -4,12 +4,9 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   padding: 1.5rem;
   transition: transform 0.2s, box-shadow 0.2s;
-
-  /* padding: 15px;
-  margin: 20px 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-  border: solid 2px #ebebeb; */
+  /* 追加: 高さを揃えるためのスタイル */
+  height: 100%;
+  display: flex;
 }
 
 .card:hover {
@@ -41,20 +38,11 @@
 }
 
 .bodyText {
-  display: -webkit-box; /* 必須 */
-  -webkit-box-orient: vertical; /* 必須 */
-  -webkit-line-clamp: 3; /* 行数を制限 */
-  overflow: hidden;
-}
-
-.bodyText * {
   color: #4b5563;
   font-size: 0.9rem;
   margin-top: 0.5rem;
-}
-
-.bodyText img,
-.bodyText div[style],
-.bodyText table {
-  display: none;
+  white-space: pre-wrap;
+  overflow: hidden;
+  line-height: 1.5;
+  max-height: calc(0.9rem * 1.5 * 3);
 }
