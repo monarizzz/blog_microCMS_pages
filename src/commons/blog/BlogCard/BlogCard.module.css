@@ -38,8 +38,8 @@
   color: #4b5563;
   font-size: 0.9rem;
   margin-top: 0.5rem;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  white-space: pre-wrap;
   overflow: hidden;
+  line-height: 1.5;
+  max-height: calc(0.9rem * 1.5 * 3);
 }
