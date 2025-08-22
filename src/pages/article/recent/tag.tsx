@@ -1,4 +1,3 @@
-import { Blog } from "@/infra/microCMS/schema/Blog/blog";
 import TagMain from "@/commons/tag/TagButton/TagMain/TagMain";
 import { GetStaticProps, NextPage } from "next";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
@@ -7,9 +6,8 @@ import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
 
 type Props = {
-  blog: Blog;
-  category: CategoryList;
   blogCategoryList: BlogCategoryList;
+  category: CategoryList;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
