@@ -7,3 +7,4 @@ export type BlogCategory = {
     contents: BlogList;
   };
 };
+export type BlogCategoryList = BlogCategory[];
