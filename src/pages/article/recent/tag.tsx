@@ -1,9 +1,9 @@
 import TagMain from "@/commons/tag/TagButton/TagMain/TagMain";
 import { GetStaticProps, NextPage } from "next";
-import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
-import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategoryList";
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
+import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategory";
+import { CategoryList } from "@/infra/microCMS/schema/Category/category";
 
 type Props = {
   blogCategoryList: BlogCategoryList;

@@ -2,8 +2,8 @@ import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import styles from "./HomePageMain.module.css";
 import CommonLayout from "@/commons/layout/Layout/CommonLayout";
 import { NextPage } from "next";
-import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { BlogWithPlainTextList } from "@/infra/microCMS/schema/Blog/blogWithPlainText";
+import { CategoryList } from "@/infra/microCMS/schema/Category/category";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainTextList;
