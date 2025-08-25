@@ -1,8 +1,8 @@
 import BlogCard from "@/commons/blog/BlogCard/BlogCard";
-import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategoryList";
 import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { NextPage } from "next";
 import styles from "@/features/blog/article/components/BlogListByCategories/BlogListCategories.module.css";
+import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategory";
 
 type Props = {
   blogCategoryList: BlogCategoryList;

@@ -1,10 +1,11 @@
-import { BlogList } from "../Blog/blogList";
+import { BlogWithPlainTextList } from "../Blog/blogWithPlainText";
 
 export type BlogCategory = {
   name: string;
   id: string;
-  blogList: {
-    contents: BlogList;
+  blogLBlogWithPlainTextList: {
+    contents: BlogWithPlainTextList;
+    // contents: BlogList;
   };
 };
 export type BlogCategoryList = BlogCategory[];
