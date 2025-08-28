@@ -1,8 +1,8 @@
 import { Blog } from "@/infra/microCMS/schema/Blog/blog";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import ArticlePageMain from "@/features/blog/article/components/ArticlePageMain/ArticlePageMain";
-import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
+import { CategoryList } from "@/infra/microCMS/schema/Category/category";
 
 type Props = {
   blog: Blog;
