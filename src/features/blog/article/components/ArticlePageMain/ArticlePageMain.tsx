@@ -5,9 +5,9 @@ import Link from "next/link";
 import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import { NextPage } from "next";
 import { Blog } from "@/infra/microCMS/schema/Blog/blog";
-import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import renderToc from "@/libs/blog/renderToc/renderToc";
 import TableOfContents from "../TableOfContent/TableOfContent";
+import { CategoryList } from "@/infra/microCMS/schema/Category/category";
 
 type Props = {
   blog: Blog;
