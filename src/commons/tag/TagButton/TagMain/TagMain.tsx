@@ -1,6 +1,6 @@
 import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import styles from "./TagMain.module.css";
-import TagButton from "../TagButton";
+import TagButton from "../TagButton/TagButton";
 import { useRouter } from "next/router";
 import BlogListByCategories from "@/features/blog/article/components/BlogListByCategories/BlogListByCategories";
 import { NextPage } from "next";
