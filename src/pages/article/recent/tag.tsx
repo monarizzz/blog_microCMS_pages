@@ -1,5 +1,5 @@
-import TagMain from "@/commons/tag/TagButton/TagMain/TagMain";
-import { getBlogCategoryList } from "@/features/blog/article/services/getBlogCategoryList";
+import TagMain from "@/features/blog/tag/components/TagMain/TagMain";
+import { getBlogCategoryList } from "@/features/blog/tag/services/getBlogCategoryList";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
 import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategory";
 import { CategoryList } from "@/infra/microCMS/schema/Category/category";

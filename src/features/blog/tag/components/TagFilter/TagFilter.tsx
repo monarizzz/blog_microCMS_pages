@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import BlogCard from "@/commons/blog/BlogCard/BlogCard";
-import styles from "@/features/blog/article/components/TagFilter/TagFilter.module.css";
 import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategory";
 import { CategoryList } from "@/infra/microCMS/schema/Category/category";
+import styles from "@/features/blog/tag/components/TagFilter/TagFilter.module.css";
 
 type Props = {
   queryID: string;

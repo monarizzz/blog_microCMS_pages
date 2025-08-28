@@ -1,8 +1,8 @@
 import Link from "next/link";
 import styles from "./TagButton.module.css";
 import { NextPage } from "next";
-import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { useRouter } from "next/router";
+import { CategoryList } from "@/infra/microCMS/schema/Category/category";
 
 export type Props = {
   category: CategoryList;
