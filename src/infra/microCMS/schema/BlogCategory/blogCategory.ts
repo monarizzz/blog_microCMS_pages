@@ -3,9 +3,6 @@ import { BlogWithPlainTextList } from "../Blog/blogWithPlainText";
 export type BlogCategory = {
   name: string;
   id: string;
-  blogWithPlainTextList: {
-    contents: BlogWithPlainTextList;
-    // contents: BlogList;
-  };
+  blogWithPlainTextList:  BlogWithPlainTextList;
 };
 export type BlogCategoryList = BlogCategory[];
