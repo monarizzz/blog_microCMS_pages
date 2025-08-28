@@ -1,10 +1,10 @@
 import HomeMain from "@/features/blog/home/components/HomePageMain/HomePageMain";
 import { GetStaticProps, NextPage } from "next";
-import { CategoryList } from "@/infra/microCMS/schema/Category/categoryList";
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
 import * as cheerio from "cheerio";
 import { BlogWithPlainTextList } from "@/infra/microCMS/schema/Blog/blogWithPlainText";
+import { CategoryList } from "@/infra/microCMS/schema/Category/category";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainTextList;
