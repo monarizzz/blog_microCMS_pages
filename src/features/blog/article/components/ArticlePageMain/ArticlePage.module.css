@@ -21,9 +21,10 @@
 
 .toc {
   display: none;
+  margin-right: 2em;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
   .toc {
     display: block;
     position: sticky;

@@ -12,25 +12,25 @@ type Props = {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const articlePageId = context.params?.articlePageId as string;
+  const articlePageId = context.params?.articlePageId;
   const data = await getBlogList({ queries: { ids: `${articlePageId}` } });
 
-  const allPostsData = await getBlogList({
+  const allArticleData = await getBlogList({
     queries: { fields: ["id", "title", "publishedAt"] },
   });
 
-  const sortedPosts = allPostsData.contents.sort((a, b) =>
+  const sortedArticles = allArticleData.contents.sort((a, b) =>
     new Date(b.publishedAt) > new Date(a.publishedAt) ? 1 : -1
   );
 
-  const currentIndex = sortedPosts.findIndex(
+  const currentIndex = sortedArticles.findIndex(
     (post) => post.id === articlePageId
   );
 
-  const prevPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
+  const prevPost = currentIndex > 0 ? sortedArticles[currentIndex - 1] : null;
   const nextPost =
-    currentIndex < sortedPosts.length - 1
-      ? sortedPosts[currentIndex + 1]
+    currentIndex < sortedArticles.length - 1
+      ? sortedArticles[currentIndex + 1]
       : null;
 
   return {
@@ -58,8 +58,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-const ArticlePage: NextPage<Props> = ({ blog, category, prevPost, nextPost }) => {
-  return <ArticlePageMain blog={blog} category={category} prevPost={prevPost} nextPost={nextPost} />;
+const ArticlePage: NextPage<Props> = ({
+  blog,
+  category,
+  prevPost,
+  nextPost,
+}) => {
+  return (
+    <ArticlePageMain
+      blog={blog}
+      category={category}
+      prevPost={prevPost}
+      nextPost={nextPost}
+    />
+  );
 };
 
 export default ArticlePage;
