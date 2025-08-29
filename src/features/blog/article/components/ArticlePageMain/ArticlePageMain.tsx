@@ -12,9 +12,11 @@ import { CategoryList } from "@/infra/microCMS/schema/Category/category";
 type Props = {
   blog: Blog;
   category: CategoryList;
+  prevPost: Pick<Blog, "id" | "title"> | null;
+  nextPost: Pick<Blog, "id" | "title"> | null;
 };
 
-const ArticlePageMain: NextPage<Props> = ({ blog, category }) => {
+const ArticlePageMain: NextPage<Props> = ({ blog, category, prevPost, nextPost }) => {
   const toc = renderToc(blog);
   return (
     <Commonlayout>
@@ -41,6 +43,59 @@ const ArticlePageMain: NextPage<Props> = ({ blog, category }) => {
                 __html: blog.body,
               }}
             />
+            {/* Pagination */}
+            <div className={styles.pagination}>
+              {prevPost && (
+                <Link
+                  href={`/article/${prevPost.id}`}
+                  className={`${styles.prevNextLink} ${styles.prevLink}`}>
+                                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className={styles.paginationArrow}>
+                    <path d="m15 18-6-6 6-6" />
+                  </svg>
+                  <div className={styles.paginationText}>
+                    <span className={styles.paginationLabel}>前の記事</span>
+                    <span className={styles.paginationTitle}>
+                      {prevPost.title}
+                    </span>
+                  </div>
+                </Link>
+              )}
+              {nextPost && (
+                <Link
+                  href={`/article/${nextPost.id}`}
+                  className={`${styles.prevNextLink} ${styles.nextLink}`}>
+                  <div className={styles.paginationText}>
+                    <span className={styles.paginationLabel}>次の記事</span>
+                    <span className={styles.paginationTitle}>
+                      {nextPost.title}
+                    </span>
+                  </div>
+                                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className={styles.paginationArrow}>
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
+                </Link>
+              )}
+            </div>
             <div className={styles.tagGroup}>
               <TagButton category={category} />
             </div>
