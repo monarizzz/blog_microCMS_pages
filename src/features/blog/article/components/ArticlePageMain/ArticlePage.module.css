@@ -83,15 +83,16 @@
 .tagGroup {
   margin-bottom: 2em;
 }
-.link {
+.backLink {
   color: #198cff;
   text-decoration: none;
   font-size: 0.8em;
   font-weight: bold;
-  margin-bottom: 5em;
+  margin-top: 10em;
+  margin-bottom: 10em;
 }
 
-.link:hover {
+.backLink:hover {
   text-decoration: underline;
 }
 
