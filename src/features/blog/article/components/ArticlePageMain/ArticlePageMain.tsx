@@ -8,15 +8,19 @@ import { Blog } from "@/infra/microCMS/schema/Blog/blog";
 import renderToc from "@/libs/blog/renderToc/renderToc";
 import TableOfContents from "../TableOfContent/TableOfContent";
 import { CategoryList } from "@/infra/microCMS/schema/Category/category";
+import { ArticleNavigation } from "@/infra/microCMS/schema/Blog/ArticleNavigation";
 
 type Props = {
   blog: Blog;
   category: CategoryList;
-  prevPost: Pick<Blog, "id" | "title"> | null;
-  nextPost: Pick<Blog, "id" | "title"> | null;
+  articleNavigation: ArticleNavigation;
 };
 
-const ArticlePageMain: NextPage<Props> = ({ blog, category, prevPost, nextPost }) => {
+const ArticlePageMain: NextPage<Props> = ({
+  blog,
+  category,
+  articleNavigation,
+}) => {
   const toc = renderToc(blog);
   return (
     <Commonlayout>
@@ -28,7 +32,7 @@ const ArticlePageMain: NextPage<Props> = ({ blog, category, prevPost, nextPost }
             </div>
             {blog.publishedAt == blog.revisedAt ? null : (
               <>
-                                <svg
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="14"
                   height="14"
@@ -38,7 +42,8 @@ const ArticlePageMain: NextPage<Props> = ({ blog, category, prevPost, nextPost }
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className={styles.updateIcon}>
+                  className={styles.updateIcon}
+                >
                   <path d="M3 2v6h6" />
                   <path d="M21 12A9 9 0 0 0 6 5.3L3 8" />
                   <path d="M21 22v-6h-6" />
@@ -60,11 +65,12 @@ const ArticlePageMain: NextPage<Props> = ({ blog, category, prevPost, nextPost }
             />
             {/* Pagination */}
             <div className={styles.pagination}>
-              {prevPost && (
+              {articleNavigation.prevArticle && (
                 <Link
-                  href={`/article/${prevPost.id}`}
-                  className={`${styles.prevNextLink} ${styles.prevLink}`}>
-                                    <svg
+                  href={`/article/${articleNavigation.prevArticle.id}`}
+                  className={`${styles.prevNextLink} ${styles.prevLink}`}
+                >
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -74,28 +80,30 @@ const ArticlePageMain: NextPage<Props> = ({ blog, category, prevPost, nextPost }
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className={styles.paginationArrow}>
+                    className={styles.paginationArrow}
+                  >
                     <path d="m15 18-6-6 6-6" />
                   </svg>
                   <div className={styles.paginationText}>
                     <span className={styles.paginationLabel}>前の記事</span>
                     <span className={styles.paginationTitle}>
-                      {prevPost.title}
+                      {articleNavigation.prevArticle.title}
                     </span>
                   </div>
                 </Link>
               )}
-              {nextPost && (
+              {articleNavigation.nextArticle && (
                 <Link
-                  href={`/article/${nextPost.id}`}
-                  className={`${styles.prevNextLink} ${styles.nextLink}`}>
+                  href={`/article/${articleNavigation.nextArticle.id}`}
+                  className={`${styles.prevNextLink} ${styles.nextLink}`}
+                >
                   <div className={styles.paginationText}>
                     <span className={styles.paginationLabel}>次の記事</span>
                     <span className={styles.paginationTitle}>
-                      {nextPost.title}
+                      {articleNavigation.nextArticle.title}
                     </span>
                   </div>
-                                    <svg
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -105,7 +113,8 @@ const ArticlePageMain: NextPage<Props> = ({ blog, category, prevPost, nextPost }
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className={styles.paginationArrow}>
+                    className={styles.paginationArrow}
+                  >
                     <path d="m9 18 6-6-6-6" />
                   </svg>
                 </Link>

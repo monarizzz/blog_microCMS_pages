@@ -3,12 +3,12 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import ArticlePageMain from "@/features/blog/article/components/ArticlePageMain/ArticlePageMain";
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { CategoryList } from "@/infra/microCMS/schema/Category/category";
+import { ArticleNavigation } from "@/infra/microCMS/schema/Blog/ArticleNavigation";
 
 type Props = {
   blog: Blog;
   category: CategoryList;
-  prevPost: Pick<Blog, "id" | "title"> | null;
-  nextPost: Pick<Blog, "id" | "title"> | null;
+  articleNavigation: ArticleNavigation;
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
@@ -19,16 +19,20 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
     queries: { fields: ["id", "title", "publishedAt"] },
   });
 
-  const sortedArticles = allArticleData.contents.sort((a, b) =>
-    new Date(b.publishedAt) > new Date(a.publishedAt) ? 1 : -1
+  const sortedArticles = allArticleData.contents.sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
 
   const currentIndex = sortedArticles.findIndex(
-    (post) => post.id === articlePageId
+    (sortedBlog) => sortedBlog.id === articlePageId
   );
 
-  const prevPost = currentIndex > 0 ? sortedArticles[currentIndex - 1] : null;
-  const nextPost =
+  // 前の記事の比較
+  const prevArticle =
+    currentIndex > 0 ? sortedArticles[currentIndex - 1] : null;
+  // 次の記事の比較
+  const nextArticle =
     currentIndex < sortedArticles.length - 1
       ? sortedArticles[currentIndex + 1]
       : null;
@@ -37,8 +41,14 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
     props: {
       blog: data.contents[0],
       category: data.contents[0].categories,
-      prevPost: prevPost ? { id: prevPost.id, title: prevPost.title } : null,
-      nextPost: nextPost ? { id: nextPost.id, title: nextPost.title } : null,
+      articleNavigation: {
+        prevArticle: prevArticle
+          ? { id: prevArticle.id, title: prevArticle.title }
+          : null,
+        nextArticle: nextArticle
+          ? { id: nextArticle.id, title: nextArticle.title }
+          : null,
+      },
     },
     revalidate: 86400,
   };
@@ -61,15 +71,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const ArticlePage: NextPage<Props> = ({
   blog,
   category,
-  prevPost,
-  nextPost,
+  articleNavigation,
 }) => {
   return (
     <ArticlePageMain
       blog={blog}
       category={category}
-      prevPost={prevPost}
-      nextPost={nextPost}
+      articleNavigation={articleNavigation}
     />
   );
 };
