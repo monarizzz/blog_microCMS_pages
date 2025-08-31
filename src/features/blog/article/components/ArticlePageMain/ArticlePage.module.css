@@ -8,7 +8,7 @@
   --font-weight-bold: bold;
 }
 .container {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2em;
 }
@@ -21,58 +21,31 @@
 
 .toc {
   display: none;
+  margin-right: 2em;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
   .toc {
     display: block;
+    position: sticky;
+    top: 2em;
+    align-self: flex-start;
+    height: fit-content;
   }
 }
 
 .articleContainer {
   display: flex;
+  justify-content: center;
+  gap: 2em;
 }
 
 .updateIcon {
   display: inline-block;
   vertical-align: middle;
-  color: #888;
-  line-height: 1;
-  position: relative;
-  width: 1em;
-  height: 1em;
-  transform: rotate(45deg);
   margin-right: 0.25em;
-  margin-bottom: 0.25em;
-}
-
-.updateIcon::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  border: 0.1em solid currentColor;
-  border-right-color: transparent;
-  border-radius: 50%;
-  box-sizing: border-box;
-  transform: rotate(-45deg);
-}
-
-.updateIcon::after {
-  content: "";
-  position: absolute;
-  top: 0.05em;
-  right: 50%;
-  width: 0.2em;
-  height: 0.2em;
-  border: 0.1em solid currentColor;
-  border-left: 0;
-  border-bottom: 0;
-  box-sizing: content-box;
-  transform: translateX(0.14142em) rotate(45deg);
-  transform-origin: top right;
+  margin-bottom: 0.1em;
+  color: #888;
 }
 .date {
   font-size: 0.9em;
@@ -83,16 +56,15 @@
 .tagGroup {
   margin-bottom: 2em;
 }
-.backLink {
+.link {
   color: #198cff;
   text-decoration: none;
   font-size: 0.8em;
   font-weight: bold;
-  margin-top: 10em;
-  margin-bottom: 10em;
+  margin-bottom: 5em;
 }
 
-.backLink:hover {
+.link:hover {
   text-decoration: underline;
 }
 
@@ -107,7 +79,6 @@
   width: 100%;
   max-width: 800px;
   padding: 1em;
-  margin: 2em;
 }
 .article {
   font-size: 1.1em;
@@ -295,4 +266,60 @@
 
 .article figure {
   margin: 1em;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4em;
+  margin-bottom: 2em;
+}
+
+.prevNextLink {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  width: 48%;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s;
+}
+
+.prevNextLink:hover {
+  background-color: #f8f9fa;
+}
+
+.prevLink {
+  justify-content: flex-start;
+}
+
+.nextLink {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.paginationText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.paginationLabel {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.paginationTitle {
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.paginationArrow {
+  width: 1.5em;
+  height: 1.5em;
+  color: #888;
 }
