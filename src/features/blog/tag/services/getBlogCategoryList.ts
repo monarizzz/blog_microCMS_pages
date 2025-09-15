@@ -1,6 +1,6 @@
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
-import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategory";
+import { BlogCategoryList } from "@/infra/microCMS/schema/Blog/blogCategory";
 import { getPlainText } from "@/libs/blog/getPlainText/getPlainText";
 
 /**

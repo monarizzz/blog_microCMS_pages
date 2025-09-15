@@ -11,4 +11,9 @@ export type Blog = {
   body: string;
 };
 
+export type BlogWithPlainText = Blog & {
+  plainTextBody: string;
+};
+
 export type BlogList = Blog[];
+export type BlogWithPlainTextList = BlogWithPlainText[];

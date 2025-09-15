@@ -5,7 +5,7 @@ import BlogListByCategories from "@/features/blog/article/components/BlogListByC
 import { NextPage } from "next";
 import TagFilter from "@/features/blog/tag/components/TagFilter/TagFilter";
 import Link from "next/link";
-import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategory";
+import { BlogCategoryList } from "@/infra/microCMS/schema/Blog/blogCategory";
 import { CategoryList } from "@/infra/microCMS/schema/Category/category";
 import TagButton from "../../../../../commons/tag/TagButton/TagButton";
 

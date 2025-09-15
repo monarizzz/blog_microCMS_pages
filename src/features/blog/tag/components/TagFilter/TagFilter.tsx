@@ -1,17 +1,17 @@
 import { NextPage } from "next";
 import BlogCard from "@/commons/blog/BlogCard/BlogCard";
-import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategory";
+import { BlogCategoryList } from "@/infra/microCMS/schema/Blog/blogCategory";
 import { CategoryList } from "@/infra/microCMS/schema/Category/category";
 import styles from "@/features/blog/tag/components/TagFilter/TagFilter.module.css";
 
 type Props = {
-  queryID: string;
+  queryId: string;
   blogCategoryList: BlogCategoryList;
   category: CategoryList;
 };
 
 const TagFilter: NextPage<Props> = ({
-  queryID,
+  queryId,
   blogCategoryList,
   category,
 }) => {
@@ -19,7 +19,7 @@ const TagFilter: NextPage<Props> = ({
     <>
       {blogCategoryList.map((blogCategory) => (
         <>
-          {blogCategory.id == queryID ? (
+          {blogCategory.id == queryId ? (
             <>
               <div className={styles.tagName}>{blogCategory.name}</div>
               <div className={styles.blogList}>
