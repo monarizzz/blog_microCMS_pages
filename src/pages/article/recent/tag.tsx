@@ -1,3 +1,4 @@
+import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import TagMain from "@/features/blog/tag/components/TagMain/TagMain";
 import { getBlogCategoryList } from "@/features/blog/tag/services/getBlogCategoryList";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
@@ -29,7 +30,11 @@ const ArticleRecentTagPage: NextPage<Props> = ({
   category,
   blogCategoryList,
 }) => {
-  return <TagMain category={category} blogCategoryList={blogCategoryList} />;
+  return (
+    <Commonlayout>
+      <TagMain category={category} blogCategoryList={blogCategoryList} />
+    </Commonlayout>
+  );
 };
 
 export default ArticleRecentTagPage;

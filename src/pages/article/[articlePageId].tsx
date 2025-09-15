@@ -4,6 +4,7 @@ import ArticlePageMain from "@/features/blog/article/components/ArticlePageMain/
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { CategoryList } from "@/infra/microCMS/schema/Category/category";
 import { ArticleNavigation } from "@/infra/microCMS/schema/Blog/ArticleNavigation";
+import CommonLayout from "@/commons/layout/Layout/CommonLayout";
 
 type Props = {
   blog: Blog;
@@ -74,11 +75,13 @@ const ArticlePage: NextPage<Props> = ({
   articleNavigation,
 }) => {
   return (
-    <ArticlePageMain
-      blog={blog}
-      category={category}
-      articleNavigation={articleNavigation}
-    />
+    <CommonLayout>
+      <ArticlePageMain
+        blog={blog}
+        category={category}
+        articleNavigation={articleNavigation}
+      />
+    </CommonLayout>
   );
 };
 

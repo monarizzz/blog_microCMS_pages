@@ -1,4 +1,3 @@
-import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import styles from "./TagMain.module.css";
 import { useRouter } from "next/router";
 import BlogListByCategories from "@/features/blog/article/components/BlogListByCategories/BlogListByCategories";
@@ -17,34 +16,32 @@ type Props = {
 const TagMain: NextPage<Props> = ({ category, blogCategoryList }) => {
   const queryId = `${useRouter().query["id"]}`;
   return (
-    <Commonlayout>
-      <div className={styles.container}>
-        <div className={styles.tree}>
-          <Link href="/">
-            <span className={styles.treeText}>🏠 HOME</span>
-          </Link>
-          <span className={styles.treeText}> / </span>
-          <Link href={""} className={styles.treeTextProduct}>
-            <span className={styles.treeText}>CATEGORY</span>
-          </Link>
-        </div>
-        <div className={styles.tagButton}>
-          <TagButton category={category} />
-        </div>
-        {useRouter().query["id"] ? (
-          <TagFilter
-            queryId={queryId}
-            blogCategoryList={blogCategoryList}
-            category={category}
-          />
-        ) : (
-          <BlogListByCategories
-            blogCategoryList={blogCategoryList}
-            category={category}
-          />
-        )}
+    <div className={styles.tagMainRoot}>
+      <div className={styles.tree}>
+        <Link href="/">
+          <span className={styles.treeText}>🏠 HOME</span>
+        </Link>
+        <span className={styles.treeText}> / </span>
+        <Link href={""} className={styles.treeTextProduct}>
+          <span className={styles.treeText}>CATEGORY</span>
+        </Link>
       </div>
-    </Commonlayout>
+      <div className={styles.tagButton}>
+        <TagButton category={category} />
+      </div>
+      {useRouter().query["id"] ? (
+        <TagFilter
+          queryId={queryId}
+          blogCategoryList={blogCategoryList}
+          category={category}
+        />
+      ) : (
+        <BlogListByCategories
+          blogCategoryList={blogCategoryList}
+          category={category}
+        />
+      )}
+    </div>
   );
 };
 
