@@ -11,16 +11,18 @@ type Props = {
 
 const HomeMain: NextPage<Props> = ({ blogsWithPlainText, category }) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.title}>一覧</div>
-      <div className={styles.blogList}>
-        {blogsWithPlainText.map((blogsWithPlainText) => (
-          <BlogCard
-            key={blogsWithPlainText.id}
-            blogsWithPlainText={blogsWithPlainText}
-            category={category}
-          />
-        ))}
+    <div className={styles.homePageRoot}>
+      <div className={styles.container}>
+        <div className={styles.title}>一覧</div>
+        <div className={styles.blogList}>
+          {blogsWithPlainText.map((blogsWithPlainText) => (
+            <BlogCard
+              key={blogsWithPlainText.id}
+              blogsWithPlainText={blogsWithPlainText}
+              category={category}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -2,12 +2,14 @@ import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import TagMain from "@/features/blog/tag/components/TagMain/TagMain";
 import { getBlogCategoryList } from "@/features/blog/tag/services/getBlogCategoryList";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
-import { BlogCategoryList } from "@/infra/microCMS/schema/Blog/blogCategory";
-import { CategoryList } from "@/infra/microCMS/schema/Category/category";
+import {
+  CategoryList,
+  CategoryWithBlogList,
+} from "@/infra/microCMS/schema/Category/category";
 import { GetStaticProps, NextPage } from "next";
 
 type Props = {
-  blogCategoryList: BlogCategoryList;
+  categoryWithBlogList: CategoryWithBlogList;
   category: CategoryList;
 };
 
@@ -20,7 +22,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       category: categoryData.contents,
-      blogCategoryList: blogCategoryListData,
+      categoryWithBlogList: blogCategoryListData,
     },
     revalidate: 86400,
   };
@@ -28,11 +30,14 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const ArticleRecentTagPage: NextPage<Props> = ({
   category,
-  blogCategoryList,
+  categoryWithBlogList,
 }) => {
   return (
     <Commonlayout>
-      <TagMain category={category} blogCategoryList={blogCategoryList} />
+      <TagMain
+        category={category}
+        categoryWithBlogList={categoryWithBlogList}
+      />
     </Commonlayout>
   );
 };

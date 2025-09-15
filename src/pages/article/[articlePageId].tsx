@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import ArticlePageMain from "@/features/blog/article/components/ArticlePageMain/ArticlePageMain";
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { CategoryList } from "@/infra/microCMS/schema/Category/category";
-import { ArticleNavigation } from "@/infra/microCMS/schema/Blog/ArticleNavigation";
+import { ArticleNavigation } from "@/infra/microCMS/schema/Blog/articleNavigation";
 import CommonLayout from "@/commons/layout/Layout/CommonLayout";
 
 type Props = {

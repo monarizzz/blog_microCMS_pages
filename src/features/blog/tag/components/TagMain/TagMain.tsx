@@ -1,19 +1,21 @@
 import styles from "./TagMain.module.css";
 import { useRouter } from "next/router";
-import BlogListByCategories from "@/features/blog/article/components/BlogListByCategories/BlogListByCategories";
+import BlogListByCategories from "@/features/blog/tag/components/BlogListByCategories/BlogListByCategories";
 import { NextPage } from "next";
 import TagFilter from "@/features/blog/tag/components/TagFilter/TagFilter";
 import Link from "next/link";
-import { BlogCategoryList } from "@/infra/microCMS/schema/Blog/blogCategory";
-import { CategoryList } from "@/infra/microCMS/schema/Category/category";
+import {
+  CategoryList,
+  CategoryWithBlogList,
+} from "@/infra/microCMS/schema/Category/category";
 import TagButton from "../../../../../commons/tag/TagButton/TagButton";
 
 type Props = {
   category: CategoryList;
-  blogCategoryList: BlogCategoryList;
+  categoryWithBlogList: CategoryWithBlogList;
 };
 
-const TagMain: NextPage<Props> = ({ category, blogCategoryList }) => {
+const TagMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
   const queryId = `${useRouter().query["id"]}`;
   return (
     <div className={styles.tagMainRoot}>
@@ -32,12 +34,12 @@ const TagMain: NextPage<Props> = ({ category, blogCategoryList }) => {
       {useRouter().query["id"] ? (
         <TagFilter
           queryId={queryId}
-          blogCategoryList={blogCategoryList}
+          CategoryWithBlogList={categoryWithBlogList}
           category={category}
         />
       ) : (
         <BlogListByCategories
-          blogCategoryList={blogCategoryList}
+          blogCategoryList={categoryWithBlogList}
           category={category}
         />
       )}

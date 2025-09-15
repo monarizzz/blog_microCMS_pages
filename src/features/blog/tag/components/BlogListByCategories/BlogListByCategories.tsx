@@ -1,12 +1,14 @@
 import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import { NextPage } from "next";
-import styles from "@/features/blog/article/components/BlogListByCategories/BlogListCategories.module.css";
-import { BlogCategoryList } from "@/infra/microCMS/schema/Blog/blogCategory";
-import { CategoryList } from "@/infra/microCMS/schema/Category/category";
+import styles from "./BlogListCategories.module.css";
+import {
+  CategoryList,
+  CategoryWithBlogList,
+} from "@/infra/microCMS/schema/Category/category";
 
 type Props = {
   category: CategoryList;
-  blogCategoryList: BlogCategoryList;
+  blogCategoryList: CategoryWithBlogList;
 };
 
 const BlogListByCategories: NextPage<Props> = ({
@@ -14,16 +16,20 @@ const BlogListByCategories: NextPage<Props> = ({
   blogCategoryList,
 }) => {
   return (
-    <div className={styles.blogGroup}>
+    <div className={styles.blogListByCategoriesRoot}>
       {blogCategoryList.map((blogCategory) => (
         <>
-          <div key={blogCategory.id} className={styles.BlogListByCategories}>
+          <div
+            key={blogCategory.category.id}
+            className={styles.blogListByCategories}
+          >
             <div>
-              <span className={styles.tagName}>{blogCategory.name}</span>
+              <span className={styles.tagName}>
+                {blogCategory.category.name}
+              </span>
             </div>
             <div className={styles.blogList}>
               {blogCategory.blogWithPlainTextList.map((blog) => {
-                console.log(blog);
                 return (
                   <BlogCard
                     key={blog.id}

@@ -1,15 +1,17 @@
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
-import { BlogCategoryList } from "@/infra/microCMS/schema/Blog/blogCategory";
+import { CategoryWithBlogList } from "@/infra/microCMS/schema/Category/category";
 import { getPlainText } from "@/libs/blog/getPlainText/getPlainText";
 
 /**
  * カテゴリごとのブログ記事リストを取得し、各記事にプレーンテキストの要約を付与します。
  * @returns {Promise<BlogCategoryList>} 整形されたブログカテゴリリスト
  */
-export const getBlogCategoryList = async (): Promise<BlogCategoryList> => {
+export const getBlogCategoryList = async (): Promise<CategoryWithBlogList> => {
   // 1. 全カテゴリを取得
-  const categoryData = await getCategoriesList({ queries: { limit: 10 , fields: ["id", "name"]} });
+  const categoryData = await getCategoriesList({
+    queries: { limit: 10, fields: ["id", "name"] },
+  });
   const categoryIds = categoryData.contents.map((category) => category.id);
 
   // 2. カテゴリIDごとに、関連するブログ記事リストを並列で取得
@@ -32,8 +34,10 @@ export const getBlogCategoryList = async (): Promise<BlogCategoryList> => {
     }));
 
     return {
-      id: category.id,
-      name: category.name,
+      category: {
+        id: category.id,
+        name: category.name,
+      },
       blogWithPlainTextList,
     };
   });
