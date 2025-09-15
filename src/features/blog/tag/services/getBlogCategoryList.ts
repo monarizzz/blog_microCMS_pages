@@ -9,7 +9,7 @@ import { getPlainText } from "@/libs/blog/getPlainText/getPlainText";
  */
 export const getBlogCategoryList = async (): Promise<BlogCategoryList> => {
   // 1. 全カテゴリを取得
-  const categoryData = await getCategoriesList({ queries: { limit: 10 } });
+  const categoryData = await getCategoriesList({ queries: { limit: 10 , fields: ["id", "name"]} });
   const categoryIds = categoryData.contents.map((category) => category.id);
 
   // 2. カテゴリIDごとに、関連するブログ記事リストを並列で取得

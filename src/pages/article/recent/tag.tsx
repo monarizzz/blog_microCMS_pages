@@ -11,7 +11,9 @@ type Props = {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const categoryData = await getCategoriesList({ queries: { limit: 10 } });
+  const categoryData = await getCategoriesList({
+    queries: { limit: 10, fields: ["id", "name"] },
+  });
   const blogCategoryListData = await getBlogCategoryList();
 
   return {
