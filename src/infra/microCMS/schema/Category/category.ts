@@ -15,10 +15,3 @@ export type CategoryWithBlog = {
 
 export type CategoryList = Category[];
 export type CategoryWithBlogList = CategoryWithBlog[];
-
-// export type BlogCategory = {
-//   name: string;
-//   id: string;
-//   blogWithPlainTextList: BlogWithPlainTextList;
-// };
-// export type BlogCategoryList = BlogCategory[];
