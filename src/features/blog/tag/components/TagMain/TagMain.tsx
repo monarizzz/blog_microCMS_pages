@@ -15,7 +15,7 @@ type Props = {
 };
 
 const TagMain: NextPage<Props> = ({ category, blogCategoryList }) => {
-  const queryID = `${useRouter().query["id"]}`;
+  const queryId = `${useRouter().query["id"]}`;
   return (
     <Commonlayout>
       <div className={styles.container}>
@@ -33,7 +33,7 @@ const TagMain: NextPage<Props> = ({ category, blogCategoryList }) => {
         </div>
         {useRouter().query["id"] ? (
           <TagFilter
-            queryID={queryID}
+            queryId={queryId}
             blogCategoryList={blogCategoryList}
             category={category}
           />
