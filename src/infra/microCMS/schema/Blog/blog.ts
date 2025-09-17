@@ -16,5 +16,9 @@ export type BlogWithPlainText = Pick<
   "id" | "publishedAt" | "categories" | "title"
 > & { plainTextBody: string };
 
+export type AllArticleData = {
+  contents: Pick<Blog, "id" | "title" | "publishedAt">[];
+};
+
 export type BlogList = Blog[];
 export type BlogWithPlainTextList = BlogWithPlainText[];
