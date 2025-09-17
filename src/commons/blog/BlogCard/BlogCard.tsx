@@ -3,8 +3,8 @@ import styles from "./BlogCard.module.css";
 import RelativeDate from "../../date/RelativeDate/RelativeDate";
 import "dayjs/locale/ja";
 import { NextPage } from "next";
-import { BlogWithPlainText } from "@/infra/microCMS/schema/Blog/blogWithPlainText";
 import { CategoryList } from "@/infra/microCMS/schema/Category/category";
+import { BlogWithPlainText } from "@/infra/microCMS/schema/Blog/blog";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainText;
@@ -21,12 +21,13 @@ const BlogCard: NextPage<Props> = ({ blogsWithPlainText, category }) => {
         <div className={styles.date}>{RelativeDate(publishedDate)} </div>
         <>
           {category.map((tag) =>
-            blogsWithPlainText.categories.map((articleCategory) =>
-              tag.id == articleCategory.id ? (
-                <span className={styles.tag} key={tag.id}>
-                  {tag.name}
-                </span>
-              ) : null
+            blogsWithPlainText.categories.map(
+              (articleCategory: { id: string }) =>
+                tag.id == articleCategory.id ? (
+                  <span className={styles.tag} key={tag.id}>
+                    {tag.name}
+                  </span>
+                ) : null
             )
           )}
         </>

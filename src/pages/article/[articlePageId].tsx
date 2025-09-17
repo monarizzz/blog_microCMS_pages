@@ -3,7 +3,9 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import ArticlePageMain from "@/features/blog/article/components/ArticlePageMain/ArticlePageMain";
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { CategoryList } from "@/infra/microCMS/schema/Category/category";
-import { ArticleNavigation } from "@/infra/microCMS/schema/Blog/ArticleNavigation";
+import CommonLayout from "@/commons/layout/Layout/CommonLayout";
+import { ArticleNavigation } from "@/infra/microCMS/schema/Blog/articleNavigation";
+import pageNation from "@/features/blog/article/pageNation/pageNation";
 
 type Props = {
   blog: Blog;
@@ -12,43 +14,21 @@ type Props = {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const articlePageId = context.params?.articlePageId;
+  const articlePageId = context.params?.articlePageId?.toString();
   const data = await getBlogList({ queries: { ids: `${articlePageId}` } });
 
   const allArticleData = await getBlogList({
     queries: { fields: ["id", "title", "publishedAt"] },
   });
 
-  const sortedArticles = allArticleData.contents.sort(
-    (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  );
+  const articleNavigation = pageNation({ allArticleData, articlePageId });
 
-  const currentIndex = sortedArticles.findIndex(
-    (sortedBlog) => sortedBlog.id === articlePageId
-  );
-
-  // 前の記事の比較
-  const prevArticle =
-    currentIndex > 0 ? sortedArticles[currentIndex - 1] : null;
-  // 次の記事の比較
-  const nextArticle =
-    currentIndex < sortedArticles.length - 1
-      ? sortedArticles[currentIndex + 1]
-      : null;
-
+  console.log(articleNavigation);
   return {
     props: {
       blog: data.contents[0],
       category: data.contents[0].categories,
-      articleNavigation: {
-        prevArticle: prevArticle
-          ? { id: prevArticle.id, title: prevArticle.title }
-          : null,
-        nextArticle: nextArticle
-          ? { id: nextArticle.id, title: nextArticle.title }
-          : null,
-      },
+      articleNavigation,
     },
     revalidate: 86400,
   };
@@ -74,11 +54,13 @@ const ArticlePage: NextPage<Props> = ({
   articleNavigation,
 }) => {
   return (
-    <ArticlePageMain
-      blog={blog}
-      category={category}
-      articleNavigation={articleNavigation}
-    />
+    <CommonLayout>
+      <ArticlePageMain
+        blog={blog}
+        category={category}
+        articleNavigation={articleNavigation}
+      />
+    </CommonLayout>
   );
 };
 
