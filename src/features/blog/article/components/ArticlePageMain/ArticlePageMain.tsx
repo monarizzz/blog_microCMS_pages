@@ -31,6 +31,7 @@ const ArticlePageMain: NextPage<Props> = ({
           </div>
           {blog.publishedAt == blog.revisedAt ? null : (
             <>
+              {/* // TODO: マジックナンバー切り分け */}
               <Image
                 src="/update_icon.svg"
                 alt="updateIcon"
@@ -59,20 +60,13 @@ const ArticlePageMain: NextPage<Props> = ({
                 href={`/article/${articleNavigation.prevArticle.id}`}
                 className={`${styles.prevNextLink} ${styles.prevLink}`}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className={styles.paginationArrow}
-                >
-                  <path d="m15 18-6-6 6-6" />
-                </svg>
+                <Image
+                  src="/arrow.svg"
+                  alt="arrowIcon"
+                  width={40}
+                  height={40}
+                  style={{ transform: "scaleX(-1)" }}
+                />
                 <div className={styles.paginationText}>
                   <span className={styles.paginationLabel}>前の記事</span>
                   <span className={styles.paginationTitle}>
@@ -92,20 +86,12 @@ const ArticlePageMain: NextPage<Props> = ({
                     {articleNavigation.nextArticle.title}
                   </span>
                 </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className={styles.paginationArrow}
-                >
-                  <path d="m9 18 6-6-6-6" />
-                </svg>
+                <Image
+                  src="/arrow.svg"
+                  alt="arrowIcon"
+                  width={40}
+                  height={40}
+                />
               </Link>
             )}
           </div>
