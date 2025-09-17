@@ -7,12 +7,12 @@ import { Blog } from "@/infra/microCMS/schema/Blog/blog";
 import renderToc from "@/libs/blog/renderToc/renderToc";
 import TableOfContents from "../TableOfContent/TableOfContent";
 import { CategoryList } from "@/infra/microCMS/schema/Category/category";
-import { articleNavigation } from "@/infra/microCMS/schema/Blog/articleNavigation";
+import { ArticleNavigation } from "@/infra/microCMS/schema/Blog/articleNavigation";
 
 type Props = {
   blog: Blog;
   category: CategoryList;
-  articleNavigation: articleNavigation;
+  articleNavigation: ArticleNavigation;
 };
 
 const ArticlePageMain: NextPage<Props> = ({
