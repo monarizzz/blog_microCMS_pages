@@ -1,9 +1,8 @@
 import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import styles from "./HomePageMain.module.css";
-import CommonLayout from "@/commons/layout/Layout/CommonLayout";
 import { NextPage } from "next";
-import { BlogWithPlainTextList } from "@/infra/microCMS/schema/Blog/blogWithPlainText";
 import { CategoryList } from "@/infra/microCMS/schema/Category/category";
+import { BlogWithPlainTextList } from "@/infra/microCMS/schema/Blog/blog";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainTextList;
@@ -12,7 +11,7 @@ type Props = {
 
 const HomeMain: NextPage<Props> = ({ blogsWithPlainText, category }) => {
   return (
-    <CommonLayout>
+    <div className={styles.homePageRoot}>
       <div className={styles.container}>
         <div className={styles.title}>一覧</div>
         <div className={styles.blogList}>
@@ -25,7 +24,7 @@ const HomeMain: NextPage<Props> = ({ blogsWithPlainText, category }) => {
           ))}
         </div>
       </div>
-    </CommonLayout>
+    </div>
   );
 };
 
