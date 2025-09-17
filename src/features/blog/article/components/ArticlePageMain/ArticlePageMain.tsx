@@ -8,6 +8,7 @@ import renderToc from "@/libs/blog/renderToc/renderToc";
 import TableOfContents from "../TableOfContent/TableOfContent";
 import { CategoryList } from "@/infra/microCMS/schema/Category/category";
 import { ArticleNavigation } from "@/infra/microCMS/schema/Blog/articleNavigation";
+import Image from "next/image";
 
 type Props = {
   blog: Blog;
@@ -30,23 +31,12 @@ const ArticlePageMain: NextPage<Props> = ({
           </div>
           {blog.publishedAt == blog.revisedAt ? null : (
             <>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className={styles.updateIcon}
-              >
-                <path d="M3 2v6h6" />
-                <path d="M21 12A9 9 0 0 0 6 5.3L3 8" />
-                <path d="M21 22v-6h-6" />
-                <path d="M3 12a9 9 0 0 0 15 6.7l3-2.7" />
-              </svg>
+              <Image
+                src="/update_icon.svg"
+                alt="updateIcon"
+                width={20}
+                height={20}
+              />
               {dayjs(blog.revisedAt).format("YYYY/MM/DD HH:mm")}
             </>
           )}
@@ -62,6 +52,7 @@ const ArticlePageMain: NextPage<Props> = ({
             }}
           />
           {/* Pagination */}
+
           <div className={styles.pagination}>
             {articleNavigation.prevArticle && (
               <Link
