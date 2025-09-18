@@ -1,11 +1,11 @@
 import Commonlayout from "@/commons/layout/Layout/CommonLayout";
-import TagMain from "@/features/blog/tag/components/TagMain/TagMain";
-import { getBlogCategoryList } from "@/features/blog/tag/services/getBlogCategoryList";
+import { getCategoryWithBlogList } from "@/libs/blog/getCategoryWithBlogList";
+import TagMain from "@/features/tag/components/TagMain/TagMain";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
 import {
   CategoryList,
   CategoryWithBlogList,
-} from "@/infra/microCMS/schema/Category/category";
+} from "@/libs/schema/Category/category";
 import { GetStaticProps, NextPage } from "next";
 
 type Props = {
@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const categoryData = await getCategoriesList({
     queries: { limit: 10, fields: ["id", "name"] },
   });
-  const blogCategoryListData = await getBlogCategoryList();
+  const blogCategoryListData = await getCategoryWithBlogList();
 
   return {
     props: {

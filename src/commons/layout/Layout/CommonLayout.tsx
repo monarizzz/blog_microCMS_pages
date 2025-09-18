@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Link from "next/link";
 import { ReactNode } from "react";
-import styles from "@/commons/layout/Layout/CommonLayout.module.css";
+import styles from "./CommonLayout.module.css";
 
 type Props = {
   children: ReactNode;

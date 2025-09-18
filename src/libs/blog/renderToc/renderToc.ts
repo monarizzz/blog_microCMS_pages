@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { Blog } from "@/infra/microCMS/schema/Blog/blog";
+import { Blog } from "@/libs/schema/Blog/blog";
 
 const renderToc = ({ body }: Blog) => {
   const $ = cheerio.load(body);

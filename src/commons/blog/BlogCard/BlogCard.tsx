@@ -3,8 +3,8 @@ import styles from "./BlogCard.module.css";
 import RelativeDate from "../../date/RelativeDate/RelativeDate";
 import "dayjs/locale/ja";
 import { NextPage } from "next";
-import { CategoryList } from "@/infra/microCMS/schema/Category/category";
-import { BlogWithPlainText } from "@/infra/microCMS/schema/Blog/blog";
+import { CategoryList } from "@/libs/schema/Category/category";
+import { BlogWithPlainText } from "@/libs/schema/Blog/blog";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainText;
