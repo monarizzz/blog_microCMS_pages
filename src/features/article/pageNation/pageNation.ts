@@ -1,4 +1,4 @@
-import { AllArticleData } from "../../../../infra/microCMS/schema/Blog/blog";
+import { AllArticleData } from "@/libs/schema/Blog/blog";
 
 const pageNation = ({
   allArticleData,
