@@ -1,11 +1,11 @@
-import { Blog } from "@/infra/microCMS/schema/Blog/blog";
+import { Blog } from "@/libs/schema/Blog/blog";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import ArticlePageMain from "@/features/blog/article/components/ArticlePageMain/ArticlePageMain";
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
-import { CategoryList } from "@/infra/microCMS/schema/Category/category";
+import { CategoryList } from "@/libs/schema/Category/category";
 import CommonLayout from "@/commons/layout/Layout/CommonLayout";
-import { ArticleNavigation } from "@/infra/microCMS/schema/Blog/articleNavigation";
-import pageNation from "@/features/blog/article/pageNation/pageNation";
+import { ArticleNavigation } from "@/libs/schema/Blog/articleNavigation";
+import pageNation from "@/features/article/pageNation/pageNation";
+import ArticlePageMain from "@/features/article/components/ArticlePageMain/ArticlePageMain";
 
 type Props = {
   blog: Blog;

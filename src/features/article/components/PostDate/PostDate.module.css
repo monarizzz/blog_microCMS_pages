@@ -1,0 +1,19 @@
+.dateRoot {
+  font-size: 0.9em;
+  color: #888;
+  text-align: right;
+  margin-bottom: 8px;
+
+  > .published {
+    padding: 0%;
+  }
+  > .update {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    > .icon {
+      margin-right: 4px;
+    }
+  }
+}
