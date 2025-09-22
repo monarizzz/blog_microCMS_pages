@@ -1,4 +1,4 @@
-.TocRoot {
+.tocRoot {
   .group {
     background-color: rgb(241, 242, 245);
     border-radius: 10px;
@@ -8,28 +8,41 @@
     position: sticky;
     top: 20px;
   }
-  .header {
-    font-weight: bold;
-    font-size: 1em;
-    margin-bottom: 1em;
+
+  .list {
+    margin-left: 3px;
   }
 
   .text {
+    margin-bottom: 2px;
     font-size: 0.9em;
-    line-height: 3em;
+    line-height: 2.5em;
     white-space: nowrap; /* 折り返さない */
     overflow: hidden; /* はみ出し非表示 */
-    text-overflow: ellipsis; /* 省略記号 ... */
+    width: 200px; /* 横幅固定 */
     cursor: pointer;
+    position: relative;
+    color: rgb(97, 105, 127);
+
+    /* 右端にグラデーションを重ねて...のように見せる */
+    mask-image: linear-gradient(to left, transparent 0%, black 9%);
+    -webkit-mask-image: linear-gradient(to left, transparent 0%, black 30%);
+    transition: mask-image 1s ease, -webkit-mask-image 1s ease;
   }
 
-  /* ホバー時に全文をスクロールできる */
+  /* ホバー時にグラデーションを消す */
   .text:hover {
-    text-overflow: clip; /* ... を消す */
-    overflow-x: auto; /* 横スクロールを許可 */
+    mask-image: none;
+    -webkit-mask-image: none;
+    color: rgb(76, 79, 233);
+    overflow-x: auto;
   }
-}
-
-.text:hover {
-  color: rgb(76, 79, 233);
+  .text::-webkit-scrollbar {
+    height: 3px; /* 横スクロールバーの太さ */
+    color: aquamarine;
+  }
+  .text::-webkit-scrollbar-thumb {
+    background-color: rgba(184, 179, 209, 0.4); /* スクロールつまみの色 */
+    border-radius: 10px; /* 丸み */
+  }
 }
