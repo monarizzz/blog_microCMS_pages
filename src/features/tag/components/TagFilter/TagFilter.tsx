@@ -1,10 +1,10 @@
 import { NextPage } from "next";
-import BlogCard from "@/commons/blog/BlogCard/BlogCard";
 import {
   CategoryList,
   CategoryWithBlogList,
 } from "@/libs/schema/Category/category";
 import styles from "./TagFilter.module.css";
+import Content from "../../../../commons/blog/BlogCardList/Content";
 
 type Props = {
   queryId: string;
@@ -19,23 +19,19 @@ const TagFilter: NextPage<Props> = ({
 }) => {
   return (
     <>
-      {CategoryWithBlogList.map((CategoryWithBlog) => (
+      {CategoryWithBlogList.map((blog) => (
         <>
-          {CategoryWithBlog.category.id == queryId ? (
-            <>
-              <div className={styles.tagName}>
-                {CategoryWithBlog.category.name}
-              </div>
-              <div className={styles.blogList}>
-                {CategoryWithBlog.blogWithPlainTextList.map((blogList) => (
-                  <BlogCard
-                    key={CategoryWithBlog.category.id}
-                    blogsWithPlainText={blogList}
-                    category={category}
-                  />
-                ))}
-              </div>
-            </>
+          {blog.category.id == queryId ? (
+            <ul>
+              <li className={styles.tag}>{blog.category.name}</li>
+              <li className={styles.blog}>
+                {/* TODO:BlogCardをまとめる */}
+                <Content
+                  category={category}
+                  blogWithPlainTextList={blog.blogWithPlainTextList}
+                />
+              </li>
+            </ul>
           ) : null}
         </>
       ))}

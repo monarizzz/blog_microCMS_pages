@@ -1,9 +1,9 @@
-.tagName {
+.tag {
   font-size: 1.5em;
   font-weight: bold;
 }
 
-.blogList {
+.blog {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;

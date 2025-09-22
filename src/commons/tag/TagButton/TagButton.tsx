@@ -11,10 +11,11 @@ export type Props = {
 const TagButton: NextPage<Props> = ({ category }) => {
   const router = useRouter();
   return (
-    <>
+    <div className={styles.tagButtonRoot}>
       {category.slice().map((category) => (
         <Link
           href={
+            // TODO: マジックナンバー切り分け
             router.pathname === "/article/recent/tag"
               ? `/article/recent/tag/?id=${category.id}`
               : `/article/recent/tag`
@@ -25,7 +26,7 @@ const TagButton: NextPage<Props> = ({ category }) => {
           {category.name}
         </Link>
       ))}
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import { AllArticleData } from "@/libs/schema/Blog/blog";
 
-const pageNation = ({
+const pageNavList = ({
   allArticleData,
   articlePageId,
 }: {
@@ -41,4 +41,4 @@ const pageNation = ({
   };
 };
 
-export default pageNation;
+export default pageNavList;

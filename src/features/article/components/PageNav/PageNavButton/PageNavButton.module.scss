@@ -1,0 +1,43 @@
+.pageNavButtonRoot {
+  .nextLink {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 48%;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.2s;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25em;
+
+      .text {
+        font-size: 0.8em;
+        color: #888;
+      }
+
+      .title {
+        font-weight: bold;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+.prevNextLink:hover {
+  background-color: #f8f9fa;
+}
+
+.prevLink {
+  justify-content: flex-start;
+}
+
+.nextLink {
+  justify-content: flex-end;
+  text-align: right;
+}
