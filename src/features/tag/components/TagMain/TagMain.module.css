@@ -14,7 +14,20 @@
   text-align: right;
 }
 
+.path {
+  display: flex;
+}
 .treeText {
+  font-size: 0.8em;
+  margin-right: 1em;
+}
+
+.home {
+  display: flex;
+}
+
+.homeText {
+  margin: 0 0 0 10px;
   font-size: 0.8em;
   margin-right: 1em;
 }

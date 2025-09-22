@@ -10,6 +10,8 @@ import TagButton from "../../../../commons/tag/TagButton/TagButton";
 import TagFilter from "../TagFilter/TagFilter";
 import BlogListByCategories from "../BlogListByCategories/BlogListByCategories";
 import { TAG } from "@/libs/utils/tag/tag";
+import Image from "next/image";
+import { SVG_HOME } from "@/libs/utils/tag/home";
 
 type Props = {
   category: CategoryList;
@@ -23,7 +25,16 @@ const TagMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
       {/* TODO: 処理綺麗にする */}
       <div className={styles.path}>
         <Link href="/">
-          <span className={styles.treeText}>{TAG.HOME}</span>
+          <div className={styles.home}>
+            <Image
+              src={SVG_HOME.SRC}
+              alt={SVG_HOME.ALT}
+              width={10}
+              height={10}
+              className={styles.homeIcon}
+            />
+            <span className={styles.homeText}>{TAG.HOME}</span>
+          </div>
         </Link>
         <span className={styles.treeText}> / </span>
         <Link href={""} className={styles.treeTextProduct}>
