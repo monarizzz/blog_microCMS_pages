@@ -4,7 +4,7 @@ import {
   CategoryList,
   CategoryWithBlogList,
 } from "@/libs/schema/Category/category";
-import Content from "../../../../commons/blog/BlogCardList/Content";
+import Content from "../../../../commons/blog/BlogCard/BlogCard";
 
 type Props = {
   category: CategoryList;

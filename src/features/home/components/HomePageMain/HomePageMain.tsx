@@ -2,7 +2,7 @@ import styles from "./HomePageMain.module.css";
 import { NextPage } from "next";
 import { CategoryList } from "@/libs/schema/Category/category";
 import { BlogWithPlainTextList } from "@/libs/schema/Blog/blog";
-import Content from "@/commons/blog/BlogCardList/Content";
+import Content from "@/commons/blog/BlogCard/BlogCard";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainTextList;
