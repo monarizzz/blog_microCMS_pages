@@ -4,7 +4,7 @@ import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { CategoryList } from "@/libs/schema/Category/category";
 import CommonLayout from "@/commons/layout/Layout/CommonLayout";
 import { ArticleNavigation } from "@/libs/schema/Blog/articleNavigation";
-import pageNation from "@/features/article/pageNation/pageNavList";
+import pageNation from "@/features/article/pageNav/pageNavList";
 import ArticlePageMain from "@/features/article/components/ArticlePageMain/ArticlePageMain";
 
 type Props = {
