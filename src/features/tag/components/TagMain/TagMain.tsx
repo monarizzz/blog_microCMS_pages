@@ -23,7 +23,6 @@ const TagMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
   const size = 10;
   return (
     <div className={styles.tagMainRoot}>
-      {/* TODO: 処理綺麗にする */}
       <div className={styles.path}>
         <Link href="/" className={styles.pathLink}>
           <Image
