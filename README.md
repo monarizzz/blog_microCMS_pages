@@ -4,7 +4,7 @@ Next.js と microCMS を使用して構築した、技術的な学びやメモ�
 
 ## 特徴
 
-- **フレームワーク**: [Next.js](https://nextjs.org/) (App Router)
+- **フレームワーク**: [Next.js](https://nextjs.org/) (Pages)
 - **ヘッドレス CMS**: [microCMS](https://microcms.io/)
 - **スタイリング**: [Tailwind CSS](https://tailwindcss.com/) & [CSS Modules](https://github.com/css-modules/css-modules)
 - **UI**: [React](https://reactjs.org/)
