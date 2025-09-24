@@ -1,14 +1,14 @@
 import TagButton from "@/commons/tag/TagButton/TagButton";
-import styles from "./ArticlePage.module.css";
+import styles from "./ArticlePage.module.scss";
 import Link from "next/link";
 import { NextPage } from "next";
 import { Blog } from "@/libs/schema/Blog/blog";
 import renderToc from "@/libs/blog/renderToc/renderToc";
-import TableOfContents from "../Toc/Toc";
 import { CategoryList } from "@/libs/schema/Category/category";
 import { ArticleNavigation } from "@/libs/schema/Blog/articleNavigation";
 import PostDate from "../PostDate/PostDate";
-import PageNavMain from "../PageNav/PageNavMain";
+import PageNav from "../PageNav/PageNav";
+import Toc from "../Toc/Toc";
 
 type Props = {
   blog: Blog;
@@ -36,7 +36,7 @@ const ArticlePageMain: NextPage<Props> = ({
               __html: blog.body,
             }}
           />
-          <PageNavMain articleNavigation={articleNavigation} />
+          <PageNav articleNavigation={articleNavigation} />
 
           <div className={styles.tagGroup}>
             <TagButton category={category} />
@@ -45,9 +45,9 @@ const ArticlePageMain: NextPage<Props> = ({
             <Link href="/">← 記事一覧に戻る</Link>
           </div>
         </div>
-        <aside className={styles.toc}>
-          <TableOfContents toc={toc} />
-        </aside>
+        <div className={styles.toc}>
+          <Toc toc={toc} />
+        </div>
       </div>
     </div>
   );

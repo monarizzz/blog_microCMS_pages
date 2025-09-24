@@ -22,8 +22,6 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
   });
 
   const articleNavigation = pageNation({ allArticleData, articlePageId });
-
-  console.log(articleNavigation);
   return {
     props: {
       blog: data.contents[0],

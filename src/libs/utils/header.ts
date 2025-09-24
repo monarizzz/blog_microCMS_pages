@@ -1,5 +1,5 @@
 export const HEADER = {
-  TITLE: "ブログ",
+  TITLE: "BLOG",
   HOME: "HOME",
   CATEGORY: "CATEGORY",
   ABOUT: "ABOUT",
