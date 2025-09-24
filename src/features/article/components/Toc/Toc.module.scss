@@ -3,7 +3,7 @@
     background-color: rgb(241, 242, 245);
     border-radius: 10px;
     padding: 1em;
-    width: 250px;
+    width: 400px;
     position: sticky;
     top: 20px;
   }
@@ -11,37 +11,20 @@
   .list {
     margin-left: 3px;
   }
-
+  /* 目次のテキストは最大50文字 */
   .text {
     margin-bottom: 2px;
-    font-size: 0.9em;
+    font-size: 13px;
     line-height: 2.5em;
-    white-space: nowrap; /* 折り返さない */
-    overflow: hidden; /* はみ出し非表示 */
-    width: 200px; /* 横幅固定 */
+    width: 100%;
     cursor: pointer;
     position: relative;
     color: rgb(97, 105, 127);
-
-    /* 右端にグラデーションを重ねて...のように見せる */
-    mask-image: linear-gradient(to left, transparent 0%, black 9%);
-    -webkit-mask-image: linear-gradient(to left, transparent 0%, black 30%);
-    transition: mask-image 1s ease, -webkit-mask-image 1s ease;
+    overflow-wrap: break-word;
   }
 
   /* ホバー時にグラデーションを消す */
   .text:hover {
-    mask-image: none;
-    -webkit-mask-image: none;
     color: rgb(76, 79, 233);
-    overflow-x: auto;
-  }
-  .text::-webkit-scrollbar {
-    height: 3px; /* 横スクロールバーの太さ */
-    color: aquamarine;
-  }
-  .text::-webkit-scrollbar-thumb {
-    background-color: rgba(184, 179, 209, 0.4); /* スクロールつまみの色 */
-    border-radius: 10px; /* 丸み */
   }
 }

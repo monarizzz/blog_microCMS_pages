@@ -15,6 +15,7 @@ type Props = {
   category: CategoryList;
   articleNavigation: ArticleNavigation;
 };
+// TODO: 記事を右に寄せる
 
 const ArticlePageMain: NextPage<Props> = ({
   blog,
