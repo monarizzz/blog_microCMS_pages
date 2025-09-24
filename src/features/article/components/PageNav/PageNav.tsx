@@ -12,7 +12,7 @@ type Props = {
 
 const PageNav: NextPage<Props> = ({ articleNavigation }) => {
   const { prevArticle, nextArticle } = articleNavigation;
-
+  const size = 40;
   return (
     <div className={styles.pageNavRoot}>
       {prevArticle ? (
@@ -20,8 +20,8 @@ const PageNav: NextPage<Props> = ({ articleNavigation }) => {
           <Image
             src={SVG_ARROW.SRC}
             alt={SVG_ARROW.ALT}
-            width={40}
-            height={40}
+            width={size}
+            height={size}
             style={{ transform: "scaleX(-1)" }}
           />
           <div className={styles.content}>
@@ -29,9 +29,7 @@ const PageNav: NextPage<Props> = ({ articleNavigation }) => {
             <span className={styles.title}>{prevArticle.title}</span>
           </div>
         </Link>
-      ) : (
-        <div />
-      )}
+      ) : null}
       {nextArticle ? (
         <Link
           href={`/article/${nextArticle.id}`}
@@ -44,13 +42,11 @@ const PageNav: NextPage<Props> = ({ articleNavigation }) => {
           <Image
             src={SVG_ARROW.SRC}
             alt={SVG_ARROW.ALT}
-            width={40}
-            height={40}
+            width={size}
+            height={size}
           />
         </Link>
-      ) : (
-        <div />
-      )}
+      ) : null}
     </div>
   );
 };

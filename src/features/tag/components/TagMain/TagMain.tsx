@@ -20,28 +20,26 @@ type Props = {
 
 const TagMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
   const queryId = `${useRouter().query["id"]}`;
+  const size = 10;
   return (
     <div className={styles.tagMainRoot}>
       {/* TODO: 処理綺麗にする */}
       <div className={styles.path}>
-        <Link href="/">
-          <div className={styles.home}>
-            <Image
-              src={SVG_HOME.SRC}
-              alt={SVG_HOME.ALT}
-              width={10}
-              height={10}
-              className={styles.homeIcon}
-            />
-            <span className={styles.homeText}>{TAG.HOME}</span>
-          </div>
+        <Link href="/" className={styles.pathLink}>
+          <Image
+            src={SVG_HOME.SRC}
+            alt={SVG_HOME.ALT}
+            width={size}
+            height={size}
+          />
+          <span>{TAG.HOME}</span>
         </Link>
-        <span className={styles.treeText}> / </span>
-        <Link href={""} className={styles.treeTextProduct}>
-          <span className={styles.treeText}>{TAG.CATEGORY}</span>
+        <span className={styles.separator}>/</span>
+        <Link href={""} className={styles.pathLink}>
+          {TAG.CATEGORY}
         </Link>
       </div>
-      <div className={styles.button}>
+      <div className={styles.tag}>
         <TagButton category={category} />
       </div>
       {useRouter().query["id"] ? (
