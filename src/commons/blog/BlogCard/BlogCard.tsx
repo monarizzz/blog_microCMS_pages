@@ -15,10 +15,8 @@ const BlogCard: NextPage<Props> = ({ category, blogWithPlainTextList }) => {
     <>
       {blogWithPlainTextList.map((blog) => {
         return (
-          <div className={styles.list} key={blog.id}>
-            <Link href={`/article/${blog.id}`}>
-              <p className={styles.title}>{blog.title}</p>
-              <p className={styles.date}>{RelativeDate(blog.publishedAt)} </p>
+          <div className={styles.blogCardRoot} key={blog.id}>
+            <div className={styles.group}>
               {category.map((tag) =>
                 blog.categories.map((articleCategory: { id: string }) =>
                   tag.id == articleCategory.id ? (
@@ -28,8 +26,15 @@ const BlogCard: NextPage<Props> = ({ category, blogWithPlainTextList }) => {
                   ) : null
                 )
               )}
-              <p className={styles.bodyText}>{blog.plainTextBody}</p>
-            </Link>
+            </div>
+            <div className={styles.content}>
+              <Link href={`/article/${blog.id}`}>
+                <p className={styles.title}>{blog.title}</p>
+                <p className={styles.date}>{RelativeDate(blog.publishedAt)} </p>
+
+                <p className={styles.bodyText}>{blog.plainTextBody}</p>
+              </Link>
+            </div>
           </div>
         );
       })}
