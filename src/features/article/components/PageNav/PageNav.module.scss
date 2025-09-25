@@ -1,0 +1,45 @@
+.pageNavRoot {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8em;
+  margin-bottom: 10em;
+  gap: 2%;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  width: 48%;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #f8f9fa;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.text {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.title {
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.nextLink {
+  justify-content: flex-end;
+  text-align: right;
+}

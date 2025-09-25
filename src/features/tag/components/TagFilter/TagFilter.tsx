@@ -4,7 +4,7 @@ import {
   CategoryWithBlogList,
 } from "@/libs/schema/Category/category";
 import styles from "./TagFilter.module.css";
-import Content from "../../../../commons/blog/BlogCardList/Content";
+import Content from "../../../../commons/blog/BlogCard/BlogCard";
 
 type Props = {
   queryId: string;

@@ -3,31 +3,31 @@
   max-width: 1000px;
   margin: 20px auto;
 }
-.tags-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px; /* タグ間の余白 */
-  justify-content: flex-end; /* 右寄せ */
-}
-
-.button {
-  text-align: right;
-}
 
 .path {
   display: flex;
-}
-.treeText {
+  align-items: center;
+  gap: 0.5em;
   font-size: 0.8em;
-  margin-right: 1em;
+  margin: 3em 0 2em 0;
 }
 
-.home {
+.pathLink {
   display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #555;
+  text-decoration: none;
 }
 
-.homeText {
-  margin: 0 0 0 10px;
-  font-size: 0.8em;
-  margin-right: 1em;
+.pathLink:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  color: #888;
+}
+
+.tag {
+  text-align: right;
 }
