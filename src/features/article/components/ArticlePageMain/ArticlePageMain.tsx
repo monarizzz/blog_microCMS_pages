@@ -9,6 +9,7 @@ import { ArticleNavigation } from "@/libs/schema/Blog/articleNavigation";
 import PostDate from "../PostDate/PostDate";
 import PageNav from "../PageNav/PageNav";
 import Toc from "../Toc/Toc";
+import { UTILS_ARTICLE } from "@/libs/utils/article/article";
 
 type Props = {
   blog: Blog;
@@ -43,7 +44,7 @@ const ArticlePageMain: NextPage<Props> = ({
             <TagButton category={category} />
           </div>
           <div className={styles.backLink}>
-            <Link href="/">← 記事一覧に戻る</Link>
+            <Link href="/">{UTILS_ARTICLE.BACK}</Link>
           </div>
         </div>
         <div className={styles.toc}>
