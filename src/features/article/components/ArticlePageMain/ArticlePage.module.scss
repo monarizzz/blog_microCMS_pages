@@ -175,19 +175,6 @@
   }
 
   /* ================================
-     Inline code
-  ================================ */
-  code:not([class]) {
-    line-height: normal;
-    background: rgb(228, 229, 236);
-    color: #1728be;
-    border-radius: 4px;
-    font-size: 0.9em;
-    font-weight: bold;
-    padding: 0.2em 0.4em;
-  }
-
-  /* ================================
      Lists
   ================================ */
   ul,
@@ -236,6 +223,19 @@
       background-color: #f8f9fa;
       font-weight: bold;
     }
+  }
+
+  /* ================================
+          Inline 
+      ================================ */
+  p code {
+    line-height: normal;
+    background: rgb(228, 229, 236);
+    color: #1728be;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 0.2em 0.4em;
   }
 
   /* ================================
