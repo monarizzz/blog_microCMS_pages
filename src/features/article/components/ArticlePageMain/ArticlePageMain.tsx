@@ -10,7 +10,7 @@ import PostDate from "../PostDate/PostDate";
 import PageNav from "../PageNav/PageNav";
 import Toc from "../Toc/Toc";
 import { UTILS_ARTICLE } from "@/libs/utils/article/article";
-import CopyClipBoard from "../CopyClipBoard/CopyClipBoard";
+import CopyToClipBoard from "../CopyToClipBoard/CopyToClipBoard";
 
 type Props = {
   blog: Blog;
@@ -34,7 +34,7 @@ const ArticlePageMain: NextPage<Props> = ({
       <div className={styles.container}>
         <div className={styles.contents}>
           <div className={styles.article}>
-            <CopyClipBoard text={blog.body} />
+            <CopyToClipBoard text={blog.body} />
           </div>
           <PageNav articleNavigation={articleNavigation} />
 
