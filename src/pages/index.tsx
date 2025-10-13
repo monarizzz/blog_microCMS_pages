@@ -6,6 +6,7 @@ import * as cheerio from "cheerio";
 import { CategoryList } from "@/libs/schema/Category/category";
 import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import { BlogWithPlainTextList } from "@/libs/schema/Blog/blog";
+import { useSession } from "next-auth/react";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainTextList;
@@ -39,8 +40,10 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 const HomePage: NextPage<Props> = ({ blogsWithPlainText, category }) => {
+  const { data: session } = useSession();
+
   return (
-    <Commonlayout>
+    <Commonlayout session={session}>
       <HomeMain blogsWithPlainText={blogsWithPlainText} category={category} />
     </Commonlayout>
   );

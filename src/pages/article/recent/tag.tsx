@@ -7,6 +7,7 @@ import {
   CategoryWithBlogList,
 } from "@/libs/schema/Category/category";
 import { GetStaticProps, NextPage } from "next";
+import { useSession } from "next-auth/react";
 
 type Props = {
   categoryWithBlogList: CategoryWithBlogList;
@@ -32,8 +33,10 @@ const ArticleRecentTagPage: NextPage<Props> = ({
   category,
   categoryWithBlogList,
 }) => {
+  const { data: session } = useSession();
+
   return (
-    <Commonlayout>
+    <Commonlayout session={session}>
       <TagMain
         category={category}
         categoryWithBlogList={categoryWithBlogList}

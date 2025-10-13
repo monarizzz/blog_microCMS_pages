@@ -3,4 +3,6 @@ export const HEADER = {
   HOME: "HOME",
   CATEGORY: "CATEGORY",
   ABOUT: "ABOUT",
+  EDIT: "EDIT",
+  LOGIN: "LOGIN",
 };

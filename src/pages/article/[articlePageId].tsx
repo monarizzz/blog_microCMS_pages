@@ -6,6 +6,7 @@ import CommonLayout from "@/commons/layout/Layout/CommonLayout";
 import { ArticleNavigation } from "@/libs/schema/Blog/articleNavigation";
 import pageNation from "@/features/article/pageNav/pageNavList";
 import ArticlePageMain from "@/features/article/components/ArticlePageMain/ArticlePageMain";
+import { useSession } from "next-auth/react";
 
 type Props = {
   blog: Blog;
@@ -51,8 +52,10 @@ const ArticlePage: NextPage<Props> = ({
   category,
   articleNavigation,
 }) => {
+  const { data: session } = useSession();
+
   return (
-    <CommonLayout>
+    <CommonLayout session={session}>
       <ArticlePageMain
         blog={blog}
         category={category}

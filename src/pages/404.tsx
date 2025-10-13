@@ -1,8 +1,11 @@
 import Commonlayout from "@/commons/layout/Layout/CommonLayout";
+import { useSession } from "next-auth/react";
 
 const Custom404 = () => {
+  const { data: session } = useSession();
+
   return (
-    <Commonlayout>
+    <Commonlayout session={session}>
       <main className="main">
         <p>ページがありません。</p>
       </main>
