@@ -3,7 +3,7 @@ import { CategoryList } from "@/libs/schema/Category/category";
 import { NextPage } from "next";
 import Link from "next/link";
 import styles from "./BlogCard.module.scss";
-import RelativeDate from "@/commons/date/RelativeDate/RelativeDate";
+import RelativeDate from "@/commons/blog/RelativeDate/RelativeDate";
 
 type Props = {
   blogWithPlainTextList: BlogWithPlainTextList;
