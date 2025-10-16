@@ -18,11 +18,15 @@ const mockBlog = {
   publishedAt: "2025-09-15T10:00:00.000Z",
   plainTextBody: "これはサンプル記事の本文です。",
   categories: [{ id: "cat1", name: "技術" }],
+  createdAt: "",
+  updatedAt: "",
+  revisedAt: "",
+  body: "",
 } satisfies BlogWithPlainText;
 
 const mockCategories: CategoryList = [
-  { id: "cat1", name: "技術" },
-  { id: "cat2", name: "日常" },
+  { id: "id1", name: "タグ1" },
+  { id: "id2", name: "タグ2" },
 ];
 
 const defaultArgs = {
