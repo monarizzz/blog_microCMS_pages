@@ -1,0 +1,33 @@
+.tagMainRoot {
+  width: 80%;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.path {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.8em;
+  margin: 3em 0 2em 0;
+}
+
+.pathLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #555;
+  text-decoration: none;
+}
+
+.pathLink:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  color: #888;
+}
+
+.tag {
+  text-align: right;
+}

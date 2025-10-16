@@ -1,0 +1,17 @@
+.blogListByCategoriesRoot {
+  .content {
+    margin-bottom: 2em;
+    margin-top: 1.5em;
+
+    .tag {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .blog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+}

@@ -1,12 +1,15 @@
-import TagMain from "@/features/blog/tag/components/TagMain/TagMain";
-import { getBlogCategoryList } from "@/features/blog/tag/services/getBlogCategoryList";
+import Commonlayout from "@/commons/layout/Layout/CommonLayout";
+import { getCategoryWithBlogList } from "@/libs/blog/getCategoryWithBlogList";
+import TagMain from "@/features/tag/components/TagMain/TagMain";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
-import { BlogCategoryList } from "@/infra/microCMS/schema/BlogCategory/blogCategory";
-import { CategoryList } from "@/infra/microCMS/schema/Category/category";
+import {
+  CategoryList,
+  CategoryWithBlogList,
+} from "@/libs/schema/Category/category";
 import { GetStaticProps, NextPage } from "next";
 
 type Props = {
-  blogCategoryList: BlogCategoryList;
+  categoryWithBlogList: CategoryWithBlogList;
   category: CategoryList;
 };
 
@@ -14,12 +17,12 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const categoryData = await getCategoriesList({
     queries: { limit: 10, fields: ["id", "name"] },
   });
-  const blogCategoryListData = await getBlogCategoryList();
+  const blogCategoryListData = await getCategoryWithBlogList();
 
   return {
     props: {
       category: categoryData.contents,
-      blogCategoryList: blogCategoryListData,
+      categoryWithBlogList: blogCategoryListData,
     },
     revalidate: 86400,
   };
@@ -27,9 +30,16 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const ArticleRecentTagPage: NextPage<Props> = ({
   category,
-  blogCategoryList,
+  categoryWithBlogList,
 }) => {
-  return <TagMain category={category} blogCategoryList={blogCategoryList} />;
+  return (
+    <Commonlayout>
+      <TagMain
+        category={category}
+        categoryWithBlogList={categoryWithBlogList}
+      />
+    </Commonlayout>
+  );
 };
 
 export default ArticleRecentTagPage;

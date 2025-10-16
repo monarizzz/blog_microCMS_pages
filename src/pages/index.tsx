@@ -1,10 +1,11 @@
-import HomeMain from "@/features/blog/home/components/HomePageMain/HomePageMain";
+import HomeMain from "@/features/home/components/HomePageMain/HomePageMain";
 import { GetStaticProps, NextPage } from "next";
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
 import * as cheerio from "cheerio";
-import { BlogWithPlainTextList } from "@/infra/microCMS/schema/Blog/blogWithPlainText";
-import { CategoryList } from "@/infra/microCMS/schema/Category/category";
+import { CategoryList } from "@/libs/schema/Category/category";
+import Commonlayout from "@/commons/layout/Layout/CommonLayout";
+import { BlogWithPlainTextList } from "@/libs/schema/Blog/blog";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainTextList;
@@ -39,7 +40,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const HomePage: NextPage<Props> = ({ blogsWithPlainText, category }) => {
   return (
-    <HomeMain blogsWithPlainText={blogsWithPlainText} category={category} />
+    <Commonlayout>
+      <HomeMain blogsWithPlainText={blogsWithPlainText} category={category} />
+    </Commonlayout>
   );
 };
 
