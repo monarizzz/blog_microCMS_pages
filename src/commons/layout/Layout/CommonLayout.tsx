@@ -7,7 +7,7 @@ type Props = {
   children: ReactNode;
 };
 
-const Commonlayout: NextPage<Props> = ({ children }) => {
+const CommonLayout: NextPage<Props> = ({ children }) => {
   return (
     <>
       <div className={styles.header}>
@@ -31,4 +31,4 @@ const Commonlayout: NextPage<Props> = ({ children }) => {
   );
 };
 
-export default Commonlayout;
+export default CommonLayout;
