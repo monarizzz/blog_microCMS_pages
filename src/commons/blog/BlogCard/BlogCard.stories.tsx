@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import BlogCard from "./BlogCard";
-import { BlogWithPlainText } from "@/infra/microCMS/schema/Blog/blogWithPlainText";
-import { CategoryList } from "@/infra/microCMS/schema/Category/category";
+import { BlogWithPlainText } from "@/libs/schema/Blog/blog";
+import { CategoryList } from "@/libs/schema/Category/category";
 
 const meta: Meta<typeof BlogCard> = {
   title: "Components/BlogCard",
@@ -12,22 +12,18 @@ export default meta;
 type Story = StoryObj<typeof BlogCard>;
 
 // --- ダミーデータ ---
-const mockBlog = {
-  id: "sample-blog",
-  title: "サンプル記事のタイトル",
-  publishedAt: "2025-09-15T10:00:00.000Z",
-  plainTextBody: "これはサンプル記事の本文です。",
-  categories: [{ id: "cat1", name: "技術" }],
-  createdAt: "",
-  updatedAt: "",
-  revisedAt: "",
-  body: "",
-} satisfies BlogWithPlainText;
-
 const mockCategories: CategoryList = [
   { id: "id1", name: "タグ1" },
   { id: "id2", name: "タグ2" },
 ];
+
+const mockBlog = {
+  id: "sample-blog",
+  publishedAt: "2025-09-15T10:00:00.000Z",
+  categories: [{ id: "cat1", name: "技術" }],
+  title: "サンプル記事のタイトル",
+  plainTextBody: "これはサンプル記事の本文です。",
+} satisfies BlogWithPlainText;
 
 const defaultArgs = {
   blogsWithPlainText: mockBlog,
@@ -41,13 +37,7 @@ export const Default: Story = {
 
 export const MultipleTags: Story = {
   args: {
-    blogsWithPlainText: {
-      ...mockBlog,
-      categories: [
-        { id: "cat1", name: "技術" },
-        { id: "cat2", name: "日常" },
-      ],
-    },
+    blogWithPlainTextList: [mockBlog],
     category: mockCategories,
   },
 };
