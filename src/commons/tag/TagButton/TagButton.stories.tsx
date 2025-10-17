@@ -1,8 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import TagButton from "./TagButton";
 
 const meta = {
   component: TagButton,
+  parameters: {
+    layout: "centered",
+  },
 } satisfies Meta<typeof TagButton>;
 
 export default meta;
