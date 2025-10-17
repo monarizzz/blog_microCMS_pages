@@ -12,7 +12,7 @@ type Props = {
 
 const PageNav: NextPage<Props> = ({ articleNavigation }) => {
   const { prevArticle, nextArticle } = articleNavigation;
-  const size = 40;
+  const size = 7;
   return (
     <div className={styles.pageNavRoot}>
       {prevArticle ? (
