@@ -23,7 +23,7 @@ const TagButton: NextPage<Props> = ({ category }) => {
           className={styles.tag}
           key={category.name}
         >
-          {category.name}
+          # {category.name}
         </Link>
       ))}
     </div>
