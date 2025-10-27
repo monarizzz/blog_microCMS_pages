@@ -1,4 +1,3 @@
-import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import { getCategoryWithBlogList } from "@/libs/blog/getCategoryWithBlogList";
 import TagMain from "@/features/tag/components/TagMain/TagMain";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
@@ -7,6 +6,7 @@ import {
   CategoryWithBlogList,
 } from "@/libs/schema/Category/category";
 import { GetStaticProps, NextPage } from "next";
+import LayoutMain from "@/commons/layout/LayoutMain/LayoutMain";
 
 type Props = {
   categoryWithBlogList: CategoryWithBlogList;
@@ -33,12 +33,12 @@ const ArticleRecentTagPage: NextPage<Props> = ({
   categoryWithBlogList,
 }) => {
   return (
-    <Commonlayout>
+    <LayoutMain>
       <TagMain
         category={category}
         categoryWithBlogList={categoryWithBlogList}
       />
-    </Commonlayout>
+    </LayoutMain>
   );
 };
 

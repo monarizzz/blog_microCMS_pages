@@ -4,8 +4,8 @@ import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
 import * as cheerio from "cheerio";
 import { CategoryList } from "@/libs/schema/Category/category";
-import Commonlayout from "@/commons/layout/Layout/CommonLayout";
 import { BlogWithPlainTextList } from "@/libs/schema/Blog/blog";
+import LayoutMain from "@/commons/layout/LayoutMain/LayoutMain";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainTextList;
@@ -40,9 +40,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const HomePage: NextPage<Props> = ({ blogsWithPlainText, category }) => {
   return (
-    <Commonlayout>
+    <LayoutMain>
       <HomeMain blogsWithPlainText={blogsWithPlainText} category={category} />
-    </Commonlayout>
+    </LayoutMain>
   );
 };
 

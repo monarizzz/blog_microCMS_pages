@@ -1,12 +1,12 @@
-import Commonlayout from "@/commons/layout/Layout/CommonLayout";
+import LayoutMain from "@/commons/layout/LayoutMain/LayoutMain";
 
 const Custom404 = () => {
   return (
-    <Commonlayout>
+    <LayoutMain>
       <main className="main">
         <p>ページがありません。</p>
       </main>
-    </Commonlayout>
+    </LayoutMain>
   );
 };
 export default Custom404;
