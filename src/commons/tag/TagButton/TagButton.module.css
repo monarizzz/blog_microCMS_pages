@@ -1,19 +1,23 @@
 .tagButtonRoot {
   .tag {
-    background-color: #e3f2fd;
-    border: none;
+    color: #868ab1;
+    background-color: white;
+    border-color: #868ab1;
+
     border-radius: 20px;
-    padding: 6px 10px;
-    margin-right: 8px;
-    margin-bottom: 12px;
+    padding: 8px 13px;
+    margin: 3px;
     cursor: pointer;
-    color: #1976d2;
+    font-size: 11px;
     font-weight: bold;
-    font-size: 0.8em;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    letter-spacing: 1px;
+    border: 1px solid #868ab1;
+    transition: background-color 0.3s ease, color 0.3s ease,
+      border-color 0.3s ease;
   }
-  .tag :hover {
-    background-color: #bbdefb;
-    color: #0d47a1;
+  .tag:hover {
+    color: white;
+    background-color: #868ab1;
+    border-color: 1transparent;
   }
 }

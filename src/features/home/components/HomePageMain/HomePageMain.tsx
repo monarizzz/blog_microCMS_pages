@@ -10,15 +10,12 @@ type Props = {
   category: CategoryList;
 };
 
-const HomeMain: NextPage<Props> = ({ blogsWithPlainText, category }) => {
+const HomeMain: NextPage<Props> = ({ blogsWithPlainText }) => {
   return (
     <div className={styles.homePageRoot}>
       <div className={styles.title}>{UTILS_HOME.HOME}</div>
       <div className={styles.blogList}>
-        <BlogCard
-          category={category}
-          blogWithPlainTextList={blogsWithPlainText}
-        />
+        <BlogCard blogWithPlainTextList={blogsWithPlainText} />
       </div>
     </div>
   );

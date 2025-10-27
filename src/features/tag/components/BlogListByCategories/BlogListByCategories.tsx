@@ -1,28 +1,20 @@
 import { NextPage } from "next";
 import styles from "./BlogListCategories.module.css";
-import {
-  CategoryList,
-  CategoryWithBlogList,
-} from "@/libs/schema/Category/category";
-import Content from "../../../../commons/blog/BlogCard/BlogCard";
+import { CategoryWithBlogList } from "@/libs/schema/Category/category";
+import BlogCard from "../../../../commons/blog/BlogCard/BlogCard";
 
 type Props = {
-  category: CategoryList;
   blogCategoryList: CategoryWithBlogList;
 };
 
-const BlogListByCategories: NextPage<Props> = ({
-  category,
-  blogCategoryList,
-}) => {
+const BlogListByCategories: NextPage<Props> = ({ blogCategoryList }) => {
   return (
     <div className={styles.blogListByCategoriesRoot}>
       {blogCategoryList.map((blogCategory) => (
         <ul key={blogCategory.category.id} className={styles.content}>
           <span className={styles.tag}>{blogCategory.category.name}</span>
           <div className={styles.blog}>
-            <Content
-              category={category}
+            <BlogCard
               blogWithPlainTextList={blogCategory.blogWithPlainTextList}
             />
           </div>

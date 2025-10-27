@@ -55,6 +55,5 @@ export const MultiTags: Story = {
         plainTextBody: "これはサンプル記事の本文です。",
       } satisfies BlogWithPlainText,
     ],
-    category: mockCategoryList,
   },
 };
