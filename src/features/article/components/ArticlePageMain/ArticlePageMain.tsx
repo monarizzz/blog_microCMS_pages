@@ -3,13 +3,13 @@ import styles from "./ArticlePage.module.scss";
 import Link from "next/link";
 import { NextPage } from "next";
 import { Blog } from "@/libs/schema/Blog/blog";
-import renderToc from "@/libs/blog/renderToc/renderToc";
 import { CategoryList } from "@/libs/schema/Category/category";
 import { ArticleNavigation } from "@/libs/schema/Blog/articleNavigation";
 import PostDate from "../PostDate/PostDate";
 import PageNav from "../PageNav/PageNav";
 import Toc from "../Toc/Toc";
 import { UTILS_ARTICLE } from "@/libs/utils/article/article";
+import tocFn from "@/libs/blog/toc/tocFn";
 
 type Props = {
   blog: Blog;
@@ -23,7 +23,7 @@ const ArticlePageMain: NextPage<Props> = ({
   category,
   articleNavigation,
 }) => {
-  const toc = renderToc(blog);
+  const toc = tocFn(blog);
   return (
     <div className={styles.articlePageMainRoot}>
       <div className={styles.detail}>

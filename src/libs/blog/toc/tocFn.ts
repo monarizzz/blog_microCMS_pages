@@ -1,7 +1,7 @@
 import * as cheerio from "cheerio";
 import { Blog } from "@/libs/schema/Blog/blog";
 
-const renderToc = ({ body }: Blog) => {
+const tocFn = ({ body }: Blog) => {
   const $ = cheerio.load(body);
   const headings = $("h1, h2, h3").toArray();
   const toc = headings.map((data) => ({
@@ -12,4 +12,4 @@ const renderToc = ({ body }: Blog) => {
   return toc;
 };
 
-export default renderToc;
+export default tocFn;
