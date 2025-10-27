@@ -1,21 +1,18 @@
 .pageNavRoot {
   display: flex;
-  justify-content: space-between;
-  margin-top: 8em;
-  margin-bottom: 10em;
   gap: 2%;
+  width: 100%;
 }
 
-.link {
+.button {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 1em;
-  width: 48%;
+  width: 50%;
   padding: 1em;
   border: 1px solid #ddd;
   border-radius: 8px;
-  text-decoration: none;
-  color: inherit;
   transition: background-color 0.2s;
 
   &:hover {
@@ -24,7 +21,6 @@
 }
 
 .content {
-  display: flex;
   flex-direction: column;
   gap: 0.25em;
 }
@@ -32,11 +28,14 @@
 .text {
   font-size: 0.8em;
   color: #888;
+  // overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 .title {
   font-weight: bold;
   line-height: 1.4;
+  overflow-wrap: break-word;
 }
 
 .nextLink {
