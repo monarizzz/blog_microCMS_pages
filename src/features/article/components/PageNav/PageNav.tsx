@@ -16,7 +16,7 @@ const PageNav: NextPage<Props> = ({ articleNavigation }) => {
   return (
     <div className={styles.pageNavRoot}>
       {prevArticle ? (
-        <Link href={`/article/${prevArticle.id}`} className={styles.link}>
+        <Link href={`/article/${prevArticle.id}`} className={styles.button}>
           <Image
             src={SVG_ARROW.SRC}
             alt={SVG_ARROW.ALT}
@@ -33,7 +33,7 @@ const PageNav: NextPage<Props> = ({ articleNavigation }) => {
       {nextArticle ? (
         <Link
           href={`/article/${nextArticle.id}`}
-          className={`${styles.link} ${styles.nextLink}`}
+          className={`${styles.button} ${styles.nextLink}`}
         >
           <div className={styles.content}>
             <span className={styles.text}>{PAGE_NAV.NEXT}</span>
