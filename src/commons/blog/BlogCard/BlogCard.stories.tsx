@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import BlogCard from "./BlogCard";
 import { BlogWithPlainText } from "@/libs/schema/Blog/blog";
 import { CategoryList } from "@/libs/schema/Category/category";
