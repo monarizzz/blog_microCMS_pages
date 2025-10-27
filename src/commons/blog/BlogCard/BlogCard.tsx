@@ -14,7 +14,7 @@ const BlogCard: NextPage<Props> = ({ blogWithPlainTextList }) => {
     <>
       {blogWithPlainTextList.map((blog) => (
         <div className={styles.blogCardRoot} key={blog.id}>
-          <div className={styles.group}>
+          <div className={styles.tag}>
             {blog.categories ? <TagButton category={blog.categories} /> : null}
           </div>
           <div className={styles.content}>
