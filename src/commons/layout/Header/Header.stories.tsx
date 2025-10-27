@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import CommonLayout from "./CommonLayout";
+import Header from "./Header";
 
 const meta = {
-  component: CommonLayout,
-} satisfies Meta<typeof CommonLayout>;
+  component: Header,
+} satisfies Meta<typeof Header>;
 
 export default meta;
 

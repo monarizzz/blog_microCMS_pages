@@ -1,14 +1,13 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import { ReactNode } from "react";
-import styles from "./CommonLayout.module.css";
+import styles from "./Header.module.css";
 import { HEADER } from "@/libs/utils/header";
 
 type Props = {};
 
-const CommonLayout: NextPage<Props> = () => {
+const Header: NextPage<Props> = () => {
   return (
-    <div className={styles.commonLayoutRoot}>
+    <div className={styles.headerRoot}>
       <Link href="/">
         <span className={styles.title}>{HEADER.TITLE}</span>
       </Link>
@@ -27,4 +26,4 @@ const CommonLayout: NextPage<Props> = () => {
   );
 };
 
-export default CommonLayout;
+export default Header;

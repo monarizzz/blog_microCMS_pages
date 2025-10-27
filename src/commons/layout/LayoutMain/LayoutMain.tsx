@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import CommonLayout from "../CommonLayout/CommonLayout";
+import CommonLayout from "../Header/Header";
 import GithubBtn from "../GithubBtn/GithubBtn";
 import { NextPage } from "next";
 import styles from "./LayoutMain.module.css";
