@@ -4,7 +4,7 @@ import PageNav from "./PageNav";
 const meta = {
   component: PageNav,
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
   },
 } satisfies Meta<typeof PageNav>;
 

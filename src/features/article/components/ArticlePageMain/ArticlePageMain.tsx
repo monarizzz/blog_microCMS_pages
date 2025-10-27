@@ -38,8 +38,9 @@ const ArticlePageMain: NextPage<Props> = ({
               __html: blog.body,
             }}
           />
-          <PageNav articleNavigation={articleNavigation} />
-
+          <div className={styles.pageNav}>
+            <PageNav articleNavigation={articleNavigation} />
+          </div>
           <div className={styles.tagGroup}>
             <TagButton category={category} />
           </div>
