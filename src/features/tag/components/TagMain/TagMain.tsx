@@ -45,14 +45,10 @@ const TagMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
         <TagFilter
           queryId={queryId}
           CategoryWithBlogList={categoryWithBlogList}
-          category={category}
         />
       ) : (
         // TODO: 命名がわかりにくすぎる
-        <BlogListByCategories
-          blogCategoryList={categoryWithBlogList}
-          category={category}
-        />
+        <BlogListByCategories blogCategoryList={categoryWithBlogList} />
       )}
     </div>
   );
