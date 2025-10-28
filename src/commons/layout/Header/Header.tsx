@@ -3,9 +3,7 @@ import Link from "next/link";
 import styles from "./Header.module.css";
 import { HEADER } from "@/libs/utils/header";
 
-type Props = {};
-
-const Header: NextPage<Props> = () => {
+const Header: NextPage = () => {
   return (
     <div className={styles.headerRoot}>
       <Link href="/">
