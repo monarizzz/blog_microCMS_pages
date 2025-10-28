@@ -5,6 +5,8 @@ import { CategoryList } from "@/libs/schema/Category/category";
 import { ArticleNavigation } from "@/libs/schema/Blog/articleNavigation";
 import pageNation from "@/features/article/pageNav/pageNavList";
 import ArticlePageMain from "@/features/article/components/ArticlePageMain/ArticlePageMain";
+import { useSession } from "next-auth/react";
+import Header from "@/features/Layout/Header/Header";
 
 type Props = {
   blog: Blog;
@@ -50,8 +52,11 @@ const ArticlePage: NextPage<Props> = ({
   category,
   articleNavigation,
 }) => {
+  const { data: session } = useSession();
+
   return (
     <>
+      <Header session={session} />
       <ArticlePageMain
         blog={blog}
         category={category}

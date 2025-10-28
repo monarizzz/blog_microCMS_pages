@@ -1,40 +1,27 @@
 import React from "react";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { NextPage } from "next";
+import LoginPageMain from "@/features/login/LoginPageMain";
+import LayoutMain from "@/commons/layout/LayoutMain/LayoutMain";
 
 const Login: NextPage = () => {
-  // sessionには、以下のような値が入っています。
-  // {
-  //     "user":{
-  //        "name":"John",
-  //        "email":"john@examle.com",
-  //        "image":"https://lh3.googleusercontent.com/a/AGNmyxZF7jQN_YTYVyxIx5kfdo3kalfRktVD17GrZ9n=s96-c"
-  //     },
-  //     "expires":"2023-04-01T00:29:51.016Z"
-  // }
-  const { data: session } = useSession();
-
+  const { data: session, status } = useSession();
+  if (status === "loading") {
+    return (
+      <LayoutMain session={session}>
+        <p>Loading...</p>
+      </LayoutMain>
+    );
+  }
   return (
     <>
-      {
-        // セッションがある場合、ログアウトを表示
-        session && (
-          <div>
-            <h1>ようこそ, {session.user && session.user.email}</h1>
-            <button onClick={() => signOut()}>ログアウト</button>
-          </div>
-        )
-      }
-      {
-        // セッションがない場合、ログインを表示
-        // ログインボタンを押すと、ログインページに遷移する
-        !session && (
-          <div>
-            <p>ログインしていません</p>
-            <button onClick={() => signIn("google")}>ログイン</button>
-          </div>
-        )
-      }
+      {session ? (
+        <LayoutMain session={session}>
+          <LoginPageMain session={session} />
+        </LayoutMain>
+      ) : (
+        <LoginPageMain session={session} />
+      )}
     </>
   );
 };

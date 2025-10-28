@@ -1,8 +1,11 @@
 import LayoutMain from "@/commons/layout/LayoutMain/LayoutMain";
+import { useSession } from "next-auth/react";
 
 const Custom404 = () => {
+  const { data: session } = useSession();
+
   return (
-    <LayoutMain>
+    <LayoutMain session={session}>
       <main className="main">
         <p>ページがありません。</p>
       </main>
