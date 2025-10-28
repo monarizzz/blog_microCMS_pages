@@ -16,6 +16,7 @@ const GithubBtn: NextPage = ({}) => {
           className={styles.icon}
         />
       </Link>
+      <p className={styles.text}>{SVG_GITHUB.COMMENT}</p>
     </div>
   );
 };

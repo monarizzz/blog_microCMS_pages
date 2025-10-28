@@ -1,5 +1,6 @@
 .GithubBtnRoot {
   .icon {
+    margin: 0 0 0 auto;
     border-radius: 20px;
     border: 1px solid transparent;
   }
@@ -7,4 +8,21 @@
   .icon:hover {
     filter: invert(50%);
   }
+  .text {
+    margin: 8px 0 0 auto;
+    border: 1px solid #868ab1;
+    color: #6d708e;
+    border-radius: 13px;
+    padding: 8px 13px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.3s ease, transform 1.3s ease;
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+
+.GithubBtnRoot:hover .text {
+  visibility: visible;
+  opacity: 1;
 }
