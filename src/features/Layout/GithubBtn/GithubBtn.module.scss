@@ -1,6 +1,9 @@
 .GithubBtnRoot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
   .icon {
-    margin: 0 0 0 auto;
     border-radius: 20px;
     border: 1px solid transparent;
   }
@@ -14,15 +17,14 @@
     color: #6d708e;
     border-radius: 13px;
     padding: 8px 13px;
-    visibility: hidden;
     opacity: 0;
-    transition: opacity 1.3s ease, transform 1.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     font-size: 13px;
     font-weight: bold;
+    pointer-events: none;
   }
 }
 
-.GithubBtnRoot:hover .text {
-  visibility: visible;
+.GithubBtnRoot a:hover + .text {
   opacity: 1;
 }
