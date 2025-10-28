@@ -4,9 +4,7 @@ import { SVG_GITHUB } from "@/libs/utils/article/github";
 import styles from "./GithubBtn.module.css";
 import { NextPage } from "next";
 
-type Props = {};
-
-const GithubBtn: NextPage<Props> = ({}) => {
+const GithubBtn: NextPage = ({}) => {
   return (
     <div className={styles.GithubBtnRoot}>
       <Link href="https://github.com/monarizzz/blog_microCMS_pages">
