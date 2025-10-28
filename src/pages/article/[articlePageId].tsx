@@ -5,7 +5,6 @@ import { CategoryList } from "@/libs/schema/Category/category";
 import { ArticleNavigation } from "@/libs/schema/Blog/articleNavigation";
 import pageNation from "@/features/article/pageNav/pageNavList";
 import ArticlePageMain from "@/features/article/components/ArticlePageMain/ArticlePageMain";
-import LayoutMain from "@/commons/layout/LayoutMain/LayoutMain";
 
 type Props = {
   blog: Blog;
@@ -52,13 +51,13 @@ const ArticlePage: NextPage<Props> = ({
   articleNavigation,
 }) => {
   return (
-    <LayoutMain>
+    <>
       <ArticlePageMain
         blog={blog}
         category={category}
         articleNavigation={articleNavigation}
       />
-    </LayoutMain>
+    </>
   );
 };
 

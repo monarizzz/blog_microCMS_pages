@@ -1,5 +1,6 @@
 .btn {
-  display: flex;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
   justify-content: flex-end;
-  padding: 5em 2em 5em 0;
 }

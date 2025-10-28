@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import CommonLayout from "../Header/Header";
-import GithubBtn from "../GithubBtn/GithubBtn";
+import Header from "../../../features/Layout/Header/Header";
+import GithubBtn from "../../../features/Layout/GithubBtn/GithubBtn";
 import { NextPage } from "next";
 import styles from "./LayoutMain.module.css";
 
@@ -11,7 +11,7 @@ type Props = {
 const LayoutMain: NextPage<Props> = ({ children }) => {
   return (
     <>
-      <CommonLayout />
+      <Header />
       {children}
       <div className={styles.btn}>
         <GithubBtn />
