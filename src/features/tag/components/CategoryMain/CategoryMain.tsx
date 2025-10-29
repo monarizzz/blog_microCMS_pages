@@ -1,4 +1,4 @@
-import styles from "./TagMain.module.css";
+import styles from "./CategoryMain.module.css";
 import { useRouter } from "next/router";
 import { NextPage } from "next";
 import Link from "next/link";
@@ -18,7 +18,7 @@ type Props = {
   categoryWithBlogList: CategoryWithBlogList;
 };
 
-const TagMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
+const CategoryMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
   const queryId = `${useRouter().query["id"]}`;
   const size = 10;
   return (
@@ -54,4 +54,4 @@ const TagMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
   );
 };
 
-export default TagMain;
+export default CategoryMain;

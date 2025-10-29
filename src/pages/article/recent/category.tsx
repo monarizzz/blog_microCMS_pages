@@ -1,5 +1,5 @@
 import { getCategoryWithBlogList } from "@/libs/blog/getCategoryWithBlogList";
-import TagMain from "@/features/tag/components/TagMain/TagMain";
+import CategoryMain from "@/features/tag/components/CategoryMain/CategoryMain";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
 import {
   CategoryList,
@@ -29,15 +29,12 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   };
 };
 
-const ArticleRecentTagPage: NextPage<Props> = ({
-  category,
-  categoryWithBlogList,
-}) => {
+const CategoryPage: NextPage<Props> = ({ category, categoryWithBlogList }) => {
   const { data: session } = useSession();
 
   return (
     <LayoutMain session={session}>
-      <TagMain
+      <CategoryMain
         category={category}
         categoryWithBlogList={categoryWithBlogList}
       />
@@ -45,4 +42,4 @@ const ArticleRecentTagPage: NextPage<Props> = ({
   );
 };
 
-export default ArticleRecentTagPage;
+export default CategoryPage;
