@@ -11,15 +11,13 @@ const Toc: NextPage<Props> = ({ toc }) => {
   return (
     <div className={styles.tocRoot}>
       {toc.length != 0 ? (
-        <div className={styles.group}>
-          <ul className={styles.list}>
-            {toc.map((data) => (
-              <li key={data.id} className={styles.text}>
-                <Link href={`#${data.id}`}>{data.text}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className={styles.list}>
+          {toc.map((data) => (
+            <li key={data.id} className={styles.text}>
+              <Link href={`#${data.id}`}>{data.text}</Link>
+            </li>
+          ))}
+        </ul>
       ) : null}
     </div>
   );
