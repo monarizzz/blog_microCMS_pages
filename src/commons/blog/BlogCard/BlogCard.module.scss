@@ -5,8 +5,8 @@
   padding: 1rem 1.5rem 1.5rem 1rem;
   transition: transform 0.2s, box-shadow 0.2s;
   /* 追加: 高さを揃えるためのスタイル */
-  height: 100%;
-  width: 330px;
+  height: 230px;
+  width: 360px;
 
   .tag {
     margin-bottom: 10px;
@@ -16,6 +16,10 @@
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: #111827;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
 
   .date {

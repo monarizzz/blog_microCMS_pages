@@ -34,6 +34,25 @@ const defaultArgs = {
   category: mockCategoryList,
 };
 
+const args2 = {
+  blogWithPlainTextList: [
+    {
+      id: "sample-blog2",
+      publishedAt: "2025-09-15T10:00:00.000Z",
+      categories: [
+        { id: "id1", name: "タグ1" },
+        { id: "id2", name: "タグ2" },
+        { id: "id3", name: "タグ3" },
+      ],
+      title:
+        "サンプル記事のタイトルサンプル記事のタイトルサンプル記事のタイトルサンプル記事のタイトルサンプル記事のタイトルサンプル記事のタイトル",
+      plainTextBody:
+        "これはサンプル記事の本文です。これはサンプル記事の本文です。これはサンプル記事の本文です。これはサンプル記事の本文です。これはサンプル記事の本文です。これはサンプル記事の本文です。これはサンプル記事の本文です。これはサンプル記事の本文です。",
+    } satisfies BlogWithPlainText,
+  ],
+  category: mockCategoryList,
+};
+
 // --- ストーリー定義 ---
 export const Default: Story = {
   args: defaultArgs,
@@ -56,4 +75,13 @@ export const MultiTags: Story = {
       } satisfies BlogWithPlainText,
     ],
   },
+};
+
+export const MultiCard = {
+  render: () => (
+    <div style={{ display: "flex" }}>
+      <BlogCard {...defaultArgs} />
+      <BlogCard {...args2} />
+    </div>
+  ),
 };
