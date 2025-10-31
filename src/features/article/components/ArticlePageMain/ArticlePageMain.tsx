@@ -29,7 +29,6 @@ const ArticlePageMain: NextPage<Props> = ({
       <div className={styles.detail}>
         <div className={styles.tagGroup}>
           <TagButton category={category} />
-          {/* TODO:直す */}
           <div className={styles.date}>
             <PostDate blog={blog} />
           </div>
