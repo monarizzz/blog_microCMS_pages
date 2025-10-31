@@ -21,6 +21,26 @@ const defaultArgs = {
   ],
 };
 
+const MultiArgs = {
+  category: [
+    {
+      id: "id1",
+      name: "これはテストです",
+    },
+    {
+      id: "id2",
+      name: "これはテストですこれはテストです",
+    },
+    {
+      id: "id3",
+      name: "これはテストですこれはテストですこれはテストです",
+    },
+  ],
+};
 export const Default: Story = {
   args: defaultArgs,
+};
+
+export const MultiTags: Story = {
+  args: MultiArgs,
 };
