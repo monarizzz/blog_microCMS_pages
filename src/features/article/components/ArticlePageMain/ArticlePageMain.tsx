@@ -27,7 +27,14 @@ const ArticlePageMain: NextPage<Props> = ({
   return (
     <div className={styles.articlePageMainRoot}>
       <div className={styles.detail}>
-        <PostDate blog={blog} />
+        <div className={styles.tagGroup}>
+          <TagButton category={category} />
+          {/* TODO:直す */}
+          <div className={styles.date}>
+            <PostDate blog={blog} />
+          </div>
+        </div>
+
         <div className={styles.title}>{blog.title}</div>
       </div>
       <div className={styles.container}>
@@ -40,9 +47,6 @@ const ArticlePageMain: NextPage<Props> = ({
           />
           <div className={styles.pageNav}>
             <PageNav articleNavigation={articleNavigation} />
-          </div>
-          <div className={styles.tagGroup}>
-            <TagButton category={category} />
           </div>
           <div className={styles.backLink}>
             <Link href="/">{UTILS_ARTICLE.BACK}</Link>
