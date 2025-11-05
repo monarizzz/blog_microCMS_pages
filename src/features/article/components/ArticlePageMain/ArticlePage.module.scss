@@ -79,15 +79,14 @@
 
 .article p:empty {
   display: block;
-  height: 1em; /* 改行の高さを設定 */
   margin-top: 1em; /* 上部に余白を追加 */
   margin-bottom: 1em; /* 下部に余白を追加 */
   visibility: hidden; /* 空の段落を非表示にして余白だけ反映 */
 }
 /* h1からh5までのスタイル */
 .article {
-  font-size: 15px;
-  line-height: 1.8em;
+  font-size: variables.$font-size-base;
+  line-height: 1.5em;
   font-family: "Noto Sans JP", sans-serif;
   color: #000000;
   overflow-wrap: break-word;
@@ -108,30 +107,20 @@
   }
 
   h1 {
-    font-size: variables.$font-size-x-large;
+    font-size: variables.$font-size-xx-large;
   }
   h2 {
-    font-size: variables.$font-size-large;
+    font-size: variables.$font-size-x-large;
   }
   h3 {
-    font-size: variables.$font-size-base;
+    font-size: variables.$font-size-large;
   }
   h4 {
-    font-size: 0.75em;
+    font-size: variables.$font-size-small;
   }
   h5 {
-    font-size: 0.5em;
+    font-size: variables.$font-size-x-small;
   }
-
-  /* p
-  p {
-    font-size: 16px;
-    margin-top: 8px;
-    margin-bottom: 10px;
-    line-height: 30px;
-  }
-  */
-
   /* ================================
      Blockquote
   ================================ */
