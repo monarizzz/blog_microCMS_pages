@@ -14,7 +14,7 @@ const HomeMain: NextPage<Props> = ({ blogsWithPlainText }) => {
   return (
     <div className={styles.homePageRoot}>
       <div className={styles.title}>{UTILS_HOME.HOME}</div>
-      <div className={styles.blogcard}>
+      <div className={styles.blogCard}>
         <BlogCard blogWithPlainTextList={blogsWithPlainText} />
       </div>
     </div>
