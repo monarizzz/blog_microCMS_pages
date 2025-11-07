@@ -1,9 +1,40 @@
-// 主に記事内のスタイルの定数を定義する
 $font-size-xx-large: 28px;
 $font-size-x-large: 23px;
 $font-size-large: 18px;
 $font-size-base: 14px;
 $font-size-small: 12px;
 $font-size-x-small: 10px;
-$font-weight-normal: normal;
-$font-weight-bold: bold;
+
+$line-height-xx-large: 38px;
+$line-height-x-large: 25px;
+$line-height-large: 18px;
+$line-height-base: 14px;
+$line-height-small: 12px;
+$line-height-x-small: 10px;
+
+$list-style-type-ul: disc;
+$list-style-type-ol: decimal;
+
+@mixin h1 {
+  font-size: $font-size-xx-large;
+  line-height: $line-height-xx-large;
+}
+
+@mixin h2 {
+  font-size: $font-size-x-large;
+  line-height: $line-height-x-large;
+}
+
+@mixin h3 {
+  font-size: $font-size-large;
+  line-height: $line-height-large;
+}
+
+@mixin h4 {
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+}
+@mixin h5 {
+  font-size: $font-size-x-small;
+  line-height: $line-height-x-small;
+}

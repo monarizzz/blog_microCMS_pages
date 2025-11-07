@@ -29,15 +29,12 @@ const ArticlePageMain: NextPage<Props> = ({
       <div className={styles.detail}>
         <div className={styles.tagGroup}>
           <TagButton category={category} />
-          <div className={styles.date}>
-            <PostDate blog={blog} />
-          </div>
+          <PostDate blog={blog} />
         </div>
-
         <div className={styles.title}>{blog.title}</div>
       </div>
       <div className={styles.container}>
-        <div className={styles.contents}>
+        <div className={styles.left}>
           <div
             className={styles.article}
             dangerouslySetInnerHTML={{
@@ -51,7 +48,7 @@ const ArticlePageMain: NextPage<Props> = ({
             <Link href="/">{UTILS_ARTICLE.BACK}</Link>
           </div>
         </div>
-        <div className={styles.toc}>
+        <div className={styles.right}>
           <Toc toc={toc} />
         </div>
       </div>
