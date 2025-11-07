@@ -6,24 +6,21 @@
   max-width: 1200px;
 
   .detail {
-    max-width: 1000px;
+    max-width: 1200px;
     margin-bottom: 1em;
     align-items: center;
 
     .tagGroup {
       margin-bottom: 2em;
       display: flex;
-
-      .date {
-        /* TODO:直す */
-      }
+      justify-content: space-between;
     }
 
     .title {
       font-size: 1.4em;
       text-align: center;
       font-weight: bold;
-      margin: 2em;
+      margin: 30px 0 70px 0;
     }
   }
 
@@ -33,9 +30,13 @@
     gap: 1em;
     max-width: 1250px;
 
-    .contents {
+    .left {
       width: 100%;
       max-width: 800px;
+
+      .pageNav {
+        margin: 125px 0;
+      }
 
       .backLink {
         color: #485b6e;
@@ -49,18 +50,14 @@
       .backLink:hover {
         text-decoration: underline;
       }
-
-      .pageNav {
-        margin: 125px 0;
-      }
     }
-    .toc {
+    .right {
       display: none;
       width: 250px;
     }
 
     @media (min-width: 1100px) {
-      .toc {
+      .right {
         display: block;
         position: sticky;
         top: 2em;
@@ -69,12 +66,6 @@
       }
     }
   }
-}
-.article {
-  border-radius: 10px;
-  padding: 10px 20px 100px;
-  margin: 25px 10px;
-  background-color: #fbfbfb;
 }
 
 .article p:empty {
@@ -85,6 +76,9 @@
 }
 /* h1からh5までのスタイル */
 .article {
+  border-radius: 10px;
+  background-color: #fbfbfb;
+  padding: 20px 20px 100px 20px;
   font-size: variables.$font-size-base;
   line-height: 1.5em;
   font-family: "Noto Sans JP", sans-serif;
@@ -93,9 +87,7 @@
 
   /* margin-bottom: 5em; */
 
-  /* ================================
-     Headings
-  ================================ */
+  /* 見出し */
   h1,
   h2,
   h3,
@@ -226,7 +218,7 @@
     background-color: #1e1e1e;
     color: #d9d9d9;
     padding: 1em;
-    margin: 2% 0;
+    margin: 30px 5px;
     border-radius: 8px;
     overflow-x: auto;
     position: relative;
