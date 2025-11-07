@@ -31,7 +31,6 @@
     display: flex;
     justify-content: center;
     gap: 1em;
-    // margin: 100px auto 0;
     max-width: 1250px;
 
     .contents {
@@ -74,6 +73,7 @@
 .article {
   border-radius: 10px;
   padding: 10px 20px 100px;
+  margin: 25px 10px;
   background-color: #fbfbfb;
 }
 
@@ -107,50 +107,62 @@
   }
 
   h1 {
-    font-size: variables.$font-size-xx-large;
+    @include variables.h1;
   }
   h2 {
-    font-size: variables.$font-size-x-large;
+    @include variables.h2;
   }
   h3 {
-    font-size: variables.$font-size-large;
+    @include variables.h3;
   }
   h4 {
-    font-size: variables.$font-size-small;
+    @include variables.h4;
   }
   h5 {
-    font-size: variables.$font-size-x-small;
+    @include variables.h5;
   }
-  /* ================================
-     Blockquote
-  ================================ */
+
+  ul,
+  ol {
+    padding: 0 0 0 16px;
+    margin: 24px 0;
+  }
+
+  ul {
+    list-style-type: variables.$list-style-type-ul;
+  }
+  ol {
+    list-style-type: variables.$list-style-type-ol;
+  }
+
+  /* 引用 */
   blockquote {
-    font-size: 14px;
     color: #555;
     font-style: italic;
-    border-left: 4px solid #c6e0ff;
+    border-left: 4px solid #868ab1;
     padding: 8px 16px;
     margin: 12px 0;
-    background: #f8f9fa;
-
-    p {
-      margin: 0;
-    }
+    background: #f3f4f9;
+    line-height: 20px;
   }
 
-  /* ================================
-     Horizontal rule
-  ================================ */
+  /* Callout */
+  p:has(span[class="callout"]) {
+    background-color: #f6ffe6;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 5px;
+    border: 1px solid #c2ea7d;
+  }
+
+  /* 区切り線 */
   hr {
-    margin: 3% 0;
+    margin: 20px 0;
   }
 
-  /* ================================
-     Links
-  ================================ */
+  /* Links */
   a {
-    color: #198cff;
-    text-decoration: none;
+    color: #1728be;
 
     &:hover {
       text-decoration: underline;
@@ -162,40 +174,6 @@
   ================================ */
   figure {
     margin: 1em;
-  }
-
-  /* ================================
-     Callout
-  ================================ */
-  p:has(span[class="callout"]) {
-    padding: 30px;
-    border-left-style: solid;
-    background-color: #ececec;
-    border-radius: 4px;
-    margin: 1rem 0;
-    display: block;
-    color: #000000;
-  }
-
-  /* ================================
-     Lists
-  ================================ */
-  ul,
-  ol {
-    padding: 0 0 0 16px;
-    margin: 24px 0;
-
-    li {
-      font-size: 16px;
-      margin-bottom: 3px;
-    }
-  }
-
-  ul {
-    list-style-type: disc;
-  }
-  ol {
-    list-style-type: decimal;
   }
 
   /* ================================
