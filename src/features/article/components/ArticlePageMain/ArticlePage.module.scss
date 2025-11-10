@@ -2,13 +2,12 @@
 
 .articlePageMainRoot {
   margin: 0 auto;
-  padding: 2em;
   max-width: 1200px;
 
   .detail {
     max-width: 1200px;
-    margin-bottom: 1em;
     align-items: center;
+    padding: 30px;
 
     .tagGroup {
       margin-bottom: 2em;
@@ -52,17 +51,17 @@
       }
     }
     .right {
-      display: none;
-      width: 250px;
+      display: block;
+      position: sticky;
+      top: 15px;
+      align-self: flex-start;
+      height: fit-content;
     }
 
-    @media (min-width: 1100px) {
+    @media (max-width: 1200px) {
       .right {
-        display: block;
-        position: sticky;
-        top: 2em;
-        align-self: flex-start;
-        height: fit-content;
+        display: none;
+        width: 250px;
       }
     }
   }
@@ -74,7 +73,7 @@
   margin-bottom: 1em; /* 下部に余白を追加 */
   visibility: hidden; /* 空の段落を非表示にして余白だけ反映 */
 }
-/* h1からh5までのスタイル */
+
 .article {
   border-radius: 10px;
   background-color: #fbfbfb;
@@ -94,7 +93,7 @@
   h4,
   h5 {
     font-weight: bold;
-    margin-top: 1.5em;
+    margin-top: 20px;
     margin-bottom: 0.5em;
   }
 
