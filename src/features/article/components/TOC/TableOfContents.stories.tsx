@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import Toc from "./Toc";
+import Toc from "./TableOfContents";
 const meta = {
   component: Toc,
   parameters: {
