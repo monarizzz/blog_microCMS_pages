@@ -7,7 +7,7 @@ import { CategoryList } from "@/libs/schema/Category/category";
 import { ArticleNavigation } from "@/libs/schema/Blog/articleNavigation";
 import PostDate from "../PostDate/PostDate";
 import PageNav from "../PageNav/PageNav";
-import Toc from "../TableOfContents/TableOfContents";
+import Toc from "../Toc/Toc";
 import { UTILS_ARTICLE } from "@/libs/utils/article/article";
 import tocFn from "@/libs/blog/toc/tocFn";
 
