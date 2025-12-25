@@ -10,9 +10,6 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "engines": {
-    "node": "20"
-  },
   "dependencies": {
     "cheerio": "^1.0.0",
     "dayjs": "^1.11.13",
