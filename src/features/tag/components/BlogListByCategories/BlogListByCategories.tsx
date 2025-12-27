@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import styles from "./BlogListCategories.module.css";
 import { CategoryWithBlogList } from "@/libs/schema/Category/category";
-import BlogCard from "../../../../commons/blog/BlogCard/BlogCard";
+import BlogCard from "@/commons/blog/components/BlogCard/BlogCard";
 
 type Props = {
   blogCategoryList: CategoryWithBlogList;

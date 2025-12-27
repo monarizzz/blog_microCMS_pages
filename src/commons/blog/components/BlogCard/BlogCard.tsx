@@ -2,8 +2,8 @@ import { BlogWithPlainTextList } from "@/libs/schema/Blog/blog";
 import { NextPage } from "next";
 import Link from "next/link";
 import styles from "./BlogCard.module.scss";
-import RelativeDate from "@/commons/date/RelativeDate/RelativeDate";
-import TagButton from "@/commons/tag/TagButton/TagButton";
+import RelativeDate from "@/commons/date/components/RelativeDate/RelativeDate";
+import TagButton from "@/commons/tag/components/TagButton/TagButton";
 
 type Props = {
   blogWithPlainTextList: BlogWithPlainTextList;

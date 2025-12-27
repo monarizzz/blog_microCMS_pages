@@ -2,7 +2,7 @@ import React from "react";
 import { useSession } from "next-auth/react";
 import { NextPage } from "next";
 import LoginPageMain from "@/features/login/LoginPageMain";
-import LayoutMain from "@/commons/layout/LayoutMain/LayoutMain";
+import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 
 const Login: NextPage = () => {
   const { data: session, status } = useSession();

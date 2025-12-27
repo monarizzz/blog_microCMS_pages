@@ -6,7 +6,7 @@ import {
   CategoryList,
   CategoryWithBlogList,
 } from "@/libs/schema/Category/category";
-import TagButton from "../../../../commons/tag/TagButton/TagButton";
+import TagButton from "@/commons/tag/components/TagButton/TagButton";
 import TagFilter from "../TagFilter/TagFilter";
 import BlogListByCategories from "../BlogListByCategories/BlogListByCategories";
 import { TAG } from "@/libs/utils/tag/tag";

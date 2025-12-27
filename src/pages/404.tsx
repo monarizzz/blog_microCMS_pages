@@ -1,4 +1,4 @@
-import LayoutMain from "@/commons/layout/LayoutMain/LayoutMain";
+import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import { useSession } from "next-auth/react";
 
 const Custom404 = () => {
