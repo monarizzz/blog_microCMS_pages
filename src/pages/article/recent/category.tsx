@@ -6,7 +6,7 @@ import {
   CategoryWithBlogList,
 } from "@/libs/schema/Category/category";
 import { GetStaticProps, NextPage } from "next";
-import LayoutMain from "@/commons/layout/LayoutMain/LayoutMain";
+import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import { useSession } from "next-auth/react";
 
 type Props = {

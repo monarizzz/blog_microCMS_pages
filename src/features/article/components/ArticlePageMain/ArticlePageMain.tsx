@@ -1,4 +1,4 @@
-import TagButton from "@/commons/tag/TagButton/TagButton";
+import TagButton from "@/commons/tag/components/TagButton/TagButton";
 import styles from "./ArticlePage.module.scss";
 import Link from "next/link";
 import { NextPage } from "next";
