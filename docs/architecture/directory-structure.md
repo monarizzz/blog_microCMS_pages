@@ -33,11 +33,22 @@ commons/
 
 各ディレクトリには以下の構造を持ちます：
 
-- `components/` - React コンポーネント（[詳細なコンポーネント構造ルール](./component-structure.md)）
-- `hooks/` - カスタムフック
-- `types/` - TypeScript 型定義
-- `utils/` - ユーティリティ関数
-- `constants/` - 定数定義
+```
+commons/
+├── date/
+│   ├── components/         # React コンポーネント（[詳細なコンポーネント構造ルール](./component-structure.md)）
+│   ├── hooks/              # カスタムフック
+│   ├── types/              # TypeScript 型定義
+│   ├── utils/              # ユーティリティ関数
+│   └── constants/          # 定数定義
+├── layout/
+│   ├── components/
+│   ├── hooks/
+│   ├── types/
+│   ├── utils/
+│   └── constants/
+└── ... (その他多数)
+```
 
 #### `/src/features` - 特定ページ専用ファイル
 
