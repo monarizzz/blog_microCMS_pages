@@ -12,7 +12,6 @@ const TagButton: NextPage<Props> = ({ category }) => {
     <div className={styles.tagButtonRoot}>
       {category.slice().map((category) => (
         <Link
-          // TODO: マジックナンバー切り分け
           href={`/article/recent/category?id=${category.id}`}
           className={styles.tag}
           key={category.name}
