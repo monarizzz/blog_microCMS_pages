@@ -1,6 +1,6 @@
-$font-size-xx-large: 28px;
-$font-size-x-large: 23px;
-$font-size-large: 18px;
+$font-size-xx-large: 23px;
+$font-size-x-large: 20px;
+$font-size-large: 16px;
 $font-size-base: 14px;
 $font-size-small: 12px;
 $font-size-x-small: 10px;
@@ -15,19 +15,26 @@ $line-height-x-small: 10px;
 $list-style-type-ul: disc;
 $list-style-type-ol: decimal;
 
+$margin-xx-large: 20px;
+$margin-x-large: 15px;
+$margin-large: 13px;
+
 @mixin h1 {
   font-size: $font-size-xx-large;
   line-height: $line-height-xx-large;
+  margin: $margin-xx-large 0;
 }
 
 @mixin h2 {
   font-size: $font-size-x-large;
   line-height: $line-height-x-large;
+  margin: $margin-x-large 0;
 }
 
 @mixin h3 {
   font-size: $font-size-large;
   line-height: $line-height-large;
+  margin: $margin-large 0;
 }
 
 @mixin h4 {
