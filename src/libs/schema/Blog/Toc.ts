@@ -1,4 +1,5 @@
 export type Toc = {
+  styles: string;
   text: string;
   id: string;
 };
