@@ -13,9 +13,11 @@ type Story = StoryObj<typeof Toc>;
 
 const defaultArgs = {
   toc: [
-    { text: "見出し1", id: "id1" },
-    { text: "見出し2", id: "id2" },
+    { styles: "h1", text: "見出し1", id: "id1" },
+    { styles: "h2", text: "見出し2", id: "id2" },
+    { styles: "h3", text: "見出し3", id: "id3" },
     {
+      styles: "h2",
       text: "テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト",
       id: "id2",
     },
