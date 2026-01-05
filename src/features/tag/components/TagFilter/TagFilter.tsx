@@ -11,12 +11,14 @@ type Props = {
 const TagFilter: NextPage<Props> = ({ queryId, blogsByCategoryList }) => {
   return (
     <>
-      {blogsByCategoryList.map((blog) =>
-        blog.category.id == queryId ? (
-          <ul key={blog.category.id}>
-            <li className={styles.tag}>{blog.category.name}</li>
+      {blogsByCategoryList.map((blogCategory) =>
+        blogCategory.category.id == queryId ? (
+          <ul key={blogCategory.category.id}>
+            <li className={styles.tag}>{blogCategory.category.name}</li>
             <li className={styles.blog}>
-              <BlogCard blogWithPlainTextList={blog.blogWithPlainTextList} />
+              <BlogCard
+                blogWithPlainTextList={blogCategory.blogWithPlainTextList}
+              />
             </li>
           </ul>
         ) : null
