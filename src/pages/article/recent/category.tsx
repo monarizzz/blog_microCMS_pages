@@ -3,14 +3,14 @@ import CategoryMain from "@/features/tag/components/CategoryMain/CategoryMain";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
 import {
   CategoryList,
-  CategoryWithBlogList,
+  BlogsByCategoryList,
 } from "@/libs/schema/Category/category";
 import { GetStaticProps, NextPage } from "next";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import { useSession } from "next-auth/react";
 
 type Props = {
-  categoryWithBlogList: CategoryWithBlogList;
+  categoryWithBlogList: BlogsByCategoryList;
   category: CategoryList;
 };
 

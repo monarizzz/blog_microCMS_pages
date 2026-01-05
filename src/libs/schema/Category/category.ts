@@ -5,7 +5,7 @@ export type Category = {
   name: string;
 };
 
-export type CategoryWithBlog = {
+export type BlogsByCategory = {
   category: {
     name: string;
     id: string;
@@ -14,4 +14,4 @@ export type CategoryWithBlog = {
 };
 
 export type CategoryList = Category[];
-export type CategoryWithBlogList = CategoryWithBlog[];
+export type BlogsByCategoryList = BlogsByCategory[];
