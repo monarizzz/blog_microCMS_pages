@@ -7,7 +7,6 @@ import {
   BlogsByCategoryList,
 } from "@/libs/schema/Category/category";
 import TagButton from "@/commons/tag/components/TagButton/TagButton";
-import TagFilter from "../TagFilter/TagFilter";
 import BlogListByCategories from "../BlogListByCategories/BlogListByCategories";
 import { TAG } from "@/libs/utils/tag/tag";
 import Image from "next/image";
@@ -19,7 +18,8 @@ type Props = {
 };
 
 const CategoryMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
-  const queryId = `${useRouter().query["id"]}`;
+  const router = useRouter();
+  const queryId = router.query["id"] ? String(router.query["id"]) : null;
   const size = 10;
   return (
     <div className={styles.tagMainRoot}>
@@ -41,14 +41,10 @@ const CategoryMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
       <div className={styles.tag}>
         <TagButton category={category} />
       </div>
-      {useRouter().query["id"] ? (
-        <TagFilter
-          queryId={queryId}
-          blogsByCategoryList={categoryWithBlogList}
-        />
-      ) : (
-        <BlogListByCategories blogCategoryList={categoryWithBlogList} />
-      )}
+      <BlogListByCategories
+        queryId={queryId}
+        blogCategoryList={categoryWithBlogList}
+      />
     </div>
   );
 };
