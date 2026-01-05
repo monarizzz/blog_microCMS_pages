@@ -23,7 +23,6 @@ const ArticlePageMain: NextPage<Props> = ({
   category,
   articleNavigation,
 }) => {
-  const toc = tocFn(blog);
   return (
     <div className={styles.articlePageMainRoot}>
       <div className={styles.detail}>
@@ -49,7 +48,7 @@ const ArticlePageMain: NextPage<Props> = ({
           </div>
         </div>
         <div className={styles.right}>
-          <Toc toc={toc} />
+          <Toc toc={tocFn(blog)} />
         </div>
       </div>
     </div>
