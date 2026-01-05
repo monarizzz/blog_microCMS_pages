@@ -11,19 +11,18 @@ type Props = {
 const TagFilter: NextPage<Props> = ({ queryId, CategoryWithBlogList }) => {
   return (
     <>
-      {CategoryWithBlogList.map((blog) => (
-        <>
-          {blog.category.id == queryId ? (
-            <ul>
-              <li className={styles.tag}>{blog.category.name}</li>
-              <li className={styles.blog}>
-                <BlogCard blogWithPlainTextList={blog.blogWithPlainTextList} />
-              </li>
-            </ul>
-          ) : null}
-        </>
-      ))}
+      {CategoryWithBlogList.map((blog) =>
+        blog.category.id == queryId ? (
+          <ul key={blog.category.id}>
+            <li className={styles.tag}>{blog.category.name}</li>
+            <li className={styles.blog}>
+              <BlogCard blogWithPlainTextList={blog.blogWithPlainTextList} />
+            </li>
+          </ul>
+        ) : null
+      )}
     </>
   );
 };
+
 export default TagFilter;
