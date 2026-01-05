@@ -1,17 +1,13 @@
 import { NextPage } from "next";
 import styles from "./BlogListCategories.module.css";
-import { BlogsByCategoryList } from "@/libs/schema/Category/category";
+import { CategoryWithBlogList } from "@/libs/schema/Category/category";
 import BlogCard from "@/commons/blog/components/BlogCard/BlogCard";
 
 type Props = {
-  blogCategoryList: BlogsByCategoryList;
+  blogCategoryList: CategoryWithBlogList;
 };
 
-const BlogListByCategories: NextPage<Props> = ({
-  // queryId,
-  blogCategoryList,
-}) => {
-  console.log("blogCategoryList", blogCategoryList);
+const BlogListByCategories: NextPage<Props> = ({ blogCategoryList }) => {
   return (
     <div className={styles.blogListByCategoriesRoot}>
       {blogCategoryList.map((blogCategory) => (

@@ -1,17 +1,17 @@
 import { NextPage } from "next";
-import { BlogsByCategoryList } from "@/libs/schema/Category/category";
+import { CategoryWithBlogList } from "@/libs/schema/Category/category";
 import styles from "./TagFilter.module.css";
 import BlogCard from "@/commons/blog/components/BlogCard/BlogCard";
 
 type Props = {
   queryId: string;
-  blogsByCategoryList: BlogsByCategoryList;
+  CategoryWithBlogList: CategoryWithBlogList;
 };
 
-const TagFilter: NextPage<Props> = ({ queryId, blogsByCategoryList }) => {
+const TagFilter: NextPage<Props> = ({ queryId, CategoryWithBlogList }) => {
   return (
     <>
-      {blogsByCategoryList.map((blog) =>
+      {CategoryWithBlogList.map((blog) =>
         blog.category.id == queryId ? (
           <ul key={blog.category.id}>
             <li className={styles.tag}>{blog.category.name}</li>
