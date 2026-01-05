@@ -4,7 +4,7 @@ import { NextPage } from "next";
 import Link from "next/link";
 import {
   CategoryList,
-  CategoryWithBlogList,
+  BlogsByCategoryList,
 } from "@/libs/schema/Category/category";
 import TagButton from "@/commons/tag/components/TagButton/TagButton";
 import TagFilter from "../TagFilter/TagFilter";
@@ -15,7 +15,7 @@ import { SVG_HOME } from "@/libs/utils/tag/home";
 
 type Props = {
   category: CategoryList;
-  categoryWithBlogList: CategoryWithBlogList;
+  categoryWithBlogList: BlogsByCategoryList;
 };
 
 const CategoryMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
@@ -44,10 +44,9 @@ const CategoryMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
       {useRouter().query["id"] ? (
         <TagFilter
           queryId={queryId}
-          CategoryWithBlogList={categoryWithBlogList}
+          blogsByCategoryList={categoryWithBlogList}
         />
       ) : (
-        // TODO: 命名がわかりにくすぎる
         <BlogListByCategories blogCategoryList={categoryWithBlogList} />
       )}
     </div>

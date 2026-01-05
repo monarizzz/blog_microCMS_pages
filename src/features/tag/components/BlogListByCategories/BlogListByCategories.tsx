@@ -1,10 +1,10 @@
 import { NextPage } from "next";
 import styles from "./BlogListCategories.module.css";
-import { CategoryWithBlogList } from "@/libs/schema/Category/category";
+import { BlogsByCategoryList } from "@/libs/schema/Category/category";
 import BlogCard from "@/commons/blog/components/BlogCard/BlogCard";
 
 type Props = {
-  blogCategoryList: CategoryWithBlogList;
+  blogCategoryList: BlogsByCategoryList;
 };
 
 const BlogListByCategories: NextPage<Props> = ({ blogCategoryList }) => {
