@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import TagButton from "./TagButton";
-import { kMaxLength } from "buffer";
 
 const meta = {
   component: TagButton,
@@ -54,6 +53,7 @@ const MultiLimitArgs = {
       name: "これはテストですこれはテストですこれはテストです",
     },
   ],
+
   maxLength: 5,
 };
 
