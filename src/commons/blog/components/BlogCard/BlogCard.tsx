@@ -14,7 +14,7 @@ const BlogWithPlainTextCardGrid: NextPage<Props> = ({ BlogWithPlainText }) => {
     <div className={styles.blogCardRoot}>
       <p className={styles.tag}>
         {BlogWithPlainText.categories ? (
-          <TagButton category={BlogWithPlainText.categories} />
+          <TagButton category={BlogWithPlainText.categories} maxLength={4} />
         ) : null}
       </p>
       <div className={styles.content}>

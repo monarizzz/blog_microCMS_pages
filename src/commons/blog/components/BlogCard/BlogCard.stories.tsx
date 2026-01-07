@@ -51,10 +51,10 @@ export const MultiTags: Story = {
       id: "sample-blog",
       publishedAt: "2025-09-15T10:00:00.000Z",
       categories: [
-        { id: "id1", name: "タグ1" },
-        { id: "id2", name: "タグ2" },
-        { id: "id3", name: "タグ3" },
-        { id: "id4", name: "タグ4" },
+        { id: "id1", name: "タグ1タグ1" },
+        { id: "id2", name: "タグ2タグ2" },
+        // /TODO: 半角全角で最大の幅が変わる問題なおす
+        { id: "id3", name: "123456789" },
       ],
       title: "サンプル記事のタイトル",
       plainTextBody: "これはサンプル記事の本文です。",

@@ -9,7 +9,7 @@ type Props = {
 
 const BlogCardGrid: NextPage<Props> = ({ blogWithPlainTextList }) => {
   return (
-    <div className={styles.blogCard}>
+    <div className={styles.blogCardGridRoot}>
       {blogWithPlainTextList.map((BlogWithPlainText) => (
         <BlogCard
           key={BlogWithPlainText.id}
