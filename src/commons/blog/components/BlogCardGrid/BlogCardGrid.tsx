@@ -11,10 +11,9 @@ const BlogCardGrid: NextPage<Props> = ({ blogWithPlainTextList }) => {
   return (
     <div className={styles.blogCardGridRoot}>
       {blogWithPlainTextList.map((BlogWithPlainText) => (
-        <BlogCard
-          key={BlogWithPlainText.id}
-          BlogWithPlainText={BlogWithPlainText}
-        />
+        <div key={BlogWithPlainText.id} className={styles.blogCard}>
+          <BlogCard BlogWithPlainText={BlogWithPlainText} />
+        </div>
       ))}
     </div>
   );

@@ -6,7 +6,6 @@
   transition: transform 0.2s, box-shadow 0.2s;
   /* 追加: 高さを揃えるためのスタイル */
   height: 230px;
-  width: 100%;
 
   .tag {
     margin-bottom: 10px;
