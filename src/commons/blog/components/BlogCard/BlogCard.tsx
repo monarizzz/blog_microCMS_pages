@@ -1,34 +1,33 @@
-import { BlogWithPlainTextList } from "@/libs/schema/Blog/blog";
-import { NextPage } from "next";
 import Link from "next/link";
-import styles from "./BlogCard.module.scss";
+import styles from "./BlogCard.module.css";
 import RelativeDate from "@/commons/date/components/RelativeDate/RelativeDate";
 import TagButton from "@/commons/tag/components/TagButton/TagButton";
+import { BlogWithPlainText } from "@/libs/schema/Blog/blog";
+import { NextPage } from "next";
 
 type Props = {
-  blogWithPlainTextList: BlogWithPlainTextList;
+  BlogWithPlainText: BlogWithPlainText;
 };
 
-const BlogCard: NextPage<Props> = ({ blogWithPlainTextList }) => {
+const BlogWithPlainTextCardGrid: NextPage<Props> = ({ BlogWithPlainText }) => {
   return (
-    <>
-      {blogWithPlainTextList.map((blog) => (
-        <div className={styles.blogCardRoot} key={blog.id}>
-          <div className={styles.tag}>
-            {blog.categories ? <TagButton category={blog.categories} /> : null}
-          </div>
-          <div className={styles.content}>
-            <Link href={`/article/${blog.id}`}>
-              <p className={styles.title}>{blog.title}</p>
-              <p className={styles.date}>{RelativeDate(blog.publishedAt)} </p>
-
-              <p className={styles.bodyText}>{blog.plainTextBody}</p>
-            </Link>
-          </div>
-        </div>
-      ))}
-    </>
+    <div className={styles.blogCardRoot}>
+      <div className={styles.tag}>
+        {BlogWithPlainText.categories ? (
+          <TagButton category={BlogWithPlainText.categories} maxLength={4} />
+        ) : null}
+      </div>
+      <div className={styles.content}>
+        <Link href={`/article/${BlogWithPlainText.id}`}>
+          <p className={styles.title}>{BlogWithPlainText.title}</p>
+          <p className={styles.date}>
+            {RelativeDate(BlogWithPlainText.publishedAt)}{" "}
+          </p>
+          <p className={styles.bodyText}>{BlogWithPlainText.plainTextBody}</p>
+        </Link>
+      </div>
+    </div>
   );
 };
 
-export default BlogCard;
+export default BlogWithPlainTextCardGrid;

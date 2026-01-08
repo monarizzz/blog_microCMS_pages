@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import styles from "./BlogListCategories.module.css";
 import { BlogsByCategoryList } from "@/libs/schema/Category/category";
-import BlogCard from "@/commons/blog/components/BlogCard/BlogCard";
+import BlogCardGrid from "@/commons/blog/components/BlogCardGrid/BlogCardGrid";
 
 type Props = {
   queryId: string | null;
@@ -21,14 +21,12 @@ const BlogListByCategories: NextPage<Props> = ({
   return (
     <div className={styles.blogListByCategoriesRoot}>
       {filteredCategories.map((blogCategory) => (
-        <ul key={blogCategory.category.id} className={styles.content}>
-          <span className={styles.tag}>{blogCategory.category.name}</span>
-          <div className={styles.blog}>
-            <BlogCard
-              blogWithPlainTextList={blogCategory.blogWithPlainTextList}
-            />
-          </div>
-        </ul>
+        <div key={blogCategory.category.id} className={styles.content}>
+          <p className={styles.tag}>{blogCategory.category.name}</p>
+          <BlogCardGrid
+            blogWithPlainTextList={blogCategory.blogWithPlainTextList}
+          />
+        </div>
       ))}
     </div>
   );
