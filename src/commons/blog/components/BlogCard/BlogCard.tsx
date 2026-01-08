@@ -12,11 +12,11 @@ type Props = {
 const BlogWithPlainTextCardGrid: NextPage<Props> = ({ BlogWithPlainText }) => {
   return (
     <div className={styles.blogCardRoot}>
-      <p className={styles.tag}>
+      <div className={styles.tag}>
         {BlogWithPlainText.categories ? (
           <TagButton category={BlogWithPlainText.categories} maxLength={4} />
         ) : null}
-      </p>
+      </div>
       <div className={styles.content}>
         <Link href={`/article/${BlogWithPlainText.id}`}>
           <p className={styles.title}>{BlogWithPlainText.title}</p>

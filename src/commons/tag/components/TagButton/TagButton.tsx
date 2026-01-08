@@ -26,7 +26,6 @@ const TagButton: NextPage<Props> = ({ category, maxLength }) => {
           </Link>
         ) : (
           <span className={styles.tag} key={category.name}>
-            {" "}
             # {truncateText(category.name, maxLength)}
           </span>
         )
