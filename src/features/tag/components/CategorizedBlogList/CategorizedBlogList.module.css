@@ -1,0 +1,9 @@
+.categorizedBlogListRoot {
+  .categoryName {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .blogCard {
+    margin: 0;
+  }
+}

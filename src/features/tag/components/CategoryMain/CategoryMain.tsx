@@ -7,7 +7,7 @@ import {
   BlogsByCategoryList,
 } from "@/libs/schema/Category/category";
 import TagButton from "@/commons/tag/components/TagButton/TagButton";
-import BlogListByCategories from "../BlogListByCategories/BlogListByCategories";
+import CategorizedBlogList from "../CategorizedBlogList/CategorizedBlogList";
 import { TAG } from "@/libs/utils/tag/tag";
 import Image from "next/image";
 import { SVG_HOME } from "@/libs/utils/tag/home";
@@ -41,7 +41,7 @@ const CategoryMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
       <div className={styles.tag}>
         <TagButton category={category} />
       </div>
-      <BlogListByCategories
+      <CategorizedBlogList
         queryId={queryId}
         blogCategoryList={categoryWithBlogList}
       />

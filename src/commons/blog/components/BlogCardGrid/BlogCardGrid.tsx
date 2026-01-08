@@ -1,7 +1,7 @@
 import { BlogWithPlainTextList } from "@/libs/schema/Blog/blog";
 import { NextPage } from "next";
 import BlogCard from "../BlogCard/BlogCard";
-import styles from "./BlogCardGrid.module.scss";
+import styles from "./BlogCardGrid.module.css";
 
 type Props = {
   blogWithPlainTextList: BlogWithPlainTextList;
