@@ -23,28 +23,32 @@ const CategoryMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
   const size = 10;
   return (
     <div className={styles.tagMainRoot}>
-      <div className={styles.path}>
-        <Link href="/" className={styles.pathLink}>
-          <Image
-            src={SVG_HOME.SRC}
-            alt={SVG_HOME.ALT}
-            width={size}
-            height={size}
-          />
-          <span>{TAG.HOME}</span>
-        </Link>
-        <span className={styles.separator}>/</span>
-        <Link href={""} className={styles.pathLink}>
-          {TAG.CATEGORY}
-        </Link>
+      <div className={styles.header}>
+        <div className={styles.path}>
+          <Link href="/" className={styles.pathLink}>
+            <Image
+              src={SVG_HOME.SRC}
+              alt={SVG_HOME.ALT}
+              width={size}
+              height={size}
+            />
+            <span>{TAG.HOME}</span>
+          </Link>
+          <span className={styles.separator}>/</span>
+          <Link href={""} className={styles.pathLink}>
+            {TAG.CATEGORY}
+          </Link>
+        </div>
+        <div className={styles.tag}>
+          <TagButton category={category} />
+        </div>
       </div>
-      <div className={styles.tag}>
-        <TagButton category={category} />
+      <div className={styles.categorizedBlogList}>
+        <CategorizedBlogList
+          queryId={queryId}
+          blogCategoryList={categoryWithBlogList}
+        />
       </div>
-      <CategorizedBlogList
-        queryId={queryId}
-        blogCategoryList={categoryWithBlogList}
-      />
     </div>
   );
 };

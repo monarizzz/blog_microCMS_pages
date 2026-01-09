@@ -3,31 +3,37 @@
   max-width: 1300px;
   margin: 20px auto;
 }
-
-.path {
+.header {
   display: flex;
-  align-items: center;
-  gap: 0.5em;
-  font-size: 0.8em;
-  margin: 3em 0 2em 0;
-}
+  justify-content: space-between;
 
-.pathLink {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  color: #555;
-  text-decoration: none;
+  .path {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.8em;
+
+    .pathLink {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      color: #555;
+      text-decoration: none;
+    }
+
+    .separator {
+      color: #888;
+    }
+  }
+  .tag {
+    text-align: right;
+    margin: 70px 0 20px 0;
+  }
 }
 
 .pathLink:hover {
   text-decoration: underline;
 }
 
-.separator {
-  color: #888;
-}
-
-.tag {
-  text-align: right;
+.categorizedBlogList {
 }
