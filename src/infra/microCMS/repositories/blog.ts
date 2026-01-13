@@ -1,4 +1,4 @@
-import { client } from "@/libs/utils/microCMS/client";
+import { client } from "@/libs/microCMS/utils/client";
 import {
   GetBlogListRequest,
   GetBlogListResponse,
