@@ -1,5 +1,5 @@
 import { getCategoryWithBlogList } from "@/libs/blog/getCategoryWithBlogList";
-import CategoryMain from "@/features/tag/components/CategoryMain/CategoryMain";
+import CategoryMain from "@/features/category/components/CategoryMain/CategoryMain";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
 import {
   CategoryList,
