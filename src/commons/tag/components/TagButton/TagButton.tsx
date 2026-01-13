@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./TagButton.module.scss";
 import { NextPage } from "next";
 import { CategoryList } from "@/libs/schema/Category/category";
-import truncateText from "@/libs/blog/limitText";
+import truncateText from "@/features/article/utils/limitText";
 import { useRouter } from "next/router";
 
 export type Props = {

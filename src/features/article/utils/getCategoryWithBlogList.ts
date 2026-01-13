@@ -1,7 +1,7 @@
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
 import { BlogsByCategoryList } from "@/libs/schema/Category/category";
-import { getPlainText } from "@/libs/blog/getPlainText/getPlainText";
+import { getPlainText } from "@/features/article/utils/getPlainText";
 
 /**
  * カテゴリごとのブログ記事リストを取得し、各記事にプレーンテキストの要約を付与します。
