@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import Header from "@/features/Layout/Header/Header";
-import GithubBtn from "@/features/Layout/GithubBtn/GithubBtn";
+import Header from "@/commons/layout/components/Header/Header";
+import GithubBtn from "@/commons/layout/components/GithubBtn/GithubBtn";
 import { NextPage } from "next";
 import styles from "./LayoutMain.module.css";
 import { Session } from "next-auth";
