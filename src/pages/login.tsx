@@ -1,7 +1,7 @@
 import React from "react";
 import { useSession } from "next-auth/react";
 import { NextPage } from "next";
-import LoginPageMain from "@/features/login/LoginPageMain";
+import LoginPageMain from "@/features/login/components/LoginPageMain/LoginPageMain";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 
 const Login: NextPage = () => {

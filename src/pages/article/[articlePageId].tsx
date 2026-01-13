@@ -3,10 +3,10 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { CategoryList } from "@/libs/schema/Category/category";
 import { ArticleNavigation } from "@/libs/schema/Blog/articleNavigation";
-import pageNation from "@/features/article/pageNav/pageNavList";
+import pageNation from "@/features/article/utils/pageNavList";
 import ArticlePageMain from "@/features/article/components/ArticlePageMain/ArticlePageMain";
 import { useSession } from "next-auth/react";
-import Header from "@/features/Layout/Header/Header";
+import Header from "@/commons/layout/components/Header/Header";
 
 type Props = {
   blog: Blog;
