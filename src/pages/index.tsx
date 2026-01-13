@@ -4,9 +4,9 @@ import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
 import * as cheerio from "cheerio";
 import { CategoryList } from "@/libs/schema/Category/category";
-import { BlogWithPlainTextList } from "@/libs/schema/Blog/blog";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import { useSession } from "next-auth/react";
+import { BlogWithPlainTextList } from "@/features/article/types/blogWithPlainText";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainTextList;

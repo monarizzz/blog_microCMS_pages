@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import BlogCardGrid from "./BlogCardGrid";
-import { BlogWithPlainText } from "@/libs/schema/Blog/blog";
 import { CategoryList } from "@/libs/schema/Category/category";
+import { BlogWithPlainText } from "@/features/article/types/blogWithPlainText";
 
 const meta: Meta<typeof BlogCardGrid> = {
   component: BlogCardGrid,
