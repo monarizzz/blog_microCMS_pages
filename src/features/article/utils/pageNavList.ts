@@ -1,4 +1,4 @@
-import { AllArticleData } from "@/libs/schema/Blog/blog";
+import { AllArticleData } from "../types/allArticleData";
 
 const pageNavList = ({
   allArticleData,

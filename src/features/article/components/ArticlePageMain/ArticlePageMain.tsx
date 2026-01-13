@@ -4,7 +4,7 @@ import Link from "next/link";
 import { NextPage } from "next";
 import { Blog } from "@/libs/schema/Blog/blog";
 import { CategoryList } from "@/libs/schema/Category/category";
-import { ArticleNavigation } from "@/libs/schema/Blog/articleNavigation";
+import { ArticleNavigation } from "@/features/article/types/articleNavigation";
 import PostDate from "../PostDate/PostDate";
 import PageNav from "../PageNav/PageNav";
 import Toc from "../Toc/Toc";

@@ -1,4 +1,4 @@
-import { BlogWithPlainTextList } from "../Blog/blog";
+import { BlogWithPlainTextList } from "@/features/article/types/blogWithPlainText";
 
 export type Category = {
   id: string;

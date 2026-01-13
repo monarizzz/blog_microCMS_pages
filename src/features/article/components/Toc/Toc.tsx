@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import { TocList } from "@/libs/schema/Blog/Toc";
+import { TocList } from "@/features/article/types/toc";
 import styles from "./Toc.module.scss";
 
 type Props = {

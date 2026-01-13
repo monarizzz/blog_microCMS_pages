@@ -1,9 +1,9 @@
 import styles from "./HomePageMain.module.css";
 import { NextPage } from "next";
 import { CategoryList } from "@/libs/schema/Category/category";
-import { BlogWithPlainTextList } from "@/libs/schema/Blog/blog";
 import BlogCardGrid from "@/commons/blog/components/BlogCardGrid/BlogCardGrid";
 import { UTILS_HOME } from "@/libs/utils/article/home/home";
+import { BlogWithPlainTextList } from "@/features/article/types/blogWithPlainText";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainTextList;
