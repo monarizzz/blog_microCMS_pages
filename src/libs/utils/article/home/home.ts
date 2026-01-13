@@ -1,3 +1,3 @@
 export const UTILS_HOME = {
-  HOME: "HOME",
+  HOME: "記事一覧",
 };
