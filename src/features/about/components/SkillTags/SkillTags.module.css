@@ -1,0 +1,8 @@
+.SkillTagsRoot {
+  padding: 3px 18px;
+  border-radius: 8px;
+  background-color: #f0f1f5;
+  color: black;
+
+  font-family: var(--font-karla), sans-serif;
+}
