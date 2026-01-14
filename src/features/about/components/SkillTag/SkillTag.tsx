@@ -6,7 +6,7 @@ type Props = {
 };
 
 const SkillTags: NextPage<Props> = ({ skill }) => {
-  return <div className={styles.SkillTagsRoot}>{skill}</div>;
+  return <span className={styles.SkillTagsRoot}>{skill}</span>;
 };
 
 export default SkillTags;
