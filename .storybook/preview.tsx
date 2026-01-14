@@ -1,5 +1,12 @@
 import type { Preview } from "@storybook/nextjs-vite";
+import { Karla } from "next/font/google";
 import "../src/styles/globals.css";
+
+const karla = Karla({
+  subsets: ["latin"],
+  weight: "300",
+  variable: "--font-karla",
+});
 
 const preview: Preview = {
   parameters: {
@@ -17,6 +24,13 @@ const preview: Preview = {
       test: "todo",
     },
   },
+  decorators: [
+    (Story) => (
+      <div className={karla.variable}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default preview;
