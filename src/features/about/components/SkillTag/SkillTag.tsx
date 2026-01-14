@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import styles from "./SkillTags.module.css";
+import styles from "./SkillTag.module.css";
 
 type Props = {
   skill: string;
