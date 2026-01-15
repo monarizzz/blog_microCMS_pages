@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./PageNav.module.scss";
 import { NextPage } from "next";
-import { ArticleNavigation } from "@/features/article/types/articleNavigation";
-import { SVG_ARROW } from "@/libs/utils/article/arrow";
-import { PAGE_NAV } from "@/libs/utils/article/pageNav";
+import { SVG_ARROW } from "@/libs/utils/blog/arrow";
+import { PAGE_NAV } from "@/libs/utils/blog/pageNav";
+import { ArticleNavigation } from "../../types/articleNavigation";
 
 type Props = {
   articleNavigation: ArticleNavigation;

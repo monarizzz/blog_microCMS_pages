@@ -1,31 +1,31 @@
 import TagButton from "@/commons/tag/components/TagButton/TagButton";
-import styles from "./ArticlePage.module.scss";
+import styles from "./BlogPage.module.scss";
 import Link from "next/link";
 import { NextPage } from "next";
 import { Blog } from "@/libs/schema/Blog/blog";
-import { CategoryList } from "@/libs/schema/Category/category";
-import { ArticleNavigation } from "@/features/article/types/articleNavigation";
+import { Category } from "@/libs/schema/Category/category";
 import PostDate from "../PostDate/PostDate";
 import PageNav from "../PageNav/PageNav";
 import Toc from "../Toc/Toc";
-import { UTILS_ARTICLE } from "@/libs/utils/article/article";
-import tocFn from "@/features/article/utils/tocFn";
+import { UTILS_ARTICLE } from "@/libs/utils/blog/article";
+import { ArticleNavigation } from "../../types/articleNavigation";
+import tocFn from "../../utils/tocFn";
 
 type Props = {
   blog: Blog;
-  category: CategoryList;
+  category: Category[];
   articleNavigation: ArticleNavigation;
 };
 // TODO: 記事を右に寄せる
 
-const ArticlePageMain: NextPage<Props> = ({
+const BlogPageMain: NextPage<Props> = ({
   blog,
   category,
   articleNavigation,
 }) => {
   const toc = tocFn(blog);
   return (
-    <div className={styles.articlePageMainRoot}>
+    <div className={styles.blogPageMainRoot}>
       <div className={styles.detail}>
         <div className={styles.tagGroup}>
           <TagButton category={category} />
@@ -56,4 +56,4 @@ const ArticlePageMain: NextPage<Props> = ({
   );
 };
 
-export default ArticlePageMain;
+export default BlogPageMain;

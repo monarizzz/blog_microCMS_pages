@@ -1,11 +1,11 @@
 import { NextPage } from "next";
 import styles from "./CategorizedBlogList.module.css";
-import { BlogsByCategoryList } from "@/libs/schema/Category/category";
+import { BlogsByCategory } from "@/libs/schema/Category/category";
 import BlogCardGrid from "@/commons/blog/components/BlogCardGrid/BlogCardGrid";
 
 type Props = {
   queryId: string | null;
-  blogCategoryList: BlogsByCategoryList;
+  blogCategoryList: BlogsByCategory[];
 };
 
 const CategorizedBlogList: NextPage<Props> = ({

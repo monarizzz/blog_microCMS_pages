@@ -2,11 +2,11 @@ import { Blog } from "@/libs/schema/Blog/blog";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { getBlogList } from "@/infra/microCMS/repositories/blog";
 import { CategoryList } from "@/libs/schema/Category/category";
-import { ArticleNavigation } from "@/features/article/types/articleNavigation";
-import pageNation from "@/features/article/utils/pageNavList";
-import ArticlePageMain from "@/features/article/components/ArticlePageMain/ArticlePageMain";
+import { ArticleNavigation } from "@/features/blog/types/articleNavigation";
+import pageNation from "@/features/blog/utils/pageNavList";
 import { useSession } from "next-auth/react";
 import Header from "@/commons/layout/components/Header/Header";
+import BlogPageMain from "@/features/blog/components/BlogPageMain/BlogPageMain";
 
 type Props = {
   blog: Blog;
@@ -15,14 +15,14 @@ type Props = {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const articlePageId = context.params?.articlePageId?.toString();
-  const data = await getBlogList({ queries: { ids: `${articlePageId}` } });
+  const blogId = context.params?.blogId?.toString();
+  const data = await getBlogList({ queries: { ids: `${blogId}` } });
 
   const allArticleData = await getBlogList({
     queries: { fields: ["id", "title", "publishedAt"] },
   });
 
-  const articleNavigation = pageNation({ allArticleData, articlePageId });
+  const articleNavigation = pageNation({ allArticleData, blogId });
   return {
     props: {
       blog: data.contents[0],
@@ -38,7 +38,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = data.contents.map((idsObject) => ({
     params: {
-      articlePageId: idsObject.id,
+      blogId: idsObject.id,
     },
   }));
   return {
@@ -57,7 +57,7 @@ const ArticlePage: NextPage<Props> = ({
   return (
     <>
       <Header session={session} />
-      <ArticlePageMain
+      <BlogPageMain
         blog={blog}
         category={category}
         articleNavigation={articleNavigation}

@@ -1,16 +1,13 @@
-import { getCategoryWithBlogList } from "@/features/article/utils/getCategoryWithBlogList";
-import CategoryMain from "@/features/article/components/CategoryMain/CategoryMain";
 import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
-import {
-  CategoryList,
-  BlogsByCategoryList,
-} from "@/libs/schema/Category/category";
+import { CategoryList, BlogsByCategory } from "@/libs/schema/Category/category";
 import { GetStaticProps, NextPage } from "next";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import { useSession } from "next-auth/react";
+import { getCategoryWithBlogList } from "@/features/blog/utils/getCategoryWithBlogList";
+import CategoryMain from "@/features/blog/components/CategoryMain/CategoryMain";
 
 type Props = {
-  categoryWithBlogList: BlogsByCategoryList;
+  categoryWithBlogList: BlogsByCategory[];
   category: CategoryList;
 };
 

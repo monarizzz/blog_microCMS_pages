@@ -1,5 +1,5 @@
 import { Blog } from "@/libs/schema/Blog/blog";
 
-export type AllArticleData = {
+export type AllBlogData = {
   contents: Pick<Blog, "id" | "title" | "publishedAt">[];
 };
