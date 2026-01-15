@@ -4,19 +4,19 @@ import styles from "./PageNav.module.scss";
 import { NextPage } from "next";
 import { SVG_ARROW } from "@/libs/utils/blog/arrow";
 import { PAGE_NAV } from "@/libs/utils/blog/pageNav";
-import { ArticleNavigation } from "../../types/articleNavigation";
+import { BlogNavigation } from "../../types/blogNavigation";
 
 type Props = {
-  articleNavigation: ArticleNavigation;
+  blogNavigation: BlogNavigation;
 };
 
-const PageNav: NextPage<Props> = ({ articleNavigation }) => {
-  const { prevArticle, nextArticle } = articleNavigation;
+const PageNav: NextPage<Props> = ({ blogNavigation }) => {
+  const { prevBlog, nextBlog } = blogNavigation;
   const size = 7;
   return (
     <div className={styles.pageNavRoot}>
-      {prevArticle ? (
-        <Link href={`/article/${prevArticle.id}`} className={styles.button}>
+      {prevBlog ? (
+        <Link href={`/blog/${prevBlog.id}`} className={styles.button}>
           <Image
             src={SVG_ARROW.SRC}
             alt={SVG_ARROW.ALT}
@@ -26,18 +26,18 @@ const PageNav: NextPage<Props> = ({ articleNavigation }) => {
           />
           <div className={styles.content}>
             <span className={styles.text}>{PAGE_NAV.BACK}</span>
-            <span className={styles.title}>{prevArticle.title}</span>
+            <span className={styles.title}>{prevBlog.title}</span>
           </div>
         </Link>
       ) : null}
-      {nextArticle ? (
+      {nextBlog ? (
         <Link
-          href={`/article/${nextArticle.id}`}
+          href={`/blog/${nextBlog.id}`}
           className={`${styles.button} ${styles.nextLink}`}
         >
           <div className={styles.content}>
             <span className={styles.text}>{PAGE_NAV.NEXT}</span>
-            <span className={styles.title}>{nextArticle.title}</span>
+            <span className={styles.title}>{nextBlog.title}</span>
           </div>
           <Image
             src={SVG_ARROW.SRC}

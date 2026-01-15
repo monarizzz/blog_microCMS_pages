@@ -13,27 +13,27 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    articleNavigation: {
-      prevArticle: { id: "sample-blog", title: "サンプル記事のタイトル" },
-      nextArticle: { id: "sample-blog", title: "サンプル記事のタイトル" },
+    blogNavigation: {
+      prevBlog: { id: "sample-blog", title: "サンプル記事のタイトル" },
+      nextBlog: { id: "sample-blog", title: "サンプル記事のタイトル" },
     },
   },
 };
 
 export const OnlyNext: Story = {
   args: {
-    articleNavigation: {
-      prevArticle: null,
-      nextArticle: { id: "sample-blog", title: "サンプル記事のタイトル" },
+    blogNavigation: {
+      prevBlog: null,
+      nextBlog: { id: "sample-blog", title: "サンプル記事のタイトル" },
     },
   },
 };
 
 export const OnlyPrev: Story = {
   args: {
-    articleNavigation: {
-      prevArticle: { id: "sample-blog", title: "サンプル記事のタイトル" },
-      nextArticle: null,
+    blogNavigation: {
+      prevBlog: { id: "sample-blog", title: "サンプル記事のタイトル" },
+      nextBlog: null,
     },
   },
 };

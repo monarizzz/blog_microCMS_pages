@@ -7,22 +7,17 @@ import { Category } from "@/libs/schema/Category/category";
 import PostDate from "../PostDate/PostDate";
 import PageNav from "../PageNav/PageNav";
 import Toc from "../Toc/Toc";
-import { UTILS_ARTICLE } from "@/libs/utils/blog/article";
-import { ArticleNavigation } from "../../types/articleNavigation";
 import tocFn from "../../utils/tocFn";
+import { BlogNavigation } from "../../types/blogNavigation";
 
 type Props = {
   blog: Blog;
   category: Category[];
-  articleNavigation: ArticleNavigation;
+  blogNavigation: BlogNavigation;
 };
 // TODO: 記事を右に寄せる
 
-const BlogPageMain: NextPage<Props> = ({
-  blog,
-  category,
-  articleNavigation,
-}) => {
+const BlogPageMain: NextPage<Props> = ({ blog, category, blogNavigation }) => {
   const toc = tocFn(blog);
   return (
     <div className={styles.blogPageMainRoot}>
@@ -42,10 +37,10 @@ const BlogPageMain: NextPage<Props> = ({
             }}
           />
           <div className={styles.pageNav}>
-            <PageNav articleNavigation={articleNavigation} />
+            <PageNav blogNavigation={blogNavigation} />
           </div>
           <div className={styles.backLink}>
-            <Link href="/">{UTILS_ARTICLE.BACK}</Link>
+            <Link href="/">← 記事一覧に戻る</Link>
           </div>
         </div>
         <div className={styles.right}>
