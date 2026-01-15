@@ -47,7 +47,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-const ArticlePage: NextPage<Props> = ({ blog, category, blogNavigation }) => {
+const BlogPage: NextPage<Props> = ({ blog, category, blogNavigation }) => {
   const { data: session } = useSession();
 
   return (
@@ -62,4 +62,4 @@ const ArticlePage: NextPage<Props> = ({ blog, category, blogNavigation }) => {
   );
 };
 
-export default ArticlePage;
+export default BlogPage;
