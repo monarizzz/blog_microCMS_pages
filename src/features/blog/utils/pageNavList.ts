@@ -1,41 +1,40 @@
-import { AllBlogData } from "../types/allArticleData";
+import { AllBlogData } from "../types/allBlogData";
 
 const pageNavList = ({
-  allArticleData,
+  allBlogData,
   blogId,
 }: {
-  allArticleData: AllBlogData; // ここに配列型
+  allBlogData: AllBlogData; // ここに配列型
   blogId?: string; // ここに数値型
 }) => {
-  const sortedArticles = allArticleData.contents.sort(
+  const sortedBlogs = allBlogData.contents.sort(
     (a, b) =>
       new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
 
-  const currentIndex = sortedArticles.findIndex(
+  const currentIndex = sortedBlogs.findIndex(
     (sortedBlog) => sortedBlog.id === blogId
   );
 
   // 前の記事の比較
-  const prevArticle =
-    currentIndex > 0 ? sortedArticles[currentIndex - 1] : null;
+  const prevBlog = currentIndex > 0 ? sortedBlogs[currentIndex - 1] : null;
   // 次の記事の比較
-  const nextArticle =
-    currentIndex < sortedArticles.length - 1
-      ? sortedArticles[currentIndex + 1]
+  const nextBlog =
+    currentIndex < sortedBlogs.length - 1
+      ? sortedBlogs[currentIndex + 1]
       : null;
 
   return {
-    prevArticle: prevArticle
+    prevBlog: prevBlog
       ? {
-          id: prevArticle.id,
-          title: prevArticle.title,
+          id: prevBlog.id,
+          title: prevBlog.title,
         }
       : null,
-    nextArticle: nextArticle
+    nextBlog: nextBlog
       ? {
-          id: nextArticle.id,
-          title: nextArticle.title,
+          id: nextBlog.id,
+          title: nextBlog.title,
         }
       : null,
   };
