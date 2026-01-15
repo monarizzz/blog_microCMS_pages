@@ -1,7 +1,7 @@
 import styles from "./PostDate.module.css";
 import dayjs from "dayjs";
 import { NextPage } from "next";
-import { SVG_UPDATE } from "@/libs/utils/article/update";
+import { SVG_UPDATE } from "@/libs/utils/blog/update";
 import { Blog } from "@/libs/schema/Blog/blog";
 import Image from "next/image";
 

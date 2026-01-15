@@ -3,7 +3,7 @@ import styles from "./BlogCard.module.css";
 import RelativeDate from "@/commons/date/components/RelativeDate/RelativeDate";
 import TagButton from "@/commons/tag/components/TagButton/TagButton";
 import { NextPage } from "next";
-import { BlogWithPlainText } from "@/features/article/types/blogWithPlainText";
+import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";
 
 type Props = {
   BlogWithPlainText: BlogWithPlainText;
@@ -18,7 +18,7 @@ const BlogWithPlainTextCardGrid: NextPage<Props> = ({ BlogWithPlainText }) => {
         ) : null}
       </div>
       <div className={styles.content}>
-        <Link href={`/article/${BlogWithPlainText.id}`}>
+        <Link href={`/blog/${BlogWithPlainText.id}`}>
           <p className={styles.title}>{BlogWithPlainText.title}</p>
           <p className={styles.date}>
             {RelativeDate(BlogWithPlainText.publishedAt)}{" "}

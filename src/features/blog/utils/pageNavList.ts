@@ -1,11 +1,11 @@
-import { AllArticleData } from "../types/allArticleData";
+import { AllBlogData } from "../types/allArticleData";
 
 const pageNavList = ({
   allArticleData,
-  articlePageId,
+  blogId,
 }: {
-  allArticleData: AllArticleData; // ここに配列型
-  articlePageId?: string; // ここに数値型
+  allArticleData: AllBlogData; // ここに配列型
+  blogId?: string; // ここに数値型
 }) => {
   const sortedArticles = allArticleData.contents.sort(
     (a, b) =>
@@ -13,7 +13,7 @@ const pageNavList = ({
   );
 
   const currentIndex = sortedArticles.findIndex(
-    (sortedBlog) => sortedBlog.id === articlePageId
+    (sortedBlog) => sortedBlog.id === blogId
   );
 
   // 前の記事の比較

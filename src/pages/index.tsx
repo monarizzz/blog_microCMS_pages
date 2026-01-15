@@ -6,10 +6,10 @@ import * as cheerio from "cheerio";
 import { CategoryList } from "@/libs/schema/Category/category";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import { useSession } from "next-auth/react";
-import { BlogWithPlainTextList } from "@/features/article/types/blogWithPlainText";
+import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";
 
 type Props = {
-  blogsWithPlainText: BlogWithPlainTextList;
+  blogsWithPlainText: BlogWithPlainText[];
   category: CategoryList;
 };
 

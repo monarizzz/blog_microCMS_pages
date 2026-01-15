@@ -2,10 +2,7 @@ import styles from "./CategoryMain.module.css";
 import { useRouter } from "next/router";
 import { NextPage } from "next";
 import Link from "next/link";
-import {
-  CategoryList,
-  BlogsByCategoryList,
-} from "@/libs/schema/Category/category";
+import { CategoryList, BlogsByCategory } from "@/libs/schema/Category/category";
 import TagButton from "@/commons/tag/components/TagButton/TagButton";
 import CategorizedBlogList from "../CategorizedBlogList/CategorizedBlogList";
 import { TAG } from "@/libs/utils/tag/tag";
@@ -14,7 +11,7 @@ import { SVG_HOME } from "@/libs/utils/tag/home";
 
 type Props = {
   category: CategoryList;
-  categoryWithBlogList: BlogsByCategoryList;
+  categoryWithBlogList: BlogsByCategory[];
 };
 
 const CategoryMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {

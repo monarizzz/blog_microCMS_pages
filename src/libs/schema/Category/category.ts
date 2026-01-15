@@ -1,4 +1,4 @@
-import { BlogWithPlainTextList } from "@/features/article/types/blogWithPlainText";
+import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";
 
 export type Category = {
   id: string;
@@ -10,8 +10,7 @@ export type BlogsByCategory = {
     name: string;
     id: string;
   };
-  blogWithPlainTextList: BlogWithPlainTextList;
+  blogWithPlainTextList: BlogWithPlainText[];
 };
 
 export type CategoryList = Category[];
-export type BlogsByCategoryList = BlogsByCategory[];

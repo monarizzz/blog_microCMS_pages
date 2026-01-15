@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SVG_GITHUB } from "@/libs/utils/article/github";
+import { SVG_GITHUB } from "@/libs/utils/blog/github";
 import styles from "./GithubBtn.module.scss";
 import { NextPage } from "next";
 
