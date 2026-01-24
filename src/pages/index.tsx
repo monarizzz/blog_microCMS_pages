@@ -1,7 +1,7 @@
 import HomeMain from "@/features/home/components/HomePageMain/HomePageMain";
 import { GetStaticProps, NextPage } from "next";
-import { getBlogList } from "@/infra/microCMS/repositories/contens/getBlogList";
-import { getCategoriesList } from "@/infra/microCMS/repositories/contens/getCategoriesList";
+import { getBlogList } from "@/infra/microCMS/repositories/contents/getBlogList";
+import { getCategoriesList } from "@/infra/microCMS/repositories/contents/getCategoriesList";
 import * as cheerio from "cheerio";
 import { CategoryList } from "@/libs/schema/contents/Category/category";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";

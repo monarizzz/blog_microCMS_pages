@@ -1,5 +1,5 @@
-import { getBlogList } from "@/infra/microCMS/repositories/contens/getBlogList";
-import { getCategoriesList } from "@/infra/microCMS/repositories/contens/getCategoriesList";
+import { getBlogList } from "@/infra/microCMS/repositories/contents/getBlogList";
+import { getCategoriesList } from "@/infra/microCMS/repositories/contents/getCategoriesList";
 import { BlogsByCategory } from "@/libs/schema/contents/Category/category";
 import { getPlainText } from "@/features/blog/utils/getPlainText";
 

@@ -1,6 +1,6 @@
 import { Blog } from "@/libs/schema/contents/Blog/blog";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { getBlogList } from "@/infra/microCMS/repositories/contens/getBlogList";
+import { getBlogList } from "@/infra/microCMS/repositories/contents/getBlogList";
 import { CategoryList } from "@/libs/schema/contents/Category/category";
 import { BlogNavigation } from "@/features/blog/types/blogNavigation";
 import pageNation from "@/features/blog/utils/pageNavList";

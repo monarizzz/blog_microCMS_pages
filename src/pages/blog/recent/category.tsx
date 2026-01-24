@@ -1,4 +1,4 @@
-import { getCategoriesList } from "@/infra/microCMS/repositories/contens/getCategoriesList";
+import { getCategoriesList } from "@/infra/microCMS/repositories/contents/getCategoriesList";
 import {
   CategoryList,
   BlogsByCategory,
