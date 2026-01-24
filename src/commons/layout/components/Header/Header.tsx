@@ -24,9 +24,9 @@ const Header: NextPage<Props> = ({ session }) => {
         <Link href="/blog/recent/category">
           <span className={styles.button}>{HEADER.CATEGORY}</span>
         </Link>
-        <Link href="/about">
+        {/* <Link href="/about">
           <span className={styles.button}>{HEADER.ABOUT}</span>
-        </Link>
+        </Link> */}
       </span>
     </div>
   );
