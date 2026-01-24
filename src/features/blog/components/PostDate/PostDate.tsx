@@ -2,7 +2,7 @@ import styles from "./PostDate.module.css";
 import dayjs from "dayjs";
 import { NextPage } from "next";
 import { SVG_UPDATE } from "@/libs/utils/blog/update";
-import { Blog } from "@/libs/schema/Blog/blog";
+import { Blog } from "@/libs/schema/contents/Blog/blog";
 import Image from "next/image";
 
 type Props = {

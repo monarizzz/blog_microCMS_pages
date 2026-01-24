@@ -1,4 +1,4 @@
-import { Blog } from "@/libs/schema/Blog/blog";
+import { Blog } from "@/libs/schema/contents/Blog/blog";
 
 export type AllBlogData = {
   contents: Pick<Blog, "id" | "title" | "publishedAt">[];

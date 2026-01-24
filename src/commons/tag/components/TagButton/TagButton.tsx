@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./TagButton.module.scss";
 import { NextPage } from "next";
-import { CategoryList } from "@/libs/schema/Category/category";
+import { CategoryList } from "@/libs/schema/contents/Category/category";
 import { useRouter } from "next/router";
 import truncateText from "@/features/blog/utils/limitText";
 
@@ -28,7 +28,7 @@ const TagButton: NextPage<Props> = ({ category, maxLength }) => {
           <span className={styles.tag} key={category.name}>
             # {truncateText(category.name, maxLength)}
           </span>
-        )
+        ),
       )}
     </div>
   );

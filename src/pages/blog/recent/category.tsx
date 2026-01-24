@@ -1,5 +1,8 @@
-import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
-import { CategoryList, BlogsByCategory } from "@/libs/schema/Category/category";
+import { getCategoriesList } from "@/infra/microCMS/repositories/contens/getCategoriesList";
+import {
+  CategoryList,
+  BlogsByCategory,
+} from "@/libs/schema/contents/Category/category";
 import { GetStaticProps, NextPage } from "next";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import { useSession } from "next-auth/react";

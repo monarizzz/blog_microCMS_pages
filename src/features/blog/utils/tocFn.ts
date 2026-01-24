@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { Blog } from "@/libs/schema/Blog/blog";
+import { Blog } from "@/libs/schema/contents/Blog/blog";
 
 const tocFn = ({ body }: Blog) => {
   const $ = cheerio.load(body);

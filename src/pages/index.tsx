@@ -1,9 +1,9 @@
 import HomeMain from "@/features/home/components/HomePageMain/HomePageMain";
 import { GetStaticProps, NextPage } from "next";
-import { getBlogList } from "@/infra/microCMS/repositories/blog";
-import { getCategoriesList } from "@/infra/microCMS/repositories/categories";
+import { getBlogList } from "@/infra/microCMS/repositories/contens/getBlogList";
+import { getCategoriesList } from "@/infra/microCMS/repositories/contens/getCategoriesList";
 import * as cheerio from "cheerio";
-import { CategoryList } from "@/libs/schema/Category/category";
+import { CategoryList } from "@/libs/schema/contents/Category/category";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import { useSession } from "next-auth/react";
 import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";

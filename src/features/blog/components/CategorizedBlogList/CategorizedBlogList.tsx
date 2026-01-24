@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import styles from "./CategorizedBlogList.module.css";
-import { BlogsByCategory } from "@/libs/schema/Category/category";
+import { BlogsByCategory } from "@/libs/schema/contents/Category/category";
 import BlogCardGrid from "@/commons/blog/components/BlogCardGrid/BlogCardGrid";
 
 type Props = {
@@ -14,7 +14,7 @@ const CategorizedBlogList: NextPage<Props> = ({
 }) => {
   const filteredCategories = queryId
     ? blogCategoryList.filter(
-        (blogCategory) => blogCategory.category.id === queryId
+        (blogCategory) => blogCategory.category.id === queryId,
       )
     : blogCategoryList;
 

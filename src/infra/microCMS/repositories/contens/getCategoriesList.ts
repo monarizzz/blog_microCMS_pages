@@ -2,7 +2,7 @@ import { client } from "@/libs/microCMS/utils/client";
 import {
   GetBlogListRequest,
   GetBlogListResponse,
-} from "@/infra/microCMS//api/categories";
+} from "../../entities/contents/blog";
 
 export const getCategoriesList = async ({ queries }: GetBlogListRequest) => {
   return await client.getList<GetBlogListResponse>({

@@ -1,6 +1,6 @@
 import styles from "./HomePageMain.module.css";
 import { NextPage } from "next";
-import { CategoryList } from "@/libs/schema/Category/category";
+import { CategoryList } from "@/libs/schema/contents/Category/category";
 import BlogCardGrid from "@/commons/blog/components/BlogCardGrid/BlogCardGrid";
 import { UTILS_HOME } from "@/libs/utils/blog/home/home";
 import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";

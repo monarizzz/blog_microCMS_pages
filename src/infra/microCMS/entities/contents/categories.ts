@@ -1,5 +1,5 @@
+import { Category } from "@/libs/schema/contents/Category/category";
 import { MicroCMSQueries } from "microcms-js-sdk";
-import { Blog } from "../../../libs/schema/Blog/blog";
 
 export type GetBlogListRequest = { queries: MicroCMSQueries };
-export type GetBlogListResponse = Blog;
+export type GetBlogListResponse = Category;
