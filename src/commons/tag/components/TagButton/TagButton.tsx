@@ -17,7 +17,7 @@ const TagButton: NextPage<Props> = ({ category, maxLength }) => {
   return (
     <div className={styles.tagButtonRoot}>
       {category.slice().map((category) =>
-        category.id !== query?.toString() ? (
+        category.id !== query ? (
           <Link
             href={`/blog?id=${category.id}`}
             className={styles.linkTag}
