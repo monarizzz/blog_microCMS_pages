@@ -1,0 +1,32 @@
+import { getBlogList } from "@/infra/microCMS/repositories/contents/getBlogList";
+import pageNation from "@/features/blog/utils/pageNavList";
+import BlogPageMain from "@/features/blog/components/BlogPageMain/BlogPageMain";
+
+export async function generateStaticParams() {
+  const data = await getBlogList({ queries: { fields: ["id"] } });
+  return data.contents.map((blog) => ({
+    id: blog.id,
+  }));
+}
+
+const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
+  const data = await getBlogList({ queries: { ids: `${id}` } });
+  const allBlogData = await getBlogList({
+    queries: { fields: ["id", "title", "publishedAt"] },
+  });
+  const blogNavigation = pageNation({ allBlogData, id });
+  // const { data: session } = useSession();
+  return (
+    <>
+      {/* <Header session={session} /> */}
+      <BlogPageMain
+        blog={data.contents[0]}
+        category={data.contents[0].categories}
+        blogNavigation={blogNavigation}
+      />
+    </>
+  );
+};
+
+export default BlogPage;

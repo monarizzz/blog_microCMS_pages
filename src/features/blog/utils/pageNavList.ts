@@ -2,18 +2,18 @@ import { AllBlogData } from "../types/allBlogData";
 
 const pageNavList = ({
   allBlogData,
-  blogId,
+  id,
 }: {
   allBlogData: AllBlogData; // ここに配列型
-  blogId?: string; // ここに数値型
+  id?: string; // ここに数値型
 }) => {
   const sortedBlogs = allBlogData.contents.sort(
     (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
 
   const currentIndex = sortedBlogs.findIndex(
-    (sortedBlog) => sortedBlog.id === blogId
+    (sortedBlog) => sortedBlog.id === id,
   );
 
   // 前の記事の比較
