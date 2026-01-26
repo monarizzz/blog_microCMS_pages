@@ -37,7 +37,7 @@ const BlogMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
             <span>{TAG.HOME}</span>
           </Link>
           <span className={styles.separator}>/</span>
-          <Link href={""} className={styles.pathLink}>
+          <Link href={"/blog"} className={styles.pathLink}>
             {TAG.CATEGORY}
           </Link>
         </div>
