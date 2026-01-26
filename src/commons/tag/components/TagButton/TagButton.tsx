@@ -13,13 +13,13 @@ export type Props = {
 };
 
 const TagButton: NextPage<Props> = ({ category, maxLength }) => {
-  const query = useSearchParams();
+  const query = useSearchParams()?.get("id");
   return (
     <div className={styles.tagButtonRoot}>
       {category.slice().map((category) =>
         category.id !== query?.toString() ? (
           <Link
-            href={`/blog/recent/category?id=${category.id}`}
+            href={`/blog?id=${category.id}`}
             className={styles.linkTag}
             key={category.name}
           >
