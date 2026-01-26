@@ -1,6 +1,9 @@
 import { getBlogList } from "@/infra/microCMS/repositories/contents/getBlogList";
 import pageNation from "@/features/blog/utils/pageNavList";
 import BlogPageMain from "@/features/blog/components/BlogPageMain/BlogPageMain";
+import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
+import { authOptions } from "@/infra/auth/authOptions";
+import { getServerSession } from "next-auth";
 
 export async function generateStaticParams() {
   const data = await getBlogList({ queries: { fields: ["id"] } });
@@ -16,16 +19,17 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     queries: { fields: ["id", "title", "publishedAt"] },
   });
   const blogNavigation = pageNation({ allBlogData, id });
-  // const { data: session } = useSession();
+
+  const session = await getServerSession(authOptions);
+
   return (
-    <>
-      {/* <Header session={session} /> */}
+    <LayoutMain session={session}>
       <BlogPageMain
         blog={data.contents[0]}
         category={data.contents[0].categories}
         blogNavigation={blogNavigation}
       />
-    </>
+    </LayoutMain>
   );
 };
 

@@ -5,8 +5,9 @@ import { getCategoriesList } from "@/infra/microCMS/repositories/contents/getCat
 import * as cheerio from "cheerio";
 import { CategoryList } from "@/libs/schema/contents/Category/category";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
-import { useSession } from "next-auth/react";
 import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/infra/auth/authOptions";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainText[];
@@ -56,15 +57,15 @@ const HomePage: NextPage<Props> = async () => {
     };
   });
 
-  // const { data: session } = useSession();
+  const session = await getServerSession(authOptions);
 
   return (
-    // <LayoutMain session={session}>
-    <HomeMain
-      blogsWithPlainText={blogsWithPlainText}
-      category={categoryData.contents}
-    />
-    /* </LayoutMain> */
+    <LayoutMain session={session}>
+      <HomeMain
+        blogsWithPlainText={blogsWithPlainText}
+        category={categoryData.contents}
+      />
+    </LayoutMain>
   );
 };
 

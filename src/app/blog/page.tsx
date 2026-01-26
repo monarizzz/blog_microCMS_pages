@@ -5,9 +5,10 @@ import {
 } from "@/libs/schema/contents/Category/category";
 import { NextPage } from "next";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
-import { useSession } from "next-auth/react";
 import { getCategoryWithBlogList } from "@/features/blog/utils/getCategoryWithBlogList";
 import BlogMain from "@/features/blog/components/BlogMain/BlogMain";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/infra/auth/authOptions";
 
 type Props = {
   categoryWithBlogList: BlogsByCategory[];
@@ -19,16 +20,15 @@ const BlogPage: NextPage<Props> = async () => {
     queries: { limit: 10, fields: ["id", "name"] },
   });
   const blogCategoryListData = await getCategoryWithBlogList();
-
-  // const { data: session } = useSession();
+  const session = await getServerSession(authOptions);
 
   return (
-    // <LayoutMain session={session}>
-    <BlogMain
-      category={categoryData.contents}
-      categoryWithBlogList={blogCategoryListData}
-    />
-    // </LayoutMain>
+    <LayoutMain session={session}>
+      <BlogMain
+        category={categoryData.contents}
+        categoryWithBlogList={blogCategoryListData}
+      />
+    </LayoutMain>
   );
 };
 
