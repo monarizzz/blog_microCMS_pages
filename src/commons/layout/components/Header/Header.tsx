@@ -21,7 +21,7 @@ const Header: NextPage<Props> = ({ session }) => {
         <Link href="/">
           <span className={styles.button}>{HEADER.HOME}</span>
         </Link>
-        <Link href="/blog/recent/category">
+        <Link href="/blog">
           <span className={styles.button}>{HEADER.CATEGORY}</span>
         </Link>
         {/* <Link href="/about">
