@@ -18,7 +18,9 @@
     border-radius: 13px;
     padding: 8px 13px;
     opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
     font-size: 13px;
     font-weight: bold;
     pointer-events: none;

@@ -2,8 +2,8 @@
   font-size: 0.9em;
   color: #888;
   display: flex;
+  justify-content: flex-end;
   gap: 13px;
-  align-items: center;
 
   .update {
     display: flex;

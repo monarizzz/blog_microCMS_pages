@@ -26,7 +26,7 @@ const BlogMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
   return (
     <div className={styles.tagMainRoot}>
       <div className={styles.header}>
-        <div className={styles.path}>
+        {/* <div className={styles.path}>
           <Link href="/" className={styles.pathLink}>
             <Image
               src={SVG_HOME.SRC}
@@ -40,7 +40,7 @@ const BlogMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
           <Link href={"/blog"} className={styles.pathLink}>
             {TAG.CATEGORY}
           </Link>
-        </div>
+        </div> */}
         <div className={styles.tag}>
           <TagButton category={category} />
         </div>

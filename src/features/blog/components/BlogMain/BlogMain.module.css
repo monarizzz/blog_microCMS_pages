@@ -4,8 +4,8 @@
   margin: 20px auto;
 }
 .header {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
 
   .path {
     display: flex;
