@@ -21,7 +21,7 @@ type Props = {
 
 const BlogMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
   // TODO:子でパスを取得するように変更、親からクライアントで動作しているため
-  const router = useSearchParams()?.get("id")?.toString();
+  const queryId = useSearchParams()?.get("cat") ?? undefined;
   const size = 10;
   return (
     <div className={styles.tagMainRoot}>
@@ -47,7 +47,7 @@ const BlogMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
       </div>
       <div className={styles.categorizedBlogList}>
         <CategorizedBlogList
-          queryId={router}
+          queryId={queryId}
           blogCategoryList={categoryWithBlogList}
         />
       </div>
