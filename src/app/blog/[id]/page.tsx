@@ -1,6 +1,6 @@
 import { getBlogList } from "@/infra/microCMS/repositories/contents/getBlogList";
 import pageNation from "@/features/blog/utils/pageNavList";
-import BlogPageMain from "@/features/blog/components/BlogPageMain/BlogPageMain";
+import BlogDetail from "@/features/blog/components/BlogDetail/BlogDetail";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import { authOptions } from "@/infra/auth/authOptions";
 import { getServerSession } from "next-auth";
@@ -24,7 +24,7 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <LayoutMain session={session}>
-      <BlogPageMain
+      <BlogDetail
         blog={data.contents[0]}
         category={data.contents[0].categories}
         blogNavigation={blogNavigation}

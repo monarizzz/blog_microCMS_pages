@@ -9,13 +9,12 @@
     color: black;
     display: inline;
     text-align: left;
-    margin-left: 2em;
+    margin-left: clamp(0.5em, 3vw, 2em);
     color: #5b5e7d;
   }
   .group {
     float: right;
-    margin-right: 1em;
-    margin-top: 0.5em;
+    margin: 0.5em 1em 0 0;
 
     .button {
       font-size: 1em;
@@ -27,7 +26,6 @@
       position: relative;
       text-decoration: none;
       transition: 0.3s;
-      margin-left: 1em;
     }
   }
 }
