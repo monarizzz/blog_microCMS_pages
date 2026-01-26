@@ -1,9 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./TagButton.module.scss";
 import { NextPage } from "next";
 import { CategoryList } from "@/libs/schema/contents/Category/category";
-import { useRouter } from "next/router";
 import truncateText from "@/features/blog/utils/limitText";
+import { useSearchParams } from "next/navigation";
 
 export type Props = {
   category: CategoryList;
@@ -11,14 +13,13 @@ export type Props = {
 };
 
 const TagButton: NextPage<Props> = ({ category, maxLength }) => {
-  const router = useRouter();
-  const queryId = router.query["id"] ? String(router.query["id"]) : null;
+  const query = useSearchParams()?.get("id");
   return (
     <div className={styles.tagButtonRoot}>
       {category.slice().map((category) =>
-        category.id !== queryId ? (
+        category.id !== query ? (
           <Link
-            href={`/blog/recent/category?id=${category.id}`}
+            href={`/blog?id=${category.id}`}
             className={styles.linkTag}
             key={category.name}
           >

@@ -1,9 +1,13 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import "@/styles/globals.css";
 
-export default function Document() {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <Html lang="jp">
-      <Head>
+    <html lang="jp">
+      <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
           rel="stylesheet"
@@ -12,11 +16,8 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
           rel="stylesheet"
         ></link>
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
+      </head>
+      <body>{children}</body>
+    </html>
   );
 }

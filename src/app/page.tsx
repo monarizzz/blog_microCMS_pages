@@ -5,15 +5,42 @@ import { getCategoriesList } from "@/infra/microCMS/repositories/contents/getCat
 import * as cheerio from "cheerio";
 import { CategoryList } from "@/libs/schema/contents/Category/category";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
-import { useSession } from "next-auth/react";
 import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/infra/auth/authOptions";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainText[];
   category: CategoryList;
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+// export const getStaticProps: GetStaticProps<Props> = async () => {
+//   const data = await getBlogList({ queries: { limit: 15 } });
+//   const categoryData = await getCategoriesList({ queries: { limit: 10 } });
+
+//   const blogsWithPlainText = data.contents.map((blog) => {
+//     const $ = cheerio.load(blog.body);
+//     // brタグを改行文字に置換
+//     $("br").replaceWith("\n");
+//     // ブロック要素の末尾に改行文字を追加
+//     $("h1, h2, h3, h4, h5, h6, p, li, blockquote").append("\n");
+//     const plainText = $.text().trim().slice(0, 150);
+//     return {
+//       ...blog,
+//       plainTextBody: plainText,
+//     };
+//   });
+
+//   return {
+//     props: {
+//       blogsWithPlainText: blogsWithPlainText,
+//       category: categoryData.contents,
+//     },
+//     revalidate: 86400,
+//   };
+// };
+
+const HomePage: NextPage<Props> = async () => {
   const data = await getBlogList({ queries: { limit: 15 } });
   const categoryData = await getCategoriesList({ queries: { limit: 10 } });
 
@@ -30,21 +57,14 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     };
   });
 
-  return {
-    props: {
-      blogsWithPlainText: blogsWithPlainText,
-      category: categoryData.contents,
-    },
-    revalidate: 86400,
-  };
-};
-
-const HomePage: NextPage<Props> = ({ blogsWithPlainText, category }) => {
-  const { data: session } = useSession();
+  const session = await getServerSession(authOptions);
 
   return (
     <LayoutMain session={session}>
-      <HomeMain blogsWithPlainText={blogsWithPlainText} category={category} />
+      <HomeMain
+        blogsWithPlainText={blogsWithPlainText}
+        category={categoryData.contents}
+      />
     </LayoutMain>
   );
 };

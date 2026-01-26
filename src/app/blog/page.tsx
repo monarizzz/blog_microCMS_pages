@@ -3,43 +3,33 @@ import {
   CategoryList,
   BlogsByCategory,
 } from "@/libs/schema/contents/Category/category";
-import { GetStaticProps, NextPage } from "next";
+import { NextPage } from "next";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
-import { useSession } from "next-auth/react";
 import { getCategoryWithBlogList } from "@/features/blog/utils/getCategoryWithBlogList";
-import CategoryMain from "@/features/blog/components/CategoryMain/CategoryMain";
+import BlogMain from "@/features/blog/components/BlogMain/BlogMain";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/infra/auth/authOptions";
 
 type Props = {
   categoryWithBlogList: BlogsByCategory[];
   category: CategoryList;
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+const BlogPage: NextPage<Props> = async () => {
   const categoryData = await getCategoriesList({
     queries: { limit: 10, fields: ["id", "name"] },
   });
   const blogCategoryListData = await getCategoryWithBlogList();
-
-  return {
-    props: {
-      category: categoryData.contents,
-      categoryWithBlogList: blogCategoryListData,
-    },
-    revalidate: 86400,
-  };
-};
-
-const CategoryPage: NextPage<Props> = ({ category, categoryWithBlogList }) => {
-  const { data: session } = useSession();
+  const session = await getServerSession(authOptions);
 
   return (
     <LayoutMain session={session}>
-      <CategoryMain
-        category={category}
-        categoryWithBlogList={categoryWithBlogList}
+      <BlogMain
+        category={categoryData.contents}
+        categoryWithBlogList={blogCategoryListData}
       />
     </LayoutMain>
   );
 };
 
-export default CategoryPage;
+export default BlogPage;

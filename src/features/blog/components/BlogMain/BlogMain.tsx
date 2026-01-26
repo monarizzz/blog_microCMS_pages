@@ -1,5 +1,6 @@
-import styles from "./CategoryMain.module.css";
-import { useRouter } from "next/router";
+"use client";
+
+import styles from "./BlogMain.module.css";
 import { NextPage } from "next";
 import Link from "next/link";
 import {
@@ -11,15 +12,16 @@ import CategorizedBlogList from "../CategorizedBlogList/CategorizedBlogList";
 import { TAG } from "@/libs/utils/tag/tag";
 import Image from "next/image";
 import { SVG_HOME } from "@/libs/utils/tag/home";
+import { useSearchParams } from "next/navigation";
 
 type Props = {
   category: CategoryList;
   categoryWithBlogList: BlogsByCategory[];
 };
 
-const CategoryMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
-  const router = useRouter();
-  const queryId = router.query["id"] ? String(router.query["id"]) : null;
+const BlogMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
+  // TODO:子でパスを取得するように変更、親からクライアントで動作しているため
+  const router = useSearchParams()?.get("id")?.toString();
   const size = 10;
   return (
     <div className={styles.tagMainRoot}>
@@ -35,7 +37,7 @@ const CategoryMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
             <span>{TAG.HOME}</span>
           </Link>
           <span className={styles.separator}>/</span>
-          <Link href={""} className={styles.pathLink}>
+          <Link href={"/blog"} className={styles.pathLink}>
             {TAG.CATEGORY}
           </Link>
         </div>
@@ -45,7 +47,7 @@ const CategoryMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
       </div>
       <div className={styles.categorizedBlogList}>
         <CategorizedBlogList
-          queryId={queryId}
+          queryId={router}
           blogCategoryList={categoryWithBlogList}
         />
       </div>
@@ -53,4 +55,4 @@ const CategoryMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
   );
 };
 
-export default CategoryMain;
+export default BlogMain;

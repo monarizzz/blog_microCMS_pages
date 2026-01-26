@@ -1,3 +1,5 @@
+"use client";
+
 import { Session } from "@/infra/auth/google/session";
 import { NextPage } from "next";
 import styles from "./LoginPageMain.module.scss";
