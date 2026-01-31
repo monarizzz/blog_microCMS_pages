@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import styles from "./TagButton.module.scss";
-import { NextPage } from "next";
 import { CategoryList } from "@/libs/schema/contents/Category/category";
 import truncateText from "@/features/blog/utils/limitText";
 import { useSearchParams } from "next/navigation";
@@ -12,7 +11,7 @@ export type Props = {
   maxLength?: number;
 };
 
-const TagButton: NextPage<Props> = ({ category, maxLength }) => {
+const TagButton = ({ category, maxLength }: Props) => {
   const query = useSearchParams()?.get("cat");
   return (
     <div className={styles.tagButtonRoot}>

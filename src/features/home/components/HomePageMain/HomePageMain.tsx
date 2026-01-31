@@ -1,5 +1,4 @@
 import styles from "./HomePageMain.module.css";
-import { NextPage } from "next";
 import { CategoryList } from "@/libs/schema/contents/Category/category";
 import BlogCardGrid from "@/commons/blog/components/BlogCardGrid/BlogCardGrid";
 import { UTILS_HOME } from "@/libs/utils/blog/home/home";
@@ -10,7 +9,7 @@ type Props = {
   category: CategoryList;
 };
 
-const HomeMain: NextPage<Props> = ({ blogsWithPlainText }) => {
+const HomeMain = ({ blogsWithPlainText }: Props) => {
   return (
     <div className={styles.homePageRoot}>
       <p className={styles.title}>{UTILS_HOME.HOME}</p>

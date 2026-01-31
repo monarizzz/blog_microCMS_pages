@@ -1,22 +1,14 @@
 import HomeMain from "@/features/home/components/HomePageMain/HomePageMain";
-import { GetStaticProps, NextPage } from "next";
 import { getBlogList } from "@/infra/microCMS/repositories/contents/getBlogList";
 import { getCategoriesList } from "@/infra/microCMS/repositories/contents/getCategoriesList";
 import * as cheerio from "cheerio";
-import { CategoryList } from "@/libs/schema/contents/Category/category";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
-import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/infra/auth/authOptions";
 
-type Props = {
-  blogsWithPlainText: BlogWithPlainText[];
-  category: CategoryList;
-};
-
 // TODO:revalidateの設定
 
-const HomePage: NextPage<Props> = async () => {
+const HomePage = async () => {
   const data = await getBlogList({ queries: { limit: 15 } });
   const categoryData = await getCategoriesList({ queries: { limit: 10 } });
 

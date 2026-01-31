@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Link from "next/link";
 import styles from "./Header.module.css";
 import { HEADER } from "@/libs/utils/header";
@@ -8,7 +7,7 @@ type Props = {
   session: Session | null;
 };
 
-const Header: NextPage<Props> = ({ session }) => {
+const Header = ({ session }: Props) => {
   return (
     <div className={styles.headerRoot}>
       <Link href="/">

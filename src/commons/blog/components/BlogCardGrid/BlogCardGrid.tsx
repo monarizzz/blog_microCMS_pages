@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import BlogCard from "../BlogCard/BlogCard";
 import styles from "./BlogCardGrid.module.css";
 import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";
@@ -7,7 +6,7 @@ type Props = {
   blogWithPlainTextList: BlogWithPlainText[];
 };
 
-const BlogCardGrid: NextPage<Props> = ({ blogWithPlainTextList }) => {
+const BlogCardGrid = ({ blogWithPlainTextList }: Props) => {
   return (
     <div className={styles.blogCardGridRoot}>
       {blogWithPlainTextList.map((BlogWithPlainText: BlogWithPlainText) => (

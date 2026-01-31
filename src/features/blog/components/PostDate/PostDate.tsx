@@ -1,6 +1,5 @@
 import styles from "./PostDate.module.css";
 import dayjs from "dayjs";
-import { NextPage } from "next";
 import { SVG_UPDATE } from "@/libs/utils/blog/update";
 import { Blog } from "@/libs/schema/contents/Blog/blog";
 import Image from "next/image";
@@ -9,7 +8,7 @@ type Props = {
   blog: Blog;
 };
 
-const PostDate: NextPage<Props> = ({ blog }) => {
+const PostDate = ({ blog }: Props) => {
   return (
     <div className={styles.dateRoot}>
       <p className={styles.published}>
