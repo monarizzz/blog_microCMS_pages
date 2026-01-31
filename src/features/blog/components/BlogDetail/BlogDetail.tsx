@@ -1,7 +1,6 @@
 import TagButton from "@/commons/tag/components/TagButton/TagButton";
 import styles from "./BlogDetail.module.scss";
 import Link from "next/link";
-import { NextPage } from "next";
 import { Blog } from "@/libs/schema/contents/Blog/blog";
 import { Category } from "@/libs/schema/contents/Category/category";
 import PostDate from "../PostDate/PostDate";
@@ -17,7 +16,7 @@ type Props = {
 };
 // TODO: 記事を右に寄せる
 
-const BlogDetail: NextPage<Props> = ({ blog, category, blogNavigation }) => {
+const BlogDetail = ({ blog, category, blogNavigation }: Props) => {
   const toc = tocFn(blog);
   return (
     <div className={styles.blogDetailRoot}>

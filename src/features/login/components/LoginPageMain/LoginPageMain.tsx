@@ -1,7 +1,6 @@
 "use client";
 
 import { Session } from "@/infra/auth/google/session";
-import { NextPage } from "next";
 import styles from "./LoginPageMain.module.scss";
 import { signIn, signOut } from "next-auth/react";
 
@@ -9,7 +8,7 @@ type Props = {
   session: Session | null;
 };
 
-const LoginPageMain: NextPage<Props> = ({ session }) => {
+const LoginPageMain = ({ session }: Props) => {
   return (
     <div className={styles.loginPageMainRoot}>
       {!session ? (

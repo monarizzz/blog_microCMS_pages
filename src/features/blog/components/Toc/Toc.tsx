@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Link from "next/link";
 import styles from "./Toc.module.scss";
 import { TocType } from "../../types/tocType";
@@ -7,7 +6,7 @@ type Props = {
   toc: TocType[];
 };
 
-const Toc: NextPage<Props> = ({ toc }) => {
+const Toc = ({ toc }: Props) => {
   return (
     <div className={styles.tocRoot}>
       {toc.length != 0 ? (

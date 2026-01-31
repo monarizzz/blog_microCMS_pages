@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./PageNav.module.scss";
-import { NextPage } from "next";
 import { SVG_ARROW } from "@/libs/utils/blog/arrow";
 import { PAGE_NAV } from "@/libs/utils/blog/pageNav";
 import { BlogNavigation } from "../../types/blogNavigation";
@@ -10,7 +9,7 @@ type Props = {
   blogNavigation: BlogNavigation;
 };
 
-const PageNav: NextPage<Props> = ({ blogNavigation }) => {
+const PageNav = ({ blogNavigation }: Props) => {
   const { prevBlog, nextBlog } = blogNavigation;
   const size = 7;
   return (

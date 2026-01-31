@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./BlogMain.module.css";
-import { NextPage } from "next";
 import Link from "next/link";
 import {
   CategoryList,
@@ -19,7 +18,7 @@ type Props = {
   categoryWithBlogList: BlogsByCategory[];
 };
 
-const BlogMain: NextPage<Props> = ({ category, categoryWithBlogList }) => {
+const BlogMain = ({ category, categoryWithBlogList }: Props) => {
   // TODO:子でパスを取得するように変更、親からクライアントで動作しているため
   const queryId = useSearchParams()?.get("cat") ?? undefined;
   const size = 10;
