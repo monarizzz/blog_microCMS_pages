@@ -19,6 +19,7 @@ export const Default: Story = {
       updatedAt: "2025-09-15T10:00:00.000Z",
       publishedAt: "2025-09-15T10:00:00.000Z",
       revisedAt: "2025-09-15T10:00:00.000Z",
+      development_env: ["dev"],
       categories: [
         {
           id: "id1",
@@ -43,6 +44,7 @@ export const update: Story = {
       updatedAt: "2025-09-15T10:00:00.000Z",
       publishedAt: "2025-09-15T10:00:00.000Z",
       revisedAt: "2025-09-25T20:10:00.000Z",
+      development_env: ["dev"],
       categories: [
         {
           id: "id1",
