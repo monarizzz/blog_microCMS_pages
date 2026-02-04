@@ -5,7 +5,10 @@ import {
 } from "../../entities/contents/blog";
 
 export const getBlogList = async ({ queries }: GetBlogListRequest) => {
-  const filters = `development_env[contains]${process.env.DEPLOYMENT_ENVIRONMENTS}`;
+  const envFilter = `development_env[contains]${process.env.DEPLOYMENT_ENVIRONMENTS}`;
+  const filters = queries?.filters
+    ? `${queries.filters}[and]${envFilter}`
+    : envFilter;
 
   return await client.getList<GetBlogListResponse>({
     endpoint: "blog",
