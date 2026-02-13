@@ -1,28 +1,15 @@
-import { AllBlogData } from "../types/allBlogData";
+import { Blog } from "@/libs/schema/contents/Blog/blog";
 
-const pageNavList = ({
-  allBlogData,
-  id,
-}: {
-  allBlogData: AllBlogData; // ここに配列型
-  id?: string; // ここに数値型
-}) => {
-  const sortedBlogs = allBlogData.contents.sort(
-    (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-  );
+const pageNavList = (blogs: Blog[], id?: string) => {
+  const currentIndex = blogs.findIndex((blog) => blog.id === id);
 
-  const currentIndex = sortedBlogs.findIndex(
-    (sortedBlog) => sortedBlog.id === id,
-  );
+  if (currentIndex === -1) return { prevBlog: null, nextBlog: null };
 
   // 前の記事の比較
-  const prevBlog = currentIndex > 0 ? sortedBlogs[currentIndex - 1] : null;
+  const prevBlog = currentIndex > 0 ? blogs[currentIndex - 1] : null;
   // 次の記事の比較
   const nextBlog =
-    currentIndex < sortedBlogs.length - 1
-      ? sortedBlogs[currentIndex + 1]
-      : null;
+    currentIndex < blogs.length - 1 ? blogs[currentIndex + 1] : null;
 
   return {
     prevBlog: prevBlog

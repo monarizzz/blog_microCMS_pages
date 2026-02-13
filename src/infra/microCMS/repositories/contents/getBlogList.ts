@@ -12,6 +12,6 @@ export const getBlogList = async ({ queries }: GetBlogListRequest) => {
 
   return await client.getList<GetBlogListResponse>({
     endpoint: "blog",
-    queries: { ...queries, filters },
+    queries: { ...queries, filters, orders: "-publishedAt" },
   });
 };
