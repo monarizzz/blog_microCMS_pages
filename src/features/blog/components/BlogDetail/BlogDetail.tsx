@@ -17,7 +17,7 @@ type Props = {
 // TODO: 記事を右に寄せる
 
 const BlogDetail = ({ blog, category, blogNavigation }: Props) => {
-  const toc = tocFn(blog);
+  const toc = tocFn(blog.body);
   return (
     <div className={styles.blogDetailRoot}>
       <div className={styles.detail}>
