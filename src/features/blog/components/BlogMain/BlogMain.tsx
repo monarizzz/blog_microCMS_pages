@@ -3,7 +3,7 @@
 import styles from "./BlogMain.module.css";
 import Link from "next/link";
 import {
-  CategoryList,
+  Category,
   BlogsByCategory,
 } from "@/libs/schema/contents/Category/category";
 import TagButton from "@/commons/tag/components/TagButton/TagButton";
@@ -14,7 +14,7 @@ import { SVG_HOME } from "@/libs/utils/tag/home";
 import { useSearchParams } from "next/navigation";
 
 type Props = {
-  category: CategoryList;
+  category: Category[];
   categoryWithBlogList: BlogsByCategory[];
 };
 

@@ -12,5 +12,3 @@ export type BlogsByCategory = {
   };
   blogWithPlainTextList: BlogWithPlainText[];
 };
-
-export type CategoryList = Category[];

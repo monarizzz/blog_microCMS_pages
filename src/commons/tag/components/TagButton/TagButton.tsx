@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import styles from "./TagButton.module.scss";
-import { CategoryList } from "@/libs/schema/contents/Category/category";
+import { Category } from "@/libs/schema/contents/Category/category";
 import limitText from "@/features/blog/utils/limitText";
 import { useSearchParams } from "next/navigation";
 
 export type Props = {
-  category: CategoryList;
+  category: Category[];
   maxLength?: number;
 };
 

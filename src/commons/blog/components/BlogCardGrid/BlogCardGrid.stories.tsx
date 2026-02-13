@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import BlogCardGrid from "./BlogCardGrid";
-import { CategoryList } from "@/libs/schema/contents/Category/category";
+import { Category } from "@/libs/schema/contents/Category/category";
 import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";
 
 const meta: Meta<typeof BlogCardGrid> = {
@@ -14,7 +14,7 @@ export default meta;
 type Story = StoryObj<typeof BlogCardGrid>;
 
 /* --- 定義されている全てのタグを定義 （ダミー）*/
-const mockCategoryList: CategoryList = [
+const mockCategoryList: Category[] = [
   { id: "id1", name: "タグ1" },
   { id: "id2", name: "タグ2" },
   { id: "id3", name: "タグ3" },

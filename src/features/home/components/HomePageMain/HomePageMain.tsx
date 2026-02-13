@@ -1,12 +1,12 @@
 import styles from "./HomePageMain.module.css";
-import { CategoryList } from "@/libs/schema/contents/Category/category";
+import { Category } from "@/libs/schema/contents/Category/category";
 import BlogCardGrid from "@/commons/blog/components/BlogCardGrid/BlogCardGrid";
 import { UTILS_HOME } from "@/libs/utils/blog/home/home";
 import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";
 
 type Props = {
   blogsWithPlainText: BlogWithPlainText[];
-  category: CategoryList;
+  category: Category[];
 };
 
 const HomeMain = ({ blogsWithPlainText }: Props) => {
