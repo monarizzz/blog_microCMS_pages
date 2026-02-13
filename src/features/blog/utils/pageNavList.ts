@@ -4,25 +4,18 @@ const pageNavList = ({
   allBlogData,
   id,
 }: {
-  allBlogData: AllBlogData; // ここに配列型
-  id?: string; // ここに数値型
+  allBlogData: AllBlogData;
+  id?: string;
 }) => {
-  const sortedBlogs = allBlogData.contents.sort(
-    (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-  );
+  const blogs = allBlogData.contents;
 
-  const currentIndex = sortedBlogs.findIndex(
-    (sortedBlog) => sortedBlog.id === id,
-  );
+  const currentIndex = blogs.findIndex((blog) => blog.id === id);
 
   // 前の記事の比較
-  const prevBlog = currentIndex > 0 ? sortedBlogs[currentIndex - 1] : null;
+  const prevBlog = currentIndex > 0 ? blogs[currentIndex - 1] : null;
   // 次の記事の比較
   const nextBlog =
-    currentIndex < sortedBlogs.length - 1
-      ? sortedBlogs[currentIndex + 1]
-      : null;
+    currentIndex < blogs.length - 1 ? blogs[currentIndex + 1] : null;
 
   return {
     prevBlog: prevBlog
