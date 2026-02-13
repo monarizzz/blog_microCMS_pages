@@ -18,7 +18,7 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const allBlogData = await getBlogList({
     queries: { fields: ["id", "title", "publishedAt"] },
   });
-  const blogNavigation = pageNavList({ allBlogData, id });
+  const blogNavigation = pageNavList(allBlogData.contents, id);
 
   const session = await getServerSession(authOptions);
 

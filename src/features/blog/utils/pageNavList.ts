@@ -1,14 +1,6 @@
-import { AllBlogData } from "../types/allBlogData";
+import { Blog } from "@/libs/schema/contents/Blog/blog";
 
-const pageNavList = ({
-  allBlogData,
-  id,
-}: {
-  allBlogData: AllBlogData;
-  id?: string;
-}) => {
-  const blogs = allBlogData.contents;
-
+const pageNavList = (blogs: Blog[], id?: string) => {
   const currentIndex = blogs.findIndex((blog) => blog.id === id);
 
   // 前の記事の比較
