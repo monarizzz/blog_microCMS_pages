@@ -1,8 +1,8 @@
 import HomeMain from "@/features/home/components/HomePageMain/HomePageMain";
 import { getBlogList } from "@/infra/microCMS/repositories/contents/getBlogList";
 import { getCategoriesList } from "@/infra/microCMS/repositories/contents/getCategoriesList";
-import * as cheerio from "cheerio";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
+import getPlainText from "@/features/blog/utils/getPlainText";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/infra/auth/authOptions";
 
@@ -12,18 +12,10 @@ const HomePage = async () => {
   const data = await getBlogList({ queries: { limit: 15 } });
   const categoryData = await getCategoriesList({ queries: { limit: 10 } });
 
-  const blogsWithPlainText = data.contents.map((blog) => {
-    const $ = cheerio.load(blog.body);
-    // brタグを改行文字に置換
-    $("br").replaceWith("\n");
-    // ブロック要素の末尾に改行文字を追加
-    $("h1, h2, h3, h4, h5, h6, p, li, blockquote").append("\n");
-    const plainText = $.text().trim().slice(0, 150);
-    return {
-      ...blog,
-      plainTextBody: plainText,
-    };
-  });
+  const blogsWithPlainText = data.contents.map((blog) => ({
+    ...blog,
+    plainTextBody: getPlainText(blog.body),
+  }));
 
   const session = await getServerSession(authOptions);
 
