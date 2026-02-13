@@ -8,7 +8,7 @@ type Props = {
   BlogWithPlainText: BlogWithPlainText;
 };
 
-const BlogWithPlainTextCardGrid = ({ BlogWithPlainText }: Props) => {
+const BlogCard = ({ BlogWithPlainText }: Props) => {
   return (
     <div className={styles.blogCardRoot}>
       <div className={styles.tag}>
@@ -29,4 +29,4 @@ const BlogWithPlainTextCardGrid = ({ BlogWithPlainText }: Props) => {
   );
 };
 
-export default BlogWithPlainTextCardGrid;
+export default BlogCard;

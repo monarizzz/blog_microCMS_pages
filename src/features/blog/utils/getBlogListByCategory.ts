@@ -1,6 +1,6 @@
 import { getBlogList } from "@/infra/microCMS/repositories/contents/getBlogList";
 import { Category } from "@/libs/schema/contents/Category/category";
-import { getPlainText } from "@/features/blog/utils/getPlainText";
+import getPlainText from "@/features/blog/utils/getPlainText";
 import { MicroCMSListResponse } from "microcms-js-sdk";
 
 export const getBlogListByCategory = async (
