@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./BlogCard.module.css";
-import RelativeDate from "@/commons/date/components/RelativeDate/RelativeDate";
+import relativeDate from "@/features/blog/utils/relativeDate";
 import TagButton from "@/commons/tag/components/TagButton/TagButton";
 import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";
 
@@ -20,7 +20,7 @@ const BlogCard = ({ BlogWithPlainText }: Props) => {
         <Link href={`/blog/${BlogWithPlainText.id}`}>
           <p className={styles.title}>{BlogWithPlainText.title}</p>
           <p className={styles.date}>
-            {RelativeDate(BlogWithPlainText.publishedAt)}{" "}
+            {relativeDate(BlogWithPlainText.publishedAt)}{" "}
           </p>
           <p className={styles.bodyText}>{BlogWithPlainText.plainTextBody}</p>
         </Link>
