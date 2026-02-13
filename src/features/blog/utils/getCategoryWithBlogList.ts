@@ -1,33 +1,23 @@
 import { getBlogList } from "@/infra/microCMS/repositories/contents/getBlogList";
-import { getCategoriesList } from "@/infra/microCMS/repositories/contents/getCategoriesList";
-import { BlogsByCategory } from "@/libs/schema/contents/Category/category";
+import { Category } from "@/libs/schema/contents/Category/category";
 import { getPlainText } from "@/features/blog/utils/getPlainText";
+import { MicroCMSListResponse } from "microcms-js-sdk";
 
-/**
- * カテゴリごとのブログ記事リストを取得し、各記事にプレーンテキストの要約を付与します。
- * @returns {Promise<BlogsByCategoryList>} 整形されたブログカテゴリリスト
- */
-export const getCategoryWithBlogList = async (): Promise<BlogsByCategory[]> => {
-  // 1. 全カテゴリを取得
-  const categoryData = await getCategoriesList({
-    queries: { limit: 10, fields: ["id", "name"] },
-  });
-  const categoryIds = categoryData.contents.map((category) => category.id);
-
-  // 2. カテゴリIDごとに、関連するブログ記事リストを並列で取得
+export const getBlogListByCategory = async (
+  categoryData: MicroCMSListResponse<Category>,
+) => {
+  const ids = categoryData.contents.map((category) => category.id);
   const blogListByCategory = await Promise.all(
-    categoryIds.map((categoryId) =>
+    ids.map((id) =>
       getBlogList({
-        queries: { limit: 10, filters: `categories[contains]${categoryId}` },
+        queries: { limit: 10, filters: `categories[contains]${id}` },
       }),
     ),
   );
 
-  // 3. 取得したブログリストを整形
   const blogCategoryList = categoryData.contents.map((category, index) => {
     const blogs = blogListByCategory[index].contents;
 
-    // 各ブログ記事の本文をプレーンテキストに変換
     const blogWithPlainTextList = blogs.map((blog) => ({
       ...blog,
       plainTextBody: getPlainText(blog.body),
