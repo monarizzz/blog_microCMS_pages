@@ -6,8 +6,8 @@ import { authOptions } from "@/infra/auth/authOptions";
 import { getServerSession } from "next-auth";
 
 export async function generateStaticParams() {
-  const data = await getBlogList({ queries: { fields: ["id"] } });
-  return data.contents.map((blog) => ({
+  const blogList = await getBlogList({ queries: { fields: ["id"] } });
+  return blogList.contents.map((blog) => ({
     id: blog.id,
   }));
 }
