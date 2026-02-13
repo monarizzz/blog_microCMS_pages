@@ -3,6 +3,8 @@ import { Blog } from "@/libs/schema/contents/Blog/blog";
 const pageNavList = (blogs: Blog[], id?: string) => {
   const currentIndex = blogs.findIndex((blog) => blog.id === id);
 
+  if (currentIndex === -1) return { prevBlog: null, nextBlog: null };
+
   // 前の記事の比較
   const prevBlog = currentIndex > 0 ? blogs[currentIndex - 1] : null;
   // 次の記事の比較
