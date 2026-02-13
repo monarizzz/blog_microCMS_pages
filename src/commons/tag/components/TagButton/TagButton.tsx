@@ -3,7 +3,7 @@
 import Link from "next/link";
 import styles from "./TagButton.module.scss";
 import { CategoryList } from "@/libs/schema/contents/Category/category";
-import truncateText from "@/features/blog/utils/limitText";
+import limitText from "@/features/blog/utils/limitText";
 import { useSearchParams } from "next/navigation";
 
 export type Props = {
@@ -22,11 +22,11 @@ const TagButton = ({ category, maxLength }: Props) => {
             className={styles.linkTag}
             key={category.name}
           >
-            # {truncateText(category.name, maxLength)}
+            # {limitText(category.name, maxLength)}
           </Link>
         ) : (
           <span className={styles.tag} key={category.name}>
-            # {truncateText(category.name, maxLength)}
+            # {limitText(category.name, maxLength)}
           </span>
         ),
       )}

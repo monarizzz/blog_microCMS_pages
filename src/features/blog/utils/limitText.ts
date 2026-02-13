@@ -1,8 +1,8 @@
-function truncateText(text: string, maxLength?: number) {
+function limitText(text: string, maxLength?: number) {
   if (!maxLength || text.length <= maxLength) {
     return text;
   }
   return text.slice(0, maxLength) + "...";
 }
 
-export default truncateText;
+export default limitText;
