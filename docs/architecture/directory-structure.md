@@ -72,12 +72,12 @@ commons/
 
 ```
 features/
-├── article/            # /article/[slug] ページ専用
+├── blog/            # /blog/[slug] ページ専用
 │   ├── components/
 │   │   ├── Toc/        # 記事ページの目次コンポーネント
 │   │   ├── PostDate/   # 記事ページの投稿日表示
 │   │   ├── PageNav/    # 記事ページのページナビゲーション
-│   │   └── ArticlePageMain/  # 記事ページのメインコンポーネント
+│   │   └── BlogPageMain/  # 記事ページのメインコンポーネント
 │   └── utils/
 │       └── pageNavList.ts    # 記事ページのナビゲーションリスト生成
 └── home/               # / (ホーム) ページ専用
@@ -121,7 +121,7 @@ Next.js のファイルベースルーティングに従ったページ定義で
 
 ```
 pages/
-├── article/              # 記事ページ
+├── blog/              # 記事ページ
 ├── api/                  # API ルート
 ├── _app.tsx              # アプリケーションルート
 ├── 404.tsx               # 404エラーページ
