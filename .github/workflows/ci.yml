@@ -1,4 +1,3 @@
-# PR時にVitestを実行するワークフロー
 name: PR-test
 
 on: [pull_request]
