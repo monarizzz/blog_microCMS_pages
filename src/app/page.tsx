@@ -7,7 +7,6 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/infra/auth/authOptions";
 
 // TODO:revalidateの設定
-
 const HomePage = async () => {
   const data = await getBlogList({ queries: { limit: 15 } });
   const categoryData = await getCategoriesList({ queries: { limit: 10 } });
