@@ -1,4 +1,3 @@
-import styles from "./HomePageMain.module.css";
 import { Category } from "@/libs/schema/contents/Category/category";
 import BlogCardGrid from "@/commons/blog/components/BlogCardGrid/BlogCardGrid";
 import { UTILS_HOME } from "@/libs/utils/blog/home/home";
