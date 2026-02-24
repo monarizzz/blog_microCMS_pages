@@ -11,7 +11,7 @@ const GithubBtn = () => {
           alt="github"
           width={size}
           height={size}
-          className=""
+          className="hover:opacity-75"
         />
       </Link>
     </div>
