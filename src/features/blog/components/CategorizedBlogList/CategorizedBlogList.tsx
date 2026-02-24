@@ -1,4 +1,3 @@
-import styles from "./CategorizedBlogList.module.css";
 import { BlogsByCategory } from "@/libs/schema/contents/Category/category";
 import BlogCardGrid from "@/commons/blog/components/BlogCardGrid/BlogCardGrid";
 
@@ -17,11 +16,10 @@ const CategorizedBlogList = ({ queryId, blogCategoryList }: Props) => {
   return (
     <>
       {filteredCategories.map((blogCategory) => (
-        <div
-          key={blogCategory.category.id}
-          className={styles.categorizedBlogListRoot}
-        >
-          <p className={styles.categoryName}>{blogCategory.category.name}</p>
+        <div key={blogCategory.category.id} className="mb-20">
+          <p className="mb-4 text-lg font-bold text-slate-900">
+            {blogCategory.category.name}
+          </p>
           <BlogCardGrid
             blogWithPlainTextList={blogCategory.blogWithPlainTextList}
           />

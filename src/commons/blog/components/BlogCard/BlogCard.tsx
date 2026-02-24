@@ -9,7 +9,7 @@ type Props = {
 
 const BlogCard = ({ BlogWithPlainText }: Props) => {
   return (
-    <div className="group rounded-2xl bg-white px-6 py-4 transition hover:-translate-y-0.5">
+    <div className="group rounded-2xl bg-white transition hover:-translate-y-0.5">
       <div className="mb-2">
         {BlogWithPlainText.categories ? (
           <TagButton category={BlogWithPlainText.categories} maxLength={4} />
