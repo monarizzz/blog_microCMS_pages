@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import styles from "./TagButton.module.scss";
 import { Category } from "@/libs/schema/contents/Category/category";
 import limitText from "@/features/blog/utils/limitText";
 import { useSearchParams } from "next/navigation";
@@ -14,18 +13,21 @@ export type Props = {
 const TagButton = ({ category, maxLength }: Props) => {
   const query = useSearchParams()?.get("cat");
   return (
-    <div className={styles.tagButtonRoot}>
+    <div>
       {category.slice().map((category) =>
         category.id !== query ? (
           <Link
             href={`/blog?cat=${category.id}`}
-            className={styles.linkTag}
+            className="m-1 rounded-3xl border border-slate-500 px-3 py-2 text-xs font-bold tracking-widest text-slate-500 hover:bg-slate-500 hover:text-white"
             key={category.name}
           >
             # {limitText(category.name, maxLength)}
           </Link>
         ) : (
-          <span className={styles.tag} key={category.name}>
+          <span
+            className="m-1 rounded-3xl border border-slate-500 px-3 py-2 text-xs font-bold tracking-widest text-slate-500"
+            key={category.name}
+          >
             # {limitText(category.name, maxLength)}
           </span>
         ),
