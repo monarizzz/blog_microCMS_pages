@@ -14,7 +14,8 @@ const LayoutMain = ({ children, session }: Props) => {
     <>
       <Header session={session} />
       {children}
-      <div className={styles.btn}>
+      {/* TODO:いつかヘッダーへ移動させる */}
+      <div className="fixed bottom-4 right-4">
         <GithubBtn />
       </div>
     </>
