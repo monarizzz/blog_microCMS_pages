@@ -1,4 +1,3 @@
-import styles from "./HomePageMain.module.css";
 import { Category } from "@/libs/schema/contents/Category/category";
 import BlogCardGrid from "@/commons/blog/components/BlogCardGrid/BlogCardGrid";
 import { UTILS_HOME } from "@/libs/utils/blog/home/home";
@@ -11,8 +10,8 @@ type Props = {
 
 const HomeMain = ({ blogsWithPlainText }: Props) => {
   return (
-    <div className={styles.homePageRoot}>
-      <p className={styles.title}>{UTILS_HOME.HOME}</p>
+    <div className="mx-auto my-6 w-4/5 max-w-7xl">
+      <p className="my-20 text-2xl font-bold">{UTILS_HOME.HOME}</p>
       <BlogCardGrid blogWithPlainTextList={blogsWithPlainText} />
     </div>
   );
