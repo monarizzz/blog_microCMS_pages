@@ -1,5 +1,7 @@
 {
-    "cSpell.words": [
-        "Commonlayout"
-    ]
+  "cSpell.words": ["Commonlayout"],
+  "tailwindCSS.experimental.configFile": "tailwind.config.ts",
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
 }
