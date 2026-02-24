@@ -11,7 +11,7 @@ const GithubBtn = () => {
           alt="github"
           width={size}
           height={size}
-          className="hover:opacity-75"
+          className="hover:[filter:invert(0.5)]"
         />
       </Link>
     </div>
