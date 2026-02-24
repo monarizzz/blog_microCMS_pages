@@ -1,9 +1,0 @@
-.btn {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  justify-content: flex-end;
-  @media (max-width: 1200) {
-    display: none;
-  }
-}
