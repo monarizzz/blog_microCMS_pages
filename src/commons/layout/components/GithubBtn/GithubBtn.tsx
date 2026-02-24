@@ -1,21 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SVG_GITHUB } from "@/libs/utils/blog/github";
-import styles from "./GithubBtn.module.scss";
 
 const GithubBtn = () => {
+  const size = 40;
   return (
-    <div className={styles.GithubBtnRoot}>
+    <div>
       <Link href="https://github.com/monarizzz/blog_microCMS_pages">
         <Image
-          src={SVG_GITHUB.SRC}
-          alt={SVG_GITHUB.ALT}
-          width={SVG_GITHUB.SIZE}
-          height={SVG_GITHUB.SIZE}
-          className={styles.icon}
+          src="/github-mark.svg"
+          alt="github"
+          width={size}
+          height={size}
+          className="hover:[filter:invert(0.5)]"
         />
       </Link>
-      <p className={styles.text}>{SVG_GITHUB.COMMENT}</p>
     </div>
   );
 };
