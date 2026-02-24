@@ -9,10 +9,7 @@ type Props = {
 const Header = ({ session }: Props) => {
   return (
     <div className="flex w-full justify-between p-3 shadow">
-      <Link
-        href="/"
-        className="my-auto ml-8 inline text-left text-2xl font-bold text-gray-600"
-      >
+      <Link href="/" className="my-auto ml-8 text-2xl font-bold text-gray-600">
         {HEADER.TITLE}
       </Link>
 
