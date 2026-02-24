@@ -1,5 +1,4 @@
 import Link from "next/link";
-import styles from "./BlogCard.module.css";
 import relativeDate from "@/features/blog/utils/relativeDate";
 import TagButton from "@/commons/tag/components/TagButton/TagButton";
 import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";
@@ -24,7 +23,7 @@ const BlogCard = ({ BlogWithPlainText }: Props) => {
           <p className="mb-2 block text-xs text-gray-400">
             {relativeDate(BlogWithPlainText.publishedAt)}
           </p>
-          <p className="lead mt-2 line-clamp-3 break-words text-sm text-gray-600">
+          <p className="mt-2 line-clamp-3 break-words text-sm text-gray-600">
             {BlogWithPlainText.plainTextBody}
           </p>
         </Link>
