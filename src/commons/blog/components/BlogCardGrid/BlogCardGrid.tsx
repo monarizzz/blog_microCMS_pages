@@ -1,5 +1,4 @@
 import BlogCard from "../BlogCard/BlogCard";
-import styles from "./BlogCardGrid.module.css";
 import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";
 
 type Props = {
@@ -8,9 +7,9 @@ type Props = {
 
 const BlogCardGrid = ({ blogWithPlainTextList }: Props) => {
   return (
-    <div className={styles.blogCardGridRoot}>
+    <div className="grid grid-cols-4 gap-4">
       {blogWithPlainTextList.map((BlogWithPlainText: BlogWithPlainText) => (
-        <div key={BlogWithPlainText.id} className={styles.blogCard}>
+        <div key={BlogWithPlainText.id} className="w-full">
           <BlogCard BlogWithPlainText={BlogWithPlainText} />
         </div>
       ))}
