@@ -1,4 +1,3 @@
-import styles from "./PostDate.module.css";
 import dayjs from "dayjs";
 import { SVG_UPDATE } from "@/libs/utils/blog/update";
 import { Blog } from "@/libs/schema/contents/Blog/blog";
@@ -10,22 +9,19 @@ type Props = {
 
 const PostDate = ({ blog }: Props) => {
   return (
-    <div className={styles.dateRoot}>
-      <p className={styles.published}>
-        {dayjs(blog.publishedAt).format("YYYY/MM/DD HH:mm")}
-      </p>
+    <div className="flex justify-end gap-3 text-sm text-slate-400">
+      <p>{dayjs(blog.publishedAt).format("YYYY/MM/DD HH:mm")}</p>
       {blog.publishedAt !== blog.revisedAt && (
-        <div className={styles.update}>
+        <div className="flex">
+          {/* TODO:svgの色をあわせる */}
           <Image
             src={SVG_UPDATE.SRC}
             alt={SVG_UPDATE.ALT}
             width={15}
             height={15}
-            className={styles.icon}
+            className="mr-1"
           />
-          <p className={styles.published}>
-            {dayjs(blog.revisedAt).format("YYYY/MM/DD HH:mm")}
-          </p>
+          <p>{dayjs(blog.revisedAt).format("YYYY/MM/DD HH:mm")}</p>
         </div>
       )}
     </div>
