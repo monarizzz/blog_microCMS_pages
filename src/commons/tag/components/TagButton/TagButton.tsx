@@ -18,7 +18,7 @@ const TagButton = ({ category, maxLength }: Props) => {
         category.id !== query ? (
           <Link
             href={`/blog?cat=${category.id}`}
-            className="mx-0.5 rounded-3xl border border-slate-500 px-3 py-1.5 text-xs font-bold tracking-widest text-slate-500 hover:bg-slate-500 hover:text-white"
+            className="mx-0.5 rounded-3xl border border-slate-500 px-3 py-1.5 text-[0.625rem] font-bold tracking-widest text-slate-500 hover:bg-slate-500 hover:text-white"
             key={category.name}
           >
             # {limitText(category.name, maxLength)}
@@ -26,7 +26,7 @@ const TagButton = ({ category, maxLength }: Props) => {
         ) : (
           // TODO:スタイルをまとめる
           <span
-            className="m-0.5 rounded-3xl border border-slate-500 px-3 py-1.5 text-xs font-bold tracking-widest text-slate-500"
+            className="m-0.5 rounded-3xl border border-slate-500 px-3 py-1.5 text-[0.625rem] font-bold tracking-widest text-slate-500"
             key={category.name}
           >
             # {limitText(category.name, maxLength)}
