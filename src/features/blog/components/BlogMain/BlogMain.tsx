@@ -6,7 +6,7 @@ import {
   Category,
   BlogsByCategory,
 } from "@/libs/schema/contents/Category/category";
-import TagButton from "@/commons/tag/components/TagButton/TagButton";
+import TagButton from "@/commons/tag/TagButton/TagButton";
 import CategorizedBlogList from "../CategorizedBlogList/CategorizedBlogList";
 import { TAG } from "@/libs/utils/tag/tag";
 import Image from "next/image";

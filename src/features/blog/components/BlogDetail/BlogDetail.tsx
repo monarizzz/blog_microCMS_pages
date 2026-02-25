@@ -1,4 +1,4 @@
-import TagButton from "@/commons/tag/components/TagButton/TagButton";
+import TagButton from "@/commons/tag/TagButton/TagButton";
 import styles from "./BlogDetail.module.scss";
 import Link from "next/link";
 import { Blog } from "@/libs/schema/contents/Blog/blog";

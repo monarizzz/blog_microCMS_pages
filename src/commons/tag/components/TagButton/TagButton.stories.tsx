@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import TagButton from "./TagButton";
+import TagButton from "./components/TagButton/TagButton";
 
 const meta = {
   component: TagButton,

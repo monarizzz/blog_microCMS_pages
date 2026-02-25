@@ -1,7 +1,7 @@
 import Link from "next/link";
 import relativeDate from "@/features/blog/utils/relativeDate";
-import TagButton from "@/commons/tag/components/TagButton/TagButton";
 import { BlogWithPlainText } from "@/features/blog/types/blogWithPlainText";
+import TagButton from "@/commons/tag/components/TagButton/TagButton";
 
 type Props = {
   BlogWithPlainText: BlogWithPlainText;
