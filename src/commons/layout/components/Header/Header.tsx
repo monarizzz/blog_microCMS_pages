@@ -13,9 +13,9 @@ const Header = ({ session }: Props) => {
     <div className="flex w-full justify-between pb-1 pt-6 shadow">
       <Link
         href="/"
-        className="et my-auto ml-[3vw] text-2xl font-bold text-gray-600"
+        className="my-auto ml-[3vw] text-2xl font-bold text-gray-600"
       >
-        {/* {HEADER.TITLE} */}
+        {HEADER.TITLE}
       </Link>
       <span className="my-auto mr-[3vw] flex">
         {session ? (
