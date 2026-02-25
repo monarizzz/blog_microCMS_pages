@@ -6,12 +6,12 @@ import {
   Category,
   BlogsByCategory,
 } from "@/libs/schema/contents/Category/category";
-import TagButton from "@/commons/tag/components/TagButton/TagButton";
 import CategorizedBlogList from "../CategorizedBlogList/CategorizedBlogList";
 import { TAG } from "@/libs/utils/tag/tag";
 import Image from "next/image";
 import { SVG_HOME } from "@/libs/utils/tag/home";
 import { useSearchParams } from "next/navigation";
+import TagButton from "@/commons/tag/components/TagButton/TagButton";
 
 type Props = {
   category: Category[];

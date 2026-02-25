@@ -1,4 +1,3 @@
-import TagButton from "@/commons/tag/components/TagButton/TagButton";
 import styles from "./BlogDetail.module.scss";
 import Link from "next/link";
 import { Blog } from "@/libs/schema/contents/Blog/blog";
@@ -8,6 +7,7 @@ import PageNav from "../PageNav/PageNav";
 import Toc from "../Toc/Toc";
 import tocFn from "../../utils/tocFn";
 import { BlogNavigation } from "../../types/blogNavigation";
+import TagButton from "@/commons/tag/components/TagButton/TagButton";
 
 type Props = {
   blog: Blog;
