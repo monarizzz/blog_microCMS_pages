@@ -20,7 +20,7 @@ const BlogCard = ({ BlogWithPlainText }: Props) => {
           <p className="mb-2 line-clamp-2 text-lg font-bold text-black group-hover:text-gray-700">
             {BlogWithPlainText.title}
           </p>
-          <p className="text-2xs mb-2 block text-gray-400">
+          <p className="mb-2 block text-2xs text-gray-400">
             {relativeDate(BlogWithPlainText.publishedAt)}
           </p>
           <p className="mt-2 line-clamp-2 break-words text-xs leading-5 tracking-wide text-gray-500 lg:line-clamp-3">
