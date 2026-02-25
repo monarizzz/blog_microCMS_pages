@@ -1,5 +1,5 @@
+import limitText from "@/features/blog/utils/limitText";
 import Link from "next/link";
-import limitText from "../utils/limitText";
 
 type Props = {
   name: string;
