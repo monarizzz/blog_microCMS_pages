@@ -6,9 +6,10 @@ type Props = {
   session: Session | null;
 };
 
+const rightBtn =
+  "relative rounded-sm px-1.5 py-1 text-left text-sm font-bold text-gray-500 hover:bg-gray-100";
+
 const Header = ({ session }: Props) => {
-  const rightBtn =
-    "relative rounded-sm px-1.5 py-1 text-left text-sm font-bold text-gray-500 hover:bg-gray-100";
   return (
     <div className="flex w-full justify-between pb-1 pt-6 shadow">
       <Link
