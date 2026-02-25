@@ -15,7 +15,7 @@ const TagButton = ({ category, maxLength }: Props) => {
     <div>
       {category.slice().map((category) => (
         <TagButtonText
-          key={category.name}
+          key={category.id}
           name={category.name}
           maxLength={maxLength}
           isSelected={category.id === query}
