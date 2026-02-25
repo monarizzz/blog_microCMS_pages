@@ -19,7 +19,7 @@ const TagButtonText = ({ name, maxLength, isSelected, categoryId }: Props) => {
   return (
     <Link
       href={`/blog?cat=${categoryId}`}
-      className={`${commonClass}hover:bg-slate-500 hover:text-white`}
+      className={`${commonClass} hover:bg-slate-500 hover:text-white`}
     >
       {text}
     </Link>
