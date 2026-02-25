@@ -9,7 +9,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontSize: {
-        tag: "0.6875rem",
+        "2xs": "0.6875rem",
       },
     },
   },
