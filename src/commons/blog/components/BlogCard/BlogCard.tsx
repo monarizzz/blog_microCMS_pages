@@ -17,13 +17,13 @@ const BlogCard = ({ BlogWithPlainText }: Props) => {
       </div>
       <div className="ml-2 mt-3">
         <Link href={`/blog/${BlogWithPlainText.id}`}>
-          <p className="mb-2 line-clamp-2 text-base font-bold text-black group-hover:text-gray-700">
+          <p className="mb-2 line-clamp-2 text-lg font-bold text-black group-hover:text-gray-700">
             {BlogWithPlainText.title}
           </p>
-          <p className="mb-2 block text-3xs text-gray-400">
+          <p className="mb-2 block text-xs text-gray-400">
             {relativeDate(BlogWithPlainText.publishedAt)}
           </p>
-          <p className="mt-2 line-clamp-2 break-words text-2xs leading-5 tracking-wide text-gray-500 lg:line-clamp-3">
+          <p className="mt-2 line-clamp-2 break-words text-xs leading-5 tracking-wide text-gray-500 lg:line-clamp-3">
             {BlogWithPlainText.plainTextBody}
           </p>
         </Link>
