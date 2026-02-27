@@ -9,7 +9,7 @@ type Props = {
 
 const PostDate = ({ blog }: Props) => {
   return (
-    <div className="flex justify-end gap-3 text-sm text-slate-400">
+    <div className="flex justify-end gap-3 text-sm text-gray-400">
       <p>{dayjs(blog.publishedAt).format("YYYY/MM/DD HH:mm")}</p>
       {blog.publishedAt !== blog.revisedAt && (
         <div className="flex">
