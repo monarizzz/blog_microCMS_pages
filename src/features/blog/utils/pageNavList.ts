@@ -3,19 +3,19 @@ import { Blog } from "@/libs/schema/contents/Blog/blog";
 const pageNavList = (blogs: Blog[], id?: string) => {
   const currentIndex = blogs.findIndex((blog) => blog.id === id);
 
-  if (currentIndex === -1) return { prevBlog: null, nextBlog: null };
+  if (currentIndex === -1) return { backBlog: null, nextBlog: null };
 
   // 前の記事の比較
-  const prevBlog = currentIndex > 0 ? blogs[currentIndex - 1] : null;
+  const backBlog = currentIndex > 0 ? blogs[currentIndex - 1] : null;
   // 次の記事の比較
   const nextBlog =
     currentIndex < blogs.length - 1 ? blogs[currentIndex + 1] : null;
 
   return {
-    prevBlog: prevBlog
+    backBlog: backBlog
       ? {
-          id: prevBlog.id,
-          title: prevBlog.title,
+          id: backBlog.id,
+          title: backBlog.title,
         }
       : null,
     nextBlog: nextBlog
