@@ -3,7 +3,7 @@ import Toc from "./Toc";
 const meta = {
   component: Toc,
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
   },
 } satisfies Meta<typeof Toc>;
 
