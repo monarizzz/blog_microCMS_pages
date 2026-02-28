@@ -1,4 +1,3 @@
-import styles from "./BlogDetail.module.scss";
 import Link from "next/link";
 import { Blog } from "@/libs/schema/contents/Blog/blog";
 import { Category } from "@/libs/schema/contents/Category/category";
@@ -14,7 +13,6 @@ type Props = {
   category: Category[];
   blogNavigation: BlogNavigation;
 };
-// TODO: 記事を右に寄せる
 
 const BlogDetail = ({ blog, category, blogNavigation }: Props) => {
   const toc = tocFn(blog.body);
@@ -32,7 +30,7 @@ const BlogDetail = ({ blog, category, blogNavigation }: Props) => {
       <div className="flex justify-center gap-4">
         <div className="w-full min-w-0 lg:max-w-4xl">
           <div
-            className={styles.article}
+            className="article"
             dangerouslySetInnerHTML={{
               __html: blog.body,
             }}
@@ -40,8 +38,13 @@ const BlogDetail = ({ blog, category, blogNavigation }: Props) => {
           <div className="my-40">
             <PageNav blogNavigation={blogNavigation} />
           </div>
-          <div className="my-72 text-sm font-bold text-indigo-800 hover:underline">
-            <Link href="/">← 記事一覧に戻る</Link>
+          <div className="my-72">
+            <Link
+              href="/"
+              className="text-sm font-bold text-indigo-800 hover:underline"
+            >
+              ← 記事一覧に戻る
+            </Link>
           </div>
         </div>
         <div className="hidden xl:sticky xl:top-4 xl:block xl:h-fit xl:w-64 xl:self-start">
