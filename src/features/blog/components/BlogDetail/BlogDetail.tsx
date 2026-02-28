@@ -1,3 +1,4 @@
+import style from "./BlogDetail.module.scss";
 import Link from "next/link";
 import { Blog } from "@/libs/schema/contents/Blog/blog";
 import { Category } from "@/libs/schema/contents/Category/category";
@@ -28,13 +29,15 @@ const BlogDetail = ({ blog, category, blogNavigation }: Props) => {
         </div>
       </div>
       <div className="flex justify-center gap-4">
-        <div className="w-full min-w-0 lg:max-w-4xl">
-          <div
-            className="article"
-            dangerouslySetInnerHTML={{
-              __html: blog.body,
-            }}
-          />
+        <div className="min-h-1.5 w-full lg:max-w-4xl">
+          <div className="min-h-36 rounded-lg bg-zinc-50 p-5">
+            <div
+              className={style.article}
+              dangerouslySetInnerHTML={{
+                __html: blog.body,
+              }}
+            />
+          </div>
           <div className="my-40">
             <PageNav blogNavigation={blogNavigation} />
           </div>
