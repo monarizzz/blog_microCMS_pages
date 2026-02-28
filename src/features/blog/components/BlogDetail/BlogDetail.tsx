@@ -29,7 +29,7 @@ const BlogDetail = ({ blog, category, blogNavigation }: Props) => {
         </div>
       </div>
       <div className="flex justify-center gap-4">
-        <div className="min-h-1.5 w-full lg:max-w-4xl">
+        <div className="w-full min-w-0 lg:max-w-4xl">
           <div className="min-h-36 rounded-lg bg-zinc-50 p-5">
             <div
               className={style.article}
