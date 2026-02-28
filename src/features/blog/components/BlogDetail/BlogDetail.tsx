@@ -19,31 +19,32 @@ type Props = {
 const BlogDetail = ({ blog, category, blogNavigation }: Props) => {
   const toc = tocFn(blog.body);
   return (
-    <div className={styles.blogDetailRoot}>
-      <div className={styles.detail}>
+    <div className="mx-auto max-w-7xl px-4">
+      <div className="w-full pb-4 pt-8">
         <TagButton category={category} />
-        <div className={styles.title}>{blog.title}</div>
-        <div className={styles.postDate}>
+        <div className="mb-16 mt-7 text-center text-xl font-bold">
+          {blog.title}
+        </div>
+        <div className="text-sm">
           <PostDate blog={blog} />
         </div>
       </div>
-
-      <div className={styles.container}>
-        <div className={styles.left}>
+      <div className="flex justify-center gap-4">
+        <div className="w-full min-w-0 lg:max-w-4xl">
           <div
             className={styles.article}
             dangerouslySetInnerHTML={{
               __html: blog.body,
             }}
           />
-          <div className={styles.pageNav}>
+          <div className="my-40">
             <PageNav blogNavigation={blogNavigation} />
           </div>
-          <div className={styles.backLink}>
+          <div className="my-72 text-sm font-bold text-indigo-800 hover:underline">
             <Link href="/">← 記事一覧に戻る</Link>
           </div>
         </div>
-        <div className={styles.right}>
+        <div className="hidden xl:sticky xl:top-4 xl:block xl:h-fit xl:w-64 xl:self-start">
           <Toc toc={toc} />
         </div>
       </div>
