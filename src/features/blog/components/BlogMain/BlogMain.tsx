@@ -14,8 +14,9 @@ type Props = {
   categoryWithBlogList: BlogsByCategory[];
 };
 
+const items = [{ label: "HOME", href: "/" }];
+
 const BlogMain = ({ category, categoryWithBlogList }: Props) => {
-  const items = [{ label: "HOME", href: "/" }];
   const queryId = useSearchParams()?.get("cat") ?? undefined;
   return (
     <div className="mx-auto my-5 w-4/5">
