@@ -6,15 +6,15 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Fragment } from "react/jsx-runtime";
+import { Fragment } from "react";
 
-type item = {
+type BreadcrumbItem = {
   label: string;
   href: string;
 };
 
 type Props = {
-  items: item[];
+  items: BreadcrumbItem[];
   current: string;
 };
 
@@ -25,7 +25,7 @@ const PageBreadcrumb = ({ items, current }: Props) => {
         {items.map((item) => (
           <Fragment key={item.label}>
             <BreadcrumbItem>
-              <BreadcrumbLink href={item.href}> {item.label}</BreadcrumbLink>
+              <BreadcrumbLink href={item.href}>{item.label}</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
           </Fragment>
