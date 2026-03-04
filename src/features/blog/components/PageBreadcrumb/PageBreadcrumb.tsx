@@ -8,13 +8,13 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Fragment } from "react";
 
-type BreadcrumbItem = {
+type BreadcrumbItemData = {
   label: string;
   href: string;
 };
 
 type Props = {
-  items: BreadcrumbItem[];
+  items: BreadcrumbItemData[];
   current: string;
 };
 
