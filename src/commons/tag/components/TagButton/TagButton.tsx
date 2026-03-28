@@ -12,7 +12,7 @@ export type Props = {
 const TagButton = ({ category, maxLength }: Props) => {
   const query = useSearchParams()?.get("cat");
   return (
-    <div>
+    <div className="h-[1.6875rem]">
       {category.slice().map((category) => (
         <TagButtonText
           key={category.id}
