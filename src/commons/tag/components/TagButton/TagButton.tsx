@@ -1,7 +1,4 @@
-"use client";
-
 import { Category } from "@/libs/schema/contents/Category/category";
-import { useSearchParams } from "next/navigation";
 import TagButtonText from "../TagButtonText/TagButtonText";
 
 export type Props = {
@@ -10,7 +7,6 @@ export type Props = {
 };
 
 const TagButton = ({ category, maxLength }: Props) => {
-  const query = useSearchParams()?.get("cat");
   return (
     <div className="h-[1.6875rem]">
       {category.slice().map((category) => (
@@ -18,7 +14,6 @@ const TagButton = ({ category, maxLength }: Props) => {
           key={category.id}
           name={category.name}
           maxLength={maxLength}
-          isSelected={category.id === query}
           categoryId={category.id}
         />
       ))}
