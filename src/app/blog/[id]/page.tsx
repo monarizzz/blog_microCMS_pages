@@ -15,7 +15,6 @@ export async function generateStaticParams() {
 }
 
 const BlogPage = async ({ params }: Props) => {
-  console.log(params);
   const { id } = await params;
   const data = await getBlogList({ queries: { ids: `${id}` } });
   const allBlogData = await getBlogList({
