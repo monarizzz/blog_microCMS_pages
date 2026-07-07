@@ -13,12 +13,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: { session: null },
+  args: {},
 };
 
 export const Login: Story = {
-  args: { session: null },
+  args: {},
 };
 export const Logout: Story = {
-  args: { session: null },
+  args: {},
 };
