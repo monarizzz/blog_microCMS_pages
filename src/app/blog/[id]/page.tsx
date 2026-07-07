@@ -2,7 +2,7 @@ import { getBlogList } from "@/infra/microCMS/repositories/contents/getBlogList"
 import pageNavList from "@/features/blog/utils/pageNavList";
 import BlogDetail from "@/features/blog/components/BlogDetail/BlogDetail";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
-import { authOptions } from "@/infra/auth/authOptions";
+
 type Props = {
   params: Promise<{ id: string }>;
 };
