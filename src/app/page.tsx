@@ -3,8 +3,6 @@ import { getBlogList } from "@/infra/microCMS/repositories/contents/getBlogList"
 import { getCategoriesList } from "@/infra/microCMS/repositories/contents/getCategoriesList";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import getPlainText from "@/features/blog/utils/getPlainText";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/infra/auth/authOptions";
 
 // TODO:revalidateの設定
 const HomePage = async () => {
@@ -16,10 +14,8 @@ const HomePage = async () => {
     plainTextBody: getPlainText(blog.body),
   }));
 
-  const session = await getServerSession(authOptions);
-
   return (
-    <LayoutMain session={session}>
+    <LayoutMain>
       <HomeMain
         blogsWithPlainText={blogsWithPlainText}
         category={categoryData.contents}
