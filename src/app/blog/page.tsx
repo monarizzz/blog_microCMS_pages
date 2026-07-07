@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { getCategoriesList } from "@/infra/microCMS/repositories/contents/getCategoriesList";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import { getBlogListByCategory } from "@/features/blog/utils/getBlogListByCategory";
@@ -11,10 +12,12 @@ const BlogPage = async () => {
 
   return (
     <LayoutMain>
-      <BlogMain
-        category={categoryData.contents}
-        categoryWithBlogList={blogCategoryListData}
-      />
+      <Suspense>
+        <BlogMain
+          category={categoryData.contents}
+          categoryWithBlogList={blogCategoryListData}
+        />
+      </Suspense>
     </LayoutMain>
   );
 };

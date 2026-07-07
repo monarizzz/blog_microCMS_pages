@@ -7,11 +7,9 @@ type Props = {
 
 const getBlogListDetail = async ({ contentId, draftKey }: Props) => {
   return await client.getListDetail({
-    endpoint: "endpoint",
+    endpoint: "blog",
     contentId: `${contentId}`,
-    queries: {
-      draftKey: `${draftKey}`,
-    },
+    queries: draftKey ? { draftKey } : undefined,
   });
 };
 
