@@ -3,7 +3,7 @@ import Header from "@/commons/layout/components/Header/Header";
 import GithubBtn from "@/commons/layout/components/GithubBtn/GithubBtn";
 
 type Props = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 const LayoutMain = ({ children }: Props) => {
