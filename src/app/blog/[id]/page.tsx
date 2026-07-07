@@ -3,7 +3,9 @@ import pageNavList from "@/features/blog/utils/pageNavList";
 import BlogDetail from "@/features/blog/components/BlogDetail/BlogDetail";
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import { authOptions } from "@/infra/auth/authOptions";
-import { getServerSession } from "next-auth";
+type Props = {
+  params: Promise<{ id: string }>;
+};
 
 export async function generateStaticParams() {
   const blogList = await getBlogList({ queries: { fields: ["id"] } });
@@ -12,7 +14,8 @@ export async function generateStaticParams() {
   }));
 }
 
-const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+const BlogPage = async ({ params }: Props) => {
+  console.log(params);
   const { id } = await params;
   const data = await getBlogList({ queries: { ids: `${id}` } });
   const allBlogData = await getBlogList({
@@ -20,10 +23,8 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   });
   const blogNavigation = pageNavList(allBlogData.contents, id);
 
-  const session = await getServerSession(authOptions);
-
   return (
-    <LayoutMain session={session}>
+    <LayoutMain>
       <BlogDetail
         blog={data.contents[0]}
         category={data.contents[0].categories}

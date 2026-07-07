@@ -1,17 +1,15 @@
 import { ReactNode } from "react";
 import Header from "@/commons/layout/components/Header/Header";
 import GithubBtn from "@/commons/layout/components/GithubBtn/GithubBtn";
-import { Session } from "next-auth";
 
 type Props = {
   children: ReactNode;
-  session: Session | null;
 };
 
-const LayoutMain = ({ children, session }: Props) => {
+const LayoutMain = ({ children }: Props) => {
   return (
     <>
-      <Header session={session} />
+      <Header />
       {children}
       {/* TODO:いつかヘッダーへ移動させる */}
       <div className="fixed bottom-4 right-4">
