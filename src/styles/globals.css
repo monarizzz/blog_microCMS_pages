@@ -16,8 +16,13 @@
   }
 } */
 
+/* Inter を先頭に置くことで、欧文=Inter / 和文=Noto Sans JP に振り分けられる。
+   順序を逆にすると欧文まで Noto Sans JP が描画するため入れ替えないこと。
+   詳細は Design.md 4.1 */
 body {
-  font-family: Arial, sans-serif;
+  font-family:
+    Inter, "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+    "Yu Gothic UI", Meiryo, sans-serif;
   margin: 0;
   padding: 0;
 }

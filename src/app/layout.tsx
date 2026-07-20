@@ -6,16 +6,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="jp">
+    <html lang="ja">
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap"
           rel="stylesheet"
-        ></link>
+        />
       </head>
       <body>{children}</body>
     </html>
