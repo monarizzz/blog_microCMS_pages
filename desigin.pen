@@ -1,0 +1,1199 @@
+{
+  "version": "2.14",
+  "children": [
+    {
+      "type": "frame",
+      "id": "t0zy7z",
+      "x": 0,
+      "y": -170,
+      "name": "Header",
+      "reusable": true,
+      "width": 1440,
+      "fill": "$white",
+      "stroke": "$gray-100",
+      "strokeWidth": {
+        "bottom": 1
+      },
+      "padding": [
+        16,
+        40
+      ],
+      "justifyContent": "space_between",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "xPliO",
+          "name": "Title",
+          "fill": "$gray-600",
+          "content": "BLOG",
+          "fontFamily": "$font-body",
+          "fontSize": 24,
+          "fontWeight": "700"
+        },
+        {
+          "type": "frame",
+          "id": "b0OmnY",
+          "name": "Nav",
+          "gap": 8,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "U4mMu",
+              "name": "NavItem",
+              "padding": [
+                4,
+                6
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tFQj9",
+                  "name": "Label",
+                  "fill": "$gray-500",
+                  "content": "HOME",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ba9MK",
+              "name": "NavItem",
+              "padding": [
+                4,
+                6
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "nDy2Y",
+                  "name": "Label",
+                  "fill": "$gray-500",
+                  "content": "CATEGORY",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "I8v4h",
+      "x": 1500,
+      "y": -170,
+      "name": "GithubBtn",
+      "reusable": true,
+      "width": 40,
+      "height": 40,
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "icon",
+          "id": "BoNkF",
+          "name": "Icon",
+          "width": 32,
+          "height": 32,
+          "icon": "github",
+          "library": "feather",
+          "fill": "$gray-600"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "jXCaU",
+      "x": 1580,
+      "y": -170,
+      "name": "TagPill",
+      "reusable": true,
+      "cornerRadius": 999,
+      "stroke": "$slate-500",
+      "strokeWidth": 1,
+      "padding": [
+        6,
+        12
+      ],
+      "children": [
+        {
+          "type": "text",
+          "id": "NTquC",
+          "name": "Label",
+          "fill": "$slate-500",
+          "content": "# タグ名",
+          "fontFamily": "$font-body",
+          "fontSize": 11,
+          "fontWeight": "700",
+          "letterSpacing": 1
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "GJlS7",
+      "x": 1692,
+      "y": -170,
+      "name": "TagButtonRow",
+      "reusable": true,
+      "gap": 4,
+      "children": [
+        {
+          "id": "B53mgL",
+          "type": "ref",
+          "ref": "jXCaU",
+          "name": "Tag1",
+          "descendants": {
+            "NTquC": {
+              "content": "# 技術"
+            }
+          }
+        },
+        {
+          "id": "J7GewH",
+          "type": "ref",
+          "ref": "jXCaU",
+          "name": "Tag2",
+          "descendants": {
+            "NTquC": {
+              "content": "# 日常"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "bPWgz",
+      "x": 1856,
+      "y": -170,
+      "name": "BlogCard",
+      "reusable": true,
+      "width": 280,
+      "fill": "$white",
+      "cornerRadius": 6,
+      "effect": {
+        "type": "shadow",
+        "shadowType": "outer",
+        "color": "#00000022",
+        "offset": {
+          "x": 0,
+          "y": 1
+        },
+        "blur": 4
+      },
+      "layout": "vertical",
+      "gap": 8,
+      "padding": 16,
+      "children": [
+        {
+          "type": "frame",
+          "id": "gUzXR",
+          "name": "CardTagRow",
+          "gap": 4,
+          "children": [
+            {
+              "id": "GYYsI",
+              "type": "ref",
+              "ref": "jXCaU",
+              "name": "Tag",
+              "descendants": {
+                "NTquC": {
+                  "content": "# 技術"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "oWMWV",
+          "name": "CardBody",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 6,
+          "padding": [
+            4,
+            0,
+            0,
+            8
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "jGh7G",
+              "name": "CardTitle",
+              "fill": "$black",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "記事タイトルがここに入ります記事タイトル",
+              "fontFamily": "$font-body",
+              "fontSize": 17,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "Ubcuv",
+              "name": "CardDate",
+              "fill": "$gray-400",
+              "content": "3日前",
+              "fontFamily": "$font-body",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "OR4UB",
+              "name": "CardExcerpt",
+              "fill": "$gray-500",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "記事の本文から抽出したプレーンテキストの抜粋がここに表示されます。二行程度で省略されます。",
+              "lineHeight": 1.6,
+              "fontFamily": "$font-body",
+              "fontSize": 12,
+              "fontWeight": "normal",
+              "letterSpacing": 0.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "nF2Rk",
+      "x": 2236,
+      "y": -170,
+      "name": "Home Page",
+      "clip": true,
+      "width": 1440,
+      "height": 700,
+      "fill": "$white",
+      "layout": "vertical",
+      "alignItems": "center",
+      "children": [
+        {
+          "id": "b5Ty6",
+          "type": "ref",
+          "ref": "t0zy7z",
+          "name": "Header",
+          "width": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "p5UaK",
+          "name": "Content",
+          "width": 1152,
+          "layout": "vertical",
+          "padding": [
+            24,
+            0
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "r9TQlF",
+              "name": "PageTitle",
+              "fill": "$black",
+              "content": "記事一覧",
+              "fontFamily": "$font-body",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "E0LUd",
+              "name": "Spacer",
+              "width": 1,
+              "height": 40
+            },
+            {
+              "type": "frame",
+              "id": "tZLze",
+              "name": "Grid",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "xbXgg",
+                  "name": "Row",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "id": "r80LX",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "Next.jsでブログを作った話"
+                        }
+                      }
+                    },
+                    {
+                      "id": "Edq8A",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "TypeScriptの型パズルに挑戦"
+                        }
+                      }
+                    },
+                    {
+                      "id": "dIzMF",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "microCMSとNext.jsの連携方法"
+                        }
+                      }
+                    },
+                    {
+                      "id": "qjttb",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "デザインシステムの作り方"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "mUcGj",
+                  "name": "Row",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "id": "jnYGx",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "Reactのパフォーマンス最適化"
+                        }
+                      }
+                    },
+                    {
+                      "id": "D0SIw7",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "エンジニア1年目の振り返り"
+                        }
+                      }
+                    },
+                    {
+                      "id": "pgUHc",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "CSS設計のベストプラクティス"
+                        }
+                      }
+                    },
+                    {
+                      "id": "wpLhP",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "チーム開発で学んだこと"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "AXQ6I",
+          "type": "ref",
+          "ref": "I8v4h",
+          "name": "GithubBtn",
+          "x": 1380,
+          "y": 640,
+          "layoutPosition": "absolute"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "yR7OI",
+      "x": 3776,
+      "y": -170,
+      "name": "Blog List Page",
+      "clip": true,
+      "width": 1440,
+      "height": 1300,
+      "fill": "$white",
+      "layout": "vertical",
+      "alignItems": "center",
+      "children": [
+        {
+          "id": "tHkrs",
+          "type": "ref",
+          "ref": "t0zy7z",
+          "name": "Header",
+          "width": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "moFJo",
+          "name": "Content",
+          "width": 1152,
+          "layout": "vertical",
+          "gap": 8,
+          "padding": [
+            24,
+            0
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "N244H",
+              "name": "Breadcrumb",
+              "gap": 6,
+              "padding": [
+                16,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "yK0yT",
+                  "name": "Home",
+                  "fill": "$gray-500",
+                  "content": "HOME",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Qt0My",
+                  "name": "Sep",
+                  "fill": "$gray-400",
+                  "content": "/",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "e2WKXn",
+                  "name": "Current",
+                  "fill": "$black",
+                  "content": "CATEGORY",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "V3AbF",
+              "name": "TagRowWrap",
+              "width": "fill_container",
+              "padding": [
+                16,
+                0
+              ],
+              "justifyContent": "end",
+              "children": [
+                {
+                  "id": "w1v0S",
+                  "type": "ref",
+                  "ref": "GJlS7",
+                  "name": "CategoryTags"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "l6GVGO",
+              "name": "CategorySection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                24,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "BF2Hp",
+                  "name": "CategoryName",
+                  "fill": "$slate-900",
+                  "content": "技術",
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "grFue",
+                  "name": "Row",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "id": "e5AOZ",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "Next.jsでブログを作った話"
+                        }
+                      }
+                    },
+                    {
+                      "id": "XBSRI",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "TypeScriptの型パズルに挑戦"
+                        }
+                      }
+                    },
+                    {
+                      "id": "rkpcz",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "microCMSとNext.jsの連携方法"
+                        }
+                      }
+                    },
+                    {
+                      "id": "CPLvk",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "デザインシステムの作り方"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "p3Deoo",
+              "name": "CategorySection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                24,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "F9Gwe",
+                  "name": "CategoryName",
+                  "fill": "$slate-900",
+                  "content": "日常",
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "USzD5",
+                  "name": "Row",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "id": "XNh39",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "エンジニア1年目の振り返り"
+                        }
+                      }
+                    },
+                    {
+                      "id": "gsAR9",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "チーム開発で学んだこと"
+                        }
+                      }
+                    },
+                    {
+                      "id": "TrJbc",
+                      "type": "ref",
+                      "ref": "bPWgz",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "descendants": {
+                        "jGh7G": {
+                          "content": "休日の過ごし方について"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "KRa2R",
+          "type": "ref",
+          "ref": "I8v4h",
+          "name": "GithubBtn",
+          "x": 1380,
+          "y": 1240,
+          "layoutPosition": "absolute"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "E602qu",
+      "x": 5316,
+      "y": -170,
+      "name": "Blog Detail Page",
+      "clip": true,
+      "width": 1200,
+      "height": 780,
+      "fill": "$white",
+      "layout": "vertical",
+      "alignItems": "center",
+      "children": [
+        {
+          "id": "eRhCB",
+          "type": "ref",
+          "ref": "t0zy7z",
+          "name": "Header",
+          "width": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "UEP0V",
+          "name": "Content",
+          "width": 960,
+          "layout": "vertical",
+          "padding": [
+            32,
+            0
+          ],
+          "children": [
+            {
+              "id": "Zpfl5",
+              "type": "ref",
+              "ref": "GJlS7",
+              "name": "Tags",
+              "justifyContent": "end",
+              "alignItems": "start",
+              "layout": "horizontal",
+              "x": 0,
+              "y": 32
+            },
+            {
+              "type": "frame",
+              "id": "OOfK0",
+              "name": "HeadArea",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                0,
+                0,
+                32,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "DevhZ",
+                  "name": "Title",
+                  "fill": "$black",
+                  "textGrowth": "fixed-width",
+                  "width": 700,
+                  "content": "Next.jsとmicroCMSでブログを作った話",
+                  "textAlign": "center",
+                  "fontFamily": "$font-body",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "LVVEI",
+                  "name": "DateRow",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "justifyContent": "end",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "uCnwn",
+                      "name": "PublishedDate",
+                      "fill": "$gray-400",
+                      "content": "2026/06/12 10:00",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "AaMNh",
+              "name": "MainRow",
+              "width": "fill_container",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jWGSG",
+                  "name": "ArticleColumn",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "C3yBG",
+                      "name": "ArticleBox",
+                      "width": "fill_container",
+                      "fill": "$zinc-50",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 20,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "kGpMg",
+                          "name": "Heading",
+                          "fill": "$black",
+                          "content": "はじめに",
+                          "fontFamily": "$font-body",
+                          "fontSize": 16,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "TxVIF",
+                          "name": "Paragraph1",
+                          "fill": "$gray-700",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "この記事では、Next.jsとmicroCMSを使ってブログを構築した際の設計や実装のポイントについて紹介します。App Routerを採用し、静的生成とISRを組み合わせた構成にしました。",
+                          "lineHeight": 1.8,
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "BMJe8",
+                          "name": "Heading2",
+                          "fill": "$black",
+                          "content": "技術選定",
+                          "fontFamily": "$font-body",
+                          "fontSize": 16,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "RbDI1",
+                          "name": "Paragraph2",
+                          "fill": "$gray-700",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "フロントエンドにはNext.js、スタイリングにはTailwind CSSを採用しています。コンテンツ管理にはmicroCMSを利用し、記事の更新をWebhook経由で反映しています。",
+                          "lineHeight": 1.8,
+                          "fontFamily": "$font-body",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Uk8F3",
+                      "name": "NavSpacer",
+                      "width": 1,
+                      "height": 56
+                    },
+                    {
+                      "type": "frame",
+                      "id": "gvpz1",
+                      "name": "PageNav",
+                      "width": "fill_container",
+                      "gap": 24,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "f72a9",
+                          "name": "PrevBtn",
+                          "width": "fill_container",
+                          "cornerRadius": 8,
+                          "stroke": "$slate-300",
+                          "strokeWidth": 1,
+                          "gap": 12,
+                          "padding": 16,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "O6MxI",
+                              "name": "ArrowLeft",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "arrow-left",
+                              "library": "feather",
+                              "fill": "$gray-500"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "W6cuP",
+                              "name": "PrevText",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "oPFK6",
+                                  "name": "Label",
+                                  "fill": "$slate-500",
+                                  "content": "前の記事",
+                                  "fontFamily": "$font-body",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "GZavd",
+                                  "name": "Title",
+                                  "fill": "$black",
+                                  "content": "TypeScriptの型パズルに挑戦",
+                                  "fontFamily": "$font-body",
+                                  "fontSize": 14,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "vUoye",
+                          "name": "NextBtn",
+                          "width": "fill_container",
+                          "cornerRadius": 8,
+                          "stroke": "$slate-300",
+                          "strokeWidth": 1,
+                          "gap": 12,
+                          "padding": 16,
+                          "justifyContent": "end",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "wiuP4",
+                              "name": "NextText",
+                              "layout": "vertical",
+                              "gap": 4,
+                              "alignItems": "end",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "P1v8Vt",
+                                  "name": "Label",
+                                  "fill": "$slate-500",
+                                  "content": "次の記事",
+                                  "fontFamily": "$font-body",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "C7gApO",
+                                  "name": "Title",
+                                  "fill": "$black",
+                                  "content": "デザインシステムの作り方",
+                                  "fontFamily": "$font-body",
+                                  "fontSize": 14,
+                                  "fontWeight": "700"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "rgYSl",
+                              "name": "ArrowRight",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "arrow-right",
+                              "library": "feather",
+                              "fill": "$gray-500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "f3XEI",
+                      "name": "BackSpacer",
+                      "width": 1,
+                      "height": 48
+                    },
+                    {
+                      "type": "text",
+                      "id": "e71Sqw",
+                      "name": "BackLink",
+                      "fill": "$indigo-800",
+                      "content": "← 記事一覧に戻る",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Gu6UX",
+                  "name": "Toc",
+                  "width": 220,
+                  "fill": "$slate-50",
+                  "cornerRadius": 8,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "uQuuP",
+                      "name": "TocItem",
+                      "fill": "$slate-500",
+                      "content": "はじめに",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Ffkbo",
+                      "name": "TocItem",
+                      "fill": "$slate-500",
+                      "content": "技術選定",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "T1z1V",
+                      "name": "TocItem",
+                      "fill": "$slate-500",
+                      "content": "ディレクトリ構成",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "P4iyPg",
+                      "name": "TocItem",
+                      "fill": "$slate-500",
+                      "content": "おわりに",
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "DsQoy",
+          "type": "ref",
+          "ref": "I8v4h",
+          "name": "GithubBtn",
+          "x": 1140,
+          "y": 720,
+          "layoutPosition": "absolute"
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "gray-100": {
+      "type": "color",
+      "value": "#F3F4F6"
+    },
+    "gray-400": {
+      "type": "color",
+      "value": "#9CA3AF"
+    },
+    "gray-500": {
+      "type": "color",
+      "value": "#6B7280"
+    },
+    "gray-600": {
+      "type": "color",
+      "value": "#4B5563"
+    },
+    "gray-700": {
+      "type": "color",
+      "value": "#374151"
+    },
+    "slate-50": {
+      "type": "color",
+      "value": "#F8FAFC"
+    },
+    "slate-300": {
+      "type": "color",
+      "value": "#CBD5E1"
+    },
+    "slate-500": {
+      "type": "color",
+      "value": "#64748B"
+    },
+    "slate-900": {
+      "type": "color",
+      "value": "#0F172A"
+    },
+    "zinc-50": {
+      "type": "color",
+      "value": "#FAFAFA"
+    },
+    "indigo-800": {
+      "type": "color",
+      "value": "#3730A3"
+    },
+    "black": {
+      "type": "color",
+      "value": "#000000"
+    },
+    "white": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "font-body": {
+      "type": "string",
+      "value": "Inter"
+    },
+    "font-inter": {
+      "type": "string",
+      "value": "Inter"
+    },
+    "font-mono": {
+      "type": "string",
+      "value": "JetBrains Mono"
+    },
+    "on-primary": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "on-surface": {
+      "type": "color",
+      "value": "#191C1D"
+    },
+    "on-surface-variant": {
+      "type": "color",
+      "value": "#4C4546"
+    },
+    "outline": {
+      "type": "color",
+      "value": "#7E7576"
+    },
+    "outline-variant": {
+      "type": "color",
+      "value": "#CFC4C5"
+    },
+    "primary": {
+      "type": "color",
+      "value": "#000000"
+    },
+    "secondary": {
+      "type": "color",
+      "value": "#555F6D"
+    },
+    "surface": {
+      "type": "color",
+      "value": "#F8F9FA"
+    },
+    "surface-bright": {
+      "type": "color",
+      "value": "#F8F9FA"
+    },
+    "surface-container": {
+      "type": "color",
+      "value": "#EDEEEF"
+    },
+    "surface-container-low": {
+      "type": "color",
+      "value": "#F3F4F5"
+    }
+  },
+  "fileToken": "6a1849b8-0263-40ac-8f9c-b55827d82a55"
+}
