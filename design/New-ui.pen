@@ -37,7 +37,7 @@
           "id": "NZPHs",
           "type": "ref",
           "ref": "JuCgU",
-          "x": 709,
+          "x": 637,
           "y": 20
         }
       ]
@@ -96,7 +96,7 @@
       "type": "frame",
       "id": "biM87",
       "x": 0,
-      "y": 437,
+      "y": 460,
       "name": "AtticTag",
       "reusable": true,
       "fill": "$surface-container-low",
@@ -251,6 +251,7 @@
               "id": "cZjgo",
               "name": "ArticleBody",
               "width": "fill_container",
+              "height": 1541,
               "layout": "vertical",
               "gap": 32,
               "children": [
@@ -277,26 +278,37 @@
                   "strokeWidth": {
                     "bottom": 1
                   },
-                  "layout": "vertical",
+                  "gap": 8,
                   "padding": [
                     0,
                     0,
                     8,
                     0
                   ],
+                  "alignItems": "center",
                   "children": [
                     {
                       "type": "text",
-                      "id": "cSC9z",
-                      "name": "H2_1",
+                      "id": "tajED",
+                      "name": "H1",
                       "fill": "$primary",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "Server Componentsの基本原則",
                       "fontFamily": "$font-inter",
-                      "fontSize": 24.19,
-                      "fontWeight": "500",
+                      "fontSize": 29.03,
+                      "fontWeight": "700",
                       "letterSpacing": -0.3
+                    },
+                    {
+                      "type": "icon",
+                      "id": "PZB8k",
+                      "name": "AnchorIcon (hover例)",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "link",
+                      "library": "lucide",
+                      "fill": "$secondary"
                     }
                   ]
                 },
@@ -426,26 +438,35 @@
                   "strokeWidth": {
                     "bottom": 1
                   },
-                  "layout": "vertical",
+                  "gap": 8,
                   "padding": [
                     0,
                     0,
                     8,
                     0
                   ],
+                  "alignItems": "center",
                   "children": [
                     {
-                      "type": "text",
-                      "id": "x93ci",
-                      "name": "H2_2",
-                      "fill": "$primary",
-                      "textGrowth": "fixed-width",
-                      "width": "fill_container",
-                      "content": "境界（Boundary）の設計",
-                      "fontFamily": "$font-inter",
-                      "fontSize": 24.19,
-                      "fontWeight": "500",
-                      "letterSpacing": -0.3
+                      "id": "gew0w",
+                      "type": "ref",
+                      "ref": "sSgdW",
+                      "x": 0,
+                      "y": 0,
+                      "content": "境界（Boundary）の設計"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "A5mEb",
+                      "x": 0,
+                      "y": 0,
+                      "name": "AnchorIcon",
+                      "enabled": false,
+                      "width": 18,
+                      "height": 18,
+                      "icon": "link",
+                      "library": "lucide",
+                      "fill": "$secondary"
                     }
                   ]
                 },
@@ -464,264 +485,11 @@
                   "letterSpacing": 0.2
                 },
                 {
-                  "type": "frame",
-                  "id": "pHbe2",
-                  "name": "CodeBlock",
-                  "clip": true,
-                  "width": "fill_container",
-                  "fill": "$surface-container-low",
-                  "cornerRadius": 36,
-                  "stroke": "$outline-variant",
-                  "strokeWidth": 1,
-                  "layout": "vertical",
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "AFV5i",
-                      "name": "CodeHeader",
-                      "width": "fill_container",
-                      "fill": "$surface",
-                      "stroke": "$outline-variant",
-                      "strokeWidth": {
-                        "bottom": 1
-                      },
-                      "padding": [
-                        8,
-                        16
-                      ],
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "GK2Il",
-                          "name": "FileName",
-                          "fill": "$secondary",
-                          "content": "components/Counter.tsx",
-                          "fontFamily": "$font-inter",
-                          "fontSize": 11.66,
-                          "fontWeight": "500",
-                          "letterSpacing": 0.5
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "V9N0Q",
-                      "name": "CodeBody",
-                      "width": "fill_container",
-                      "layout": "vertical",
-                      "padding": 16,
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "fDU6M",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "use client",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "v07yU",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": " ",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "h5ltcJ",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "import { useState } from react",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "VmhQJ",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": " ",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "m9pP04",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "export default function Counter() {",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "uZJre",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "  const [count, setCount] = useState(0)",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "jVevL",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "  ",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "pJgH6",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "  return (",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "LRIn9",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "    <button ",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "l9KMD",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "      onClick={() => setCount(count + 1)}",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "gVqQZ",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "      className=px-4 py-2 bg-primary text-on-primary rounded",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "ny3mq",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "    >",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "Wx19T",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "      Count: {count}",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "m4bo0u",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "    </button>",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "rt03K",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "  )",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "SkY16",
-                          "name": "CodeLine",
-                          "fill": "$primary",
-                          "textGrowth": "fixed-width",
-                          "width": "fill_container",
-                          "content": "}",
-                          "lineHeight": 1.6,
-                          "fontFamily": "$font-mono",
-                          "fontSize": 14,
-                          "fontWeight": "normal"
-                        }
-                      ]
-                    }
-                  ]
+                  "id": "NSDJb",
+                  "type": "ref",
+                  "ref": "qvMsD",
+                  "x": 0,
+                  "y": 607
                 },
                 {
                   "type": "text",
@@ -738,371 +506,11 @@
                   "letterSpacing": 0.2
                 },
                 {
-                  "type": "frame",
-                  "id": "jwZsH",
-                  "name": "Table",
-                  "clip": true,
-                  "width": "fill_container",
-                  "fill": "$white",
-                  "cornerRadius": 36,
-                  "stroke": "$outline-variant",
-                  "strokeWidth": 1,
-                  "layout": "vertical",
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "qk0nX",
-                      "name": "TableRow Head",
-                      "width": "fill_container",
-                      "fill": "$surface-container-low",
-                      "stroke": "$outline-variant",
-                      "strokeWidth": {
-                        "bottom": 1
-                      },
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "podZJ",
-                          "name": "Cell 種別",
-                          "width": "fill_container",
-                          "fill": "#00000000",
-                          "padding": [
-                            8,
-                            16
-                          ],
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "y5UHy",
-                              "name": "Label",
-                              "fill": "$primary",
-                              "content": "種別",
-                              "lineHeight": 1.6,
-                              "fontFamily": "$font-inter",
-                              "fontSize": 11.66,
-                              "fontWeight": "500",
-                              "letterSpacing": 0.5
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "ZgYFn",
-                          "name": "Cell バンドル",
-                          "width": "fill_container",
-                          "fill": "#00000000",
-                          "padding": [
-                            8,
-                            16
-                          ],
-                          "justifyContent": "end",
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "cx9yf",
-                              "name": "Label",
-                              "fill": "$primary",
-                              "content": "バンドル増加",
-                              "lineHeight": 1.6,
-                              "fontFamily": "$font-inter",
-                              "fontSize": 11.66,
-                              "fontWeight": "500",
-                              "letterSpacing": 0.5
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "CvrI4",
-                          "name": "Cell 初期表示",
-                          "width": "fill_container",
-                          "fill": "#00000000",
-                          "padding": [
-                            8,
-                            16
-                          ],
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "r7JIF",
-                              "name": "Label",
-                              "fill": "$primary",
-                              "content": "初期表示",
-                              "lineHeight": 1.6,
-                              "fontFamily": "$font-inter",
-                              "fontSize": 11.66,
-                              "fontWeight": "500",
-                              "letterSpacing": 0.5
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "OPO5h",
-                      "name": "TableRow 1",
-                      "width": "fill_container",
-                      "fill": "#00000000",
-                      "stroke": "$outline-variant",
-                      "strokeWidth": {
-                        "bottom": 1
-                      },
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "fVyWf",
-                          "name": "Cell 種別",
-                          "width": "fill_container",
-                          "fill": "#00000000",
-                          "padding": [
-                            8,
-                            16
-                          ],
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "Y9EMd",
-                              "name": "Label",
-                              "fill": "$on-surface",
-                              "content": "Server Component",
-                              "lineHeight": 1.6,
-                              "fontFamily": "$font-inter",
-                              "fontSize": 14,
-                              "fontWeight": "normal",
-                              "letterSpacing": 0.2
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "mGadS",
-                          "name": "Cell バンドル",
-                          "width": "fill_container",
-                          "fill": "#00000000",
-                          "padding": [
-                            8,
-                            16
-                          ],
-                          "justifyContent": "end",
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "oXStb",
-                              "name": "Label",
-                              "fill": "$on-surface",
-                              "content": "0 KB",
-                              "lineHeight": 1.6,
-                              "fontFamily": "$font-mono",
-                              "fontSize": 14,
-                              "fontWeight": "normal",
-                              "letterSpacing": 0.5
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "Ah11n",
-                          "name": "Cell 初期表示",
-                          "width": "fill_container",
-                          "fill": "#00000000",
-                          "padding": [
-                            8,
-                            16
-                          ],
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "hc6Hu",
-                              "name": "Label",
-                              "fill": "$on-surface",
-                              "content": "速い",
-                              "lineHeight": 1.6,
-                              "fontFamily": "$font-inter",
-                              "fontSize": 14,
-                              "fontWeight": "normal",
-                              "letterSpacing": 0.2
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "dWfFz",
-                      "name": "TableRow 2",
-                      "width": "fill_container",
-                      "fill": "#00000000",
-                      "stroke": "$outline-variant",
-                      "strokeWidth": {
-                        "bottom": 1
-                      },
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "CCTqG",
-                          "name": "Cell 種別",
-                          "width": "fill_container",
-                          "fill": "#00000000",
-                          "padding": [
-                            8,
-                            16
-                          ],
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "x6AVtr",
-                              "name": "Label",
-                              "fill": "$on-surface",
-                              "content": "Client Component",
-                              "lineHeight": 1.6,
-                              "fontFamily": "$font-inter",
-                              "fontSize": 14,
-                              "fontWeight": "normal",
-                              "letterSpacing": 0.2
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "VTY2P",
-                          "name": "Cell バンドル",
-                          "width": "fill_container",
-                          "fill": "#00000000",
-                          "padding": [
-                            8,
-                            16
-                          ],
-                          "justifyContent": "end",
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "z2eRp",
-                              "name": "Label",
-                              "fill": "$on-surface",
-                              "content": "+12 KB",
-                              "lineHeight": 1.6,
-                              "fontFamily": "$font-mono",
-                              "fontSize": 14,
-                              "fontWeight": "normal",
-                              "letterSpacing": 0.5
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "E6Cad",
-                          "name": "Cell 初期表示",
-                          "width": "fill_container",
-                          "fill": "#00000000",
-                          "padding": [
-                            8,
-                            16
-                          ],
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "e8knua",
-                              "name": "Label",
-                              "fill": "$on-surface",
-                              "content": "標準",
-                              "lineHeight": 1.6,
-                              "fontFamily": "$font-inter",
-                              "fontSize": 14,
-                              "fontWeight": "normal",
-                              "letterSpacing": 0.2
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "frame",
-                      "id": "nEYqX",
-                      "name": "TableRow 3",
-                      "width": "fill_container",
-                      "fill": "#00000000",
-                      "stroke": "$outline-variant",
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "l6H3a",
-                          "name": "Cell 種別",
-                          "width": "fill_container",
-                          "fill": "#00000000",
-                          "padding": [
-                            8,
-                            16
-                          ],
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "k1m4R2",
-                              "name": "Label",
-                              "fill": "$on-surface",
-                              "content": "Client + dynamic",
-                              "lineHeight": 1.6,
-                              "fontFamily": "$font-inter",
-                              "fontSize": 14,
-                              "fontWeight": "normal",
-                              "letterSpacing": 0.2
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "UWW2E",
-                          "name": "Cell バンドル",
-                          "width": "fill_container",
-                          "fill": "#00000000",
-                          "padding": [
-                            8,
-                            16
-                          ],
-                          "justifyContent": "end",
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "K08nf",
-                              "name": "Label",
-                              "fill": "$on-surface",
-                              "content": "+4 KB",
-                              "lineHeight": 1.6,
-                              "fontFamily": "$font-mono",
-                              "fontSize": 14,
-                              "fontWeight": "normal",
-                              "letterSpacing": 0.5
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "WHsh9",
-                          "name": "Cell 初期表示",
-                          "width": "fill_container",
-                          "fill": "#00000000",
-                          "padding": [
-                            8,
-                            16
-                          ],
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "U9xJM",
-                              "name": "Label",
-                              "fill": "$on-surface",
-                              "content": "速い",
-                              "lineHeight": 1.6,
-                              "fontFamily": "$font-inter",
-                              "fontSize": 14,
-                              "fontWeight": "normal",
-                              "letterSpacing": 0.2
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
+                  "id": "u54AqV",
+                  "type": "ref",
+                  "ref": "Y1rfsy",
+                  "x": 0,
+                  "y": 911
                 },
                 {
                   "type": "frame",
@@ -1140,13 +548,14 @@
                   "strokeWidth": {
                     "bottom": 1
                   },
-                  "layout": "vertical",
+                  "gap": 8,
                   "padding": [
                     0,
                     0,
                     8,
                     0
                   ],
+                  "alignItems": "center",
                   "children": [
                     {
                       "type": "text",
@@ -1160,6 +569,19 @@
                       "fontSize": 24.19,
                       "fontWeight": "500",
                       "letterSpacing": -0.3
+                    },
+                    {
+                      "type": "icon",
+                      "id": "zo2PU",
+                      "x": 0,
+                      "y": 0,
+                      "name": "AnchorIcon",
+                      "enabled": false,
+                      "width": 18,
+                      "height": 18,
+                      "icon": "link",
+                      "library": "lucide",
+                      "fill": "$secondary"
                     }
                   ]
                 },
@@ -1176,6 +598,16 @@
                   "fontSize": 16.8,
                   "fontWeight": "normal",
                   "letterSpacing": 0.2
+                },
+                {
+                  "id": "H4YXw",
+                  "type": "ref",
+                  "ref": "YJxBa",
+                  "name": "ScrollTop",
+                  "layoutPosition": "absolute",
+                  "x": 752,
+                  "y": 1477,
+                  "effect": []
                 }
               ]
             },
@@ -1350,7 +782,7 @@
       "id": "EAKfF",
       "x": 1963,
       "y": 564,
-      "name": "Profile Page",
+      "name": "About Page",
       "clip": true,
       "width": 880,
       "fill": "$white",
@@ -1401,7 +833,7 @@
                       "fill": "$primary",
                       "content": "Ccc",
                       "fontFamily": "$font-inter",
-                      "fontSize": 34.84,
+                      "fontSize": 41.8,
                       "fontWeight": "700",
                       "letterSpacing": -0.8
                     },
@@ -2929,6 +2361,16 @@
           "ref": "VMThv",
           "name": "Footer",
           "width": "fill_container"
+        },
+        {
+          "id": "I3RANa",
+          "type": "ref",
+          "ref": "qXMlW",
+          "name": "ScrollNav",
+          "layoutPosition": "absolute",
+          "x": 752,
+          "y": 1810,
+          "effect": []
         }
       ]
     },
@@ -3056,7 +2498,7 @@
       "name": "Home Page",
       "clip": true,
       "width": 880,
-      "height": 1925,
+      "height": 1826,
       "fill": "$white",
       "layout": "vertical",
       "children": [
@@ -3354,6 +2796,16 @@
           "ref": "VMThv",
           "name": "Footer",
           "width": "fill_container"
+        },
+        {
+          "id": "rrEJc",
+          "type": "ref",
+          "ref": "qXMlW",
+          "name": "ScrollNav",
+          "layoutPosition": "absolute",
+          "x": 755,
+          "y": 1648,
+          "effect": []
         }
       ]
     },
@@ -3365,7 +2817,6 @@
       "name": "Archive Page",
       "clip": true,
       "width": 880,
-      "height": 2325,
       "fill": "$white",
       "layout": "vertical",
       "children": [
@@ -3405,9 +2856,9 @@
                   "fill": "$primary",
                   "content": "Tags",
                   "fontFamily": "$font-inter",
-                  "fontSize": 34.84,
+                  "fontSize": 41.8,
                   "fontWeight": "700",
-                  "letterSpacing": -0.5
+                  "letterSpacing": -0.8
                 },
                 {
                   "type": "text",
@@ -3604,22 +3055,41 @@
                           "id": "AzLZo",
                           "name": "CategoryName",
                           "fill": "$primary",
-                          "content": "Next.js",
+                          "content": "# Next.js",
                           "fontFamily": "$font-inter",
                           "fontSize": 20.16,
                           "fontWeight": "700",
                           "letterSpacing": -0.3
                         },
                         {
-                          "type": "text",
-                          "id": "l2N0lW",
-                          "name": "Count",
-                          "fill": "$secondary",
-                          "content": "12 記事",
-                          "fontFamily": "$font-mono",
-                          "fontSize": 11.66,
-                          "fontWeight": "normal",
-                          "letterSpacing": 0.5
+                          "type": "frame",
+                          "id": "QQS9k",
+                          "name": "HeadRight",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "l2N0lW",
+                              "name": "Count",
+                              "fill": "$secondary",
+                              "content": "12 記事",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 11.66,
+                              "fontWeight": "normal",
+                              "letterSpacing": 0.5
+                            },
+                            {
+                              "type": "icon",
+                              "id": "WofpL",
+                              "name": "AnchorIcon (hover例)",
+                              "width": 18,
+                              "height": 18,
+                              "icon": "link",
+                              "library": "lucide",
+                              "fill": "$secondary"
+                            }
+                          ]
                         }
                       ]
                     },
@@ -3703,6 +3173,77 @@
                           }
                         }
                       ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "otrSz",
+                      "name": "SeeAll",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "padding": [
+                        20,
+                        0,
+                        4,
+                        0
+                      ],
+                      "justifyContent": "end",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "F0nX14",
+                          "name": "SeeAllLeft",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "NE3uu",
+                              "name": "Label",
+                              "fill": "$primary",
+                              "content": "# Next.js の記事をすべて見る",
+                              "fontFamily": "$font-inter",
+                              "fontSize": 13,
+                              "fontWeight": "700",
+                              "letterSpacing": -0.2
+                            },
+                            {
+                              "type": "frame",
+                              "id": "kUg6c",
+                              "name": "MoreBadge",
+                              "fill": "$surface-container-low",
+                              "cornerRadius": 9999,
+                              "padding": [
+                                3,
+                                9
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "byZtV",
+                                  "name": "Count",
+                                  "fill": "$secondary",
+                                  "content": "+9",
+                                  "fontFamily": "$font-mono",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal",
+                                  "letterSpacing": 0.5
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon",
+                          "id": "pCz1U",
+                          "name": "Arrow",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "arrow-right",
+                          "library": "lucide",
+                          "fill": "$primary"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -3738,22 +3279,44 @@
                           "id": "t7opg",
                           "name": "CategoryName",
                           "fill": "$primary",
-                          "content": "設計",
+                          "content": "# 設計",
                           "fontFamily": "$font-inter",
                           "fontSize": 20.16,
                           "fontWeight": "700",
                           "letterSpacing": -0.3
                         },
                         {
-                          "type": "text",
-                          "id": "J6F5ma",
-                          "name": "Count",
-                          "fill": "$secondary",
-                          "content": "11 記事",
-                          "fontFamily": "$font-mono",
-                          "fontSize": 11.66,
-                          "fontWeight": "normal",
-                          "letterSpacing": 0.5
+                          "type": "frame",
+                          "id": "xoueI",
+                          "name": "HeadRight",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "J6F5ma",
+                              "name": "Count",
+                              "fill": "$secondary",
+                              "content": "11 記事",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 11.66,
+                              "fontWeight": "normal",
+                              "letterSpacing": 0.5
+                            },
+                            {
+                              "type": "icon",
+                              "id": "X6QrzP",
+                              "x": 0,
+                              "y": 0,
+                              "name": "AnchorIcon",
+                              "enabled": false,
+                              "width": 18,
+                              "height": 18,
+                              "icon": "link",
+                              "library": "lucide",
+                              "fill": "$secondary"
+                            }
+                          ]
                         }
                       ]
                     },
@@ -3837,6 +3400,77 @@
                           }
                         }
                       ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ZlYDE",
+                      "name": "SeeAll",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "padding": [
+                        20,
+                        0,
+                        4,
+                        0
+                      ],
+                      "justifyContent": "end",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "bp72k",
+                          "name": "SeeAllLeft",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "LWlRh",
+                              "name": "Label",
+                              "fill": "$primary",
+                              "content": "# 設計 の記事をすべて見る",
+                              "fontFamily": "$font-inter",
+                              "fontSize": 13,
+                              "fontWeight": "700",
+                              "letterSpacing": -0.2
+                            },
+                            {
+                              "type": "frame",
+                              "id": "qk9CZ",
+                              "name": "MoreBadge",
+                              "fill": "$surface-container-low",
+                              "cornerRadius": 9999,
+                              "padding": [
+                                3,
+                                9
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "j1Wiw4",
+                                  "name": "Count",
+                                  "fill": "$secondary",
+                                  "content": "+8",
+                                  "fontFamily": "$font-mono",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal",
+                                  "letterSpacing": 0.5
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon",
+                          "id": "i5gBs",
+                          "name": "Arrow",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "arrow-right",
+                          "library": "lucide",
+                          "fill": "$primary"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -3872,22 +3506,44 @@
                           "id": "ZlSCw",
                           "name": "CategoryName",
                           "fill": "$primary",
-                          "content": "TypeScript",
+                          "content": "# TypeScript",
                           "fontFamily": "$font-inter",
                           "fontSize": 20.16,
                           "fontWeight": "700",
                           "letterSpacing": -0.3
                         },
                         {
-                          "type": "text",
-                          "id": "GHSx8",
-                          "name": "Count",
-                          "fill": "$secondary",
-                          "content": "8 記事",
-                          "fontFamily": "$font-mono",
-                          "fontSize": 11.66,
-                          "fontWeight": "normal",
-                          "letterSpacing": 0.5
+                          "type": "frame",
+                          "id": "krmV7",
+                          "name": "HeadRight",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "GHSx8",
+                              "name": "Count",
+                              "fill": "$secondary",
+                              "content": "8 記事",
+                              "fontFamily": "$font-mono",
+                              "fontSize": 11.66,
+                              "fontWeight": "normal",
+                              "letterSpacing": 0.5
+                            },
+                            {
+                              "type": "icon",
+                              "id": "klRKK",
+                              "x": 0,
+                              "y": 0,
+                              "name": "AnchorIcon",
+                              "enabled": false,
+                              "width": 18,
+                              "height": 18,
+                              "icon": "link",
+                              "library": "lucide",
+                              "fill": "$secondary"
+                            }
+                          ]
                         }
                       ]
                     },
@@ -3945,6 +3601,77 @@
                               "content": "#Vitest"
                             }
                           }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dBNOT",
+                      "name": "SeeAll",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "padding": [
+                        20,
+                        0,
+                        4,
+                        0
+                      ],
+                      "justifyContent": "end",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "yAbN4",
+                          "name": "SeeAllLeft",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "uP8wl",
+                              "name": "Label",
+                              "fill": "$primary",
+                              "content": "# TypeScript の記事をすべて見る",
+                              "fontFamily": "$font-inter",
+                              "fontSize": 13,
+                              "fontWeight": "700",
+                              "letterSpacing": -0.2
+                            },
+                            {
+                              "type": "frame",
+                              "id": "EKepY",
+                              "name": "MoreBadge",
+                              "fill": "$surface-container-low",
+                              "cornerRadius": 9999,
+                              "padding": [
+                                3,
+                                9
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Or1M7",
+                                  "name": "Count",
+                                  "fill": "$secondary",
+                                  "content": "+5",
+                                  "fontFamily": "$font-mono",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal",
+                                  "letterSpacing": 0.5
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon",
+                          "id": "jwG9m",
+                          "name": "Arrow",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "arrow-right",
+                          "library": "lucide",
+                          "fill": "$primary"
                         }
                       ]
                     }
@@ -4323,6 +4050,15 @@
             96,
             24
           ]
+        },
+        {
+          "id": "OoKjQ",
+          "type": "ref",
+          "ref": "qXMlW",
+          "name": "ScrollNav",
+          "layoutPosition": "absolute",
+          "x": 278,
+          "y": 1860
         }
       ]
     },
@@ -6246,6 +5982,15 @@
               "enabled": false
             }
           }
+        },
+        {
+          "id": "yHcwP",
+          "type": "ref",
+          "ref": "YJxBa",
+          "name": "ScrollTop",
+          "layoutPosition": "absolute",
+          "x": 310,
+          "y": 2860
         }
       ]
     },
@@ -7877,13 +7622,22 @@
             96,
             24
           ]
+        },
+        {
+          "id": "n49s4L",
+          "type": "ref",
+          "ref": "qXMlW",
+          "name": "ScrollNav",
+          "layoutPosition": "absolute",
+          "x": 278,
+          "y": 2380
         }
       ]
     },
     {
       "type": "frame",
       "id": "gwtSi",
-      "x": 3940,
+      "x": 6969,
       "y": 564,
       "name": "Search Page",
       "clip": true,
@@ -8107,9 +7861,172 @@
     },
     {
       "type": "frame",
+      "id": "JuCgU",
+      "x": 753,
+      "y": -101,
+      "name": "Nav",
+      "reusable": true,
+      "gap": 24,
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "QXsKn",
+          "name": "NavArchiveWrap",
+          "stroke": "$primary",
+          "strokeWidth": {
+            "bottom": 2
+          },
+          "padding": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "b6VE9b",
+              "name": "NavArchive",
+              "fill": "$primary",
+              "content": "Tags",
+              "fontFamily": "$font-inter",
+              "fontSize": 14,
+              "fontWeight": "700"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "Pt5R7",
+          "name": "NavProfile",
+          "fill": "$secondary",
+          "content": "Service",
+          "fontFamily": "$font-inter",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "yMSUA",
+          "name": "NavProfile",
+          "fill": "$secondary",
+          "content": "about",
+          "fontFamily": "$font-inter",
+          "fontSize": 14,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "icon",
+          "id": "UN4pf",
+          "name": "SearchIcon",
+          "width": 20,
+          "height": 20,
+          "icon": "search",
+          "library": "feather",
+          "fill": "$primary"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "qXMlW",
+      "x": 16,
+      "y": -577,
+      "name": "ScrollNav",
+      "reusable": true,
+      "width": 96,
+      "cornerRadius": 12,
+      "effect": {
+        "type": "shadow",
+        "shadowType": "outer",
+        "color": "#1a2a3314",
+        "offset": {
+          "x": 0,
+          "y": 4
+        },
+        "blur": 6,
+        "spread": -1
+      },
+      "layout": "vertical",
+      "gap": 24,
+      "padding": 24,
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "Ga8Lq",
+          "name": "Label",
+          "fill": "$secondary",
+          "content": "TOP",
+          "fontFamily": "$font-mono",
+          "fontSize": 11.66,
+          "fontWeight": "500",
+          "letterSpacing": 1.5
+        },
+        {
+          "type": "icon",
+          "id": "soxUW",
+          "name": "Up",
+          "width": 24,
+          "height": 24,
+          "icon": "chevron-up",
+          "library": "feather",
+          "fill": "$secondary"
+        },
+        {
+          "type": "icon",
+          "id": "saJfG",
+          "name": "Down",
+          "width": 24,
+          "height": 24,
+          "icon": "chevron-down",
+          "library": "feather",
+          "fill": "$secondary"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "YJxBa",
+      "x": 202,
+      "y": -513,
+      "name": "ScrollTop",
+      "reusable": true,
+      "width": 64,
+      "height": 64,
+      "cornerRadius": 12,
+      "layout": "vertical",
+      "gap": 4,
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "rectangle",
+          "cornerRadius": 9999,
+          "id": "l3oBuW",
+          "name": "Bar",
+          "fill": "$outline",
+          "width": 22,
+          "height": 3
+        },
+        {
+          "type": "icon",
+          "id": "aTP5w",
+          "name": "Chevron",
+          "width": 30,
+          "height": 30,
+          "icon": "chevron-up",
+          "library": "feather",
+          "fill": "$outline"
+        }
+      ]
+    },
+    {
+      "type": "frame",
       "id": "ZnbhV",
-      "x": 4900,
-      "y": -560,
+      "x": 3940,
+      "y": 2887,
       "name": "Blocks Catalog Page",
       "clip": true,
       "width": 880,
@@ -9018,18 +8935,30 @@
               "gap": 16,
               "children": [
                 {
-                  "type": "text",
-                  "id": "D3qg5",
+                  "type": "frame",
+                  "id": "Y5MxdQ",
                   "name": "H1",
                   "reusable": true,
-                  "fill": "$primary",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "見出し1 / Heading 1",
-                  "fontFamily": "$font-inter",
-                  "fontSize": 29.03,
-                  "fontWeight": "700",
-                  "letterSpacing": -0.3
+                  "width": "fit_content(784)",
+                  "stroke": "$outline-variant",
+                  "strokeWidth": {
+                    "bottom": 1
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "D3qg5",
+                      "name": "H1",
+                      "fill": "$primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "見出し1 / Heading 1",
+                      "fontFamily": "$font-inter",
+                      "fontSize": 29.03,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.3
+                    }
+                  ]
                 },
                 {
                   "type": "text",
@@ -9656,60 +9585,1116 @@
     },
     {
       "type": "frame",
-      "id": "JuCgU",
-      "x": 753,
-      "y": -101,
-      "name": "Nav",
+      "id": "JE7aw",
+      "x": 0,
+      "y": -71,
+      "name": "AtticPostRowCompact",
       "reusable": true,
+      "width": "fill_container(800)",
+      "stroke": "$outline-variant",
+      "strokeWidth": {
+        "bottom": 1
+      },
       "gap": 24,
+      "padding": [
+        16,
+        0
+      ],
       "alignItems": "center",
       "children": [
         {
           "type": "frame",
-          "id": "QXsKn",
-          "name": "NavArchiveWrap",
-          "stroke": "$primary",
-          "strokeWidth": {
-            "bottom": 2
-          },
-          "padding": [
-            0,
-            0,
-            4,
-            0
-          ],
+          "id": "AhcTG",
+          "name": "DateCol",
+          "width": 76,
+          "layout": "vertical",
           "children": [
             {
               "type": "text",
-              "id": "b6VE9b",
-              "name": "NavArchive",
-              "fill": "$primary",
-              "content": "Tags",
-              "fontFamily": "$font-inter",
-              "fontSize": 14,
-              "fontWeight": "700"
+              "id": "ZQpxk",
+              "name": "Date",
+              "fill": "$secondary",
+              "content": "2024.03.18",
+              "fontFamily": "$font-mono",
+              "fontSize": 11.66,
+              "fontWeight": "normal",
+              "letterSpacing": 0.5
             }
           ]
         },
         {
           "type": "text",
-          "id": "Pt5R7",
-          "name": "NavProfile",
-          "fill": "$secondary",
-          "content": "about",
+          "id": "dFvWY",
+          "name": "Title",
+          "fill": "$primary",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Next.js 14 App Router 移行の勘所",
+          "lineHeight": 1.4,
           "fontFamily": "$font-inter",
-          "fontSize": 14,
-          "fontWeight": "normal"
+          "fontSize": 15.5,
+          "fontWeight": "700",
+          "letterSpacing": -0.2
         },
         {
-          "type": "icon",
-          "id": "UN4pf",
-          "name": "SearchIcon",
-          "width": 20,
-          "height": 20,
-          "icon": "search",
-          "library": "feather",
-          "fill": "$primary"
+          "id": "PVKC1",
+          "type": "ref",
+          "ref": "biM87",
+          "name": "Tag",
+          "descendants": {
+            "jRLkz": {
+              "content": "#React"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "nwTBC",
+      "x": 3940,
+      "y": 564,
+      "name": "Tag Detail Page (Many Posts)",
+      "clip": true,
+      "width": 880,
+      "fill": "$white",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "YUdz6",
+          "type": "ref",
+          "ref": "K2xrvp",
+          "name": "Header",
+          "width": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "cTj5g",
+          "name": "Main",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            64,
+            32,
+            96,
+            32
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "sDQ9F",
+              "name": "Back",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "ulWfV",
+                  "name": "BackIcon",
+                  "width": 14,
+                  "height": 14,
+                  "icon": "arrow-left",
+                  "library": "lucide",
+                  "fill": "$secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "XsRk1",
+                  "name": "BackLabel",
+                  "fill": "$secondary",
+                  "content": "Tags 一覧へ",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 11.66,
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.5
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dKriu",
+              "name": "PageHead",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "XxckI",
+                  "name": "Title",
+                  "fill": "$primary",
+                  "content": "#Next.js",
+                  "fontFamily": "$font-inter",
+                  "fontSize": 34.84,
+                  "fontWeight": "700",
+                  "letterSpacing": -0.5
+                },
+                {
+                  "type": "text",
+                  "id": "p3WrM",
+                  "name": "Sub",
+                  "fill": "$secondary",
+                  "content": "38 記事",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 11.66,
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.5
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ceR2Q",
+              "name": "Toolbar",
+              "width": "fill_container",
+              "stroke": "$outline-variant",
+              "strokeWidth": {
+                "bottom": 1
+              },
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "vV5Py",
+                  "name": "SortRow",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "GabeB",
+                      "name": "Sort 新着順",
+                      "fill": "$surface-container-low",
+                      "cornerRadius": 9999,
+                      "padding": [
+                        6,
+                        12
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "vDbeH",
+                          "name": "Label",
+                          "fill": "$primary",
+                          "content": "新着順",
+                          "fontFamily": "$font-inter",
+                          "fontSize": 11.66,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Zex50",
+                      "name": "Sort 古い順",
+                      "cornerRadius": 9999,
+                      "padding": [
+                        6,
+                        12
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "G4O2Jk",
+                          "name": "Label",
+                          "fill": "$secondary",
+                          "content": "古い順",
+                          "fontFamily": "$font-inter",
+                          "fontSize": 11.66,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.5
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Q4O6S0",
+                  "name": "Range",
+                  "fill": "$secondary",
+                  "content": "1–15 / 38",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 11.66,
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.5
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Il4Ty",
+              "name": "PostList",
+              "width": "fill_container",
+              "layout": "vertical",
+              "children": [
+                {
+                  "id": "pu6e4",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post Next.js 14 App Router 移行の勘所",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2024.03.18"
+                    },
+                    "dFvWY": {
+                      "content": "Next.js 14 App Router 移行の勘所"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#React"
+                    }
+                  }
+                },
+                {
+                  "id": "k2dNH7",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post Server Actions で form 処理を書き直す",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2024.03.10"
+                    },
+                    "dFvWY": {
+                      "content": "Server Actions で form 処理を書き直す"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#React"
+                    }
+                  }
+                },
+                {
+                  "id": "Gi6KM",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post generateMetadata で OGP を動的生成する",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2024.03.02"
+                    },
+                    "dFvWY": {
+                      "content": "generateMetadata で OGP を動的生成する"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#SEO"
+                    }
+                  }
+                },
+                {
+                  "id": "X73iv",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post Suspense の使いどころを整理する",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2024.02.21"
+                    },
+                    "dFvWY": {
+                      "content": "Suspense の使いどころを整理する"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#React"
+                    }
+                  }
+                },
+                {
+                  "id": "y5upF",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post Route Handlers で API を薄く保つ",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2024.02.14"
+                    },
+                    "dFvWY": {
+                      "content": "Route Handlers で API を薄く保つ"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#設計"
+                    }
+                  }
+                },
+                {
+                  "id": "L5BTp1",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post Parallel Routes を実務で使ってみた",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2024.02.06"
+                    },
+                    "dFvWY": {
+                      "content": "Parallel Routes を実務で使ってみた"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#UI"
+                    }
+                  }
+                },
+                {
+                  "id": "k03HX",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post ISR とキャッシュ戦略の基本",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2024.01.30"
+                    },
+                    "dFvWY": {
+                      "content": "ISR とキャッシュ戦略の基本"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#パフォーマンス"
+                    }
+                  }
+                },
+                {
+                  "id": "YLDMy",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post middleware で認証ガードを一元化する",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2024.01.22"
+                    },
+                    "dFvWY": {
+                      "content": "middleware で認証ガードを一元化する"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#認証"
+                    }
+                  }
+                },
+                {
+                  "id": "Z0Nps",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post next/image の落とし穴と最適化",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2024.01.15"
+                    },
+                    "dFvWY": {
+                      "content": "next/image の落とし穴と最適化"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#パフォーマンス"
+                    }
+                  }
+                },
+                {
+                  "id": "ltLNI",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post Turbopack へ移行して開発体験はどう変わったか",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2024.01.08"
+                    },
+                    "dFvWY": {
+                      "content": "Turbopack へ移行して開発体験はどう変わったか"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#DX"
+                    }
+                  }
+                },
+                {
+                  "id": "ljMgc",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post Metadata API で SNS カードを整える",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2023.12.27"
+                    },
+                    "dFvWY": {
+                      "content": "Metadata API で SNS カードを整える"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#SEO"
+                    }
+                  }
+                },
+                {
+                  "id": "W1vEMu",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post Streaming SSR とローディング設計",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2023.12.18"
+                    },
+                    "dFvWY": {
+                      "content": "Streaming SSR とローディング設計"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#UX"
+                    }
+                  }
+                },
+                {
+                  "id": "uOFbJ",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post 環境変数の扱いと NEXT_PUBLIC の境界",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2023.12.09"
+                    },
+                    "dFvWY": {
+                      "content": "環境変数の扱いと NEXT_PUBLIC の境界"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#設計"
+                    }
+                  }
+                },
+                {
+                  "id": "MQHpv",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post App Router でのエラーハンドリング設計",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2023.11.30"
+                    },
+                    "dFvWY": {
+                      "content": "App Router でのエラーハンドリング設計"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#設計"
+                    }
+                  }
+                },
+                {
+                  "id": "y3Q1L",
+                  "type": "ref",
+                  "ref": "JE7aw",
+                  "name": "Post Vercel へのデプロイとプレビュー運用",
+                  "width": "fill_container",
+                  "descendants": {
+                    "ZQpxk": {
+                      "content": "2023.11.21"
+                    },
+                    "dFvWY": {
+                      "content": "Vercel へのデプロイとプレビュー運用"
+                    },
+                    "PVKC1/jRLkz": {
+                      "content": "#インフラ"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wFiAq",
+              "name": "Pagination",
+              "width": "fill_container",
+              "gap": 8,
+              "padding": [
+                24,
+                0,
+                0,
+                0
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "rrZzs",
+                  "name": "Prev",
+                  "width": 36,
+                  "height": 36,
+                  "cornerRadius": 9999,
+                  "stroke": "$outline-variant",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "amCUb",
+                      "name": "PrevIcon",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "chevron-left",
+                      "library": "lucide",
+                      "fill": "$secondary"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "tpJFd",
+                  "name": "Page 1",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "$primary",
+                  "cornerRadius": 9999,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "x27pHL",
+                      "name": "Num",
+                      "fill": "$on-primary",
+                      "content": "1",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 12.5,
+                      "fontWeight": "normal",
+                      "letterSpacing": 0.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "x5Xkyo",
+                  "name": "Page 2",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "$white",
+                  "cornerRadius": 9999,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "V6xtVG",
+                      "name": "Num",
+                      "fill": "$secondary",
+                      "content": "2",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 12.5,
+                      "fontWeight": "normal",
+                      "letterSpacing": 0.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EHuyf",
+                  "name": "Page 3",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "$white",
+                  "cornerRadius": 9999,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "FgCP5",
+                      "name": "Num",
+                      "fill": "$secondary",
+                      "content": "3",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 12.5,
+                      "fontWeight": "normal",
+                      "letterSpacing": 0.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gIC2A",
+                  "name": "Ellipsis",
+                  "width": 24,
+                  "height": 36,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "DOeTX",
+                      "name": "Dots",
+                      "fill": "$secondary",
+                      "content": "…",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 12.5,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "MzBOe",
+                  "name": "Page 3last",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "$white",
+                  "cornerRadius": 9999,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ggPEB",
+                      "name": "Num",
+                      "fill": "$secondary",
+                      "content": "10",
+                      "fontFamily": "$font-mono",
+                      "fontSize": 12.5,
+                      "fontWeight": "normal",
+                      "letterSpacing": 0.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Qu07V",
+                  "name": "Next",
+                  "width": 36,
+                  "height": 36,
+                  "cornerRadius": 9999,
+                  "stroke": "$outline-variant",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "EaDD8",
+                      "name": "NextIcon",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "chevron-right",
+                      "library": "lucide",
+                      "fill": "$primary"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Z5Cyp",
+          "type": "ref",
+          "ref": "VMThv",
+          "name": "Footer",
+          "width": "fill_container"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "jhtzh",
+      "x": 0,
+      "y": 4843,
+      "name": "ServiceCard",
+      "reusable": true,
+      "width": "fill_container(400)",
+      "height": 392,
+      "fill": "$surface",
+      "stroke": "$outline-variant",
+      "layout": "vertical",
+      "gap": 24,
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "erCnB",
+          "name": "Thumbnail",
+          "clip": true,
+          "width": "fill_container",
+          "height": 180,
+          "fill": "$surface-container-low",
+          "stroke": "$outline-variant",
+          "children": [
+            {
+              "type": "frame",
+              "id": "pBqqE",
+              "name": "ThumbFallback",
+              "clip": true,
+              "width": "fill_container",
+              "height": 220,
+              "fill": "$surface-container-low",
+              "stroke": "$outline-variant",
+              "layout": "vertical",
+              "gap": 10,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "V9iNDF",
+                  "name": "NoImgIcon",
+                  "width": 30,
+                  "height": 30,
+                  "icon": "image",
+                  "library": "lucide",
+                  "fill": "$on-surface-variant"
+                },
+                {
+                  "type": "text",
+                  "id": "rPvy8",
+                  "name": "NoImgLabel",
+                  "fill": "$on-surface-variant",
+                  "content": "NO IMAGE",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 10.5,
+                  "fontWeight": "normal",
+                  "letterSpacing": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "N1TFuE",
+          "name": "MetaRow",
+          "width": "fill_container",
+          "padding": [
+            0,
+            24
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "F9DQ1",
+              "name": "TechRow",
+              "fill": "$secondary",
+              "content": "Solo development",
+              "textAlign": "center",
+              "fontFamily": "$font-mono",
+              "fontSize": 10.5,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "M7R0J5",
+          "name": "CardBody",
+          "width": "fill_container",
+          "height": 189,
+          "layout": "vertical",
+          "gap": 16,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "rvZjc",
+              "name": "Frame 1",
+              "width": 401,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                0,
+                24
+              ],
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "b5TI7M",
+                  "name": "Title",
+                  "fill": "$primary",
+                  "content": "プロジェクト名",
+                  "lineHeight": 1.4,
+                  "textAlign": "center",
+                  "fontFamily": "$font-inter",
+                  "fontSize": 20.16,
+                  "fontWeight": "700",
+                  "letterSpacing": -0.3
+                },
+                {
+                  "type": "text",
+                  "id": "flw9W",
+                  "name": "TechRow",
+                  "fill": "$secondary",
+                  "textGrowth": "fixed-width",
+                  "width": 230,
+                  "content": "Next.js / TypeScript / microCMS",
+                  "textAlign": "center",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "YMarm",
+                  "name": "FootRow",
+                  "width": 124,
+                  "stroke": "$outline-variant",
+                  "padding": [
+                    4,
+                    0,
+                    0,
+                    0
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Z3Vl7",
+                      "name": "Links",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "mL8uj",
+                          "name": "Link Demo",
+                          "gap": 4,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "epe7P",
+                              "name": "LinkLabel",
+                              "fill": "$primary",
+                              "content": "URL",
+                              "fontFamily": "$font-inter",
+                              "fontSize": 12.5,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "icon",
+                              "id": "XOhBV",
+                              "name": "LinkIcon",
+                              "width": 13,
+                              "height": 13,
+                              "icon": "external-link",
+                              "library": "lucide",
+                              "fill": "$secondary"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "cDXGP",
+                          "name": "Link GitHub",
+                          "gap": 4,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "U8zfG",
+                              "name": "LinkLabel",
+                              "fill": "$primary",
+                              "content": "GitHub",
+                              "fontFamily": "$font-inter",
+                              "fontSize": 12.5,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "icon",
+                              "id": "ZxyQs",
+                              "name": "LinkIcon",
+                              "width": 13,
+                              "height": 13,
+                              "icon": "external-link",
+                              "library": "lucide",
+                              "fill": "$secondary"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "xFTIf",
+      "x": 4940,
+      "y": 564,
+      "name": "Service Page",
+      "clip": true,
+      "width": 880,
+      "fill": "$white",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "TVNRz",
+          "type": "ref",
+          "ref": "K2xrvp",
+          "name": "Header",
+          "width": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "a1eiiM",
+          "name": "Main",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 38,
+          "padding": [
+            64,
+            32,
+            96,
+            32
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "c40wr",
+              "name": "PageHead",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "O8Gbc",
+                  "name": "Title",
+                  "fill": "$primary",
+                  "content": "Service",
+                  "fontFamily": "$font-inter",
+                  "fontSize": 41.8,
+                  "fontWeight": "700",
+                  "letterSpacing": -0.8
+                },
+                {
+                  "type": "text",
+                  "id": "G1SuQs",
+                  "name": "Sub",
+                  "fill": "$on-surface-variant",
+                  "textGrowth": "fixed-width",
+                  "width": 560,
+                  "content": "これまでに開発したプロダクトと制作物のまとめ。",
+                  "lineHeight": 1.75,
+                  "fontFamily": "$font-inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.2
+                },
+                {
+                  "type": "text",
+                  "id": "Z6p83K",
+                  "name": "Count",
+                  "fill": "$secondary",
+                  "content": "6 プロジェクト",
+                  "fontFamily": "$font-mono",
+                  "fontSize": 11.66,
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.5
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "U2UG0Q",
+              "name": "WorksSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "bPjME",
+                  "name": "WorksHeadWrap",
+                  "width": "fill_container",
+                  "height": "fit_content(41)",
+                  "stroke": "$outline-variant",
+                  "strokeWidth": {
+                    "bottom": 1
+                  },
+                  "layout": "vertical",
+                  "padding": [
+                    0,
+                    0,
+                    12,
+                    0
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "z9vEl0",
+                  "name": "WorksGrid",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "K3OnSq",
+                      "name": "GalleryRow",
+                      "width": "fill_container",
+                      "height": 340,
+                      "gap": 32,
+                      "children": [
+                        {
+                          "id": "exbm8",
+                          "type": "ref",
+                          "ref": "jhtzh",
+                          "name": "Work MoneLogue",
+                          "width": "fill_container",
+                          "descendants": {
+                            "erCnB": {
+                              "cornerRadius": 0
+                            }
+                          }
+                        },
+                        {
+                          "type": "rectangle",
+                          "id": "gcmrA",
+                          "name": "VDivider",
+                          "fill": "$outline-variant",
+                          "width": 1,
+                          "height": "fill_container"
+                        },
+                        {
+                          "id": "HHxNx",
+                          "type": "ref",
+                          "ref": "jhtzh",
+                          "name": "Work タスク管理アプリ",
+                          "width": "fill_container",
+                          "descendants": {
+                            "erCnB": {
+                              "cornerRadius": 0
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "RoLzx",
+          "type": "ref",
+          "ref": "VMThv",
+          "name": "Footer",
+          "width": "fill_container"
         }
       ]
     }
