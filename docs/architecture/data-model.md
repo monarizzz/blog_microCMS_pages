@@ -44,7 +44,7 @@
 
 → 並び順は `startDate`（date）が担保し、期間は `startDate`/`endDate`、補足は `periodLabel` で添える。
 
-### 本棚（ShelfBook / ShelfNote） - HomePage
+### 本棚 - HomePage
 `articles` や `experiences`（`hasDetailPage=true`のみ）を並べて見せる**ビュー**なので、専用データは持たない。
 
 ## ER図
