@@ -62,7 +62,7 @@
                     {
                       "type": "frame",
                       "id": "d2SAII",
-                      "name": "Frame 10",
+                      "name": "Message",
                       "layout": "vertical",
                       "gap": 4,
                       "alignItems": "center",
@@ -104,182 +104,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "frame",
-          "id": "uGhVA",
-          "x": 241.2841923384476,
-          "y": 1804.5243067356764,
-          "name": "SP",
-          "clip": true,
-          "width": 390,
-          "fill": "$white",
-          "layout": "vertical",
-          "children": [
-            {
-              "id": "CGl6O",
-              "type": "ref",
-              "ref": "K2xrvp",
-              "name": "Header",
-              "width": "fill_container",
-              "padding": [
-                0,
-                24
-              ],
-              "descendants": {
-                "UYrzZ": {
-                  "width": "fit_content"
-                }
-              }
-            },
-            {
-              "type": "frame",
-              "id": "t6lvK",
-              "name": "Main",
-              "width": "fill_container",
-              "height": 720,
-              "layout": "vertical",
-              "gap": 24,
-              "padding": [
-                64,
-                24
-              ],
-              "justifyContent": "center",
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "VyXVA",
-                  "name": "Code",
-                  "fill": "$primary",
-                  "content": "404",
-                  "fontFamily": "$font-mono",
-                  "fontSize": 96,
-                  "fontWeight": "700",
-                  "letterSpacing": -2
-                },
-                {
-                  "type": "text",
-                  "id": "k15Uk",
-                  "name": "Title",
-                  "fill": "$primary",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "ページが見つかりません",
-                  "textAlign": "center",
-                  "fontFamily": "$font-inter",
-                  "fontSize": 20,
-                  "fontWeight": "700"
-                },
-                {
-                  "type": "text",
-                  "id": "AwHUC",
-                  "name": "Desc",
-                  "fill": "$secondary",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "お探しのページは移動または削除された可能性があります。URLをご確認いただくか、以下から目的のページをお探しください。",
-                  "lineHeight": 1.75,
-                  "textAlign": "center",
-                  "fontFamily": "$font-inter",
-                  "fontSize": 14,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "frame",
-                  "id": "T6SU2",
-                  "name": "HomeButton",
-                  "fill": "$primary",
-                  "cornerRadius": 24,
-                  "gap": 8,
-                  "padding": [
-                    14,
-                    28
-                  ],
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon",
-                      "id": "j44ChS",
-                      "name": "Arrow",
-                      "width": 16,
-                      "height": 16,
-                      "icon": "arrow-left",
-                      "library": "feather",
-                      "fill": "$on-primary"
-                    },
-                    {
-                      "type": "text",
-                      "id": "s4sw4",
-                      "name": "Label",
-                      "fill": "$on-primary",
-                      "content": "ホームに戻る",
-                      "fontFamily": "$font-inter",
-                      "fontSize": 14,
-                      "fontWeight": "500"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "A7flI",
-                  "name": "SubLinks",
-                  "gap": 20,
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "uhR3T",
-                      "name": "記事一覧",
-                      "fill": "$on-surface-variant",
-                      "content": "記事一覧",
-                      "fontFamily": "$font-inter",
-                      "fontSize": 14,
-                      "fontWeight": "500"
-                    },
-                    {
-                      "type": "text",
-                      "id": "OmNHx",
-                      "name": "アーカイブ",
-                      "fill": "$on-surface-variant",
-                      "content": "アーカイブ",
-                      "fontFamily": "$font-inter",
-                      "fontSize": 14,
-                      "fontWeight": "500"
-                    },
-                    {
-                      "type": "text",
-                      "id": "NRC5D",
-                      "name": "検索",
-                      "fill": "$on-surface-variant",
-                      "content": "検索",
-                      "fontFamily": "$font-inter",
-                      "fontSize": 14,
-                      "fontWeight": "500"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "h50px",
-              "type": "ref",
-              "ref": "VMThv",
-              "name": "Footer",
-              "width": "fill_container",
-              "padding": [
-                96,
-                24
-              ],
-              "descendants": {
-                "Cw2iV": {
-                  "width": "fit_content"
-                }
-              }
-            }
-          ]
         }
       ]
     },
@@ -297,52 +121,6 @@
           "y": 0,
           "name": "PC",
           "children": [
-            {
-              "type": "group",
-              "id": "o6MYC9",
-              "x": 74,
-              "y": 1723.5243067356764,
-              "name": "Search (No Results)",
-              "children": [
-                {
-                  "id": "bJhVd",
-                  "type": "ref",
-                  "ref": "gwtSi",
-                  "name": "Search Page (No Results)",
-                  "x": 0,
-                  "y": 0,
-                  "descendants": {
-                    "BFYlk": {
-                      "padding": [
-                        40,
-                        0
-                      ]
-                    },
-                    "Xeme1": {
-                      "width": "fill_container"
-                    },
-                    "lq9Gj/rtkJa": {
-                      "content": "ホゲホゲ"
-                    },
-                    "leuAk": {
-                      "content": "検索結果 0件"
-                    },
-                    "H7ytd": {
-                      "enabled": false
-                    },
-                    "HlAwB": {
-                      "enabled": false
-                    },
-                    "e8BuyX": {
-                      "enabled": true
-                    },
-                    "w4D2ut/Cw2iV": {
-                      "width": "fill_container"
-                    }
-                  }
-                }
-              ]
-            },
             {
               "type": "frame",
               "id": "gwtSi",
@@ -659,7 +437,7 @@
       "id": "t9pvP",
       "x": 8818.715807661552,
       "y": 564.6851677444912,
-      "name": "About",
+      "name": "Profile",
       "rotation": 0.027261959374392068,
       "children": [
         {
@@ -691,7 +469,7 @@
               "id": "EAKfF",
               "x": 0,
               "y": 0,
-              "name": "About Page",
+              "name": "Profile Page",
               "clip": true,
               "width": 1440,
               "fill": "$white",
@@ -723,7 +501,7 @@
                     {
                       "type": "frame",
                       "id": "sM8O1",
-                      "name": "Frame 13",
+                      "name": "IdentityBlock",
                       "layout": "vertical",
                       "gap": 64,
                       "children": [
@@ -795,7 +573,7 @@
                             {
                               "type": "frame",
                               "id": "WCc4s",
-                              "name": "Frame 9",
+                              "name": "StackList",
                               "layout": "vertical",
                               "gap": 8,
                               "padding": [
@@ -843,7 +621,7 @@
                                 {
                                   "type": "frame",
                                   "id": "o9IvtV",
-                                  "name": "StackRow2",
+                                  "name": "StackRow3",
                                   "gap": 8,
                                   "children": [
                                     {
@@ -983,7 +761,7 @@
                                   "id": "j2ccOZ",
                                   "x": 0.00004527920918917516,
                                   "y": -0.09516217596251408,
-                                  "name": "Frame 7",
+                                  "name": "ToolList",
                                   "width": "fit_content(200.04946169749655)",
                                   "layout": "vertical",
                                   "gap": 12,
@@ -1417,6 +1195,7 @@
                           "id": "cQ4lS",
                           "x": 566.1249456308724,
                           "y": -239.12884740577408,
+                          "name": "ProfileImage",
                           "fill": {
                             "type": "image",
                             "enabled": true,
@@ -1595,7 +1374,7 @@
                             {
                               "type": "frame",
                               "id": "qf7sr",
-                              "name": "Frame 15",
+                              "name": "DetailSections",
                               "width": "fit_content(655)",
                               "layout": "vertical",
                               "gap": 40,
@@ -2105,9 +1884,6 @@
                               "name": "GalleryRow 2",
                               "width": "fill_container",
                               "descendants": {
-                                "UewR6/b5TI7M": {
-                                  "content": "ポートフォリオサイト"
-                                },
                                 "pzeP1/b5TI7M": {
                                   "content": "天気予報アプリ"
                                 }
@@ -2125,14 +1901,14 @@
                                   "id": "omQxF",
                                   "type": "ref",
                                   "ref": "Ar2tj",
-                                  "name": "Line",
+                                  "name": "Divider",
                                   "width": "fill_container"
                                 },
                                 {
                                   "id": "Dzb4S",
                                   "type": "ref",
                                   "ref": "Ar2tj",
-                                  "name": "Line",
+                                  "name": "Divider",
                                   "width": "fill_container"
                                 }
                               ]
@@ -2144,9 +1920,6 @@
                               "name": "GalleryRow 3",
                               "width": "fill_container",
                               "descendants": {
-                                "UewR6/b5TI7M": {
-                                  "content": "技術ブログ"
-                                },
                                 "pzeP1/b5TI7M": {
                                   "content": "ECサイト"
                                 }
@@ -3522,10 +3295,17 @@
                           "alignItems": "center",
                           "children": [
                             {
-                              "id": "CreDl",
+                              "id": "SJcOb",
                               "type": "ref",
-                              "ref": "IXoQI",
-                              "name": "Check"
+                              "ref": "D1pbg",
+                              "name": "Check",
+                              "fill": "$surface",
+                              "strokeWidth": 1.5,
+                              "descendants": {
+                                "RGHUb": {
+                                  "enabled": false
+                                }
+                              }
                             },
                             {
                               "type": "text",
@@ -4280,7 +4060,7 @@
                         {
                           "type": "frame",
                           "id": "I3LdY",
-                          "name": "Frame 14",
+                          "name": "ShareBarWrap",
                           "width": "fill_container",
                           "children": [
                             {
@@ -4288,7 +4068,8 @@
                               "type": "ref",
                               "ref": "VyBtl",
                               "x": 0,
-                              "y": 0
+                              "y": 0,
+                              "name": "ShareBar"
                             }
                           ]
                         },
@@ -4946,534 +4727,6 @@
                   "content": "All"
                 }
               }
-            },
-            {
-              "type": "frame",
-              "id": "hdLAj",
-              "x": 0,
-              "y": 7783,
-              "name": "Home Page — Shelf (案)",
-              "clip": true,
-              "width": 1440,
-              "fill": "$surface",
-              "layout": "vertical",
-              "children": [
-                {
-                  "id": "rRpkO",
-                  "type": "ref",
-                  "ref": "K2xrvp",
-                  "name": "Header",
-                  "width": "fill_container"
-                },
-                {
-                  "id": "UmjU2",
-                  "type": "ref",
-                  "ref": "XEUvq",
-                  "name": "Intro",
-                  "width": "fill_container",
-                  "gap": 18,
-                  "padding": [
-                    88,
-                    64,
-                    40,
-                    64
-                  ],
-                  "descendants": {
-                    "n2Ampt": {
-                      "enabled": true,
-                      "content": "Home",
-                      "fontFamily": "$font-mono",
-                      "letterSpacing": 2,
-                      "fill": "$secondary"
-                    },
-                    "l5OrXg": {
-                      "content": "Portfolio",
-                      "letterSpacing": -0.3,
-                      "lineHeight": 1.3,
-                      "textGrowth": "fixed-width",
-                      "width": 820,
-                      "fill": "$primary"
-                    }
-                  }
-                },
-                {
-                  "type": "frame",
-                  "id": "tsynC",
-                  "name": "Shelf 1",
-                  "width": "fill_container",
-                  "layout": "vertical",
-                  "children": [
-                    {
-                      "id": "Mrb2Z",
-                      "type": "ref",
-                      "ref": "C0GFq",
-                      "name": "ShelfLabel",
-                      "width": "fill_container",
-                      "descendants": {
-                        "TclI5": {
-                          "content": "Blog"
-                        }
-                      }
-                    },
-                    {
-                      "type": "frame",
-                      "id": "VVE3R",
-                      "name": "Row",
-                      "width": "fill_container",
-                      "gap": 22,
-                      "padding": [
-                        0,
-                        64
-                      ],
-                      "alignItems": "end",
-                      "children": [
-                        {
-                          "id": "NA9uH",
-                          "type": "ref",
-                          "ref": "mqZTV",
-                          "name": "Note",
-                          "width": 186,
-                          "height": 300,
-                          "descendants": {
-                            "K2tIke": {
-                              "content": "伝えるよりも、\n気づいてもらう"
-                            },
-                            "GF38B": {
-                              "content": "Attitude · 10"
-                            }
-                          }
-                        },
-                        {
-                          "id": "IxZnS",
-                          "type": "ref",
-                          "ref": "AXiNC",
-                          "name": "Kosugiyu",
-                          "width": 238,
-                          "descendants": {
-                            "VZn8h": {
-                              "height": 300,
-                              "fill": "$surface"
-                            },
-                            "I7ktfB": {
-                              "content": "小杉湯",
-                              "fontSize": 40,
-                              "fill": "$primary"
-                            },
-                            "pIhcE": {
-                              "fill": "$ac-info"
-                            },
-                            "tg5be": {
-                              "content": "2024 | Service",
-                              "fill": "$on-primary"
-                            },
-                            "NYlYD": {
-                              "content": "Kosugiyu",
-                              "fill": "$white"
-                            }
-                          }
-                        },
-                        {
-                          "id": "v9l8S",
-                          "type": "ref",
-                          "ref": "AXiNC",
-                          "name": "麻婆食堂 DONDON",
-                          "width": 214,
-                          "descendants": {
-                            "VZn8h": {
-                              "height": 232,
-                              "fill": "$primary"
-                            },
-                            "I7ktfB": {
-                              "content": "どんどん",
-                              "fontSize": 26,
-                              "fill": "$white"
-                            },
-                            "pIhcE": {
-                              "fill": "$ac-danger"
-                            },
-                            "tg5be": {
-                              "content": "2024 | Service",
-                              "fill": "$on-primary"
-                            },
-                            "NYlYD": {
-                              "content": "麻婆食堂 DONDON",
-                              "fill": "$white"
-                            }
-                          }
-                        },
-                        {
-                          "id": "ZRbCX",
-                          "type": "ref",
-                          "ref": "mqZTV",
-                          "name": "Note",
-                          "width": 176,
-                          "height": 248,
-                          "descendants": {
-                            "K2tIke": {
-                              "content": "意訳してみる"
-                            },
-                            "GF38B": {
-                              "content": "Attitude · 15"
-                            }
-                          }
-                        },
-                        {
-                          "id": "BMmBL",
-                          "type": "ref",
-                          "ref": "AXiNC",
-                          "name": "KISO",
-                          "width": 240,
-                          "descendants": {
-                            "VZn8h": {
-                              "height": 292,
-                              "fill": "$surface",
-                              "flipX": false,
-                              "flipY": false,
-                              "width": "fill_container",
-                              "x": 0,
-                              "y": 0
-                            },
-                            "I7ktfB": {
-                              "content": "KISO",
-                              "fontSize": 46,
-                              "fill": "$primary"
-                            },
-                            "pIhcE": {
-                              "fill": "$primary"
-                            },
-                            "tg5be": {
-                              "content": "2024 | Service",
-                              "fill": "$on-primary"
-                            },
-                            "NYlYD": {
-                              "content": "KISO",
-                              "fill": "$white"
-                            }
-                          }
-                        },
-                        {
-                          "id": "r9uCgv",
-                          "type": "ref",
-                          "ref": "AXiNC",
-                          "name": "Portalley",
-                          "width": 210,
-                          "descendants": {
-                            "VZn8h": {
-                              "height": 276,
-                              "fill": "$surface-container-low"
-                            },
-                            "I7ktfB": {
-                              "content": "Portalley",
-                              "fontSize": 22,
-                              "fill": "$secondary"
-                            },
-                            "pIhcE": {
-                              "fill": "$ac-warning"
-                            },
-                            "tg5be": {
-                              "content": "2023 | Service",
-                              "fill": "$on-surface"
-                            },
-                            "NYlYD": {
-                              "content": "Portalley",
-                              "fill": "$on-surface"
-                            }
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "id": "Yxl7B",
-                      "type": "ref",
-                      "ref": "T42nPd",
-                      "name": "ShelfPlank",
-                      "width": "fill_container"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "LxesB",
-                  "name": "Shelf 2",
-                  "width": "fill_container",
-                  "layout": "vertical",
-                  "padding": [
-                    56,
-                    0,
-                    0,
-                    0
-                  ],
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "yuI4K",
-                      "name": "MoreLink",
-                      "width": "fill_container",
-                      "padding": [
-                        10,
-                        0,
-                        88,
-                        0
-                      ],
-                      "justifyContent": "center",
-                      "children": [
-                        {
-                          "id": "YHGiP",
-                          "type": "ref",
-                          "ref": "ZRLCv",
-                          "name": "SeeAll",
-                          "descendants": {
-                            "pkS6n": {
-                              "content": "記事 をすべて見る"
-                            },
-                            "Enc0Y": {
-                              "enabled": false
-                            }
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "id": "I2Psk",
-                      "type": "ref",
-                      "ref": "C0GFq",
-                      "name": "ShelfLabel",
-                      "width": "fill_container",
-                      "descendants": {
-                        "TclI5": {
-                          "content": "Service"
-                        }
-                      }
-                    },
-                    {
-                      "type": "frame",
-                      "id": "p1b4u",
-                      "name": "Row",
-                      "width": "fill_container",
-                      "gap": 22,
-                      "padding": [
-                        0,
-                        64
-                      ],
-                      "alignItems": "end",
-                      "children": [
-                        {
-                          "id": "a34ko",
-                          "type": "ref",
-                          "ref": "AXiNC",
-                          "name": "Next.js 14 App Router 移行の勘所",
-                          "width": 248,
-                          "descendants": {
-                            "VZn8h": {
-                              "height": 322,
-                              "fill": {
-                                "type": "image",
-                                "enabled": true,
-                                "url": "https://images.unsplash.com/photo-1607799131608-9a22dd60e25e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ3MDY1MjB8&ixlib=rb-4.1.0&q=80&w=1080",
-                                "mode": "fill"
-                              }
-                            },
-                            "I7ktfB": {
-                              "content": "",
-                              "enabled": false
-                            },
-                            "pIhcE": {
-                              "fill": "$surface-container-low"
-                            },
-                            "tg5be": {
-                              "content": "2024.03.18 · Blog",
-                              "fill": "$on-surface"
-                            },
-                            "NYlYD": {
-                              "content": "Next.js 14 App Router 移行の勘所",
-                              "fill": "$on-surface"
-                            }
-                          }
-                        },
-                        {
-                          "id": "BACzV",
-                          "type": "ref",
-                          "ref": "mqZTV",
-                          "name": "Note",
-                          "width": 180,
-                          "height": 272,
-                          "descendants": {
-                            "K2tIke": {
-                              "content": "わかりあえないを、\nわかる"
-                            },
-                            "GF38B": {
-                              "content": "Attitude · 18"
-                            }
-                          }
-                        },
-                        {
-                          "id": "jE7WN",
-                          "type": "ref",
-                          "ref": "AXiNC",
-                          "name": "型で守るコンポーネント設計",
-                          "width": 224,
-                          "descendants": {
-                            "VZn8h": {
-                              "height": 244,
-                              "fill": "$surface"
-                            },
-                            "I7ktfB": {
-                              "content": "TS",
-                              "fontSize": 44,
-                              "fill": "$ac-info"
-                            },
-                            "pIhcE": {
-                              "fill": "$primary"
-                            },
-                            "tg5be": {
-                              "content": "2024.02.06 · Blog",
-                              "fill": "$on-primary"
-                            },
-                            "NYlYD": {
-                              "content": "型で守るコンポーネント設計",
-                              "fill": "$white"
-                            }
-                          }
-                        },
-                        {
-                          "id": "dElNz",
-                          "type": "ref",
-                          "ref": "AXiNC",
-                          "name": "余白のデザイン、その効能",
-                          "width": 248,
-                          "descendants": {
-                            "VZn8h": {
-                              "height": 300,
-                              "fill": {
-                                "type": "image",
-                                "enabled": true,
-                                "url": "https://images.unsplash.com/photo-1625461291092-13d0c45608b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ3MDY1MjF8&ixlib=rb-4.1.0&q=80&w=1080",
-                                "mode": "fill"
-                              }
-                            },
-                            "I7ktfB": {
-                              "content": "",
-                              "enabled": false
-                            },
-                            "pIhcE": {
-                              "fill": "$surface-container-low"
-                            },
-                            "tg5be": {
-                              "content": "2024.01.22 · Blog",
-                              "fill": "$on-surface"
-                            },
-                            "NYlYD": {
-                              "content": "余白のデザイン、その効能",
-                              "fill": "$on-surface"
-                            }
-                          }
-                        },
-                        {
-                          "id": "lldTx",
-                          "type": "ref",
-                          "ref": "AXiNC",
-                          "name": "静的サイトという選択",
-                          "width": 214,
-                          "descendants": {
-                            "VZn8h": {
-                              "height": 268,
-                              "fill": "$surface-container-low"
-                            },
-                            "I7ktfB": {
-                              "content": "#",
-                              "fontSize": 56,
-                              "fill": "$secondary"
-                            },
-                            "pIhcE": {
-                              "fill": "$ac-success"
-                            },
-                            "tg5be": {
-                              "content": "2023.12.10 · Blog",
-                              "fill": "$on-primary"
-                            },
-                            "NYlYD": {
-                              "content": "静的サイトという選択",
-                              "fill": "$white"
-                            }
-                          }
-                        },
-                        {
-                          "id": "Ecx3j",
-                          "type": "ref",
-                          "ref": "AXiNC",
-                          "name": "日本語タイポグラフィの基礎",
-                          "width": 202,
-                          "descendants": {
-                            "VZn8h": {
-                              "height": 308,
-                              "fill": "$surface"
-                            },
-                            "I7ktfB": {
-                              "content": "あ",
-                              "fontSize": 52,
-                              "fill": "$primary"
-                            },
-                            "pIhcE": {
-                              "fill": "$ac-danger"
-                            },
-                            "tg5be": {
-                              "content": "2023.11.04 · Blog",
-                              "fill": "$on-primary"
-                            },
-                            "NYlYD": {
-                              "content": "日本語タイポグラフィの基礎",
-                              "fill": "$white"
-                            }
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "id": "ILD73",
-                      "type": "ref",
-                      "ref": "T42nPd",
-                      "name": "ShelfPlank",
-                      "width": "fill_container"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "m7WNZ",
-                  "name": "MoreLink",
-                  "width": "fill_container",
-                  "padding": [
-                    64,
-                    0,
-                    88,
-                    0
-                  ],
-                  "justifyContent": "center",
-                  "children": [
-                    {
-                      "id": "E73JB",
-                      "type": "ref",
-                      "ref": "ZRLCv",
-                      "name": "SeeAll",
-                      "descendants": {
-                        "pkS6n": {
-                          "content": "制作物をすべて見る"
-                        },
-                        "Enc0Y": {
-                          "enabled": false
-                        }
-                      }
-                    }
-                  ]
-                },
-                {
-                  "id": "KtVTL",
-                  "type": "ref",
-                  "ref": "VMThv",
-                  "name": "Footer",
-                  "width": "fill_container"
-                }
-              ]
             }
           ]
         }
@@ -5666,8 +4919,7 @@
                 {
                   "type": "frame",
                   "id": "UYrzZ",
-                  "name": "Frame 11",
-                  "rotation": 0.11769372726095013,
+                  "name": "HeaderInner",
                   "width": 1300,
                   "justifyContent": "space_between",
                   "alignItems": "center",
@@ -5682,8 +4934,9 @@
                       "id": "NZPHs",
                       "type": "ref",
                       "ref": "JuCgU",
-                      "x": 1082,
-                      "y": 5.5
+                      "x": 1085,
+                      "y": 5.5,
+                      "name": "GlobalNav"
                     }
                   ]
                 }
@@ -5711,7 +4964,7 @@
                 {
                   "type": "frame",
                   "id": "Cw2iV",
-                  "name": "Frame 12",
+                  "name": "FooterInner",
                   "width": 1300,
                   "layout": "vertical",
                   "gap": 16,
@@ -5722,11 +4975,12 @@
                       "ref": "JuCgU",
                       "x": 0,
                       "y": 0,
+                      "name": "GlobalNav",
                       "descendants": {
                         "yMSUA": {
                           "x": 128,
-                          "y": 2.0076343404436967,
-                          "rotation": 0.019016692880327837
+                          "y": 2,
+                          "rotation": 0
                         }
                       }
                     },
@@ -5762,7 +5016,7 @@
                 {
                   "type": "frame",
                   "id": "QXsKn",
-                  "name": "NavArchiveWrap",
+                  "name": "NavTagsWrap",
                   "stroke": "$primary",
                   "strokeWidth": {
                     "bottom": 2
@@ -5777,7 +5031,7 @@
                     {
                       "type": "text",
                       "id": "b6VE9b",
-                      "name": "NavArchive",
+                      "name": "NavTags",
                       "fill": "$primary",
                       "content": "Tags",
                       "fontFamily": "$font-inter",
@@ -5789,7 +5043,7 @@
                 {
                   "type": "text",
                   "id": "Pt5R7",
-                  "name": "NavProfile",
+                  "name": "NavService",
                   "fill": "$secondary",
                   "content": "Service",
                   "fontFamily": "$font-inter",
@@ -5801,7 +5055,7 @@
                   "id": "yMSUA",
                   "name": "NavProfile",
                   "fill": "$secondary",
-                  "content": " Profile",
+                  "content": "Profile",
                   "fontFamily": "$font-inter",
                   "fontSize": 14,
                   "fontWeight": "normal"
@@ -5810,8 +5064,9 @@
                   "id": "NzJuN",
                   "type": "ref",
                   "ref": "k2xlJ",
-                  "x": 198,
-                  "y": 2
+                  "x": 195,
+                  "y": 2,
+                  "name": "SearchButton"
                 }
               ]
             },
@@ -6253,7 +5508,8 @@
                   "type": "ref",
                   "ref": "XHkBO",
                   "name": "ImagePlaceholder",
-                  "width": "fill_container"
+                  "width": "fill_container",
+                  "height": "fill_container"
                 }
               ]
             },
@@ -6381,7 +5637,7 @@
                 {
                   "type": "frame",
                   "id": "pvV56",
-                  "name": "Frame 3",
+                  "name": "PageNumbers",
                   "gap": 4,
                   "children": [
                     {
@@ -6480,7 +5736,7 @@
                     {
                       "type": "frame",
                       "id": "MzBOe",
-                      "name": "Page 3last",
+                      "name": "PageLast",
                       "width": 36,
                       "height": 36,
                       "fill": "$white",
@@ -6680,7 +5936,7 @@
                     {
                       "type": "text",
                       "id": "HARWb",
-                      "name": "Icon",
+                      "name": "EmojiIcon",
                       "fill": "$primary",
                       "content": "💡",
                       "fontFamily": "$font-inter",
@@ -6848,7 +6104,7 @@
             {
               "type": "frame",
               "id": "D1pbg",
-              "name": "CheckboxChecked",
+              "name": "Checkbox",
               "reusable": true,
               "width": 20,
               "height": 20,
@@ -6869,20 +6125,6 @@
                   "fontWeight": "700"
                 }
               ]
-            },
-            {
-              "type": "frame",
-              "id": "IXoQI",
-              "name": "CheckboxUnchecked",
-              "reusable": true,
-              "width": 20,
-              "height": 20,
-              "fill": "$surface",
-              "cornerRadius": 12,
-              "stroke": "$outline",
-              "strokeWidth": 1.5,
-              "justifyContent": "center",
-              "alignItems": "center"
             },
             {
               "type": "frame",
@@ -7695,7 +6937,7 @@
                       "name": "ThumbFallback",
                       "clip": true,
                       "width": "fill_container",
-                      "height": 220,
+                      "height": "fill_container",
                       "fill": "$surface-container-low",
                       "stroke": "$outline-variant",
                       "layout": "vertical",
@@ -7769,7 +7011,7 @@
                     {
                       "type": "frame",
                       "id": "rvZjc",
-                      "name": "Frame 1",
+                      "name": "TitleBlock",
                       "width": "fill_container",
                       "layout": "vertical",
                       "gap": 12,
@@ -7791,7 +7033,7 @@
                         {
                           "type": "frame",
                           "id": "dMLNa",
-                          "name": "Frame 4",
+                          "name": "TechBlock",
                           "layout": "vertical",
                           "gap": 12,
                           "padding": [
@@ -7910,7 +7152,7 @@
               "name": "ServiceCardRow",
               "reusable": true,
               "width": "fill_container",
-              "height": 340,
+              "height": 362,
               "gap": 32,
               "padding": [
                 0,
@@ -7918,32 +7160,12 @@
               ],
               "children": [
                 {
-                  "id": "UewR6",
+                  "id": "cpiji",
                   "type": "ref",
                   "ref": "jhtzh",
-                  "name": "CardLeft",
-                  "width": "fill_container",
-                  "descendants": {
-                    "erCnB": {
-                      "cornerRadius": 0
-                    },
-                    "M7R0J5": {
-                      "flipX": false,
-                      "flipY": false,
-                      "height": 135,
-                      "width": 376,
-                      "x": 153.75,
-                      "y": 208
-                    },
-                    "rvZjc": {
-                      "flipX": false,
-                      "flipY": false,
-                      "height": "fit_content",
-                      "width": "fill_container",
-                      "x": 16,
-                      "y": 26
-                    }
-                  }
+                  "x": 20,
+                  "y": 0,
+                  "name": "CardLeft"
                 },
                 {
                   "id": "d4x4jW",
@@ -7992,7 +7214,7 @@
                     {
                       "type": "frame",
                       "id": "L8Xzn",
-                      "name": "Frame 5",
+                      "name": "IndexBadge",
                       "padding": [
                         0,
                         2
@@ -8028,7 +7250,7 @@
                         {
                           "type": "frame",
                           "id": "kbEKQ",
-                          "name": "Frame 6",
+                          "name": "TitleGroup",
                           "gap": 17,
                           "alignItems": "center",
                           "children": [
@@ -8046,7 +7268,7 @@
                             {
                               "type": "text",
                               "id": "PE2Cc",
-                              "name": "Title",
+                              "name": "Separator",
                               "fill": "$primary",
                               "content": "・",
                               "fontFamily": "$font-inter",
@@ -8070,7 +7292,7 @@
                         {
                           "type": "rectangle",
                           "id": "fqXD7",
-                          "name": "Line",
+                          "name": "Rule",
                           "fill": "$primary",
                           "width": "fill_container",
                           "height": 1.5
@@ -8102,7 +7324,7 @@
                         {
                           "type": "frame",
                           "id": "U3ke7",
-                          "name": "Frame 8",
+                          "name": "TechCol",
                           "layout": "vertical",
                           "gap": 4,
                           "padding": [
@@ -8131,7 +7353,8 @@
                           "type": "ref",
                           "ref": "aGtFB",
                           "x": 794,
-                          "y": 0
+                          "y": 0,
+                          "name": "OpenButton"
                         }
                       ]
                     }
@@ -8712,6 +7935,629 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "hdLAj",
+      "x": 0,
+      "y": 4863,
+      "name": "Home Page — Shelf (案)",
+      "clip": true,
+      "width": 1440,
+      "fill": "$surface",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "rRpkO",
+          "type": "ref",
+          "ref": "K2xrvp",
+          "name": "Header",
+          "width": "fill_container"
+        },
+        {
+          "id": "UmjU2",
+          "type": "ref",
+          "ref": "XEUvq",
+          "name": "Intro",
+          "width": "fill_container",
+          "gap": 18,
+          "padding": [
+            88,
+            64,
+            40,
+            64
+          ],
+          "descendants": {
+            "n2Ampt": {
+              "enabled": true,
+              "content": "Home",
+              "fontFamily": "$font-mono",
+              "letterSpacing": 2,
+              "fill": "$secondary"
+            },
+            "l5OrXg": {
+              "content": "Portfolio",
+              "letterSpacing": -0.3,
+              "lineHeight": 1.3,
+              "textGrowth": "fixed-width",
+              "width": 820,
+              "fill": "$primary"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "tsynC",
+          "name": "Shelf 1",
+          "width": "fill_container",
+          "layout": "vertical",
+          "children": [
+            {
+              "id": "Mrb2Z",
+              "type": "ref",
+              "ref": "C0GFq",
+              "name": "ShelfLabel",
+              "width": "fill_container",
+              "descendants": {
+                "TclI5": {
+                  "content": "Blog"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "VVE3R",
+              "name": "Row",
+              "width": "fill_container",
+              "gap": 22,
+              "padding": [
+                0,
+                64
+              ],
+              "alignItems": "end",
+              "children": [
+                {
+                  "id": "NA9uH",
+                  "type": "ref",
+                  "ref": "mqZTV",
+                  "name": "Note",
+                  "width": 186,
+                  "height": 300,
+                  "descendants": {
+                    "K2tIke": {
+                      "content": "伝えるよりも、\n気づいてもらう"
+                    },
+                    "GF38B": {
+                      "content": "Attitude · 10"
+                    }
+                  }
+                },
+                {
+                  "id": "IxZnS",
+                  "type": "ref",
+                  "ref": "AXiNC",
+                  "name": "Kosugiyu",
+                  "width": 238,
+                  "descendants": {
+                    "VZn8h": {
+                      "height": 300,
+                      "fill": "$surface"
+                    },
+                    "I7ktfB": {
+                      "content": "小杉湯",
+                      "fontSize": 40,
+                      "fill": "$primary"
+                    },
+                    "pIhcE": {
+                      "fill": "$ac-info"
+                    },
+                    "tg5be": {
+                      "content": "2024 | Service",
+                      "fill": "$on-primary"
+                    },
+                    "NYlYD": {
+                      "content": "Kosugiyu",
+                      "fill": "$white"
+                    }
+                  }
+                },
+                {
+                  "id": "v9l8S",
+                  "type": "ref",
+                  "ref": "AXiNC",
+                  "name": "麻婆食堂 DONDON",
+                  "width": 214,
+                  "descendants": {
+                    "VZn8h": {
+                      "height": 232,
+                      "fill": "$primary"
+                    },
+                    "I7ktfB": {
+                      "content": "どんどん",
+                      "fontSize": 26,
+                      "fill": "$white"
+                    },
+                    "pIhcE": {
+                      "fill": "$ac-danger"
+                    },
+                    "tg5be": {
+                      "content": "2024 | Service",
+                      "fill": "$on-primary"
+                    },
+                    "NYlYD": {
+                      "content": "麻婆食堂 DONDON",
+                      "fill": "$white"
+                    }
+                  }
+                },
+                {
+                  "id": "ZRbCX",
+                  "type": "ref",
+                  "ref": "mqZTV",
+                  "name": "Note",
+                  "width": 176,
+                  "height": 248,
+                  "descendants": {
+                    "K2tIke": {
+                      "content": "意訳してみる"
+                    },
+                    "GF38B": {
+                      "content": "Attitude · 15"
+                    }
+                  }
+                },
+                {
+                  "id": "BMmBL",
+                  "type": "ref",
+                  "ref": "AXiNC",
+                  "name": "KISO",
+                  "width": 240,
+                  "descendants": {
+                    "VZn8h": {
+                      "height": 292,
+                      "fill": "$surface",
+                      "flipX": false,
+                      "flipY": false,
+                      "width": "fill_container",
+                      "x": 0,
+                      "y": 0
+                    },
+                    "I7ktfB": {
+                      "content": "KISO",
+                      "fontSize": 46,
+                      "fill": "$primary"
+                    },
+                    "pIhcE": {
+                      "fill": "$primary"
+                    },
+                    "tg5be": {
+                      "content": "2024 | Service",
+                      "fill": "$on-primary"
+                    },
+                    "NYlYD": {
+                      "content": "KISO",
+                      "fill": "$white"
+                    }
+                  }
+                },
+                {
+                  "id": "r9uCgv",
+                  "type": "ref",
+                  "ref": "AXiNC",
+                  "name": "Portalley",
+                  "width": 210,
+                  "descendants": {
+                    "VZn8h": {
+                      "height": 276,
+                      "fill": "$surface-container-low"
+                    },
+                    "I7ktfB": {
+                      "content": "Portalley",
+                      "fontSize": 22,
+                      "fill": "$secondary"
+                    },
+                    "pIhcE": {
+                      "fill": "$ac-warning"
+                    },
+                    "tg5be": {
+                      "content": "2023 | Service",
+                      "fill": "$on-surface"
+                    },
+                    "NYlYD": {
+                      "content": "Portalley",
+                      "fill": "$on-surface"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "Yxl7B",
+              "type": "ref",
+              "ref": "T42nPd",
+              "name": "ShelfPlank",
+              "width": "fill_container"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "LxesB",
+          "name": "Shelf 2",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            56,
+            0,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "yuI4K",
+              "name": "MoreLink",
+              "width": "fill_container",
+              "padding": [
+                10,
+                0,
+                88,
+                0
+              ],
+              "justifyContent": "center",
+              "children": [
+                {
+                  "id": "YHGiP",
+                  "type": "ref",
+                  "ref": "ZRLCv",
+                  "name": "SeeAll",
+                  "descendants": {
+                    "pkS6n": {
+                      "content": "記事 をすべて見る"
+                    },
+                    "Enc0Y": {
+                      "enabled": false
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "I2Psk",
+              "type": "ref",
+              "ref": "C0GFq",
+              "name": "ShelfLabel",
+              "width": "fill_container",
+              "descendants": {
+                "TclI5": {
+                  "content": "Service"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "p1b4u",
+              "name": "Row",
+              "width": "fill_container",
+              "gap": 22,
+              "padding": [
+                0,
+                64
+              ],
+              "alignItems": "end",
+              "children": [
+                {
+                  "id": "a34ko",
+                  "type": "ref",
+                  "ref": "AXiNC",
+                  "name": "Next.js 14 App Router 移行の勘所",
+                  "width": 248,
+                  "descendants": {
+                    "VZn8h": {
+                      "height": 322,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1607799131608-9a22dd60e25e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ3MDY1MjB8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      }
+                    },
+                    "I7ktfB": {
+                      "content": "",
+                      "enabled": false
+                    },
+                    "pIhcE": {
+                      "fill": "$surface-container-low"
+                    },
+                    "tg5be": {
+                      "content": "2024.03.18 · Blog",
+                      "fill": "$on-surface"
+                    },
+                    "NYlYD": {
+                      "content": "Next.js 14 App Router 移行の勘所",
+                      "fill": "$on-surface"
+                    }
+                  }
+                },
+                {
+                  "id": "BACzV",
+                  "type": "ref",
+                  "ref": "mqZTV",
+                  "name": "Note",
+                  "width": 180,
+                  "height": 272,
+                  "descendants": {
+                    "K2tIke": {
+                      "content": "わかりあえないを、\nわかる"
+                    },
+                    "GF38B": {
+                      "content": "Attitude · 18"
+                    }
+                  }
+                },
+                {
+                  "id": "jE7WN",
+                  "type": "ref",
+                  "ref": "AXiNC",
+                  "name": "型で守るコンポーネント設計",
+                  "width": 224,
+                  "descendants": {
+                    "VZn8h": {
+                      "height": 244,
+                      "fill": "$surface"
+                    },
+                    "I7ktfB": {
+                      "content": "TS",
+                      "fontSize": 44,
+                      "fill": "$ac-info"
+                    },
+                    "pIhcE": {
+                      "fill": "$primary"
+                    },
+                    "tg5be": {
+                      "content": "2024.02.06 · Blog",
+                      "fill": "$on-primary"
+                    },
+                    "NYlYD": {
+                      "content": "型で守るコンポーネント設計",
+                      "fill": "$white"
+                    }
+                  }
+                },
+                {
+                  "id": "dElNz",
+                  "type": "ref",
+                  "ref": "AXiNC",
+                  "name": "余白のデザイン、その効能",
+                  "width": 248,
+                  "descendants": {
+                    "VZn8h": {
+                      "height": 300,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "https://images.unsplash.com/photo-1625461291092-13d0c45608b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ3MDY1MjF8&ixlib=rb-4.1.0&q=80&w=1080",
+                        "mode": "fill"
+                      }
+                    },
+                    "I7ktfB": {
+                      "content": "",
+                      "enabled": false
+                    },
+                    "pIhcE": {
+                      "fill": "$surface-container-low"
+                    },
+                    "tg5be": {
+                      "content": "2024.01.22 · Blog",
+                      "fill": "$on-surface"
+                    },
+                    "NYlYD": {
+                      "content": "余白のデザイン、その効能",
+                      "fill": "$on-surface"
+                    }
+                  }
+                },
+                {
+                  "id": "lldTx",
+                  "type": "ref",
+                  "ref": "AXiNC",
+                  "name": "静的サイトという選択",
+                  "width": 214,
+                  "descendants": {
+                    "VZn8h": {
+                      "height": 268,
+                      "fill": "$surface-container-low"
+                    },
+                    "I7ktfB": {
+                      "content": "#",
+                      "fontSize": 56,
+                      "fill": "$secondary"
+                    },
+                    "pIhcE": {
+                      "fill": "$ac-success"
+                    },
+                    "tg5be": {
+                      "content": "2023.12.10 · Blog",
+                      "fill": "$on-primary"
+                    },
+                    "NYlYD": {
+                      "content": "静的サイトという選択",
+                      "fill": "$white"
+                    }
+                  }
+                },
+                {
+                  "id": "Ecx3j",
+                  "type": "ref",
+                  "ref": "AXiNC",
+                  "name": "日本語タイポグラフィの基礎",
+                  "width": 202,
+                  "descendants": {
+                    "VZn8h": {
+                      "height": 308,
+                      "fill": "$surface"
+                    },
+                    "I7ktfB": {
+                      "content": "あ",
+                      "fontSize": 52,
+                      "fill": "$primary"
+                    },
+                    "pIhcE": {
+                      "fill": "$ac-danger"
+                    },
+                    "tg5be": {
+                      "content": "2023.11.04 · Blog",
+                      "fill": "$on-primary"
+                    },
+                    "NYlYD": {
+                      "content": "日本語タイポグラフィの基礎",
+                      "fill": "$white"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ILD73",
+              "type": "ref",
+              "ref": "T42nPd",
+              "name": "ShelfPlank",
+              "width": "fill_container"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "m7WNZ",
+          "name": "MoreLink",
+          "width": "fill_container",
+          "padding": [
+            64,
+            0,
+            88,
+            0
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "id": "E73JB",
+              "type": "ref",
+              "ref": "ZRLCv",
+              "name": "SeeAll",
+              "descendants": {
+                "pkS6n": {
+                  "content": "制作物をすべて見る"
+                },
+                "Enc0Y": {
+                  "enabled": false
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "KtVTL",
+          "type": "ref",
+          "ref": "VMThv",
+          "name": "Footer",
+          "width": "fill_container"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "o6MYC9",
+      "x": 10561,
+      "y": 2288,
+      "name": "Search (No Results)",
+      "children": [
+        {
+          "id": "bJhVd",
+          "type": "ref",
+          "ref": "gwtSi",
+          "name": "Search Page (No Results)",
+          "x": 0,
+          "y": 0,
+          "descendants": {
+            "BFYlk": {
+              "padding": [
+                40,
+                0
+              ]
+            },
+            "Xeme1": {
+              "width": "fill_container"
+            },
+            "lq9Gj/rtkJa": {
+              "content": "ホゲホゲ"
+            },
+            "leuAk": {
+              "content": "検索結果 0件"
+            },
+            "H7ytd": {
+              "enabled": false
+            },
+            "HlAwB": {
+              "enabled": false
+            },
+            "e8BuyX": {
+              "enabled": true
+            },
+            "w4D2ut/Cw2iV": {
+              "width": "fill_container"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "C6NZre",
+      "type": "ref",
+      "ref": "RgUbK",
+      "x": 16280.715807661552,
+      "y": -7837
+    },
+    {
+      "id": "F9rMqz",
+      "type": "ref",
+      "ref": "RgUbK",
+      "x": 17792.715807661552,
+      "y": -7837
+    },
+    {
+      "id": "r8kaU",
+      "type": "ref",
+      "ref": "RgUbK",
+      "x": 19304.715807661552,
+      "y": -7837
+    },
+    {
+      "id": "m2DeST",
+      "type": "ref",
+      "ref": "RgUbK",
+      "x": 20816.715807661552,
+      "y": -7837
+    },
+    {
+      "id": "V70HB0",
+      "type": "ref",
+      "ref": "RgUbK",
+      "x": 22328.715807661552,
+      "y": -7837
+    },
+    {
+      "id": "KPHcM",
+      "type": "ref",
+      "ref": "RgUbK",
+      "x": 23840.715807661552,
+      "y": -7837
+    },
+    {
+      "id": "w0RHQs",
+      "type": "ref",
+      "ref": "RgUbK",
+      "x": 25352.715807661552,
+      "y": -7837
     }
   ],
   "variables": {
