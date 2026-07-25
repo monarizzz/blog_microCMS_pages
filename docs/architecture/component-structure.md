@@ -76,8 +76,32 @@ export default Component;
 
 **原則 Tailwind CSS。** クラスは `className` に直接書く。
 
-- 条件によるスタイル切り替えはテンプレートリテラルで書く（例: `PageNavBtn` の `isNext`）
 - デザイントークンは `tailwind.config.ts` 経由で参照する。生の値を直接書かない
+
+### 条件によるスタイル切り替え
+
+**`cn()`（`@/lib/utils`）を使う**
+
+```tsx
+import { cn } from "@/lib/utils";
+
+<Link
+  className={cn(
+    "flex min-w-0 flex-1 items-center rounded-lg border border-slate-300 p-4",
+    isNext && "flex-row-reverse text-right",
+  )}
+>
+```
+
+使い分け:
+
+| 状況 | 手段 |
+|---|---|
+| 条件なし（静的） | 文字列をそのまま `className` に書く |
+| ON/OFF や数個の条件 | `cn()` |
+| `variant` / `size` など多軸のバリアント | `cva()`（class-variance-authority） |
+
+> `cn()` の中もクラス並び替えの対象にするには、`prettier.config.js` に `tailwindFunctions: ["cn"]` の指定が必要。
 
 <!-- ### CSS Modules（`*.module.scss`）を使ってよい場合
 
