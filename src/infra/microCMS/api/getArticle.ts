@@ -7,5 +7,6 @@ export const getArticle = async ({
 }: MicroCMSQueries): Promise<MicroCMSListResponse<Article>> => {
   return await client.getList({
     endpoint: "article",
+    queries: {},
   });
 };
