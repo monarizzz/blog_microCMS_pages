@@ -8,8 +8,11 @@
     "Noto Sans JP", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
   --font-family-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  /* 基準 14px（base）・公比 1.2 の等比スケール */
-  --font-size-xs: 0.6076rem; /*  9.72px */
+  /* 基準 14px（base）・公比 1.2 の等比スケール。
+     xs だけは等比から外れる。等幅ラベル（PERIOD / TECH STACK / ROLE など）専用の
+     光学補正値で、同じ px でも小さく見える font-mono に合わせて一段上げてある。
+     等比どおりの 9.72px は使用箇所がないため段として持たない */
+  --font-size-xs: 0.65625rem; /* 10.5px  font-mono の極小ラベル */
   --font-size-sm: 0.7292rem; /* 11.66px */
   --font-size-base: 0.875rem; /* 14px    本文 */
   --font-size-lg: 1.05rem; /* 16.8px  */
