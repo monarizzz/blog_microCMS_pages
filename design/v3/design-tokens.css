@@ -2,9 +2,11 @@
 
 :root {
   /* Typography */
-  --font-family-body: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', system-ui, sans-serif;
-  --font-family-heading: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', system-ui, sans-serif;
-  --font-family-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-family-body:
+    "Noto Sans JP", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+  --font-family-heading:
+    "Noto Sans JP", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+  --font-family-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --font-size-xs: 0.6076rem;
   --font-size-sm: 0.7292rem;
@@ -51,9 +53,15 @@
 
   /* Shadow */
   --shadow-sm: 0 1px 2px 0 oklch(25% 0.08 220 / 0.06);
-  --shadow-md: 0 4px 6px -1px oklch(25% 0.08 220 / 0.08), 0 2px 4px -2px oklch(25% 0.08 220 / 0.08);
-  --shadow-lg: 0 10px 15px -3px oklch(25% 0.08 220 / 0.1), 0 4px 6px -4px oklch(25% 0.08 220 / 0.1);
-  --shadow-xl: 0 20px 25px -5px oklch(25% 0.08 220 / 0.12), 0 8px 10px -6px oklch(25% 0.08 220 / 0.12);
+  --shadow-md:
+    0 4px 6px -1px oklch(25% 0.08 220 / 0.08),
+    0 2px 4px -2px oklch(25% 0.08 220 / 0.08);
+  --shadow-lg:
+    0 10px 15px -3px oklch(25% 0.08 220 / 0.1),
+    0 4px 6px -4px oklch(25% 0.08 220 / 0.1);
+  --shadow-xl:
+    0 20px 25px -5px oklch(25% 0.08 220 / 0.12),
+    0 8px 10px -6px oklch(25% 0.08 220 / 0.12);
 
   /* Color: monochrome (cool tint), light + dark */
   /* OKLCH (source of truth) */
@@ -83,9 +91,10 @@
 
   --color-success-500: oklch(60% 0.057 145);
   --color-warning-500: oklch(72% 0.057 80);
-  --color-danger-500:  oklch(60% 0.057 25);
-  --color-info-500:    oklch(60% 0.057 240);
+  --color-danger-500: oklch(60% 0.057 25);
+  --color-info-500: oklch(60% 0.057 240);
 
+  /* 未実装のため参照しない */
   /* Dark variants */
   --color-primary-dark-50: oklch(15% 0.0042 240);
   --color-primary-dark-100: oklch(22% 0.0054 240);
