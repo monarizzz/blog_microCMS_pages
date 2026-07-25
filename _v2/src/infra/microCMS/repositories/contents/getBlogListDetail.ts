@@ -1,4 +1,4 @@
-import { client } from "@/libs/microCMS/utils/client";
+import { client } from "@/libs/microCMS/client";
 
 type Props = {
   contentId: string;
