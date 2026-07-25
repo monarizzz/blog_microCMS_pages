@@ -1,4 +1,4 @@
-import { MicroCMSImage } from "microcms-js-sdk";
+import { MicroCMSImage, MicroCMSListContent } from "microcms-js-sdk";
 import { Tags } from "./tags";
 
 export type Experiences = {
@@ -13,5 +13,10 @@ export type Experiences = {
   endDate?: string;
   periodLabel?: string;
   role?: string;
-  url: [];
+  url: CustomField[];
+};
+
+type CustomField = {
+  fieldId: "url";
+  url: string;
 };
