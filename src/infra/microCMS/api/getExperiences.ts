@@ -7,8 +7,6 @@ export const getExperiences = async ({
 }: MicroCMSQueries): Promise<MicroCMSListResponse<Experiences>> => {
   return await client.getList({
     endpoint: "experiences",
-    queries: {
-      richEditorFormat: "object",
-    },
+    queries: {},
   });
 };
