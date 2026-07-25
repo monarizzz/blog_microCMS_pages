@@ -22,10 +22,10 @@ components/
 
 ```tsx
 type Props = {
-  prop: prop;
+ propName: string
 };
 
-const Component = ({ prop }: Props) => {
+const Component = ({ propName }: Props) => {
   return <div className="...">...</div>;
 };
 
