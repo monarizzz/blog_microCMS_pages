@@ -32,10 +32,10 @@ app/
 ├── service/              # サービスページ
 ├── profile/              # プロフィールページ
 ├── search/               # 検索ページ
-├── 404.tsx               # 404エラーページ
-└── index.tsx             # ホームページ
+├── layout.tsx            
+├── not-found.tsx         # 404エラーページ
+└── page.tsx              # ホームページ
 ```
-
 
 #### `/src/commons`、`/src/features`、`/src/libs` - 共通ディレクトリ構造
 
@@ -107,7 +107,7 @@ features/
 
 ```text
 infra/
-└── microCMS/             # microCMS CMS 連携
+└── microCMS/             # microCMS 連携
     ├── api/              # API エンドポイント定義
     ├── entities/         # エンティティ定義
     └── repositories/     # データアクセス関数（機能別整理）
