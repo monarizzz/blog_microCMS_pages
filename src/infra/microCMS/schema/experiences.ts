@@ -8,7 +8,7 @@ export type Experiences = {
   summary: string;
   description: string;
   heroImage: MicroCMSImage[];
-  tags: Tags[];
+  tags: (Tags & MicroCMSListContent)[];
   startDate: string;
   endDate?: string;
   periodLabel?: string;
