@@ -73,14 +73,14 @@ spacing:
   5xl: 192px
 rounded:
   none: 0
+  xs: 8px
   sm: 12px
-  md: 24px
-  lg: 36px
-  xl: 48px
+  md: 16px
+  lg: 24px
   full: 9999px
 components:
   button:
-    rounded: "{rounded.md}"
+    rounded: "{rounded.full}"
   card:
     rounded: "{rounded.lg}"
   input:
