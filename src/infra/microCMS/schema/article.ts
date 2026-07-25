@@ -1,3 +1,8 @@
+import { MicroCMSListContent } from "microcms-js-sdk";
+import { Tags } from "./tags";
+
 export type Article = {
-  // TODO:APIに破壊的変更をする必要があるので最後に実装
+  title: string;
+  tags: (Tags & MicroCMSListContent)[];
+  content: string;
 };
