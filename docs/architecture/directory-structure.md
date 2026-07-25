@@ -37,9 +37,9 @@ app/
 └── page.tsx              # ホームページ
 ```
 
-#### `/src/commons`、`/src/features`、`/src/libs` - 共通ディレクトリ構造
+#### `/src/commons`、`/src/features` - 共通ディレクトリ構造
 
-**`/src/commons`、`/src/features`、`/src/libs`は同じディレクトリ構造を持ちます。**
+**`/src/commons`、`/src/features`は同じディレクトリ構造を持ちます。**
 違いは「利用目的と範囲」であり、内部構造は統一されています。
 
 ##### 共通のディレクトリ構造
@@ -107,28 +107,10 @@ features/
 
 ```text
 infra/
-└── microCMS/             # microCMS 連携
-    ├── api/              # API エンドポイント定義
-    ├── entities/         # エンティティ定義
-    └── repositories/     # データアクセス関数（機能別整理）
-```
-
-#### `/src/libs` - 外部ライブラリの設定、拡張、カスタマイズ
-
-**外部ライブラリの設定、拡張、カスタマイズ**を格納します。
-
-**配置基準:**
-
-- 外部ライブラリの初期化設定
-- ライブラリ固有のカスタムコンポーネント・フック
-- ライブラリのラッパー関数やヘルパー
-
-**具体例:**
-
-```text
-libs/
-└── microCMS/       # microCMS クライアント設定・拡張
-    └── client.ts   # microCMS クライアント初期化
+└── microCMS/
+    ├── api/              # データアクセス関数
+    ├── schema/           # エンティティ定義
+    └── client.ts
 ```
 
 ### その他の主要ディレクトリ
