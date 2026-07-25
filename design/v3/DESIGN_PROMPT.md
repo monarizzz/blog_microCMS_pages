@@ -43,6 +43,21 @@ The final `DESIGN.md` must be a durable design source of truth for future AI and
 --font-size-2xl: 1.512rem;
 --font-size-3xl: 1.8144rem;
 --font-size-4xl: 2.1773rem;
+--font-size-5xl: 2.6128rem;
+```
+
+### Letter spacing
+
+Optical sizing: larger type tightens, smaller type opens up.
+
+```css
+--letter-spacing-tighter: -0.8px;
+--letter-spacing-tight: -0.5px;
+--letter-spacing-snug: -0.3px;
+--letter-spacing-normal: 0;
+--letter-spacing-wide: 0.2px;
+--letter-spacing-wider: 0.5px;
+--letter-spacing-widest: 1px;
 ```
 
 ### Line heights
@@ -53,9 +68,11 @@ The final `DESIGN.md` must be a durable design source of truth for future AI and
 ```
 
 ### Font families
+
+Heading and body share one typeface, so there is no separate `heading` / `body` variable — a single `sans` token covers both. Matches `font-sans` / `font-mono` in ui.pen.
+
 ```css
---font-family-heading: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', system-ui, sans-serif;
---font-family-body: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', system-ui, sans-serif;
+--font-family-sans: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', system-ui, sans-serif;
 --font-family-mono: 'JetBrains Mono', ui-monospace, monospace;
 ```
 
@@ -97,25 +114,24 @@ The final `DESIGN.md` must be a durable design source of truth for future AI and
 ```
 
 ## Radius
-- Base radius: 24px (capsule)
-- Scale approach: scaled
-- Rationale: bold, almost-pill — per-component variation that reinforces shape roles (inputs crisper, cards softer).
+- Steps derived from actual usage in `ui.pen`, not from a ratio
+- Rationale: buttons/tags are fully pilled while inputs and content blocks stay crisp, so the gap between "small radius" and "pill" is wide. Intermediate steps are defined instead of rounding toward one base. Radius reads as a ratio (8px → 12px is 1.5×), so adjacent steps are not collapsed just because they differ by 4px.
 
 ### Radius scale
 ```css
 --radius-none: 0;
---radius-sm: 0.75rem;
---radius-md: 1.5rem;
---radius-lg: 2.25rem;
---radius-xl: 3rem;
---radius-full: 9999px;
+--radius-xs: 0.5rem; /*  8px — content blocks: code, tables, TOC */
+--radius-sm: 0.75rem; /* 12px — inputs, checkboxes, chips */
+--radius-md: 1rem; /* 16px — toggles, callouts */
+--radius-lg: 1.5rem; /* 24px — cards */
+--radius-full: 9999px; /*      — buttons, tags, pagination */
 ```
 
 ### Per-component variables
 ```css
 --radius-input: 0.75rem;
---radius-button: 1.5rem;
---radius-card: 2.25rem;
+--radius-button: 9999px;
+--radius-card: 1.5rem;
 --radius-badge: 9999px;
 ```
 
@@ -141,45 +157,44 @@ The final `DESIGN.md` must be a durable design source of truth for future AI and
 - Dark mode: supported
 - Rationale: Monochrome with a barely-perceptible cool (toward blue-gray, ~240°) tint (warmth -1.00). Easier on the eyes than absolute mono while keeping the no-color identity. Dark mode is supported.
 
-### Primary palette
-```css
---color-primary-50: oklch(98.5% 0.0018 240);
---color-primary-100: oklch(96% 0.0036 240);
---color-primary-200: oklch(90% 0.0066 240);
---color-primary-300: oklch(82% 0.0096 240);
---color-primary-400: oklch(72% 0.0114 240);
---color-primary-500: oklch(62% 0.012 240);
---color-primary-600: oklch(52% 0.0114 240);
---color-primary-700: oklch(42% 0.0096 240);
---color-primary-800: oklch(32% 0.0078 240);
---color-primary-900: oklch(22% 0.0054 240);
---color-primary-950: oklch(15% 0.0042 240);
-```
-
 ### Neutral palette
+
+Monochrome, so a separate primary ramp would be identical at every step. Only `neutral` is defined; `primary` exists as a role. Hex is authoritative (ui.pen holds the same values); OKLCH is the derivation.
+
 ```css
---color-neutral-50: oklch(98.5% 0.0018 240);
---color-neutral-100: oklch(96% 0.0036 240);
---color-neutral-200: oklch(90% 0.0066 240);
---color-neutral-300: oklch(82% 0.0096 240);
---color-neutral-400: oklch(72% 0.0114 240);
---color-neutral-500: oklch(62% 0.012 240);
---color-neutral-600: oklch(52% 0.0114 240);
---color-neutral-700: oklch(42% 0.0096 240);
---color-neutral-800: oklch(32% 0.0078 240);
---color-neutral-900: oklch(22% 0.0054 240);
---color-neutral-950: oklch(15% 0.0042 240);
+--color-neutral-50: #f9fafb; /* oklch(98.5% 0.0018 240) */
+--color-neutral-100: #f0f2f4; /* oklch(96%   0.0036 240) */
+--color-neutral-200: #dadfe2; /* oklch(90%   0.0066 240) */
+--color-neutral-300: #bfc5ca; /* oklch(82%   0.0096 240) */
+--color-neutral-400: #9ea6ab; /* oklch(72%   0.0114 240) */
+--color-neutral-500: #80878d; /* oklch(62%   0.012  240) */
+--color-neutral-600: #636a6f; /* oklch(52%   0.0114 240) */
+--color-neutral-700: #494e52; /* oklch(42%   0.0096 240) */
+--color-neutral-800: #2f3336; /* oklch(32%   0.0078 240) */
+--color-neutral-900: #181b1d; /* oklch(22%   0.0054 240) */
+--color-neutral-950: #0a0b0d; /* oklch(15%   0.0042 240) */
 ```
 
-### Semantic surface roles
+### Semantic roles
+
+1:1 with the variables in `ui.pen`. Implementation references these, not the numbered scale.
+
 ```css
---color-bg: var(--color-neutral-50);
---color-surface: var(--color-neutral-50);
---color-surface-raised: oklch(100% 0 0);
---color-text: var(--color-neutral-900);
---color-text-muted: var(--color-neutral-600);
---color-border: var(--color-neutral-200);
---color-border-strong: var(--color-neutral-300);
+--color-surface: var(--color-neutral-50); /* page background */
+--color-surface-raised: #ffffff; /* lifted plane; no consumers yet */
+--color-surface-container-low: var(--color-neutral-100);
+--color-surface-container: var(--color-neutral-200);
+--color-primary: var(--color-neutral-900);
+--color-secondary: var(--color-neutral-700);
+--color-on-primary: var(--color-neutral-50);
+--color-on-surface: var(--color-neutral-900);
+--color-on-surface-variant: var(--color-neutral-600);
+--color-outline: var(--color-neutral-300);
+--color-outline-variant: var(--color-neutral-200);
+--color-ac-success: var(--color-success-500);
+--color-ac-warning: var(--color-warning-500);
+--color-ac-danger: var(--color-danger-500);
+--color-ac-info: var(--color-info-500);
 ```
 
 ### Semantic colors
@@ -193,44 +208,34 @@ The final `DESIGN.md` must be a durable design source of truth for future AI and
 ### Interaction states (derived)
 - `hover`: lightness -5%
 - `active`: lightness -10%
-- `focus`: `2px solid var(--color-primary-500)` with offset `2px`
+- `focus`: `2px solid var(--color-primary)` with offset `2px`
 - `disabled`: opacity 40%
 
 ### Dark variants
-```css
---color-primary-dark-50: oklch(15% 0.0042 240);
---color-primary-dark-100: oklch(22% 0.0054 240);
---color-primary-dark-200: oklch(32% 0.0078 240);
---color-primary-dark-300: oklch(42% 0.0096 240);
---color-primary-dark-400: oklch(52% 0.0114 240);
---color-primary-dark-500: oklch(62% 0.012 240);
---color-primary-dark-600: oklch(72% 0.0114 240);
---color-primary-dark-700: oklch(82% 0.0096 240);
---color-primary-dark-800: oklch(90% 0.0066 240);
---color-primary-dark-900: oklch(96% 0.0036 240);
---color-primary-dark-950: oklch(98.5% 0.0018 240);
-```
+
+Same ramp inverted (`dark-50` is the darkest). Not implemented yet — kept for a future dark mode, which should swap the role targets rather than rewrite call sites.
 
 ```css
---color-neutral-dark-50: oklch(15% 0.0042 240);
---color-neutral-dark-100: oklch(22% 0.0054 240);
---color-neutral-dark-200: oklch(32% 0.0078 240);
---color-neutral-dark-300: oklch(42% 0.0096 240);
---color-neutral-dark-400: oklch(52% 0.0114 240);
---color-neutral-dark-500: oklch(62% 0.012 240);
---color-neutral-dark-600: oklch(72% 0.0114 240);
---color-neutral-dark-700: oklch(82% 0.0096 240);
---color-neutral-dark-800: oklch(90% 0.0066 240);
---color-neutral-dark-900: oklch(96% 0.0036 240);
---color-neutral-dark-950: oklch(98.5% 0.0018 240);
+--color-neutral-dark-50: #0a0b0d;
+--color-neutral-dark-100: #181b1d;
+--color-neutral-dark-200: #2f3336;
+--color-neutral-dark-300: #494e52;
+--color-neutral-dark-400: #636a6f;
+--color-neutral-dark-500: #80878d;
+--color-neutral-dark-600: #9ea6ab;
+--color-neutral-dark-700: #bfc5ca;
+--color-neutral-dark-800: #dadfe2;
+--color-neutral-dark-900: #f0f2f4;
+--color-neutral-dark-950: #f9fafb;
 ```
 
 ## Usage guidelines
 
-- Primary actions: `var(--color-primary-500)`; on hover `var(--color-primary-600)`; on active `var(--color-primary-700)`
-- Page background: `var(--color-bg)`; elevated panels use `var(--color-surface-raised)`; body copy uses `var(--color-text)`
-- Cards: `var(--radius-card)` with `var(--shadow-md)`
-- Buttons: `var(--radius-button)` with `var(--shadow-sm)` on the primary variant
+- Reach for a role first; drop to a numbered step only when no role fits
+- Primary actions: `var(--color-primary)`; on hover `var(--color-neutral-800)`; on active `var(--color-neutral-700)`
+- Page background: `var(--color-surface)`; lifted panels use `var(--color-surface-raised)`; body copy uses `var(--color-on-surface)`
+- Cards: `var(--radius-card)` with a `var(--color-outline-variant)` border — the design uses no shadows
+- Buttons: `var(--radius-button)`; separation comes from fill contrast, not elevation
 - Inputs: `var(--radius-input)`; focus ring uses the interaction-states spec
 - Body text: `var(--font-size-base)` with `var(--line-height-normal)`
 - Section spacing: `var(--space-3xl)` between major blocks
