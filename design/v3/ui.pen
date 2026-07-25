@@ -8658,7 +8658,7 @@
               "fill": "#636a6f",
               "textGrowth": "fixed-width",
               "width": "fill_container",
-              "content": "背景・面。値は CSS のスケールと一致している。",
+              "content": "DESIGN_PROMPT.md の二層構造に準拠。surface = ページ背景（neutral-50）、surface-raised = 浮いた面（純白）。",
               "lineHeight": 1.6,
               "fontFamily": "Noto Sans JP",
               "fontSize": 12,
@@ -8678,7 +8678,7 @@
                   "name": "Chip",
                   "width": 96,
                   "height": 52,
-                  "fill": "#ffffff",
+                  "fill": "#f9fafb",
                   "cornerRadius": 8,
                   "stroke": "#bfc5ca",
                   "strokeWidth": 1
@@ -8702,7 +8702,7 @@
                   "fill": "#636a6f",
                   "textGrowth": "fixed-width",
                   "width": 110,
-                  "content": "#ffffff",
+                  "content": "#f9fafb",
                   "fontFamily": "JetBrains Mono",
                   "fontSize": 13,
                   "fontWeight": "normal"
@@ -8714,7 +8714,7 @@
                   "fill": "#636a6f",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "--color-surface-raised / oklch 100%",
+                  "content": "--color-surface / neutral-50 / 98.5%（ページ背景）",
                   "fontFamily": "Noto Sans JP",
                   "fontSize": 13,
                   "fontWeight": "normal"
@@ -8724,7 +8724,7 @@
             {
               "type": "frame",
               "id": "BsRWJ",
-              "name": "surface-bright",
+              "name": "surface-raised",
               "width": "fill_container",
               "gap": 20,
               "alignItems": "center",
@@ -8735,7 +8735,7 @@
                   "name": "Chip",
                   "width": 96,
                   "height": 52,
-                  "fill": "#f9fafb",
+                  "fill": "#ffffff",
                   "cornerRadius": 8,
                   "stroke": "#bfc5ca",
                   "strokeWidth": 1
@@ -8747,7 +8747,7 @@
                   "fill": "#181b1d",
                   "textGrowth": "fixed-width",
                   "width": 210,
-                  "content": "surface-bright",
+                  "content": "surface-raised",
                   "fontFamily": "Noto Sans JP",
                   "fontSize": 14,
                   "fontWeight": "500"
@@ -8759,7 +8759,7 @@
                   "fill": "#636a6f",
                   "textGrowth": "fixed-width",
                   "width": 110,
-                  "content": "#f9fafb",
+                  "content": "#ffffff",
                   "fontFamily": "JetBrains Mono",
                   "fontSize": 13,
                   "fontWeight": "normal"
@@ -8771,7 +8771,7 @@
                   "fill": "#636a6f",
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
-                  "content": "--color-neutral-50 / 98.5%",
+                  "content": "--color-surface-raised / oklch 100%（浮いた面。現在は未使用）",
                   "fontFamily": "Noto Sans JP",
                   "fontSize": 13,
                   "fontWeight": "normal"
@@ -10155,7 +10155,7 @@
     },
     "surface": {
       "type": "color",
-      "value": "#ffffff"
+      "value": "#f9fafb"
     },
     "surface-container": {
       "type": "color",
@@ -10197,13 +10197,13 @@
       "type": "color",
       "value": "#eef2ee"
     },
-    "font-inter": {
+    "surface-raised": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "font-sans": {
       "type": "string",
       "value": "Noto Sans JP"
-    },
-    "surface-bright": {
-      "type": "color",
-      "value": "#f9fafb"
     }
   },
   "fileToken": "619fc5eb-e23d-475f-8c5a-1a1c16d7dc00"
