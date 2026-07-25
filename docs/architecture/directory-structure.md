@@ -7,6 +7,7 @@
 ```
 blog_microcms_pages/
 ├── docs/                    # プロジェクトドキュメント
+├── design/                  # デザインに関するファイル
 ├── public/                  # Next.jsの静的ファイル
 ├── src/                     # ソースコード（メインディレクトリ）
 ├── package.json            # パッケージ依存関係
