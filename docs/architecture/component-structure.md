@@ -103,14 +103,6 @@ import { cn } from "@/lib/utils";
 
 > `cn()` の中もクラス並び替えの対象にするには、`prettier.config.js` に `tailwindFunctions: ["cn"]` の指定が必要。
 
-<!-- ### CSS Modules（`*.module.scss`）を使ってよい場合
-
-**microCMS のリッチテキストのように、自分で className を付けられない HTML に当てる場合のみ。**
-現状の該当例は `BlogDetail` の 1 件だけ（`dangerouslySetInnerHTML` で挿入した本文にスタイルを当てている）。
-
-- これ以外の理由で CSS Modules を新設しない
-- 通常のコンポーネントで Tailwind が書きづらいと感じた場合は、まず分割を検討する -->
-
 
 ## Storybook
 
