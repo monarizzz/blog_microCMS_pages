@@ -1,6 +1,6 @@
 # データモデル設計（microCMS コンテンツモデル）
 
-デザイン `design/New-ui.pen` の各画面から必要なデータを起こしたもの。
+デザイン `design/v3/ui.pen` の各画面から必要なデータを起こしたもの（デザイン全体の構成は [design/README.md](../../design/README.md) を参照）。
 
 ## API（エンドポイント）一覧
 
