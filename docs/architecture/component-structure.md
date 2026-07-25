@@ -7,7 +7,7 @@
 
 **1 コンポーネント = 1 ディレクトリ**。ディレクトリ名とファイル名を一致させる。
 
-```
+```text
 components/
 └── BlogCard/                 # PascalCase
     ├── BlogCard.tsx          # 本体（ディレクトリ名と同名）
