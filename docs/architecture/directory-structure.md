@@ -4,15 +4,15 @@
 
 ## プロジェクト全体構造
 
-```
+```text
 blog_microcms_pages/
-├── docs/                    # プロジェクトドキュメント
 ├── design/                  # デザインに関するファイル
+├── docs/                    # プロジェクトドキュメント
 ├── public/                  # Next.jsの静的ファイル
 ├── src/                     # ソースコード（メインディレクトリ）
-├── package.json            # パッケージ依存関係
-├── README.md               # プロジェクト概要
-└── tsconfig.json           # TypeScript設定
+├── package.json             # パッケージ依存関係
+├── README.md                # プロジェクト概要
+└── tsconfig.json            # TypeScript設定
 ```
 
 ## 主要ディレクトリ詳細
@@ -20,6 +20,22 @@ blog_microcms_pages/
 ### `/src` - ソースコードディレクトリ
 
 アプリケーションのメインソースコードを格納するディレクトリです。
+
+#### `/src/app` - Next.js ページ
+
+Next.js のファイルベースルーティングに従ったページ定義です。
+
+```text
+app/
+├── article/              # 記事ページ
+├── tag/                  # タグごとの記事ページ
+├── service/              # サービスページ
+├── profile/              # プロフィールページ
+├── search/               # 検索ページ
+├── 404.tsx               # 404エラーページ
+└── index.tsx             # ホームページ
+```
+
 
 #### `/src/commons`、`/src/features`、`/src/libs` - 共通ディレクトリ構造
 
@@ -30,7 +46,7 @@ blog_microcms_pages/
 
 3 つのディレクトリすべてが以下の統一された構造を持ちます：
 
-```
+```text
 commons/ または features/ または libs/
 ├── [機能名 or ライブラリ名]/
 │   ├── components/      # React コンポーネント（[詳細なコンポーネント構造ルール](./component-structure.md)）
@@ -52,7 +68,7 @@ commons/ または features/ または libs/
 
 **具体例:**
 
-```
+```text
 commons/
 ├── date/                 # 日付処理関連
 ├── layout/               # レイアウト関連
@@ -71,7 +87,7 @@ commons/
 
 **具体例:**
 
-```
+```text
 features/
 ├── blog/            # /blog/[slug] ページ専用
 │   ├── components/
@@ -85,7 +101,19 @@ features/
     └── components/     # ホームページ専用コンポーネント
 ```
 
-##### `/src/libs` - 外部ライブラリの設定、拡張、カスタマイズ
+#### `/src/infra` - インフラストラクチャ層
+
+外部サービスとの連携やデータアクセス層を管理します。
+
+```text
+infra/
+└── microCMS/             # microCMS CMS 連携
+    ├── api/              # API エンドポイント定義
+    ├── entities/         # エンティティ定義
+    └── repositories/     # データアクセス関数（機能別整理）
+```
+
+#### `/src/libs` - 外部ライブラリの設定、拡張、カスタマイズ
 
 **外部ライブラリの設定、拡張、カスタマイズ**を格納します。
 
@@ -97,36 +125,10 @@ features/
 
 **具体例:**
 
-```
+```text
 libs/
-└── microCMS/           # microCMS クライアント設定・拡張
-    └── utils/
-        └── client.ts   # microCMS クライアント初期化
-```
-
-#### `/src/infra` - インフラストラクチャ層
-
-外部サービスとの連携やデータアクセス層を管理します。
-
-```
-infra/
-├── microCMS/           # Contentful CMS 連携
-│   ├── api/              # API エンドポイント定義
-│   ├── entities/         # エンティティ定義
-│   └── repositories/     # データアクセス関数（機能別整理）
-```
-
-#### `/src/pages` - Next.js ページ
-
-Next.js のファイルベースルーティングに従ったページ定義です。
-
-```
-pages/
-├── blog/              # 記事ページ
-├── api/                  # API ルート
-├── _app.tsx              # アプリケーションルート
-├── 404.tsx               # 404エラーページ
-└── index.tsx             # ホームページ
+└── microCMS/       # microCMS クライアント設定・拡張
+    └── client.ts   # microCMS クライアント初期化
 ```
 
 ### その他の主要ディレクトリ
@@ -135,7 +137,7 @@ pages/
 
 プロジェクト関連のドキュメントを格納します。
 
-```
+```text
 docs/
 └── architecture/         # アーキテクチャドキュメント
     ├── README.md         # アーキテクチャ概要
@@ -146,7 +148,7 @@ docs/
 
 Next.js の静的ファイル配信用ディレクトリです。
 
-```
+```text
 public/
 └── favicon.ico           # ファビコン
 ```
