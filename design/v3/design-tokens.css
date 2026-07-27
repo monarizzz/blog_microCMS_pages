@@ -112,7 +112,6 @@
 
   /* 面 */
   --color-surface: var(--color-neutral-50); /* ページ背景 */
-  --color-surface-raised: #ffffff; /* 浮いた面。現状は使用箇所なし */
   --color-surface-container-low: var(--color-neutral-100);
   --color-surface-container: var(--color-neutral-200);
 
