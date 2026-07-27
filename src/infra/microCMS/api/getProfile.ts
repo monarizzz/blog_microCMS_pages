@@ -5,7 +5,7 @@ import { Profile } from "../schema/profile";
 export const getProfile = async ({
   q,
 }: MicroCMSQueries): Promise<MicroCMSListResponse<Profile>> => {
-  return await client.getList({
+  return await client.getObject({
     endpoint: "profile",
     queries: {},
   });
