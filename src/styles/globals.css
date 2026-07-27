@@ -1,0 +1,20 @@
+@import "./tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* トークンをページに適用する唯一の場所。
+     ここで指定した値が全要素の既定になるので、
+     コンポーネント側は既定から外れるものだけを宣言すればよい */
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-wide);
+    -webkit-font-smoothing: antialiased;
+  }
+}
