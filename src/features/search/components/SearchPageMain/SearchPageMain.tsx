@@ -12,7 +12,7 @@ type Props = {
 const SearchPageMain = ({ article, num }: Props) => {
   return (
     <div className="flex flex-col gap-6">
-      <p>記事を検索</p>
+      <h1 className="text-sm tracking-[0.5px]">記事を検索</h1>
       <SearchInput />
       <div className="flex items-center gap-2">
         <AlertCircle size={14} />
