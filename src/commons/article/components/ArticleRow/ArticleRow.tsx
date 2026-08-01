@@ -12,10 +12,12 @@ type Props = {
 const ArticleRow = ({ compact }: Props) => {
   return (
     <div className="border-outline-variant flex w-full gap-8 border-b py-6">
-      <p className="space-[0.5px] text-secondary my-auto text-sm">2024.03.18</p>
+      <p className="text-secondary my-auto text-sm tracking-[0.5px]">
+        2024.03.18
+      </p>
       {compact ? (
         <div className="flex w-full justify-between">
-          <p className="text-primary space-[0.2px] text-[15.5px] font-bold">
+          <p className="text-primary text-[15.5px] font-bold tracking-[0.2px]">
             {title}
           </p>
           <div className="flex gap-2">
