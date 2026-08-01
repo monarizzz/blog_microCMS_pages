@@ -1,10 +1,15 @@
 import ArticleRow from "@/commons/article/components/ArticleRow/ArticleRow";
 import SearchInput from "../SearchInput/SearchInput";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, SearchX } from "lucide-react";
+import TagBtn from "@/commons/layout/components/TagBtn/TagBtn";
 
-const num = 2;
+//TODO:仮置き
+type Props = {
+  article?: boolean;
+  num?: number;
+};
 
-const SearchPageMain = ({}) => {
+const SearchPageMain = ({ article, num }: Props) => {
   return (
     <div className="flex flex-col gap-6">
       <p>記事を検索</p>
@@ -16,8 +21,26 @@ const SearchPageMain = ({}) => {
       <p className="text-secondary text-sm tracking-[0.5px]">
         検索結果 {num}件
       </p>
-      <ArticleRow />
-      <ArticleRow />
+      {article ? (
+        <>
+          <ArticleRow />
+          <ArticleRow />
+        </>
+      ) : (
+        <div className="flex flex-col items-center gap-6">
+          <SearchX size={48} className="text-outline" />
+          <p className="text-primary text-lg font-bold">
+            一致する記事が見つかりませんでした
+          </p>
+          <p className="text-secondary text-base">
+            キーワードを変えてお試しいただくか、以下のタグから記事を探してみてください。
+          </p>
+          <div>
+            <TagBtn text="タグ" />
+          </div>
+          <p className="text-on-surface-variant text-base">検索をクリア</p>
+        </div>
+      )}
     </div>
   );
 };

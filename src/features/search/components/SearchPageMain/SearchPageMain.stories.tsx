@@ -10,4 +10,16 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    article: true,
+    num: 2,
+  },
+};
+
+export const NoResult: Story = {
+  args: {
+    article: false,
+    num: 0,
+  },
+};
