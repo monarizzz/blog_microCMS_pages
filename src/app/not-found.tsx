@@ -1,6 +1,6 @@
-import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
 
 const NotFound = () => {
   return (

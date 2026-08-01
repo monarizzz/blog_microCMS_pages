@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import Header from "@/commons/layout/components/Header/Header";
 import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 import { pageList } from "../../constants/pageList";
 
 type Props = {
