@@ -6,6 +6,13 @@ const preview: Preview = {
     // 個別 Story で上書き可
     layout: "fullscreen",
 
+    options: {
+      // 未指定だと登録順になるため、サイドバーの並びを明示する
+      storySort: {
+        method: "alphabetical",
+      },
+    },
+
     controls: {
       matchers: {
         color: /(background|color)$/i,
