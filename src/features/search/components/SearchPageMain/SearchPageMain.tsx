@@ -2,6 +2,7 @@ import ArticleRow from "@/commons/article/components/ArticleRow/ArticleRow";
 import SearchInput from "../SearchInput/SearchInput";
 import { AlertCircle, SearchX } from "lucide-react";
 import TagBtn from "@/commons/layout/components/TagBtn/TagBtn";
+import { MIN_QUERY_LENGTH } from "../../constants/searchQuery";
 
 //TODO:仮置き
 type Props = {
@@ -16,7 +17,7 @@ const SearchPageMain = ({ article, num }: Props) => {
       <SearchInput />
       <div className="flex items-center gap-2">
         <AlertCircle size={14} />
-        <p>2文字以上で検索されます。</p>
+        <p>{MIN_QUERY_LENGTH}文字以上で検索されます。</p>
       </div>
       <p className="text-secondary text-sm tracking-[0.5px]">
         検索結果 {num}件
