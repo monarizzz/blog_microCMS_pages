@@ -32,7 +32,7 @@ const ArticleRow = ({ compact }: Props) => {
           <p className="text-on-surface-variant">{expect}</p>
           <div className="flex gap-2">
             {tagNum.map((tag) => (
-              <TagBtn text={tag} />
+              <TagBtn key={tag} text={tag} />
             ))}
           </div>
         </div>
