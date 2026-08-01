@@ -5,7 +5,7 @@ import Link from "next/link";
 const icons = {
   arrowUpRight: <ArrowUpRight size={15} className="text-on-surface-variant" />,
   link: <LinkIcon size={18} className="text-primary" />,
-  x: <Image src="/logo.svg" alt="" width={16} height={16} aria-hidden />,
+  x: <Image src="/x-mark.svg" alt="" width={16} height={16} aria-hidden />,
 } as const;
 
 export type IconName = keyof typeof icons;
