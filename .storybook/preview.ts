@@ -3,6 +3,9 @@ import "../src/styles/globals.css";
 
 const preview: Preview = {
   parameters: {
+    // 個別 Story で上書き可
+    layout: "fullscreen",
+
     controls: {
       matchers: {
         color: /(background|color)$/i,
