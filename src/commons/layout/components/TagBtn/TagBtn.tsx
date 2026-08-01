@@ -8,7 +8,7 @@ type Props = {
 const TagBtn = ({ text, link }: Props) => {
   return (
     <Link
-      href={`${link}`}
+      href={link}
       className="bg-surface-container-low rounded-button text-secondary px-2 py-1"
     >
       #{text}
