@@ -19,25 +19,28 @@ const ArticleRow = ({ compact }: Props) => {
   );
 
   return (
-    <div className="border-outline-variant flex w-full gap-8 border-b py-6">
-      <p className="text-secondary my-auto text-sm tracking-[0.5px]">
+    <article className="border-outline-variant flex w-full gap-8 border-b py-6">
+      <time
+        dateTime="2024-03-18"
+        className="text-secondary my-auto text-sm tracking-[0.5px]"
+      >
         2024.03.18
-      </p>
+      </time>
       {compact ? (
         <div className="flex w-full justify-between">
-          <p className="text-primary text-[15.5px] font-bold tracking-[0.2px]">
+          <h2 className="text-primary text-[15.5px] font-bold tracking-[0.2px]">
             {title}
-          </p>
+          </h2>
           <div className="flex gap-2">{tags}</div>
         </div>
       ) : (
         <div className="flex flex-col gap-2">
-          <p className="text-primary font-bold">{title}</p>
+          <h2 className="text-primary font-bold">{title}</h2>
           <p className="text-on-surface-variant">{expect}</p>
           <div className="flex gap-2">{tags}</div>
         </div>
       )}
-    </div>
+    </article>
   );
 };
 
