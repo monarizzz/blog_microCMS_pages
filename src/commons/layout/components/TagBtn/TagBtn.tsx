@@ -5,23 +5,16 @@ type Props = {
   link?: string;
 };
 
-const TagBtn = ({ text, link }: Props) => {
-  return (
-    <>
-      {link ? (
-        <Link
-          href={link}
-          className="bg-surface-container-low rounded-button text-secondary px-2 py-1"
-        >
-          #{text}
-        </Link>
-      ) : (
-        <div className="bg-surface-container-low rounded-button text-secondary px-2 py-1">
-          #{text}
-        </div>
-      )}
-    </>
+const className =
+  "bg-surface-container-low rounded-button text-secondary px-2 py-1";
+
+const TagBtn = ({ text, link }: Props) =>
+  link ? (
+    <Link href={link} className={className}>
+      #{text}
+    </Link>
+  ) : (
+    <span className={className}>#{text}</span>
   );
-};
 
 export default TagBtn;
