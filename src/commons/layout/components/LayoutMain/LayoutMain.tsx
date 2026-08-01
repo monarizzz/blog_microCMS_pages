@@ -12,7 +12,6 @@ const LayoutMain = ({ children }: Props) => {
     <>
       <Header pageList={pageList} />
       {children}
-      <div></div>
       <Footer pageList={pageList} />
     </>
   );
