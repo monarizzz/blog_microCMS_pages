@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 import Header from "./Header";
+import { pageList } from "../../constants/pageList";
 
 const meta = {
   component: Header,
