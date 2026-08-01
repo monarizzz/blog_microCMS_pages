@@ -11,7 +11,7 @@ const LayoutMain = ({ children }: Props) => {
   return (
     <>
       <Header pageList={pageList} />
-      {children}
+      <main>{children}</main>
       <Footer pageList={pageList} />
     </>
   );
