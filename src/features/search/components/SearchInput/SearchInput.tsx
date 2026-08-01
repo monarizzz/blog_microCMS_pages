@@ -9,7 +9,9 @@ const SearchInput = () => {
         {/* <input /> */}
         <p className="text-base">App Router</p>
       </div>
-      <XIcon size={14} className="text-secondary" />
+      <button type="button" aria-label="検索をクリア">
+        <XIcon size={14} className="text-secondary" />
+      </button>
     </div>
   );
 };
