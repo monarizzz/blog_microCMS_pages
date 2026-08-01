@@ -39,7 +39,13 @@ const SearchPageMain = ({ article, num }: Props) => {
           <div>
             <TagBtn text="タグ" />
           </div>
-          <p className="text-on-surface-variant text-base">検索をクリア</p>
+          <button
+            type="button"
+            aria-label="検索をクリア"
+            className="text-on-surface-variant text-base"
+          >
+            検索をクリア
+          </button>
         </div>
       )}
     </div>
