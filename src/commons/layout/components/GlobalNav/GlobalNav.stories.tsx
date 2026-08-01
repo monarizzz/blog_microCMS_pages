@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 import GlobalNav from "./GlobalNav";
+import { pageList } from "../../constants/pageList";
 
 const meta = {
   component: GlobalNav,
@@ -12,6 +13,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    pageList: ["Tags", "Service", "Profile"],
+    pageList: pageList,
   },
 };
