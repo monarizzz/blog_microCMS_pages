@@ -16,3 +16,11 @@ export const Default: Story = {
     link: "/tags/nextjs",
   },
 };
+
+export const Active: Story = {
+  args: {
+    text: "Next.js",
+    link: "/tags/nextjs",
+    active: true,
+  },
+};

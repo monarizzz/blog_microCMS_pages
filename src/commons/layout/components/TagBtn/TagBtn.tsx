@@ -1,20 +1,25 @@
 import Link from "next/link";
+import { CHIP_CLASS_NAME } from "../../constants/chipStyle";
 
 type Props = {
   text: string;
-  link?: string;
+  link: string;
+  active?: boolean;
 };
 
-const className =
-  "bg-surface-container-low rounded-button text-secondary px-2 py-1";
+const className = `${CHIP_CLASS_NAME} bg-surface-container-low text-secondary`;
 
-const TagBtn = ({ text, link }: Props) =>
-  link ? (
-    <Link href={link} className={className}>
+const TagBtn = ({ text, link, active }: Props) => {
+  return (
+    <Link
+      href={link}
+      className={
+        active ? `${CHIP_CLASS_NAME} bg-primary text-on-primary` : className
+      }
+    >
       #{text}
     </Link>
-  ) : (
-    <span className={className}>#{text}</span>
   );
+};
 
 export default TagBtn;
