@@ -29,7 +29,7 @@
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ArticleListPage` | `nwTBC` | `src/features/article/components/articlePage/articlePage.tsx` | 🟡 ファイルはあるが中身が空 |
+| `ArticleListPage` | `nwTBC` | `src/features/article/components/articlePage/articlePage.tsx` | ✅ ルートは `src/app/article/page.tsx` |
 | `SearchPage` | `gwtSi` | `src/features/search/components/SearchPageMain/SearchPageMain.tsx` | ✅ |
 | `ServiceDetailPage` | `qiFnK` | — | ❌ |
 
@@ -45,7 +45,7 @@
 | `Footer` | `VMThv` | `src/features/layout/components/Footer/Footer.tsx` | ✅ |
 | `GlobalNav` | `JuCgU` | `src/features/layout/components/GlobalNav/GlobalNav.tsx` | ✅ |
 | `Logo` | `VD5vy` | — | ❌ |
-| `PageHeader` | `XEUvq` | — | ❌ |
+| `PageHeader` | `XEUvq` | `src/commons/layout/components/PageHeader/PageHeader.tsx` | ✅ |
 | `ScrollNav` | `qXMlW` | — | ❌ |
 | `ScrollTopButton` | `YJxBa` | — | ❌ |
 
@@ -59,7 +59,7 @@
 | `ArticleRowCompact` | `JE7aw` | 同上（`compact` prop で兼用） | ✅ |
 | `Tag` | `biM87` | `src/commons/layout/components/TagBtn/TagBtn.tsx` | ✅ |
 | `SeeAllLink` | `ZRLCv` | `src/commons/layout/components/SeeAllRight/SeeAllRight.tsx` | ✅ |
-| `Pagination` | `uxLwl` | `src/commons/pageNav/components/pageNavNum/`（**空ディレクトリ**） | ❌ |
+| `Pagination` | `uxLwl` | `src/commons/pageNav/components/pageNavNum/pageNavNum.tsx` | ✅ |
 | `ArticleThumbnail` | `N7jyll` | — | ❌ |
 | `CategorySectionHeader` | `QSeNC` | — | ❌ |
 | `ArticleSectionHeading` | `RgUbK` | — | ❌ |
@@ -67,6 +67,7 @@
 - `src/commons/layout/components/FilterBtn/FilterBtn.tsx` は `Tag` の `#` なし版。
   pen 側に独立コンポーネントはなく、`Tags` ページ（group `j9tOQT`）のフィルタ行が出典。
   `Tag` を触る時は `CHIP_CLASS_NAME`（`src/commons/layout/constants/chipStyle.ts`）を共有しているので巻き添えに注意。
+  `size="md"`（`px-3 py-1.5`）は `ArticleListPage` のソート行（`Tag` の padding override）用。
 
 ## テキスト・ラベル
 
@@ -74,7 +75,7 @@
 | --- | --- | --- | --- |
 | `SectionLabel` | `TbTSl` | — | ❌ |
 | `InfoLabel` | `PHZV0` | — | ❌ |
-| `MetaText` | `E2rKp` | — | ❌ |
+| `MetaText` | `E2rKp` | `src/commons/layout/components/MetaText/MetaText.tsx` | ✅ |
 | `Paragraph` | `g5WYtH` | — | ❌ |
 
 ## 記事本文（リッチエディタ由来の要素）
@@ -107,7 +108,7 @@
 | `IconButton` | `aGtFB` | `src/commons/layout/components/IconBtn/IconBtn.tsx` | ✅ |
 | `SearchIconButton` | `k2xlJ` | — | ❌ |
 | `LinkButton` | `Rl2z4` | — | ❌ |
-| `BackLink` | `r2KGU` | — | ❌ |
+| `BackLink` | `r2KGU` | `src/commons/layout/components/BackLink/BackLink.tsx` | ✅ |
 | `PrimaryButton` | `N3GA43` | — | ❌ |
 
 ## サービス・プロフィール
@@ -153,5 +154,5 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 2. **ボタン類** — `PrimaryButton` `LinkButton` `BackLink` `SearchIconButton`
 3. **記事一覧の残り** — `ArticleThumbnail` `Pagination` `CategorySectionHeader` `ArticleSectionHeading`
 4. **記事本文** — `ArticleH1`〜`H3` → `Paragraph` `Quote` `BulletItem` `NumberItem` → `Callout` `CodeBlock` `Table` `Bookmark`
-5. **ページ組み立て** — `ArticleListPage`（空のまま放置されている）→ `ServiceDetailPage`
+5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）
