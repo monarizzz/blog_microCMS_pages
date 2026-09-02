@@ -4,7 +4,9 @@ import { getCategoriesList } from "@/infra/microCMS/repositories/contents/getCat
 import LayoutMain from "@/commons/layout/components/LayoutMain/LayoutMain";
 import getPlainText from "@/features/blog/utils/getPlainText";
 
-// TODO:revalidateの設定
+// microCMSの更新を反映させるため、60秒ごとに再生成する
+export const revalidate = 60;
+
 const HomePage = async () => {
   const data = await getBlogList({ queries: { limit: 15 } });
   const categoryData = await getCategoriesList({ queries: { limit: 10 } });

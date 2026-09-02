@@ -8,6 +8,9 @@ type Props = {
   params: Promise<{ id: string }>;
 };
 
+// microCMSの更新を反映させるため、60秒ごとに再生成する
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   const blogList = await getBlogList({ queries: { fields: ["id"] } });
   return blogList.contents.map((blog) => ({
