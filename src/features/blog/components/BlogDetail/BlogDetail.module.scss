@@ -2,10 +2,24 @@
 
 .article {
   font-size: variables.$font-size-base;
-  line-height: 1.5em;
+  line-height: variables.$line-height-body;
   font-family: "Noto Sans JP", sans-serif;
   color: #000000;
   overflow-wrap: break-word;
+
+  /* 段落
+     Tailwindのpreflightがp要素のmarginを0にするため、ここで指定し直す */
+  p {
+    margin: 1.5em 0;
+  }
+
+  > p:first-child {
+    margin-top: 0;
+  }
+
+  > p:last-child {
+    margin-bottom: 0;
+  }
 
   /* 空の<p>タグに改行を適用 */
   p:empty {
@@ -24,14 +38,21 @@
   }
 
   /* 見出し */
+  /* marginは各見出しのmixinで指定する */
   h1,
   h2,
   h3,
   h4,
   h5 {
     font-weight: bold;
-    margin-top: 1.25rem;
-    margin-bottom: 0.5rem;
+  }
+
+  > h1:first-child,
+  > h2:first-child,
+  > h3:first-child,
+  > h4:first-child,
+  > h5:first-child {
+    margin-top: 0;
   }
 
   h1 {
@@ -52,7 +73,7 @@
 
   ul,
   ol {
-    padding: 0 0 0 1rem;
+    padding: 0 0 0 1.5rem;
     margin: 1.5rem 0;
   }
 
@@ -63,15 +84,31 @@
     list-style-type: variables.$list-style-type-ol;
   }
 
+  li {
+    margin: 0.6em 0;
+    line-height: variables.$line-height-body;
+
+    /* ネストしたリストの余白が二重にならないようにする */
+    ul,
+    ol {
+      margin: 0.6em 0;
+    }
+  }
+
   /* 引用 */
   blockquote {
     color: #555;
     font-style: italic;
     border-left: 4px solid #868ab1;
-    padding: 8px 16px;
-    margin: 12px 0;
+    padding: 16px 20px;
+    margin: 1.5em 0;
     background: #f3f4f9;
-    line-height: 20px;
+    line-height: variables.$line-height-body;
+
+    /* 引用内の段落は上下の余白を詰める */
+    p {
+      margin: 0;
+    }
   }
 
   /* Callout */
@@ -161,10 +198,10 @@
     position: relative;
 
     code {
-      font-size: 0.75em;
+      font-size: 0.85em;
       font-weight: bold;
       font-family: "Fira Code";
-      line-height: 1em;
+      line-height: 1.7;
     }
   }
 }
