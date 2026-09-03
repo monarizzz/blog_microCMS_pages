@@ -45,7 +45,7 @@
 | `Footer` | `VMThv` | `src/features/layout/components/Footer/Footer.tsx` | ✅ |
 | `GlobalNav` | `JuCgU` | `src/features/layout/components/GlobalNav/GlobalNav.tsx` | ✅ |
 | `Logo` | `VD5vy` | — | ❌ |
-| `PageHeader` | `XEUvq` | — | ❌ |
+| `PageHeader` | `XEUvq` | `src/commons/layout/components/PageHeader/PageHeader.tsx` | ✅ |
 | `ScrollNav` | `qXMlW` | — | ❌ |
 | `ScrollTopButton` | `YJxBa` | — | ❌ |
 
@@ -74,7 +74,7 @@
 | --- | --- | --- | --- |
 | `SectionLabel` | `TbTSl` | — | ❌ |
 | `InfoLabel` | `PHZV0` | — | ❌ |
-| `MetaText` | `E2rKp` | — | ❌ |
+| `MetaText` | `E2rKp` | `src/commons/layout/components/MetaText/MetaText.tsx` | ✅ |
 | `Paragraph` | `g5WYtH` | — | ❌ |
 
 ## 記事本文（リッチエディタ由来の要素）
@@ -107,7 +107,7 @@
 | `IconButton` | `aGtFB` | `src/commons/layout/components/IconBtn/IconBtn.tsx` | ✅ |
 | `SearchIconButton` | `k2xlJ` | — | ❌ |
 | `LinkButton` | `Rl2z4` | — | ❌ |
-| `BackLink` | `r2KGU` | — | ❌ |
+| `BackLink` | `r2KGU` | `src/commons/layout/components/BackLink/BackLink.tsx` | ✅ |
 | `PrimaryButton` | `N3GA43` | — | ❌ |
 
 ## サービス・プロフィール
