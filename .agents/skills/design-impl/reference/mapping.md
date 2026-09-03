@@ -67,7 +67,7 @@
 | `ArticleRowCompact` | `JE7aw` | 同上（`compact` prop で兼用） | ✅ |
 | `Tag` | `biM87` | `src/commons/layout/components/TagBtn/TagBtn.tsx` | ✅ |
 | `SeeAllLink` | `ZRLCv` | `src/commons/layout/components/SeeAllRight/SeeAllRight.tsx` | ✅ |
-| `Pagination` | `uxLwl` | `src/commons/pageNav/components/pageNavNum/`（**空ディレクトリ**） | ❌ |
+| `Pagination` | `uxLwl` | `src/commons/pageNav/components/pageNavNum/pageNavNum.tsx` | ✅ |
 | `ArticleThumbnail` | `N7jyll` | — | ❌ |
 | `CategorySectionHeader` | `QSeNC` | — | ❌ |
 | `ArticleSectionHeading` | `RgUbK` | — | ❌ |
@@ -75,6 +75,9 @@
 - `src/commons/layout/components/FilterBtn/FilterBtn.tsx` は `Tag` の `#` なし版。
   pen 側に独立コンポーネントはなく、`Tags` ページ（group `j9tOQT`）のフィルタ行が出典。
   `Tag` を触る時は `CHIP_CLASS_NAME`（`src/commons/layout/constants/chipStyle.ts`）を共有しているので巻き添えに注意。
+  `ArticleListPage` のソート行（`SortRow` `vV5Py`）は未実装。選択/非選択の色は `FilterBtn` と
+  同じで padding だけ 6/12（`Tag` の override）なので、実装時に `FilterBtn` を再利用するか
+  別コンポーネントにするかを決めること。
 
 ## テキスト・ラベル
 
