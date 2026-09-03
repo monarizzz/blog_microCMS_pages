@@ -53,7 +53,7 @@ export const AllIcons: Story = {
       {iconNames.map((icon) => (
         <div key={icon} className="flex flex-col items-center gap-2">
           <IconBtn icon={icon} link="/" label={icon} />
-          <span className="text-on-surface-variant text-xs">{icon}</span>
+          <span className="text-xs text-on-surface-variant">{icon}</span>
         </div>
       ))}
     </div>

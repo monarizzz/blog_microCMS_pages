@@ -6,9 +6,9 @@ type Props = {
 
 const GlobalNav = ({ pageList }: Props) => {
   return (
-    <div className="gap-md flex items-center">
+    <div className="flex items-center gap-md">
       {pageList.map((page) => (
-        <span key={page} className="text-secondary font-sans text-base">
+        <span key={page} className="font-sans text-base text-secondary">
           {page}
         </span>
       ))}
