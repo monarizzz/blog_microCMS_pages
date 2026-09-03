@@ -1,7 +1,11 @@
 import { pageList } from "../../constants/pageList";
 import GlobalNav from "../GlobalNav/GlobalNav";
 
-const Header = () => {
+type Props = {
+  pageList: typeof pageList;
+};
+
+const Header = ({ pageList }: Props) => {
   return (
     <div className="w-full bg-surface px-8 py-3">
       <div className="flex justify-between">

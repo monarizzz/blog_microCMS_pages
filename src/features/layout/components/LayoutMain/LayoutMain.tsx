@@ -10,7 +10,7 @@ type Props = {
 const LayoutMain = ({ children }: Props) => {
   return (
     <>
-      <Header />
+      <Header pageList={pageList} />
       <main>{children}</main>
       <Footer pageList={pageList} />
     </>

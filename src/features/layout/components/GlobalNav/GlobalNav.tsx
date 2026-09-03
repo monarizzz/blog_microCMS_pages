@@ -1,16 +1,22 @@
 import { Search } from "lucide-react";
+import Link from "next/link";
+import { pageList } from "../../constants/pageList";
 
 type Props = {
-  pageList: string[];
+  pageList: typeof pageList;
 };
 
 const GlobalNav = ({ pageList }: Props) => {
   return (
     <div className="flex items-center gap-md">
       {pageList.map((page) => (
-        <span key={page} className="font-sans text-base text-secondary">
-          {page}
-        </span>
+        <Link
+          key={page.path}
+          href={page.path}
+          className="font-sans text-base text-secondary"
+        >
+          {page.label}
+        </Link>
       ))}
       <Search size={20} />
     </div>
