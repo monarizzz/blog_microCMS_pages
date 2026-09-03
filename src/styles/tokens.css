@@ -8,19 +8,21 @@
     "Noto Sans JP", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
   --font-family-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  /* 基準 14px（base）・公比 1.2 の等比スケール。
-     xs だけは等比から外れる。等幅ラベル（PERIOD / TECH STACK / ROLE など）専用の
+  /* 基準 14px（base）・公比 1.2 の等比スケール。段名は ui.pen の変数名と 1:1 で対応する
+     （2xs / sm / base / md / lg / xl / 2xl / 3xl / 4xl）。Tailwind 標準のスケールとは
+     段名が一致しないが、@theme 側で標準スケールを潰しているので衝突しない。
+     2xs だけは等比から外れる。等幅ラベル（PERIOD / TECH STACK / ROLE など）専用の
      光学補正値で、同じ px でも小さく見える font-mono に合わせて一段上げてある。
      等比どおりの 9.72px は使用箇所がないため段として持たない */
-  --font-size-xs: 0.65625rem; /* 10.5px  font-mono の極小ラベル */
+  --font-size-2xs: 0.65625rem; /* 10.5px  font-mono の極小ラベル */
   --font-size-sm: 0.7292rem; /* 11.66px */
   --font-size-base: 0.875rem; /* 14px    本文 */
-  --font-size-lg: 1.05rem; /* 16.8px  */
-  --font-size-xl: 1.26rem; /* 20.16px */
-  --font-size-2xl: 1.512rem; /* 24.19px */
-  --font-size-3xl: 1.8144rem; /* 29.03px */
-  --font-size-4xl: 2.1773rem; /* 34.84px h1 */
-  --font-size-5xl: 2.6128rem; /* 41.8px  page-title（ページ自体の見出し） */
+  --font-size-md: 1.05rem; /* 16.8px  */
+  --font-size-lg: 1.26rem; /* 20.16px */
+  --font-size-xl: 1.512rem; /* 24.19px */
+  --font-size-2xl: 1.8144rem; /* 29.03px */
+  --font-size-3xl: 2.1773rem; /* 34.84px h1 */
+  --font-size-4xl: 2.6128rem; /* 41.8px  page-title（ページ自体の見出し） */
 
   --line-height-tight: 1.3; /* 見出し */
   --line-height-normal: 1.6; /* 本文 */
@@ -103,6 +105,13 @@
   --color-danger-500: #a0736f;
   --color-info-500: #61859f;
 
+  /* 状態色の面。500 と同 hue のまま明度を上げ彩度を落としたもの。
+     Callout の背景に使う。ui.pen の ac-*-bg と同値 */
+  --color-success-50: #eef2ee;
+  --color-warning-50: #f4f0e8;
+  --color-danger-50: #f5ecea;
+  --color-info-50: #edf1f4;
+
   /* ========== 色：ロール ========== */
   /* ui.pen の変数と 1:1 で対応する。
      実装では上の段階名（--color-neutral-900 など）ではなく、
@@ -131,6 +140,11 @@
   --color-ac-warning: var(--color-warning-500);
   --color-ac-danger: var(--color-danger-500);
   --color-ac-info: var(--color-info-500);
+
+  --color-ac-success-bg: var(--color-success-50);
+  --color-ac-warning-bg: var(--color-warning-50);
+  --color-ac-danger-bg: var(--color-danger-50);
+  --color-ac-info-bg: var(--color-info-50);
 
   /* ========== 色：ダークモード ========== */
   /* 未実装のため参照しない。同じランプの反転で dark-50 が最も暗い。
