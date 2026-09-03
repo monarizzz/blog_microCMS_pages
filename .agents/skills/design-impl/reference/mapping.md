@@ -59,7 +59,7 @@
 | `ArticleRowCompact` | `JE7aw` | 同上（`compact` prop で兼用） | ✅ |
 | `Tag` | `biM87` | `src/commons/layout/components/TagBtn/TagBtn.tsx` | ✅ |
 | `SeeAllLink` | `ZRLCv` | `src/commons/layout/components/SeeAllRight/SeeAllRight.tsx` | ✅ |
-| `Pagination` | `uxLwl` | `src/commons/pageNav/components/pageNavNum/`（**空ディレクトリ**） | ❌ |
+| `Pagination` | `uxLwl` | `src/commons/pageNav/components/pageNavNum/pageNavNum.tsx` | ✅ |
 | `ArticleThumbnail` | `N7jyll` | — | ❌ |
 | `CategorySectionHeader` | `QSeNC` | — | ❌ |
 | `ArticleSectionHeading` | `RgUbK` | — | ❌ |
@@ -67,6 +67,7 @@
 - `src/commons/layout/components/FilterBtn/FilterBtn.tsx` は `Tag` の `#` なし版。
   pen 側に独立コンポーネントはなく、`Tags` ページ（group `j9tOQT`）のフィルタ行が出典。
   `Tag` を触る時は `CHIP_CLASS_NAME`（`src/commons/layout/constants/chipStyle.ts`）を共有しているので巻き添えに注意。
+  `size="md"`（`px-3 py-1.5`）は `ArticleListPage` のソート行（`Tag` の padding override）用。
 
 ## テキスト・ラベル
 
