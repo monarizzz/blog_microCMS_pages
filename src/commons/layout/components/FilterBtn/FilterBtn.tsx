@@ -5,15 +5,13 @@ type Props = {
   text: string;
   link: string;
   active?: boolean;
-  /** md は記事一覧のソート行のように余白を広く取る置かれ方（ui.pen: padding 6 / 12） */
-  size?: "sm" | "md";
 };
 
-const FilterBtn = ({ text, link, active, size = "sm" }: Props) => (
+const FilterBtn = ({ text, link, active }: Props) => (
   <Link
     href={link}
     aria-current={active ? "true" : undefined}
-    className={`${size === "md" ? "rounded-button px-3 py-1.5" : CHIP_CLASS_NAME} ${
+    className={`${CHIP_CLASS_NAME} ${
       active ? "bg-surface-container-low text-primary" : "text-secondary"
     }`}
   >
