@@ -11,9 +11,11 @@ const FilterBtn = ({ text, link, active }: Props) => (
   <Link
     href={link}
     aria-current={active ? "true" : undefined}
-    className={`${CHIP_CLASS_NAME} ${
-      active ? "bg-surface-container-low text-primary" : "text-secondary"
-    }`}
+    className={
+      active
+        ? `${CHIP_CLASS_NAME} bg-surface-container-low text-primary`
+        : `${CHIP_CLASS_NAME} text-secondary`
+    }
   >
     {text}
   </Link>
