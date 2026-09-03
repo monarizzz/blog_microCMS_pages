@@ -2,7 +2,7 @@ import "./_styles/globals.css";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="jp">
+    <html lang="ja">
       <body>{children}</body>
     </html>
   );
