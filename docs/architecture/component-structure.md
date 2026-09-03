@@ -101,7 +101,7 @@ import { cn } from "@/lib/utils";
 | ON/OFF や数個の条件 | `cn()` |
 | `variant` / `size` など多軸のバリアント | `cva()`（class-variance-authority） |
 
-> `cn()` の中もクラス並び替えの対象にするには、`prettier.config.js` に `tailwindFunctions: ["cn"]` の指定が必要。
+> `cn()` の中もクラス並び替えの対象にするには、`prettier.config.mjs` に `tailwindFunctions: ["cn"]` の指定が必要。
 
 
 ## Storybook
