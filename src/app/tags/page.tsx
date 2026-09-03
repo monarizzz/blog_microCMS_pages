@@ -1,10 +1,11 @@
-import Header from "@/features/layout/components/Header/Header";
+import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
 
 const Home = () => {
   return (
     <>
-      <Header />
-      <>Tag page</>
+      <LayoutMain>
+        <>Tag page</>
+      </LayoutMain>
     </>
   );
 };
