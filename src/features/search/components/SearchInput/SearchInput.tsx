@@ -2,7 +2,7 @@ import { Search, XIcon } from "lucide-react";
 
 const SearchInput = () => {
   return (
-    <div className="outline-primary rounded-input flex items-center gap-4 px-4 py-3 outline">
+    <div className="flex items-center gap-4 rounded-input px-4 py-3 outline outline-primary">
       <Search size={20} className="text-secondary" />
 
       <div className="w-full">

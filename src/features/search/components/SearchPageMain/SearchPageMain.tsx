@@ -19,7 +19,7 @@ const SearchPageMain = ({ article, num }: Props) => {
         <AlertCircle size={14} />
         <p>{MIN_QUERY_LENGTH}文字以上で検索されます。</p>
       </div>
-      <p className="text-secondary text-sm tracking-[0.5px]">
+      <p className="text-sm tracking-[0.5px] text-secondary">
         検索結果 {num}件
       </p>
       {article ? (
@@ -30,10 +30,10 @@ const SearchPageMain = ({ article, num }: Props) => {
       ) : (
         <div className="flex flex-col items-center gap-6">
           <SearchX size={48} className="text-outline" />
-          <p className="text-primary text-md font-bold">
+          <p className="text-lg font-bold text-primary">
             一致する記事が見つかりませんでした
           </p>
-          <p className="text-secondary text-base">
+          <p className="text-base text-secondary">
             キーワードを変えてお試しいただくか、以下のタグから記事を探してみてください。
           </p>
           <div>
@@ -42,7 +42,7 @@ const SearchPageMain = ({ article, num }: Props) => {
           <button
             type="button"
             aria-label="検索をクリア"
-            className="text-on-surface-variant text-base"
+            className="text-base text-on-surface-variant"
           >
             検索をクリア
           </button>

@@ -15,7 +15,7 @@ const NotFound = () => {
         </div>
         <Link
           href="/"
-          className="bg-primary text-on-primary rounded-button flex items-center justify-center gap-2 px-7 py-3.5"
+          className="flex items-center justify-center gap-2 rounded-button bg-primary px-7 py-3.5 text-on-primary"
         >
           <ArrowLeft size={16} />
           <span> ホームに戻る</span>
