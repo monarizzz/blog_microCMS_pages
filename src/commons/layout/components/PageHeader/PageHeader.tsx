@@ -13,7 +13,7 @@ const PageHeader = ({ title, kicker, meta, sub, count, compact }: Props) => {
   return (
     <div className={`flex w-full flex-col ${compact ? "gap-3" : "gap-4"}`}>
       {kicker && (
-        <span className="text-secondary text-sm font-medium tracking-widest">
+        <span className="text-secondary text-sm font-medium tracking-[1.5px]">
           {kicker}
         </span>
       )}
