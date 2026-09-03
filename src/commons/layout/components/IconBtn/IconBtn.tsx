@@ -21,7 +21,7 @@ const IconBtn = ({ icon, link, label }: Props) => {
     <Link
       href={link}
       aria-label={label}
-      className="border-outline bg-surface flex size-10.25 items-center justify-center rounded-full border"
+      className="flex size-10.25 items-center justify-center rounded-full border border-outline bg-surface"
     >
       {icons[icon]}
     </Link>
