@@ -24,3 +24,11 @@ export const Active: Story = {
     active: true,
   },
 };
+
+export const Medium: Story = {
+  args: {
+    text: "新着順",
+    link: "?sort=newest",
+    size: "md",
+  },
+};

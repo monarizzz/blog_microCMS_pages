@@ -1,24 +1,29 @@
 import Link from "next/link";
-import { CHIP_CLASS_NAME } from "../../constants/chipStyle";
+import { ChipSize, chipClassName } from "../../constants/chipStyle";
 
 type Props = {
   text: string;
   link: string;
+  size?: ChipSize;
   active?: boolean;
 };
 
-const FilterBtn = ({ text, link, active }: Props) => (
-  <Link
-    href={link}
-    aria-current={active ? "true" : undefined}
-    className={
-      active
-        ? `${CHIP_CLASS_NAME} bg-surface-container-low text-primary`
-        : `${CHIP_CLASS_NAME} text-secondary`
-    }
-  >
-    {text}
-  </Link>
-);
+const FilterBtn = ({ text, link, size = "sm", active }: Props) => {
+  const base = chipClassName(size);
+
+  return (
+    <Link
+      href={link}
+      aria-current={active ? "true" : undefined}
+      className={
+        active
+          ? `${base} bg-surface-container-low text-primary`
+          : `${base} text-secondary`
+      }
+    >
+      {text}
+    </Link>
+  );
+};
 
 export default FilterBtn;
