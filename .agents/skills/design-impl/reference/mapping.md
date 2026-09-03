@@ -29,7 +29,7 @@
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ArticleListPage` | `nwTBC` | `src/features/article/components/articlePage/articlePage.tsx` | 🟡 ファイルはあるが中身が空 |
+| `ArticleListPage` | `nwTBC` | `src/features/article/components/articlePage/articlePage.tsx` | ✅ ルートは `src/app/article/page.tsx` |
 | `SearchPage` | `gwtSi` | `src/features/search/components/SearchPageMain/SearchPageMain.tsx` | ✅ |
 | `ServiceDetailPage` | `qiFnK` | — | ❌ |
 
@@ -164,5 +164,5 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 2. **ボタン類** — `PrimaryButton` `LinkButton` `BackLink` `SearchIconButton`
 3. **記事一覧の残り** — `ArticleThumbnail` `Pagination` `CategorySectionHeader` `ArticleSectionHeading`
 4. **記事本文** — `ArticleH1`〜`H3` → `Paragraph` `Quote` `BulletItem` `NumberItem` → `Callout` `CodeBlock` `Table` `Bookmark`
-5. **ページ組み立て** — `ArticleListPage`（空のまま放置されている）→ `ServiceDetailPage`
+5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）
