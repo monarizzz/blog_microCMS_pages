@@ -29,13 +29,11 @@ const ArticlePage = ({ currentPage = 1, sort = "new" }: Props) => {
           <FilterBtn
             text="新着順"
             link="?sort=new"
-            size="md"
             active={sort === "new"}
           />
           <FilterBtn
             text="古い順"
             link="?sort=old"
-            size="md"
             active={sort === "old"}
           />
         </div>
