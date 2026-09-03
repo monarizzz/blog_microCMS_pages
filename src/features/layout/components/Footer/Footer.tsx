@@ -1,7 +1,8 @@
+import { pageList } from "../../constants/pageList";
 import GlobalNav from "../GlobalNav/GlobalNav";
 
 type Props = {
-  pageList: string[];
+  pageList: typeof pageList;
 };
 
 const Footer = ({ pageList }: Props) => {
