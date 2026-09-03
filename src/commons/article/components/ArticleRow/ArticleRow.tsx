@@ -13,7 +13,7 @@ const ArticleRow = ({ compact }: Props) => {
   const tags = (
     <div className="flex gap-2">
       {tagList.map((tag) => (
-        <TagBtn key={tag} text={tag} />
+        <TagBtn key={tag} text={tag} link={tag} />
       ))}
     </div>
   );

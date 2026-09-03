@@ -1,6 +1,1 @@
-# CLAUDE.md
-
-## 基本ルール
-
-- 必ず日本語で応答すること
-- thinkingも日本語で行うこと
+@AGENTS.md

@@ -37,7 +37,7 @@ const SearchPageMain = ({ article, num }: Props) => {
             キーワードを変えてお試しいただくか、以下のタグから記事を探してみてください。
           </p>
           <div>
-            <TagBtn text="タグ" />
+            <TagBtn text="タグ" link="" />
           </div>
           <button
             type="button"

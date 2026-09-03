@@ -4,17 +4,18 @@
 # https://docs.claude.com/ja/docs/claude-code/github-actions
 name: Claude Code Review
 
+# NOTE: 現在は自動レビューを停止中(Codexのレビューに一本化)
+#       再開する場合は下の pull_request のコメントアウトを外す
 on:
-  # 手動実行のみ。自動レビューを再開する場合は下の pull_request を復活させる
   workflow_dispatch:
   # pull_request:
   #   types: [opened, synchronize, ready_for_review, reopened]
-    # Optional: Only run on specific file changes
-    # paths:
-    #   - "src/**/*.ts"
-    #   - "src/**/*.tsx"
-    #   - "src/**/*.js"
-    #   - "src/**/*.jsx"
+  #   # Optional: Only run on specific file changes
+  #   # paths:
+  #   #   - "src/**/*.ts"
+  #   #   - "src/**/*.tsx"
+  #   #   - "src/**/*.js"
+  #   #   - "src/**/*.jsx"
 
 jobs:
   claude-review:

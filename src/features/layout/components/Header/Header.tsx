@@ -8,7 +8,7 @@ const Header = ({ pageList }: Props) => {
   return (
     <div className="w-full bg-surface px-8 py-3">
       <div className="flex justify-between">
-        <span className="text-xl">Monelog</span>
+        <span className="text-lg">Monelog</span>
         <GlobalNav pageList={pageList} />
       </div>
     </div>
