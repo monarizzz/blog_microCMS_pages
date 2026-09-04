@@ -2,14 +2,41 @@ name: PR-test
 
 on: [pull_request]
 
+# 同一 PR に連続で push した場合、古い run を打ち切る
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
-  test:
-    name: Run Vitest
+  typecheck:
+    name: Type check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
       - name: Setup Node.js
         uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
       - run: npm ci
       - run: npx tsc --noEmit
-      - run: npx vitest --project node 
+
+  # NOTE: 現在 Vitest は使っていないため一旦停止中。
+  #       node プロジェクトの include (src/**/*.test.ts) に該当ファイルが無く、
+  #       通しても検証しているものが無い状態のため。
+  #       テストを書き始めるタイミングでコメントアウトを外す。
+  # test:
+  #   name: Run Vitest
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v7
+  #     - name: Setup Node.js
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 24
+  #         cache: npm
+  #     - run: npm ci
+  #     - run: npx vitest run --project node --passWithNoTests
