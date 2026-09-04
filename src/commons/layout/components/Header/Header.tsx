@@ -6,10 +6,10 @@ const rightBtn =
 
 const Header = () => {
   return (
-    <div className="flex w-full justify-between pb-1 pt-6 shadow">
+    <div className="pb-1 pt-6 shadow flex w-full justify-between">
       <Link
         href="/"
-        className="my-auto ml-[3vw] text-2xl font-bold text-gray-600"
+        className="text-2xl font-bold text-gray-600 my-auto ml-[3vw]"
       >
         {HEADER.TITLE}
       </Link>

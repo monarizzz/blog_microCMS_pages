@@ -12,7 +12,7 @@ const LayoutMain = ({ children }: Props) => {
       <Header />
       {children}
       {/* TODO:いつかヘッダーへ移動させる */}
-      <div className="fixed bottom-4 right-4">
+      <div className="bottom-4 right-4 fixed">
         <GithubBtn />
       </div>
     </>

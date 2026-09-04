@@ -19,7 +19,7 @@ const items = [{ label: "HOME", href: "/" }];
 const BlogMain = ({ category, categoryWithBlogList }: Props) => {
   const queryId = useSearchParams()?.get("cat") ?? undefined;
   return (
-    <div className="mx-auto my-5 w-4/5">
+    <div className="my-5 mx-auto w-4/5">
       <div className="mt-10">
         <PageBreadcrumb items={items} current={"CATEGORY"} />
       </div>
