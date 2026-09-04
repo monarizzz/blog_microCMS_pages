@@ -10,7 +10,7 @@ type Props = {
 
 const HomeMain = ({ blogsWithPlainText }: Props) => {
   return (
-    <div className="mx-auto my-6 w-4/5 max-w-7xl">
+    <div className="my-6 max-w-7xl mx-auto w-4/5">
       <p className="my-20 text-2xl font-bold">{UTILS_HOME.HOME}</p>
       <BlogCardGrid blogWithPlainTextList={blogsWithPlainText} />
     </div>

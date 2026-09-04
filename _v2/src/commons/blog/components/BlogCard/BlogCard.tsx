@@ -9,7 +9,7 @@ type Props = {
 
 const BlogCard = ({ BlogWithPlainText }: Props) => {
   return (
-    <div className="group min-h-44 rounded-md bg-white p-3 shadow transition hover:-translate-y-1 lg:min-h-52">
+    <div className="group min-h-44 rounded-md bg-white p-3 shadow hover:-translate-y-1 lg:min-h-52 transition">
       <div className="mb-2 overflow-hidden">
         {BlogWithPlainText.categories ? (
           <TagButton category={BlogWithPlainText.categories} />
@@ -17,13 +17,13 @@ const BlogCard = ({ BlogWithPlainText }: Props) => {
       </div>
       <div className="ml-2 mt-3">
         <Link href={`/blog/${BlogWithPlainText.id}`}>
-          <p className="mb-2 line-clamp-2 text-lg font-bold text-black group-hover:text-gray-700">
+          <p className="mb-2 text-lg font-bold text-black group-hover:text-gray-700 line-clamp-2">
             {BlogWithPlainText.title}
           </p>
-          <p className="mb-2 block text-2xs text-gray-400">
+          <p className="mb-2 text-2xs text-gray-400 block">
             {relativeDate(BlogWithPlainText.publishedAt)}
           </p>
-          <p className="mt-2 line-clamp-2 break-words text-xs leading-5 tracking-wide text-gray-500 lg:line-clamp-3">
+          <p className="mt-2 text-xs leading-5 tracking-wide text-gray-500 lg:line-clamp-3 line-clamp-2 break-words">
             {BlogWithPlainText.plainTextBody}
           </p>
         </Link>

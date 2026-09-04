@@ -18,18 +18,18 @@ type Props = {
 const BlogDetail = ({ blog, category, blogNavigation }: Props) => {
   const toc = tocFn(blog.body);
   return (
-    <div className="mx-auto max-w-7xl px-4">
-      <div className="w-full pb-4 pt-8">
+    <div className="max-w-7xl px-4 mx-auto">
+      <div className="pb-4 pt-8 w-full">
         <TagButton category={category} />
-        <div className="mb-16 mt-7 text-center text-xl font-bold">
+        <div className="mb-16 mt-7 text-xl font-bold text-center">
           {blog.title}
         </div>
         <div className="text-sm">
           <PostDate blog={blog} />
         </div>
       </div>
-      <div className="flex justify-center gap-4">
-        <div className="w-full min-w-0 lg:max-w-4xl">
+      <div className="gap-4 flex justify-center">
+        <div className="min-w-0 lg:max-w-4xl w-full">
           <div className="min-h-36 rounded-lg bg-zinc-50 p-5">
             <div
               className={style.article}
@@ -50,7 +50,7 @@ const BlogDetail = ({ blog, category, blogNavigation }: Props) => {
             </Link>
           </div>
         </div>
-        <div className="hidden xl:sticky xl:top-4 xl:block xl:h-fit xl:w-64 xl:self-start">
+        <div className="xl:sticky xl:top-4 xl:block xl:h-fit xl:w-64 xl:self-start hidden">
           <Toc toc={toc} />
         </div>
       </div>
