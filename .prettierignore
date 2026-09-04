@@ -1,0 +1,19 @@
+# Prettier は .gitignore も自動で参照するため、ここには
+# 「git 管理下だが整形したくないもの」と「gitignore に無いローカル生成物」だけを書く。
+
+# 旧実装。tsconfig でも exclude 済みで、手を入れる予定がない
+_v2/
+
+# Markdown。日本語を含む表を Prettier が桁ズレさせるため整形対象にしない
+*.md
+
+# 自動生成・ロックファイル
+package-lock.json
+next-env.d.ts
+*.tsbuildinfo
+
+# ビルド成果物
+.next/
+out/
+storybook-static/
+coverage/

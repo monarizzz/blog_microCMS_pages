@@ -11,7 +11,7 @@ const PageNavBtn = ({ content, isNext }: Props) => {
   return content ? (
     <Link
       href={`/blog/${content.id}`}
-      className={`flex min-w-0 flex-1 items-center overflow-hidden rounded-lg border border-slate-300 p-4 hover:bg-gray-50 ${isNext ? "flex-row-reverse text-right" : ""}`}
+      className={`min-w-0 rounded-lg border-slate-300 p-4 hover:bg-gray-50 flex flex-1 items-center overflow-hidden border ${isNext ? "flex-row-reverse text-right" : ""}`}
     >
       <Image
         src="/arrow.svg"
@@ -20,11 +20,11 @@ const PageNavBtn = ({ content, isNext }: Props) => {
         height={7}
         style={{ transform: `scaleX(${isNext ? 1 : -1})` }}
       />
-      <div className={`flex min-w-0 flex-col ${isNext ? "mr-3" : "ml-3"}`}>
-        <span className="mb-1 break-words text-xs text-slate-500">
+      <div className={`min-w-0 flex flex-col ${isNext ? "mr-3" : "ml-3"}`}>
+        <span className="mb-1 text-xs text-slate-500 break-words">
           {isNext ? "次の記事" : "前の記事"}
         </span>
-        <span className="truncate font-bold">{content.title}</span>
+        <span className="font-bold truncate">{content.title}</span>
       </div>
     </Link>
   ) : (
