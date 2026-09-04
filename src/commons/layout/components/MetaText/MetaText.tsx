@@ -6,7 +6,7 @@ type Props = {
 
 const MetaText = ({ children }: Props) => {
   return (
-    <span className="text-secondary font-mono text-sm tracking-wider">
+    <span className="font-mono text-sm tracking-wider text-secondary">
       {children}
     </span>
   );
