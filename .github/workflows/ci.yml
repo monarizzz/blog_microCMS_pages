@@ -10,6 +10,11 @@ concurrency:
 permissions:
   contents: read
 
+# 各ジョブが node_modules を直接キャッシュし、ヒット時は npm ci を丸ごとスキップする。
+# setup-node の cache: npm は ~/.npm(tarball)しか復元せず、node_modules への展開は
+# 毎回走るため、それだけでは npm ci は速くならない(実測 4 分前後)。
+# ジョブ間に依存関係は作らない。install 専用ジョブを前段に置くと、そこが落ちたときに
+# 後続が全てスキップされ「どこで落ちたか分からない」状態になるため。
 jobs:
   typecheck:
     name: Type check
@@ -21,7 +26,14 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - run: npm ci
+      - name: Restore node_modules
+        id: node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node24-node-modules-${{ hashFiles('package-lock.json') }}
+      - if: steps.node-modules.outputs.cache-hit != 'true'
+        run: npm ci
       - run: npm run typecheck
 
   lint:
@@ -34,7 +46,14 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - run: npm ci
+      - name: Restore node_modules
+        id: node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node24-node-modules-${{ hashFiles('package-lock.json') }}
+      - if: steps.node-modules.outputs.cache-hit != 'true'
+        run: npm ci
       - run: npm run lint
 
   build:
@@ -50,7 +69,14 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - run: npm ci
+      - name: Restore node_modules
+        id: node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node24-node-modules-${{ hashFiles('package-lock.json') }}
+      - if: steps.node-modules.outputs.cache-hit != 'true'
+        run: npm ci
       # ビルド成果物のキャッシュ。ソース or 依存が変わった run では
       # restore-keys で前回分を復元し、Next.js の差分ビルドを効かせる。
       - name: Restore Next.js cache
