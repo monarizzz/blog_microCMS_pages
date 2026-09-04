@@ -24,18 +24,10 @@ const ArticlePage = ({ currentPage = 1, sort = "new" }: Props) => {
     <div className="mx-auto flex w-full max-w-[1100px] flex-col gap-10 pt-[113px] pr-10 pb-24 pl-[47px]">
       <BackLink text="Tags へ" link="/tags" />
       <PageHeader compact title={`#${tag}`} count={`${totalCount} 記事`} />
-      <div className="border-outline-variant flex items-center justify-between border-b pb-4">
+      <div className="flex items-center justify-between border-b border-outline-variant pb-4">
         <div className="flex items-center gap-2">
-          <FilterBtn
-            text="新着順"
-            link="?sort=new"
-            active={sort === "new"}
-          />
-          <FilterBtn
-            text="古い順"
-            link="?sort=old"
-            active={sort === "old"}
-          />
+          <FilterBtn text="新着順" link="?sort=new" active={sort === "new"} />
+          <FilterBtn text="古い順" link="?sort=old" active={sort === "old"} />
         </div>
         <MetaText>
           {start}–{end} / {totalCount}

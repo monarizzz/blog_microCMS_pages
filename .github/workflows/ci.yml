@@ -10,6 +10,11 @@ concurrency:
 permissions:
   contents: read
 
+# 各ジョブが node_modules を直接キャッシュし、ヒット時は npm ci を丸ごとスキップする。
+# setup-node の cache: npm は ~/.npm(tarball)しか復元せず、node_modules への展開は
+# 毎回走るため、それだけでは npm ci は速くならない(実測 4 分前後)。
+# ジョブ間に依存関係は作らない。install 専用ジョブを前段に置くと、そこが落ちたときに
+# 後続が全てスキップされ「どこで落ちたか分からない」状態になるため。
 jobs:
   typecheck:
     name: Type check
@@ -21,13 +26,87 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - run: npm ci
-      - run: npx tsc --noEmit
+      - name: Restore node_modules
+        id: node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node24-node-modules-${{ hashFiles('package-lock.json') }}
+      - if: steps.node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+      - run: npm run typecheck
 
-  # NOTE: 現在 Vitest は使っていないため一旦停止中。
-  #       node プロジェクトの include (src/**/*.test.ts) に該当ファイルが無く、
-  #       通しても検証しているものが無い状態のため。
-  #       テストを書き始めるタイミングでコメントアウトを外す。
+  format:
+    name: Format check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run format:check
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Restore node_modules
+        id: node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node24-node-modules-${{ hashFiles('package-lock.json') }}
+      - if: steps.node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+      - run: npm run lint
+
+  build:
+    name: Next build
+    runs-on: ubuntu-latest
+    # fork からの PR には Actions secrets が渡らず、microCMS クライアントの
+    # 初期化で必ず落ちるため、同一リポジトリ内の PR に限定する。
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - uses: actions/checkout@v7
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Restore node_modules
+        id: node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node24-node-modules-${{ hashFiles('package-lock.json') }}
+      - if: steps.node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+      # ビルド成果物のキャッシュ。ソース or 依存が変わった run では
+      # restore-keys で前回分を復元し、Next.js の差分ビルドを効かせる。
+      - name: Restore Next.js cache
+        uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('src/**', 'next.config.ts', 'postcss.config.mjs') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+      - run: npm run build
+        env:
+          # generateStaticParams でビルド時に microCMS から記事を取得するため必須
+          API_KEY: ${{ secrets.API_KEY }}
+          DEPLOYMENT_ENVIRONMENTS: ${{ secrets.DEPLOYMENT_ENVIRONMENTS }}
+
+  # NOTE: 一旦停止中。src/**/*.test.ts のテスト自体は存在し全て通る状態のため、
+  #       CI ジョブの整理をするタイミングでコメントアウトを外す。
   # test:
   #   name: Run Vitest
   #   runs-on: ubuntu-latest
@@ -39,4 +118,4 @@ jobs:
   #         node-version: 24
   #         cache: npm
   #     - run: npm ci
-  #     - run: npx vitest run --project node --passWithNoTests
+  #     - run: npm test

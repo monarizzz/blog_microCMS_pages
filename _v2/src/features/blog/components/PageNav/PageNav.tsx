@@ -9,7 +9,7 @@ const PageNav = ({ blogNavigation }: Props) => {
   const { backBlog, nextBlog } = blogNavigation;
 
   return (
-    <div className="flex gap-x-6">
+    <div className="gap-x-6 flex">
       <PageNavBtn content={backBlog} isNext={false} />
       <PageNavBtn content={nextBlog} isNext={true} />
     </div>

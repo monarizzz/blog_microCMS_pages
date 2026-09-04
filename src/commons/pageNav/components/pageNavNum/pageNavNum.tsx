@@ -60,7 +60,7 @@ const PageNavNum = ({ currentPage, totalPages, basePath = "" }: Props) => {
             <span
               key={`ellipsis-${index}`}
               aria-hidden
-              className="text-secondary flex h-9 w-6 items-center justify-center font-mono text-[12.5px]"
+              className="flex h-9 w-6 items-center justify-center font-mono text-[12.5px] text-secondary"
             >
               …
             </span>

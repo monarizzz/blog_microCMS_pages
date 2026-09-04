@@ -76,7 +76,7 @@ export default Component;
 
 **原則 Tailwind CSS。** クラスは `className` に直接書く。
 
-- デザイントークンは `tailwind.config.ts` 経由で参照する。生の値を直接書かない
+- デザイントークンは `src/app/_styles/globals.css` の `@theme`(実体は `tokens.css`)経由で参照する。生の値を直接書かない
 
 ### 条件によるスタイル切り替え
 
