@@ -27,6 +27,9 @@ jobs:
   build:
     name: Next build
     runs-on: ubuntu-latest
+    # fork からの PR には Actions secrets が渡らず、microCMS クライアントの
+    # 初期化で必ず落ちるため、同一リポジトリ内の PR に限定する。
+    if: github.event.pull_request.head.repo.full_name == github.repository
     steps:
       - uses: actions/checkout@v7
       - name: Setup Node.js
