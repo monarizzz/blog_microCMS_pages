@@ -24,6 +24,32 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
 
+  build:
+    name: Next build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # ビルド成果物のキャッシュ。ソース or 依存が変わった run では
+      # restore-keys で前回分を復元し、Next.js の差分ビルドを効かせる。
+      - name: Restore Next.js cache
+        uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('src/**', 'next.config.ts', 'tailwind.config.ts', 'postcss.config.mjs') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+      - run: npm run build
+        env:
+          # generateStaticParams でビルド時に microCMS から記事を取得するため必須
+          API_KEY: ${{ secrets.API_KEY }}
+          DEPLOYMENT_ENVIRONMENTS: ${{ secrets.DEPLOYMENT_ENVIRONMENTS }}
+
   # NOTE: 一旦停止中。src/**/*.test.ts のテスト自体は存在し全て通る状態のため、
   #       CI ジョブの整理をするタイミングでコメントアウトを外す。
   # test:
