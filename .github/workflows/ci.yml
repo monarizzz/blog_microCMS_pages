@@ -22,12 +22,10 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npx tsc --noEmit
+      - run: npm run typecheck
 
-  # NOTE: 現在 Vitest は使っていないため一旦停止中。
-  #       node プロジェクトの include (src/**/*.test.ts) に該当ファイルが無く、
-  #       通しても検証しているものが無い状態のため。
-  #       テストを書き始めるタイミングでコメントアウトを外す。
+  # NOTE: 一旦停止中。src/**/*.test.ts のテスト自体は存在し全て通る状態のため、
+  #       CI ジョブの整理をするタイミングでコメントアウトを外す。
   # test:
   #   name: Run Vitest
   #   runs-on: ubuntu-latest
@@ -39,4 +37,4 @@ jobs:
   #         node-version: 24
   #         cache: npm
   #     - run: npm ci
-  #     - run: npx vitest run --project node --passWithNoTests
+  #     - run: npm test
