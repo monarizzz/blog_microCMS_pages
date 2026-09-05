@@ -129,7 +129,7 @@
 | `ServiceCardRow` | `T2ai0` | — | ❌ |
 | `ProjectItem` | `XiMk9` | — | ❌ |
 | `InfoRow` | `Nle6p` | — | ❌ |
-| `ShareBar` | `VyBtl` | — | ❌ |
+| `ShareBar` | `VyBtl` | `src/commons/article/components/ShareBar/ShareBar.tsx` | ✅ |
 
 ## Shelf（本棚）
 
