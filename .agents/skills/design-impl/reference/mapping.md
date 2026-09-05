@@ -97,8 +97,8 @@
 | `ArticleH3` | `v0Atx` | — | ❌ |
 | `Callout` | `KaNJF` | — | ❌ ※ `$ac-*-bg` が実装側に無い。token-map.md 参照 |
 | `Quote` | `xR0ql` | — | ❌ |
-| `BulletItem` | `eQqNb` | — | ❌ |
-| `NumberItem` | `c3XVs` | — | ❌ |
+| `BulletItem` | `eQqNb` | `src/commons/article/components/BulletItem/BulletItem.tsx` | ✅ |
+| `NumberItem` | `c3XVs` | `src/commons/article/components/NumberItem/NumberItem.tsx` | ✅ |
 | `Checkbox` | `D1pbg` | — | ❌ |
 | `Toggle` | `HbAE1` | — | ❌ |
 | `Divider` | `Ar2tj` | — | ❌ |
@@ -163,6 +163,6 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 1. **葉のパーツ** — `SectionLabel` `MetaText` `InfoLabel` `Divider` `ImagePlaceholder`
 2. **ボタン類** — `PrimaryButton` `LinkButton` `BackLink` `SearchIconButton`
 3. **記事一覧の残り** — `ArticleThumbnail` `Pagination` `CategorySectionHeader` `ArticleSectionHeading`
-4. **記事本文** — `ArticleH1`〜`H3` → `Paragraph` `Quote` `BulletItem` `NumberItem` → `Callout` `CodeBlock` `Table` `Bookmark`
+4. **記事本文** — `ArticleH1`〜`H3` → `Paragraph` `Quote` → `Callout` `CodeBlock` `Table` `Bookmark`
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）
