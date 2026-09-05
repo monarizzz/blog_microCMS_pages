@@ -83,8 +83,8 @@
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `SectionLabel` | `TbTSl` | — | ❌ |
-| `InfoLabel` | `PHZV0` | — | ❌ |
+| `SectionLabel` | `TbTSl` | `src/commons/layout/components/SectionLabel/SectionLabel.tsx` | ✅ |
+| `InfoLabel` | `PHZV0` | `src/commons/layout/components/InfoLabel/InfoLabel.tsx` | ✅ |
 | `MetaText` | `E2rKp` | `src/commons/layout/components/MetaText/MetaText.tsx` | ✅ |
 | `Paragraph` | `g5WYtH` | — | ❌ |
 
@@ -117,7 +117,7 @@
 | `SearchInput` | `Jh09L` | `src/features/search/components/SearchInput/SearchInput.tsx` | ✅ |
 | `IconButton` | `aGtFB` | `src/commons/layout/components/IconBtn/IconBtn.tsx` | ✅ |
 | `SearchIconButton` | `k2xlJ` | — | ❌ |
-| `LinkButton` | `Rl2z4` | — | ❌ |
+| `LinkButton` | `Rl2z4` | `src/commons/layout/components/LinkButton/LinkButton.tsx` | ✅ |
 | `BackLink` | `r2KGU` | `src/commons/layout/components/BackLink/BackLink.tsx` | ✅ |
 | `PrimaryButton` | `N3GA43` | — | ❌ |
 
@@ -146,7 +146,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ImagePlaceholder` | `XHkBO` | — | ❌ |
+| `ImagePlaceholder` | `XHkBO` | `src/commons/layout/components/ImagePlaceholder/ImagePlaceholder.tsx` | ✅ |
 | `ArticleRowSkeleton` | `M4eia` | — | ❌ |
 | `ArticleCardSkeleton` | `Pacnv` | — | ❌ |
 
@@ -160,8 +160,8 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 依存の少ないものから。上ほど先。
 
-1. **葉のパーツ** — `SectionLabel` `MetaText` `InfoLabel` `Divider` `ImagePlaceholder`
-2. **ボタン類** — `PrimaryButton` `LinkButton` `BackLink` `SearchIconButton`
+1. **葉のパーツ** — `MetaText` `Divider`
+2. **ボタン類** — `PrimaryButton` `BackLink` `SearchIconButton`
 3. **記事一覧の残り** — `ArticleThumbnail` `Pagination` `CategorySectionHeader` `ArticleSectionHeading`
 4. **記事本文** — `ArticleH1`〜`H3` → `Paragraph` `Quote` `BulletItem` `NumberItem` → `Callout` `CodeBlock` `Table` `Bookmark`
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
