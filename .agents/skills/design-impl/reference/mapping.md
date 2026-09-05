@@ -100,7 +100,7 @@
 | `BulletItem` | `eQqNb` | — | ❌ |
 | `NumberItem` | `c3XVs` | — | ❌ |
 | `Checkbox` | `D1pbg` | — | ❌ |
-| `Toggle` | `HbAE1` | — | ❌ |
+| `Toggle` | `HbAE1` | `src/commons/article/components/Toggle/Toggle.tsx` | ✅ |
 | `Divider` | `Ar2tj` | — | ❌ |
 | `CodeBlock` | `qvMsD` | — | ❌ |
 | `Table` | `Y1rfsy` | — | ❌ |
@@ -163,6 +163,6 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 1. **葉のパーツ** — `SectionLabel` `MetaText` `InfoLabel` `Divider` `ImagePlaceholder`
 2. **ボタン類** — `PrimaryButton` `LinkButton` `BackLink` `SearchIconButton`
 3. **記事一覧の残り** — `ArticleThumbnail` `Pagination` `CategorySectionHeader` `ArticleSectionHeading`
-4. **記事本文** — `ArticleH1`〜`H3` → `Paragraph` `Quote` `BulletItem` `NumberItem` → `Callout` `CodeBlock` `Table` `Bookmark`
+4. **記事本文** — `ArticleH1`〜`H3` → `Paragraph` `Quote` `BulletItem` `NumberItem` → `Callout` `CodeBlock` `Table` `Bookmark`（~~`Toggle`~~ は実装済み）
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）
