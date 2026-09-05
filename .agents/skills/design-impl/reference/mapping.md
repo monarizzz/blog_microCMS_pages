@@ -99,7 +99,7 @@
 | `Quote` | `xR0ql` | — | ❌ |
 | `BulletItem` | `eQqNb` | — | ❌ |
 | `NumberItem` | `c3XVs` | — | ❌ |
-| `Checkbox` | `D1pbg` | — | ❌ |
+| `Checkbox` | `D1pbg` | `src/commons/article/components/Checkbox/Checkbox.tsx` | ✅ |
 | `Toggle` | `HbAE1` | — | ❌ |
 | `Divider` | `Ar2tj` | — | ❌ |
 | `CodeBlock` | `qvMsD` | — | ❌ |
