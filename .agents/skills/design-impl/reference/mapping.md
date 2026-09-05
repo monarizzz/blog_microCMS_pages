@@ -119,7 +119,7 @@
 | `SearchIconButton` | `k2xlJ` | — | ❌ |
 | `LinkButton` | `Rl2z4` | — | ❌ |
 | `BackLink` | `r2KGU` | `src/commons/layout/components/BackLink/BackLink.tsx` | ✅ |
-| `PrimaryButton` | `N3GA43` | — | ❌ |
+| `PrimaryButton` | `N3GA43` | `src/commons/layout/components/PrimaryButton/PrimaryButton.tsx` | ✅ |
 
 ## サービス・プロフィール
 
@@ -161,7 +161,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 依存の少ないものから。上ほど先。
 
 1. **葉のパーツ** — `SectionLabel` `MetaText` `InfoLabel` `Divider` `ImagePlaceholder`
-2. **ボタン類** — `PrimaryButton` `LinkButton` `BackLink` `SearchIconButton`
+2. **ボタン類** — `LinkButton` `BackLink` `SearchIconButton`
 3. **記事一覧の残り** — `ArticleThumbnail` `Pagination` `CategorySectionHeader` `ArticleSectionHeading`
 4. **記事本文** — `ArticleH1`〜`H3` → `Paragraph` `Quote` `BulletItem` `NumberItem` → `Callout` `CodeBlock` `Table` `Bookmark`
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
