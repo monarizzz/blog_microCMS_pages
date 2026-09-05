@@ -127,8 +127,8 @@
 | --- | --- | --- | --- |
 | `ServiceCard` | `jhtzh` | — | ❌ |
 | `ServiceCardRow` | `T2ai0` | — | ❌ |
-| `ProjectItem` | `XiMk9` | — | ❌ |
-| `InfoRow` | `Nle6p` | — | ❌ |
+| `ProjectItem` | `XiMk9` | `src/commons/service/components/ProjectItem/ProjectItem.tsx` | ✅ |
+| `InfoRow` | `Nle6p` | `src/commons/service/components/InfoRow/InfoRow.tsx` | ✅ 内部の `InfoLabel`(`PHZV0`)は独立コンポーネント化せず内包 |
 | `ShareBar` | `VyBtl` | — | ❌ |
 
 ## Shelf（本棚）
