@@ -59,18 +59,18 @@
   /* 比率ではなく ui.pen の実測値をそのまま段にしている。
      角丸は差ではなく比で効くため（8→12px は 1.5 倍で明確に見える）、
      「4px しか違わない」という理由で隣接する段をまとめないこと */
-  --radius-none: 0;
-  --radius-xs: 0.5rem; /*  8px  コンテンツブロック（目次・コード・表） */
-  --radius-sm: 0.75rem; /* 12px  入力欄・チェックボックス・チップ類 */
-  --radius-md: 1rem; /* 16px  トグル・コールアウト */
-  --radius-lg: 1.5rem; /* 24px  カード */
-  --radius-full: 9999px; /*       ボタン・タグ・ページャ */
+  --token-radius-none: 0;
+  --token-radius-xs: 0.5rem; /*  8px  コンテンツブロック（目次・コード・表） */
+  --token-radius-sm: 0.75rem; /* 12px  入力欄・チェックボックス・チップ類 */
+  --token-radius-md: 1rem; /* 16px  トグル・コールアウト */
+  --token-radius-lg: 1.5rem; /* 24px  カード */
+  --token-radius-full: 9999px; /*       ボタン・タグ・ページャ */
 
   /* コンポーネント別（上のスケールから解決） */
-  --radius-button: 9999px; /* ui.pen のボタンはすべて pill */
-  --radius-card: 1.5rem;
-  --radius-input: 0.75rem;
-  --radius-badge: 9999px;
+  --token-radius-button: 9999px; /* ui.pen のボタンはすべて pill */
+  --token-radius-card: 1.5rem;
+  --token-radius-input: 0.75rem;
+  --token-radius-badge: 9999px;
 
   /* ========== 影 ========== */
   /* 色味 #00293c（oklch(25% 0.08 220) 由来）を alpha 6/8/10/12% で使用 */
@@ -87,77 +87,79 @@
      彩度 C は中間で 0.012 まで上がって再び下がる。
      モノクロなので primary ランプは neutral と全段同値になる。
      重複を避けるため neutral のみを定義し、primary はロールとしてのみ持つ */
-  --color-neutral-50: #f9fafb;
-  --color-neutral-100: #f0f2f4;
-  --color-neutral-200: #dadfe2;
-  --color-neutral-300: #bfc5ca;
-  --color-neutral-400: #9ea6ab;
-  --color-neutral-500: #80878d;
-  --color-neutral-600: #636a6f;
-  --color-neutral-700: #494e52;
-  --color-neutral-800: #2f3336;
-  --color-neutral-900: #181b1d;
-  --color-neutral-950: #0a0b0d;
+  --token-color-neutral-50: #f9fafb;
+  --token-color-neutral-100: #f0f2f4;
+  --token-color-neutral-200: #dadfe2;
+  --token-color-neutral-300: #bfc5ca;
+  --token-color-neutral-400: #9ea6ab;
+  --token-color-neutral-500: #80878d;
+  --token-color-neutral-600: #636a6f;
+  --token-color-neutral-700: #494e52;
+  --token-color-neutral-800: #2f3336;
+  --token-color-neutral-900: #181b1d;
+  --token-color-neutral-950: #0a0b0d;
 
   /* 状態色。彩度 C 0.057、hue は 145/80/25/240 */
-  --color-success-500: #6b8a6b;
-  --color-warning-500: #b8a17c;
-  --color-danger-500: #a0736f;
-  --color-info-500: #61859f;
+  --token-color-success-500: #6b8a6b;
+  --token-color-warning-500: #b8a17c;
+  --token-color-danger-500: #a0736f;
+  --token-color-info-500: #61859f;
 
   /* 状態色の面。500 と同 hue のまま明度を上げ彩度を落としたもの。
      Callout の背景に使う。ui.pen の ac-*-bg と同値 */
-  --color-success-50: #eef2ee;
-  --color-warning-50: #f4f0e8;
-  --color-danger-50: #f5ecea;
-  --color-info-50: #edf1f4;
+  --token-color-success-50: #eef2ee;
+  --token-color-warning-50: #f4f0e8;
+  --token-color-danger-50: #f5ecea;
+  --token-color-info-50: #edf1f4;
 
   /* ========== 色：ロール ========== */
   /* ui.pen の変数と 1:1 で対応する。
-     実装では上の段階名（--color-neutral-900 など）ではなく、
+     実装では上の段階名（--token-color-neutral-900 など）ではなく、
      こちらのロール名を参照すること。意図がコードから読め、
      ダークモード対応時も参照先の差し替えだけで済む。
      新しい色は増やしていない。既存の色に役割名を与えているだけ */
 
   /* 面 */
-  --color-surface: var(--color-neutral-50); /* ページ背景 */
-  --color-surface-container-low: var(--color-neutral-100);
-  --color-surface-container: var(--color-neutral-200);
+  --token-color-surface: var(--token-color-neutral-50); /* ページ背景 */
+  --token-color-surface-container-low: var(--token-color-neutral-100);
+  --token-color-surface-container: var(--token-color-neutral-200);
 
   /* 文字・主要要素 */
-  --color-primary: var(--color-neutral-900);
-  --color-secondary: var(--color-neutral-700);
-  --color-on-primary: var(--color-neutral-50);
-  --color-on-surface: var(--color-neutral-900); /* 本文 */
-  --color-on-surface-variant: var(--color-neutral-600); /* 補助テキスト */
+  --token-color-primary: var(--token-color-neutral-900);
+  --token-color-secondary: var(--token-color-neutral-700);
+  --token-color-on-primary: var(--token-color-neutral-50);
+  --token-color-on-surface: var(--token-color-neutral-900); /* 本文 */
+  --token-color-on-surface-variant: var(
+    --token-color-neutral-600
+  ); /* 補助テキスト */
 
   /* 境界線。このデザインは影ではなく境界線で階層を作る */
-  --color-outline: var(--color-neutral-300);
-  --color-outline-variant: var(--color-neutral-200);
+  --token-color-outline: var(--token-color-neutral-300);
+  --token-color-outline-variant: var(--token-color-neutral-200);
 
   /* アクセント */
-  --color-ac-success: var(--color-success-500);
-  --color-ac-warning: var(--color-warning-500);
-  --color-ac-danger: var(--color-danger-500);
-  --color-ac-info: var(--color-info-500);
+  --token-color-ac-success: var(--token-color-success-500);
+  --token-color-ac-warning: var(--token-color-warning-500);
+  --token-color-ac-danger: var(--token-color-danger-500);
+  --token-color-ac-info: var(--token-color-info-500);
 
-  --color-ac-success-bg: var(--color-success-50);
-  --color-ac-warning-bg: var(--color-warning-50);
-  --color-ac-danger-bg: var(--color-danger-50);
-  --color-ac-info-bg: var(--color-info-50);
+  --token-color-ac-success-bg: var(--token-color-success-50);
+  --token-color-ac-warning-bg: var(--token-color-warning-50);
+  --token-color-ac-danger-bg: var(--token-color-danger-50);
+  --token-color-ac-info-bg: var(--token-color-info-50);
 
   /* ========== 色：ダークモード ========== */
   /* 未実装のため参照しない。同じランプの反転で dark-50 が最も暗い。
      実装時はロールの参照先を差し替える形にすること */
-  --color-neutral-dark-50: #0a0b0d;
-  --color-neutral-dark-100: #181b1d;
-  --color-neutral-dark-200: #2f3336;
-  --color-neutral-dark-300: #494e52;
-  --color-neutral-dark-400: #636a6f;
-  --color-neutral-dark-500: #80878d;
-  --color-neutral-dark-600: #9ea6ab;
-  --color-neutral-dark-700: #bfc5ca;
-  --color-neutral-dark-800: #dadfe2;
-  --color-neutral-dark-900: #f0f2f4;
-  --color-neutral-dark-950: #f9fafb;
+  --token-color-neutral-dark-50: #0a0b0d;
+  --token-color-neutral-dark-100: #181b1d;
+  --token-color-neutral-dark-200: #2f3336;
+  --token-color-neutral-dark-300: #494e52;
+  --token-color-neutral-dark-400: #636a6f;
+  --token-color-neutral-dark-500: #80878d;
+  --token-color-neutral-dark-600: #9ea6ab;
+  --token-color-neutral-dark-700: #bfc5ca;
+  --token-color-neutral-dark-800: #dadfe2;
+  --token-color-neutral-dark-900: #f0f2f4;
+  --token-color-neutral-dark-950: #f9fafb;
 }

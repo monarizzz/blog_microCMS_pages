@@ -34,40 +34,40 @@
   --tracking-widest: var(--letter-spacing-widest);
 
   --radius-*: initial;
-  --radius-none: var(--radius-none);
-  --radius-xs: var(--radius-xs);
-  --radius-sm: var(--radius-sm);
-  --radius-md: var(--radius-md);
-  --radius-lg: var(--radius-lg);
-  --radius-full: var(--radius-full);
-  --radius-button: var(--radius-button);
-  --radius-card: var(--radius-card);
-  --radius-input: var(--radius-input);
-  --radius-badge: var(--radius-badge);
+  --radius-none: var(--token-radius-none);
+  --radius-xs: var(--token-radius-xs);
+  --radius-sm: var(--token-radius-sm);
+  --radius-md: var(--token-radius-md);
+  --radius-lg: var(--token-radius-lg);
+  --radius-full: var(--token-radius-full);
+  --radius-button: var(--token-radius-button);
+  --radius-card: var(--token-radius-card);
+  --radius-input: var(--token-radius-input);
+  --radius-badge: var(--token-radius-badge);
 
-  --color-surface: var(--color-surface);
-  --color-surface-container-low: var(--color-surface-container-low);
-  --color-surface-container: var(--color-surface-container);
+  --color-surface: var(--token-color-surface);
+  --color-surface-container-low: var(--token-color-surface-container-low);
+  --color-surface-container: var(--token-color-surface-container);
 
-  --color-primary: var(--color-primary);
-  --color-secondary: var(--color-secondary);
-  --color-on-primary: var(--color-on-primary);
+  --color-primary: var(--token-color-primary);
+  --color-secondary: var(--token-color-secondary);
+  --color-on-primary: var(--token-color-on-primary);
 
-  --color-on-surface: var(--color-on-surface);
-  --color-on-surface-variant: var(--color-on-surface-variant);
+  --color-on-surface: var(--token-color-on-surface);
+  --color-on-surface-variant: var(--token-color-on-surface-variant);
 
-  --color-outline: var(--color-outline);
-  --color-outline-variant: var(--color-outline-variant);
+  --color-outline: var(--token-color-outline);
+  --color-outline-variant: var(--token-color-outline-variant);
 
-  --color-ac-success: var(--color-ac-success);
-  --color-ac-warning: var(--color-ac-warning);
-  --color-ac-danger: var(--color-ac-danger);
-  --color-ac-info: var(--color-ac-info);
+  --color-ac-success: var(--token-color-ac-success);
+  --color-ac-warning: var(--token-color-ac-warning);
+  --color-ac-danger: var(--token-color-ac-danger);
+  --color-ac-info: var(--token-color-ac-info);
 
-  --color-ac-success-bg: var(--color-ac-success-bg);
-  --color-ac-warning-bg: var(--color-ac-warning-bg);
-  --color-ac-danger-bg: var(--color-ac-danger-bg);
-  --color-ac-info-bg: var(--color-ac-info-bg);
+  --color-ac-success-bg: var(--token-color-ac-success-bg);
+  --color-ac-warning-bg: var(--token-color-ac-warning-bg);
+  --color-ac-danger-bg: var(--token-color-ac-danger-bg);
+  --color-ac-info-bg: var(--token-color-ac-info-bg);
 
   --spacing-2xs: var(--space-2xs);
   --spacing-xs: var(--space-xs);
@@ -96,8 +96,8 @@
      ここで指定した値が全要素の既定になるので、
      コンポーネント側は既定から外れるものだけを宣言すればよい */
   body {
-    background-color: var(--color-surface);
-    color: var(--color-on-surface);
+    background-color: var(--token-color-surface);
+    color: var(--token-color-on-surface);
     font-family: var(--font-family-sans);
     font-size: var(--font-size-base);
     line-height: var(--line-height-normal);
