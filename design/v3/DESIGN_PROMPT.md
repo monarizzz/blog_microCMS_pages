@@ -181,7 +181,6 @@ Monochrome, so a separate primary ramp would be identical at every step. Only `n
 
 ```css
 --color-surface: var(--color-neutral-50); /* page background */
---color-surface-raised: #ffffff; /* lifted plane; no consumers yet */
 --color-surface-container-low: var(--color-neutral-100);
 --color-surface-container: var(--color-neutral-200);
 --color-primary: var(--color-neutral-900);
@@ -233,7 +232,7 @@ Same ramp inverted (`dark-50` is the darkest). Not implemented yet — kept for 
 
 - Reach for a role first; drop to a numbered step only when no role fits
 - Primary actions: `var(--color-primary)`; on hover `var(--color-neutral-800)`; on active `var(--color-neutral-700)`
-- Page background: `var(--color-surface)`; lifted panels use `var(--color-surface-raised)`; body copy uses `var(--color-on-surface)`
+- Page background: `var(--color-surface)`; body copy uses `var(--color-on-surface)`
 - Cards: `var(--radius-card)` with a `var(--color-outline-variant)` border — the design uses no shadows
 - Buttons: `var(--radius-button)`; separation comes from fill contrast, not elevation
 - Inputs: `var(--radius-input)`; focus ring uses the interaction-states spec

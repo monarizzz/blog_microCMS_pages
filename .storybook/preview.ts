@@ -1,8 +1,18 @@
 import type { Preview } from "@storybook/nextjs-vite";
-import "../src/styles/globals.css";
+import "../src/app/_styles/globals.css";
 
 const preview: Preview = {
   parameters: {
+    // 個別 Story で上書き可
+    layout: "fullscreen",
+
+    options: {
+      // 未指定だと登録順になるため、サイドバーの並びを明示する
+      storySort: {
+        method: "alphabetical",
+      },
+    },
+
     controls: {
       matchers: {
         color: /(background|color)$/i,

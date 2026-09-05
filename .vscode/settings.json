@@ -1,6 +1,6 @@
 {
   "cSpell.words": ["Commonlayout"],
-  "tailwindCSS.experimental.configFile": "tailwind.config.ts",
+  "tailwindCSS.experimental.configFile": "src/app/_styles/globals.css",
   "editor.quickSuggestions": {
     "strings": "on"
   }
