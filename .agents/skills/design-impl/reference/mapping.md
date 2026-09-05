@@ -125,8 +125,8 @@
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ServiceCard` | `jhtzh` | — | ❌ |
-| `ServiceCardRow` | `T2ai0` | — | ❌ |
+| `ServiceCard` | `jhtzh` | `src/features/service/components/ServiceCard/ServiceCard.tsx` | ✅ |
+| `ServiceCardRow` | `T2ai0` | `src/features/service/components/ServiceCardRow/ServiceCardRow.tsx` | ✅ |
 | `ProjectItem` | `XiMk9` | — | ❌ |
 | `InfoRow` | `Nle6p` | — | ❌ |
 | `ShareBar` | `VyBtl` | — | ❌ |
