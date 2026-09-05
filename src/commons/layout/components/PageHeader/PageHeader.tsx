@@ -7,9 +7,19 @@ type Props = {
   sub?: string;
   count?: string;
   compact?: boolean;
+  /** Sub を text-base・幅560pxで表示する（ui.pen PageHead nrspz 相当） */
+  wide?: boolean;
 };
 
-const PageHeader = ({ title, kicker, meta, sub, count, compact }: Props) => {
+const PageHeader = ({
+  title,
+  kicker,
+  meta,
+  sub,
+  count,
+  compact,
+  wide,
+}: Props) => {
   return (
     <div className={`flex w-full flex-col ${compact ? "gap-3" : "gap-4"}`}>
       {kicker && (
@@ -27,9 +37,16 @@ const PageHeader = ({ title, kicker, meta, sub, count, compact }: Props) => {
       >
         {title}
       </h1>
-      {sub && (
-        <p className="text-md leading-relaxed text-on-surface-variant">{sub}</p>
-      )}
+      {sub &&
+        (wide ? (
+          <p className="w-[560px] text-base leading-relaxed text-on-surface-variant">
+            {sub}
+          </p>
+        ) : (
+          <p className="text-md leading-relaxed text-on-surface-variant">
+            {sub}
+          </p>
+        ))}
       {count && <MetaText>{count}</MetaText>}
     </div>
   );
