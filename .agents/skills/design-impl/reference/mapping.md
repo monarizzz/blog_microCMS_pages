@@ -101,7 +101,7 @@
 | `NumberItem` | `c3XVs` | — | ❌ |
 | `Checkbox` | `D1pbg` | — | ❌ |
 | `Toggle` | `HbAE1` | — | ❌ |
-| `Divider` | `Ar2tj` | — | ❌ |
+| `Divider` | `Ar2tj` | `src/commons/layout/components/Divider/Divider.tsx` | ✅ |
 | `CodeBlock` | `qvMsD` | — | ❌ |
 | `Table` | `Y1rfsy` | — | ❌ |
 | `Bookmark` | `A4rGR` | — | ❌ |
