@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { expect, within } from "storybook/test";
 
 import PageNavNum from "./PageNumNav";
 
@@ -35,5 +36,60 @@ export const Few: Story = {
   args: {
     currentPage: 2,
     totalPages: 3,
+  },
+};
+
+/** sort などのクエリを引き継ぐケース（例: /article?sort=old&page=3） */
+export const WithQuery: Story = {
+  args: {
+    currentPage: 3,
+    totalPages: 10,
+    basePath: "/article",
+    // page はコンポーネントが組み立てるので、渡しても捨てられる
+    query: { sort: "old", page: "3" },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // 1 ページ目は page を付けず、sort だけ引き継ぐ
+    await expect(canvas.getByRole("link", { name: "1" })).toHaveAttribute(
+      "href",
+      "/article?sort=old",
+    );
+    await expect(canvas.getByRole("link", { name: "2" })).toHaveAttribute(
+      "href",
+      "/article?sort=old&page=2",
+    );
+    await expect(canvas.getByRole("link", { name: "10" })).toHaveAttribute(
+      "href",
+      "/article?sort=old&page=10",
+    );
+    await expect(
+      canvas.getByRole("link", { name: "前のページ" }),
+    ).toHaveAttribute("href", "/article?sort=old&page=2");
+    await expect(
+      canvas.getByRole("link", { name: "次のページ" }),
+    ).toHaveAttribute("href", "/article?sort=old&page=4");
+  },
+};
+
+/** query 無しのとき、従来どおり page だけの URL になること */
+export const WithoutQuery: Story = {
+  args: {
+    currentPage: 2,
+    totalPages: 10,
+    basePath: "/article",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await expect(canvas.getByRole("link", { name: "1" })).toHaveAttribute(
+      "href",
+      "/article",
+    );
+    await expect(canvas.getByRole("link", { name: "3" })).toHaveAttribute(
+      "href",
+      "/article?page=3",
+    );
   },
 };

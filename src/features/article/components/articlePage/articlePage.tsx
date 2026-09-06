@@ -46,6 +46,7 @@ const ArticlePage = ({ currentPage = 1, sort = "new" }: Props) => {
           currentPage={page}
           totalPages={totalPages}
           basePath="/article"
+          query={{ sort }}
         />
       </div>
     </div>
