@@ -5,6 +5,8 @@ type Props = {
   currentPage: number;
   totalPages: number;
   basePath?: string;
+  /** ページ遷移時に引き継ぐクエリ（sort など）。undefined の値は付けない */
+  query?: Record<string, string | undefined>;
 };
 
 const CELL_CLASS_NAME =
@@ -32,10 +34,28 @@ const buildPages = (currentPage: number, totalPages: number) => {
   );
 };
 
-const pageHref = (basePath: string, page: number) =>
-  page === 1 ? basePath : `${basePath}?page=${page}`;
+/** 1 ページ目は page を付けない（正規 URL を 1 つに保つため）が、query は常に引き継ぐ */
+const pageHref = (
+  basePath: string,
+  page: number,
+  query: Record<string, string | undefined>,
+) => {
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(query)) {
+    if (value !== undefined) params.set(key, value);
+  }
+  if (page !== 1) params.set("page", String(page));
 
-const PageNavNum = ({ currentPage, totalPages, basePath = "" }: Props) => {
+  const search = params.toString();
+  return search ? `${basePath}?${search}` : basePath;
+};
+
+const PageNavNum = ({
+  currentPage,
+  totalPages,
+  basePath = "",
+  query = {},
+}: Props) => {
   const hasPrev = currentPage > 1;
   const hasNext = currentPage < totalPages;
 
@@ -43,7 +63,7 @@ const PageNavNum = ({ currentPage, totalPages, basePath = "" }: Props) => {
     <nav aria-label="ページネーション" className="flex gap-4">
       {hasPrev ? (
         <Link
-          href={pageHref(basePath, currentPage - 1)}
+          href={pageHref(basePath, currentPage - 1, query)}
           aria-label="前のページ"
           className={ARROW_CLASS_NAME}
         >
@@ -75,7 +95,7 @@ const PageNavNum = ({ currentPage, totalPages, basePath = "" }: Props) => {
           ) : (
             <Link
               key={page}
-              href={pageHref(basePath, page)}
+              href={pageHref(basePath, page, query)}
               className={`${CELL_CLASS_NAME} bg-surface text-secondary`}
             >
               {page}
@@ -85,7 +105,7 @@ const PageNavNum = ({ currentPage, totalPages, basePath = "" }: Props) => {
       </div>
       {hasNext ? (
         <Link
-          href={pageHref(basePath, currentPage + 1)}
+          href={pageHref(basePath, currentPage + 1, query)}
           aria-label="次のページ"
           className={ARROW_CLASS_NAME}
         >

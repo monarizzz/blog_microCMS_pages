@@ -37,3 +37,13 @@ export const Few: Story = {
     totalPages: 3,
   },
 };
+
+/** sort などのクエリを引き継ぐケース（例: /article?sort=old&page=3） */
+export const WithQuery: Story = {
+  args: {
+    currentPage: 3,
+    totalPages: 10,
+    basePath: "/article",
+    query: { sort: "old" },
+  },
+};
