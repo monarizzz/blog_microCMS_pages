@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CHIP_CLASS_NAME } from "../../layout/constants/chipStyle";
+import { CHIP_CLASS_NAME } from "../../other/constants/chipStyle";
 
 type Props = {
   text: string;

@@ -1,8 +1,8 @@
 import ArticleRow from "@/commons/contents/components/ArticleRow/ArticleRow";
 import CategorySectionHeader from "@/commons/contents/components/CategorySectionHeader/CategorySectionHeader";
 import FilterBtn from "@/commons/button/FilterBtn/FilterBtn";
-import PageHeader from "@/commons/layout/components/PageHeader/PageHeader";
-import SeeAllRight from "@/commons/layout/components/SeeAllRight/SeeAllRight";
+import PageHeader from "@/commons/other/components/PageHeader/PageHeader";
+import SeeAllRight from "@/commons/other/components/SeeAllRight/SeeAllRight";
 
 //TODO:仮置き
 const totalCount = 38;

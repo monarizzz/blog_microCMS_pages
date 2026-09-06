@@ -1,5 +1,5 @@
 import { Link as LinkIcon } from "lucide-react";
-import MetaText from "@/commons/layout/components/MetaText/MetaText";
+import MetaText from "@/commons/other/components/MetaText/MetaText";
 
 type Props = {
   name: string;
