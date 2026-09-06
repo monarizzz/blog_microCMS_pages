@@ -33,3 +33,14 @@ export const Internship: Story = {
     link: "#",
   },
 };
+
+export const NoDetailPage: Story = {
+  args: {
+    index: "03",
+    title: "社内ツール",
+    category: "業務委託",
+    description:
+      "コラボレーション、スピード感、柔軟性、そしてイノベーティブな発想を、品質・コスト・スケジュール・スコープに意識を集中し、ストーリーのある活動的なビジュアルを表現します。",
+    techStack: "Next.js / TypeScript",
+  },
+};

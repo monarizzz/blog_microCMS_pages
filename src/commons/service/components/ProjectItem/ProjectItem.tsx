@@ -6,7 +6,7 @@ type Props = {
   category: string;
   description: string;
   techStack: string;
-  link: string;
+  link?: string;
 };
 
 const ProjectItem = ({
@@ -42,11 +42,13 @@ const ProjectItem = ({
         </p>
         <div className="flex w-full justify-between gap-7">
           <div className="flex flex-col items-end gap-1">
-            <span className="w-[190px] text-center font-mono text-[10px] text-on-surface-variant">
+            <span className="text-center font-mono text-[10px] whitespace-nowrap text-on-surface-variant">
               {techStack}
             </span>
           </div>
-          <IconBtn icon="arrowUpRight" link={link} label={`${title}を開く`} />
+          {link && (
+            <IconBtn icon="arrowUpRight" link={link} label={`${title}を開く`} />
+          )}
         </div>
       </div>
     </div>
