@@ -46,7 +46,17 @@ description: 全open PRを対象に、chatgpt-codex-connector[bot] のレビュ�
 ## 修正対応
 
 - 各PRのブランチ用worktreeは `.claude/worktrees/` 配下に既存のものがあることが多い。
-  `git worktree list` で確認し、無ければ `git worktree add` で作る
+  `git worktree list` で確認し、無ければ `git worktree add` で作る。
+  **このスキルの実行中に新規作成した worktree は、全PRの対応完了後に必ず削除する**
+  (AGENTS.md「worktree」節)。放置すると巡回のたびに不要な作業ツリーが積み上がる:
+
+  ```bash
+  git -C <パス> status        # 未コミットの変更が無いことを確認
+  git worktree remove <パス>  # 空になった親ディレクトリも消す
+  git worktree list           # 消えたことを確認
+  ```
+
+  消すのは worktree だけでブランチは残す。元から存在した worktree は削除しない
 - AGENTS.md の規約(1コミット=1コンポーネント/1論点、既存コンポーネント変更は独立コミット、
   コミット本文に状態数・推測箇所を明記)に従う
 - コード修正の実作業(ファイル編集・`tsc --noEmit`)は `sonnet` サブエージェントに委任してよいが、
