@@ -22,16 +22,16 @@ const ServiceCard = ({
 
   return (
     <div className="flex w-full flex-1 flex-col items-center gap-7 border border-outline-variant bg-surface">
-      <div className="relative h-[180px] w-full overflow-hidden border-b border-outline-variant bg-surface-container-low">
+      <div className="relative h-45 w-full overflow-hidden border-b border-outline-variant bg-surface-container-low">
         {thumbnailUrl ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={thumbnailUrl}
             alt={title}
-            className="h-full w-full object-cover"
+            className="size-full object-cover"
           />
         ) : (
-          <div className="flex h-full w-full flex-col items-center justify-center gap-[10px]">
+          <div className="flex size-full flex-col items-center justify-center gap-2.5">
             <ImageIcon size={30} className="text-on-surface-variant" />
             <span className="font-mono text-2xs tracking-[2px] text-on-surface-variant">
               NO IMAGE
@@ -39,9 +39,9 @@ const ServiceCard = ({
           </div>
         )}
       </div>
-      <div className="flex min-h-[149px] w-full flex-col gap-3 px-4 pb-4">
+      <div className="flex min-h-37.25 w-full flex-col gap-3 px-4 pb-4">
         {developmentType && (
-          <div className="flex w-full items-center justify-between px-[3px]">
+          <div className="flex w-full items-center justify-between px-0.75">
             <span className="text-center font-mono text-2xs text-secondary">
               {developmentType}
             </span>
@@ -51,12 +51,12 @@ const ServiceCard = ({
           <h3 className="text-center font-sans text-lg leading-[1.4] font-bold tracking-snug text-primary">
             {title}
           </h3>
-          <div className="flex flex-col gap-3 px-[3px]">
-            <p className="w-[230px] max-w-full text-center font-mono text-[12px] break-words text-secondary">
+          <div className="flex flex-col gap-3 px-0.75">
+            <p className="w-57.5 max-w-full text-center font-mono text-[12px] wrap-break-word text-secondary">
               {techStack}
             </p>
             {hasLink && (
-              <div className="flex w-[124px] items-center justify-center border border-outline-variant pt-1">
+              <div className="flex w-31 items-center justify-center border border-outline-variant pt-1">
                 <div className="flex items-center gap-4">
                   {url && (
                     <a

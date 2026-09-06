@@ -21,7 +21,7 @@ const Toggle = ({ summary, children, defaultOpen = false }: Props) => {
         />
         <span className="text-md font-bold text-primary">{summary}</span>
       </summary>
-      <div className="mt-2 w-full text-md leading-normal text-on-surface">
+      <div className="mt-2 w-full text-md/normal text-on-surface">
         {children}
       </div>
     </details>
