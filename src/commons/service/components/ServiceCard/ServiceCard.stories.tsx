@@ -14,6 +14,15 @@ export const Default: Story = {
   args: {
     title: "天気予報アプリ",
     techStack: "Next.js / TypeScript / microCMS",
+    developmentType: "Solo development",
+  },
+};
+
+/** developmentType・リンクを省略した場合。ラベルとリンク枠が消える */
+export const Minimal: Story = {
+  args: {
+    title: "天気予報アプリ",
+    techStack: "Next.js / TypeScript / microCMS",
   },
 };
 
