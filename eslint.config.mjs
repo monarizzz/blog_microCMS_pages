@@ -6,8 +6,15 @@ import storybook from "eslint-plugin-storybook";
 
 const eslintConfig = [
   {
-    // _v2 は旧実装。tsconfig / .prettierignore でも除外済みで手を入れないため lint 対象外
-    ignores: ["_v2/**", ".next/**", "node_modules/**", "storybook-static/**"],
+    ignores: [
+      // _v2 は旧実装。tsconfig / .prettierignore でも除外済みで手を入れない
+      "_v2/**",
+      // worktree はそれぞれのブランチ側で lint する
+      ".claude/worktrees/**",
+      ".next/**",
+      "node_modules/**",
+      "storybook-static/**",
+    ],
   },
   ...nextCoreWebVitals,
   ...nextTypescript,
@@ -24,26 +31,19 @@ const eslintConfig = [
     },
     rules: {
       // クラスの並び替え・改行整形は prettier-plugin-tailwindcss に任せるため、
-      // recommended に含まれる整形系ルール (enforce-consistent-class-order /
+      // 整形系ルール (enforce-consistent-class-order /
       // enforce-consistent-line-wrapping) は有効化しない
-      "better-tailwindcss/no-conflicting-classes": "warn",
-      "better-tailwindcss/no-duplicate-classes": "warn",
-      "better-tailwindcss/no-unnecessary-whitespace": "warn",
-      "better-tailwindcss/no-unregistered-classes": "warn",
-      // トークンは tokens.css / globals.css の @theme に集約する方針なので、
-      // 任意値 (max-w-[1100px] 等) の混入を検知する。
-      // 既存コードに残存があるため、まずは warn で導入する
-      "better-tailwindcss/no-restricted-classes": [
-        "warn",
-        {
-          restrict: [
-            {
-              message:
-                "任意値 '$0' ではなく tokens.css / globals.css の @theme に定義したトークンを使ってください",
-              pattern: ".*-\\[.*\\].*",
-            },
-          ],
-        },
+      "better-tailwindcss/no-conflicting-classes": "error",
+      "better-tailwindcss/no-duplicate-classes": "error",
+      "better-tailwindcss/no-unnecessary-whitespace": "error",
+      "better-tailwindcss/no-unknown-classes": "error",
+      "better-tailwindcss/no-deprecated-classes": "error",
+      // h-[180px] のような任意値を、トークンで表せる正規クラス (h-45) に寄せる。
+      // rootFontSize を渡さないと px → spacing スケールの変換が働かず、
+      // bg-[#fff] → bg-white のような色の正規化しか効かない
+      "better-tailwindcss/enforce-canonical-classes": [
+        "error",
+        { rootFontSize: 16 },
       ],
     },
   },
