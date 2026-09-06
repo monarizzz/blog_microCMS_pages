@@ -100,7 +100,7 @@
 | `Quote` | `xR0ql` | `src/commons/article/components/Quote/Quote.tsx` | ✅ |
 | `BulletItem` | `eQqNb` | `src/commons/article/components/BulletItem/BulletItem.tsx` | ✅ |
 | `NumberItem` | `c3XVs` | `src/commons/article/components/NumberItem/NumberItem.tsx` | ✅ |
-| `Checkbox` | `D1pbg` | — | ❌ |
+| `Checkbox` | `D1pbg` | `src/commons/article/components/Checkbox/Checkbox.tsx` | ✅ |
 | `Toggle` | `HbAE1` | — | ❌ |
 | `Divider` | `Ar2tj` | `src/commons/layout/components/Divider/Divider.tsx` | ✅ |
 | `CodeBlock` | `qvMsD` | `src/commons/article/components/CodeBlock/CodeBlock.tsx` | ✅ |
