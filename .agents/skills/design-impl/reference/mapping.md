@@ -71,7 +71,7 @@
 | `Pagination` | `uxLwl` | `src/commons/pageNav/components/pageNavNum/pageNavNum.tsx` | ✅ |
 | `ArticleThumbnail` | `N7jyll` | `src/commons/article/components/ArticleThumbnail/ArticleThumbnail.tsx` | ✅ `ImagePlaceholder` (`XHkBO`) は未実装のためインライン化 |
 | `CategorySectionHeader` | `QSeNC` | `src/commons/article/components/CategorySectionHeader/CategorySectionHeader.tsx` | ✅ |
-| `ArticleSectionHeading` | `RgUbK` | — | ❌ |
+| `ArticleSectionHeading` | `RgUbK` | `src/commons/article/components/ArticleSectionHeading/ArticleSectionHeading.tsx` | ✅ |
 
 - `src/commons/layout/components/FilterBtn/FilterBtn.tsx` は `Tag` の `#` なし版。
   pen 側に独立コンポーネントはなく、`Tags` ページ（group `j9tOQT`）のフィルタ行が出典。
@@ -163,7 +163,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` ~~`InfoLabel`~~（実装済み） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
 2. **ボタン類** — `LinkButton` `BackLink` ~~`SearchIconButton`~~（実装済み）
-3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（実装済み） `ArticleSectionHeading`
+3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（実装済み） ~~`ArticleSectionHeading`~~（実装済み）
 4. **記事本文** — `Callout` `Bookmark`（`ArticleH1`〜`H3` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` は実装済み）
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）
