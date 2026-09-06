@@ -10,7 +10,7 @@ const Footer = ({ pageList }: Props) => {
     <div className="h-full bg-surface px-8 py-24">
       <div className="flex flex-col gap-4">
         <GlobalNav pageList={pageList} />
-        <span className="tracking-[-0.5px] text-[24px]">Monelog</span>
+        <span className="text-[24px] tracking-[-0.5px]">Monelog</span>
         <span className="text-sm">© 2024 Monelog</span>
       </div>
     </div>
