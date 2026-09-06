@@ -117,7 +117,7 @@
 | --- | --- | --- | --- |
 | `SearchInput` | `Jh09L` | `src/features/search/components/SearchInput/SearchInput.tsx` | ✅ |
 | `IconButton` | `aGtFB` | `src/commons/layout/components/IconBtn/IconBtn.tsx` | ✅ |
-| `SearchIconButton` | `k2xlJ` | — | ❌ |
+| `SearchIconButton` | `k2xlJ` | `src/commons/layout/components/SearchIconButton/SearchIconButton.tsx` | ✅ |
 | `LinkButton` | `Rl2z4` | — | ❌ |
 | `BackLink` | `r2KGU` | `src/commons/layout/components/BackLink/BackLink.tsx` | ✅ |
 | `PrimaryButton` | `N3GA43` | `src/commons/layout/components/PrimaryButton/PrimaryButton.tsx` | ✅ |
@@ -162,7 +162,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 依存の少ないものから。上ほど先。
 
 1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` ~~`InfoLabel`~~（実装済み） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
-2. **ボタン類** — `LinkButton` `BackLink` `SearchIconButton`
+2. **ボタン類** — `LinkButton` `BackLink` ~~`SearchIconButton`~~（実装済み）
 3. **記事一覧の残り** — `ArticleThumbnail` `ArticleSectionHeading`
 4. **記事本文** — `Callout` `CodeBlock` `Bookmark`（`ArticleH1`〜`H3` / `Quote` / `Table` は実装済み）
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
