@@ -28,10 +28,10 @@ const ServiceCard = ({ title, role, stack, url, github }: Props) => {
             {title}
           </h3>
           <div className="flex flex-col gap-3 px-[3px]">
-            <p className="w-[230px] self-center text-center font-mono text-[12px] text-secondary">
+            <p className="w-[230px] max-w-full self-center text-center font-mono text-[12px] text-secondary">
               {stack}
             </p>
-            <div className="flex w-[124px] items-center justify-center gap-4 self-center border-t border-outline-variant pt-1">
+            <div className="flex w-[124px] max-w-full items-center justify-center gap-4 self-center border-t border-outline-variant pt-1">
               {url && (
                 <a
                   href={url}
