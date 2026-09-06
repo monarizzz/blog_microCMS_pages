@@ -1,3 +1,7 @@
+/* 等幅は design/v3 の --font-family-mono (JetBrains Mono) が正。
+   layout.tsx ではなくここで読み込むことで Storybook にも適用される。 */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

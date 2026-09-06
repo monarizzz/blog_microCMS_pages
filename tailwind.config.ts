@@ -52,6 +52,18 @@ export default {
         "on-surface-variant": "var(--color-on-surface-variant)",
         "outline-variant": "var(--color-outline-variant)",
       },
+      fontFamily: {
+        // design/v3/design-tokens.css の --font-family-mono に対応。
+        // 既存の Fira Code はフォールバックとして残す
+        mono: [
+          "JetBrains Mono",
+          "Fira Code",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Consolas",
+          "monospace",
+        ],
+      },
       fontSize: {
         "2xs": "0.6875rem",
       },
