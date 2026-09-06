@@ -84,7 +84,7 @@
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
 | `SectionLabel` | `TbTSl` | — | ❌ |
-| `InfoLabel` | `PHZV0` | — | ❌ |
+| `InfoLabel` | `PHZV0` | `src/commons/layout/components/InfoLabel/InfoLabel.tsx` | ✅ |
 | `MetaText` | `E2rKp` | `src/commons/layout/components/MetaText/MetaText.tsx` | ✅ |
 | `Paragraph` | `g5WYtH` | — | ❌ |
 
