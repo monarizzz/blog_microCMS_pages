@@ -14,7 +14,7 @@ const CodeBlock = ({ children, language }: Props) => {
         </div>
       )}
       <pre className="overflow-x-auto p-4">
-        <code className="whitespace-pre font-mono text-base leading-normal text-primary">
+        <code className="font-mono text-base leading-normal tracking-normal whitespace-pre text-primary">
           {children}
         </code>
       </pre>
