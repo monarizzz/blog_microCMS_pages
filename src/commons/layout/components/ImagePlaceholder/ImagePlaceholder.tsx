@@ -11,7 +11,7 @@ const ImagePlaceholder = ({ label = "NO IMAGE", className }: Props) => {
   return (
     <div
       className={cn(
-        "border-outline-variant bg-surface-container-low flex h-[220px] w-full flex-col items-center justify-center gap-2.5 border",
+        "border-outline-variant bg-surface-container-low flex h-[220px] w-full flex-col items-center justify-center gap-2.5 overflow-hidden border",
         className,
       )}
     >
