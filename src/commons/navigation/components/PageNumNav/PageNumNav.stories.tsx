@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import PageNavNum from "./pageNavNum";
+import PageNavNum from "./PageNumNav";
 
 const meta = {
   component: PageNavNum,
