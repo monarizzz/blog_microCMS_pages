@@ -28,7 +28,7 @@ const ArticleSectionHeading = ({
       className={`flex w-full items-center gap-2 border-b border-outline-variant ${wrapper}`}
     >
       <h2
-        className={`w-full flex-1 font-bold leading-tight tracking-[-0.2px] text-primary ${heading}`}
+        className={`w-full flex-1 leading-tight font-bold tracking-[-0.2px] text-primary ${heading}`}
       >
         {title}
       </h2>
