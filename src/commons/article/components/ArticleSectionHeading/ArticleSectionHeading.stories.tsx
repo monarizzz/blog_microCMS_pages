@@ -22,3 +22,11 @@ export const WithoutLinkIcon: Story = {
     showLinkIcon: false,
   },
 };
+
+export const Timeline: Story = {
+  args: {
+    title: "Timeline",
+    showLinkIcon: false,
+    variant: "timeline",
+  },
+};
