@@ -3,7 +3,7 @@ import PageHeader from "@/commons/other/components/PageHeader/PageHeader";
 import ServiceCardRow, {
   type ServiceCardRowItem,
   type ServiceCardRowServices,
-} from "@/commons/service/components/ServiceCardRow/ServiceCardRow";
+} from "@/features/service/components/ServiceCardRow/ServiceCardRow";
 
 //TODO:仮置き
 const services: ServiceCardRowItem[] = [
