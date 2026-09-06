@@ -1,6 +1,6 @@
 import ArticleRow from "@/commons/contents/components/ArticleRow/ArticleRow";
 import BackLink from "@/commons/layout/components/BackLink/BackLink";
-import FilterBtn from "@/commons/layout/components/FilterBtn/FilterBtn";
+import FilterBtn from "@/commons/button/FilterBtn/FilterBtn";
 import MetaText from "@/commons/layout/components/MetaText/MetaText";
 import PageHeader from "@/commons/layout/components/PageHeader/PageHeader";
 import PageNavNum from "@/commons/navigation/components/PageNumNav/PageNumNav";
