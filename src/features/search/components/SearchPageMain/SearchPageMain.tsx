@@ -1,7 +1,7 @@
 import ArticleRow from "@/commons/contents/components/ArticleRow/ArticleRow";
 import SearchInput from "../SearchInput/SearchInput";
 import { AlertCircle, SearchX } from "lucide-react";
-import TagBtn from "@/commons/layout/components/TagBtn/TagBtn";
+import TagBtn from "@/commons/button/TagBtn/TagBtn";
 import { MIN_QUERY_LENGTH } from "../../constants/searchQuery";
 
 //TODO:仮置き
