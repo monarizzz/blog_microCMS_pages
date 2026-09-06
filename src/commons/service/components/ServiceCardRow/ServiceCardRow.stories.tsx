@@ -10,7 +10,21 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Single: Story = {
+  args: {
+    services: [
+      {
+        id: "weather-app",
+        title: "天気予報アプリ",
+        techStack: "Next.js / TypeScript / microCMS",
+        url: "https://example.com",
+        githubUrl: "https://github.com/example/weather-app",
+      },
+    ],
+  },
+};
+
+export const Double: Story = {
   args: {
     services: [
       {
@@ -26,20 +40,6 @@ export const Default: Story = {
         techStack: "Next.js / TypeScript / microCMS",
         developmentType: "Team development",
         url: "https://example.com",
-      },
-    ],
-  },
-};
-
-export const SingleCard: Story = {
-  args: {
-    services: [
-      {
-        id: "weather-app",
-        title: "天気予報アプリ",
-        techStack: "Next.js / TypeScript / microCMS",
-        url: "https://example.com",
-        githubUrl: "https://github.com/example/weather-app",
       },
     ],
   },
