@@ -86,4 +86,4 @@ git worktree list            # 消えたことを確認
 ## プロジェクトの前提
 
 - Next.js (App Router) + TypeScript + Tailwind CSS の構成
-- スタイルは `src/styles/tokens.css` / `src/styles/globals.css` のデザイントークンを使用する
+- スタイルは `src/app/_styles/tokens.css` / `src/app/_styles/globals.css` のデザイントークンを使用する
