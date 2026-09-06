@@ -101,7 +101,7 @@
 | `BulletItem` | `eQqNb` | `src/commons/article/components/BulletItem/BulletItem.tsx` | ✅ |
 | `NumberItem` | `c3XVs` | `src/commons/article/components/NumberItem/NumberItem.tsx` | ✅ |
 | `Checkbox` | `D1pbg` | `src/commons/article/components/Checkbox/Checkbox.tsx` | ✅ |
-| `Toggle` | `HbAE1` | — | ❌ |
+| `Toggle` | `HbAE1` | `src/commons/article/components/Toggle/Toggle.tsx` | ✅ |
 | `Divider` | `Ar2tj` | `src/commons/layout/components/Divider/Divider.tsx` | ✅ |
 | `CodeBlock` | `qvMsD` | `src/commons/article/components/CodeBlock/CodeBlock.tsx` | ✅ |
 | `Table` | `Y1rfsy` | `src/commons/article/components/Table/Table.tsx` | ✅ |
