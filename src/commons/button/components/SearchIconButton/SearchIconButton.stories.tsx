@@ -15,10 +15,3 @@ export const Default: Story = {
     link: "/search",
   },
 };
-
-export const CustomLabel: Story = {
-  args: {
-    link: "/search",
-    label: "記事を検索する",
-  },
-};
