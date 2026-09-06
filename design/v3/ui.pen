@@ -40,10 +40,10 @@
                   "width": "fill_container",
                   "height": 820,
                   "layout": "vertical",
-                  "gap": 24,
+                  "gap": "$space-24",
                   "padding": [
-                    64,
-                    40
+                    "$space-64",
+                    "$space-40"
                   ],
                   "justifyContent": "center",
                   "alignItems": "center",
@@ -64,7 +64,7 @@
                       "id": "d2SAII",
                       "name": "Message",
                       "layout": "vertical",
-                      "gap": 4,
+                      "gap": "$space-4",
                       "alignItems": "center",
                       "children": [
                         {
@@ -74,8 +74,8 @@
                           "fill": "$primary",
                           "content": "ページが見つかりません",
                           "textAlign": "center",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 29.03,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-2xl",
                           "fontWeight": "700"
                         },
                         {
@@ -86,8 +86,8 @@
                           "content": "お探しのページは移動または削除された可能性があります。",
                           "lineHeight": 1.75,
                           "textAlign": "center",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 14,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-base",
                           "fontWeight": "normal"
                         }
                       ]
@@ -97,9 +97,9 @@
                       "id": "wy9uw",
                       "name": "Actions",
                       "layout": "vertical",
-                      "gap": 20,
+                      "gap": "$space-20",
                       "padding": [
-                        16,
+                        "$space-16",
                         0,
                         0,
                         0
@@ -173,12 +173,12 @@
                   "name": "Main",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 64,
+                  "gap": "$space-64",
                   "padding": [
                     150,
-                    40,
-                    96,
-                    48
+                    "$space-40",
+                    "$space-96",
+                    47
                   ],
                   "alignItems": "center",
                   "children": [
@@ -190,7 +190,7 @@
                       "fill": "$surface",
                       "stroke": "$outline-variant",
                       "layout": "vertical",
-                      "gap": 24,
+                      "gap": "$space-24",
                       "children": [
                         {
                           "type": "text",
@@ -198,8 +198,8 @@
                           "name": "FieldLabel",
                           "fill": "$primary",
                           "content": "記事を検索",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 11.66,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-sm",
                           "fontWeight": "500",
                           "letterSpacing": 0.5
                         },
@@ -216,7 +216,7 @@
                           "name": "HelpRow",
                           "width": "fill_container",
                           "stroke": "$outline-variant",
-                          "gap": 8,
+                          "gap": "$space-8",
                           "alignItems": "center",
                           "children": [
                             {
@@ -236,8 +236,8 @@
                               "fill": "$on-surface",
                               "content": "2文字以上で検索されます。",
                               "lineHeight": 1.6,
-                              "fontFamily": "Noto Sans JP",
-                              "fontSize": 11.66,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-sm",
                               "fontWeight": "500",
                               "letterSpacing": 0.2
                             }
@@ -257,7 +257,7 @@
                           "name": "Result 1",
                           "width": "fill_container",
                           "layout": "horizontal",
-                          "gap": 32,
+                          "gap": "$space-32",
                           "descendants": {
                             "zFOXG": {
                               "width": 96,
@@ -273,7 +273,7 @@
                             },
                             "kOjX9": {
                               "content": "Next.js 14 App Router 移行の勘所",
-                              "fontSize": 20.16
+                              "fontSize": "$text-lg"
                             },
                             "q4awq": {
                               "content": "Pages Routerからの移行で最初につまずくのは、Server Componentsの境界をどこに引くかという判断です。実際の移行手順に沿って整理しました。"
@@ -293,7 +293,7 @@
                           "name": "Result 2",
                           "width": "fill_container",
                           "layout": "horizontal",
-                          "gap": 32,
+                          "gap": "$space-32",
                           "descendants": {
                             "zFOXG": {
                               "width": 96,
@@ -309,7 +309,7 @@
                             },
                             "kOjX9": {
                               "content": "microCMSのコンテンツ設計で後悔しないために",
-                              "fontSize": 20.16
+                              "fontSize": "$text-lg"
                             },
                             "q4awq": {
                               "content": "スキーマは後から変えづらい。カテゴリを参照型にするか文字列にするか、最初の分岐点で考えるべきことをまとめます。"
@@ -335,9 +335,9 @@
                   "enabled": false,
                   "width": "fill_container(0)",
                   "layout": "vertical",
-                  "gap": 24,
+                  "gap": "$space-24",
                   "padding": [
-                    64,
+                    "$space-64",
                     0
                   ],
                   "justifyContent": "center",
@@ -362,8 +362,8 @@
                       "width": "fill_container",
                       "content": "一致する記事が見つかりませんでした",
                       "textAlign": "center",
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 20.16,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-lg",
                       "fontWeight": "700"
                     },
                     {
@@ -376,8 +376,8 @@
                       "content": "キーワードを変えてお試しいただくか、以下のタグから記事を探してみてください。",
                       "lineHeight": 1.75,
                       "textAlign": "center",
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 14,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
                       "fontWeight": "normal"
                     },
                     {
@@ -385,7 +385,7 @@
                       "id": "zNpSq",
                       "name": "SuggestTags",
                       "width": "fill_container",
-                      "gap": 8,
+                      "gap": "$space-8",
                       "justifyContent": "center",
                       "children": [
                         {
@@ -440,8 +440,8 @@
                       "name": "ClearLink",
                       "fill": "$on-surface-variant",
                       "content": "検索をクリア",
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 14,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
                       "fontWeight": "500"
                     }
                   ]
@@ -519,9 +519,9 @@
                   "gap": 106,
                   "padding": [
                     150,
-                    40,
-                    96,
-                    48
+                    "$space-40",
+                    "$space-96",
+                    47
                   ],
                   "children": [
                     {
@@ -529,14 +529,14 @@
                       "id": "sM8O1",
                       "name": "IdentityBlock",
                       "layout": "vertical",
-                      "gap": 64,
+                      "gap": "$space-64",
                       "children": [
                         {
                           "type": "frame",
                           "id": "GKzdm",
                           "name": "IdentityHeader",
                           "width": "fill_container",
-                          "gap": 64,
+                          "gap": "$space-64",
                           "justifyContent": "space_between",
                           "alignItems": "end",
                           "children": [
@@ -546,7 +546,7 @@
                               "name": "IdLeft",
                               "width": "fill_container",
                               "layout": "vertical",
-                              "gap": 8,
+                              "gap": "$space-8",
                               "children": [
                                 {
                                   "type": "text",
@@ -554,8 +554,8 @@
                                   "name": "Name",
                                   "fill": "$primary",
                                   "content": "Ccc",
-                                  "fontFamily": "Noto Sans JP",
-                                  "fontSize": 41.8,
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-4xl",
                                   "fontWeight": "700",
                                   "letterSpacing": -0.8
                                 },
@@ -568,8 +568,8 @@
                                   "width": 520,
                                   "content": "情報系の大学生 フロント中心に開発してます",
                                   "lineHeight": 1.75,
-                                  "fontFamily": "Noto Sans JP",
-                                  "fontSize": 14,
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-base",
                                   "fontWeight": "normal",
                                   "letterSpacing": 0.2
                                 }
@@ -583,7 +583,7 @@
                           "name": "StackCol",
                           "width": 479,
                           "layout": "vertical",
-                          "gap": 16,
+                          "gap": "$space-16",
                           "children": [
                             {
                               "type": "text",
@@ -591,8 +591,8 @@
                               "name": "StackHeading",
                               "fill": "$secondary",
                               "content": "技術スタック",
-                              "fontFamily": "Noto Sans JP",
-                              "fontSize": 11.66,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-sm",
                               "fontWeight": "500",
                               "letterSpacing": 1
                             },
@@ -600,9 +600,8 @@
                               "type": "frame",
                               "id": "WCc4s",
                               "name": "StackList",
-                              "height": 58,
                               "layout": "vertical",
-                              "gap": 8,
+                              "gap": "$space-8",
                               "padding": [
                                 0,
                                 2
@@ -612,7 +611,7 @@
                                   "type": "frame",
                                   "id": "z91gW",
                                   "name": "StackRow1",
-                                  "gap": 8,
+                                  "gap": "$space-8",
                                   "children": [
                                     {
                                       "type": "text",
@@ -631,7 +630,7 @@
                                   "type": "frame",
                                   "id": "uY8zH",
                                   "name": "StackRow2",
-                                  "gap": 8,
+                                  "gap": "$space-8",
                                   "children": [
                                     {
                                       "type": "text",
@@ -649,7 +648,7 @@
                                   "type": "frame",
                                   "id": "o9IvtV",
                                   "name": "StackRow3",
-                                  "gap": 8,
+                                  "gap": "$space-8",
                                   "children": [
                                     {
                                       "type": "text",
@@ -723,7 +722,7 @@
                                       "name": "Content",
                                       "width": "fill_container",
                                       "layout": "vertical",
-                                      "gap": 4,
+                                      "gap": "$space-4",
                                       "alignItems": "end",
                                       "children": [
                                         {
@@ -734,7 +733,7 @@
                                           "content": "2024",
                                           "textAlign": "right",
                                           "fontFamily": "$font-mono",
-                                          "fontSize": 20.16,
+                                          "fontSize": "$text-lg",
                                           "fontWeight": "700",
                                           "letterSpacing": -0.5
                                         },
@@ -745,8 +744,8 @@
                                           "fill": "$secondary",
                                           "content": "Next.js / TypeScript",
                                           "textAlign": "right",
-                                          "fontFamily": "Noto Sans JP",
-                                          "fontSize": 11.66,
+                                          "fontFamily": "$font-sans",
+                                          "fontSize": 12,
                                           "fontWeight": "500"
                                         }
                                       ]
@@ -756,7 +755,7 @@
                                       "id": "poihh",
                                       "name": "NodeWrap",
                                       "padding": [
-                                        12,
+                                        "$space-12",
                                         0,
                                         0,
                                         0
@@ -791,7 +790,7 @@
                                   "name": "ToolList",
                                   "width": "fit_content(200.04946169749655)",
                                   "layout": "vertical",
-                                  "gap": 12,
+                                  "gap": "$space-12",
                                   "children": [
                                     {
                                       "type": "frame",
@@ -817,7 +816,7 @@
                                               "content": "2020",
                                               "textAlign": "right",
                                               "fontFamily": "$font-mono",
-                                              "fontSize": 11.66,
+                                              "fontSize": 12,
                                               "fontWeight": "700",
                                               "letterSpacing": -0.5
                                             },
@@ -828,7 +827,7 @@
                                               "fill": "$secondary",
                                               "content": "Clip Studio Paint",
                                               "textAlign": "right",
-                                              "fontFamily": "Noto Sans JP",
+                                              "fontFamily": "$font-sans",
                                               "fontSize": 8,
                                               "fontWeight": "500"
                                             }
@@ -839,7 +838,7 @@
                                           "id": "zSKm2",
                                           "name": "NodeWrap",
                                           "padding": [
-                                            12,
+                                            "$space-12",
                                             0,
                                             0,
                                             0
@@ -890,7 +889,7 @@
                                               "content": "2022",
                                               "textAlign": "right",
                                               "fontFamily": "$font-mono",
-                                              "fontSize": 11.66,
+                                              "fontSize": 12,
                                               "fontWeight": "700",
                                               "letterSpacing": -0.5
                                             },
@@ -901,7 +900,7 @@
                                               "fill": "$secondary",
                                               "content": "Live2D Cubism",
                                               "textAlign": "right",
-                                              "fontFamily": "Noto Sans JP",
+                                              "fontFamily": "$font-sans",
                                               "fontSize": 8,
                                               "fontWeight": "500"
                                             }
@@ -912,7 +911,7 @@
                                           "id": "p0xRR2",
                                           "name": "NodeWrap",
                                           "padding": [
-                                            12,
+                                            "$space-12",
                                             0,
                                             0,
                                             0
@@ -963,7 +962,7 @@
                                               "content": "2021",
                                               "textAlign": "right",
                                               "fontFamily": "$font-mono",
-                                              "fontSize": 11.66,
+                                              "fontSize": 12,
                                               "fontWeight": "700",
                                               "letterSpacing": -0.5
                                             },
@@ -974,7 +973,7 @@
                                               "fill": "$secondary",
                                               "content": "Blender",
                                               "textAlign": "right",
-                                              "fontFamily": "Noto Sans JP",
+                                              "fontFamily": "$font-sans",
                                               "fontSize": 8,
                                               "fontWeight": "500"
                                             }
@@ -985,7 +984,7 @@
                                           "id": "hyXpT",
                                           "name": "NodeWrap",
                                           "padding": [
-                                            12,
+                                            "$space-12",
                                             0,
                                             0,
                                             0
@@ -1051,7 +1050,7 @@
                                       "content": "ブログサイト"
                                     },
                                     "Fm4SS": {
-                                      "fontSize": 11.66
+                                      "fontSize": "$text-sm"
                                     },
                                     "U76rKU": {
                                       "width": "fit_content(299)",
@@ -1083,7 +1082,7 @@
                                       "content": "インターン"
                                     },
                                     "Fm4SS": {
-                                      "fontSize": 11.66
+                                      "fontSize": "$text-sm"
                                     },
                                     "U76rKU": {
                                       "content": "Next.js / TypeScript / SCSS / StoryBook",
@@ -1127,7 +1126,7 @@
                                   "content": "2025.09",
                                   "textAlign": "right",
                                   "fontFamily": "$font-mono",
-                                  "fontSize": 11.66,
+                                  "fontSize": 12,
                                   "fontWeight": "700",
                                   "letterSpacing": -0.5
                                 },
@@ -1188,7 +1187,7 @@
                                   "content": "2025.09",
                                   "textAlign": "right",
                                   "fontFamily": "$font-mono",
-                                  "fontSize": 11.66,
+                                  "fontSize": 12,
                                   "fontWeight": "700",
                                   "letterSpacing": -0.5
                                 },
@@ -1249,13 +1248,13 @@
                           "padding": [
                             0,
                             0,
-                            16,
+                            "$space-16",
                             0
                           ],
                           "descendants": {
                             "RV9oc": {
                               "content": "Timeline",
-                              "fontSize": 29.03
+                              "fontSize": "$text-2xl"
                             },
                             "EWFrv": {
                               "enabled": false
@@ -1329,12 +1328,12 @@
                   "name": "Main",
                   "width": 1030,
                   "layout": "vertical",
-                  "gap": 40,
+                  "gap": "$space-40",
                   "padding": [
                     150,
-                    40,
-                    96,
-                    48
+                    "$space-40",
+                    "$space-96",
+                    47
                   ],
                   "children": [
                     {
@@ -1394,7 +1393,7 @@
                       "id": "s7MC5A",
                       "name": "Body",
                       "width": "fill_container",
-                      "gap": 48,
+                      "gap": "$space-48",
                       "children": [
                         {
                           "type": "frame",
@@ -1402,7 +1401,7 @@
                           "name": "Left",
                           "width": "fill_container",
                           "layout": "vertical",
-                          "gap": 100,
+                          "gap": "$space-100",
                           "children": [
                             {
                               "type": "frame",
@@ -1410,7 +1409,7 @@
                               "name": "DetailSections",
                               "width": "fit_content(655)",
                               "layout": "vertical",
-                              "gap": 40,
+                              "gap": "$space-40",
                               "children": [
                                 {
                                   "type": "frame",
@@ -1418,7 +1417,7 @@
                                   "name": "FeaturesSec",
                                   "width": "fill_container",
                                   "layout": "vertical",
-                                  "gap": 16,
+                                  "gap": "$space-16",
                                   "children": [
                                     {
                                       "type": "frame",
@@ -1433,7 +1432,7 @@
                                       "padding": [
                                         0,
                                         0,
-                                        8,
+                                        "$space-8",
                                         0
                                       ],
                                       "children": [
@@ -1443,8 +1442,8 @@
                                           "name": "H2",
                                           "fill": "$primary",
                                           "content": "主な機能",
-                                          "fontFamily": "Noto Sans JP",
-                                          "fontSize": 20.16,
+                                          "fontFamily": "$font-sans",
+                                          "fontSize": 22,
                                           "fontWeight": "700",
                                           "letterSpacing": -0.3
                                         }
@@ -1456,7 +1455,7 @@
                                       "name": "FeatList",
                                       "width": "fill_container",
                                       "layout": "vertical",
-                                      "gap": 12,
+                                      "gap": "$space-12",
                                       "children": [
                                         {
                                           "type": "frame",
@@ -1471,7 +1470,7 @@
                                               "name": "Dot",
                                               "fill": "$primary",
                                               "content": "・",
-                                              "fontFamily": "Noto Sans JP",
+                                              "fontFamily": "$font-sans",
                                               "fontSize": 16,
                                               "fontWeight": "700"
                                             },
@@ -1484,7 +1483,7 @@
                                               "width": "fill_container",
                                               "content": "収支の記録とカテゴリ別の分類",
                                               "lineHeight": 1.7,
-                                              "fontFamily": "Noto Sans JP",
+                                              "fontFamily": "$font-sans",
                                               "fontSize": 15,
                                               "fontWeight": "normal",
                                               "letterSpacing": 0.2
@@ -1504,7 +1503,7 @@
                                               "name": "Dot",
                                               "fill": "$primary",
                                               "content": "・",
-                                              "fontFamily": "Noto Sans JP",
+                                              "fontFamily": "$font-sans",
                                               "fontSize": 16,
                                               "fontWeight": "700"
                                             },
@@ -1517,7 +1516,7 @@
                                               "width": "fill_container",
                                               "content": "月次・年次レポートの自動生成",
                                               "lineHeight": 1.7,
-                                              "fontFamily": "Noto Sans JP",
+                                              "fontFamily": "$font-sans",
                                               "fontSize": 15,
                                               "fontWeight": "normal",
                                               "letterSpacing": 0.2
@@ -1537,7 +1536,7 @@
                                               "name": "Dot",
                                               "fill": "$primary",
                                               "content": "・",
-                                              "fontFamily": "Noto Sans JP",
+                                              "fontFamily": "$font-sans",
                                               "fontSize": 16,
                                               "fontWeight": "700"
                                             },
@@ -1550,7 +1549,7 @@
                                               "width": "fill_container",
                                               "content": "資産推移のグラフ可視化",
                                               "lineHeight": 1.7,
-                                              "fontFamily": "Noto Sans JP",
+                                              "fontFamily": "$font-sans",
                                               "fontSize": 15,
                                               "fontWeight": "normal",
                                               "letterSpacing": 0.2
@@ -1570,7 +1569,7 @@
                                               "name": "Dot",
                                               "fill": "$primary",
                                               "content": "・",
-                                              "fontFamily": "Noto Sans JP",
+                                              "fontFamily": "$font-sans",
                                               "fontSize": 16,
                                               "fontWeight": "700"
                                             },
@@ -1583,7 +1582,7 @@
                                               "width": "fill_container",
                                               "content": "データのCSVエクスポート",
                                               "lineHeight": 1.7,
-                                              "fontFamily": "Noto Sans JP",
+                                              "fontFamily": "$font-sans",
                                               "fontSize": 15,
                                               "fontWeight": "normal",
                                               "letterSpacing": 0.2
@@ -1600,7 +1599,7 @@
                                   "name": "OverviewSec",
                                   "width": "fill_container",
                                   "layout": "vertical",
-                                  "gap": 16,
+                                  "gap": "$space-16",
                                   "children": [
                                     {
                                       "type": "frame",
@@ -1615,7 +1614,7 @@
                                       "padding": [
                                         0,
                                         0,
-                                        8,
+                                        "$space-8",
                                         0
                                       ],
                                       "children": [
@@ -1625,8 +1624,8 @@
                                           "name": "H2",
                                           "fill": "$primary",
                                           "content": "概要",
-                                          "fontFamily": "Noto Sans JP",
-                                          "fontSize": 20.16,
+                                          "fontFamily": "$font-sans",
+                                          "fontSize": 22,
                                           "fontWeight": "700",
                                           "letterSpacing": -0.3
                                         }
@@ -1641,7 +1640,7 @@
                                       "width": "fill_container",
                                       "content": "日々の収支入力から月次・年次の資産推移までを一元管理できる家計簿アプリです。microCMSをヘッドレスCMSとして採用し、カテゴリ管理を柔軟に行えるように設計しました。Rechartsによるグラフで資産の推移を直感的に把握できます。",
                                       "lineHeight": 1.85,
-                                      "fontFamily": "Noto Sans JP",
+                                      "fontFamily": "$font-sans",
                                       "fontSize": 16,
                                       "fontWeight": "normal",
                                       "letterSpacing": 0.2
@@ -1658,7 +1657,7 @@
                               "layout": "vertical",
                               "gap": 10,
                               "padding": [
-                                20,
+                                "$space-20",
                                 0,
                                 0,
                                 0
@@ -1680,7 +1679,7 @@
                           "name": "Right",
                           "width": 240,
                           "layout": "vertical",
-                          "gap": 28,
+                          "gap": "$space-28",
                           "children": [
                             {
                               "type": "frame",
@@ -1722,9 +1721,9 @@
                                 "top": 1
                               },
                               "layout": "vertical",
-                              "gap": 16,
+                              "gap": "$space-16",
                               "padding": [
-                                20,
+                                "$space-20",
                                 0,
                                 0,
                                 0
@@ -1766,7 +1765,7 @@
                               "layout": "vertical",
                               "gap": 10,
                               "padding": [
-                                20,
+                                "$space-20",
                                 0,
                                 0,
                                 0
@@ -1846,9 +1845,9 @@
                   "gap": 38,
                   "padding": [
                     150,
-                    40,
-                    96,
-                    48
+                    "$space-40",
+                    "$space-96",
+                    47
                   ],
                   "children": [
                     {
@@ -1865,7 +1864,7 @@
                         "ichqg": {
                           "enabled": true,
                           "content": "これまでに開発したプロダクトと制作物のまとめ。",
-                          "fontSize": 14,
+                          "fontSize": "$text-base",
                           "width": 560,
                           "fill": "$on-surface-variant"
                         },
@@ -1882,7 +1881,7 @@
                       "name": "WorksSection",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 24,
+                      "gap": "$space-24",
                       "children": [
                         {
                           "type": "frame",
@@ -1898,7 +1897,7 @@
                           "padding": [
                             0,
                             0,
-                            12,
+                            "$space-12",
                             0
                           ]
                         },
@@ -1908,7 +1907,7 @@
                           "name": "WorksGrid",
                           "width": "fill_container",
                           "layout": "vertical",
-                          "gap": 32,
+                          "gap": "$space-32",
                           "children": [
                             {
                               "id": "ji5ZY",
@@ -2028,12 +2027,12 @@
                   "name": "Main",
                   "width": 1100,
                   "layout": "vertical",
-                  "gap": 40,
+                  "gap": "$space-40",
                   "padding": [
                     113,
-                    40,
-                    96,
-                    48
+                    "$space-40",
+                    "$space-96",
+                    47
                   ],
                   "children": [
                     {
@@ -2048,11 +2047,11 @@
                       "ref": "XEUvq",
                       "name": "PageHead",
                       "width": "fill_container",
-                      "gap": 12,
+                      "gap": "$space-12",
                       "descendants": {
                         "l5OrXg": {
                           "content": "#Next.js",
-                          "fontSize": 34.84,
+                          "fontSize": "$text-3xl",
                           "letterSpacing": -0.5,
                           "fill": "$primary"
                         },
@@ -2075,7 +2074,7 @@
                       "padding": [
                         0,
                         0,
-                        16,
+                        "$space-16",
                         0
                       ],
                       "justifyContent": "space_between",
@@ -2085,7 +2084,7 @@
                           "type": "frame",
                           "id": "vV5Py",
                           "name": "SortRow",
-                          "gap": 8,
+                          "gap": "$space-8",
                           "alignItems": "center",
                           "children": [
                             {
@@ -2095,7 +2094,7 @@
                               "name": "Sort 新着順",
                               "padding": [
                                 6,
-                                12
+                                "$space-12"
                               ],
                               "descendants": {
                                 "jRLkz": {
@@ -2111,7 +2110,7 @@
                               "name": "Sort 古い順",
                               "padding": [
                                 6,
-                                12
+                                "$space-12"
                               ],
                               "fill": [],
                               "descendants": {
@@ -2416,9 +2415,9 @@
                       "id": "wFiAq",
                       "name": "Pagination",
                       "width": "fill_container",
-                      "gap": 8,
+                      "gap": "$space-8",
                       "padding": [
-                        24,
+                        "$space-24",
                         0,
                         0,
                         0
@@ -2430,7 +2429,7 @@
                           "id": "iqwEX",
                           "type": "ref",
                           "ref": "uxLwl",
-                          "x": 362,
+                          "x": 362.5,
                           "y": 24
                         }
                       ]
@@ -2489,12 +2488,12 @@
                   "name": "Main",
                   "width": 1100,
                   "layout": "vertical",
-                  "gap": 64,
+                  "gap": "$space-64",
                   "padding": [
                     150,
-                    40,
-                    96,
-                    48
+                    "$space-40",
+                    "$space-96",
+                    47
                   ],
                   "children": [
                     {
@@ -2524,11 +2523,11 @@
                       "strokeWidth": {
                         "bottom": 1
                       },
-                      "gap": 8,
+                      "gap": "$space-8",
                       "padding": [
                         0,
                         0,
-                        24,
+                        "$space-24",
                         0
                       ],
                       "alignItems": "center",
@@ -2539,8 +2538,8 @@
                           "ref": "biM87",
                           "name": "Filter すべて",
                           "padding": [
-                            8,
-                            16
+                            "$space-8",
+                            "$space-16"
                           ],
                           "fill": "$primary",
                           "descendants": {
@@ -2556,8 +2555,8 @@
                           "ref": "biM87",
                           "name": "Filter #Next.js",
                           "padding": [
-                            8,
-                            16
+                            "$space-8",
+                            "$space-16"
                           ],
                           "descendants": {
                             "jRLkz": {
@@ -2572,8 +2571,8 @@
                           "ref": "biM87",
                           "name": "Filter #設計",
                           "padding": [
-                            8,
-                            16
+                            "$space-8",
+                            "$space-16"
                           ],
                           "descendants": {
                             "jRLkz": {
@@ -2588,8 +2587,8 @@
                           "ref": "biM87",
                           "name": "Filter #TypeScript",
                           "padding": [
-                            8,
-                            16
+                            "$space-8",
+                            "$space-16"
                           ],
                           "descendants": {
                             "jRLkz": {
@@ -2604,8 +2603,8 @@
                           "ref": "biM87",
                           "name": "Filter #テスト",
                           "padding": [
-                            8,
-                            16
+                            "$space-8",
+                            "$space-16"
                           ],
                           "descendants": {
                             "jRLkz": {
@@ -2622,7 +2621,7 @@
                       "name": "Sections",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 64,
+                      "gap": "$space-64",
                       "children": [
                         {
                           "type": "frame",
@@ -2631,7 +2630,7 @@
                           "width": "fill_container",
                           "height": 587,
                           "layout": "vertical",
-                          "gap": 8,
+                          "gap": "$space-8",
                           "children": [
                             {
                               "id": "zV5Bw",
@@ -2737,9 +2736,9 @@
                               "width": "fill_container",
                               "justifyContent": "end",
                               "padding": [
-                                20,
+                                "$space-20",
                                 0,
-                                4,
+                                "$space-4",
                                 0
                               ],
                               "descendants": {
@@ -2748,7 +2747,7 @@
                                 },
                                 "r9H0aA": {
                                   "content": "+9",
-                                  "fontSize": 11.66
+                                  "fontSize": "$text-sm"
                                 }
                               }
                             }
@@ -2760,7 +2759,7 @@
                           "name": "Section 設計",
                           "width": "fill_container",
                           "layout": "vertical",
-                          "gap": 8,
+                          "gap": "$space-8",
                           "children": [
                             {
                               "id": "auNdu",
@@ -2869,9 +2868,9 @@
                               "width": "fill_container",
                               "justifyContent": "end",
                               "padding": [
-                                20,
+                                "$space-20",
                                 0,
-                                4,
+                                "$space-4",
                                 0
                               ],
                               "descendants": {
@@ -2880,7 +2879,7 @@
                                 },
                                 "r9H0aA": {
                                   "content": "+8",
-                                  "fontSize": 11.66
+                                  "fontSize": "$text-sm"
                                 }
                               }
                             }
@@ -2892,7 +2891,7 @@
                           "name": "Section TypeScript",
                           "width": "fill_container",
                           "layout": "vertical",
-                          "gap": 8,
+                          "gap": "$space-8",
                           "children": [
                             {
                               "id": "sRPca",
@@ -2977,9 +2976,9 @@
                               "width": "fill_container",
                               "justifyContent": "end",
                               "padding": [
-                                20,
+                                "$space-20",
                                 0,
-                                4,
+                                "$space-4",
                                 0
                               ],
                               "descendants": {
@@ -3034,12 +3033,12 @@
               "width": 1440,
               "fill": "$surface",
               "layout": "vertical",
-              "gap": 48,
+              "gap": "$space-48",
               "padding": [
-                48,
-                40,
-                64,
-                48
+                "$space-48",
+                "$space-40",
+                "$space-64",
+                47
               ],
               "children": [
                 {
@@ -3048,7 +3047,7 @@
                   "ref": "XEUvq",
                   "name": "PageHead",
                   "width": "fill_container",
-                  "gap": 8,
+                  "gap": "$space-8",
                   "descendants": {
                     "n2Ampt": {
                       "enabled": true,
@@ -3057,7 +3056,7 @@
                     },
                     "l5OrXg": {
                       "content": "記事装飾カタログ",
-                      "fontSize": 34.84,
+                      "fontSize": "$text-3xl",
                       "letterSpacing": -0.3,
                       "lineHeight": 1.3,
                       "textGrowth": "fixed-width",
@@ -3078,15 +3077,14 @@
                   "name": "Sec_Callout",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "cM6mf",
                       "type": "ref",
                       "ref": "TbTSl",
                       "name": "SecLabel",
-                      "content": "CALLOUT / コールアウト",
-                      "fontSize": 11.66
+                      "content": "CALLOUT / コールアウト"
                     },
                     {
                       "id": "w7ejTA",
@@ -3103,7 +3101,7 @@
                   "name": "Sec_Quote",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "tVXbQ",
@@ -3127,7 +3125,7 @@
                   "name": "Sec_Bullet",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "FWbGv",
@@ -3142,7 +3140,7 @@
                       "name": "BulletList",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 8,
+                      "gap": "$space-8",
                       "children": [
                         {
                           "id": "gSd15",
@@ -3185,7 +3183,7 @@
                   "name": "Sec_Number",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "UDkmd",
@@ -3200,7 +3198,7 @@
                       "name": "NumberList",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 8,
+                      "gap": "$space-8",
                       "children": [
                         {
                           "id": "Z10jl",
@@ -3249,7 +3247,7 @@
                   "name": "Sec_Todo",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "g5oAa",
@@ -3264,14 +3262,14 @@
                       "name": "TodoList",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 8,
+                      "gap": "$space-8",
                       "children": [
                         {
                           "type": "frame",
                           "id": "I79Lz1",
                           "name": "Item",
                           "width": "fill_container",
-                          "gap": 16,
+                          "gap": "$space-16",
                           "alignItems": "center",
                           "children": [
                             {
@@ -3288,8 +3286,8 @@
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
                               "content": "環境構築",
-                              "fontFamily": "Noto Sans JP",
-                              "fontSize": 16.8,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-md",
                               "fontWeight": "normal"
                             }
                           ]
@@ -3299,7 +3297,7 @@
                           "id": "SBCmb",
                           "name": "Item",
                           "width": "fill_container",
-                          "gap": 16,
+                          "gap": "$space-16",
                           "alignItems": "center",
                           "children": [
                             {
@@ -3316,8 +3314,8 @@
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
                               "content": "記事の下書き",
-                              "fontFamily": "Noto Sans JP",
-                              "fontSize": 16.8,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-md",
                               "fontWeight": "normal"
                             }
                           ]
@@ -3327,7 +3325,7 @@
                           "id": "P8BglX",
                           "name": "Item",
                           "width": "fill_container",
-                          "gap": 16,
+                          "gap": "$space-16",
                           "alignItems": "center",
                           "children": [
                             {
@@ -3351,8 +3349,8 @@
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
                               "content": "レビュー依頼",
-                              "fontFamily": "Noto Sans JP",
-                              "fontSize": 16.8,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-md",
                               "fontWeight": "normal"
                             }
                           ]
@@ -3367,7 +3365,7 @@
                   "name": "Sec_Toggle",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "chMxd",
@@ -3391,7 +3389,7 @@
                   "name": "Sec_Divider",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "G2fYxr",
@@ -3415,7 +3413,7 @@
                   "name": "Sec_Code",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "AA8vI",
@@ -3439,7 +3437,7 @@
                   "name": "Sec_Heading",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "R3a6PV",
@@ -3454,7 +3452,7 @@
                       "name": "HeadingList",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 16,
+                      "gap": "$space-16",
                       "children": [
                         {
                           "id": "lakKq",
@@ -3487,7 +3485,7 @@
                   "name": "Sec_Table",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "IEdR3",
@@ -3511,7 +3509,7 @@
                   "name": "Sec_Bookmark",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "bHSrM",
@@ -3538,7 +3536,7 @@
                   "enabled": false,
                   "width": "fill_container(784)",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "v4hUK",
@@ -3553,7 +3551,7 @@
                       "name": "ImageWrap",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 8,
+                      "gap": "$space-8",
                       "children": [
                         {
                           "id": "FtKvT",
@@ -3586,8 +3584,8 @@
                           "width": "fill_container",
                           "content": "図1. アーキテクチャの全体像",
                           "textAlign": "center",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 11.66,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-sm",
                           "fontWeight": "normal"
                         }
                       ]
@@ -3600,7 +3598,7 @@
                   "name": "Sec_Inline",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "qo890",
@@ -3614,7 +3612,7 @@
                       "id": "Hveyn",
                       "name": "InlineRow",
                       "width": "fill_container",
-                      "gap": 24,
+                      "gap": "$space-24",
                       "alignItems": "center",
                       "children": [
                         {
@@ -3623,8 +3621,8 @@
                           "name": "Bold",
                           "fill": "$primary",
                           "content": "太字",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 16.8,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-md",
                           "fontWeight": "700"
                         },
                         {
@@ -3633,8 +3631,8 @@
                           "name": "Italic",
                           "fill": "$on-surface",
                           "content": "斜体",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 16.8,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-md",
                           "fontWeight": "normal",
                           "fontStyle": "italic"
                         },
@@ -3644,8 +3642,8 @@
                           "name": "Strike",
                           "fill": "$on-surface-variant",
                           "content": "取り消し線",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 16.8,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-md",
                           "fontWeight": "normal"
                         },
                         {
@@ -3654,8 +3652,8 @@
                           "name": "Underline",
                           "fill": "$on-surface",
                           "content": "下線",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 16.8,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-md",
                           "fontWeight": "normal"
                         },
                         {
@@ -3664,8 +3662,8 @@
                           "name": "Link",
                           "fill": "$ac-info",
                           "content": "リンク",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 16.8,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-md",
                           "fontWeight": "normal"
                         },
                         {
@@ -3677,8 +3675,8 @@
                           "stroke": "$outline-variant",
                           "strokeWidth": 1,
                           "padding": [
-                            4,
-                            8
+                            "$space-4",
+                            "$space-8"
                           ],
                           "children": [
                             {
@@ -3688,7 +3686,7 @@
                               "fill": "$ac-danger",
                               "content": "inline code",
                               "fontFamily": "$font-mono",
-                              "fontSize": 14,
+                              "fontSize": "$text-base",
                               "fontWeight": "normal"
                             }
                           ]
@@ -3697,11 +3695,11 @@
                           "type": "frame",
                           "id": "QP1Rl",
                           "name": "HighlightChip",
-                          "fill": "#f4f0e8",
+                          "fill": "$ac-warning-bg",
                           "cornerRadius": 12,
                           "padding": [
-                            4,
-                            8
+                            "$space-4",
+                            "$space-8"
                           ],
                           "children": [
                             {
@@ -3710,8 +3708,8 @@
                               "name": "HlText",
                               "fill": "$on-surface",
                               "content": "ハイライト",
-                              "fontFamily": "Noto Sans JP",
-                              "fontSize": 16.8,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-md",
                               "fontWeight": "normal"
                             }
                           ]
@@ -3746,12 +3744,12 @@
                   "id": "MXFA7",
                   "name": "Main",
                   "width": 1240,
-                  "gap": 48,
+                  "gap": "$space-48",
                   "padding": [
                     175,
-                    40,
-                    96,
-                    48
+                    "$space-40",
+                    "$space-96",
+                    47
                   ],
                   "children": [
                     {
@@ -3760,7 +3758,7 @@
                       "name": "ContentCol",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 32,
+                      "gap": "$space-32",
                       "children": [
                         {
                           "type": "frame",
@@ -3768,13 +3766,13 @@
                           "name": "Article",
                           "width": "fill_container",
                           "layout": "vertical",
-                          "gap": 24,
+                          "gap": "$space-24",
                           "children": [
                             {
                               "type": "frame",
                               "id": "L8kUe",
                               "name": "TagRow",
-                              "gap": 8,
+                              "gap": "$space-8",
                               "children": [
                                 {
                                   "id": "YogXC",
@@ -3815,8 +3813,8 @@
                               "width": "fill_container",
                               "content": "Next.js 14 App Router 移行",
                               "lineHeight": 1.3,
-                              "fontFamily": "Noto Sans JP",
-                              "fontSize": 34.84,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-3xl",
                               "fontWeight": "700",
                               "letterSpacing": -0.5
                             },
@@ -3826,7 +3824,7 @@
                               "name": "MetaRow",
                               "width": "fill_container",
                               "padding": [
-                                16,
+                                "$space-16",
                                 0
                               ],
                               "justifyContent": "end",
@@ -3837,8 +3835,8 @@
                                   "name": "Date",
                                   "fill": "$secondary",
                                   "content": "2023.11.24",
-                                  "fontFamily": "Noto Sans JP",
-                                  "fontSize": 11.66,
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-sm",
                                   "fontWeight": "500",
                                   "letterSpacing": 0.5
                                 }
@@ -3853,7 +3851,7 @@
                           "width": "fill_container",
                           "height": 1541,
                           "layout": "vertical",
-                          "gap": 32,
+                          "gap": "$space-32",
                           "children": [
                             {
                               "id": "ZjJKs",
@@ -3889,14 +3887,14 @@
                               "name": "List",
                               "width": "fill_container",
                               "layout": "vertical",
-                              "gap": 16,
+                              "gap": "$space-16",
                               "children": [
                                 {
                                   "type": "frame",
                                   "id": "c8GIs1",
                                   "name": "ListItem",
                                   "width": "fill_container",
-                                  "gap": 8,
+                                  "gap": "$space-8",
                                   "alignItems": "center",
                                   "children": [
                                     {
@@ -3916,8 +3914,8 @@
                                       "width": "fill_container",
                                       "content": "データベースへの直接アクセスが可能",
                                       "lineHeight": 1.75,
-                                      "fontFamily": "Noto Sans JP",
-                                      "fontSize": 16.8,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-md",
                                       "fontWeight": "normal"
                                     }
                                   ]
@@ -3927,7 +3925,7 @@
                                   "id": "MLwJ9",
                                   "name": "ListItem",
                                   "width": "fill_container",
-                                  "gap": 8,
+                                  "gap": "$space-8",
                                   "alignItems": "center",
                                   "children": [
                                     {
@@ -3947,8 +3945,8 @@
                                       "width": "fill_container",
                                       "content": "機密情報（APIキーなど）を安全に扱える",
                                       "lineHeight": 1.75,
-                                      "fontFamily": "Noto Sans JP",
-                                      "fontSize": 16.8,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-md",
                                       "fontWeight": "normal"
                                     }
                                   ]
@@ -3958,7 +3956,7 @@
                                   "id": "iAg3C",
                                   "name": "ListItem",
                                   "width": "fill_container",
-                                  "gap": 8,
+                                  "gap": "$space-8",
                                   "alignItems": "center",
                                   "children": [
                                     {
@@ -3978,8 +3976,8 @@
                                       "width": "fill_container",
                                       "content": "大きな依存関係をクライアントに送らずに済む",
                                       "lineHeight": 1.75,
-                                      "fontFamily": "Noto Sans JP",
-                                      "fontSize": 16.8,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-md",
                                       "fontWeight": "normal"
                                     }
                                   ]
@@ -4040,7 +4038,7 @@
                               "stroke": "$outline-variant",
                               "strokeWidth": 1,
                               "layout": "vertical",
-                              "padding": 32,
+                              "padding": "$space-32",
                               "children": [
                                 {
                                   "type": "text",
@@ -4051,8 +4049,8 @@
                                   "width": "fill_container",
                                   "content": "データフェッチは可能な限り親のServer Componentで行い、結果をpropsとしてClient Componentに渡す設計を心がけましょう。これにより不要なクライアントサイドのウォーターフォールリクエストを防ぐことができます。",
                                   "lineHeight": 1.75,
-                                  "fontFamily": "Noto Sans JP",
-                                  "fontSize": 16.8,
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-md",
                                   "fontWeight": "normal",
                                   "letterSpacing": 0.2
                                 }
@@ -4120,7 +4118,7 @@
                           },
                           "layout": "vertical",
                           "padding": [
-                            32,
+                            "$space-32",
                             0,
                             0,
                             0
@@ -4143,11 +4141,11 @@
                                     "right": 1
                                   },
                                   "layout": "vertical",
-                                  "gap": 4,
+                                  "gap": "$space-4",
                                   "padding": [
-                                    16,
-                                    16,
-                                    16,
+                                    "$space-16",
+                                    "$space-16",
+                                    "$space-16",
                                     0
                                   ],
                                   "children": [
@@ -4155,7 +4153,7 @@
                                       "type": "frame",
                                       "id": "VuStm",
                                       "name": "PrevLabelRow",
-                                      "gap": 4,
+                                      "gap": "$space-4",
                                       "alignItems": "center",
                                       "children": [
                                         {
@@ -4174,8 +4172,8 @@
                                           "name": "PrevLabel",
                                           "fill": "$secondary",
                                           "content": "Previous Post",
-                                          "fontFamily": "Noto Sans JP",
-                                          "fontSize": 11.66,
+                                          "fontFamily": "$font-sans",
+                                          "fontSize": "$text-sm",
                                           "fontWeight": "500",
                                           "letterSpacing": 0.5
                                         }
@@ -4189,8 +4187,8 @@
                                       "textGrowth": "fixed-width",
                                       "width": "fill_container",
                                       "content": "TypeScript 5.2のusing宣言によるリソース管理",
-                                      "fontFamily": "Noto Sans JP",
-                                      "fontSize": 16.8,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-md",
                                       "fontWeight": "normal"
                                     }
                                   ]
@@ -4201,12 +4199,12 @@
                                   "name": "NextLink",
                                   "width": "fill_container",
                                   "layout": "vertical",
-                                  "gap": 4,
+                                  "gap": "$space-4",
                                   "padding": [
-                                    16,
+                                    "$space-16",
                                     0,
-                                    16,
-                                    16
+                                    "$space-16",
+                                    "$space-16"
                                   ],
                                   "alignItems": "end",
                                   "children": [
@@ -4214,7 +4212,7 @@
                                       "type": "frame",
                                       "id": "I6KHJ9",
                                       "name": "NextLabelRow",
-                                      "gap": 4,
+                                      "gap": "$space-4",
                                       "alignItems": "center",
                                       "children": [
                                         {
@@ -4223,8 +4221,8 @@
                                           "name": "NextLabel",
                                           "fill": "$secondary",
                                           "content": "Next Post",
-                                          "fontFamily": "Noto Sans JP",
-                                          "fontSize": 11.66,
+                                          "fontFamily": "$font-sans",
+                                          "fontSize": "$text-sm",
                                           "fontWeight": "500",
                                           "letterSpacing": 0.5
                                         },
@@ -4249,8 +4247,8 @@
                                       "width": "fill_container",
                                       "content": "Tailwind CSS v4への期待と課題",
                                       "textAlign": "right",
-                                      "fontFamily": "Noto Sans JP",
-                                      "fontSize": 16.8,
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-md",
                                       "fontWeight": "normal"
                                     }
                                   ]
@@ -4267,7 +4265,7 @@
                       "name": "TocCol",
                       "width": 240,
                       "layout": "vertical",
-                      "gap": 16,
+                      "gap": "$space-16",
                       "padding": [
                         199,
                         0,
@@ -4285,8 +4283,8 @@
                           "stroke": "$outline-variant",
                           "strokeWidth": 1,
                           "layout": "vertical",
-                          "gap": 16,
-                          "padding": 24,
+                          "gap": "$space-16",
+                          "padding": "$space-24",
                           "children": [
                             {
                               "id": "TtL6w",
@@ -4302,7 +4300,7 @@
                               "name": "TocList",
                               "width": "fill_container",
                               "layout": "vertical",
-                              "gap": 12,
+                              "gap": "$space-12",
                               "children": [
                                 {
                                   "type": "frame",
@@ -4329,7 +4327,7 @@
                                       "width": "fill_container",
                                       "content": "Server Componentsの基本原則",
                                       "lineHeight": 1.4,
-                                      "fontFamily": "Noto Sans JP",
+                                      "fontFamily": "$font-sans",
                                       "fontSize": 13.5,
                                       "fontWeight": "500"
                                     }
@@ -4360,7 +4358,7 @@
                                       "width": "fill_container",
                                       "content": "境界（Boundary）の設計",
                                       "lineHeight": 1.4,
-                                      "fontFamily": "Noto Sans JP",
+                                      "fontFamily": "$font-sans",
                                       "fontSize": 13.5,
                                       "fontWeight": "normal"
                                     }
@@ -4391,7 +4389,7 @@
                                       "width": "fill_container",
                                       "content": "まとめ",
                                       "lineHeight": 1.4,
-                                      "fontFamily": "Noto Sans JP",
+                                      "fontFamily": "$font-sans",
                                       "fontSize": 13.5,
                                       "fontWeight": "normal"
                                     }
@@ -4457,12 +4455,12 @@
                   "name": "Main",
                   "width": 1100,
                   "layout": "vertical",
-                  "gap": 64,
+                  "gap": "$space-64",
                   "padding": [
                     150,
-                    40,
-                    96,
-                    48
+                    "$space-40",
+                    "$space-96",
+                    47
                   ],
                   "children": [
                     {
@@ -4475,11 +4473,11 @@
                         "bottom": 1
                       },
                       "layout": "vertical",
-                      "gap": 24,
+                      "gap": "$space-24",
                       "padding": [
                         0,
                         0,
-                        48,
+                        "$space-48",
                         0
                       ],
                       "children": [
@@ -4490,7 +4488,7 @@
                           "fill": "$secondary",
                           "content": "最新記事",
                           "fontFamily": "$font-mono",
-                          "fontSize": 11.66,
+                          "fontSize": "$text-sm",
                           "fontWeight": "500",
                           "letterSpacing": 1.5
                         },
@@ -4529,11 +4527,11 @@
                               "name": "Title",
                               "fill": "$primary",
                               "textGrowth": "fixed-width",
-                              "width": "fill_container(1012)",
+                              "width": "fill_container(1013)",
                               "content": "最新の記事のタイトル",
                               "lineHeight": 1.3,
-                              "fontFamily": "Noto Sans JP",
-                              "fontSize": 34.84,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-3xl",
                               "fontWeight": "700",
                               "letterSpacing": -0.5
                             },
@@ -4545,11 +4543,11 @@
                               "name": "Excerpt",
                               "fill": "$on-surface",
                               "textGrowth": "fixed-width",
-                              "width": "fill_container(1012)",
+                              "width": "fill_container(1013)",
                               "content": "最新の記事の本文最新の記事の本文最新の記事の本文最新の記事の本文最新の記事の本文最新の記事の本文最新の記事の本文 最大二行まで表示されます",
                               "lineHeight": 1.75,
-                              "fontFamily": "Noto Sans JP",
-                              "fontSize": 16.8,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-md",
                               "fontWeight": "normal",
                               "letterSpacing": 0.2
                             }
@@ -4563,7 +4561,7 @@
                       "name": "LatestSection",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 8,
+                      "gap": "$space-8",
                       "children": [
                         {
                           "id": "p9LrM",
@@ -4777,8 +4775,8 @@
       "width": 900,
       "fill": "$surface",
       "layout": "vertical",
-      "gap": 56,
-      "padding": 48,
+      "gap": "$space-56",
+      "padding": "$space-48",
       "children": [
         {
           "type": "frame",
@@ -4794,7 +4792,7 @@
               "fill": "$on-surface-variant",
               "content": "ARTICLE LIST — loading.tsx",
               "fontFamily": "$font-mono",
-              "fontSize": 11.66,
+              "fontSize": "$text-sm",
               "fontWeight": "normal",
               "letterSpacing": 1
             },
@@ -4805,7 +4803,7 @@
               "width": "fill_container",
               "layout": "vertical",
               "padding": [
-                16,
+                "$space-16",
                 0,
                 0,
                 0
@@ -4849,7 +4847,7 @@
           "name": "GridLoading",
           "width": "fill_container",
           "layout": "vertical",
-          "gap": 16,
+          "gap": "$space-16",
           "children": [
             {
               "type": "text",
@@ -4858,7 +4856,7 @@
               "fill": "$on-surface-variant",
               "content": "HOME — loading.tsx",
               "fontFamily": "$font-mono",
-              "fontSize": 11.66,
+              "fontSize": "$text-sm",
               "fontWeight": "normal",
               "letterSpacing": 1
             },
@@ -4867,7 +4865,7 @@
               "id": "e6HhY",
               "name": "Grid",
               "width": "fill_container",
-              "gap": 24,
+              "gap": "$space-24",
               "children": [
                 {
                   "id": "fl8Kl",
@@ -4896,12 +4894,11 @@
       "y": -7837,
       "name": "Design System",
       "width": 1600,
-      "fill": "$surface",
       "stroke": "$outline-variant",
       "strokeWidth": 1,
       "layout": "vertical",
-      "gap": 80,
-      "padding": 64,
+      "gap": "$space-80",
+      "padding": "$space-64",
       "children": [
         {
           "type": "text",
@@ -4909,8 +4906,8 @@
           "name": "DSTitle",
           "fill": "$primary",
           "content": "Design System / Components",
-          "fontFamily": "Noto Sans JP",
-          "fontSize": 34.84,
+          "fontFamily": "$font-sans",
+          "fontSize": "$text-3xl",
           "fontWeight": "700",
           "letterSpacing": -0.5
         },
@@ -4920,7 +4917,7 @@
           "name": "01 Layout",
           "width": "fill_container",
           "layout": "vertical",
-          "gap": 32,
+          "gap": "$space-32",
           "children": [
             {
               "id": "x4BhN",
@@ -4946,7 +4943,7 @@
               "layout": "vertical",
               "padding": [
                 0,
-                32
+                "$space-32"
               ],
               "justifyContent": "center",
               "alignItems": "center",
@@ -4990,8 +4987,8 @@
               },
               "layout": "vertical",
               "padding": [
-                96,
-                32
+                "$space-96",
+                "$space-32"
               ],
               "justifyContent": "center",
               "alignItems": "center",
@@ -5002,7 +4999,7 @@
                   "name": "FooterInner",
                   "width": 1300,
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": "$space-16",
                   "children": [
                     {
                       "id": "Up4uI",
@@ -5032,8 +5029,8 @@
                       "name": "Copyright",
                       "fill": "$secondary",
                       "content": "© 2024 The Attic. Built for high-density technical discourse.",
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 11.66,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-sm",
                       "fontWeight": "normal"
                     }
                   ]
@@ -5045,7 +5042,7 @@
               "id": "JuCgU",
               "name": "GlobalNav",
               "reusable": true,
-              "gap": 24,
+              "gap": "$space-24",
               "alignItems": "center",
               "children": [
                 {
@@ -5059,7 +5056,7 @@
                   "padding": [
                     0,
                     0,
-                    4,
+                    "$space-4",
                     0
                   ],
                   "children": [
@@ -5069,8 +5066,8 @@
                       "name": "NavTags",
                       "fill": "$primary",
                       "content": "Tags",
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 14,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
                       "fontWeight": "700"
                     }
                   ]
@@ -5081,8 +5078,8 @@
                   "name": "NavService",
                   "fill": "$secondary",
                   "content": "Service",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-base",
                   "fontWeight": "normal"
                 },
                 {
@@ -5091,8 +5088,8 @@
                   "name": "NavProfile",
                   "fill": "$secondary",
                   "content": "Profile",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-base",
                   "fontWeight": "normal"
                 },
                 {
@@ -5113,8 +5110,8 @@
               "width": 96,
               "cornerRadius": 12,
               "layout": "vertical",
-              "gap": 24,
-              "padding": 24,
+              "gap": "$space-24",
+              "padding": "$space-24",
               "alignItems": "center",
               "children": [
                 {
@@ -5124,7 +5121,7 @@
                   "fill": "$secondary",
                   "content": "TOP",
                   "fontFamily": "$font-mono",
-                  "fontSize": 11.66,
+                  "fontSize": "$text-sm",
                   "fontWeight": "500",
                   "letterSpacing": 1.5
                 },
@@ -5159,7 +5156,7 @@
               "height": 64,
               "cornerRadius": 12,
               "layout": "vertical",
-              "gap": 4,
+              "gap": "$space-4",
               "justifyContent": "center",
               "alignItems": "center",
               "children": [
@@ -5192,7 +5189,7 @@
           "name": "02 Typography",
           "width": "fill_container",
           "layout": "vertical",
-          "gap": 32,
+          "gap": "$space-32",
           "children": [
             {
               "id": "lMy0k",
@@ -5210,8 +5207,8 @@
               "reusable": true,
               "fill": "$primary",
               "content": "MoneLogue",
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 24.19,
+              "fontFamily": "$font-sans",
+              "fontSize": "$text-xl",
               "fontWeight": "300",
               "letterSpacing": -0.5
             },
@@ -5222,7 +5219,7 @@
               "reusable": true,
               "width": "fill_container",
               "layout": "vertical",
-              "gap": 16,
+              "gap": "$space-16",
               "children": [
                 {
                   "id": "n2Ampt",
@@ -5247,8 +5244,8 @@
                   "name": "Title",
                   "fill": "$primary",
                   "content": "ページタイトル",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 41.8,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-4xl",
                   "fontWeight": "700",
                   "letterSpacing": -0.8
                 },
@@ -5264,8 +5261,8 @@
                   "width": "fill_container(1472)",
                   "content": "ページの説明文が入ります。",
                   "lineHeight": 1.75,
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 16.8,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-md",
                   "fontWeight": "normal",
                   "letterSpacing": 0.2
                 },
@@ -5286,8 +5283,8 @@
               "reusable": true,
               "fill": "$secondary",
               "content": "SECTION LABEL",
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 11.66,
+              "fontFamily": "$font-sans",
+              "fontSize": "$text-sm",
               "fontWeight": "500",
               "letterSpacing": 1
             },
@@ -5299,7 +5296,7 @@
               "fill": "$secondary",
               "content": "LABEL",
               "fontFamily": "$font-mono",
-              "fontSize": 10.5,
+              "fontSize": "$text-2xs",
               "fontWeight": "normal",
               "letterSpacing": 1.5
             },
@@ -5311,7 +5308,7 @@
               "fill": "$secondary",
               "content": "2024.03.18",
               "fontFamily": "$font-mono",
-              "fontSize": 11.66,
+              "fontSize": "$text-sm",
               "fontWeight": "normal",
               "letterSpacing": 0.5
             },
@@ -5325,8 +5322,8 @@
               "width": "fill_container",
               "content": "本文テキストが入ります。",
               "lineHeight": 1.75,
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 16.8,
+              "fontFamily": "$font-sans",
+              "fontSize": "$text-md",
               "fontWeight": "normal",
               "letterSpacing": 0.2
             }
@@ -5338,7 +5335,7 @@
           "name": "03 Article",
           "width": "fill_container",
           "layout": "vertical",
-          "gap": 32,
+          "gap": "$space-32",
           "children": [
             {
               "id": "Ei04J",
@@ -5359,9 +5356,9 @@
               "strokeWidth": {
                 "bottom": 1
               },
-              "gap": 32,
+              "gap": "$space-32",
               "padding": [
-                24,
+                "$space-24",
                 0
               ],
               "children": [
@@ -5371,9 +5368,9 @@
                   "name": "DateCol",
                   "width": 96,
                   "layout": "vertical",
-                  "gap": 8,
+                  "gap": "$space-8",
                   "padding": [
-                    4,
+                    "$space-4",
                     0,
                     0,
                     0
@@ -5386,7 +5383,7 @@
                       "fill": "$secondary",
                       "content": "2024.03.18",
                       "fontFamily": "$font-mono",
-                      "fontSize": 11.66,
+                      "fontSize": "$text-sm",
                       "fontWeight": "normal",
                       "letterSpacing": 0.5
                     }
@@ -5398,7 +5395,7 @@
                   "name": "BodyCol",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 8,
+                  "gap": "$space-8",
                   "children": [
                     {
                       "type": "text",
@@ -5409,8 +5406,8 @@
                       "width": "fill_container",
                       "content": "Next.js 14 App Router 移行の勘所",
                       "lineHeight": 1.3,
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 20.16,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-lg",
                       "fontWeight": "700",
                       "letterSpacing": -0.3
                     },
@@ -5423,8 +5420,8 @@
                       "width": "fill_container",
                       "content": "Pages Routerからの移行を検討しているプロジェクトも多いことでしょう。最大のパラダイムシフトは、React Server Components をデフォルトとする設計思想にあります。",
                       "lineHeight": 1.75,
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 14,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
                       "fontWeight": "normal",
                       "letterSpacing": 0.2
                     },
@@ -5432,9 +5429,9 @@
                       "type": "frame",
                       "id": "XoJ7x",
                       "name": "TagRow",
-                      "gap": 8,
+                      "gap": "$space-8",
                       "padding": [
-                        4,
+                        "$space-4",
                         0,
                         0,
                         0
@@ -5473,9 +5470,9 @@
               "strokeWidth": {
                 "bottom": 1
               },
-              "gap": 24,
+              "gap": "$space-24",
               "padding": [
-                16,
+                "$space-16",
                 0
               ],
               "alignItems": "center",
@@ -5494,7 +5491,7 @@
                       "fill": "$secondary",
                       "content": "2024.03.18",
                       "fontFamily": "$font-mono",
-                      "fontSize": 11.66,
+                      "fontSize": "$text-sm",
                       "fontWeight": "normal",
                       "letterSpacing": 0.5
                     }
@@ -5509,7 +5506,7 @@
                   "width": "fill_container",
                   "content": "Next.js 14 App Router 移行の勘所",
                   "lineHeight": 1.4,
-                  "fontFamily": "Noto Sans JP",
+                  "fontFamily": "$font-sans",
                   "fontSize": 15.5,
                   "fontWeight": "700",
                   "letterSpacing": -0.2
@@ -5556,8 +5553,8 @@
               "fill": "$surface-container-low",
               "cornerRadius": 9999,
               "padding": [
-                4,
-                8
+                "$space-4",
+                "$space-8"
               ],
               "children": [
                 {
@@ -5566,8 +5563,8 @@
                   "name": "Label",
                   "fill": "$secondary",
                   "content": "#タグ",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 11.66,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-sm",
                   "fontWeight": "500",
                   "letterSpacing": 0.5
                 }
@@ -5578,7 +5575,7 @@
               "id": "ZRLCv",
               "name": "SeeAllLink",
               "reusable": true,
-              "gap": 16,
+              "gap": "$space-16",
               "justifyContent": "center",
               "alignItems": "center",
               "children": [
@@ -5586,7 +5583,7 @@
                   "type": "frame",
                   "id": "VjvmO",
                   "name": "SeeAllLeft",
-                  "gap": 8,
+                  "gap": "$space-8",
                   "alignItems": "center",
                   "children": [
                     {
@@ -5595,7 +5592,7 @@
                       "name": "Label",
                       "fill": "$primary",
                       "content": "# タグ名 の記事をすべて見る",
-                      "fontFamily": "Noto Sans JP",
+                      "fontFamily": "$font-sans",
                       "fontSize": 13,
                       "fontWeight": "700",
                       "letterSpacing": -0.2
@@ -5618,7 +5615,7 @@
                           "fill": "$secondary",
                           "content": "+9",
                           "fontFamily": "$font-mono",
-                          "fontSize": 11.66,
+                          "fontSize": "$text-sm",
                           "fontWeight": "normal",
                           "letterSpacing": 0.5
                         }
@@ -5643,7 +5640,7 @@
               "id": "uxLwl",
               "name": "Pagination",
               "reusable": true,
-              "gap": 16,
+              "gap": "$space-16",
               "children": [
                 {
                   "type": "frame",
@@ -5673,7 +5670,7 @@
                   "type": "frame",
                   "id": "pvV56",
                   "name": "PageNumbers",
-                  "gap": 4,
+                  "gap": "$space-4",
                   "children": [
                     {
                       "type": "frame",
@@ -5830,11 +5827,11 @@
               "strokeWidth": {
                 "bottom": 2
               },
-              "gap": 16,
+              "gap": "$space-16",
               "padding": [
                 0,
                 0,
-                16,
+                "$space-16",
                 0
               ],
               "justifyContent": "space_between",
@@ -5844,7 +5841,7 @@
                   "type": "frame",
                   "id": "D9LMdy",
                   "name": "HeadLeft",
-                  "gap": 8,
+                  "gap": "$space-8",
                   "alignItems": "center",
                   "children": [
                     {
@@ -5853,8 +5850,8 @@
                       "name": "CategoryName",
                       "fill": "$primary",
                       "content": "# カテゴリ",
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 20.16,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-lg",
                       "fontWeight": "700",
                       "letterSpacing": -0.3
                     },
@@ -5896,7 +5893,7 @@
           "name": "04 Article Body",
           "width": "fill_container",
           "layout": "vertical",
-          "gap": 32,
+          "gap": "$space-32",
           "children": [
             {
               "id": "jDTMb",
@@ -5917,11 +5914,11 @@
               "strokeWidth": {
                 "bottom": 1
               },
-              "gap": 8,
+              "gap": "$space-8",
               "padding": [
                 0,
                 0,
-                8,
+                "$space-8",
                 0
               ],
               "alignItems": "center",
@@ -5954,7 +5951,7 @@
               "reusable": true,
               "width": "fill_container",
               "layout": "vertical",
-              "gap": 16,
+              "gap": "$space-16",
               "children": [
                 {
                   "type": "frame",
@@ -5963,10 +5960,10 @@
                   "width": "fill_container",
                   "fill": "$surface-container-low",
                   "cornerRadius": 16,
-                  "gap": 16,
+                  "gap": "$space-16",
                   "padding": [
-                    16,
-                    24
+                    "$space-16",
+                    "$space-24"
                   ],
                   "children": [
                     {
@@ -5975,8 +5972,8 @@
                       "name": "EmojiIcon",
                       "fill": "$primary",
                       "content": "💡",
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 20.16,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-lg",
                       "fontWeight": "normal"
                     },
                     {
@@ -5985,7 +5982,7 @@
                       "name": "Body",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 4,
+                      "gap": "$space-4",
                       "children": [
                         {
                           "type": "text",
@@ -5995,8 +5992,8 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "ヒント",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 16.8,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-md",
                           "fontWeight": "700"
                         },
                         {
@@ -6008,8 +6005,8 @@
                           "width": "fill_container",
                           "content": "補足情報や注意点をここに書きます。Notionのコールアウトと同じく、絵文字アイコンと本文で構成されます。",
                           "lineHeight": 1.6,
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 14,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-base",
                           "fontWeight": "normal"
                         }
                       ]
@@ -6029,10 +6026,10 @@
                 "left": 3
               },
               "padding": [
-                4,
+                "$space-4",
                 0,
-                4,
-                24
+                "$space-4",
+                "$space-24"
               ],
               "children": [
                 {
@@ -6041,7 +6038,7 @@
                   "name": "QCol",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 8,
+                  "gap": "$space-8",
                   "children": [
                     {
                       "type": "text",
@@ -6052,8 +6049,8 @@
                       "width": "fill_container",
                       "content": "シンプルさは究極の洗練である。",
                       "lineHeight": 1.6,
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 20.16,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-lg",
                       "fontWeight": "normal",
                       "fontStyle": "italic"
                     },
@@ -6063,8 +6060,8 @@
                       "name": "QAttr",
                       "fill": "$on-surface-variant",
                       "content": "— レオナルド・ダ・ヴィンチ",
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 14,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
                       "fontWeight": "normal"
                     }
                   ]
@@ -6077,7 +6074,7 @@
               "name": "BulletItem",
               "reusable": true,
               "width": "fill_container",
-              "gap": 16,
+              "gap": "$space-16",
               "children": [
                 {
                   "type": "text",
@@ -6085,8 +6082,8 @@
                   "name": "Bullet",
                   "fill": "$secondary",
                   "content": "•",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 16.8,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-md",
                   "fontWeight": "normal"
                 },
                 {
@@ -6098,8 +6095,8 @@
                   "width": "fill_container",
                   "content": "Server Componentsをデフォルトで使う",
                   "lineHeight": 1.6,
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 16.8,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-md",
                   "fontWeight": "normal"
                 }
               ]
@@ -6110,7 +6107,7 @@
               "name": "NumberItem",
               "reusable": true,
               "width": "fill_container",
-              "gap": 16,
+              "gap": "$space-16",
               "children": [
                 {
                   "type": "text",
@@ -6118,8 +6115,8 @@
                   "name": "Num",
                   "fill": "$secondary",
                   "content": "1.",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 16.8,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-md",
                   "fontWeight": "500"
                 },
                 {
@@ -6131,8 +6128,8 @@
                   "width": "fill_container",
                   "content": "依存関係をインストールする",
                   "lineHeight": 1.6,
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 16.8,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-md",
                   "fontWeight": "normal"
                 }
               ]
@@ -6156,8 +6153,8 @@
                   "name": "Tick",
                   "fill": "$on-primary",
                   "content": "✓",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 11.66,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-sm",
                   "fontWeight": "700"
                 }
               ]
@@ -6171,10 +6168,10 @@
               "fill": "$surface-container-low",
               "cornerRadius": 16,
               "layout": "vertical",
-              "gap": 8,
+              "gap": "$space-8",
               "padding": [
-                16,
-                24
+                "$space-16",
+                "$space-24"
               ],
               "children": [
                 {
@@ -6182,7 +6179,7 @@
                   "id": "hhLh0",
                   "name": "ToggleHead",
                   "width": "fill_container",
-                  "gap": 8,
+                  "gap": "$space-8",
                   "alignItems": "center",
                   "children": [
                     {
@@ -6191,8 +6188,8 @@
                       "name": "Caret",
                       "fill": "$secondary",
                       "content": "▼",
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 11.66,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-sm",
                       "fontWeight": "normal"
                     },
                     {
@@ -6201,8 +6198,8 @@
                       "name": "ToggleTitle",
                       "fill": "$primary",
                       "content": "詳細を表示する",
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 16.8,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-md",
                       "fontWeight": "700"
                     }
                   ]
@@ -6216,8 +6213,8 @@
                   "width": "fill_container",
                   "content": "展開すると隠れていた本文が表示されます。折りたたみ可能なブロックとして補足情報の格納に便利です。",
                   "lineHeight": 1.6,
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 16.8,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-md",
                   "fontWeight": "normal"
                 }
               ]
@@ -6255,8 +6252,8 @@
                     "bottom": 1
                   },
                   "padding": [
-                    8,
-                    16
+                    "$space-8",
+                    "$space-16"
                   ],
                   "children": [
                     {
@@ -6265,8 +6262,8 @@
                       "name": "FileName",
                       "fill": "$secondary",
                       "content": "app/page.tsx",
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 11.66,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-sm",
                       "fontWeight": "500",
                       "letterSpacing": 0.5
                     }
@@ -6278,7 +6275,7 @@
                   "name": "CodeBody",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "padding": 16,
+                  "padding": "$space-16",
                   "children": [
                     {
                       "type": "text",
@@ -6290,7 +6287,7 @@
                       "content": "export default async function Page() {",
                       "lineHeight": 1.6,
                       "fontFamily": "$font-mono",
-                      "fontSize": 14,
+                      "fontSize": "$text-base",
                       "fontWeight": "normal"
                     },
                     {
@@ -6303,7 +6300,7 @@
                       "content": "  const posts = await getPosts()",
                       "lineHeight": 1.6,
                       "fontFamily": "$font-mono",
-                      "fontSize": 14,
+                      "fontSize": "$text-base",
                       "fontWeight": "normal"
                     },
                     {
@@ -6316,7 +6313,7 @@
                       "content": "  return <PostList posts={posts} />",
                       "lineHeight": 1.6,
                       "fontFamily": "$font-mono",
-                      "fontSize": 14,
+                      "fontSize": "$text-base",
                       "fontWeight": "normal"
                     },
                     {
@@ -6329,7 +6326,7 @@
                       "content": "}",
                       "lineHeight": 1.6,
                       "fontFamily": "$font-mono",
-                      "fontSize": 14,
+                      "fontSize": "$text-base",
                       "fontWeight": "normal"
                     }
                   ]
@@ -6355,8 +6352,8 @@
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
                   "content": "見出し1 / Heading 1",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 29.03,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-2xl",
                   "fontWeight": "700",
                   "letterSpacing": -0.3
                 }
@@ -6371,8 +6368,8 @@
               "textGrowth": "fixed-width",
               "width": "fill_container",
               "content": "見出し2 / Heading 2",
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 24.19,
+              "fontFamily": "$font-sans",
+              "fontSize": "$text-xl",
               "fontWeight": "700",
               "letterSpacing": -0.2
             },
@@ -6385,8 +6382,8 @@
               "textGrowth": "fixed-width",
               "width": "fill_container",
               "content": "見出し3 / Heading 3",
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 20.16,
+              "fontFamily": "$font-sans",
+              "fontSize": "$text-lg",
               "fontWeight": "700"
             },
             {
@@ -6418,8 +6415,8 @@
                       "name": "Cell",
                       "width": 220,
                       "padding": [
-                        8,
-                        16
+                        "$space-8",
+                        "$space-16"
                       ],
                       "children": [
                         {
@@ -6430,8 +6427,8 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "プロパティ",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 14,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-base",
                           "fontWeight": "700"
                         }
                       ]
@@ -6442,8 +6439,8 @@
                       "name": "Cell",
                       "width": 160,
                       "padding": [
-                        8,
-                        16
+                        "$space-8",
+                        "$space-16"
                       ],
                       "children": [
                         {
@@ -6454,8 +6451,8 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "型",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 14,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-base",
                           "fontWeight": "700"
                         }
                       ]
@@ -6466,8 +6463,8 @@
                       "name": "Cell",
                       "width": "fill_container",
                       "padding": [
-                        8,
-                        16
+                        "$space-8",
+                        "$space-16"
                       ],
                       "children": [
                         {
@@ -6478,8 +6475,8 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "説明",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 14,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-base",
                           "fontWeight": "700"
                         }
                       ]
@@ -6503,8 +6500,8 @@
                       "name": "Cell",
                       "width": 220,
                       "padding": [
-                        8,
-                        16
+                        "$space-8",
+                        "$space-16"
                       ],
                       "children": [
                         {
@@ -6516,7 +6513,7 @@
                           "width": "fill_container",
                           "content": "title",
                           "fontFamily": "$font-mono",
-                          "fontSize": 14,
+                          "fontSize": "$text-base",
                           "fontWeight": "normal"
                         }
                       ]
@@ -6527,8 +6524,8 @@
                       "name": "Cell",
                       "width": 160,
                       "padding": [
-                        8,
-                        16
+                        "$space-8",
+                        "$space-16"
                       ],
                       "children": [
                         {
@@ -6540,7 +6537,7 @@
                           "width": "fill_container",
                           "content": "string",
                           "fontFamily": "$font-mono",
-                          "fontSize": 14,
+                          "fontSize": "$text-base",
                           "fontWeight": "normal"
                         }
                       ]
@@ -6551,8 +6548,8 @@
                       "name": "Cell",
                       "width": "fill_container",
                       "padding": [
-                        8,
-                        16
+                        "$space-8",
+                        "$space-16"
                       ],
                       "children": [
                         {
@@ -6564,7 +6561,7 @@
                           "width": "fill_container",
                           "content": "記事のタイトル",
                           "fontFamily": "$font-mono",
-                          "fontSize": 14,
+                          "fontSize": "$text-base",
                           "fontWeight": "normal"
                         }
                       ]
@@ -6585,8 +6582,8 @@
                       "name": "Cell",
                       "width": 220,
                       "padding": [
-                        8,
-                        16
+                        "$space-8",
+                        "$space-16"
                       ],
                       "children": [
                         {
@@ -6598,7 +6595,7 @@
                           "width": "fill_container",
                           "content": "publishedAt",
                           "fontFamily": "$font-mono",
-                          "fontSize": 14,
+                          "fontSize": "$text-base",
                           "fontWeight": "normal"
                         }
                       ]
@@ -6609,8 +6606,8 @@
                       "name": "Cell",
                       "width": 160,
                       "padding": [
-                        8,
-                        16
+                        "$space-8",
+                        "$space-16"
                       ],
                       "children": [
                         {
@@ -6622,7 +6619,7 @@
                           "width": "fill_container",
                           "content": "string",
                           "fontFamily": "$font-mono",
-                          "fontSize": 14,
+                          "fontSize": "$text-base",
                           "fontWeight": "normal"
                         }
                       ]
@@ -6633,8 +6630,8 @@
                       "name": "Cell",
                       "width": "fill_container",
                       "padding": [
-                        8,
-                        16
+                        "$space-8",
+                        "$space-16"
                       ],
                       "children": [
                         {
@@ -6646,7 +6643,7 @@
                           "width": "fill_container",
                           "content": "公開日時 (ISO 8601)",
                           "fontFamily": "$font-mono",
-                          "fontSize": 14,
+                          "fontSize": "$text-base",
                           "fontWeight": "normal"
                         }
                       ]
@@ -6673,8 +6670,8 @@
                   "name": "BmCol",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 4,
-                  "padding": 16,
+                  "gap": "$space-4",
+                  "padding": "$space-16",
                   "children": [
                     {
                       "type": "text",
@@ -6684,8 +6681,8 @@
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "Next.js Documentation",
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 16.8,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-md",
                       "fontWeight": "700"
                     },
                     {
@@ -6697,8 +6694,8 @@
                       "width": "fill_container",
                       "content": "The React Framework for the Web. Used by some of the world's largest companies.",
                       "lineHeight": 1.6,
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 14,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
                       "fontWeight": "normal"
                     },
                     {
@@ -6707,8 +6704,8 @@
                       "name": "BmUrl",
                       "fill": "$secondary",
                       "content": "nextjs.org",
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 11.66,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-sm",
                       "fontWeight": "normal"
                     }
                   ]
@@ -6745,7 +6742,7 @@
           "name": "05 Form & Action",
           "width": "fill_container",
           "layout": "vertical",
-          "gap": 32,
+          "gap": "$space-32",
           "children": [
             {
               "id": "vebi4",
@@ -6802,10 +6799,10 @@
               "cornerRadius": 9999,
               "stroke": "$outline",
               "strokeWidth": 1,
-              "gap": 8,
+              "gap": "$space-8",
               "padding": [
                 10,
-                16
+                "$space-16"
               ],
               "justifyContent": "center",
               "alignItems": "center",
@@ -6826,7 +6823,7 @@
                   "name": "LinkText",
                   "fill": "$on-surface",
                   "content": "サイトへ",
-                  "fontFamily": "Noto Sans JP",
+                  "fontFamily": "$font-sans",
                   "fontSize": 13,
                   "fontWeight": "500"
                 }
@@ -6870,10 +6867,10 @@
               "cornerRadius": 12,
               "stroke": "$primary",
               "strokeWidth": 1,
-              "gap": 16,
+              "gap": "$space-16",
               "padding": [
                 0,
-                16
+                "$space-16"
               ],
               "alignItems": "center",
               "children": [
@@ -6896,8 +6893,8 @@
                   "width": "fill_container",
                   "content": "App Router",
                   "lineHeight": 1.6,
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-base",
                   "fontWeight": "normal",
                   "letterSpacing": 0.2
                 },
@@ -6932,10 +6929,10 @@
               "reusable": true,
               "fill": "$primary",
               "cornerRadius": 9999,
-              "gap": 8,
+              "gap": "$space-8",
               "padding": [
                 14,
-                28
+                "$space-28"
               ],
               "justifyContent": "center",
               "alignItems": "center",
@@ -6956,8 +6953,8 @@
                   "name": "Label",
                   "fill": "$on-primary",
                   "content": "ボタンラベル",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-base",
                   "fontWeight": "500"
                 }
               ]
@@ -6970,7 +6967,7 @@
           "name": "06 Service",
           "width": "fill_container",
           "layout": "vertical",
-          "gap": 32,
+          "gap": "$space-32",
           "children": [
             {
               "id": "V0NTI",
@@ -6991,7 +6988,7 @@
               "fill": "$surface",
               "stroke": "$outline-variant",
               "layout": "vertical",
-              "gap": 28,
+              "gap": "$space-28",
               "alignItems": "center",
               "children": [
                 {
@@ -7035,7 +7032,7 @@
                           "fill": "$on-surface-variant",
                           "content": "NO IMAGE",
                           "fontFamily": "$font-mono",
-                          "fontSize": 10.5,
+                          "fontSize": "$text-2xs",
                           "fontWeight": "normal",
                           "letterSpacing": 2
                         }
@@ -7050,10 +7047,10 @@
                   "width": "fill_container",
                   "height": 149,
                   "layout": "vertical",
-                  "gap": 12,
+                  "gap": "$space-12",
                   "padding": [
                     0,
-                    16
+                    "$space-16"
                   ],
                   "children": [
                     {
@@ -7076,7 +7073,7 @@
                           "content": "Solo development",
                           "textAlign": "center",
                           "fontFamily": "$font-mono",
-                          "fontSize": 10.5,
+                          "fontSize": "$text-2xs",
                           "fontWeight": "normal"
                         }
                       ]
@@ -7087,7 +7084,7 @@
                       "name": "TitleBlock",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 12,
+                      "gap": "$space-12",
                       "justifyContent": "center",
                       "children": [
                         {
@@ -7098,8 +7095,8 @@
                           "content": "プロジェクト名",
                           "lineHeight": 1.4,
                           "textAlign": "center",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 20.16,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-lg",
                           "fontWeight": "700",
                           "letterSpacing": -0.3
                         },
@@ -7108,7 +7105,7 @@
                           "id": "dMLNa",
                           "name": "TechBlock",
                           "layout": "vertical",
-                          "gap": 12,
+                          "gap": "$space-12",
                           "padding": [
                             0,
                             3
@@ -7124,7 +7121,7 @@
                               "content": "Next.js / TypeScript / microCMS",
                               "textAlign": "center",
                               "fontFamily": "$font-mono",
-                              "fontSize": 11.66,
+                              "fontSize": 12,
                               "fontWeight": "normal"
                             },
                             {
@@ -7134,7 +7131,7 @@
                               "width": 124,
                               "stroke": "$outline-variant",
                               "padding": [
-                                4,
+                                "$space-4",
                                 0,
                                 0,
                                 0
@@ -7146,14 +7143,14 @@
                                   "type": "frame",
                                   "id": "Z3Vl7",
                                   "name": "Links",
-                                  "gap": 16,
+                                  "gap": "$space-16",
                                   "alignItems": "center",
                                   "children": [
                                     {
                                       "type": "frame",
                                       "id": "mL8uj",
                                       "name": "Link Demo",
-                                      "gap": 4,
+                                      "gap": "$space-4",
                                       "alignItems": "center",
                                       "children": [
                                         {
@@ -7162,7 +7159,7 @@
                                           "name": "LinkLabel",
                                           "fill": "$primary",
                                           "content": "URL",
-                                          "fontFamily": "Noto Sans JP",
+                                          "fontFamily": "$font-sans",
                                           "fontSize": 12.5,
                                           "fontWeight": "500"
                                         },
@@ -7182,7 +7179,7 @@
                                       "type": "frame",
                                       "id": "cDXGP",
                                       "name": "Link GitHub",
-                                      "gap": 4,
+                                      "gap": "$space-4",
                                       "alignItems": "center",
                                       "children": [
                                         {
@@ -7191,7 +7188,7 @@
                                           "name": "LinkLabel",
                                           "fill": "$primary",
                                           "content": "GitHub",
-                                          "fontFamily": "Noto Sans JP",
+                                          "fontFamily": "$font-sans",
                                           "fontSize": 12.5,
                                           "fontWeight": "500"
                                         },
@@ -7226,10 +7223,10 @@
               "reusable": true,
               "width": "fill_container",
               "height": 362,
-              "gap": 32,
+              "gap": "$space-32",
               "padding": [
                 0,
-                20
+                "$space-20"
               ],
               "children": [
                 {
@@ -7269,7 +7266,7 @@
               "reusable": true,
               "width": 835,
               "height": 268,
-              "gap": 72,
+              "gap": "$space-72",
               "alignItems": "center",
               "children": [
                 {
@@ -7280,7 +7277,7 @@
                   "layout": "vertical",
                   "gap": 9,
                   "padding": [
-                    40,
+                    "$space-40",
                     0
                   ],
                   "children": [
@@ -7299,8 +7296,8 @@
                           "name": "Index",
                           "fill": "$primary",
                           "content": "01",
-                          "fontFamily": "Noto Sans JP",
-                          "fontSize": 11.66,
+                          "fontFamily": "$font-sans",
+                          "fontSize": 12,
                           "fontWeight": "700",
                           "letterSpacing": 1
                         }
@@ -7311,11 +7308,11 @@
                       "id": "euH9s",
                       "name": "TitleRow",
                       "width": "fill_container",
-                      "gap": 40,
+                      "gap": "$space-40",
                       "padding": [
-                        12,
+                        "$space-12",
                         0,
-                        4,
+                        "$space-4",
                         0
                       ],
                       "alignItems": "center",
@@ -7333,8 +7330,8 @@
                               "name": "Title",
                               "fill": "$primary",
                               "content": "Project Design",
-                              "fontFamily": "Noto Sans JP",
-                              "fontSize": 20.16,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-lg",
                               "fontWeight": "700",
                               "letterSpacing": 0.5
                             },
@@ -7344,8 +7341,8 @@
                               "name": "Separator",
                               "fill": "$primary",
                               "content": "・",
-                              "fontFamily": "Noto Sans JP",
-                              "fontSize": 20.16,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-lg",
                               "fontWeight": "700",
                               "letterSpacing": 0.5
                             },
@@ -7355,7 +7352,7 @@
                               "name": "SubTitle",
                               "fill": "$primary",
                               "content": "個人開発",
-                              "fontFamily": "Noto Sans JP",
+                              "fontFamily": "$font-sans",
                               "fontSize": 16,
                               "fontWeight": "500",
                               "letterSpacing": 0.5
@@ -7381,8 +7378,8 @@
                       "width": "fill_container",
                       "content": "コラボレーション、スピード感、柔軟性、そしてイノベーティブな発想を、品質・コスト・スケジュール・スコープに意識を集中し、ストーリーのある活動的なビジュアルを表現します。",
                       "lineHeight": 2,
-                      "fontFamily": "Noto Sans JP",
-                      "fontSize": 11.66,
+                      "fontFamily": "$font-sans",
+                      "fontSize": 12,
                       "fontWeight": "normal",
                       "letterSpacing": 0.3
                     },
@@ -7391,7 +7388,7 @@
                       "id": "bhY4x",
                       "name": "MoreRow",
                       "width": "fill_container",
-                      "gap": 28,
+                      "gap": "$space-28",
                       "justifyContent": "space_between",
                       "children": [
                         {
@@ -7399,7 +7396,7 @@
                           "id": "U3ke7",
                           "name": "TechCol",
                           "layout": "vertical",
-                          "gap": 4,
+                          "gap": "$space-4",
                           "padding": [
                             0,
                             2
@@ -7442,7 +7439,7 @@
               "reusable": true,
               "width": "fill_container",
               "layout": "vertical",
-              "gap": 4,
+              "gap": "$space-4",
               "children": [
                 {
                   "id": "XISh5",
@@ -7459,7 +7456,7 @@
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
                   "content": "2024.01 - 2024.04",
-                  "fontFamily": "Noto Sans JP",
+                  "fontFamily": "$font-sans",
                   "fontSize": 13,
                   "fontWeight": "500"
                 }
@@ -7470,7 +7467,7 @@
               "id": "VyBtl",
               "name": "ShareBar",
               "reusable": true,
-              "gap": 16,
+              "gap": "$space-16",
               "alignItems": "center",
               "children": [
                 {
@@ -7538,7 +7535,7 @@
           "name": "07 Shelf",
           "width": "fill_container",
           "layout": "vertical",
-          "gap": 32,
+          "gap": "$space-32",
           "children": [
             {
               "id": "C2YQMr",
@@ -7569,7 +7566,7 @@
                   "fill": "$surface",
                   "layout": "vertical",
                   "gap": 10,
-                  "padding": 24,
+                  "padding": "$space-24",
                   "justifyContent": "center",
                   "alignItems": "center",
                   "children": [
@@ -7580,7 +7577,7 @@
                       "fill": "$primary",
                       "content": "小杉湯",
                       "textAlign": "center",
-                      "fontFamily": "Noto Sans JP",
+                      "fontFamily": "$font-sans",
                       "fontSize": 40,
                       "fontWeight": "700",
                       "letterSpacing": 1
@@ -7597,7 +7594,7 @@
                   "gap": 5,
                   "padding": [
                     14,
-                    16
+                    "$space-16"
                   ],
                   "children": [
                     {
@@ -7607,7 +7604,7 @@
                       "fill": "$on-primary",
                       "content": "2024 | Logo etc.",
                       "fontFamily": "$font-mono",
-                      "fontSize": 11.66,
+                      "fontSize": "$text-sm",
                       "fontWeight": "normal",
                       "letterSpacing": 0.5
                     },
@@ -7620,7 +7617,7 @@
                       "width": "fill_container",
                       "content": "Kosugiyu",
                       "lineHeight": 1.35,
-                      "fontFamily": "Noto Sans JP",
+                      "fontFamily": "$font-sans",
                       "fontSize": 15,
                       "fontWeight": "700",
                       "letterSpacing": 0.2
@@ -7640,12 +7637,12 @@
               "stroke": "$outline-variant",
               "strokeWidth": 1,
               "layout": "vertical",
-              "gap": 24,
+              "gap": "$space-24",
               "padding": [
-                28,
-                20,
-                20,
-                20
+                "$space-28",
+                "$space-20",
+                "$space-20",
+                "$space-20"
               ],
               "justifyContent": "space_between",
               "alignItems": "center",
@@ -7660,7 +7657,7 @@
                   "content": "伝えるよりも、\n気づいてもらう",
                   "lineHeight": 1.9,
                   "textAlign": "center",
-                  "fontFamily": "Noto Sans JP",
+                  "fontFamily": "$font-sans",
                   "fontSize": 15,
                   "fontWeight": "500",
                   "letterSpacing": 1
@@ -7673,7 +7670,7 @@
                   "content": "Attitude · 10",
                   "textAlign": "center",
                   "fontFamily": "$font-mono",
-                  "fontSize": 10.5,
+                  "fontSize": "$text-2xs",
                   "fontWeight": "normal",
                   "letterSpacing": 1
                 }
@@ -7685,12 +7682,12 @@
               "name": "ShelfLabel",
               "reusable": true,
               "width": "fill_container",
-              "gap": 12,
+              "gap": "$space-12",
               "padding": [
                 0,
-                64,
-                20,
-                64
+                "$space-64",
+                "$space-20",
+                "$space-64"
               ],
               "alignItems": "center",
               "children": [
@@ -7700,7 +7697,7 @@
                   "name": "En",
                   "fill": "$primary",
                   "content": "Blog",
-                  "fontFamily": "Noto Sans JP",
+                  "fontFamily": "$font-sans",
                   "fontSize": 30,
                   "fontWeight": "500",
                   "letterSpacing": 2
@@ -7741,7 +7738,7 @@
           "name": "08 Media",
           "width": "fill_container",
           "layout": "vertical",
-          "gap": 32,
+          "gap": "$space-32",
           "children": [
             {
               "id": "HKRl3",
@@ -7784,7 +7781,7 @@
                   "fill": "$on-surface-variant",
                   "content": "NO IMAGE",
                   "fontFamily": "$font-mono",
-                  "fontSize": 10.5,
+                  "fontSize": "$text-2xs",
                   "fontWeight": "normal",
                   "letterSpacing": 2
                 }
@@ -7798,7 +7795,7 @@
           "name": "09 Skeleton",
           "width": "fill_container",
           "layout": "vertical",
-          "gap": 32,
+          "gap": "$space-32",
           "children": [
             {
               "id": "fj87J",
@@ -7819,9 +7816,9 @@
               "strokeWidth": {
                 "bottom": 1
               },
-              "gap": 32,
+              "gap": "$space-32",
               "padding": [
-                24,
+                "$space-24",
                 0
               ],
               "children": [
@@ -7831,9 +7828,9 @@
                   "name": "DateCol",
                   "width": 96,
                   "layout": "vertical",
-                  "gap": 8,
+                  "gap": "$space-8",
                   "padding": [
-                    4,
+                    "$space-4",
                     0,
                     0,
                     0
@@ -7873,7 +7870,7 @@
                       "name": "Excerpt",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 8,
+                      "gap": "$space-8",
                       "children": [
                         {
                           "type": "rectangle",
@@ -7908,9 +7905,9 @@
                       "type": "frame",
                       "id": "wGK5B",
                       "name": "TagRow",
-                      "gap": 8,
+                      "gap": "$space-8",
                       "padding": [
-                        4,
+                        "$space-4",
                         0,
                         0,
                         0
@@ -7949,7 +7946,7 @@
               "fill": "$surface",
               "stroke": "$outline-variant",
               "layout": "vertical",
-              "gap": 28,
+              "gap": "$space-28",
               "children": [
                 {
                   "type": "rectangle",
@@ -7968,9 +7965,9 @@
                   "gap": 14,
                   "padding": [
                     0,
-                    16,
-                    20,
-                    16
+                    "$space-16",
+                    "$space-20",
+                    "$space-16"
                   ],
                   "alignItems": "center",
                   "children": [
@@ -8035,10 +8032,10 @@
           "width": "fill_container",
           "gap": 18,
           "padding": [
-            88,
-            64,
-            40,
-            64
+            "$space-88",
+            "$space-64",
+            "$space-40",
+            "$space-64"
           ],
           "descendants": {
             "n2Ampt": {
@@ -8085,7 +8082,7 @@
               "gap": 22,
               "padding": [
                 0,
-                64
+                "$space-64"
               ],
               "alignItems": "end",
               "children": [
@@ -8260,7 +8257,7 @@
           "width": "fill_container",
           "layout": "vertical",
           "padding": [
-            56,
+            "$space-56",
             0,
             0,
             0
@@ -8274,7 +8271,7 @@
               "padding": [
                 10,
                 0,
-                88,
+                "$space-88",
                 0
               ],
               "justifyContent": "center",
@@ -8315,7 +8312,7 @@
               "gap": 22,
               "padding": [
                 0,
-                64
+                "$space-64"
               ],
               "alignItems": "end",
               "children": [
@@ -8505,9 +8502,9 @@
           "name": "MoreLink",
           "width": "fill_container",
           "padding": [
-            64,
+            "$space-64",
             0,
-            88,
+            "$space-88",
             0
           ],
           "justifyContent": "center",
@@ -8582,1544 +8579,6 @@
           }
         }
       ]
-    },
-    {
-      "type": "frame",
-      "id": "Kx6aW",
-      "x": 480,
-      "y": -7837,
-      "name": "Token Audit - Color Roles",
-      "width": 960,
-      "fill": "#ffffff",
-      "cornerRadius": 16,
-      "stroke": "#dadfe2",
-      "strokeWidth": 1,
-      "layout": "vertical",
-      "gap": 36,
-      "padding": 48,
-      "children": [
-        {
-          "type": "frame",
-          "id": "kDCsH",
-          "name": "Header",
-          "width": "fill_container",
-          "layout": "vertical",
-          "gap": 8,
-          "children": [
-            {
-              "type": "text",
-              "id": "qCroB",
-              "name": "Title",
-              "fill": "#181b1d",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "Token Audit — Color Roles",
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 26,
-              "fontWeight": "700"
-            },
-            {
-              "type": "text",
-              "id": "t9QYM",
-              "name": "Desc",
-              "fill": "#636a6f",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "ui.pen の色変数と design/v3/design-tokens.css の対応確認用。実装で使うのはロール名（左）、CSS 側は素材名（右）。",
-              "lineHeight": 1.6,
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 13,
-              "fontWeight": "normal"
-            }
-          ]
-        },
-        {
-          "type": "frame",
-          "id": "G97Yc",
-          "name": "Surface",
-          "width": "fill_container",
-          "layout": "vertical",
-          "gap": 14,
-          "children": [
-            {
-              "type": "text",
-              "id": "D5ifW",
-              "name": "Heading",
-              "fill": "#181b1d",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "Surface",
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 18,
-              "fontWeight": "700"
-            },
-            {
-              "type": "text",
-              "id": "i08fjd",
-              "name": "Note",
-              "fill": "#636a6f",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "DESIGN_PROMPT.md の二層構造に準拠。surface = ページ背景（neutral-50）、surface-raised = 浮いた面（純白）。",
-              "lineHeight": 1.6,
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 12,
-              "fontWeight": "normal"
-            },
-            {
-              "type": "frame",
-              "id": "B6B8i",
-              "name": "surface",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "BwlT0",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#f9fafb",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "n5BRmK",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "surface",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "s8GKVD",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#f9fafb",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "liYKR",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-surface / neutral-50 / 98.5%（ページ背景）",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "BsRWJ",
-              "name": "surface-raised",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "wWppX",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#ffffff",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "Z3RM9",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "surface-raised",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "C74YK",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#ffffff",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "nE5Px",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-surface-raised / oklch 100%（浮いた面。現在は未使用）",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "TKuUb",
-              "name": "surface-container-low",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "S8w6m",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#f0f2f4",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "HhpaW",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "surface-container-low",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "ZzSmJ",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#f0f2f4",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "rXtBT",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-neutral-100 / 96%",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "SaSHS",
-              "name": "surface-container",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "XV2yk",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#dadfe2",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "JmPVz",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "surface-container",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "xeWW8",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#dadfe2",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "znzav",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-neutral-200 / 90%",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "frame",
-          "id": "Corjg",
-          "name": "Content",
-          "width": "fill_container",
-          "layout": "vertical",
-          "gap": 14,
-          "children": [
-            {
-              "type": "text",
-              "id": "IDk2w",
-              "name": "Heading",
-              "fill": "#181b1d",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "Content",
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 18,
-              "fontWeight": "700"
-            },
-            {
-              "type": "text",
-              "id": "bvYGO",
-              "name": "Note",
-              "fill": "#636a6f",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "文字・主要要素。",
-              "lineHeight": 1.6,
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 12,
-              "fontWeight": "normal"
-            },
-            {
-              "type": "frame",
-              "id": "fVGgn",
-              "name": "primary",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "Inxsk",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#181b1d",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "ownz1",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "primary",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "AsWv0",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#181b1d",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "hhtSB",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-neutral-900 / 22%",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "F7aEnU",
-              "name": "on-primary",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "kkpSl",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#f9fafb",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "TtScR",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "on-primary",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "z8d1n",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#f9fafb",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "aY6Ql",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-neutral-50 / 98.5%",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "afWbj",
-              "name": "on-surface",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "UsBub",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#181b1d",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "RA6ut",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "on-surface",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "hzUgS",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#181b1d",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "jECXz",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-neutral-900 / 22%（primary と同値）",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "rSyKx",
-              "name": "on-surface-variant",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "WaVP8",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#636a6f",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "tWkMR",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "on-surface-variant",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "KxOIF",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#636a6f",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "aQgzJ",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-neutral-600 / 52%",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "NIRkr",
-              "name": "secondary",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "tsQqy",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#494e52",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "VkXDV",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "secondary",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "IovAq",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#494e52",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "Y4F1XE",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-neutral-700 / 42%",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "frame",
-          "id": "C5HfO8",
-          "name": "Outline",
-          "width": "fill_container",
-          "layout": "vertical",
-          "gap": 14,
-          "children": [
-            {
-              "type": "text",
-              "id": "X9Rk7",
-              "name": "Heading",
-              "fill": "#181b1d",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "Outline",
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 18,
-              "fontWeight": "700"
-            },
-            {
-              "type": "text",
-              "id": "Ij7MP",
-              "name": "Note",
-              "fill": "#636a6f",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "罫線・境界。",
-              "lineHeight": 1.6,
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 12,
-              "fontWeight": "normal"
-            },
-            {
-              "type": "frame",
-              "id": "yWctc",
-              "name": "outline",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "eXmIl",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#bfc5ca",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "eLw59",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "outline",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "NdSLQ",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#bfc5ca",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "vBVP5",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-neutral-300 / 82%",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "g6HGD",
-              "name": "outline-variant",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "O6CFI",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#dadfe2",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "XKS9l",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "outline-variant",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "VSD3H",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#dadfe2",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "CEpWs",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-neutral-200 / 90%（surface-container と同値）",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "frame",
-          "id": "vDHhw",
-          "name": "Accent",
-          "width": "fill_container",
-          "layout": "vertical",
-          "gap": 14,
-          "children": [
-            {
-              "type": "text",
-              "id": "x49vG",
-              "name": "Heading",
-              "fill": "#181b1d",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "Accent",
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 18,
-              "fontWeight": "700"
-            },
-            {
-              "type": "text",
-              "id": "c3J4AV",
-              "name": "Note",
-              "fill": "#636a6f",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "状態色。前景は CSS と一致。背景（-bg）は CSS に対応が無い。",
-              "lineHeight": 1.6,
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 12,
-              "fontWeight": "normal"
-            },
-            {
-              "type": "frame",
-              "id": "pFG7Y",
-              "name": "ac-success",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "SUSGi",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#6b8a6b",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "NU7zl",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "ac-success",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "XazMl",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#6b8a6b",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "Fu0Ml",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-success-500",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "luPZY",
-              "name": "ac-success-bg",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "OCoDD",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#eef2ee",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "pGfSp",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "ac-success-bg",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "ynOmL",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#eef2ee",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "N3SMQb",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "CSS に対応なし",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "PaTs5",
-              "name": "ac-warning",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "mmZmG",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#b8a17c",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "LrQ9Y",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "ac-warning",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "GtlsD",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#b8a17c",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "Bhcwq",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-warning-500",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "TsrNN",
-              "name": "ac-warning-bg",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "PUoOD",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#f4f0e8",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "z8fFfS",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "ac-warning-bg",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "P9bg22",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#f4f0e8",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "C5f8c4",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "CSS に対応なし",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "xeTHo",
-              "name": "ac-danger",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "AE2bQ",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#a0736f",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "N55dB",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "ac-danger",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "XbRA4",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#a0736f",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "RzdVb",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-danger-500",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "J2Wei",
-              "name": "ac-danger-bg",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "W0H1Ar",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#f5ecea",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "oWCqi",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "ac-danger-bg",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "FzQak",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#f5ecea",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "v6yw7c",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "CSS に対応なし",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "Ln8je",
-              "name": "ac-info",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "rLyqi",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#61859f",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "L9es34",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "ac-info",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "zgPTY",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#61859f",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "KZZO8",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-info-500",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "WPKoD",
-              "name": "ac-info-bg",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "qfx0o",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#edf1f4",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "X3not",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "ac-info-bg",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "s0GmF",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#edf1f4",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "Z6sw9",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "CSS に対応なし",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "frame",
-          "id": "UPExF",
-          "name": "CSS にのみ存在（ui.pen で未使用）",
-          "width": "fill_container",
-          "layout": "vertical",
-          "gap": 14,
-          "children": [
-            {
-              "type": "text",
-              "id": "b2cD7M",
-              "name": "Heading",
-              "fill": "#181b1d",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "CSS にのみ存在（ui.pen で未使用）",
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 18,
-              "fontWeight": "700"
-            },
-            {
-              "type": "text",
-              "id": "x6ahE",
-              "name": "Note",
-              "fill": "#636a6f",
-              "textGrowth": "fixed-width",
-              "width": "fill_container",
-              "content": "design-tokens.css のスケールにはあるが、ui.pen 側でロールが割り当てられていない段。残すか削るかの判断対象。",
-              "lineHeight": 1.6,
-              "fontFamily": "Noto Sans JP",
-              "fontSize": 12,
-              "fontWeight": "normal"
-            },
-            {
-              "type": "frame",
-              "id": "NoEiR",
-              "name": "(未割当)",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "dFAPg",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#9ea6ab",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "Unq6Q",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "(未割当)",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "KvPmq",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#9ea6ab",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "utjh7",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-neutral-400 / 72%",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "mXR4p",
-              "name": "(未割当)",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "u3TRoi",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#80878d",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "h0w82T",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "(未割当)",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "l0KsAo",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#80878d",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "kh9w1",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-neutral-500 / 62%",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "gQxvU",
-              "name": "(未割当)",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "AGuV1",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#2f3336",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "sU88R",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "(未割当)",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "vkyyQ",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#2f3336",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "tFhVX",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-neutral-800 / 32%",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "a9Zk6C",
-              "name": "(未割当)",
-              "width": "fill_container",
-              "gap": 20,
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "njP6L",
-                  "name": "Chip",
-                  "width": 96,
-                  "height": 52,
-                  "fill": "#0a0b0d",
-                  "cornerRadius": 8,
-                  "stroke": "#bfc5ca",
-                  "strokeWidth": 1
-                },
-                {
-                  "type": "text",
-                  "id": "Ff94X",
-                  "name": "Var",
-                  "fill": "#181b1d",
-                  "textGrowth": "fixed-width",
-                  "width": 210,
-                  "content": "(未割当)",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 14,
-                  "fontWeight": "500"
-                },
-                {
-                  "type": "text",
-                  "id": "mlzNK",
-                  "name": "Hex",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": 110,
-                  "content": "#0a0b0d",
-                  "fontFamily": "JetBrains Mono",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "L5EEf",
-                  "name": "Css",
-                  "fill": "#636a6f",
-                  "textGrowth": "fixed-width",
-                  "width": "fill_container",
-                  "content": "--color-neutral-950 / 15%",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                }
-              ]
-            }
-          ]
-        }
-      ]
     }
   ],
   "variables": {
@@ -10179,17 +8638,133 @@
       "type": "color",
       "value": "#61859f"
     },
+    "ac-info-bg": {
+      "type": "color",
+      "value": "#edf1f4"
+    },
     "ac-success": {
       "type": "color",
       "value": "#6b8a6b"
     },
-    "surface-raised": {
+    "ac-warning-bg": {
       "type": "color",
-      "value": "#ffffff"
+      "value": "#f4f0e8"
+    },
+    "ac-danger-bg": {
+      "type": "color",
+      "value": "#f5ecea"
+    },
+    "ac-success-bg": {
+      "type": "color",
+      "value": "#eef2ee"
+    },
+    "text-2xs": {
+      "type": "number",
+      "value": 10.5
+    },
+    "text-md": {
+      "type": "number",
+      "value": 16.8
+    },
+    "text-lg": {
+      "type": "number",
+      "value": 20.16
+    },
+    "text-xl": {
+      "type": "number",
+      "value": 24.19
+    },
+    "text-2xl": {
+      "type": "number",
+      "value": 29.03
+    },
+    "text-3xl": {
+      "type": "number",
+      "value": 34.84
+    },
+    "text-4xl": {
+      "type": "number",
+      "value": 41.8
     },
     "font-sans": {
       "type": "string",
       "value": "Noto Sans JP"
+    },
+    "space-4": {
+      "type": "number",
+      "value": 4
+    },
+    "space-8": {
+      "type": "number",
+      "value": 8
+    },
+    "space-12": {
+      "type": "number",
+      "value": 12
+    },
+    "space-16": {
+      "type": "number",
+      "value": 16
+    },
+    "space-20": {
+      "type": "number",
+      "value": 20
+    },
+    "space-24": {
+      "type": "number",
+      "value": 24
+    },
+    "space-28": {
+      "type": "number",
+      "value": 28
+    },
+    "space-32": {
+      "type": "number",
+      "value": 32
+    },
+    "space-40": {
+      "type": "number",
+      "value": 40
+    },
+    "space-48": {
+      "type": "number",
+      "value": 48
+    },
+    "space-56": {
+      "type": "number",
+      "value": 56
+    },
+    "space-64": {
+      "type": "number",
+      "value": 64
+    },
+    "space-72": {
+      "type": "number",
+      "value": 72
+    },
+    "space-80": {
+      "type": "number",
+      "value": 80
+    },
+    "space-88": {
+      "type": "number",
+      "value": 88
+    },
+    "space-96": {
+      "type": "number",
+      "value": 96
+    },
+    "space-100": {
+      "type": "number",
+      "value": 100
+    },
+    "text-base": {
+      "type": "number",
+      "value": 14
+    },
+    "text-sm": {
+      "type": "number",
+      "value": 11.66
     }
   },
   "fileToken": "619fc5eb-e23d-475f-8c5a-1a1c16d7dc00"
