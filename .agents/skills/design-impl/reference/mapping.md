@@ -147,7 +147,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ImagePlaceholder` | `XHkBO` | — | ❌ |
+| `ImagePlaceholder` | `XHkBO` | `src/commons/layout/components/ImagePlaceholder/ImagePlaceholder.tsx` | ✅ |
 | `ArticleRowSkeleton` | `M4eia` | — | ❌ |
 | `ArticleCardSkeleton` | `Pacnv` | — | ❌ |
 
