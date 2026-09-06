@@ -8,12 +8,16 @@ type Props = {
 
 const Checkbox = ({ checked, children }: Props) => {
   return (
-    <div className="flex items-center gap-4">
+    <div
+      role="checkbox"
+      aria-checked={checked}
+      aria-readonly
+      className="flex items-center gap-4"
+    >
       <span
-        role="checkbox"
-        aria-checked={checked}
-        className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-sm border border-outline ${
-          checked ? "bg-primary" : "bg-surface"
+        aria-hidden
+        className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-sm border-outline ${
+          checked ? "border bg-primary" : "border-[1.5px] bg-surface"
         }`}
       >
         {checked && (
