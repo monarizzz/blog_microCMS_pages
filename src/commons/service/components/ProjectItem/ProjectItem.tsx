@@ -35,7 +35,7 @@ const ProjectItem = ({
               {category}
             </span>
           </div>
-          <div className="h-[1.5px] w-full bg-primary" />
+          <div className="h-[1.5px] flex-1 bg-primary" />
         </div>
         <p className="w-full text-[12px] leading-[2] tracking-[0.3px] text-on-surface-variant">
           {description}
