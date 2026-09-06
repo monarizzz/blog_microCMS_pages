@@ -1,4 +1,4 @@
-import ArticleRow from "@/commons/contents/components/ArticleRow/ArticleRow";
+import ContentsRow from "@/commons/contents/components/ContentsRow/ContentsRow";
 import CategorySectionHeader from "@/commons/contents/components/CategorySectionHeader/CategorySectionHeader";
 import FilterBtn from "@/commons/button/components/FilterBtn/FilterBtn";
 import PageHeader from "@/commons/other/components/PageHeader/PageHeader";
@@ -53,7 +53,7 @@ const TagsPageMain = ({ activeTag }: Props) => {
             />
             <div className="flex w-full flex-col">
               {Array.from({ length: section.shown }, (_, i) => (
-                <ArticleRow key={i} />
+                <ContentsRow key={i} />
               ))}
             </div>
             <div className="flex justify-end pt-5 pb-1">

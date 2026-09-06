@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import ArticleRow from "./ArticleRow";
+import ContentsRow from "./ContentsRow";
 
 const meta = {
-  component: ArticleRow,
-} satisfies Meta<typeof ArticleRow>;
+  component: ContentsRow,
+} satisfies Meta<typeof ContentsRow>;
 
 export default meta;
 

@@ -66,8 +66,8 @@
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ArticleRow` | `D7Q2z7` | `src/commons/contents/components/ArticleRow/ArticleRow.tsx` | ✅ |
-| `ArticleRowCompact` | `JE7aw` | 同上（`compact` prop で兼用） | ✅ |
+| `ArticleRow` | `D7Q2z7` | `src/commons/contents/components/ContentsRow/ContentsRow.tsx` | ✅ 実装名は `ContentsRow`（記事以外のコンテンツにも使うため） |
+| `ArticleRowCompact` | `JE7aw` | 同上（`ContentsRow` の `compact` prop で兼用） | ✅ |
 | `Tag` | `biM87` | `src/commons/button/components/TagBtn/TagBtn.tsx` | ✅ |
 | `SeeAllLink` | `ZRLCv` | `src/commons/other/components/SeeAllRight/SeeAllRight.tsx` | ✅ |
 | `Pagination` | `uxLwl` | `src/commons/navigation/components/PageNumNav/PageNumNav.tsx` | ✅ |
@@ -150,7 +150,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
 | `ImagePlaceholder` | `XHkBO` | `src/commons/other/components/ImagePlaceholder/ImagePlaceholder.tsx` | ✅ |
-| `ArticleRowSkeleton` | `M4eia` | — | ❌ |
+| `ArticleRowSkeleton` | `M4eia` | — | ❌ 実装時は `ContentsRowSkeleton` にする |
 | `ArticleCardSkeleton` | `Pacnv` | — | ❌ |
 
 スケルトンの並べ方は `Skeleton Demo (Loading)`（frame `ogaR6`）に

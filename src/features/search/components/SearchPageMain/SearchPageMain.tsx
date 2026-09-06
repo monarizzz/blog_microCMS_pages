@@ -1,4 +1,4 @@
-import ArticleRow from "@/commons/contents/components/ArticleRow/ArticleRow";
+import ContentsRow from "@/commons/contents/components/ContentsRow/ContentsRow";
 import SearchInput from "../SearchInput/SearchInput";
 import { AlertCircle, SearchX } from "lucide-react";
 import TagBtn from "@/commons/button/components/TagBtn/TagBtn";
@@ -24,8 +24,8 @@ const SearchPageMain = ({ article, num }: Props) => {
       </p>
       {article ? (
         <>
-          <ArticleRow />
-          <ArticleRow />
+          <ContentsRow />
+          <ContentsRow />
         </>
       ) : (
         <div className="flex flex-col items-center gap-6">
