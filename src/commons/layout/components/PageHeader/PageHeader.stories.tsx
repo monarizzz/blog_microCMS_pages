@@ -33,6 +33,15 @@ export const Full: Story = {
   },
 };
 
+export const Wide: Story = {
+  args: {
+    title: "Service",
+    sub: "これまでに開発したプロダクトと制作物のまとめ。",
+    count: "6 プロジェクト",
+    wide: true,
+  },
+};
+
 export const Compact: Story = {
   args: {
     title: "#Next.js",

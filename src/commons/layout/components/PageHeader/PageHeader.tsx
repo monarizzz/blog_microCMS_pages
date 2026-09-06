@@ -7,9 +7,18 @@ type Props = {
   sub?: string;
   count?: string;
   compact?: boolean;
+  wide?: boolean;
 };
 
-const PageHeader = ({ title, kicker, meta, sub, count, compact }: Props) => {
+const PageHeader = ({
+  title,
+  kicker,
+  meta,
+  sub,
+  count,
+  compact,
+  wide,
+}: Props) => {
   return (
     <div className={`flex w-full flex-col ${compact ? "gap-3" : "gap-4"}`}>
       {kicker && (
@@ -28,7 +37,15 @@ const PageHeader = ({ title, kicker, meta, sub, count, compact }: Props) => {
         {title}
       </h1>
       {sub && (
-        <p className="text-md leading-relaxed text-on-surface-variant">{sub}</p>
+        <p
+          className={
+            wide
+              ? "w-[560px] max-w-full text-base leading-relaxed text-on-surface-variant"
+              : "text-md leading-relaxed text-on-surface-variant"
+          }
+        >
+          {sub}
+        </p>
       )}
       {count && <MetaText>{count}</MetaText>}
     </div>
