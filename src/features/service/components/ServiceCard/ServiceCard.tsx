@@ -32,36 +32,38 @@ const ServiceCard = ({ title, role, stack, url, github }: Props) => {
             <p className="w-[230px] self-center text-center font-mono text-[12px] text-secondary">
               {stack}
             </p>
-            <div className="flex w-[124px] items-center justify-center gap-4 self-center border border-outline-variant pt-1">
-              {url && (
-                <Link
-                  href={url}
-                  aria-label={`${title} のサイトを開く`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1"
-                >
-                  <span className="text-[12.5px] font-medium text-primary">
-                    URL
-                  </span>
-                  <ExternalLink size={13} className="text-secondary" />
-                </Link>
-              )}
-              {github && (
-                <Link
-                  href={github}
-                  aria-label={`${title} の GitHub リポジトリを開く`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1"
-                >
-                  <span className="text-[12.5px] font-medium text-primary">
-                    GitHub
-                  </span>
-                  <ExternalLink size={13} className="text-secondary" />
-                </Link>
-              )}
-            </div>
+            {(url || github) && (
+              <div className="flex w-[124px] items-center justify-center gap-4 self-center border border-outline-variant pt-1">
+                {url && (
+                  <Link
+                    href={url}
+                    aria-label={`${title} のサイトを開く`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1"
+                  >
+                    <span className="text-[12.5px] font-medium text-primary">
+                      URL
+                    </span>
+                    <ExternalLink size={13} className="text-secondary" />
+                  </Link>
+                )}
+                {github && (
+                  <Link
+                    href={github}
+                    aria-label={`${title} の GitHub リポジトリを開く`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1"
+                  >
+                    <span className="text-[12.5px] font-medium text-primary">
+                      GitHub
+                    </span>
+                    <ExternalLink size={13} className="text-secondary" />
+                  </Link>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
