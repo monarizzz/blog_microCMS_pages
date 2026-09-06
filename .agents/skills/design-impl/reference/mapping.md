@@ -104,7 +104,7 @@
 | `Toggle` | `HbAE1` | — | ❌ |
 | `Divider` | `Ar2tj` | `src/commons/layout/components/Divider/Divider.tsx` | ✅ |
 | `CodeBlock` | `qvMsD` | — | ❌ |
-| `Table` | `Y1rfsy` | — | ❌ |
+| `Table` | `Y1rfsy` | `src/commons/article/components/Table/Table.tsx` | ✅ |
 | `Bookmark` | `A4rGR` | — | ❌ |
 
 これらは microCMS のリッチエディタ HTML を変換して当てる想定
@@ -164,6 +164,6 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` `InfoLabel` ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
 2. **ボタン類** — `LinkButton` `BackLink` `SearchIconButton`
 3. **記事一覧の残り** — `ArticleThumbnail` `ArticleSectionHeading`
-4. **記事本文** — `Callout` `CodeBlock` `Table` `Bookmark`（`ArticleH1`〜`H3` / `Quote` は実装済み）
+4. **記事本文** — `Callout` `CodeBlock` `Bookmark`（`ArticleH1`〜`H3` / `Quote` / `Table` は実装済み）
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）
