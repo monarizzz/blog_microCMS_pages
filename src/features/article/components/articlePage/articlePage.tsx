@@ -1,4 +1,4 @@
-import ArticleRow from "@/commons/article/components/ArticleRow/ArticleRow";
+import ArticleRow from "@/commons/contents/components/ArticleRow/ArticleRow";
 import BackLink from "@/commons/layout/components/BackLink/BackLink";
 import FilterBtn from "@/commons/layout/components/FilterBtn/FilterBtn";
 import MetaText from "@/commons/layout/components/MetaText/MetaText";

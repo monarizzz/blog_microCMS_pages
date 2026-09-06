@@ -1,4 +1,4 @@
-import ArticleRow from "@/commons/article/components/ArticleRow/ArticleRow";
+import ArticleRow from "@/commons/contents/components/ArticleRow/ArticleRow";
 import SearchInput from "../SearchInput/SearchInput";
 import { AlertCircle, SearchX } from "lucide-react";
 import TagBtn from "@/commons/layout/components/TagBtn/TagBtn";

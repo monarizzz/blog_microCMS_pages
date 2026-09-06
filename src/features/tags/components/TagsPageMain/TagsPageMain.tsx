@@ -1,5 +1,5 @@
-import ArticleRow from "@/commons/article/components/ArticleRow/ArticleRow";
-import CategorySectionHeader from "@/commons/article/components/CategorySectionHeader/CategorySectionHeader";
+import ArticleRow from "@/commons/contents/components/ArticleRow/ArticleRow";
+import CategorySectionHeader from "@/commons/contents/components/CategorySectionHeader/CategorySectionHeader";
 import FilterBtn from "@/commons/layout/components/FilterBtn/FilterBtn";
 import PageHeader from "@/commons/layout/components/PageHeader/PageHeader";
 import SeeAllRight from "@/commons/layout/components/SeeAllRight/SeeAllRight";
