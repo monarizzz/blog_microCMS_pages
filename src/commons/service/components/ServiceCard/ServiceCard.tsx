@@ -30,7 +30,7 @@ const ServiceCard = ({
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center gap-[10px]">
             <ImageIcon size={30} className="text-on-surface-variant" />
-            <span className="font-mono text-2xs tracking-widest text-on-surface-variant">
+            <span className="font-mono text-2xs tracking-[2px] text-on-surface-variant">
               NO IMAGE
             </span>
           </div>
