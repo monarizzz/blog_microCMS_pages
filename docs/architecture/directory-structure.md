@@ -96,10 +96,11 @@ commons/
 
 ```text
 features/
-├── article/                    # /article/[slug] ページ専用
+├── article/                    # /article 一覧ページ専用
 │   └── components/
-│       └── articlePage/        # 記事ページのメインコンポーネント
-├── layout/                     # 全ページ共通のレイアウト
+│       └── articlePage/        # 記事一覧ページのメインコンポーネント
+│                               # ※ 命名例外。本来は ArticlePage/ArticlePage.tsx
+├── layout/                     # 全ページ共通のレイアウト（配置基準の例外。下記参照）
 │   ├── components/
 │   │   ├── Header/
 │   │   ├── GlobalNav/
@@ -116,9 +117,17 @@ features/
         └── TagsPageMain/
 ```
 
+**例外:**
+
+- `layout/` は全ページ共通のレイアウト（`Header` / `GlobalNav` / `Footer` / `LayoutMain`）で、上記の配置基準には当てはまらない。
+  ページ横断だが再利用可能なドメインロジックでもないため、`commons/` ではなく `features/` に置いている
+- `article/components/articlePage/` は先頭小文字で、[component-structure.md](./component-structure.md) の PascalCase ルールに反する既知の例外。
+  新規実装ではこの例に倣わず `ArticlePage/ArticlePage.tsx` とすること
+
 #### `/src/infra` - インフラストラクチャ層
 
-外部サービスとの連携やデータアクセス層を管理します。
+外部サービスとの連携やデータアクセス層を管理します。あわせて、**特定の外部ライブラリに依存する薄いラッパー**もここに置きます。
+アプリ側がライブラリの API を直接触らずに済み、差し替え時の影響範囲を `infra/` に閉じられるためです。
 
 ```text
 infra/
@@ -127,8 +136,11 @@ infra/
 │   ├── schema/           # エンティティ定義
 │   └── client.ts
 └── Tailwind/
-    └── cn.ts             # クラス名結合ユーティリティ
+    └── cn.ts             # clsx + tailwind-merge のラッパー
 ```
+
+`Tailwind/cn.ts` は表示層向けのユーティリティだが、`clsx` / `tailwind-merge` という外部ライブラリのラッパーであるため `infra/` に配置している。
+ライブラリに依存しない純粋なユーティリティは `commons/` 配下の `utils/` に置く。
 
 ### その他の主要ディレクトリ
 
