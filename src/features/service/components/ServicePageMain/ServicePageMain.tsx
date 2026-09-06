@@ -2,6 +2,7 @@ import Divider from "@/commons/other/components/Divider/Divider";
 import PageHeader from "@/commons/other/components/PageHeader/PageHeader";
 import ServiceCardRow, {
   type ServiceCardRowItem,
+  type ServiceCardRowServices,
 } from "@/commons/service/components/ServiceCardRow/ServiceCardRow";
 
 //TODO:仮置き
@@ -37,9 +38,18 @@ const services: ServiceCardRowItem[] = [
 
 const ROW_SIZE = 2;
 
-const serviceRows = Array.from(
+// ServiceCardRow が 1 行 1〜2 件のタプルしか受け付けないため、slice の結果を
+// そのままではなく件数を絞り込んだ形で渡す
+const serviceRows: ServiceCardRowServices[] = Array.from(
   { length: Math.ceil(services.length / ROW_SIZE) },
-  (_, index) => services.slice(index * ROW_SIZE, (index + 1) * ROW_SIZE),
+  (_, index) => {
+    const [first, second] = services.slice(
+      index * ROW_SIZE,
+      (index + 1) * ROW_SIZE,
+    );
+
+    return second ? [first, second] : [first];
+  },
 );
 
 const ServicePageMain = () => {
