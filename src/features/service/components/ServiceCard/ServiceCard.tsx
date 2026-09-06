@@ -53,7 +53,7 @@ const ServiceCard = ({
             {title}
           </h2>
           <div className="flex flex-col gap-3 px-0.75">
-            <p className="w-57.5 max-w-full text-center font-mono text-[12px] wrap-break-word text-secondary">
+            <p className="w-full text-center font-mono text-[12px] wrap-break-word text-secondary">
               {techStack}
             </p>
             {hasLink && (
