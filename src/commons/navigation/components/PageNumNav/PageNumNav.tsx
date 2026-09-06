@@ -5,7 +5,10 @@ type Props = {
   currentPage: number;
   totalPages: number;
   basePath?: string;
-  /** ページ遷移時に引き継ぐクエリ（sort など）。undefined の値は付けない */
+  /**
+   * ページ遷移時に引き継ぐクエリ（sort など）。undefined の値は付けない。
+   * `page` はこのコンポーネントが組み立てるため、渡されても無視する
+   */
   query?: Record<string, string | undefined>;
 };
 
@@ -34,7 +37,11 @@ const buildPages = (currentPage: number, totalPages: number) => {
   );
 };
 
-/** 1 ページ目は page を付けない（正規 URL を 1 つに保つため）が、query は常に引き継ぐ */
+/**
+ * 1 ページ目は page を付けない（正規 URL を 1 つに保つため）が、query は常に引き継ぐ。
+ * query 側の page は捨てる。呼び出し側が現在の検索パラメータをそのまま渡した場合に、
+ * 1 ページ目のリンクへ元の page が残るのを防ぐため
+ */
 const pageHref = (
   basePath: string,
   page: number,
@@ -42,7 +49,7 @@ const pageHref = (
 ) => {
   const params = new URLSearchParams();
   for (const [key, value] of Object.entries(query)) {
-    if (value !== undefined) params.set(key, value);
+    if (key !== "page" && value !== undefined) params.set(key, value);
   }
   if (page !== 1) params.set("page", String(page));
 
