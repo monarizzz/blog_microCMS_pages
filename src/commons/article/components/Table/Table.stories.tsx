@@ -42,3 +42,36 @@ export const Default: Story = {
     ),
   },
 };
+
+/** 最終行に行見出し (th scope="row") と tfoot を含むケース。最終行グループの最終行だけ罫線が消えること */
+export const WithRowHeaderAndFoot: Story = {
+  args: {
+    label: "料金表",
+    children: (
+      <>
+        <thead>
+          <tr>
+            <th>プラン</th>
+            <th>月額</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Free</th>
+            <td>0 円</td>
+          </tr>
+          <tr>
+            <th scope="row">Pro</th>
+            <td>1,200 円</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">合計</th>
+            <td>1,200 円</td>
+          </tr>
+        </tfoot>
+      </>
+    ),
+  },
+};
