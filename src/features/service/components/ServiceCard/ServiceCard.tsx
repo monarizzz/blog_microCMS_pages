@@ -36,6 +36,7 @@ const ServiceCard = ({ title, role, stack, url, github }: Props) => {
               {url && (
                 <Link
                   href={url}
+                  aria-label={`${title} のサイトを開く`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1"
@@ -49,6 +50,7 @@ const ServiceCard = ({ title, role, stack, url, github }: Props) => {
               {github && (
                 <Link
                   href={github}
+                  aria-label={`${title} の GitHub リポジトリを開く`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1"
