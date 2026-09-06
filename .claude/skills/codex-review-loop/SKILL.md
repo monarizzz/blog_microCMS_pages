@@ -59,6 +59,16 @@ description: 全open PRを対象に、chatgpt-codex-connector[bot] のレビュ�
 
 - 各PRのブランチ用worktreeは `.claude/worktrees/` 配下に既存のものがあることが多い。
   `git worktree list` で確認し、無ければ `git worktree add` で作る。
+  **既存worktreeを再利用する場合は、編集を始める前に対象ブランチを検証する**こと:
+
+  ```bash
+  git -C <パス> branch --show-current   # 対象PRの headRefName と一致するか
+  git -C <パス> status --short          # 未コミットの変更が無いか
+  ```
+
+  一致しなければ `git -C <パス> switch <headRefName>` で戻してから作業を始める。
+  前回の並行作業でブランチが切り替わったまま残っていることがあり(後述の実例)、
+  そのまま委任すると別PRのコードを編集・検証してしまう。作業後の確認では手遅れになる。
   **このスキルの実行中に新規作成した worktree は、全PRの対応完了後に必ず削除する**
   (AGENTS.md「worktree」節)。放置すると巡回のたびに不要な作業ツリーが積み上がる:
 
