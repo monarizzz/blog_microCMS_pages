@@ -15,3 +15,10 @@ export const Default: Story = {
     title: "セクション見出し",
   },
 };
+
+export const WithoutLinkIcon: Story = {
+  args: {
+    title: "セクション見出し",
+    showLinkIcon: false,
+  },
+};
