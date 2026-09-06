@@ -7,16 +7,16 @@ type Props = {
 
 const Quote = ({ children, cite }: Props) => {
   return (
-    <div className="border-l-[3px] border-outline py-1 pl-6">
+    <blockquote className="border-l-[3px] border-outline py-1 pl-6">
       <div className="flex flex-col gap-2">
-        <p className="text-lg italic leading-normal text-primary">
-          {children}
-        </p>
+        <p className="text-lg leading-normal text-primary italic">{children}</p>
         {cite && (
-          <p className="text-base text-on-surface-variant">{cite}</p>
+          <cite className="text-base text-on-surface-variant not-italic">
+            {cite}
+          </cite>
         )}
       </div>
-    </div>
+    </blockquote>
   );
 };
 
