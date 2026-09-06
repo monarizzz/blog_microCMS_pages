@@ -11,6 +11,7 @@
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run --project node",
+    "test:storybook": "vitest run --project storybook",
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
