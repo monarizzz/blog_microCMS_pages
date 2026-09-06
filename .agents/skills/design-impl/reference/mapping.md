@@ -85,7 +85,7 @@
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
 | `SectionLabel` | `TbTSl` | `src/commons/layout/components/SectionLabel/SectionLabel.tsx` | ✅ |
-| `InfoLabel` | `PHZV0` | — | ❌ |
+| `InfoLabel` | `PHZV0` | `src/commons/layout/components/InfoLabel/InfoLabel.tsx` | ✅ |
 | `MetaText` | `E2rKp` | `src/commons/layout/components/MetaText/MetaText.tsx` | ✅ |
 | `Paragraph` | `g5WYtH` | `src/commons/layout/components/Paragraph/Paragraph.tsx` | ✅ |
 
@@ -161,7 +161,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 依存の少ないものから。上ほど先。
 
-1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` `InfoLabel` ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
+1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` ~~`InfoLabel`~~（実装済み） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
 2. **ボタン類** — `LinkButton` `BackLink` `SearchIconButton`
 3. **記事一覧の残り** — `ArticleThumbnail` `ArticleSectionHeading`
 4. **記事本文** — `Callout` `CodeBlock` `Bookmark`（`ArticleH1`〜`H3` / `Quote` / `Table` は実装済み）
