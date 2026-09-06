@@ -47,7 +47,7 @@
 | `GlobalNav` | `JuCgU` | `src/features/layout/components/GlobalNav/GlobalNav.tsx` | ✅ |
 | `Logo` | `VD5vy` | — | ❌ |
 | `PageHeader` | `XEUvq` | `src/commons/layout/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` のみ |
-| `ScrollNav` | `qXMlW` | — | ❌ |
+| `ScrollNav` | `qXMlW` | `src/commons/layout/components/ScrollNav/ScrollNav.tsx` | ✅ |
 | `ScrollTopButton` | `YJxBa` | — | ❌ |
 
 - `src/features/layout/components/LayoutMain/LayoutMain.tsx` は pen に対応物なし（実装都合の骨組み）
@@ -84,7 +84,7 @@
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `SectionLabel` | `TbTSl` | — | ❌ |
+| `SectionLabel` | `TbTSl` | `src/commons/layout/components/SectionLabel/SectionLabel.tsx` | ✅ |
 | `InfoLabel` | `PHZV0` | — | ❌ |
 | `MetaText` | `E2rKp` | `src/commons/layout/components/MetaText/MetaText.tsx` | ✅ |
 | `Paragraph` | `g5WYtH` | `src/commons/layout/components/Paragraph/Paragraph.tsx` | ✅ |
@@ -98,8 +98,8 @@
 | `ArticleH3` | `v0Atx` | — | ❌ |
 | `Callout` | `KaNJF` | — | ❌ ※ `$ac-*-bg` が実装側に無い。token-map.md 参照 |
 | `Quote` | `xR0ql` | `src/commons/article/components/Quote/Quote.tsx` | ✅ |
-| `BulletItem` | `eQqNb` | — | ❌ |
-| `NumberItem` | `c3XVs` | — | ❌ |
+| `BulletItem` | `eQqNb` | `src/commons/article/components/BulletItem/BulletItem.tsx` | ✅ |
+| `NumberItem` | `c3XVs` | `src/commons/article/components/NumberItem/NumberItem.tsx` | ✅ |
 | `Checkbox` | `D1pbg` | — | ❌ |
 | `Toggle` | `HbAE1` | — | ❌ |
 | `Divider` | `Ar2tj` | `src/commons/layout/components/Divider/Divider.tsx` | ✅ |
@@ -161,9 +161,9 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 依存の少ないものから。上ほど先。
 
-1. **葉のパーツ** — `SectionLabel` `MetaText` `InfoLabel` `Divider` `ImagePlaceholder`
+1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` `InfoLabel` `Divider` `ImagePlaceholder`
 2. **ボタン類** — `LinkButton` `BackLink` `SearchIconButton`
 3. **記事一覧の残り** — `ArticleThumbnail` `ArticleSectionHeading`
-4. **記事本文** — `ArticleH1`〜`H3` → `BulletItem` `NumberItem` → `Callout` `CodeBlock` `Table` `Bookmark`
+4. **記事本文** — `ArticleH1`〜`H3` → `Callout` `CodeBlock` `Table` `Bookmark`
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）
