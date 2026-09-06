@@ -105,6 +105,44 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
           DEPLOYMENT_ENVIRONMENTS: ${{ secrets.DEPLOYMENT_ENVIRONMENTS }}
 
+  # Playwright の Chromium を落とす必要があり実行時間が伸びるため、他のチェックとは
+  # 別ジョブに分離している。paths フィルタで src/** 変更時のみに絞る案は採らない。
+  # workflow 単位でしか指定できず、必須チェックにした場合に対象外の PR で永遠に
+  # pending のままになるため。
+  storybook-test:
+    name: Storybook test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Restore node_modules
+        id: node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node24-node-modules-${{ hashFiles('package-lock.json') }}
+      - if: steps.node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+      # node_modules キャッシュには playwright パッケージしか含まれず、
+      # ブラウザ本体 (~/.cache/ms-playwright) は別に復元する必要がある。
+      - name: Restore Playwright browsers
+        id: playwright
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+      - if: steps.playwright.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+      # キャッシュヒット時はブラウザ本体だけ復元され、OS 側の依存ライブラリが
+      # 入らないため、そこだけ別途入れる。
+      - if: steps.playwright.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
+      - run: npm run test:storybook
+
   # NOTE: 一旦停止中。src/**/*.test.ts のテスト自体は存在し全て通る状態のため、
   #       CI ジョブの整理をするタイミングでコメントアウトを外す。
   # test:
