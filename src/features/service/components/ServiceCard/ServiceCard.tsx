@@ -1,4 +1,5 @@
 import { ExternalLink, Image as ImageIcon } from "lucide-react";
+import Link from "next/link";
 
 type Props = {
   title: string;
@@ -33,7 +34,7 @@ const ServiceCard = ({ title, role, stack, url, github }: Props) => {
             </p>
             <div className="flex w-[124px] items-center justify-center gap-4 self-center border border-outline-variant pt-1">
               {url && (
-                <a
+                <Link
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -43,10 +44,10 @@ const ServiceCard = ({ title, role, stack, url, github }: Props) => {
                     URL
                   </span>
                   <ExternalLink size={13} className="text-secondary" />
-                </a>
+                </Link>
               )}
               {github && (
-                <a
+                <Link
                   href={github}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -56,7 +57,7 @@ const ServiceCard = ({ title, role, stack, url, github }: Props) => {
                     GitHub
                   </span>
                   <ExternalLink size={13} className="text-secondary" />
-                </a>
+                </Link>
               )}
             </div>
           </div>
