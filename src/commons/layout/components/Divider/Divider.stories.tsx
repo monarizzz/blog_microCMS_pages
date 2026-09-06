@@ -10,7 +10,9 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Horizontal: Story = {
+  args: {},
+};
 
 export const Vertical: Story = {
   args: {
@@ -18,7 +20,7 @@ export const Vertical: Story = {
   },
   decorators: [
     (Story) => (
-      <div style={{ height: "80px" }}>
+      <div style={{ height: 120 }}>
         <Story />
       </div>
     ),
