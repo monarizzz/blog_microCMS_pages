@@ -1,6 +1,6 @@
 import ArticleRow from "@/commons/contents/components/ArticleRow/ArticleRow";
 import CategorySectionHeader from "@/commons/contents/components/CategorySectionHeader/CategorySectionHeader";
-import FilterBtn from "@/commons/button/FilterBtn/FilterBtn";
+import FilterBtn from "@/commons/button/components/FilterBtn/FilterBtn";
 import PageHeader from "@/commons/other/components/PageHeader/PageHeader";
 import SeeAllRight from "@/commons/other/components/SeeAllRight/SeeAllRight";
 

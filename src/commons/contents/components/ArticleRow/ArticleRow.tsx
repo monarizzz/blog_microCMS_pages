@@ -1,4 +1,4 @@
-import TagBtn from "@/commons/button/TagBtn/TagBtn";
+import TagBtn from "@/commons/button/components/TagBtn/TagBtn";
 
 const title = "Next.js 14 App Router 移行の勘所";
 const expect =
