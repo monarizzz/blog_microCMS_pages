@@ -60,6 +60,11 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
+    /* design/v3/design-tokens.css (ui.pen 色ロール) から LinkButton で使う分のみ引用。
+       他のロールは既存コンポーネントが未使用のため追加しない */
+    --color-outline: #bfc5ca; /* neutral-300 */
+    --color-on-surface: #181b1d; /* neutral-900 本文 */
   }
   .dark {
     --background: 222.2 84% 4.9%;
