@@ -24,3 +24,21 @@ export const Active: Story = {
     active: true,
   },
 };
+
+export const MediumSolidActive: Story = {
+  args: {
+    text: "すべて",
+    link: "/tags",
+    active: true,
+    size: "md",
+    solid: true,
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    text: "#Next.js",
+    link: "/tags/nextjs",
+    size: "md",
+  },
+};
