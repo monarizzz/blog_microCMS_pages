@@ -25,3 +25,17 @@ export const SecondPage: Story = {
     currentPage: 2,
   },
 };
+
+/** 最終ページ。端数（38 - 30 = 8 件）だけ行が出る */
+export const LastPage: Story = {
+  args: {
+    currentPage: 3,
+  },
+};
+
+/** 範囲外のページ番号。最終ページにクランプされる */
+export const OutOfRangePage: Story = {
+  args: {
+    currentPage: 999,
+  },
+};
