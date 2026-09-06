@@ -10,7 +10,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Period: Story = {
+export const Default: Story = {
   args: {
     label: "PERIOD",
     value: "2024.01 - 2024.04",
