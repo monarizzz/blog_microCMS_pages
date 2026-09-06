@@ -78,7 +78,7 @@ Print(Get("<コンポーネントID>", {depth: 4}))
 
 - default export、`type Props = {...}` をファイル内に定義
 - Tailwind ユーティリティを JSX に直書き。CSS Modules や `style` 属性は使わない
-- 複数コンポーネントで共有する className は `constants/` に切り出す（例: `src/commons/layout/constants/chipStyle.ts` の `CHIP_CLASS_NAME`）
+- 複数コンポーネントで共有する className は `constants/` に切り出す（例: `src/commons/other/constants/chipStyle.ts` の `CHIP_CLASS_NAME`）
 - リンクは `next/link`、アイコンは `lucide-react`
 - 同階層に `<Name>.stories.tsx` を作る。既存の stories に書式を合わせること
 

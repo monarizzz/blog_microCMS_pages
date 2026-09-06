@@ -46,8 +46,8 @@
 | `Footer` | `VMThv` | `src/features/layout/components/Footer/Footer.tsx` | ✅ |
 | `GlobalNav` | `JuCgU` | `src/features/layout/components/GlobalNav/GlobalNav.tsx` | ✅ |
 | `Logo` | `VD5vy` | — | ❌ |
-| `PageHeader` | `XEUvq` | `src/commons/layout/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` / `wide` のみ |
-| `ScrollNav` | `qXMlW` | `src/commons/layout/components/ScrollNav/ScrollNav.tsx` | ✅ |
+| `PageHeader` | `XEUvq` | `src/commons/other/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` / `wide` のみ |
+| `ScrollNav` | `qXMlW` | `src/commons/navigation/components/ScrollNav/ScrollNav.tsx` | ✅ |
 | `ScrollTopButton` | `YJxBa` | — | ❌ |
 
 - `src/features/layout/components/LayoutMain/LayoutMain.tsx` は pen に対応物なし（実装都合の骨組み）
@@ -65,18 +65,18 @@
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ArticleRow` | `D7Q2z7` | `src/commons/article/components/ArticleRow/ArticleRow.tsx` | ✅ |
+| `ArticleRow` | `D7Q2z7` | `src/commons/contents/components/ArticleRow/ArticleRow.tsx` | ✅ |
 | `ArticleRowCompact` | `JE7aw` | 同上（`compact` prop で兼用） | ✅ |
-| `Tag` | `biM87` | `src/commons/layout/components/TagBtn/TagBtn.tsx` | ✅ |
-| `SeeAllLink` | `ZRLCv` | `src/commons/layout/components/SeeAllRight/SeeAllRight.tsx` | ✅ |
-| `Pagination` | `uxLwl` | `src/commons/pageNav/components/pageNavNum/pageNavNum.tsx` | ✅ |
-| `ArticleThumbnail` | `N7jyll` | `src/commons/article/components/ArticleThumbnail/ArticleThumbnail.tsx` | ✅ `ImagePlaceholder` (`XHkBO`) は未実装のためインライン化 |
-| `CategorySectionHeader` | `QSeNC` | `src/commons/article/components/CategorySectionHeader/CategorySectionHeader.tsx` | ✅ |
-| `ArticleSectionHeading` | `RgUbK` | `src/commons/article/components/ArticleSectionHeading/ArticleSectionHeading.tsx` | ✅ |
+| `Tag` | `biM87` | `src/commons/button/TagBtn/TagBtn.tsx` | ✅ |
+| `SeeAllLink` | `ZRLCv` | `src/commons/other/components/SeeAllRight/SeeAllRight.tsx` | ✅ |
+| `Pagination` | `uxLwl` | `src/commons/navigation/components/PageNumNav/PageNumNav.tsx` | ✅ |
+| `ArticleThumbnail` | `N7jyll` | `src/commons/contents/components/ArticleThumbnail/ArticleThumbnail.tsx` | ✅ `ImagePlaceholder` (`XHkBO`) は未実装のためインライン化 |
+| `CategorySectionHeader` | `QSeNC` | `src/commons/contents/components/CategorySectionHeader/CategorySectionHeader.tsx` | ✅ |
+| `ArticleSectionHeading` | `RgUbK` | `src/commons/contents/components/ArticleSectionHeading/ArticleSectionHeading.tsx` | ✅ |
 
-- `src/commons/layout/components/FilterBtn/FilterBtn.tsx` は `Tag` の `#` なし版。
+- `src/commons/button/FilterBtn/FilterBtn.tsx` は `Tag` の `#` なし版。
   pen 側に独立コンポーネントはなく、`Tags` ページ（group `j9tOQT`）のフィルタ行が出典。
-  `Tag` を触る時は `CHIP_CLASS_NAME`（`src/commons/layout/constants/chipStyle.ts`）を共有しているので巻き添えに注意。
+  `Tag` を触る時は `CHIP_CLASS_NAME`（`src/commons/other/constants/chipStyle.ts`）を共有しているので巻き添えに注意。
   `ArticleListPage` のソート行（`SortRow` `vV5Py`）は未実装。選択/非選択の色は `FilterBtn` と
   同じで padding だけ 6/12（`Tag` の override）なので、実装時に `FilterBtn` を再利用するか
   別コンポーネントにするかを決めること。
@@ -85,28 +85,28 @@
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `SectionLabel` | `TbTSl` | `src/commons/layout/components/SectionLabel/SectionLabel.tsx` | ✅ |
-| `InfoLabel` | `PHZV0` | `src/commons/layout/components/InfoLabel/InfoLabel.tsx` | ✅ |
-| `MetaText` | `E2rKp` | `src/commons/layout/components/MetaText/MetaText.tsx` | ✅ |
-| `Paragraph` | `g5WYtH` | `src/commons/layout/components/Paragraph/Paragraph.tsx` | ✅ |
+| `SectionLabel` | `TbTSl` | `src/commons/other/components/SectionLabel/SectionLabel.tsx` | ✅ |
+| `InfoLabel` | `PHZV0` | `src/commons/other/components/InfoLabel/InfoLabel.tsx` | ✅ |
+| `MetaText` | `E2rKp` | `src/commons/other/components/MetaText/MetaText.tsx` | ✅ |
+| `Paragraph` | `g5WYtH` | `src/commons/contentsDetail/components/Paragraph/Paragraph.tsx` | ✅ |
 
 ## 記事本文（リッチエディタ由来の要素）
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ArticleH1` | `Y5MxdQ` | `src/commons/article/components/ArticleH1/ArticleH1.tsx` | ✅ |
-| `ArticleH2` | `sSgdW` | `src/commons/article/components/ArticleH2/ArticleH2.tsx` | ✅ |
-| `ArticleH3` | `v0Atx` | `src/commons/article/components/ArticleH3/ArticleH3.tsx` | ✅ |
+| `ArticleH1` | `Y5MxdQ` | `src/commons/contentsDetail/components/ArticleH1/ArticleH1.tsx` | ✅ |
+| `ArticleH2` | `sSgdW` | `src/commons/contentsDetail/components/ArticleH2/ArticleH2.tsx` | ✅ |
+| `ArticleH3` | `v0Atx` | `src/commons/contentsDetail/components/ArticleH3/ArticleH3.tsx` | ✅ |
 | `Callout` | `KaNJF` | — | ❌ ※ `$ac-*-bg` が実装側に無い。token-map.md 参照 |
-| `Quote` | `xR0ql` | `src/commons/article/components/Quote/Quote.tsx` | ✅ |
-| `BulletItem` | `eQqNb` | `src/commons/article/components/BulletItem/BulletItem.tsx` | ✅ |
-| `NumberItem` | `c3XVs` | `src/commons/article/components/NumberItem/NumberItem.tsx` | ✅ |
-| `Checkbox` | `D1pbg` | `src/commons/article/components/Checkbox/Checkbox.tsx` | ✅ |
-| `Toggle` | `HbAE1` | `src/commons/article/components/Toggle/Toggle.tsx` | ✅ |
-| `Divider` | `Ar2tj` | `src/commons/layout/components/Divider/Divider.tsx` | ✅ |
-| `CodeBlock` | `qvMsD` | `src/commons/article/components/CodeBlock/CodeBlock.tsx` | ✅ |
-| `Table` | `Y1rfsy` | `src/commons/article/components/Table/Table.tsx` | ✅ |
-| `Bookmark` | `A4rGR` | `src/commons/article/components/Bookmark/Bookmark.tsx` | ✅ |
+| `Quote` | `xR0ql` | `src/commons/contentsDetail/components/Quote/Quote.tsx` | ✅ |
+| `BulletItem` | `eQqNb` | `src/commons/contentsDetail/components/BulletItem/BulletItem.tsx` | ✅ |
+| `NumberItem` | `c3XVs` | `src/commons/contentsDetail/components/NumberItem/NumberItem.tsx` | ✅ |
+| `Checkbox` | `D1pbg` | `src/commons/contentsDetail/components/Checkbox/Checkbox.tsx` | ✅ |
+| `Toggle` | `HbAE1` | `src/commons/contentsDetail/components/Toggle/Toggle.tsx` | ✅ |
+| `Divider` | `Ar2tj` | `src/commons/other/components/Divider/Divider.tsx` | ✅ |
+| `CodeBlock` | `qvMsD` | `src/commons/contentsDetail/components/CodeBlock/CodeBlock.tsx` | ✅ |
+| `Table` | `Y1rfsy` | `src/commons/contentsDetail/components/Table/Table.tsx` | ✅ |
+| `Bookmark` | `A4rGR` | `src/commons/contents/components/Bookmark/Bookmark.tsx` | ✅ |
 
 これらは microCMS のリッチエディタ HTML を変換して当てる想定
 （`microcms-rich-editor-handler` / `cheerio` が依存に入っている）。
@@ -117,11 +117,11 @@
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
 | `SearchInput` | `Jh09L` | `src/features/search/components/SearchInput/SearchInput.tsx` | ✅ |
-| `IconButton` | `aGtFB` | `src/commons/layout/components/IconBtn/IconBtn.tsx` | ✅ |
-| `SearchIconButton` | `k2xlJ` | `src/commons/layout/components/SearchIconButton/SearchIconButton.tsx` | ✅ |
+| `IconButton` | `aGtFB` | `src/commons/button/IconBtn/IconBtn.tsx` | ✅ |
+| `SearchIconButton` | `k2xlJ` | `src/commons/button/SearchIconButton/SearchIconButton.tsx` | ✅ |
 | `LinkButton` | `Rl2z4` | — | ❌ |
-| `BackLink` | `r2KGU` | `src/commons/layout/components/BackLink/BackLink.tsx` | ✅ |
-| `PrimaryButton` | `N3GA43` | `src/commons/layout/components/PrimaryButton/PrimaryButton.tsx` | ✅ |
+| `BackLink` | `r2KGU` | `src/commons/other/components/BackLink/BackLink.tsx` | ✅ |
+| `PrimaryButton` | `N3GA43` | `src/commons/button/PrimaryButton/PrimaryButton.tsx` | ✅ |
 
 ## サービス・プロフィール
 
@@ -129,9 +129,9 @@
 | --- | --- | --- | --- |
 | `ServiceCard` | `jhtzh` | `src/commons/service/components/ServiceCard/ServiceCard.tsx` | ✅ |
 | `ServiceCardRow` | `T2ai0` | `src/commons/service/components/ServiceCardRow/ServiceCardRow.tsx` | ✅ |
-| `ProjectItem` | `XiMk9` | `src/commons/service/components/ProjectItem/ProjectItem.tsx` | ✅ |
+| `ProjectItem` | `XiMk9` | `src/commons/profile/components/ProjectItem/ProjectItem.tsx` | ✅ |
 | `InfoRow` | `Nle6p` | `src/commons/service/components/InfoRow/InfoRow.tsx` | ✅ 内部の `InfoLabel`(`PHZV0`)は独立コンポーネント化せず内包 |
-| `ShareBar` | `VyBtl` | `src/commons/layout/components/ShareBar/ShareBar.tsx` | ✅ |
+| `ShareBar` | `VyBtl` | `src/commons/contentsDetail/components/ShareBar/ShareBar.tsx` | ✅ |
 
 ## Shelf（本棚）
 
@@ -148,7 +148,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ImagePlaceholder` | `XHkBO` | `src/commons/layout/components/ImagePlaceholder/ImagePlaceholder.tsx` | ✅ |
+| `ImagePlaceholder` | `XHkBO` | `src/commons/other/components/ImagePlaceholder/ImagePlaceholder.tsx` | ✅ |
 | `ArticleRowSkeleton` | `M4eia` | — | ❌ |
 | `ArticleCardSkeleton` | `Pacnv` | — | ❌ |
 
