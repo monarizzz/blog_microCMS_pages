@@ -20,7 +20,7 @@ const ProjectItem = ({
   return (
     <div className="flex w-full items-center gap-18">
       <div className="flex w-full flex-col gap-[9px] py-10">
-        <span className="text-[12px] font-bold tracking-widest text-primary">
+        <span className="p-[2px] text-[12px] font-bold tracking-widest text-primary">
           {index}
         </span>
         <div className="flex w-full items-center gap-10 pt-3 pb-1">
