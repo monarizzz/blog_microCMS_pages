@@ -4,7 +4,10 @@ import nextTypescript from "eslint-config-next/typescript";
 import storybook from "eslint-plugin-storybook";
 
 const eslintConfig = [
-  { ignores: [".next/**", "node_modules/**", "storybook-static/**"] },
+  {
+    // _v2 は旧実装。tsconfig / .prettierignore でも除外済みで手を入れないため lint 対象外
+    ignores: ["_v2/**", ".next/**", "node_modules/**", "storybook-static/**"],
+  },
   ...nextCoreWebVitals,
   ...nextTypescript,
   ...storybook.configs["flat/recommended"],
