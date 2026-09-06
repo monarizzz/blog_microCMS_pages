@@ -14,12 +14,14 @@ export const Default: Story = {
   args: {
     services: [
       {
+        id: "weather-app",
         title: "天気予報アプリ",
         techStack: "Next.js / TypeScript / microCMS",
         url: "https://example.com",
         githubUrl: "https://github.com/example/weather-app",
       },
       {
+        id: "ec-site",
         title: "ECサイト",
         techStack: "Next.js / TypeScript / microCMS",
         developmentType: "Team development",
