@@ -11,12 +11,12 @@ const ImagePlaceholder = ({ label = "NO IMAGE", className }: Props) => {
   return (
     <div
       className={cn(
-        "border-outline-variant bg-surface-container-low flex h-[220px] w-full flex-col items-center justify-center gap-2.5 overflow-hidden border",
+        "flex h-[220px] w-full flex-col items-center justify-center gap-2.5 overflow-hidden border border-outline-variant bg-surface-container-low",
         className,
       )}
     >
       <ImageIcon size={30} className="text-on-surface-variant" />
-      <span className="font-mono text-2xs text-on-surface-variant tracking-[2px]">
+      <span className="font-mono text-2xs tracking-[2px] text-on-surface-variant">
         {label}
       </span>
     </div>
