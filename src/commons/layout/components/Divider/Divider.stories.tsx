@@ -11,3 +11,16 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const Vertical: Story = {
+  args: {
+    orientation: "vertical",
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ height: "80px" }}>
+        <Story />
+      </div>
+    ),
+  ],
+};

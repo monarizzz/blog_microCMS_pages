@@ -1,10 +1,18 @@
 type Props = {
+  orientation?: "horizontal" | "vertical";
   className?: string;
 };
 
-const Divider = ({ className }: Props) => {
+const ORIENTATION_CLASS_NAME = {
+  horizontal: "h-px w-full",
+  vertical: "h-full w-px",
+} as const;
+
+const Divider = ({ orientation = "horizontal", className }: Props) => {
   return (
-    <div className={`h-px w-full bg-outline-variant ${className ?? ""}`} />
+    <div
+      className={`${ORIENTATION_CLASS_NAME[orientation]} bg-outline-variant ${className ?? ""}`}
+    />
   );
 };
 
