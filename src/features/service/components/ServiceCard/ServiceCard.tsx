@@ -1,4 +1,6 @@
-import { ExternalLink, Image as ImageIcon } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+
+import ImagePlaceholder from "@/commons/other/components/ImagePlaceholder/ImagePlaceholder";
 
 export type ServiceCardProps = {
   title: string;
@@ -31,12 +33,9 @@ const ServiceCard = ({
             className="size-full object-cover"
           />
         ) : (
-          <div className="flex size-full flex-col items-center justify-center gap-2.5">
-            <ImageIcon size={30} className="text-on-surface-variant" />
-            <span className="font-mono text-2xs tracking-[2px] text-on-surface-variant">
-              NO IMAGE
-            </span>
-          </div>
+          // 枠と高さは親の div が持つため、ImagePlaceholder 既定の
+          // h-55 / border を打ち消して親いっぱいに広げる
+          <ImagePlaceholder className="size-full border-0" />
         )}
       </div>
       <div className="flex min-h-37.25 w-full flex-col gap-3 px-4 pb-4">
