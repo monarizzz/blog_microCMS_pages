@@ -34,6 +34,7 @@ const Bookmark = ({ href, title, url, description, thumbnailUrl }: Props) => {
             alt={title}
             width={140}
             height={104}
+            unoptimized
             className="h-full w-full object-cover"
           />
         ) : (
