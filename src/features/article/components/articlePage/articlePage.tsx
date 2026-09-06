@@ -9,7 +9,8 @@ import PageNavNum from "@/commons/navigation/components/PageNumNav/PageNumNav";
 const tag = "Next.js";
 const totalCount = 38;
 const perPage = 15;
-const totalPages = 10;
+
+const totalPages = Math.max(1, Math.ceil(totalCount / perPage));
 
 type Props = {
   currentPage?: number;
@@ -20,6 +21,7 @@ const ArticlePage = ({ currentPage = 1, sort = "new" }: Props) => {
   const page = Math.min(Math.max(currentPage, 1), totalPages);
   const start = (page - 1) * perPage + 1;
   const end = Math.min(page * perPage, totalCount);
+  const rowCount = Math.max(0, end - start + 1);
 
   return (
     <div className="mx-auto flex w-full max-w-275 flex-col gap-10 pt-28.25 pr-10 pb-24 pl-11.75">
@@ -35,7 +37,7 @@ const ArticlePage = ({ currentPage = 1, sort = "new" }: Props) => {
         </MetaText>
       </div>
       <div className="flex w-full flex-col">
-        {Array.from({ length: perPage }, (_, i) => (
+        {Array.from({ length: rowCount }, (_, i) => (
           <ContentsRow key={i} compact />
         ))}
       </div>
