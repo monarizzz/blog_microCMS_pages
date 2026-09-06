@@ -14,7 +14,7 @@ const Bookmark = ({ href, title, url, description, thumbnailUrl }: Props) => {
   return (
     <Link
       href={href}
-      className="flex w-full items-center overflow-hidden rounded-lg border border-outline-variant"
+      className="flex w-full items-stretch overflow-hidden rounded-lg border border-outline-variant"
     >
       <div className="flex w-full flex-col gap-1 p-4">
         <p className="w-full text-md font-bold break-words text-primary">
@@ -27,7 +27,7 @@ const Bookmark = ({ href, title, url, description, thumbnailUrl }: Props) => {
         )}
         <p className="text-sm text-secondary">{url}</p>
       </div>
-      <div className="flex h-[104px] w-[140px] shrink-0 items-center justify-center bg-surface-container">
+      <div className="flex min-h-[104px] w-[140px] shrink-0 items-center justify-center bg-surface-container">
         {thumbnailUrl ? (
           <Image
             src={thumbnailUrl}
