@@ -67,14 +67,14 @@
 | --- | --- | --- | --- |
 | `ArticleRow` | `D7Q2z7` | `src/commons/contents/components/ArticleRow/ArticleRow.tsx` | ✅ |
 | `ArticleRowCompact` | `JE7aw` | 同上（`compact` prop で兼用） | ✅ |
-| `Tag` | `biM87` | `src/commons/button/TagBtn/TagBtn.tsx` | ✅ |
+| `Tag` | `biM87` | `src/commons/button/components/TagBtn/TagBtn.tsx` | ✅ |
 | `SeeAllLink` | `ZRLCv` | `src/commons/other/components/SeeAllRight/SeeAllRight.tsx` | ✅ |
 | `Pagination` | `uxLwl` | `src/commons/navigation/components/PageNumNav/PageNumNav.tsx` | ✅ |
 | `ArticleThumbnail` | `N7jyll` | `src/commons/contents/components/ArticleThumbnail/ArticleThumbnail.tsx` | ✅ `ImagePlaceholder` (`XHkBO`) は未実装のためインライン化 |
 | `CategorySectionHeader` | `QSeNC` | `src/commons/contents/components/CategorySectionHeader/CategorySectionHeader.tsx` | ✅ |
 | `ArticleSectionHeading` | `RgUbK` | `src/commons/contents/components/ArticleSectionHeading/ArticleSectionHeading.tsx` | ✅ |
 
-- `src/commons/button/FilterBtn/FilterBtn.tsx` は `Tag` の `#` なし版。
+- `src/commons/button/components/FilterBtn/FilterBtn.tsx` は `Tag` の `#` なし版。
   pen 側に独立コンポーネントはなく、`Tags` ページ（group `j9tOQT`）のフィルタ行が出典。
   `Tag` を触る時は `CHIP_CLASS_NAME`（`src/commons/other/constants/chipStyle.ts`）を共有しているので巻き添えに注意。
   `ArticleListPage` のソート行（`SortRow` `vV5Py`）は未実装。選択/非選択の色は `FilterBtn` と
@@ -117,11 +117,11 @@
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
 | `SearchInput` | `Jh09L` | `src/features/search/components/SearchInput/SearchInput.tsx` | ✅ |
-| `IconButton` | `aGtFB` | `src/commons/button/IconBtn/IconBtn.tsx` | ✅ |
-| `SearchIconButton` | `k2xlJ` | `src/commons/button/SearchIconButton/SearchIconButton.tsx` | ✅ |
+| `IconButton` | `aGtFB` | `src/commons/button/components/IconBtn/IconBtn.tsx` | ✅ |
+| `SearchIconButton` | `k2xlJ` | `src/commons/button/components/SearchIconButton/SearchIconButton.tsx` | ✅ |
 | `LinkButton` | `Rl2z4` | — | ❌ |
 | `BackLink` | `r2KGU` | `src/commons/other/components/BackLink/BackLink.tsx` | ✅ |
-| `PrimaryButton` | `N3GA43` | `src/commons/button/PrimaryButton/PrimaryButton.tsx` | ✅ |
+| `PrimaryButton` | `N3GA43` | `src/commons/button/components/PrimaryButton/PrimaryButton.tsx` | ✅ |
 
 ## サービス・プロフィール
 
