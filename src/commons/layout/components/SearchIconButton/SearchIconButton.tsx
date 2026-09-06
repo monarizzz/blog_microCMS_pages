@@ -11,7 +11,7 @@ const SearchIconButton = ({ link, label = "検索" }: Props) => {
     <Link
       href={link}
       aria-label={label}
-      className="flex size-10.25 items-center justify-center rounded-full border border-outline bg-surface"
+      className="flex items-center justify-center p-2.5"
     >
       <Search size={20} className="text-primary" />
     </Link>
