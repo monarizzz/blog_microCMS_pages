@@ -23,3 +23,14 @@ export const Unchecked: Story = {
     children: "未完了のタスク",
   },
 };
+
+export const WithLink: Story = {
+  args: {
+    checked: false,
+    children: (
+      <>
+        本文に <a href="https://example.com">リンク</a> を含む項目
+      </>
+    ),
+  },
+};
