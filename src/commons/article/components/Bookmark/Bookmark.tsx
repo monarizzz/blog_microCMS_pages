@@ -17,7 +17,7 @@ const Bookmark = ({ href, title, url, description, thumbnailUrl }: Props) => {
       className="flex w-full items-center overflow-hidden rounded-lg border border-outline-variant"
     >
       <div className="flex w-full flex-col gap-1 p-4">
-        <p className="w-full truncate text-md font-bold text-primary">
+        <p className="w-full break-words text-md font-bold text-primary">
           {title}
         </p>
         {description && (
@@ -31,7 +31,7 @@ const Bookmark = ({ href, title, url, description, thumbnailUrl }: Props) => {
         {thumbnailUrl ? (
           <Image
             src={thumbnailUrl}
-            alt={title}
+            alt=""
             width={140}
             height={104}
             unoptimized
