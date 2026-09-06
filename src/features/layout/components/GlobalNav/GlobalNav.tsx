@@ -18,7 +18,9 @@ const GlobalNav = ({ pageList }: Props) => {
           {page.label}
         </Link>
       ))}
-      <Search size={20} />
+      <Link href="/search" aria-label="検索" className="text-secondary">
+        <Search size={20} />
+      </Link>
     </div>
   );
 };
