@@ -11,8 +11,10 @@ description: 全open PRを対象に、chatgpt-codex-connector[bot] のレビュ�
 
 ## 全体の流れ
 
-1. **調査**: `gh pr list --author monarizzz --state open --limit 100` で全open PRを取得
+1. **調査**: `gh pr list --state open --limit 100` で全open PRを取得
    (`--limit` の既定は30。open PRが30件を超えると黙って切り捨てられるので必ず指定する)
+   **`--author` で絞り込まない**。共同作業者やbot、fork由来のPRもcodexのレビュー対象であり、
+   絞ると恒久的に見落とす
 2. 各PRについて以下をすべて取得する。**コメント系APIは1ページ30件が既定のため `--paginate` を必ず付ける**:
    - `gh api --paginate repos/monarizzz/blog_microCMS_pages/pulls/<番号>/comments` … codexのインライン指摘
    - `gh api --paginate repos/monarizzz/blog_microCMS_pages/pulls/<番号>/reviews` … レビュー本体。
