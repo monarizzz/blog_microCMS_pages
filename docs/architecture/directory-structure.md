@@ -27,12 +27,15 @@ Next.js のファイルベースルーティングに従ったページ定義で
 
 ```text
 app/
+├── _styles/              # グローバルCSS・デザイントークン
+│   ├── globals.css
+│   └── tokens.css
 ├── article/              # 記事ページ
-├── tag/                  # タグごとの記事ページ
+├── tags/                 # タグごとの記事ページ
 ├── service/              # サービスページ
 ├── profile/              # プロフィールページ
 ├── search/               # 検索ページ
-├── layout.tsx            
+├── layout.tsx
 ├── not-found.tsx         # 404エラーページ
 └── page.tsx              # ホームページ
 ```
@@ -44,11 +47,11 @@ app/
 
 ##### 共通のディレクトリ構造
 
-3 つのディレクトリすべてが以下の統一された構造を持ちます：
+どちらのディレクトリも以下の統一された構造を持ちます：
 
 ```text
-commons/ または features/ または libs/
-├── [機能名 or ライブラリ名]/
+commons/ または features/
+├── [機能名]/
 │   ├── components/      # React コンポーネント（[詳細なコンポーネント構造ルール](./component-structure.md)）
 │   ├── hooks/           # カスタムフック
 │   ├── types/           # TypeScript 型定義
@@ -70,9 +73,13 @@ commons/ または features/ または libs/
 
 ```text
 commons/
-├── date/                 # 日付処理関連
-├── layout/               # レイアウト関連
-└── ... (その他多数)      # 必要に応じて追加・削除される
+├── button/               # ボタン関連
+├── contents/             # 記事一覧などのコンテンツ表示
+├── contentsDetail/       # コンテンツ詳細表示
+├── navigation/           # ナビゲーション
+├── other/                # 上記に分類されない共通要素
+├── profile/              # プロフィール関連
+└── service/              # サービス関連
 ```
 
 ##### `/src/features` - 特定ページ専用ファイル
@@ -89,16 +96,24 @@ commons/
 
 ```text
 features/
-├── blog/            # /blog/[slug] ページ専用
+├── article/                    # /article/[slug] ページ専用
+│   └── components/
+│       └── articlePage/        # 記事ページのメインコンポーネント
+├── layout/                     # 全ページ共通のレイアウト
 │   ├── components/
-│   │   ├── Toc/        # 記事ページの目次コンポーネント
-│   │   ├── PostDate/   # 記事ページの投稿日表示
-│   │   ├── PageNav/    # 記事ページのページナビゲーション
-│   │   └── BlogPageMain/  # 記事ページのメインコンポーネント
-│   └── utils/
-│       └── pageNavList.ts    # 記事ページのナビゲーションリスト生成
-└── home/               # / (ホーム) ページ専用
-    └── components/     # ホームページ専用コンポーネント
+│   │   ├── Header/
+│   │   ├── GlobalNav/
+│   │   ├── Footer/
+│   │   └── LayoutMain/
+│   └── constants/
+├── search/                     # /search ページ専用
+│   ├── components/
+│   │   ├── SearchInput/
+│   │   └── SearchPageMain/
+│   └── constants/
+└── tags/                       # /tags ページ専用
+    └── components/
+        └── TagsPageMain/
 ```
 
 #### `/src/infra` - インフラストラクチャ層
@@ -107,10 +122,12 @@ features/
 
 ```text
 infra/
-└── microCMS/
-    ├── api/              # データアクセス関数
-    ├── schema/           # エンティティ定義
-    └── client.ts
+├── microCMS/
+│   ├── api/              # データアクセス関数
+│   ├── schema/           # エンティティ定義
+│   └── client.ts
+└── Tailwind/
+    └── cn.ts             # クラス名結合ユーティリティ
 ```
 
 ### その他の主要ディレクトリ
@@ -121,9 +138,11 @@ infra/
 
 ```text
 docs/
-└── architecture/         # アーキテクチャドキュメント
-    ├── README.md         # アーキテクチャ概要
-    └── directory-structure.md    # ディレクトリ構造（このドキュメント）
+├── README.md                     # ドキュメント全体の入口
+└── architecture/                 # アーキテクチャドキュメント
+    ├── directory-structure.md    # ディレクトリ構造（このドキュメント）
+    ├── component-structure.md    # コンポーネント構造ルール
+    └── data-model.md             # データモデル
 ```
 
 #### `/public` - 静的ファイル
@@ -132,5 +151,6 @@ Next.js の静的ファイル配信用ディレクトリです。
 
 ```text
 public/
-└── favicon.ico           # ファビコン
+├── favicon.ico           # ファビコン
+└── *.svg                 # アイコン類（arrow / callout / home / update など）
 ```
