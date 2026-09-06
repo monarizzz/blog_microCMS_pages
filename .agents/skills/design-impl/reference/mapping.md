@@ -97,7 +97,7 @@
 | `ArticleH2` | `sSgdW` | `src/commons/article/components/ArticleH2/ArticleH2.tsx` | ✅ |
 | `ArticleH3` | `v0Atx` | `src/commons/article/components/ArticleH3/ArticleH3.tsx` | ✅ |
 | `Callout` | `KaNJF` | — | ❌ ※ `$ac-*-bg` が実装側に無い。token-map.md 参照 |
-| `Quote` | `xR0ql` | — | ❌ |
+| `Quote` | `xR0ql` | `src/commons/article/components/Quote/Quote.tsx` | ✅ |
 | `BulletItem` | `eQqNb` | `src/commons/article/components/BulletItem/BulletItem.tsx` | ✅ |
 | `NumberItem` | `c3XVs` | `src/commons/article/components/NumberItem/NumberItem.tsx` | ✅ |
 | `Checkbox` | `D1pbg` | — | ❌ |
@@ -164,6 +164,6 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` `InfoLabel` `Divider` `ImagePlaceholder`
 2. **ボタン類** — `LinkButton` `BackLink` `SearchIconButton`
 3. **記事一覧の残り** — `ArticleThumbnail` `ArticleSectionHeading`
-4. **記事本文** — `Quote` → `Callout` `CodeBlock` `Table` `Bookmark`（`ArticleH1`〜`H3` は実装済み）
+4. **記事本文** — `Callout` `CodeBlock` `Table` `Bookmark`（`ArticleH1`〜`H3` / `Quote` は実装済み）
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）
