@@ -9,7 +9,7 @@ type Props = {
   compact?: boolean;
 };
 
-const ArticleRow = ({ compact }: Props) => {
+const ContentsRow = ({ compact }: Props) => {
   const tags = (
     <div className="flex gap-2">
       {tagList.map((tag) => (
@@ -44,4 +44,4 @@ const ArticleRow = ({ compact }: Props) => {
   );
 };
 
-export default ArticleRow;
+export default ContentsRow;

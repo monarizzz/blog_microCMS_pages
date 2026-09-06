@@ -1,4 +1,4 @@
-import ArticleRow from "@/commons/contents/components/ArticleRow/ArticleRow";
+import ContentsRow from "@/commons/contents/components/ContentsRow/ContentsRow";
 import BackLink from "@/commons/other/components/BackLink/BackLink";
 import FilterBtn from "@/commons/button/components/FilterBtn/FilterBtn";
 import MetaText from "@/commons/other/components/MetaText/MetaText";
@@ -35,7 +35,7 @@ const ArticlePage = ({ currentPage = 1, sort = "new" }: Props) => {
       </div>
       <div className="flex w-full flex-col">
         {Array.from({ length: perPage }, (_, i) => (
-          <ArticleRow key={i} compact />
+          <ContentsRow key={i} compact />
         ))}
       </div>
       <div className="flex items-center justify-center gap-2 pt-6">
