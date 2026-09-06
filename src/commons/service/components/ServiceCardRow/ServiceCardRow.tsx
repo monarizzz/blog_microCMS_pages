@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-
 import ServiceCard, {
   type ServiceCardProps,
 } from "@/commons/service/components/ServiceCard/ServiceCard";
@@ -10,18 +8,21 @@ export type ServiceCardRowItem = ServiceCardProps & {
 };
 
 type Props = {
+  /** 1 行あたり最大 2 件。3 件以上渡してもカラムは 2 つのまま溢れる */
   services: ServiceCardRowItem[];
 };
 
 const ServiceCardRow = ({ services }: Props) => {
+  const [first, second] = services;
+
   return (
-    <div className="flex w-full gap-8 px-5">
-      {services.map(({ id, ...service }, index) => (
-        <Fragment key={id}>
-          {index > 0 && <div className="w-px shrink-0 bg-outline-variant" />}
-          <ServiceCard {...service} />
-        </Fragment>
-      ))}
+    // 1 件のときもカード幅を 2 件のときと揃えるため、カラムを固定した grid にする。
+    // flex だとカードの flex-1 が伸びて 1 件のとき横幅いっぱいになってしまう
+    <div className="grid w-full grid-cols-[1fr_1px_1fr] gap-8 px-5">
+      {first && <ServiceCard {...first} />}
+      {/* 縦線は 2 件目があるときだけ引く。1 件のときは右カラムが空白になる */}
+      {second && <div className="bg-outline-variant" />}
+      {second && <ServiceCard {...second} />}
     </div>
   );
 };
