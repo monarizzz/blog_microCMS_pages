@@ -143,8 +143,12 @@ jobs:
         run: npx playwright install-deps chromium
       - run: npm run test:storybook
 
-  # NOTE: 一旦停止中。src/**/*.test.ts のテスト自体は存在し全て通る状態のため、
-  #       CI ジョブの整理をするタイミングでコメントアウトを外す。
+  # NOTE: 停止中。上の storybook-test とは別物で、こちらは vitest の node
+  #       プロジェクト (src/**/*.test.ts) を対象にする。
+  #       ただし該当ファイルは現在 0 件で、有効化すると vitest が
+  #       「テストが 1 件も無い」として exit 1 で落ちるため外せない。
+  #       (以前ここに書かれていた「テスト自体は存在し全て通る状態」は誤り)
+  #       node プロジェクト向けのテストを書くタイミングで復活させる。
   # test:
   #   name: Run Vitest
   #   runs-on: ubuntu-latest
