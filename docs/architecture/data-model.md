@@ -103,8 +103,8 @@ erDiagram
 | フィールド | 型 | 必須 | 説明 |
 |---|---|---|---|
 | `title` | text | ✓ | 記事タイトル |
-| `content` | richtext | ✓ | 本文 |
 | `tags` | 複数参照(tags) | ✓ | トピック＋技術。`#` 表示 |
+| `content` | richtext | ✓ | 本文 |
 
 ※ microCMS標準の `id` / `publishedAt` / `updatedAt` は自動付与のため上表には含めない。並び順や「新着」表示は `publishedAt` を利用。
 ※ 一覧カード・検索・SEO用に **`eyecatch`（image）/ `description`（text 抜粋）/ `slug`（text）** の追加を要検討（デザインの一覧・検索画面で必要になる想定）。
@@ -113,7 +113,7 @@ erDiagram
 | フィールド | 型 | 必須 | 説明 |
 |---|---|:---:|---|
 | `name` | text | ✓ | 使用する名称 |
-| `type` | select(`技術` / `トピック`) | ✓ | 仕分け用。未設定だと横断検索から漏れるため必須 |
+| `type` | select(`トピック` / `言語` / `フレームワーク` / `ライブラリ` / `その他・ツール類`) | ✓ | 仕分け用。未設定だと横断検索から漏れるため必須 |
 
 ### experiences
 | フィールド | 型 | 必須 | 説明 |
@@ -123,13 +123,13 @@ erDiagram
 | `hasDetailPage` | boolean | | 詳細ページ（Service Detail）を生成するか。初期値OFF。一覧表示はMicroCMS標準の下書き/公開で制御するため本フラグとは無関係 |
 | `summary` | text | | 一言解説（カード・冒頭に出す短い説明）。`description`とは別 |
 | `description` | text | | 開発の詳細（本文） |
-| `heroImage` | image | | 詳細ページ上部のメインビジュアル画像 |
+| `heroImage` | list | | 詳細ページ上部のメインビジュアル画像（複数可能） |
 | `tags` | 複数参照(tags) | | 技術スタック |
 | `startDate` | date | ✓ | 開始日。並び替えの基準 |
 | `endDate` | date | | 終了日。期間表示に使う |
 | `periodLabel` | text | | 上記の日付の隣に添える一言（`約2週間` / `（現在開発中）` など・空欄可） |
 | `role` | text | | 役割 |
-| `url` | text | | 外部リンク |
+| `url` | 繰り返し(カスタムフィールド`url`) | | 外部リンク。複数登録可 |
 
 ### profile（単一オブジェクト・1件のみ）
 | フィールド | 型 | 必須 | 説明 |
