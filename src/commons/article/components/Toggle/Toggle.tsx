@@ -29,9 +29,9 @@ const Toggle = ({ summary, children, defaultOpen = false }: Props) => {
         <span className="text-md font-bold text-primary">{summary}</span>
       </button>
       {open && (
-        <p className="w-full text-md leading-normal text-on-surface">
+        <div className="w-full text-md leading-normal text-on-surface">
           {children}
-        </p>
+        </div>
       )}
     </div>
   );
