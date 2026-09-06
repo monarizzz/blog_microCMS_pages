@@ -24,12 +24,15 @@ export const Open: Story = {
   },
 };
 
-export const WithLink: Story = {
+// summary が ReactNode を受け取れることを示すストーリー。
+// リンクやボタンなどフォーカス可能な要素は <summary> の中に置けないため
+// (nested-interactive / Enter キーでの開閉が壊れる)、装飾要素で示す。
+export const WithRichSummary: Story = {
   args: {
     ...Default.args,
     summary: (
       <>
-        <a href="https://example.com">リンク</a> を含む見出し
+        <code>Toggle</code> を含む見出し
       </>
     ),
   },
