@@ -30,7 +30,7 @@ const ServicePage = () => {
         wide
         title="Service"
         sub="これまでに開発したプロダクトと制作物のまとめ。"
-        count="6 プロジェクト"
+        count={`${rows.length * 2} プロジェクト`}
       />
       <div className="flex flex-col gap-6">
         <div className="h-[13px] border-b border-outline-variant" />
