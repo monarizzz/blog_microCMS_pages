@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Paragraph = ({ children }: Props) => {
-  return <p className="text-md leading-relaxed">{children}</p>;
+  return <p className="text-md/relaxed">{children}</p>;
 };
 
 export default Paragraph;

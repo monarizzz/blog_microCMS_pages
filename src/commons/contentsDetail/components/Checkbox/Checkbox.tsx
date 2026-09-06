@@ -10,14 +10,14 @@ const Checkbox = ({ checked, children }: Props) => {
   return (
     <div className="flex items-center gap-4">
       <span
-        className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-sm border-outline ${
+        className={`flex size-5 shrink-0 items-center justify-center rounded-sm border-outline ${
           checked ? "border bg-primary" : "border-[1.5px] bg-surface"
         }`}
       >
         {checked && (
           <Check
             aria-hidden
-            className="h-3.5 w-3.5 text-on-primary"
+            className="size-3.5 text-on-primary"
             strokeWidth={3}
           />
         )}

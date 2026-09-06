@@ -19,12 +19,12 @@ const ProjectItem = ({
 }: Props) => {
   return (
     <div className="flex w-full items-center gap-18">
-      <div className="flex w-full flex-col gap-[9px] py-10">
-        <span className="p-[2px] text-[12px] font-bold tracking-widest text-primary">
+      <div className="flex w-full flex-col gap-2.25 py-10">
+        <span className="p-0.5 text-[12px] font-bold tracking-widest text-primary">
           {index}
         </span>
         <div className="flex w-full items-center gap-10 pt-3 pb-1">
-          <div className="flex items-center gap-[17px]">
+          <div className="flex items-center gap-4.25">
             <span className="text-lg font-bold tracking-wider text-primary">
               {title}
             </span>

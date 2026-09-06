@@ -40,8 +40,8 @@ const PageHeader = ({
         <p
           className={
             wide
-              ? "w-[560px] max-w-full text-base leading-relaxed text-on-surface-variant"
-              : "text-md leading-relaxed text-on-surface-variant"
+              ? "w-140 max-w-full text-base/relaxed text-on-surface-variant"
+              : "text-md/relaxed text-on-surface-variant"
           }
         >
           {sub}

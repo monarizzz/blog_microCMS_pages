@@ -21,7 +21,7 @@ const ArticlePage = ({ currentPage = 1, sort = "new" }: Props) => {
   const end = Math.min(currentPage * perPage, totalCount);
 
   return (
-    <div className="mx-auto flex w-full max-w-[1100px] flex-col gap-10 pt-[113px] pr-10 pb-24 pl-[47px]">
+    <div className="mx-auto flex w-full max-w-275 flex-col gap-10 pt-28.25 pr-10 pb-24 pl-11.75">
       <BackLink text="Tags へ" link="/tags" />
       <PageHeader compact title={`#${tag}`} count={`${totalCount} 記事`} />
       <div className="flex items-center justify-between border-b border-outline-variant pb-4">

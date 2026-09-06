@@ -8,7 +8,7 @@ type Props = {
 
 const ArticleThumbnail = ({ src, alt = "" }: Props) => {
   return (
-    <div className="relative h-[180px] w-full overflow-hidden border border-outline-variant bg-surface-container-low">
+    <div className="relative h-45 w-full overflow-hidden border border-outline-variant bg-surface-container-low">
       {src ? (
         <NextImage
           src={src}
@@ -18,7 +18,7 @@ const ArticleThumbnail = ({ src, alt = "" }: Props) => {
           className="object-cover"
         />
       ) : (
-        <div className="flex h-full w-full flex-col items-center justify-center gap-2.5">
+        <div className="flex size-full flex-col items-center justify-center gap-2.5">
           <NoImgIcon size={30} className="text-on-surface-variant" />
           <span className="font-mono text-2xs tracking-[2px] text-on-surface-variant">
             NO IMAGE
