@@ -1,6 +1,6 @@
 import ServiceCard, {
   type ServiceCardProps,
-} from "@/commons/service/components/ServiceCard/ServiceCard";
+} from "@/features/service/components/ServiceCard/ServiceCard";
 
 export type ServiceCardRowItem = ServiceCardProps & {
   /** 一意で安定した ID。title は重複しうるため key には使わない */
