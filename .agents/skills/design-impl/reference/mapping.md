@@ -103,7 +103,7 @@
 | `Checkbox` | `D1pbg` | — | ❌ |
 | `Toggle` | `HbAE1` | — | ❌ |
 | `Divider` | `Ar2tj` | `src/commons/layout/components/Divider/Divider.tsx` | ✅ |
-| `CodeBlock` | `qvMsD` | — | ❌ |
+| `CodeBlock` | `qvMsD` | `src/commons/article/components/CodeBlock/CodeBlock.tsx` | ✅ |
 | `Table` | `Y1rfsy` | `src/commons/article/components/Table/Table.tsx` | ✅ |
 | `Bookmark` | `A4rGR` | — | ❌ |
 
@@ -164,6 +164,6 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` ~~`InfoLabel`~~（実装済み） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
 2. **ボタン類** — `LinkButton` `BackLink` ~~`SearchIconButton`~~（実装済み）
 3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（実装済み） `ArticleSectionHeading`
-4. **記事本文** — `Callout` `CodeBlock` `Bookmark`（`ArticleH1`〜`H3` / `Quote` / `BulletItem` / `NumberItem` / `Table` は実装済み）
+4. **記事本文** — `Callout` `Bookmark`（`ArticleH1`〜`H3` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` は実装済み）
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）
