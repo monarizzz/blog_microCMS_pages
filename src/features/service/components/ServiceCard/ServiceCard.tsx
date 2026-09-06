@@ -13,7 +13,7 @@ const ServiceCard = ({ title, role, stack, url, github }: Props) => {
     <div className="flex h-[362px] w-full flex-col items-center gap-7 border border-outline-variant bg-surface">
       <div className="flex h-[180px] w-full flex-col items-center justify-center gap-2.5 border border-outline-variant bg-surface-container-low">
         <ImageIcon size={30} className="text-on-surface-variant" />
-        <span className="font-mono text-2xs tracking-widest text-on-surface-variant">
+        <span className="font-mono text-2xs tracking-[2px] text-on-surface-variant">
           NO IMAGE
         </span>
       </div>
