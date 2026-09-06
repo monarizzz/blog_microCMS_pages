@@ -17,8 +17,9 @@ type Props = {
 };
 
 const ArticlePage = ({ currentPage = 1, sort = "new" }: Props) => {
-  const start = (currentPage - 1) * perPage + 1;
-  const end = Math.min(currentPage * perPage, totalCount);
+  const page = Math.min(Math.max(currentPage, 1), totalPages);
+  const start = (page - 1) * perPage + 1;
+  const end = Math.min(page * perPage, totalCount);
 
   return (
     <div className="mx-auto flex w-full max-w-275 flex-col gap-10 pt-28.25 pr-10 pb-24 pl-11.75">
@@ -39,7 +40,11 @@ const ArticlePage = ({ currentPage = 1, sort = "new" }: Props) => {
         ))}
       </div>
       <div className="flex items-center justify-center gap-2 pt-6">
-        <PageNavNum currentPage={currentPage} totalPages={totalPages} />
+        <PageNavNum
+          currentPage={page}
+          totalPages={totalPages}
+          basePath="/article"
+        />
       </div>
     </div>
   );
