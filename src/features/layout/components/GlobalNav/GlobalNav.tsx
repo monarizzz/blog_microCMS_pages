@@ -1,5 +1,5 @@
-import { Search } from "lucide-react";
 import Link from "next/link";
+import SearchIconButton from "@/commons/button/components/SearchIconButton/SearchIconButton";
 import { pageList } from "../../constants/pageList";
 
 type Props = {
@@ -18,9 +18,7 @@ const GlobalNav = ({ pageList }: Props) => {
           {page.label}
         </Link>
       ))}
-      <Link href="/search" aria-label="検索" className="text-secondary">
-        <Search size={20} />
-      </Link>
+      <SearchIconButton link="/search" />
     </div>
   );
 };
