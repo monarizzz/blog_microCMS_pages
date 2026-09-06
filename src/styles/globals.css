@@ -60,6 +60,19 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
+    /* デザインリニューアル(v3)の色ロール。
+       値は design/v3/design-tokens.css の neutral スケール・ロール定義と一致させる。
+       まだ移行途中のため、実装で使われた分だけここに足している。
+       段階名(neutral-N)ではなくロール名(surface-container-low 等)を
+       Tailwind のユーティリティ名として使うこと */
+    --color-neutral-100: #f0f2f4;
+    --color-neutral-200: #dadfe2;
+    --color-neutral-600: #636a6f;
+
+    --color-surface-container-low: var(--color-neutral-100);
+    --color-on-surface-variant: var(--color-neutral-600);
+    --color-outline-variant: var(--color-neutral-200);
   }
   .dark {
     --background: 222.2 84% 4.9%;

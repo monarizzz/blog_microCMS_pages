@@ -47,6 +47,10 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        // デザインリニューアル(v3)の色ロール。値は src/styles/globals.css で定義
+        "surface-container-low": "var(--color-surface-container-low)",
+        "on-surface-variant": "var(--color-on-surface-variant)",
+        "outline-variant": "var(--color-outline-variant)",
       },
       fontSize: {
         "2xs": "0.6875rem",
