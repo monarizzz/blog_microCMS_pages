@@ -161,7 +161,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 依存の少ないものから。上ほど先。
 
-1. **葉のパーツ** — `SectionLabel` `MetaText` `InfoLabel` `Divider` `ImagePlaceholder`
+1. **葉のパーツ** — `SectionLabel` `MetaText` `InfoLabel` `Divider` ~~`ImagePlaceholder`~~（実装済み）
 2. **ボタン類** — `LinkButton` `BackLink` `SearchIconButton`
 3. **記事一覧の残り** — `ArticleThumbnail` `ArticleSectionHeading`
 4. **記事本文** — `ArticleH1`〜`H3` → `Quote` → `Callout` `CodeBlock` `Table` `Bookmark`
