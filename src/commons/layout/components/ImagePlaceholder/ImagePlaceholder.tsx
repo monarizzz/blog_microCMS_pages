@@ -1,6 +1,6 @@
 import { Image as ImageIcon } from "lucide-react";
 
-import { cn } from "@/commons/utils/cn";
+import { cn } from "@/infra/Tailwind/cn";
 
 type Props = {
   label?: string;
