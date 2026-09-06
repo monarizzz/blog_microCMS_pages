@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-
 import Toggle from "./Toggle";
 
 const meta = {
@@ -20,9 +19,18 @@ export const Default: Story = {
 
 export const Open: Story = {
   args: {
-    summary: "詳細を表示する",
-    children:
-      "展開すると隠れていた本文が表示されます。折りたたみ可能なブロックとして補足情報の格納に便利です。",
+    ...Default.args,
     defaultOpen: true,
+  },
+};
+
+export const WithLink: Story = {
+  args: {
+    ...Default.args,
+    summary: (
+      <>
+        <a href="https://example.com">リンク</a> を含む見出し
+      </>
+    ),
   },
 };
