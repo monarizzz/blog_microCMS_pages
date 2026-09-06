@@ -11,6 +11,8 @@ const ORIENTATION_CLASS_NAME = {
 const Divider = ({ orientation = "horizontal", className }: Props) => {
   return (
     <div
+      role="separator"
+      aria-orientation={orientation}
       className={`${ORIENTATION_CLASS_NAME[orientation]} bg-outline-variant ${className ?? ""}`}
     />
   );
