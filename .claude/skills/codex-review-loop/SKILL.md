@@ -11,12 +11,19 @@ description: 全open PRを対象に、chatgpt-codex-connector[bot] のレビュ�
 
 ## 全体の流れ
 
-1. **調査**: `gh pr list --author monarizzz --state open` で全open PRを取得
-2. 各PRについて `gh api repos/monarizzz/blog_microCMS_pages/pulls/<番号>/comments` でcodexの指摘コメント、
-   `gh api repos/monarizzz/blog_microCMS_pages/issues/<番号>/comments` で人間の対応コメント・`@codex`メンション有無を確認
-3. 状態を分類する:
-   - 指摘なし(codexコメント0件) → 対象外
-   - 指摘あり・未対応(人間の対応コメント/push が無い) → **修正対象**
+1. **調査**: `gh pr list --author monarizzz --state open --limit 100` で全open PRを取得
+   (`--limit` の既定は30。open PRが30件を超えると黙って切り捨てられるので必ず指定する)
+2. 各PRについて以下をすべて取得する。**コメント系APIは1ページ30件が既定のため `--paginate` を必ず付ける**:
+   - `gh api --paginate repos/monarizzz/blog_microCMS_pages/pulls/<番号>/comments` … codexのインライン指摘
+   - `gh api --paginate repos/monarizzz/blog_microCMS_pages/pulls/<番号>/reviews` … レビュー本体。
+     codexが「指摘なし」や承認をレビュー本体だけで返すケースがあり、インラインコメント0件でも
+     ここに最新の応答が入っている。返信済み/待機中の判別にはこちらが必要
+   - `gh api --paginate repos/monarizzz/blog_microCMS_pages/issues/<番号>/comments` … 人間の対応コメント・`@codex`メンション有無
+   - `gh pr view <番号> --json headRefOid,commits` … 指摘後にpushされたコミットの有無。
+     人間がコメントを残さずpushで対応した場合、コメントだけ見ると未対応に誤分類してしまう
+3. 状態を分類する。**指摘の日時と、その後のコミット日時・コメント日時を時系列で突き合わせる**こと:
+   - 指摘なし(codexのインラインコメント・レビュー本体のいずれにも指摘が無い) → 対象外
+   - 指摘あり・未対応(指摘より後の対応コメントもコミットも無い) → **修正対象**
    - 指摘あり・対応済みだが `@codex` 未送信 → **再レビュー依頼のみ**
    - `@codex` 送信済み・返信待ち → 監視継続
    - codexから承認/追加指摘の返信あり → 追加指摘なら再度2から、承認なら完了
