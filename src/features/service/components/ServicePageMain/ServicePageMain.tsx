@@ -11,6 +11,7 @@ const services: ServiceCardRowItem[] = [
     id: "blog",
     title: "技術ブログ",
     techStack: "Next.js / TypeScript / microCMS",
+    developmentType: "Solo development",
     url: "https://example.com",
     githubUrl: "https://github.com/example/blog",
   },
@@ -32,6 +33,7 @@ const services: ServiceCardRowItem[] = [
     id: "portfolio",
     title: "ポートフォリオ",
     techStack: "Astro / TypeScript",
+    developmentType: "Solo development",
     url: "https://example.com",
   },
 ];

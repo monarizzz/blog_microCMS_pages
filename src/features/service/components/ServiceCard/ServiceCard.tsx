@@ -3,7 +3,7 @@ import { ExternalLink, Image as ImageIcon } from "lucide-react";
 export type ServiceCardProps = {
   title: string;
   techStack: string;
-  developmentType?: string;
+  developmentType: string;
   /** サムネイル画像の URL。未指定時は NO IMAGE のフォールバックを表示する */
   thumbnailUrl?: string;
   url?: string;
@@ -40,13 +40,11 @@ const ServiceCard = ({
         )}
       </div>
       <div className="flex min-h-37.25 w-full flex-col gap-3 px-4 pb-4">
-        {developmentType && (
-          <div className="flex w-full items-center justify-between px-0.75">
-            <span className="text-center font-mono text-2xs text-secondary">
-              {developmentType}
-            </span>
-          </div>
-        )}
+        <div className="flex w-full items-center justify-between px-0.75">
+          <span className="text-center font-mono text-2xs text-secondary">
+            {developmentType}
+          </span>
+        </div>
         <div className="flex w-full flex-col justify-center gap-3">
           {/* 使用箇所は Service 一覧（h1 "Service" の直下）だけなので h2。
               h3 だと h1 から 1 段飛んで heading-order (axe) 違反になる。

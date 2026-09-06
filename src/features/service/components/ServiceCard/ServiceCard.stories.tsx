@@ -18,14 +18,6 @@ export const Default: Story = {
   },
 };
 
-/** developmentType・リンクを省略した場合。ラベルとリンク枠が消える */
-export const Minimal: Story = {
-  args: {
-    title: "天気予報アプリ",
-    techStack: "Next.js / TypeScript / microCMS",
-  },
-};
-
 export const WithLinks: Story = {
   args: {
     title: "ECサイト",
@@ -40,6 +32,7 @@ export const WithThumbnail: Story = {
   args: {
     title: "ポートフォリオサイト",
     techStack: "Next.js / TypeScript / Tailwind CSS",
+    developmentType: "Solo development",
     thumbnailUrl: "https://placehold.jp/440x180.png",
     url: "https://example.com",
   },
