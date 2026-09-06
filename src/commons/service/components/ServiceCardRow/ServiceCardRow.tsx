@@ -16,11 +16,10 @@ const ServiceCardRow = ({ services }: Props) => {
   const [first, second] = services;
 
   return (
-    // 1 件のときもカード幅を 2 件のときと揃えるため、カラムを固定した grid にする。
-    // flex だとカードの flex-1 が伸びて 1 件のとき横幅いっぱいになってしまう
+    // 1 件のときもカード幅を 2 件のときと揃えるため、カラムを固定した grid にする
     <div className="grid w-full grid-cols-[1fr_1px_1fr] gap-8 px-5">
       {first && <ServiceCard {...first} />}
-      {/* 縦線は 2 件目があるときだけ引く。1 件のときは右カラムが空白になる */}
+      {/* 縦線は 2 件目があるときのみ*/}
       {second && <div className="bg-outline-variant" />}
       {second && <ServiceCard {...second} />}
     </div>
