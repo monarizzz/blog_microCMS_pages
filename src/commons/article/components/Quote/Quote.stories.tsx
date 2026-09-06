@@ -17,6 +17,17 @@ export const Default: Story = {
   },
 };
 
+export const WithWorkTitle: Story = {
+  args: {
+    children: "シンプルさは究極の洗練である。",
+    cite: (
+      <>
+        レオナルド・ダ・ヴィンチ <cite>『手稿』</cite>
+      </>
+    ),
+  },
+};
+
 export const WithoutCite: Story = {
   args: {
     children: "引用元を伴わないシンプルな引用ブロック。",
