@@ -31,6 +31,7 @@
 | --- | --- | --- | --- |
 | `ArticleListPage` | `nwTBC` | `src/features/article/components/articlePage/articlePage.tsx` | ✅ ルートは `src/app/article/page.tsx` |
 | `SearchPage` | `gwtSi` | `src/features/search/components/SearchPageMain/SearchPageMain.tsx` | ✅ |
+| `Service`（トップレベル group・reusable ではない） | `olqvM` | `src/features/service/components/ServicePageMain/ServicePageMain.tsx` | ✅ ルートは `src/app/service/page.tsx` |
 | `ServiceDetailPage` | `qiFnK` | — | ❌ |
 | `Tags`（group `j9tOQT`・reusable ではない） | `wJS3A` | `src/features/tags/components/TagsPageMain/TagsPageMain.tsx` | ✅ ルートは `src/app/tags/page.tsx` |
 
@@ -127,7 +128,7 @@
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ServiceCard` | `jhtzh` | `src/commons/service/components/ServiceCard/ServiceCard.tsx` | ✅ |
+| `ServiceCard` | `jhtzh` | `src/commons/service/components/ServiceCard/ServiceCard.tsx` | ✅ タイトルは `h2`（`Service` 一覧の `h1` 直下でのみ使う前提） |
 | `ServiceCardRow` | `T2ai0` | `src/commons/service/components/ServiceCardRow/ServiceCardRow.tsx` | ✅ |
 | `ProjectItem` | `XiMk9` | `src/commons/profile/components/ProjectItem/ProjectItem.tsx` | ✅ |
 | `InfoRow` | `Nle6p` | `src/commons/service/components/InfoRow/InfoRow.tsx` | ✅ 内部の `InfoLabel`(`PHZV0`)は独立コンポーネント化せず内包 |
@@ -166,5 +167,5 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 2. **ボタン類** — `LinkButton` `BackLink` ~~`SearchIconButton`~~（実装済み）
 3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（実装済み） ~~`ArticleSectionHeading`~~（実装済み）
 4. **記事本文** — `Callout`（`ArticleH1`〜`H3` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` / `Bookmark` は実装済み）
-5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
+5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み） ~~`Service`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）

@@ -1,13 +1,12 @@
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
+import ServicePageMain from "@/features/service/components/ServicePageMain/ServicePageMain";
 
-const Home = () => {
+const Service = () => {
   return (
-    <>
-      <LayoutMain>
-        <>Service page</>
-      </LayoutMain>
-    </>
+    <LayoutMain>
+      <ServicePageMain />
+    </LayoutMain>
   );
 };
 
-export default Home;
+export default Service;
