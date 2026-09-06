@@ -18,7 +18,7 @@ const ServiceCard = ({
   githubUrl,
 }: ServiceCardProps) => {
   return (
-    <div className="flex w-full flex-col items-center gap-7 border border-outline-variant bg-surface">
+    <div className="flex w-full flex-1 flex-col items-center gap-7 border border-outline-variant bg-surface">
       <div className="relative h-[180px] w-full overflow-hidden border-b border-outline-variant bg-surface-container-low">
         {thumbnailUrl ? (
           // eslint-disable-next-line @next/next/no-img-element
@@ -50,7 +50,7 @@ const ServiceCard = ({
             <p className="w-[230px] text-center font-mono text-[12px] text-secondary">
               {techStack}
             </p>
-            <div className="flex w-[124px] items-center justify-center border-t border-outline-variant pt-1">
+            <div className="flex w-[124px] items-center justify-center border border-outline-variant pt-1">
               <div className="flex items-center gap-4">
                 {url && (
                   <a
