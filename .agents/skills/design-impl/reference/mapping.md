@@ -31,6 +31,7 @@
 | --- | --- | --- | --- |
 | `ArticleListPage` | `nwTBC` | `src/features/article/components/articlePage/articlePage.tsx` | ✅ ルートは `src/app/article/page.tsx` |
 | `SearchPage` | `gwtSi` | `src/features/search/components/SearchPageMain/SearchPageMain.tsx` | ✅ |
+| `Service`（トップレベル group・reusable ではない） | `olqvM` | `src/features/service/components/ServicePageMain/ServicePageMain.tsx` | ✅ ルートは `src/app/service/page.tsx` |
 | `ServiceDetailPage` | `qiFnK` | — | ❌ |
 | `Tags`（group `j9tOQT`・reusable ではない） | `wJS3A` | `src/features/tags/components/TagsPageMain/TagsPageMain.tsx` | ✅ ルートは `src/app/tags/page.tsx` |
 
@@ -166,5 +167,5 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 2. **ボタン類** — `LinkButton` `BackLink` ~~`SearchIconButton`~~（実装済み）
 3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（実装済み） ~~`ArticleSectionHeading`~~（実装済み）
 4. **記事本文** — `Callout`（`ArticleH1`〜`H3` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` / `Bookmark` は実装済み）
-5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
+5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み） ~~`Service`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）
