@@ -69,7 +69,7 @@
 | `SeeAllLink` | `ZRLCv` | `src/commons/layout/components/SeeAllRight/SeeAllRight.tsx` | ✅ |
 | `Pagination` | `uxLwl` | `src/commons/pageNav/components/pageNavNum/pageNavNum.tsx` | ✅ |
 | `ArticleThumbnail` | `N7jyll` | — | ❌ |
-| `CategorySectionHeader` | `QSeNC` | — | ❌ |
+| `CategorySectionHeader` | `QSeNC` | `src/commons/article/components/CategorySectionHeader/CategorySectionHeader.tsx` | ✅ |
 | `ArticleSectionHeading` | `RgUbK` | — | ❌ |
 
 - `src/commons/layout/components/FilterBtn/FilterBtn.tsx` は `Tag` の `#` なし版。
@@ -162,7 +162,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 1. **葉のパーツ** — `SectionLabel` `MetaText` `InfoLabel` `Divider` `ImagePlaceholder`
 2. **ボタン類** — `PrimaryButton` `LinkButton` `BackLink` `SearchIconButton`
-3. **記事一覧の残り** — `ArticleThumbnail` `Pagination` `CategorySectionHeader` `ArticleSectionHeading`
+3. **記事一覧の残り** — `ArticleThumbnail` `ArticleSectionHeading`
 4. **記事本文** — `ArticleH1`〜`H3` → `Paragraph` `Quote` `BulletItem` `NumberItem` → `Callout` `CodeBlock` `Table` `Bookmark`
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）
