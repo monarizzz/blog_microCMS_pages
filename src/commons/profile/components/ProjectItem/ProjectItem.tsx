@@ -1,4 +1,4 @@
-import IconBtn from "@/commons/layout/components/IconBtn/IconBtn";
+import IconBtn from "@/commons/button/components/IconBtn/IconBtn";
 
 type Props = {
   index: string;
