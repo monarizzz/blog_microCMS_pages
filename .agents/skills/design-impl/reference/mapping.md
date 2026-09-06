@@ -32,6 +32,7 @@
 | `ArticleListPage` | `nwTBC` | `src/features/article/components/articlePage/articlePage.tsx` | ✅ ルートは `src/app/article/page.tsx` |
 | `SearchPage` | `gwtSi` | `src/features/search/components/SearchPageMain/SearchPageMain.tsx` | ✅ |
 | `ServiceDetailPage` | `qiFnK` | — | ❌ |
+| `Tags`（group `j9tOQT`・reusable ではない） | `wJS3A` | `src/features/tags/components/TagsPageMain/TagsPageMain.tsx` | ✅ ルートは `src/app/tags/page.tsx` |
 
 参考: ページ全体のデザインは reusable ではなくトップレベルの group にもある
 （`Home Page` `Article Page` `Article Detail` `Tags` `Profile` `Service` `Search` `404 Page`）。
@@ -46,7 +47,7 @@
 | `GlobalNav` | `JuCgU` | `src/features/layout/components/GlobalNav/GlobalNav.tsx` | ✅ |
 | `Logo` | `VD5vy` | — | ❌ |
 | `PageHeader` | `XEUvq` | `src/commons/layout/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` のみ |
-| `ScrollNav` | `qXMlW` | — | ❌ |
+| `ScrollNav` | `qXMlW` | `src/commons/layout/components/ScrollNav/ScrollNav.tsx` | ✅ |
 | `ScrollTopButton` | `YJxBa` | — | ❌ |
 
 - `src/features/layout/components/LayoutMain/LayoutMain.tsx` は pen に対応物なし（実装都合の骨組み）
@@ -68,8 +69,8 @@
 | `Tag` | `biM87` | `src/commons/layout/components/TagBtn/TagBtn.tsx` | ✅ |
 | `SeeAllLink` | `ZRLCv` | `src/commons/layout/components/SeeAllRight/SeeAllRight.tsx` | ✅ |
 | `Pagination` | `uxLwl` | `src/commons/pageNav/components/pageNavNum/pageNavNum.tsx` | ✅ |
-| `ArticleThumbnail` | `N7jyll` | — | ❌ |
-| `CategorySectionHeader` | `QSeNC` | — | ❌ |
+| `ArticleThumbnail` | `N7jyll` | `src/commons/article/components/ArticleThumbnail/ArticleThumbnail.tsx` | ✅ `ImagePlaceholder` (`XHkBO`) は未実装のためインライン化 |
+| `CategorySectionHeader` | `QSeNC` | `src/commons/article/components/CategorySectionHeader/CategorySectionHeader.tsx` | ✅ |
 | `ArticleSectionHeading` | `RgUbK` | — | ❌ |
 
 - `src/commons/layout/components/FilterBtn/FilterBtn.tsx` は `Tag` の `#` なし版。
@@ -83,27 +84,27 @@
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `SectionLabel` | `TbTSl` | — | ❌ |
-| `InfoLabel` | `PHZV0` | — | ❌ |
+| `SectionLabel` | `TbTSl` | `src/commons/layout/components/SectionLabel/SectionLabel.tsx` | ✅ |
+| `InfoLabel` | `PHZV0` | `src/commons/layout/components/InfoLabel/InfoLabel.tsx` | ✅ |
 | `MetaText` | `E2rKp` | `src/commons/layout/components/MetaText/MetaText.tsx` | ✅ |
-| `Paragraph` | `g5WYtH` | — | ❌ |
+| `Paragraph` | `g5WYtH` | `src/commons/layout/components/Paragraph/Paragraph.tsx` | ✅ |
 
 ## 記事本文（リッチエディタ由来の要素）
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ArticleH1` | `Y5MxdQ` | — | ❌ |
-| `ArticleH2` | `sSgdW` | — | ❌ |
-| `ArticleH3` | `v0Atx` | — | ❌ |
+| `ArticleH1` | `Y5MxdQ` | `src/commons/article/components/ArticleH1/ArticleH1.tsx` | ✅ |
+| `ArticleH2` | `sSgdW` | `src/commons/article/components/ArticleH2/ArticleH2.tsx` | ✅ |
+| `ArticleH3` | `v0Atx` | `src/commons/article/components/ArticleH3/ArticleH3.tsx` | ✅ |
 | `Callout` | `KaNJF` | — | ❌ ※ `$ac-*-bg` が実装側に無い。token-map.md 参照 |
-| `Quote` | `xR0ql` | — | ❌ |
-| `BulletItem` | `eQqNb` | — | ❌ |
-| `NumberItem` | `c3XVs` | — | ❌ |
+| `Quote` | `xR0ql` | `src/commons/article/components/Quote/Quote.tsx` | ✅ |
+| `BulletItem` | `eQqNb` | `src/commons/article/components/BulletItem/BulletItem.tsx` | ✅ |
+| `NumberItem` | `c3XVs` | `src/commons/article/components/NumberItem/NumberItem.tsx` | ✅ |
 | `Checkbox` | `D1pbg` | `src/commons/article/components/Checkbox/Checkbox.tsx` | ✅ |
 | `Toggle` | `HbAE1` | — | ❌ |
-| `Divider` | `Ar2tj` | — | ❌ |
-| `CodeBlock` | `qvMsD` | — | ❌ |
-| `Table` | `Y1rfsy` | — | ❌ |
+| `Divider` | `Ar2tj` | `src/commons/layout/components/Divider/Divider.tsx` | ✅ |
+| `CodeBlock` | `qvMsD` | `src/commons/article/components/CodeBlock/CodeBlock.tsx` | ✅ |
+| `Table` | `Y1rfsy` | `src/commons/article/components/Table/Table.tsx` | ✅ |
 | `Bookmark` | `A4rGR` | — | ❌ |
 
 これらは microCMS のリッチエディタ HTML を変換して当てる想定
@@ -116,20 +117,20 @@
 | --- | --- | --- | --- |
 | `SearchInput` | `Jh09L` | `src/features/search/components/SearchInput/SearchInput.tsx` | ✅ |
 | `IconButton` | `aGtFB` | `src/commons/layout/components/IconBtn/IconBtn.tsx` | ✅ |
-| `SearchIconButton` | `k2xlJ` | — | ❌ |
+| `SearchIconButton` | `k2xlJ` | `src/commons/layout/components/SearchIconButton/SearchIconButton.tsx` | ✅ |
 | `LinkButton` | `Rl2z4` | — | ❌ |
 | `BackLink` | `r2KGU` | `src/commons/layout/components/BackLink/BackLink.tsx` | ✅ |
-| `PrimaryButton` | `N3GA43` | — | ❌ |
+| `PrimaryButton` | `N3GA43` | `src/commons/layout/components/PrimaryButton/PrimaryButton.tsx` | ✅ |
 
 ## サービス・プロフィール
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ServiceCard` | `jhtzh` | — | ❌ |
-| `ServiceCardRow` | `T2ai0` | — | ❌ |
+| `ServiceCard` | `jhtzh` | `src/commons/service/components/ServiceCard/ServiceCard.tsx` | ✅ |
+| `ServiceCardRow` | `T2ai0` | `src/commons/service/components/ServiceCardRow/ServiceCardRow.tsx` | ✅ |
 | `ProjectItem` | `XiMk9` | — | ❌ |
 | `InfoRow` | `Nle6p` | — | ❌ |
-| `ShareBar` | `VyBtl` | — | ❌ |
+| `ShareBar` | `VyBtl` | `src/commons/layout/components/ShareBar/ShareBar.tsx` | ✅ |
 
 ## Shelf（本棚）
 
@@ -146,7 +147,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ImagePlaceholder` | `XHkBO` | — | ❌ |
+| `ImagePlaceholder` | `XHkBO` | `src/commons/layout/components/ImagePlaceholder/ImagePlaceholder.tsx` | ✅ |
 | `ArticleRowSkeleton` | `M4eia` | — | ❌ |
 | `ArticleCardSkeleton` | `Pacnv` | — | ❌ |
 
@@ -160,9 +161,9 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 依存の少ないものから。上ほど先。
 
-1. **葉のパーツ** — `SectionLabel` `MetaText` `InfoLabel` `Divider` `ImagePlaceholder`
-2. **ボタン類** — `PrimaryButton` `LinkButton` `BackLink` `SearchIconButton`
-3. **記事一覧の残り** — `ArticleThumbnail` `Pagination` `CategorySectionHeader` `ArticleSectionHeading`
-4. **記事本文** — `ArticleH1`〜`H3` → `Paragraph` `Quote` `BulletItem` `NumberItem` → `Callout` `CodeBlock` `Table` `Bookmark`
+1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` ~~`InfoLabel`~~（実装済み） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
+2. **ボタン類** — `LinkButton` `BackLink` ~~`SearchIconButton`~~（実装済み）
+3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（実装済み） `ArticleSectionHeading`
+4. **記事本文** — `Callout` `Bookmark`（`ArticleH1`〜`H3` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` は実装済み）
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）

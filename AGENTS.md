@@ -6,8 +6,8 @@
 ## 基本ルール
 
 - 必ず日本語で応答すること
-- thinkingも日本語で行うこと
 - Autoで実装する場合は、Commitまで実行しPushはユーザーが明示的に示した場合のみとする
+- force push（`git push --force` / `--force-with-lease` 等）は行わない。実行するのは、ユーザーが明示的に指示した例外的な場合のみとする
 
 ## ブランチ
 
@@ -52,6 +52,10 @@ feat FilterBtn に size prop を追加
 CHIP_CLASS_NAME を書き換えると TagBtn を巻き添えにするため、
 既定 (sm) を変えずに md を足す形にした。TagBtn の見た目は変わらない。
 ```
+
+## PRレビュー対応
+
+- PRでレビューを受けて修正したら、コメントで `@codex` をメンションすること
 
 ## worktree
 

@@ -119,20 +119,20 @@ Heading and body share one typeface, so there is no separate `heading` / `body` 
 
 ### Radius scale
 ```css
---radius-none: 0;
---radius-xs: 0.5rem; /*  8px — content blocks: code, tables, TOC */
---radius-sm: 0.75rem; /* 12px — inputs, checkboxes, chips */
---radius-md: 1rem; /* 16px — toggles, callouts */
---radius-lg: 1.5rem; /* 24px — cards */
---radius-full: 9999px; /*      — buttons, tags, pagination */
+--token-radius-none: 0;
+--token-radius-xs: 0.5rem; /*  8px — content blocks: code, tables, TOC */
+--token-radius-sm: 0.75rem; /* 12px — inputs, checkboxes, chips */
+--token-radius-md: 1rem; /* 16px — toggles, callouts */
+--token-radius-lg: 1.5rem; /* 24px — cards */
+--token-radius-full: 9999px; /*      — buttons, tags, pagination */
 ```
 
 ### Per-component variables
 ```css
---radius-input: 0.75rem;
---radius-button: 9999px;
---radius-card: 1.5rem;
---radius-badge: 9999px;
+--token-radius-input: 0.75rem;
+--token-radius-button: 9999px;
+--token-radius-card: 1.5rem;
+--token-radius-badge: 9999px;
 ```
 
 ## Shadow / Elevation
@@ -162,17 +162,17 @@ Heading and body share one typeface, so there is no separate `heading` / `body` 
 Monochrome, so a separate primary ramp would be identical at every step. Only `neutral` is defined; `primary` exists as a role. Hex is authoritative (ui.pen holds the same values); OKLCH is the derivation.
 
 ```css
---color-neutral-50: #f9fafb; /* oklch(98.5% 0.0018 240) */
---color-neutral-100: #f0f2f4; /* oklch(96%   0.0036 240) */
---color-neutral-200: #dadfe2; /* oklch(90%   0.0066 240) */
---color-neutral-300: #bfc5ca; /* oklch(82%   0.0096 240) */
---color-neutral-400: #9ea6ab; /* oklch(72%   0.0114 240) */
---color-neutral-500: #80878d; /* oklch(62%   0.012  240) */
---color-neutral-600: #636a6f; /* oklch(52%   0.0114 240) */
---color-neutral-700: #494e52; /* oklch(42%   0.0096 240) */
---color-neutral-800: #2f3336; /* oklch(32%   0.0078 240) */
---color-neutral-900: #181b1d; /* oklch(22%   0.0054 240) */
---color-neutral-950: #0a0b0d; /* oklch(15%   0.0042 240) */
+--token-color-neutral-50: #f9fafb; /* oklch(98.5% 0.0018 240) */
+--token-color-neutral-100: #f0f2f4; /* oklch(96%   0.0036 240) */
+--token-color-neutral-200: #dadfe2; /* oklch(90%   0.0066 240) */
+--token-color-neutral-300: #bfc5ca; /* oklch(82%   0.0096 240) */
+--token-color-neutral-400: #9ea6ab; /* oklch(72%   0.0114 240) */
+--token-color-neutral-500: #80878d; /* oklch(62%   0.012  240) */
+--token-color-neutral-600: #636a6f; /* oklch(52%   0.0114 240) */
+--token-color-neutral-700: #494e52; /* oklch(42%   0.0096 240) */
+--token-color-neutral-800: #2f3336; /* oklch(32%   0.0078 240) */
+--token-color-neutral-900: #181b1d; /* oklch(22%   0.0054 240) */
+--token-color-neutral-950: #0a0b0d; /* oklch(15%   0.0042 240) */
 ```
 
 ### Semantic roles
@@ -180,34 +180,34 @@ Monochrome, so a separate primary ramp would be identical at every step. Only `n
 1:1 with the variables in `ui.pen`. Implementation references these, not the numbered scale.
 
 ```css
---color-surface: var(--color-neutral-50); /* page background */
---color-surface-container-low: var(--color-neutral-100);
---color-surface-container: var(--color-neutral-200);
---color-primary: var(--color-neutral-900);
---color-secondary: var(--color-neutral-700);
---color-on-primary: var(--color-neutral-50);
---color-on-surface: var(--color-neutral-900);
---color-on-surface-variant: var(--color-neutral-600);
---color-outline: var(--color-neutral-300);
---color-outline-variant: var(--color-neutral-200);
---color-ac-success: var(--color-success-500);
---color-ac-warning: var(--color-warning-500);
---color-ac-danger: var(--color-danger-500);
---color-ac-info: var(--color-info-500);
+--token-color-surface: var(--token-color-neutral-50); /* page background */
+--token-color-surface-container-low: var(--token-color-neutral-100);
+--token-color-surface-container: var(--token-color-neutral-200);
+--token-color-primary: var(--token-color-neutral-900);
+--token-color-secondary: var(--token-color-neutral-700);
+--token-color-on-primary: var(--token-color-neutral-50);
+--token-color-on-surface: var(--token-color-neutral-900);
+--token-color-on-surface-variant: var(--token-color-neutral-600);
+--token-color-outline: var(--token-color-neutral-300);
+--token-color-outline-variant: var(--token-color-neutral-200);
+--token-color-ac-success: var(--token-color-success-500);
+--token-color-ac-warning: var(--token-color-warning-500);
+--token-color-ac-danger: var(--token-color-danger-500);
+--token-color-ac-info: var(--token-color-info-500);
 ```
 
 ### Semantic colors
 ```css
---color-success-500: oklch(60% 0.057 145);
---color-warning-500: oklch(72% 0.057 80);
---color-danger-500:  oklch(60% 0.057 25);
---color-info-500:    oklch(60% 0.057 240);
+--token-color-success-500: oklch(60% 0.057 145);
+--token-color-warning-500: oklch(72% 0.057 80);
+--token-color-danger-500:  oklch(60% 0.057 25);
+--token-color-info-500:    oklch(60% 0.057 240);
 ```
 
 ### Interaction states (derived)
 - `hover`: lightness -5%
 - `active`: lightness -10%
-- `focus`: `2px solid var(--color-primary)` with offset `2px`
+- `focus`: `2px solid var(--token-color-primary)` with offset `2px`
 - `disabled`: opacity 40%
 
 ### Dark variants
@@ -215,27 +215,27 @@ Monochrome, so a separate primary ramp would be identical at every step. Only `n
 Same ramp inverted (`dark-50` is the darkest). Not implemented yet — kept for a future dark mode, which should swap the role targets rather than rewrite call sites.
 
 ```css
---color-neutral-dark-50: #0a0b0d;
---color-neutral-dark-100: #181b1d;
---color-neutral-dark-200: #2f3336;
---color-neutral-dark-300: #494e52;
---color-neutral-dark-400: #636a6f;
---color-neutral-dark-500: #80878d;
---color-neutral-dark-600: #9ea6ab;
---color-neutral-dark-700: #bfc5ca;
---color-neutral-dark-800: #dadfe2;
---color-neutral-dark-900: #f0f2f4;
---color-neutral-dark-950: #f9fafb;
+--token-color-neutral-dark-50: #0a0b0d;
+--token-color-neutral-dark-100: #181b1d;
+--token-color-neutral-dark-200: #2f3336;
+--token-color-neutral-dark-300: #494e52;
+--token-color-neutral-dark-400: #636a6f;
+--token-color-neutral-dark-500: #80878d;
+--token-color-neutral-dark-600: #9ea6ab;
+--token-color-neutral-dark-700: #bfc5ca;
+--token-color-neutral-dark-800: #dadfe2;
+--token-color-neutral-dark-900: #f0f2f4;
+--token-color-neutral-dark-950: #f9fafb;
 ```
 
 ## Usage guidelines
 
 - Reach for a role first; drop to a numbered step only when no role fits
-- Primary actions: `var(--color-primary)`; on hover `var(--color-neutral-800)`; on active `var(--color-neutral-700)`
-- Page background: `var(--color-surface)`; body copy uses `var(--color-on-surface)`
-- Cards: `var(--radius-card)` with a `var(--color-outline-variant)` border — the design uses no shadows
-- Buttons: `var(--radius-button)`; separation comes from fill contrast, not elevation
-- Inputs: `var(--radius-input)`; focus ring uses the interaction-states spec
+- Primary actions: `var(--token-color-primary)`; on hover `var(--token-color-neutral-800)`; on active `var(--token-color-neutral-700)`
+- Page background: `var(--token-color-surface)`; body copy uses `var(--token-color-on-surface)`
+- Cards: `var(--token-radius-card)` with a `var(--token-color-outline-variant)` border — the design uses no shadows
+- Buttons: `var(--token-radius-button)`; separation comes from fill contrast, not elevation
+- Inputs: `var(--token-radius-input)`; focus ring uses the interaction-states spec
 - Body text: `var(--font-size-base)` with `var(--line-height-normal)`
 - Section spacing: `var(--space-3xl)` between major blocks
 - Stack spacing within a block: `var(--space-md)`
@@ -248,7 +248,7 @@ Same ramp inverted (`dark-50` is the darkest). Not implemented yet — kept for 
 
 - Not a component library specification — tokens only
 - Not opinionated about responsive breakpoints
-- Extend these tokens via prefixed custom properties (`--color-brand-*`), do not replace
+- Extend these tokens via prefixed custom properties (`--token-color-brand-*`), do not replace
 
 ## Change management
 
