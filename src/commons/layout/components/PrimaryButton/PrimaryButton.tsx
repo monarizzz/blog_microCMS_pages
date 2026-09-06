@@ -8,7 +8,7 @@ type Props = {
 };
 
 const CLASS_NAME =
-  "flex items-center justify-center gap-2 rounded-button bg-primary py-3.5 px-7 text-base font-medium text-on-primary";
+  "inline-flex items-center justify-center gap-2 rounded-button bg-primary py-3.5 px-7 text-base font-medium text-on-primary";
 
 const PrimaryButton = ({ label, href, onClick }: Props) => {
   const content = (
