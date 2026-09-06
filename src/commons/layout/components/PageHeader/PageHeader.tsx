@@ -39,7 +39,7 @@ const PageHeader = ({
       </h1>
       {sub &&
         (wide ? (
-          <p className="w-[560px] text-base leading-relaxed text-on-surface-variant">
+          <p className="w-[560px] max-w-full text-base leading-relaxed text-on-surface-variant">
             {sub}
           </p>
         ) : (
