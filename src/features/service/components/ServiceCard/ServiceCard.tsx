@@ -49,11 +49,11 @@ const ServiceCard = ({
           {/* 使用箇所は Service 一覧（h1 "Service" の直下）だけなので h2。
               h3 だと h1 から 1 段飛んで heading-order (axe) 違反になる。
               他の階層でも使うようになったら headingLevel prop を検討する */}
-          <h2 className="px-0.75 font-sans text-lg leading-[1.4] font-bold tracking-snug text-primary">
+          <h2 className="text-center font-sans text-lg leading-[1.4] font-bold tracking-snug text-primary">
             {title}
           </h2>
           <div className="flex flex-col gap-3 px-0.75">
-            <p className="w-full font-mono text-[12px] wrap-break-word text-secondary">
+            <p className="w-full text-center font-mono text-[12px] wrap-break-word text-secondary">
               {techStack}
             </p>
             {hasLink && (
