@@ -80,10 +80,10 @@ export default Component;
 
 ### 条件によるスタイル切り替え
 
-**`cn()`（`@/lib/utils`）を使う**
+**`cn()`（`@/infra/Tailwind/cn`）を使う**
 
 ```tsx
-import { cn } from "@/lib/utils";
+import { cn } from "@/infra/Tailwind/cn";
 
 <Link
   className={cn(
