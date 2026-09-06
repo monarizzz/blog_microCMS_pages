@@ -128,8 +128,8 @@
 | --- | --- | --- | --- |
 | `ServiceCard` | `jhtzh` | `src/commons/service/components/ServiceCard/ServiceCard.tsx` | ✅ |
 | `ServiceCardRow` | `T2ai0` | `src/commons/service/components/ServiceCardRow/ServiceCardRow.tsx` | ✅ |
-| `ProjectItem` | `XiMk9` | — | ❌ |
-| `InfoRow` | `Nle6p` | — | ❌ |
+| `ProjectItem` | `XiMk9` | `src/commons/service/components/ProjectItem/ProjectItem.tsx` | ✅ |
+| `InfoRow` | `Nle6p` | `src/commons/service/components/InfoRow/InfoRow.tsx` | ✅ 内部の `InfoLabel`(`PHZV0`)は独立コンポーネント化せず内包 |
 | `ShareBar` | `VyBtl` | `src/commons/layout/components/ShareBar/ShareBar.tsx` | ✅ |
 
 ## Shelf（本棚）
