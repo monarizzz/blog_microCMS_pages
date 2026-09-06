@@ -43,7 +43,7 @@ const ServiceCard = ({
           </span>
         </div>
         <div className="flex w-full flex-col justify-center gap-3">
-          <h3 className="text-center font-sans text-lg font-bold leading-[1.4] tracking-snug text-primary">
+          <h3 className="text-center font-sans text-lg leading-[1.4] font-bold tracking-snug text-primary">
             {title}
           </h3>
           <div className="flex flex-col gap-3 px-[3px]">
