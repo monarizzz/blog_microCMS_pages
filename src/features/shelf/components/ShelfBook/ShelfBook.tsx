@@ -13,7 +13,10 @@ type Props = {
    * 未指定なら coverText を大きく置く
    */
   coverImageUrl?: string;
-  /** 表紙に置く文字。画像が無い本の背表紙代わり。例: "小杉湯" "TS" "あ" */
+  /**
+   * 表紙に置く文字。画像が無い本の背表紙代わり。例: "小杉湯" "TS" "あ"
+   * 画像・文字ともに未指定なら title を置くため、表紙が空になることはない
+   */
   coverText?: string;
   cover?: Cover;
   coverTextSize?: CoverTextSize;
@@ -108,13 +111,14 @@ const ShelfBook = ({
             className="object-cover"
           />
         ) : (
-          coverText && (
-            <span
-              className={`text-center font-sans font-bold tracking-[1px] ${COVER_TEXT_SIZE_CLASS_NAME[coverTextSize]}`}
-            >
-              {coverText}
-            </span>
-          )
+          // 表紙文字も帯の title と同じ内容を装飾として見せるだけなので、
+          // 読み上げからは除外する。画像表紙の alt="" と揃える
+          <span
+            aria-hidden="true"
+            className={`text-center font-sans font-bold tracking-[1px] ${COVER_TEXT_SIZE_CLASS_NAME[coverTextSize]}`}
+          >
+            {coverText ?? title}
+          </span>
         )}
       </div>
       <div
