@@ -21,3 +21,10 @@ export const Range: Story = {
     children: "1–15 / 38",
   },
 };
+
+export const ExtraSmall: Story = {
+  args: {
+    children: "TECH STACK",
+    size: "xs",
+  },
+};

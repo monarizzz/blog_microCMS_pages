@@ -1,5 +1,6 @@
 import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
+import ScrollNav from "@/commons/navigation/components/ScrollNav/ScrollNav";
 import ProfilePageMain from "@/features/profile/components/ProfilePageMain/ProfilePageMain";
 
 export const metadata = buildPageMetadata({
@@ -10,9 +11,12 @@ export const metadata = buildPageMetadata({
 
 const Profile = () => {
   return (
-    <LayoutMain>
-      <ProfilePageMain />
-    </LayoutMain>
+    <>
+      <LayoutMain>
+        <ProfilePageMain />
+      </LayoutMain>
+      <ScrollNav />
+    </>
   );
 };
 
