@@ -11,3 +11,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const WithQuery: Story = {
+  args: {
+    query: "App Router",
+  },
+};
