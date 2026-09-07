@@ -4,9 +4,14 @@
   /* ========== タイポグラフィ ========== */
   /* ui.pen の font-sans / font-mono に対応。
      見出しと本文は同一書体なので、書体変数はこの 2 つだけ */
+  /* --font-noto-sans-jp / --font-jetbrains-mono は next/font が self-host したフォントの
+     変数（src/app/_styles/fonts.ts）。読み込まれていない環境では後続のローカル名・
+     フォールバックが効く */
   --font-family-sans:
-    "Noto Sans JP", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
-  --font-family-mono: "JetBrains Mono", ui-monospace, monospace;
+    var(--font-noto-sans-jp), "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+    system-ui, sans-serif;
+  --font-family-mono:
+    var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
 
   /* 基準 14px（base）・公比 1.2 の等比スケール。段名は ui.pen の変数名と 1:1 で対応する
      （2xs / sm / base / md / lg / xl / 2xl / 3xl / 4xl）。Tailwind 標準のスケールとは
