@@ -48,12 +48,11 @@ const TagsPageMain = ({ activeTag }: Props) => {
         ))}
       </div>
       <div className="flex flex-col gap-16">
-        {sections.map((category, index) => (
+        {sections.map((category) => (
           <section key={category.name} className="flex flex-col gap-2">
             <CategorySectionHeader
               name={category.name}
               count={`${category.count} 記事`}
-              anchor={index === 0}
             />
             <div className="flex w-full flex-col">
               {Array.from({ length: category.shown }, (_, i) => (
