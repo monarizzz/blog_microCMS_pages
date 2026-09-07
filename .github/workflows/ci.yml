@@ -102,7 +102,8 @@ jobs:
       - run: npm run build
         env:
           # generateStaticParams でビルド時に microCMS から記事を取得するため必須
-          API_KEY: ${{ secrets.API_KEY }}
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           DEPLOYMENT_ENVIRONMENTS: ${{ secrets.DEPLOYMENT_ENVIRONMENTS }}
 
   # Playwright の Chromium を落とす必要があり実行時間が伸びるため、他のチェックとは
