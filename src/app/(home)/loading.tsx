@@ -6,7 +6,6 @@ const HomeLoading = () => {
   return (
     <div
       role="status"
-      aria-busy
       className="mx-auto flex w-full max-w-275 flex-col gap-10 pt-28.25 pr-10 pb-24 pl-11.75"
     >
       <span className="sr-only">トップページを読み込んでいます</span>
