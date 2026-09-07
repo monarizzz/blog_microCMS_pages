@@ -9,20 +9,52 @@ import InfoLabel from "@/commons/other/components/InfoLabel/InfoLabel";
 import PageHeader from "@/commons/other/components/PageHeader/PageHeader";
 import InfoRow from "@/commons/service/components/InfoRow/InfoRow";
 
+/** LINKS の 1 行。microCMS の `Experiences.url`（繰り返しフィールド）1 要素に対応する */
+export type ServiceDetailLink = {
+  href: string;
+  /** 省略時は LinkButton の既定ラベル（サイトへ / GitHub） */
+  label?: string;
+};
+
 export type ServiceDetail = {
   title: string;
   /** Hero の Meta 行。「個人開発 · 2024 · フルスタック」の形 */
   meta?: string;
   description?: string;
   heroImageUrl?: string;
-  features: string[];
+  //TODO:機能一覧に対応する microCMS のフィールドがまだ無い。
+  // 接続フェーズで experiences 側にフィールドを足すまで空のまま呼べるよう任意にしている
+  features?: string[];
   overview?: string;
   /** 1 要素 1 行で縦に並ぶ */
-  techStack: string[];
-  periodLabel?: string;
+  techStack?: string[];
+  /**
+   * PERIOD の本体。microCMS の `startDate` / `endDate` から組み立てた期間表示。
+   * 日付の整形は呼び出し側（データ取得層）の責務にしている
+   */
+  period?: string;
+  /** `periodLabel` 相当の補足。「約2週間」「開発中」など。period の隣に括弧付きで添える */
+  periodNote?: string;
   role?: string;
-  url?: string;
-  githubUrl?: string;
+  /**
+   * 外部リンク。CMS 側は件数が可変で GitHub を判別する区分も持たないため、
+   * 配列で受け取りホスト名からアイコンを決める
+   */
+  links?: ServiceDetailLink[];
+};
+
+/** github.com 配下だけ GitHub アイコンにする。CMS にリンク種別の項目が無いための判定 */
+const iconOf = (href: string) => {
+  try {
+    const { hostname } = new URL(href);
+
+    return hostname === "github.com" || hostname.endsWith(".github.com")
+      ? ("github" as const)
+      : ("external-link" as const);
+  } catch {
+    // 相対パスなど URL として解釈できない値。アイコンは既定に倒す
+    return "external-link" as const;
+  }
 };
 
 type Props = {
@@ -45,17 +77,19 @@ const ServiceDetailMain = ({ service, shareUrl }: Props) => {
     meta,
     description,
     heroImageUrl,
-    features,
+    features = [],
     overview,
-    techStack,
-    periodLabel,
+    techStack = [],
+    period,
+    periodNote,
     role,
-    url,
-    githubUrl,
+    links = [],
   } = service;
 
-  const hasInfo = Boolean(periodLabel || role);
-  const hasLink = Boolean(url || githubUrl);
+  const periodValue = [period, periodNote && `(${periodNote})`]
+    .filter(Boolean)
+    .join(" ");
+  const hasInfo = Boolean(periodValue || role);
 
   return (
     <div className="mx-auto flex w-full max-w-257.5 flex-col gap-10 pt-37.5 pr-10 pb-24 pl-11.75">
@@ -124,17 +158,25 @@ const ServiceDetailMain = ({ service, shareUrl }: Props) => {
           )}
           {hasInfo && (
             <div className="flex w-full flex-col gap-4 border-t border-outline-variant pt-5">
-              {periodLabel && <InfoRow label="PERIOD" value={periodLabel} />}
+              {periodValue && <InfoRow label="PERIOD" value={periodValue} />}
               {role && <InfoRow label="ROLE" value={role} />}
             </div>
           )}
-          {hasLink && (
+          {links.length > 0 && (
             <div className="flex w-full flex-col gap-2.5 border-t border-outline-variant pt-5">
               <InfoLabel>LINKS</InfoLabel>
-              {githubUrl && (
-                <LinkButton href={githubUrl} label="GitHub" icon="github" />
-              )}
-              {url && <LinkButton href={url} />}
+              {links.map(({ href, label }) => {
+                const icon = iconOf(href);
+
+                return (
+                  <LinkButton
+                    key={href}
+                    href={href}
+                    label={label ?? (icon === "github" ? "GitHub" : undefined)}
+                    icon={icon}
+                  />
+                );
+              })}
             </div>
           )}
         </aside>

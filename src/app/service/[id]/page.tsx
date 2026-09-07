@@ -28,10 +28,12 @@ const services: Record<string, ServiceDetail> = {
       "Tailwind CSS",
       "Recharts",
     ],
-    periodLabel: "2024.01 - 2024.04",
+    period: "2024.01 - 2024.04",
     role: "設計 / 開発 / デザイン",
-    url: "https://example.com",
-    githubUrl: "https://github.com/example/monelogue",
+    links: [
+      { href: "https://github.com/example/monelogue" },
+      { href: "https://example.com" },
+    ],
   },
 };
 

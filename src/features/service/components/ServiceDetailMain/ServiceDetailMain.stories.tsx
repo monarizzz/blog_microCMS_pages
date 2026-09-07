@@ -34,10 +34,12 @@ export const Default: Story = {
         "Tailwind CSS",
         "Recharts",
       ],
-      periodLabel: "2024.01 - 2024.04",
+      period: "2024.01 - 2024.04",
       role: "設計 / 開発 / デザイン",
-      url: "https://example.com",
-      githubUrl: "https://github.com/example/monelogue",
+      links: [
+        { href: "https://github.com/example/monelogue" },
+        { href: "https://example.com" },
+      ],
     },
   },
 };
@@ -48,8 +50,6 @@ export const Minimal: Story = {
     shareUrl: "https://example.com/service/minimal",
     service: {
       title: "名前だけのプロダクト",
-      features: [],
-      techStack: [],
     },
   },
 };
@@ -65,9 +65,10 @@ export const GithubOnly: Story = {
       overview:
         "チーム 4 名で開発した EC サイトのフロントエンドを担当しました。",
       techStack: ["Next.js", "TypeScript", "Stripe"],
-      periodLabel: "2023.06 - 2023.10",
+      period: "2023.06 - 2023.10",
+      periodNote: "約4ヶ月",
       role: "フロントエンド",
-      githubUrl: "https://github.com/example/ec-site",
+      links: [{ href: "https://github.com/example/ec-site" }],
     },
   },
 };
