@@ -109,7 +109,7 @@ const ProfilePageMain = () => {
           {/* 目盛りを貫く縦軸。pen では左端から 174px の位置に置かれている */}
           <div
             aria-hidden
-            className="absolute top-0 bottom-0 left-43.5 w-0.5 bg-on-surface-variant"
+            className="absolute inset-y-0 left-43.5 w-0.5 bg-on-surface-variant"
           />
           {timeline.map((item) => (
             <div key={item.id} className="relative flex items-start">
