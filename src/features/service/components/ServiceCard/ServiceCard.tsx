@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import ImagePlaceholder from "@/commons/other/components/ImagePlaceholder/ImagePlaceholder";
@@ -7,7 +8,11 @@ export type ServiceCardProps = {
   title: string;
   techStack: string;
   developmentType: string;
-  /** サムネイル画像の URL。未指定時は NO IMAGE のフォールバックを表示する */
+  /**
+   * サムネイル画像の URL。未指定時は NO IMAGE のフォールバックを表示する。
+   * next/image で最適化するため、`next.config.ts` の images.remotePatterns に
+   * 登録されたホスト (microCMS) か、public 配下のパスのみ渡せる
+   */
   thumbnailUrl?: string;
   url?: string;
   githubUrl?: string;
@@ -33,11 +38,14 @@ const ServiceCard = ({
     <div className="flex w-full flex-1 flex-col items-center gap-7 border border-outline-variant bg-surface">
       <div className="relative h-45 w-full overflow-hidden border-b border-outline-variant bg-surface-container-low">
         {thumbnailUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          // カード見出し (h2) に title があり、サムネイル自体は装飾なので alt は空。
+          // sizes は 1 行 2 カラム (max-w-275 = 1100px 内) のカード幅に合わせた概算。
+          <Image
             src={thumbnailUrl}
-            alt={title}
-            className="size-full object-cover"
+            alt=""
+            fill
+            sizes="(max-width: 1100px) 50vw, 520px"
+            className="object-cover"
           />
         ) : (
           // 枠と高さは親の div が持つため、ImagePlaceholder 既定の
