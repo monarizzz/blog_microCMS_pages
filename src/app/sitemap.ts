@@ -2,6 +2,15 @@ import type { MetadataRoute } from "next";
 import { siteUrl } from "@/commons/constants/site";
 import { getArticle } from "@/infra/microCMS/api/getArticle";
 
+/**
+ * sitemap は既定でビルド時に一度だけ生成され、以降キャッシュされる。
+ * microCMS で記事を追加・更新しても反映されず、初回生成時に API が失敗すると
+ * `getAllArticles` の catch が返した記事ゼロの sitemap が固定されてしまうため、
+ * 1 時間で再検証する。値は「記事公開の反映がこの程度遅れても許容できる」という
+ * こちらの判断で、仕様上の根拠がある数字ではない。
+ */
+export const revalidate = 3600;
+
 /** microCMS の 1 リクエストあたりの上限 */
 const MICROCMS_MAX_LIMIT = 100;
 
