@@ -10,6 +10,13 @@ type Props = {
   wide?: boolean;
   /** ServiceDetailPage の Hero (sHYtM) 相当。gap だけ 14px に詰める */
   hero?: boolean;
+  /**
+   * Home の Intro (`UmjU2`) 相当。gap を 18px にし、Kicker を等幅・字間 2px、
+   * Title の字間を snug (-0.3px) に緩める。
+   * padding は持たない（pen 側のインスタンスは padding を上書きしているが、
+   * 他ページと同じく余白はページ側の責務に寄せた）
+   */
+  intro?: boolean;
 };
 
 const PageHeader = ({
@@ -21,13 +28,26 @@ const PageHeader = ({
   compact,
   wide,
   hero,
+  intro,
 }: Props) => {
-  const gapClassName = compact ? "gap-3" : hero ? "gap-3.5" : "gap-4";
+  const gapClassName = compact
+    ? "gap-3"
+    : hero
+      ? "gap-3.5"
+      : intro
+        ? "gap-4.5"
+        : "gap-4";
 
   return (
     <div className={`flex w-full flex-col ${gapClassName}`}>
       {kicker && (
-        <span className="text-sm font-medium tracking-[1.5px] text-secondary">
+        <span
+          className={
+            intro
+              ? "font-mono text-sm font-medium tracking-[2px] text-secondary"
+              : "text-sm font-medium tracking-[1.5px] text-secondary"
+          }
+        >
           {kicker}
         </span>
       )}
@@ -36,7 +56,9 @@ const PageHeader = ({
         className={
           compact
             ? "text-3xl font-bold tracking-tight text-primary"
-            : "text-4xl font-bold tracking-tighter text-primary"
+            : intro
+              ? "text-4xl/tight font-bold tracking-snug text-primary"
+              : "text-4xl font-bold tracking-tighter text-primary"
         }
       >
         {title}
