@@ -120,7 +120,7 @@
 | `SearchInput` | `Jh09L` | `src/features/search/components/SearchInput/SearchInput.tsx` | ✅ |
 | `IconButton` | `aGtFB` | `src/commons/button/components/IconBtn/IconBtn.tsx` | ✅ |
 | `SearchIconButton` | `k2xlJ` | `src/commons/button/components/SearchIconButton/SearchIconButton.tsx` | ✅ |
-| `LinkButton` | `Rl2z4` | — | ❌ |
+| `LinkButton` | `Rl2z4` | `src/commons/button/components/LinkButton/LinkButton.tsx` | ✅ アイコンは `icon` prop で `external-link` / `github` |
 | `BackLink` | `r2KGU` | `src/commons/other/components/BackLink/BackLink.tsx` | ✅ |
 | `PrimaryButton` | `N3GA43` | `src/commons/button/components/PrimaryButton/PrimaryButton.tsx` | ✅ |
 
@@ -164,7 +164,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 依存の少ないものから。上ほど先。
 
 1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` ~~`InfoLabel`~~（実装済み） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
-2. **ボタン類** — `LinkButton` `BackLink` ~~`SearchIconButton`~~（実装済み）
+2. **ボタン類** — ~~`LinkButton`~~（実装済み） ~~`BackLink`~~（実装済み） ~~`SearchIconButton`~~（実装済み）
 3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（`ImagePlaceholder` に統合） ~~`ArticleSectionHeading`~~（実装済み）
 4. **記事本文** — `Callout`（`ArticleH1`〜`H3` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` / `Bookmark` は実装済み）
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み） ~~`Service`~~（実装済み）→ `ServiceDetailPage`
