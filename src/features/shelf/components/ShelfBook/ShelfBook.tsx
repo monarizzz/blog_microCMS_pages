@@ -58,14 +58,19 @@ const COVER_HEIGHT_CLASS_NAME = {
 
 /**
  * 帯の地色と文字色の組み合わせ。
- * warning / muted だけ地色が明るいため、文字を on-surface に反転させる。
+ *
+ * アクセント 4 色は ac-* (500) ではなく面色の ac-*-bg を地色に使う。
+ * 500 に文字を載せるとコントラストが白文字で 3.7〜3.9、
+ * on-surface に反転しても 4.3〜4.4 で、どちらも AA (4.5:1) に届かない。
+ * ac-*-bg + on-surface なら 15:1 前後を確保できる。
+ * ui.pen は 500 の濃い帯だが、既存トークンの中では両立しないため面色を採る。
  */
 const ACCENT_CLASS_NAME = {
   primary: "bg-primary text-on-primary",
-  info: "bg-ac-info text-on-primary",
-  danger: "bg-ac-danger text-on-primary",
-  warning: "bg-ac-warning text-on-surface",
-  success: "bg-ac-success text-on-primary",
+  info: "bg-ac-info-bg text-on-surface",
+  danger: "bg-ac-danger-bg text-on-surface",
+  warning: "bg-ac-warning-bg text-on-surface",
+  success: "bg-ac-success-bg text-on-surface",
   muted: "bg-surface-container-low text-on-surface",
 } as const satisfies Record<Accent, string>;
 

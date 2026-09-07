@@ -62,6 +62,21 @@ export const InfoCover: Story = {
   },
 };
 
+// accent は success だけストーリーが無く、帯のコントラストが検査されていなかった
+export const SuccessAccent: Story = {
+  args: {
+    title: "テストを書く習慣のつくりかた",
+    meta: "2023.11.02 · Blog",
+    href: "/article/testing-habit",
+    coverText: "Test",
+    cover: "muted",
+    coverTextSize: "md",
+    coverHeight: "sm",
+    accent: "success",
+    size: "md",
+  },
+};
+
 export const WithImage: Story = {
   args: {
     title: "Next.js 14 App Router 移行の勘所",
