@@ -138,7 +138,7 @@
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ShelfBook` | `AXiNC` | — | ❌ |
+| `ShelfBook` | `AXiNC` | `src/features/shelf/components/ShelfBook/ShelfBook.tsx` | ✅ 寸法・色は離散バリアントに畳んだ |
 | `ShelfNote` | `mqZTV` | — | ❌ |
 | `ShelfLabel` | `C0GFq` | — | ❌ |
 | `ShelfPlank` | `T42nPd` | — | ❌ |
