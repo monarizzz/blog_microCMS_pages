@@ -8,10 +8,16 @@ export const metadata = buildPageMetadata({
   path: "/search",
 });
 
-const SearchPage = () => {
+type Props = {
+  searchParams: Promise<{ q?: string }>;
+};
+
+const SearchPage = async ({ searchParams }: Props) => {
+  const { q } = await searchParams;
+
   return (
     <LayoutMain>
-      <SearchPageMain />
+      <SearchPageMain query={q?.trim()} />
     </LayoutMain>
   );
 };
