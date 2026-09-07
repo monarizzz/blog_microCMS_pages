@@ -4,6 +4,12 @@ import Footer from "./Footer";
 
 const meta = {
   component: Footer,
+  // GlobalNav が usePathname を使うため、App Router のモックを有効にする
+  parameters: {
+    nextjs: {
+      appDirectory: true,
+    },
+  },
 } satisfies Meta<typeof Footer>;
 
 export default meta;
