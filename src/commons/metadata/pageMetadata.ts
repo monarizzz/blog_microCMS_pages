@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
 import { siteLocale, siteName } from "@/commons/constants/site";
 
+/**
+ * 既定 OGP 画像。`src/app/opengraph-image.tsx` が生成するルート。
+ *
+ * ファイル規約による画像は、そのページが `openGraph` を持たない場合しか
+ * 自動で入らない。`buildPageMetadata` を使うページはここで `openGraph` を
+ * 丸ごと差し替えるため、明示的に指し直さないと子ページの og:image と
+ * twitter:image が両方消える（`next start` で実測）。
+ */
+const defaultOgImage = {
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: siteName,
+};
+
 type Args = {
   /** ページ固有のタイトル。`%s | Monelog` のテンプレートに流し込まれる */
   title: string;
@@ -34,6 +49,7 @@ export const buildPageMetadata = ({
     title: `${title} | ${siteName}`,
     description,
     url: path,
+    images: [defaultOgImage],
   },
   alternates: {
     canonical: path,
