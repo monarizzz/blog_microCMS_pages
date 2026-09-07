@@ -20,35 +20,40 @@ const SearchInput = ({ query = "" }: Props) => {
   const router = useRouter();
   const [value, setValue] = useState(query);
   const inputRef = useRef<HTMLInputElement>(null);
+  // 自分が最後に URL へ送ったクエリ。URL 側の変化が自分由来かを見分けるために持つ
+  const [lastSubmitted, setLastSubmitted] = useState(query);
 
   const submit = useCallback(
     (next: string) => {
-      if (next === query) return;
+      if (next === lastSubmitted) return;
+      setLastSubmitted(next);
       router.replace(buildSearchPath(next));
     },
-    [query, router],
+    [lastSubmitted, router],
   );
 
   useEffect(() => {
     const trimmed = value.trim();
     // 空文字は「検索をやめた」とみなして反映する。1文字だけの状態は反映しない
     if (trimmed.length > 0 && trimmed.length < MIN_QUERY_LENGTH) return;
-    if (trimmed === query) return;
+    if (trimmed === lastSubmitted) return;
 
     const timer = setTimeout(() => submit(trimmed), DEBOUNCE_MS);
     return () => clearTimeout(timer);
-  }, [value, query, submit]);
+  }, [value, lastSubmitted, submit]);
 
-  // 戻る / 進むで `?q=` が変わったときに入力欄を追従させる。
-  // query prop の変化を見ると自分の router.replace でも発火し、打ちかけの文字を
-  // 上書きしてしまうため、履歴操作だけを拾う popstate を購読する
-  useEffect(() => {
-    const syncFromUrl = () => {
-      setValue(new URLSearchParams(window.location.search).get("q") ?? "");
-    };
-    window.addEventListener("popstate", syncFromUrl);
-    return () => window.removeEventListener("popstate", syncFromUrl);
-  }, []);
+  // `?q=` が自分の router.replace 以外で変わったときだけ入力欄を追従させる。
+  // 戻る / 進むと、結果なし画面の「検索をクリア」リンクの両方がここを通る
+  // (Link のクライアント遷移では popstate が発火しないため prop の差分で見る)。
+  // effect ではなくレンダー中に調整するのは、追従前の値で1フレーム描画させないため
+  const [prevQuery, setPrevQuery] = useState(query);
+  if (query !== prevQuery) {
+    setPrevQuery(query);
+    if (query !== lastSubmitted) {
+      setLastSubmitted(query);
+      setValue(query);
+    }
+  }
 
   const handleClear = () => {
     setValue("");
