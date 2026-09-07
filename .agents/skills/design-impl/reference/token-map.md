@@ -70,14 +70,20 @@ pen の変数名と Tailwind のクラス名が **1:1 で同名**。そのまま
 | `$ac-warning` | `text-ac-warning` | 〃 |
 | `$ac-danger` | `text-ac-danger` | 〃 |
 | `$ac-info` | `text-ac-info` | 〃 |
+| `$ac-success-bg` | `bg-ac-success-bg` | 状態色の面 |
+| `$ac-warning-bg` | `bg-ac-warning-bg` | 〃（`HighlightChip` `QP1Rl` で使用） |
+| `$ac-danger-bg` | `bg-ac-danger-bg` | 〃 |
+| `$ac-info-bg` | `bg-ac-info-bg` | 〃 |
+
+> `$ac-*-bg` は **`Callout` の色ではない**。pen の `Callout`（`KaNJF`）の背景は
+> `$surface-container-low` で、状態別のバリアントは pen 側に存在しない。
 
 このデザインは**影ではなく境界線で階層を作る**。`shadow-*` は原則使わない（tokens.css に定義はあるが未使用）。
 
 ### 実装側に存在しないトークン（要報告）
 
-以下は pen 側にあるが Tailwind クラスが存在しない。使う必要が出たらユーザーに報告して指示を仰ぐこと。**勝手に `@theme` に足さない。**
-
-- `$ac-success-bg` `$ac-warning-bg` `$ac-danger-bg` `$ac-info-bg`（Callout の背景色。`Callout` 実装時に必ず当たる）
+現時点で不足しているトークンは無い。pen 側にあって Tailwind クラスが無いものが出たら、
+ユーザーに報告して指示を仰ぐこと。**勝手に `@theme` に足さない。**
 
 ### 壊れている参照（使用禁止）
 
