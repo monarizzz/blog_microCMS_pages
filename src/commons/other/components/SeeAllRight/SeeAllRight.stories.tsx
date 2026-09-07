@@ -25,3 +25,14 @@ export const WithTag: Story = {
     },
   },
 };
+
+// 残り件数が 0 以下のときはバッジを描画しない
+export const WithTagNoRemainder: Story = {
+  args: {
+    href: "/tags/nextjs",
+    tag: {
+      name: "Next.js",
+      count: 0,
+    },
+  },
+};
