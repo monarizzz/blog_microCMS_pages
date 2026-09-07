@@ -2,7 +2,7 @@
 # Codex の `@codex` メンションと同じ使い方ができるようにするためのもの。
 # 自動レビュー(claude-code-review.yml)は停止中で、こちらは手動メンション専用。
 # https://docs.claude.com/ja/docs/claude-code/github-actions
-name: Claude
+name: Claude (@claude メンション)
 
 on:
   issue_comment:
@@ -15,7 +15,7 @@ on:
     types: [opened, assigned]
 
 jobs:
-  claude:
+  claude-mention:
     # `@claude` を含む本文のときだけ動かす(無関係なコメントで課金しないため)
     if: |
       (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
