@@ -10,6 +10,7 @@ type TimelineProject = {
   category: string;
   description: string;
   techStack: string;
+  // 実 URL が繋がるまでは省略する（渡すとリンク先の無いボタンが出てしまう）
   link?: string;
 };
 
@@ -49,7 +50,6 @@ const timeline: TimelineItem[] = [
       description:
         "コラボレーション、スピード感、柔軟性、そしてイノベーティブな発想を、品質・コスト・スケジュール・スコープに意識を集中し、ストーリーのある活動的なビジュアルを表現します。",
       techStack: "Next.js / TypeScript / microCMS",
-      link: "#",
     },
   },
   {
@@ -62,7 +62,6 @@ const timeline: TimelineItem[] = [
       description:
         "コラボレーション、スピード感、柔軟性、そしてイノベーティブな発想を、品質・コスト・スケジュール・スコープに意識を集中し、ストーリーのある活動的なビジュアルを表現します。",
       techStack: "Next.js / TypeScript / SCSS / StoryBook",
-      link: "#",
     },
   },
 ];
