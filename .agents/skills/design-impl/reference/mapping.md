@@ -99,7 +99,7 @@
 | `ArticleH1` | `Y5MxdQ` | `src/commons/contentsDetail/components/ArticleH1/ArticleH1.tsx` | ✅ |
 | `ArticleH2` | `sSgdW` | `src/commons/contentsDetail/components/ArticleH2/ArticleH2.tsx` | ✅ |
 | `ArticleH3` | `v0Atx` | `src/commons/contentsDetail/components/ArticleH3/ArticleH3.tsx` | ✅ |
-| `Callout` | `KaNJF` | — | ❌ ※ `$ac-*-bg` が実装側に無い。token-map.md 参照 |
+| `Callout` | `KaNJF` | `src/commons/contentsDetail/components/Callout/Callout.tsx` | ✅ pen は単一バリアント（背景 `$surface-container-low`）。`$ac-*-bg` は使っていない |
 | `Quote` | `xR0ql` | `src/commons/contentsDetail/components/Quote/Quote.tsx` | ✅ |
 | `BulletItem` | `eQqNb` | `src/commons/contentsDetail/components/BulletItem/BulletItem.tsx` | ✅ |
 | `NumberItem` | `c3XVs` | `src/commons/contentsDetail/components/NumberItem/NumberItem.tsx` | ✅ |
@@ -168,6 +168,6 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` ~~`InfoLabel`~~（実装済み） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
 2. **ボタン類** — `LinkButton` `BackLink` ~~`SearchIconButton`~~（実装済み）
 3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（`ImagePlaceholder` に統合） ~~`ArticleSectionHeading`~~（実装済み）
-4. **記事本文** — `Callout`（`ArticleH1`〜`H3` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` / `Bookmark` は実装済み）
+4. ~~**記事本文**~~ — 全て実装済み（`ArticleH1`〜`H3` / `Callout` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` / `Bookmark`）
 5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み） ~~`Service`~~（実装済み） ~~`Profile`~~（実装済み）→ `ServiceDetailPage`
 6. **Shelf 一式**（他から独立しているのでいつでも可）

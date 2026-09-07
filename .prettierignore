@@ -7,6 +7,10 @@ _v2/
 # Markdown。日本語を含む表を Prettier が桁ズレさせるため整形対象にしない
 *.md
 
+# .gitignore で除外を打ち消しているため、Prettier からも明示的に外す
+# （拡張子が無く parser を推論できずエラーになる）
+.env.example
+
 # 自動生成・ロックファイル
 package-lock.json
 next-env.d.ts
