@@ -35,6 +35,7 @@
 | `Profile`（トップレベル group・reusable ではない） | `t9pvP` | `src/features/profile/components/ProfilePageMain/ProfilePageMain.tsx` | ✅ ルートは `src/app/profile/page.tsx` |
 | `ServiceDetailPage` | `qiFnK` | `src/features/service/components/ServiceDetailMain/ServiceDetailMain.tsx` | ✅ ルートは `src/app/service/[id]/page.tsx` |
 | `Tags`（group `j9tOQT`・reusable ではない） | `wJS3A` | `src/features/tags/components/TagsPageMain/TagsPageMain.tsx` | ✅ ルートは `src/app/tags/page.tsx` |
+| `Home Page — Shelf (案)`（frame・reusable ではない） | `hdLAj` | `src/features/home/components/HomePageMain/HomePageMain.tsx` | ✅ ルートは `src/app/page.tsx`。もう一つの `Home Page`（group `ezIQH`）は採らなかった |
 
 参考: ページ全体のデザインは reusable ではなくトップレベルの group にもある
 （`Home Page` `Article Page` `Article Detail` `Tags` `Profile` `Service` `Search` `404 Page`）。
@@ -176,5 +177,5 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 2. **ボタン類** — ~~`LinkButton`~~（実装済み） ~~`BackLink`~~（実装済み） ~~`SearchIconButton`~~（実装済み）
 3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（`ImagePlaceholder` に統合） ~~`ArticleSectionHeading`~~（実装済み）
 4. ~~**記事本文**~~ — 全て実装済み（`ArticleH1`〜`H3` / `Callout` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` / `Bookmark`）
-5. ~~**ページ組み立て**~~ — 全て実装済み（`ArticleListPage` / `Service` / `Profile` / `ServiceDetailPage`）
-6. **Shelf 一式**（他から独立しているのでいつでも可）
+5. ~~**ページ組み立て**~~ — 全て実装済み（`ArticleListPage` / `Service` / `Profile` / `ServiceDetailPage` / `Home Page`）
+6. ~~**Shelf 一式**~~ — 全て実装済み（`ShelfBook` / `ShelfNote` / `ShelfLabel` / `ShelfPlank` / `ShelfRow`）
