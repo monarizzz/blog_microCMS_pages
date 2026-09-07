@@ -63,9 +63,25 @@ CHIP_CLASS_NAME を書き換えると TagBtn を巻き添えにするため、
 - 対応する Issue が無い場合は「なし」と明記する
 
 作業を始める前に、対応する Issue があるかを確認すること。
-`gh issue list` で探し、見つからず、かつ単発の修正でないなら Issue を先に立てる。
-`Close` を書いた PR がマージされると Issue は自動で閉じるので、
-別途 `gh issue close` は行わない。
+引数なしの `gh issue list` は open のみ・既定 30 件しか出さないため、
+これだけで「無い」と判断すると重複 Issue を作ってしまう。
+キーワードと取得件数、閉じた Issue まで含めて探す。
+
+```bash
+gh issue list --state all --limit 200 --search 'フッター 年'
+```
+
+見つからず、かつ単発の修正でないなら Issue を先に立てる。
+
+`Close` キーワードによる自動クローズは、**PR の宛先がデフォルトブランチ
+（`dev`）のときだけ**効く。`desgin-renewal` 宛ての PR では自動で閉じないので、
+マージ後に手動で閉じる。
+
+```bash
+gh issue close 123 --comment 'PR #124 で対応（desgin-renewal へマージ）'
+```
+
+宛先が `dev` の PR では自動で閉じるため、`gh issue close` を重ねて叩かない。
 
 ## PRのスクリーンショット
 
