@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { siteUrl } from "@/commons/constants/site";
+import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
 import ServiceDetailMain, {
   type ServiceDetail,
@@ -37,6 +39,31 @@ const services: Record<string, ServiceDetail> = {
 
 type Props = {
   params: Promise<{ id: string }>;
+};
+
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const { id } = await params;
+  const service = services[id];
+
+  // 参照先はローカルの Record なので、記事詳細のように取得が失敗して
+  // 500 になることはない。「無い ID は 404」というページ本体の判断と
+  // 揃えて、既定値へ退避せず notFound() に倒す
+  if (!service) {
+    notFound();
+  }
+
+  return buildPageMetadata({
+    title: service.title,
+    // ServiceDetail の description / overview はどちらも optional。
+    // Hero のサマリー → 概要本文 → サービス名だけの定型文の順に落とす
+    description:
+      service.description ??
+      service.overview ??
+      `${service.title} の紹介ページです。`,
+    path: `/service/${id}`,
+  });
 };
 
 const ServiceDetailPage = async ({ params }: Props) => {
