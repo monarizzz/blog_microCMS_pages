@@ -17,16 +17,28 @@ const CELL_CLASS_NAME =
 const ARROW_CLASS_NAME =
   "border-outline-variant flex h-9 w-9 items-center justify-center rounded-full border";
 
-/** 先頭 3 ページ・現在ページ・最終ページを並べ、飛んだ箇所に省略記号を挟む（デザイン: 1 2 3 … 10） */
+/**
+ * 先頭 3 ページ・現在ページとその前後 1 ページ・最終ページを並べ、
+ * 飛んだ箇所に省略記号を挟む（1 ページ目は `1 2 3 … 10`、5 ページ目は `1 2 3 4 5 6 … 10`）。
+ *
+ * ui.pen の Pagination には 1 ページ目の状態しか描かれていないため、
+ * 中間ページで前後 1 ページを出すのは実装側の判断（#285）
+ */
 const buildPages = (currentPage: number, totalPages: number) => {
   if (totalPages <= 4) {
     return Array.from({ length: totalPages }, (_, i) => i + 1);
   }
   const numbers = [
     ...new Set(
-      [1, 2, 3, currentPage, totalPages].filter(
-        (n) => n >= 1 && n <= totalPages,
-      ),
+      [
+        1,
+        2,
+        3,
+        currentPage - 1,
+        currentPage,
+        currentPage + 1,
+        totalPages,
+      ].filter((n) => n >= 1 && n <= totalPages),
     ),
   ].sort((a, b) => a - b);
 

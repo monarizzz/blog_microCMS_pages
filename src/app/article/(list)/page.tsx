@@ -1,4 +1,11 @@
+import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
 import ArticlePage from "@/features/article/components/articlePage/articlePage";
+
+export const metadata = buildPageMetadata({
+  title: "記事一覧",
+  description: "投稿した記事の一覧です。新着順・古い順に並び替えて探せます。",
+  path: "/article",
+});
 
 type Props = {
   searchParams: Promise<{ page?: string; sort?: string }>;

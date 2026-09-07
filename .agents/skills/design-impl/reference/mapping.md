@@ -141,7 +141,7 @@
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
-| `ShelfBook` | `AXiNC` | — | ❌ |
+| `ShelfBook` | `AXiNC` | `src/features/shelf/components/ShelfBook/ShelfBook.tsx` | ✅ 寸法・色は離散バリアントに畳んだ |
 | `ShelfNote` | `mqZTV` | `src/features/shelf/components/ShelfNote/ShelfNote.tsx` | ✅ 寸法は `size` 3 段に畳んだ |
 | `ShelfLabel` | `C0GFq` | `src/features/shelf/components/ShelfLabel/ShelfLabel.tsx` | ✅ 見出しは `h2` 固定 |
 | `ShelfPlank` | `T42nPd` | `src/features/shelf/components/ShelfPlank/ShelfPlank.tsx` | ✅ 装飾のみなので `aria-hidden` |
