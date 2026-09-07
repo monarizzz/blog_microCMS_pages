@@ -1,6 +1,7 @@
 import ContentsRowSkeleton from "@/commons/contents/components/ContentsRowSkeleton/ContentsRowSkeleton";
 
-const SKELETON_ROWS = 4;
+// ArticlePage の perPage と同じ件数ぶん領域を確保する
+const SKELETON_ROWS = 15;
 
 const ArticleListLoading = () => {
   return (
@@ -12,7 +13,7 @@ const ArticleListLoading = () => {
       <span className="sr-only">記事一覧を読み込んでいます</span>
       <div className="flex w-full flex-col">
         {Array.from({ length: SKELETON_ROWS }, (_, i) => (
-          <ContentsRowSkeleton key={i} />
+          <ContentsRowSkeleton key={i} compact />
         ))}
       </div>
     </div>
