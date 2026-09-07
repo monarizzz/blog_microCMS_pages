@@ -10,6 +10,8 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+// detailPath なし。カード全体がリンクにならず、
+// hover / focus の見た目も出ないことを確認するケース
 export const Default: Story = {
   args: {
     title: "天気予報アプリ",
@@ -18,6 +20,8 @@ export const Default: Story = {
   },
 };
 
+// detailPath なし・外部リンクあり。外部リンクだけが押せる状態で、
+// カードの余白がクリックできないままであることを確認するケース
 export const WithLinks: Story = {
   args: {
     title: "ECサイト",
@@ -40,6 +44,8 @@ export const WithThumbnail: Story = {
   },
 };
 
+// detailPath あり・外部リンクあり。カード全面がクリックでき、かつ
+// URL / GitHub が飲まれずに個別に押せることを確認するケース
 export const WithDetailPage: Story = {
   args: {
     title: "MoneLogue",
@@ -47,6 +53,16 @@ export const WithDetailPage: Story = {
     developmentType: "Solo development",
     url: "https://example.com",
     githubUrl: "https://github.com/example/monelogue",
+    detailPath: "/service/monelogue",
+  },
+};
+
+// detailPath あり・外部リンクなし。カード全面のリンクだけがある状態
+export const WithDetailPageOnly: Story = {
+  args: {
+    title: "MoneLogue",
+    techStack: "Next.js / TypeScript / microCMS",
+    developmentType: "Solo development",
     detailPath: "/service/monelogue",
   },
 };

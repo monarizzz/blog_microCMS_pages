@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import ImagePlaceholder from "@/commons/other/components/ImagePlaceholder/ImagePlaceholder";
+import { cn } from "@/infra/Tailwind/cn";
 
 export type ServiceCardProps = {
   title: string;
@@ -35,7 +36,15 @@ const ServiceCard = ({
   const hasLink = Boolean(url || githubUrl);
 
   return (
-    <div className="flex w-full flex-1 flex-col items-center gap-7 border border-outline-variant bg-surface">
+    // detailPath がある場合のみカード全体をリンク領域として扱う。
+    // relative は Link の ::after (after:inset-0) の基準、group は
+    // カードのどこをホバーしてもタイトルに下線を出すために付ける
+    <div
+      className={cn(
+        "flex w-full flex-1 flex-col items-center gap-7 border border-outline-variant bg-surface",
+        detailPath && "group relative transition-colors hover:border-outline",
+      )}
+    >
       <div className="relative h-45 w-full overflow-hidden border-b border-outline-variant bg-surface-container-low">
         {thumbnailUrl ? (
           // カード見出し (h2) に title があり、サムネイル自体は装飾なので alt は空。
@@ -64,23 +73,37 @@ const ServiceCard = ({
               h3 だと h1 から 1 段飛んで heading-order (axe) 違反になる。
               他の階層でも使うようになったら headingLevel prop を検討する */}
           <h2 className="px-0.75 font-sans text-lg leading-[1.4] font-bold tracking-snug text-primary">
-            {/* pen (jhtzh) に詳細ページへの導線は無いため、見た目を足さずに
-                タイトル自体をリンクにする。detailPath 未指定なら素のテキスト */}
-            {detailPath ? <Link href={detailPath}>{title}</Link> : title}
+            {/* ::after でカード全面をクリック領域にする。カード全体を <a> で
+                包むと下の外部リンクが入れ子の <a> になり不正な HTML になるため。
+                フォーカスリングもこの ::after に出すことで、リンク自体は
+                文字幅しか無くてもカード外周にリングが出る。
+                detailPath 未指定なら素のテキスト */}
+            {detailPath ? (
+              <Link
+                href={detailPath}
+                className="group-hover:underline after:absolute after:inset-0 focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2 focus-visible:after:outline-primary"
+              >
+                {title}
+              </Link>
+            ) : (
+              title
+            )}
           </h2>
           <div className="flex flex-col gap-3 px-0.75">
             <p className="w-full font-mono text-[12px] wrap-break-word text-secondary">
               {techStack}
             </p>
             {hasLink && (
-              <div className="flex w-31 items-center justify-center border border-outline-variant pt-1">
+              // カード全面に広がる Link の ::after より手前に出さないと
+              // 外部リンクがクリックできなくなるため relative z-10 で退避させる
+              <div className="relative z-10 flex w-31 items-center justify-center border border-outline-variant pt-1">
                 <div className="flex items-center gap-4">
                   {url && (
                     <a
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1"
+                      className="flex items-center gap-1 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                     >
                       <span className="font-sans text-[12.5px] font-medium text-primary">
                         URL
@@ -93,7 +116,7 @@ const ServiceCard = ({
                       href={githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1"
+                      className="flex items-center gap-1 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                     >
                       <span className="font-sans text-[12.5px] font-medium text-primary">
                         GitHub
