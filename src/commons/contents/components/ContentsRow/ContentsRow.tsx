@@ -2,16 +2,6 @@ import Link from "next/link";
 
 import TagBtn from "@/commons/button/components/TagBtn/TagBtn";
 
-//TODO:仮置き。props を渡していない呼び出し側が残っている間の既定値。
-// 呼び出し 3 箇所 (articlePage / TagsPageMain / SearchPageMain) が
-// props を渡すようになった時点で削除し、props を必須にする
-const DEFAULT_TITLE = "Next.js 14 App Router 移行の勘所";
-const DEFAULT_SUMMARY =
-  "PagesRouterからの移行を検討しているプロジェクトも多いことでしょう。最大のパラダイムシフトは、ReactServerComponentsをデフォルトとする設計思想にあります。";
-const DEFAULT_TAGS = ["タグ", "Next.js"];
-const DEFAULT_PUBLISHED_AT = "2024-03-18";
-const DEFAULT_HREF = "/article";
-
 /** タグ絞り込み一覧への遷移先。既存の TagsPageMain のフィルタと同じ形式に揃える */
 const tagHref = (tag: string) => `/tags?tag=${encodeURIComponent(tag)}`;
 
@@ -23,14 +13,15 @@ const formatPublishedAt = (publishedAt: string) =>
   publishedAt.slice(0, 10).replace(/-/g, ".");
 
 type Props = {
-  title?: string;
-  /** 本文の抜粋。`compact` では表示しない */
-  summary?: string;
+  title: string;
   /** ISO 8601 の日時文字列。`<time dateTime>` には日付部分をそのまま入れる */
-  publishedAt?: string;
-  tags?: string[];
+  publishedAt: string;
   /** 記事詳細への遷移先 */
-  href?: string;
+  href: string;
+  /** 本文の抜粋。`compact` では表示しないため任意 */
+  summary?: string;
+  /** タグを持たない記事もあるため任意 */
+  tags?: string[];
   compact?: boolean;
   /**
    * 記事タイトルの見出しレベル。
@@ -41,11 +32,11 @@ type Props = {
 };
 
 const ContentsRow = ({
-  title = DEFAULT_TITLE,
-  summary = DEFAULT_SUMMARY,
-  publishedAt = DEFAULT_PUBLISHED_AT,
-  tags = DEFAULT_TAGS,
-  href = DEFAULT_HREF,
+  title,
+  publishedAt,
+  href,
+  summary,
+  tags = [],
   compact,
   headingLevel = 2,
 }: Props) => {
