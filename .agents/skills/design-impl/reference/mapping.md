@@ -140,7 +140,7 @@
 | --- | --- | --- | --- |
 | `ShelfBook` | `AXiNC` | — | ❌ |
 | `ShelfNote` | `mqZTV` | — | ❌ |
-| `ShelfLabel` | `C0GFq` | — | ❌ |
+| `ShelfLabel` | `C0GFq` | `src/features/shelf/components/ShelfLabel/ShelfLabel.tsx` | ✅ 見出しは `h2` 固定 |
 | `ShelfPlank` | `T42nPd` | — | ❌ |
 
 Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `hdLAj`）が配置の参考。
