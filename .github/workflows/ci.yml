@@ -1,6 +1,15 @@
 name: PR-test
 
-on: [pull_request]
+# pull_request だけだと PR を経由しない push が無チェックで通る。
+# 実際に desgin-renewal へ直コミットされたものが CI ゼロで入っていたため、
+# 統合ブランチへの push でも走らせる。
+# push 側をブランチ限定にしているのは、作業ブランチへの push で
+# pull_request と二重に走らせないため。統合ブランチは PR 経由なら
+# マージコミットの push でしか発火しない。
+on:
+  pull_request:
+  push:
+    branches: [dev, desgin-renewal, release]
 
 # 同一 PR に連続で push した場合、古い run を打ち切る
 concurrency:
@@ -74,7 +83,10 @@ jobs:
     runs-on: ubuntu-latest
     # fork からの PR には Actions secrets が渡らず、microCMS クライアントの
     # 初期化で必ず落ちるため、同一リポジトリ内の PR に限定する。
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    # push イベントでは pull_request が null になり、この比較だけでは常に
+    # false になってビルドが丸ごとスキップされる。push は同一リポジトリの
+    # ブランチへのものしか発火しないので、無条件に許可してよい。
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
     steps:
       - uses: actions/checkout@v7
       - name: Setup Node.js
