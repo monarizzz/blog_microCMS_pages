@@ -4,7 +4,7 @@ import LinkButton from "@/commons/button/components/LinkButton/LinkButton";
 import ShareBar from "@/commons/contentsDetail/components/ShareBar/ShareBar";
 import BackLink from "@/commons/other/components/BackLink/BackLink";
 import ImagePlaceholder from "@/commons/other/components/ImagePlaceholder/ImagePlaceholder";
-import InfoLabel from "@/commons/other/components/InfoLabel/InfoLabel";
+import MetaText from "@/commons/other/components/MetaText/MetaText";
 import PageHeader from "@/commons/other/components/PageHeader/PageHeader";
 import InfoRow from "@/commons/service/components/InfoRow/InfoRow";
 
@@ -110,7 +110,7 @@ const ServiceDetailMain = ({ service, shareUrl }: Props) => {
         <aside className="flex w-60 shrink-0 flex-col gap-7">
           {techStack.length > 0 && (
             <div className="flex w-full flex-col gap-2.5">
-              <InfoLabel>TECH STACK</InfoLabel>
+              <MetaText size="xs">TECH STACK</MetaText>
               <p className="w-full font-mono text-[12.5px] leading-[1.8] whitespace-pre-line text-on-surface">
                 {techStack.join("\n")}
               </p>
@@ -124,7 +124,7 @@ const ServiceDetailMain = ({ service, shareUrl }: Props) => {
           )}
           {hasLink && (
             <div className="flex w-full flex-col gap-2.5 border-t border-outline-variant pt-5">
-              <InfoLabel>LINKS</InfoLabel>
+              <MetaText size="xs">LINKS</MetaText>
               {githubUrl && (
                 <LinkButton href={githubUrl} label="GitHub" icon="github" />
               )}
