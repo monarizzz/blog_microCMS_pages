@@ -24,3 +24,18 @@ export const List: Story = {
     </div>
   ),
 };
+
+export const Compact: Story = {
+  args: { compact: true },
+};
+
+export const CompactList: Story = {
+  args: { compact: true },
+  render: () => (
+    <div className="flex flex-col">
+      {Array.from({ length: 4 }, (_, i) => (
+        <ContentsRowSkeleton key={i} compact />
+      ))}
+    </div>
+  ),
+};
