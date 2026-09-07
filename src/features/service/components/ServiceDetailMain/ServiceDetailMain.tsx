@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ReactNode } from "react";
 
 import LinkButton from "@/commons/button/components/LinkButton/LinkButton";
@@ -61,12 +62,17 @@ const ServiceDetailMain = ({ service, shareUrl }: Props) => {
       <BackLink text="Service へ戻る" link="/service" />
       <PageHeader hero title={title} meta={meta} sub={description} />
       {heroImageUrl ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={heroImageUrl}
-          alt={title}
-          className="h-90 w-full border border-outline-variant object-cover"
-        />
+        // 見出し (PageHeader の h1) に title があり画像は装飾なので alt は空。
+        // sizes は本文コンテナ (max-w-257.5 = 1030px) から左右 padding を引いた概算
+        <div className="relative h-90 w-full border border-outline-variant">
+          <Image
+            src={heroImageUrl}
+            alt=""
+            fill
+            sizes="(max-width: 1030px) 100vw, 950px"
+            className="object-cover"
+          />
+        </div>
       ) : (
         // pen (yJKEY) はプレースホルダのラベルにプロダクト名の大文字を入れている
         <ImagePlaceholder className="h-90" label={title.toUpperCase()} />
