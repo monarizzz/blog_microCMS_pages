@@ -153,8 +153,8 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
 | `ImagePlaceholder` | `XHkBO` | `src/commons/other/components/ImagePlaceholder/ImagePlaceholder.tsx` | ✅ |
-| `ArticleRowSkeleton` | `M4eia` | — | ❌ 実装時は `ContentsRowSkeleton` にする |
-| `ArticleCardSkeleton` | `Pacnv` | — | ❌ |
+| `ArticleRowSkeleton` | `M4eia` | `src/commons/contents/components/ContentsRowSkeleton/ContentsRowSkeleton.tsx` | ✅ 実装名は `ContentsRowSkeleton`（`ContentsRow` に合わせた） |
+| `ArticleCardSkeleton` | `Pacnv` | `src/commons/contents/components/ArticleCardSkeleton/ArticleCardSkeleton.tsx` | ✅ pen 側に角丸は無い（`border` のみ） |
 
 スケルトンの並べ方は `Skeleton Demo (Loading)`（frame `ogaR6`）に
 `ListLoading` / `GridLoading` として置かれている。
