@@ -141,7 +141,7 @@
 | `ShelfBook` | `AXiNC` | — | ❌ |
 | `ShelfNote` | `mqZTV` | — | ❌ |
 | `ShelfLabel` | `C0GFq` | — | ❌ |
-| `ShelfPlank` | `T42nPd` | — | ❌ |
+| `ShelfPlank` | `T42nPd` | `src/features/shelf/components/ShelfPlank/ShelfPlank.tsx` | ✅ 装飾のみなので `aria-hidden` |
 
 Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `hdLAj`）が配置の参考。
 
