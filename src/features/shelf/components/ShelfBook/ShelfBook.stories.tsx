@@ -77,6 +77,19 @@ export const SuccessAccent: Story = {
   },
 };
 
+// 詳細ページがまだ無い本。リンクにならず、見た目は Default と同じであること
+export const WithoutHref: Story = {
+  args: {
+    title: "静的サイトという選択",
+    meta: "2023.12.10 · Blog",
+    coverText: "#",
+    cover: "muted",
+    coverTextSize: "lg",
+    accent: "success",
+    size: "sm",
+  },
+};
+
 export const WithImage: Story = {
   args: {
     title: "Next.js 14 App Router 移行の勘所",

@@ -4,13 +4,14 @@ import FilterBtn from "@/commons/button/components/FilterBtn/FilterBtn";
 import MetaText from "@/commons/other/components/MetaText/MetaText";
 import PageHeader from "@/commons/other/components/PageHeader/PageHeader";
 import PageNavNum from "@/commons/navigation/components/PageNumNav/PageNumNav";
+import {
+  resolveArticleListPage,
+  totalCount,
+  totalPages,
+} from "@/features/article/articleListPagination";
 
 //TODO:仮置き
 const tag = "Next.js";
-const totalCount = 38;
-const perPage = 15;
-
-const totalPages = Math.max(1, Math.ceil(totalCount / perPage));
 
 type Props = {
   currentPage?: number;
@@ -18,10 +19,7 @@ type Props = {
 };
 
 const ArticlePage = ({ currentPage = 1, sort = "new" }: Props) => {
-  const page = Math.min(Math.max(currentPage, 1), totalPages);
-  const start = (page - 1) * perPage + 1;
-  const end = Math.min(page * perPage, totalCount);
-  const rowCount = Math.max(0, end - start + 1);
+  const { page, start, end, rowCount } = resolveArticleListPage(currentPage);
 
   return (
     <div className="mx-auto flex w-full max-w-275 flex-col gap-10 pt-28.25 pr-10 pb-24 pl-11.75">

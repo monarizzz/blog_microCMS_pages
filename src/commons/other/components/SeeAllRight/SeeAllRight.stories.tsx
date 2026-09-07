@@ -36,3 +36,22 @@ export const WithTagNoRemainder: Story = {
     },
   },
 };
+
+export const WithLabel: Story = {
+  args: {
+    href: "/service",
+    label: "制作物をすべて見る",
+  },
+};
+
+// tag と label を同時に渡した場合はタグ用の文言が勝つ
+export const TagWinsOverLabel: Story = {
+  args: {
+    href: "/tags/nextjs",
+    tag: {
+      name: "Next.js",
+      count: 12,
+    },
+    label: "制作物をすべて見る",
+  },
+};

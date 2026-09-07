@@ -6,7 +6,11 @@ type Props = {
   title: string;
   /** 帯の上段。例: "2024.03.18 · Blog" "2024 | Service" */
   meta: string;
-  href: string;
+  /**
+   * 遷移先。詳細ページがまだ無い本もあるため省略でき、
+   * その場合はリンクにせず見た目だけ同じカードとして置く
+   */
+  href?: string;
   /**
    * 表紙の画像 URL。next/image で最適化するため、`next.config.ts` の
    * images.remotePatterns に登録されたホスト (microCMS) か public 配下のみ渡せる。
@@ -97,11 +101,10 @@ const ShelfBook = ({
   accent = "primary",
   size = "md",
 }: Props) => {
-  return (
-    <Link
-      href={href}
-      className={`flex shrink-0 flex-col border border-outline-variant bg-surface ${SIZE_CLASS_NAME[size]}`}
-    >
+  const className = `flex shrink-0 flex-col border border-outline-variant bg-surface ${SIZE_CLASS_NAME[size]}`;
+
+  const body = (
+    <>
       <div
         className={`relative flex w-full flex-col items-center justify-center gap-2.5 overflow-hidden p-6 ${COVER_HEIGHT_CLASS_NAME[coverHeight]} ${COVER_CLASS_NAME[cover]}`}
       >
@@ -134,7 +137,17 @@ const ShelfBook = ({
           {title}
         </span>
       </div>
+    </>
+  );
+
+  // href が無い本はリンクにしない。空の href を渡すと現在のページへの
+  // リンクになり、押せるのに何も起きない導線ができてしまう
+  return href ? (
+    <Link href={href} className={className}>
+      {body}
     </Link>
+  ) : (
+    <div className={className}>{body}</div>
   );
 };
 

@@ -35,6 +35,7 @@
 | `Profile`（トップレベル group・reusable ではない） | `t9pvP` | `src/features/profile/components/ProfilePageMain/ProfilePageMain.tsx` | ✅ ルートは `src/app/profile/page.tsx` |
 | `ServiceDetailPage` | `qiFnK` | `src/features/service/components/ServiceDetailMain/ServiceDetailMain.tsx` | ✅ ルートは `src/app/service/[id]/page.tsx` |
 | `Tags`（group `j9tOQT`・reusable ではない） | `wJS3A` | `src/features/tags/components/TagsPageMain/TagsPageMain.tsx` | ✅ ルートは `src/app/tags/page.tsx` |
+| `Home Page — Shelf (案)`（frame・reusable ではない） | `hdLAj` | `src/features/home/components/HomePageMain/HomePageMain.tsx` | ✅ ルートは `src/app/page.tsx`。もう一つの `Home Page`（group `ezIQH`）は採らなかった |
 | `Article Detail`（group `hLVQl` の frame・reusable ではない） | `y2xbA` | `src/features/article/components/ArticleDetailMain/ArticleDetailMain.tsx` | ✅ ルートは `src/app/article/[id]/page.tsx` |
 
 `Article Detail` のページ内パーツは reusable ではないため個別の行を持たない。
@@ -63,7 +64,7 @@
 | `Footer` | `VMThv` | `src/features/layout/components/Footer/Footer.tsx` | ✅ |
 | `GlobalNav` | `JuCgU` | `src/features/layout/components/GlobalNav/GlobalNav.tsx` | ✅ |
 | `Logo` | `VD5vy` | — | ❌ |
-| `PageHeader` | `XEUvq` | `src/commons/other/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` / `wide` / `hero` のみ |
+| `PageHeader` | `XEUvq` | `src/commons/other/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` / `wide` / `hero` / `intro` のみ |
 | `ScrollNav` | `qXMlW` | `src/commons/navigation/components/ScrollNav/ScrollNav.tsx` | ✅ |
 | `ScrollTopButton` | `YJxBa` | `src/commons/navigation/components/ScrollTopButton/ScrollTopButton.tsx` | ✅ |
 
@@ -72,12 +73,15 @@
   - ~~`Hero`（`sHYtM`）— gap 14~~ → `hero` prop で実装済み
   - `PageHead`（`TzqGY`）— gap `$space-8` / Sub の `lineHeight` 1.6
   - ~~`PageHead`（`nrspz`）— Sub が `$text-base` / 幅 560~~ → `wide` prop で実装済み
-  - `Intro`（`UmjU2`）— gap 18 / padding 付き / Kicker が `$font-mono` `letterSpacing` 2 /
-    Title は `letterSpacing` -0.3（`tracking-snug`）
+  - ~~`Intro`（`UmjU2`）— gap 18 / padding 付き / Kicker が `$font-mono` `letterSpacing` 2 /
+    Title は `letterSpacing` -0.3（`tracking-snug`）~~ → `intro` prop で実装済み
+    （padding は付けていない。余白は他ページと同じくページ側の責務）
   - 実装済みは標準形（gap-4・`text-4xl`・`tracking-tighter`）、
     `compact`（`MyXLm` 相当: gap-3・`text-3xl`・`tracking-tight`）、
     `wide`（`nrspz` 相当: Sub が `text-base`・幅 560）、
-    `hero`（`sHYtM` 相当: gap-3.5）の4種類
+    `hero`（`sHYtM` 相当: gap-3.5）、
+    `intro`（`UmjU2` 相当: gap-4.5・Kicker が `font-mono tracking-[2px]`・
+    Title が `tracking-snug leading-tight`）の5種類
 
 ## 記事一覧・記事メタ
 
@@ -104,8 +108,8 @@
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
 | `SectionLabel` | `TbTSl` | `src/commons/other/components/SectionLabel/SectionLabel.tsx` | ✅ |
-| `InfoLabel` | `PHZV0` | `src/commons/other/components/InfoLabel/InfoLabel.tsx` | ✅ |
-| `MetaText` | `E2rKp` | `src/commons/other/components/MetaText/MetaText.tsx` | ✅ |
+| `InfoLabel` | `PHZV0` | `src/commons/other/components/MetaText/MetaText.tsx`（`size="xs"`） | ✅ `MetaText` に統合済み（専用ファイルは無い） |
+| `MetaText` | `E2rKp` | `src/commons/other/components/MetaText/MetaText.tsx` | ✅ `size` prop で `sm`(既定) / `xs`(旧 `InfoLabel`) を出し分け |
 | `Paragraph` | `g5WYtH` | `src/commons/contentsDetail/components/Paragraph/Paragraph.tsx` | ✅ |
 
 ## 記事本文（リッチエディタ由来の要素）
@@ -148,7 +152,7 @@
 | `ServiceCard` | `jhtzh` | `src/features/service/components/ServiceCard/ServiceCard.tsx` | ✅ タイトルは `h2`（`Service` 一覧の `h1` 直下でのみ使う前提） |
 | `ServiceCardRow` | `T2ai0` | `src/features/service/components/ServiceCardRow/ServiceCardRow.tsx` | ✅ |
 | `ProjectItem` | `XiMk9` | `src/commons/profile/components/ProjectItem/ProjectItem.tsx` | ✅ |
-| `InfoRow` | `Nle6p` | `src/commons/service/components/InfoRow/InfoRow.tsx` | ✅ 内部の `InfoLabel`(`PHZV0`)は独立コンポーネント化せず内包 |
+| `InfoRow` | `Nle6p` | `src/commons/service/components/InfoRow/InfoRow.tsx` | ✅ 内部の `InfoLabel`(`PHZV0`)は `MetaText size="xs"` を利用 |
 | `ShareBar` | `VyBtl` | `src/commons/contentsDetail/components/ShareBar/ShareBar.tsx` | ✅ |
 | （reusable なし。`Profile` group のタイムライン目盛り `YBl0K` / `knPPs` / `O3yfbV`） | — | `src/commons/profile/components/TimelineMarker/TimelineMarker.tsx` | ✅ |
 
@@ -160,16 +164,19 @@
 | `ShelfNote` | `mqZTV` | `src/features/shelf/components/ShelfNote/ShelfNote.tsx` | ✅ 寸法は `size` 3 段に畳んだ |
 | `ShelfLabel` | `C0GFq` | `src/features/shelf/components/ShelfLabel/ShelfLabel.tsx` | ✅ 見出しは `h2` 固定 |
 | `ShelfPlank` | `T42nPd` | `src/features/shelf/components/ShelfPlank/ShelfPlank.tsx` | ✅ 装飾のみなので `aria-hidden` |
+| （reusable なし。`hdLAj` の Row フレーム `VVE3R` / `p1b4u`） | — | `src/features/shelf/components/ShelfRow/ShelfRow.tsx` | ✅ 横スクロール領域。`tabIndex=0` + `role="group"` |
 
 Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `hdLAj`）が配置の参考。
+横スクロール領域は `ShelfRow` に切り出し済み。マウス以外でも送れるよう
+`tabIndex=0` でフォーカス可能にし、見出しは `ShelfLabel` 側にあるので `role` は `group` に留めた。
 
 ## メディア・スケルトン
 
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
 | `ImagePlaceholder` | `XHkBO` | `src/commons/other/components/ImagePlaceholder/ImagePlaceholder.tsx` | ✅ |
-| `ArticleRowSkeleton` | `M4eia` | — | ❌ 実装時は `ContentsRowSkeleton` にする |
-| `ArticleCardSkeleton` | `Pacnv` | — | ❌ |
+| `ArticleRowSkeleton` | `M4eia` | `src/commons/contents/components/ContentsRowSkeleton/ContentsRowSkeleton.tsx` | ✅ 実装名は `ContentsRowSkeleton`（`ContentsRow` に合わせた） |
+| `ArticleCardSkeleton` | `Pacnv` | `src/commons/contents/components/ArticleCardSkeleton/ArticleCardSkeleton.tsx` | ✅ pen 側に角丸は無い（`border` のみ） |
 
 スケルトンの並べ方は `Skeleton Demo (Loading)`（frame `ogaR6`）に
 `ListLoading` / `GridLoading` として置かれている。
@@ -181,9 +188,9 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 依存の少ないものから。上ほど先。
 
-1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` ~~`InfoLabel`~~（実装済み） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
+1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） ~~`MetaText`~~（実装済み） ~~`InfoLabel`~~（`MetaText` の `size="xs"` に統合） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
 2. **ボタン類** — ~~`LinkButton`~~（実装済み） ~~`BackLink`~~（実装済み） ~~`SearchIconButton`~~（実装済み）
 3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（`ImagePlaceholder` に統合） ~~`ArticleSectionHeading`~~（実装済み）
 4. ~~**記事本文**~~ — 全て実装済み（`ArticleH1`〜`H3` / `Callout` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` / `Bookmark`）
-5. ~~**ページ組み立て**~~ — 全て実装済み（`ArticleListPage` / `Service` / `Profile` / `ServiceDetailPage` / `Article Detail`）
-6. **Shelf 一式**（他から独立しているのでいつでも可）
+5. ~~**ページ組み立て**~~ — 全て実装済み（`ArticleListPage` / `Service` / `Profile` / `ServiceDetailPage` / `Home Page` / `Article Detail`）
+6. ~~**Shelf 一式**~~ — 全て実装済み（`ShelfBook` / `ShelfNote` / `ShelfLabel` / `ShelfPlank` / `ShelfRow`）

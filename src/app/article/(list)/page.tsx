@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
+import { resolveArticleListPage } from "@/features/article/articleListPagination";
 import ArticlePage from "@/features/article/components/articlePage/articlePage";
-import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
+import ArticlePageSkeleton from "@/features/article/components/articlePageSkeleton/articlePageSkeleton";
 
 export const metadata = buildPageMetadata({
   title: "記事一覧",
@@ -17,14 +19,18 @@ const ArticleListPage = async ({ searchParams }: Props) => {
   const parsedPage = Number(page);
   const currentPage =
     Number.isInteger(parsedPage) && parsedPage > 0 ? parsedPage : 1;
+  const { rowCount } = resolveArticleListPage(currentPage);
 
   return (
-    <LayoutMain>
+    <Suspense
+      key={`${currentPage}-${sort}`}
+      fallback={<ArticlePageSkeleton rowCount={rowCount} />}
+    >
       <ArticlePage
         currentPage={currentPage}
         sort={sort === "old" ? "old" : "new"}
       />
-    </LayoutMain>
+    </Suspense>
   );
 };
 
