@@ -36,6 +36,21 @@
 | `ServiceDetailPage` | `qiFnK` | `src/features/service/components/ServiceDetailMain/ServiceDetailMain.tsx` | ✅ ルートは `src/app/service/[id]/page.tsx` |
 | `Tags`（group `j9tOQT`・reusable ではない） | `wJS3A` | `src/features/tags/components/TagsPageMain/TagsPageMain.tsx` | ✅ ルートは `src/app/tags/page.tsx` |
 | `Home Page — Shelf (案)`（frame・reusable ではない） | `hdLAj` | `src/features/home/components/HomePageMain/HomePageMain.tsx` | ✅ ルートは `src/app/page.tsx`。もう一つの `Home Page`（group `ezIQH`）は採らなかった |
+| `Article Detail`（group `hLVQl` の frame・reusable ではない） | `y2xbA` | `src/features/article/components/ArticleDetailMain/ArticleDetailMain.tsx` | ✅ ルートは `src/app/article/[id]/page.tsx` |
+
+`Article Detail` のページ内パーツは reusable ではないため個別の行を持たない。
+実装は `src/features/article/components/` に置いてある。
+
+| pen（ページ内 frame） | ID | 実装 |
+| --- | --- | --- |
+| `ArticleBody` | `cZjgo` | `ArticleBody/ArticleBody.tsx`（ブロック配列を各要素へ振り分ける） |
+| `TocCard` / `TocList` | `y19hdB` / `kxgXf` | `ArticleToc/ArticleToc.tsx` |
+| `TocItem` | `FdgCE` | `ArticleTocItem/ArticleTocItem.tsx` |
+| `PaginationWrap` / `Pagination` | `CI1Qw` / `l1okcz` | `PostNav/PostNav.tsx` |
+| `PrevLink` / `NextLink` | `nAaaH` / `O4vmc` | `PostNavLink/PostNavLink.tsx` |
+| `InfoCard` | `q6phow` | `ArticleBody/ArticleBody.tsx` に内包（単体の再利用先が無いため） |
+
+`Blocks Catalog Page`（frame `ZnbhV`）は記事装飾のカタログで、ページとしては実装しない。
 
 参考: ページ全体のデザインは reusable ではなくトップレベルの group にもある
 （`Home Page` `Article Page` `Article Detail` `Tags` `Profile` `Service` `Search` `404 Page`）。
@@ -51,7 +66,7 @@
 | `Logo` | `VD5vy` | — | ❌ |
 | `PageHeader` | `XEUvq` | `src/commons/other/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` / `wide` / `hero` / `intro` のみ |
 | `ScrollNav` | `qXMlW` | `src/commons/navigation/components/ScrollNav/ScrollNav.tsx` | ✅ |
-| `ScrollTopButton` | `YJxBa` | — | ❌ |
+| `ScrollTopButton` | `YJxBa` | `src/commons/navigation/components/ScrollTopButton/ScrollTopButton.tsx` | ✅ |
 
 - `src/features/layout/components/LayoutMain/LayoutMain.tsx` は pen に対応物なし（実装都合の骨組み）
 - `PageHeader` の未対応バリアント（pen 側インスタンスの上書き）:
@@ -177,5 +192,5 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 2. **ボタン類** — ~~`LinkButton`~~（実装済み） ~~`BackLink`~~（実装済み） ~~`SearchIconButton`~~（実装済み）
 3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（`ImagePlaceholder` に統合） ~~`ArticleSectionHeading`~~（実装済み）
 4. ~~**記事本文**~~ — 全て実装済み（`ArticleH1`〜`H3` / `Callout` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` / `Bookmark`）
-5. ~~**ページ組み立て**~~ — 全て実装済み（`ArticleListPage` / `Service` / `Profile` / `ServiceDetailPage` / `Home Page`）
+5. ~~**ページ組み立て**~~ — 全て実装済み（`ArticleListPage` / `Service` / `Profile` / `ServiceDetailPage` / `Home Page` / `Article Detail`）
 6. ~~**Shelf 一式**~~ — 全て実装済み（`ShelfBook` / `ShelfNote` / `ShelfLabel` / `ShelfPlank` / `ShelfRow`）
