@@ -133,6 +133,7 @@
 | `ProjectItem` | `XiMk9` | `src/commons/profile/components/ProjectItem/ProjectItem.tsx` | ✅ |
 | `InfoRow` | `Nle6p` | `src/commons/service/components/InfoRow/InfoRow.tsx` | ✅ 内部の `InfoLabel`(`PHZV0`)は独立コンポーネント化せず内包 |
 | `ShareBar` | `VyBtl` | `src/commons/contentsDetail/components/ShareBar/ShareBar.tsx` | ✅ |
+| （reusable なし。`Profile` group のタイムライン目盛り `YBl0K` / `knPPs` / `O3yfbV`） | — | `src/commons/profile/components/TimelineMarker/TimelineMarker.tsx` | ✅ |
 
 ## Shelf（本棚）
 
