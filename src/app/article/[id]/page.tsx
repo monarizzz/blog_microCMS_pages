@@ -28,6 +28,13 @@ const NAMED_ENTITIES: Record<string, string> = {
   nbsp: " ",
 };
 
+/** Unicode のスカラー値か（範囲内で、かつサロゲート単体でない） */
+const isValidCodePoint = (codePoint: number) =>
+  Number.isInteger(codePoint) &&
+  codePoint >= 0 &&
+  codePoint <= 0x10ffff &&
+  !(codePoint >= 0xd800 && codePoint <= 0xdfff);
+
 /**
  * 文字参照をデコードする。`&amp;lt;` が `<` にならないよう、
  * 実体参照は 1 度しか展開しない（再帰的に走らせない）。
@@ -42,9 +49,13 @@ const decodeEntities = (text: string) =>
             ? Number.parseInt(ref.slice(2), 16)
             : Number.parseInt(ref.slice(1), 10);
 
-        return Number.isNaN(codePoint)
-          ? match
-          : String.fromCodePoint(codePoint);
+        // 本文は外部 CMS の入力なので、Unicode の範囲外
+        // （`&#1114112;` など）やサロゲート単体が来ても
+        // String.fromCodePoint で RangeError / 不正な文字列にならないよう、
+        // 呼ぶ前に弾いて元の文字列のまま残す
+        return isValidCodePoint(codePoint)
+          ? String.fromCodePoint(codePoint)
+          : match;
       }
 
       return NAMED_ENTITIES[ref.toLowerCase()] ?? match;
