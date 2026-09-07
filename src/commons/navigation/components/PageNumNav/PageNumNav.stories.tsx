@@ -18,10 +18,31 @@ export const Default: Story = {
   },
 };
 
+/** 中間ページ。現在ページの前後 1 ページ（4 / 6）が出ること（1 2 3 4 5 6 … 10） */
 export const Middle: Story = {
   args: {
     currentPage: 5,
     totalPages: 10,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await expect(canvas.getByRole("link", { name: "4" })).toBeInTheDocument();
+    await expect(canvas.getByRole("link", { name: "6" })).toBeInTheDocument();
+  },
+};
+
+/** 先頭 3 ページから離れた中間ページ。前後が両側の省略記号に挟まれること（1 2 3 … 6 7 8 … 10） */
+export const MiddleFar: Story = {
+  args: {
+    currentPage: 7,
+    totalPages: 10,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await expect(canvas.getByRole("link", { name: "6" })).toBeInTheDocument();
+    await expect(canvas.getByRole("link", { name: "8" })).toBeInTheDocument();
   },
 };
 
