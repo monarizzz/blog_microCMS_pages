@@ -48,7 +48,7 @@
 | `Footer` | `VMThv` | `src/features/layout/components/Footer/Footer.tsx` | ✅ |
 | `GlobalNav` | `JuCgU` | `src/features/layout/components/GlobalNav/GlobalNav.tsx` | ✅ |
 | `Logo` | `VD5vy` | — | ❌ |
-| `PageHeader` | `XEUvq` | `src/commons/other/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` / `wide` / `hero` のみ |
+| `PageHeader` | `XEUvq` | `src/commons/other/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` / `wide` / `hero` / `intro` のみ |
 | `ScrollNav` | `qXMlW` | `src/commons/navigation/components/ScrollNav/ScrollNav.tsx` | ✅ |
 | `ScrollTopButton` | `YJxBa` | — | ❌ |
 
@@ -57,12 +57,15 @@
   - ~~`Hero`（`sHYtM`）— gap 14~~ → `hero` prop で実装済み
   - `PageHead`（`TzqGY`）— gap `$space-8` / Sub の `lineHeight` 1.6
   - ~~`PageHead`（`nrspz`）— Sub が `$text-base` / 幅 560~~ → `wide` prop で実装済み
-  - `Intro`（`UmjU2`）— gap 18 / padding 付き / Kicker が `$font-mono` `letterSpacing` 2 /
-    Title は `letterSpacing` -0.3（`tracking-snug`）
+  - ~~`Intro`（`UmjU2`）— gap 18 / padding 付き / Kicker が `$font-mono` `letterSpacing` 2 /
+    Title は `letterSpacing` -0.3（`tracking-snug`）~~ → `intro` prop で実装済み
+    （padding は付けていない。余白は他ページと同じくページ側の責務）
   - 実装済みは標準形（gap-4・`text-4xl`・`tracking-tighter`）、
     `compact`（`MyXLm` 相当: gap-3・`text-3xl`・`tracking-tight`）、
     `wide`（`nrspz` 相当: Sub が `text-base`・幅 560）、
-    `hero`（`sHYtM` 相当: gap-3.5）の4種類
+    `hero`（`sHYtM` 相当: gap-3.5）、
+    `intro`（`UmjU2` 相当: gap-4.5・Kicker が `font-mono tracking-[2px]`・
+    Title が `tracking-snug leading-tight`）の5種類
 
 ## 記事一覧・記事メタ
 
