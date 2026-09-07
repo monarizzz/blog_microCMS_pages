@@ -11,9 +11,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  sassOptions: {
-    // TODO: scssの定数ファイルパスを記載
-  },
 };
 
 export default nextConfig;
