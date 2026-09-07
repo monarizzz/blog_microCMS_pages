@@ -89,8 +89,8 @@
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
 | `SectionLabel` | `TbTSl` | `src/commons/other/components/SectionLabel/SectionLabel.tsx` | ✅ |
-| `InfoLabel` | `PHZV0` | `src/commons/other/components/InfoLabel/InfoLabel.tsx` | ✅ |
-| `MetaText` | `E2rKp` | `src/commons/other/components/MetaText/MetaText.tsx` | ✅ |
+| `InfoLabel` | `PHZV0` | `src/commons/other/components/MetaText/MetaText.tsx`（`size="xs"`） | ✅ `MetaText` に統合済み（専用ファイルは無い） |
+| `MetaText` | `E2rKp` | `src/commons/other/components/MetaText/MetaText.tsx` | ✅ `size` prop で `sm`(既定) / `xs`(旧 `InfoLabel`) を出し分け |
 | `Paragraph` | `g5WYtH` | `src/commons/contentsDetail/components/Paragraph/Paragraph.tsx` | ✅ |
 
 ## 記事本文（リッチエディタ由来の要素）
@@ -133,7 +133,7 @@
 | `ServiceCard` | `jhtzh` | `src/features/service/components/ServiceCard/ServiceCard.tsx` | ✅ タイトルは `h2`（`Service` 一覧の `h1` 直下でのみ使う前提） |
 | `ServiceCardRow` | `T2ai0` | `src/features/service/components/ServiceCardRow/ServiceCardRow.tsx` | ✅ |
 | `ProjectItem` | `XiMk9` | `src/commons/profile/components/ProjectItem/ProjectItem.tsx` | ✅ |
-| `InfoRow` | `Nle6p` | `src/commons/service/components/InfoRow/InfoRow.tsx` | ✅ 内部の `InfoLabel`(`PHZV0`)は独立コンポーネント化せず内包 |
+| `InfoRow` | `Nle6p` | `src/commons/service/components/InfoRow/InfoRow.tsx` | ✅ 内部の `InfoLabel`(`PHZV0`)は `MetaText size="xs"` を利用 |
 | `ShareBar` | `VyBtl` | `src/commons/contentsDetail/components/ShareBar/ShareBar.tsx` | ✅ |
 | （reusable なし。`Profile` group のタイムライン目盛り `YBl0K` / `knPPs` / `O3yfbV`） | — | `src/commons/profile/components/TimelineMarker/TimelineMarker.tsx` | ✅ |
 
@@ -166,7 +166,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 依存の少ないものから。上ほど先。
 
-1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` ~~`InfoLabel`~~（実装済み） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
+1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） ~~`MetaText`~~（実装済み） ~~`InfoLabel`~~（`MetaText` の `size="xs"` に統合） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
 2. **ボタン類** — ~~`LinkButton`~~（実装済み） ~~`BackLink`~~（実装済み） ~~`SearchIconButton`~~（実装済み）
 3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（`ImagePlaceholder` に統合） ~~`ArticleSectionHeading`~~（実装済み）
 4. ~~**記事本文**~~ — 全て実装済み（`ArticleH1`〜`H3` / `Callout` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` / `Bookmark`）
