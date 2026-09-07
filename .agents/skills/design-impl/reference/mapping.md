@@ -148,8 +148,11 @@
 | `ShelfNote` | `mqZTV` | `src/features/shelf/components/ShelfNote/ShelfNote.tsx` | ✅ 寸法は `size` 3 段に畳んだ |
 | `ShelfLabel` | `C0GFq` | `src/features/shelf/components/ShelfLabel/ShelfLabel.tsx` | ✅ 見出しは `h2` 固定 |
 | `ShelfPlank` | `T42nPd` | `src/features/shelf/components/ShelfPlank/ShelfPlank.tsx` | ✅ 装飾のみなので `aria-hidden` |
+| （reusable なし。`hdLAj` の Row フレーム `VVE3R` / `p1b4u`） | — | `src/features/shelf/components/ShelfRow/ShelfRow.tsx` | ✅ 横スクロール領域。`tabIndex=0` + `role="group"` |
 
 Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `hdLAj`）が配置の参考。
+横スクロール領域は `ShelfRow` に切り出し済み。マウス以外でも送れるよう
+`tabIndex=0` でフォーカス可能にし、見出しは `ShelfLabel` 側にあるので `role` は `group` に留めた。
 
 ## メディア・スケルトン
 
