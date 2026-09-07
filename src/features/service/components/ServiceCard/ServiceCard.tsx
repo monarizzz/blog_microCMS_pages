@@ -1,4 +1,6 @@
 import { ExternalLink } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 import ImagePlaceholder from "@/commons/other/components/ImagePlaceholder/ImagePlaceholder";
 
@@ -6,10 +8,19 @@ export type ServiceCardProps = {
   title: string;
   techStack: string;
   developmentType: string;
-  /** サムネイル画像の URL。未指定時は NO IMAGE のフォールバックを表示する */
+  /**
+   * サムネイル画像の URL。未指定時は NO IMAGE のフォールバックを表示する。
+   * next/image で最適化するため、`next.config.ts` の images.remotePatterns に
+   * 登録されたホスト (microCMS) か、public 配下のパスのみ渡せる
+   */
   thumbnailUrl?: string;
   url?: string;
   githubUrl?: string;
+  /**
+   * 詳細ページのパス。microCMS の `hasDetailPage` が false の項目は
+   * 詳細ページを持たないので、その場合は渡さない（外部リンクのみになる）
+   */
+  detailPath?: string;
 };
 
 const ServiceCard = ({
@@ -19,6 +30,7 @@ const ServiceCard = ({
   thumbnailUrl,
   url,
   githubUrl,
+  detailPath,
 }: ServiceCardProps) => {
   const hasLink = Boolean(url || githubUrl);
 
@@ -26,11 +38,14 @@ const ServiceCard = ({
     <div className="flex w-full flex-1 flex-col items-center gap-7 border border-outline-variant bg-surface">
       <div className="relative h-45 w-full overflow-hidden border-b border-outline-variant bg-surface-container-low">
         {thumbnailUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          // カード見出し (h2) に title があり、サムネイル自体は装飾なので alt は空。
+          // sizes は 1 行 2 カラム (max-w-275 = 1100px 内) のカード幅に合わせた概算。
+          <Image
             src={thumbnailUrl}
-            alt={title}
-            className="size-full object-cover"
+            alt=""
+            fill
+            sizes="(max-width: 1100px) 50vw, 520px"
+            className="object-cover"
           />
         ) : (
           // 枠と高さは親の div が持つため、ImagePlaceholder 既定の
@@ -49,7 +64,9 @@ const ServiceCard = ({
               h3 だと h1 から 1 段飛んで heading-order (axe) 違反になる。
               他の階層でも使うようになったら headingLevel prop を検討する */}
           <h2 className="px-0.75 font-sans text-lg leading-[1.4] font-bold tracking-snug text-primary">
-            {title}
+            {/* pen (jhtzh) に詳細ページへの導線は無いため、見た目を足さずに
+                タイトル自体をリンクにする。detailPath 未指定なら素のテキスト */}
+            {detailPath ? <Link href={detailPath}>{title}</Link> : title}
           </h2>
           <div className="flex flex-col gap-3 px-0.75">
             <p className="w-full font-mono text-[12px] wrap-break-word text-secondary">

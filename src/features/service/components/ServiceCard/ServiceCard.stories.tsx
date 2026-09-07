@@ -33,7 +33,20 @@ export const WithThumbnail: Story = {
     title: "ポートフォリオサイト",
     techStack: "Next.js / TypeScript / Tailwind CSS",
     developmentType: "Solo development",
-    thumbnailUrl: "https://placehold.jp/440x180.png",
+    // next/image は remotePatterns 未登録のホストを弾くため、
+    // ストーリーでは public 配下の画像を使う
+    thumbnailUrl: "/github-mark.svg",
     url: "https://example.com",
+  },
+};
+
+export const WithDetailPage: Story = {
+  args: {
+    title: "MoneLogue",
+    techStack: "Next.js / TypeScript / microCMS",
+    developmentType: "Solo development",
+    url: "https://example.com",
+    githubUrl: "https://github.com/example/monelogue",
+    detailPath: "/service/monelogue",
   },
 };

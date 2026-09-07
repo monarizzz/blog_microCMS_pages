@@ -8,6 +8,8 @@ type Props = {
   count?: string;
   compact?: boolean;
   wide?: boolean;
+  /** ServiceDetailPage の Hero (sHYtM) 相当。gap だけ 14px に詰める */
+  hero?: boolean;
 };
 
 const PageHeader = ({
@@ -18,9 +20,12 @@ const PageHeader = ({
   count,
   compact,
   wide,
+  hero,
 }: Props) => {
+  const gapClassName = compact ? "gap-3" : hero ? "gap-3.5" : "gap-4";
+
   return (
-    <div className={`flex w-full flex-col ${compact ? "gap-3" : "gap-4"}`}>
+    <div className={`flex w-full flex-col ${gapClassName}`}>
       {kicker && (
         <span className="text-sm font-medium tracking-[1.5px] text-secondary">
           {kicker}

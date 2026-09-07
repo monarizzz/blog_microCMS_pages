@@ -25,7 +25,7 @@ Next.js と microCMS を使用して構築した、技術的な学びやメモ�
    ```
 
 3. **環境変数を設定**
-   `.env.local.example` ファイルを参考に `.env.local` ファイルを作成し、microCMS の API キーなどを設定してください。
+   `.env.example` ファイルを参考に `.env.local` ファイルを作成し、microCMS の API キーなどを設定してください。
 
    ```
    MICROCMS_SERVICE_DOMAIN=your-service-domain
