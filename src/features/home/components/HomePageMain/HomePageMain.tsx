@@ -19,13 +19,16 @@ type ShelfItem =
 //TODO:仮置き（データ接続は #282）
 // 寸法・色・並び順は pen `hdLAj` の Row (p1b4u) をそのまま写している。
 // pen では画像表紙の本が 2 冊あるが、表紙画像は microCMS 由来で
-// データ接続まで用意できないため、短い表紙文字に置き換えた
+// データ接続まで用意できないため、短い表紙文字に置き換えた。
+//
+// href は付けていない。記事詳細 (`/article/[id]`) は本文がまだ
+// プレースホルダで、遷移させても未実装画面に着地するため。
+// 一覧への導線は下の SeeAllRight が持っている
 const blogShelf: ShelfItem[] = [
   {
     kind: "book",
     title: "Next.js 14 App Router 移行の勘所",
     meta: "2024.03.18 · Blog",
-    href: "/article/app-router",
     coverText: "Next",
     cover: "muted",
     coverHeight: "lg",
@@ -41,7 +44,6 @@ const blogShelf: ShelfItem[] = [
     kind: "book",
     title: "型で守るコンポーネント設計",
     meta: "2024.02.06 · Blog",
-    href: "/article/typed-components",
     coverText: "TS",
     cover: "info",
     coverTextSize: "lg",
@@ -52,7 +54,6 @@ const blogShelf: ShelfItem[] = [
     kind: "book",
     title: "余白のデザイン、その効能",
     meta: "2024.01.22 · Blog",
-    href: "/article/whitespace",
     coverText: "余白",
     cover: "muted",
     coverHeight: "lg",
@@ -63,7 +64,6 @@ const blogShelf: ShelfItem[] = [
     kind: "book",
     title: "静的サイトという選択",
     meta: "2023.12.10 · Blog",
-    href: "/article/static-site",
     coverText: "#",
     cover: "muted",
     coverTextSize: "lg",
@@ -75,7 +75,6 @@ const blogShelf: ShelfItem[] = [
     kind: "book",
     title: "日本語タイポグラフィの基礎",
     meta: "2023.11.04 · Blog",
-    href: "/article/japanese-typography",
     coverText: "あ",
     coverTextSize: "lg",
     coverHeight: "lg",
@@ -85,7 +84,10 @@ const blogShelf: ShelfItem[] = [
 ];
 
 //TODO:仮置き（データ接続は #282）
-// 寸法・色・並び順は pen `hdLAj` の Row (VVE3R) をそのまま写している
+// 寸法・色・並び順は pen `hdLAj` の Row (VVE3R) をそのまま写している。
+//
+// href は付けていない。`/service/[id]` に実在する ID は `monelogue` だけで、
+// ここに並ぶ 4 件はどれも notFound() に落ちるため
 const serviceShelf: ShelfItem[] = [
   {
     kind: "note",
@@ -97,7 +99,6 @@ const serviceShelf: ShelfItem[] = [
     kind: "book",
     title: "小杉湯",
     meta: "2024 | Service",
-    href: "/service/kosugiyu",
     coverText: "小杉湯",
     coverHeight: "lg",
     accent: "info",
@@ -107,7 +108,6 @@ const serviceShelf: ShelfItem[] = [
     kind: "book",
     title: "麻婆食堂 DONDON",
     meta: "2024 | Service",
-    href: "/service/dondon",
     coverText: "どんどん",
     cover: "dark",
     coverTextSize: "sm",
@@ -125,7 +125,6 @@ const serviceShelf: ShelfItem[] = [
     kind: "book",
     title: "KISO",
     meta: "2024 | Service",
-    href: "/service/kiso",
     coverText: "KISO",
     coverTextSize: "lg",
     coverHeight: "lg",
@@ -135,7 +134,6 @@ const serviceShelf: ShelfItem[] = [
     kind: "book",
     title: "Portalley",
     meta: "2023 | Service",
-    href: "/service/portalley",
     coverText: "Portalley",
     cover: "muted",
     coverTextSize: "sm",
@@ -148,7 +146,7 @@ const serviceShelf: ShelfItem[] = [
 const renderShelfItems = (items: ShelfItem[]) =>
   items.map((item) =>
     item.kind === "book" ? (
-      <ShelfBook key={item.href} {...item} />
+      <ShelfBook key={item.title} {...item} />
     ) : (
       <ShelfNote key={item.label} {...item} />
     ),
