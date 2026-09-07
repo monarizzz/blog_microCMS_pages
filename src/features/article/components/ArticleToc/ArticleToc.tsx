@@ -22,11 +22,12 @@ const ArticleToc = ({ items }: Props) => {
   const [activeId, setActiveId] = useState<string | undefined>(items[0]?.id);
 
   // items をそのまま依存にすると、親の再レンダーで配列の参照が変わるたびに
-  // 購読を張り直してしまう。中身が同じなら再実行しないよう文字列に畳む
-  const idsKey = items.map(({ id }) => id).join(",");
+  // 購読を張り直してしまう。中身が同じなら再実行しないよう文字列に畳む。
+  // 区切り文字で連結すると id 自体に区切り文字が入ったときに壊れるため JSON にする
+  const idsKey = JSON.stringify(items.map(({ id }) => id));
 
   useEffect(() => {
-    const ids = idsKey.length > 0 ? idsKey.split(",") : [];
+    const ids: string[] = JSON.parse(idsKey);
     const targets = ids
       .map((id) => document.getElementById(id))
       .filter((element): element is HTMLElement => element !== null);
