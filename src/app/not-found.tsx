@@ -5,7 +5,7 @@ import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
 const NotFound = () => {
   return (
     <LayoutMain>
-      <div className="flex w-full flex-col items-center gap-6">
+      <div className="mx-auto flex w-full max-w-275 flex-col items-center justify-center gap-6 px-10 py-16">
         <p className="text-[70px] font-bold">404</p>
         <div className="flex flex-col items-center justify-center gap-1">
           <h1 className="text-xl font-bold">ページがありません。</h1>
