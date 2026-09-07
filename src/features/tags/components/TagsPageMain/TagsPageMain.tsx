@@ -5,17 +5,17 @@ import PageHeader from "@/commons/other/components/PageHeader/PageHeader";
 import SeeAllRight from "@/commons/other/components/SeeAllRight/SeeAllRight";
 
 //TODO:仮置き
-const categories = [
+// 記事は複数タグを持てるため、記事総数はカテゴリ別件数の合計とは一致しない。
+// #282 のデータ接続時は記事一覧の総件数を独立して取得する
+const totalCount = 38;
+// フィルタは全カテゴリ。カテゴリ数はこの配列から数える
+const categories = ["Next.js", "設計", "TypeScript", "テスト"];
+// セクションとして展開するのは ui.pen の Sections に合わせて 3 件のみ
+const sections = [
   { name: "Next.js", count: 12, shown: 3 },
   { name: "設計", count: 11, shown: 3 },
   { name: "TypeScript", count: 8, shown: 2 },
-  { name: "テスト", count: 7, shown: 2 },
 ];
-
-const totalCount = categories.reduce(
-  (sum, category) => sum + category.count,
-  0,
-);
 
 type Props = {
   activeTag?: string;
@@ -36,7 +36,7 @@ const TagsPageMain = ({ activeTag }: Props) => {
           solid
           active={!activeTag}
         />
-        {categories.map(({ name }) => (
+        {categories.map((name) => (
           <FilterBtn
             key={name}
             text={`#${name}`}
@@ -48,7 +48,7 @@ const TagsPageMain = ({ activeTag }: Props) => {
         ))}
       </div>
       <div className="flex flex-col gap-16">
-        {categories.map((category, index) => (
+        {sections.map((category, index) => (
           <section key={category.name} className="flex flex-col gap-2">
             <CategorySectionHeader
               name={category.name}
