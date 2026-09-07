@@ -1,13 +1,19 @@
+import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
+import ProfilePageMain from "@/features/profile/components/ProfilePageMain/ProfilePageMain";
 
-const Home = () => {
+export const metadata = buildPageMetadata({
+  title: "プロフィール",
+  description: "運営者のプロフィールと経歴です。",
+  path: "/profile",
+});
+
+const Profile = () => {
   return (
-    <>
-      <LayoutMain>
-        <>profile page</>
-      </LayoutMain>
-    </>
+    <LayoutMain>
+      <ProfilePageMain />
+    </LayoutMain>
   );
 };
 
-export default Home;
+export default Profile;

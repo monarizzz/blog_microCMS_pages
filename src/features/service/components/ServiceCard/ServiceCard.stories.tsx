@@ -39,3 +39,14 @@ export const WithThumbnail: Story = {
     url: "https://example.com",
   },
 };
+
+export const WithDetailPage: Story = {
+  args: {
+    title: "MoneLogue",
+    techStack: "Next.js / TypeScript / microCMS",
+    developmentType: "Solo development",
+    url: "https://example.com",
+    githubUrl: "https://github.com/example/monelogue",
+    detailPath: "/service/monelogue",
+  },
+};

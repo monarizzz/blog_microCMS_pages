@@ -16,7 +16,7 @@ const SeeAllRight = ({ href, tag }: Props) => {
         <span className="text-[13px] text-primary">
           {tag ? `#${tag.name} の記事をすべて見る` : "すべての記事を見る"}
         </span>
-        {tag && (
+        {tag && tag.count > 0 && (
           <div className="rounded-button bg-surface-container-low px-2.25 py-0.75 text-sm tracking-[0.5px]">
             +{tag.count}
           </div>
