@@ -22,6 +22,7 @@ const SearchInput = ({ query = "" }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   // 自分が最後に URL へ送ったクエリ。URL 側の変化が自分由来かを見分けるために持つ
   const [lastSubmitted, setLastSubmitted] = useState(query);
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const submit = useCallback(
     (next: string) => {
@@ -38,8 +39,8 @@ const SearchInput = ({ query = "" }: Props) => {
     if (trimmed.length > 0 && trimmed.length < MIN_QUERY_LENGTH) return;
     if (trimmed === lastSubmitted) return;
 
-    const timer = setTimeout(() => submit(trimmed), DEBOUNCE_MS);
-    return () => clearTimeout(timer);
+    timerRef.current = setTimeout(() => submit(trimmed), DEBOUNCE_MS);
+    return () => clearTimeout(timerRef.current);
   }, [value, lastSubmitted, submit]);
 
   // `?q=` が自分の router.replace 以外で変わったときだけ入力欄を追従させる。
@@ -67,6 +68,9 @@ const SearchInput = ({ query = "" }: Props) => {
         e.preventDefault();
         const trimmed = value.trim();
         if (trimmed.length > 0 && trimmed.length < MIN_QUERY_LENGTH) return;
+        // 待機中のタイマーを消してから即時に送る。残すと同じクエリへの
+        // router.replace が二重に走り、遷移とサーバーリクエストが重複する
+        clearTimeout(timerRef.current);
         submit(trimmed);
       }}
       className="flex items-center gap-4 rounded-input px-4 py-3 outline outline-primary"
