@@ -30,6 +30,11 @@ Next.js と microCMS を使用して構築した、技術的な学びやメモ�
    ```
    MICROCMS_SERVICE_DOMAIN=your-service-domain
    MICROCMS_API_KEY=your-api-key
+
+   # OGP 画像や canonical URL の解決に使うサイトの絶対 URL。
+   # 未設定の場合は http://localhost:3000 にフォールバックするため、
+   # 本番デプロイ先では必ず設定する
+   NEXT_PUBLIC_SITE_URL=https://example.com
    ```
 
 4. **開発サーバーを起動**
