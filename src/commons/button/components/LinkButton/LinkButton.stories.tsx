@@ -22,3 +22,11 @@ export const CustomLabel: Story = {
     label: "GitHub へ",
   },
 };
+
+export const GithubIcon: Story = {
+  args: {
+    href: "https://github.com/example",
+    label: "GitHub",
+    icon: "github",
+  },
+};

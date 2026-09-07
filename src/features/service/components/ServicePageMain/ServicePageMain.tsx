@@ -8,12 +8,14 @@ import ServiceCardRow, {
 //TODO:仮置き
 const services: ServiceCardRowItem[] = [
   {
-    id: "blog",
-    title: "技術ブログ",
+    id: "monelogue",
+    title: "MoneLogue",
     techStack: "Next.js / TypeScript / microCMS",
     developmentType: "Solo development",
     url: "https://example.com",
-    githubUrl: "https://github.com/example/blog",
+    githubUrl: "https://github.com/example/monelogue",
+    // hasDetailPage が true の項目だけ詳細ページへの導線を持つ
+    detailPath: "/service/monelogue",
   },
   {
     id: "weather-app",

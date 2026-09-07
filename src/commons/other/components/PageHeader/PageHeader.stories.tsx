@@ -42,6 +42,15 @@ export const Wide: Story = {
   },
 };
 
+export const Hero: Story = {
+  args: {
+    meta: "個人開発 · 2024 · フルスタック",
+    title: "MoneLogue",
+    sub: "収支を記録し、資産の推移をグラフで可視化する家計簿アプリ。日々の入力から月次・年次の資産推移までを一元管理できます。",
+    hero: true,
+  },
+};
+
 export const Compact: Story = {
   args: {
     title: "#Next.js",

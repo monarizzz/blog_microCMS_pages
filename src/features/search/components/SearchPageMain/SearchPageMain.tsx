@@ -12,7 +12,7 @@ type Props = {
 
 const SearchPageMain = ({ article, num }: Props) => {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="mx-auto flex w-full max-w-275 flex-col gap-6 pt-37.5 pr-10 pb-24 pl-11.75">
       <h1 className="text-sm tracking-[0.5px]">記事を検索</h1>
       <SearchInput />
       <div className="flex items-center gap-2">
@@ -28,7 +28,7 @@ const SearchPageMain = ({ article, num }: Props) => {
           <ContentsRow />
         </>
       ) : (
-        <div className="flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-6 py-16">
           <SearchX size={48} className="text-outline" />
           <p className="text-lg font-bold text-primary">
             一致する記事が見つかりませんでした

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { pageList } from "../../constants/pageList";
 import GlobalNav from "../GlobalNav/GlobalNav";
 
 const Header = () => {
@@ -9,7 +8,7 @@ const Header = () => {
         <Link href="/" className="text-lg">
           Monelog
         </Link>
-        <GlobalNav pageList={pageList} />
+        <GlobalNav />
       </div>
     </div>
   );
