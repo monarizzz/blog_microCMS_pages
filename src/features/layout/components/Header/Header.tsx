@@ -8,7 +8,7 @@ const Header = () => {
         <Link href="/" className="text-lg">
           Monelog
         </Link>
-        <GlobalNav />
+        <GlobalNav label="メインナビゲーション" />
       </div>
     </div>
   );

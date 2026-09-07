@@ -4,6 +4,9 @@ import GlobalNav from "./GlobalNav";
 
 const meta = {
   component: GlobalNav,
+  args: {
+    label: "メインナビゲーション",
+  },
   parameters: {
     nextjs: {
       appDirectory: true,
