@@ -57,7 +57,7 @@ const PageHeader = ({
           compact
             ? "text-3xl font-bold tracking-tight text-primary"
             : intro
-              ? "text-4xl leading-tight font-bold tracking-snug text-primary"
+              ? "text-4xl/tight font-bold tracking-snug text-primary"
               : "text-4xl font-bold tracking-tighter text-primary"
         }
       >
