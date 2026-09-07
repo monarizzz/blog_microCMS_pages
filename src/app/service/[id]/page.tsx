@@ -44,11 +44,13 @@ type Props = {
 
 const ServiceDetailPage = async ({ params }: Props) => {
   const { id } = await params;
-  const service = services[id];
-
-  if (!service) {
+  // 添字アクセスだと /service/toString のような ID で Object.prototype の
+  // 継承プロパティが返り、notFound() をすり抜けて描画時に落ちる
+  if (!Object.hasOwn(services, id)) {
     notFound();
   }
+
+  const service = services[id];
 
   return (
     <LayoutMain>
