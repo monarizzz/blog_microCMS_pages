@@ -1,13 +1,12 @@
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
+import ProfilePageMain from "@/features/profile/components/ProfilePageMain/ProfilePageMain";
 
-const Home = () => {
+const Profile = () => {
   return (
-    <>
-      <LayoutMain>
-        <>profile page</>
-      </LayoutMain>
-    </>
+    <LayoutMain>
+      <ProfilePageMain />
+    </LayoutMain>
   );
 };
 
-export default Home;
+export default Profile;
