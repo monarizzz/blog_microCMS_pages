@@ -3,6 +3,7 @@ import SearchInput from "../SearchInput/SearchInput";
 import { AlertCircle, SearchX } from "lucide-react";
 import TagBtn from "@/commons/button/components/TagBtn/TagBtn";
 import { MIN_QUERY_LENGTH } from "../../constants/searchQuery";
+import Link from "next/link";
 
 //TODO:仮置き
 type Props = {
@@ -41,13 +42,9 @@ const SearchPageMain = ({ query, article, num }: Props) => {
           <div>
             <TagBtn text="タグ" link="" />
           </div>
-          <button
-            type="button"
-            aria-label="検索をクリア"
-            className="text-base text-on-surface-variant"
-          >
+          <Link href="/search" className="text-base text-on-surface-variant">
             検索をクリア
-          </button>
+          </Link>
         </div>
       )}
     </div>
