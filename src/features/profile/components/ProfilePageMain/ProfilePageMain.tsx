@@ -122,8 +122,13 @@ const ProfilePageMain = () => {
                   hollow={Boolean(item.project)}
                 />
               </div>
+              {/*
+                pl は縦軸の中心から ProjectItem までの 29px。
+                border-box では padding が max-w に含まれるため、
+                ProjectItem の表示幅 (582 - 4 = 578px) を保つよう max-w も 25px 広げる。
+              */}
               {item.project && (
-                <div className="w-full max-w-145.5 pl-7.25">
+                <div className="w-full max-w-151.75 pl-7.25">
                   <ProjectItem {...item.project} />
                 </div>
               )}
