@@ -33,7 +33,7 @@
 | `SearchPage` | `gwtSi` | `src/features/search/components/SearchPageMain/SearchPageMain.tsx` | ✅ |
 | `Service`（トップレベル group・reusable ではない） | `olqvM` | `src/features/service/components/ServicePageMain/ServicePageMain.tsx` | ✅ ルートは `src/app/service/page.tsx` |
 | `Profile`（トップレベル group・reusable ではない） | `t9pvP` | `src/features/profile/components/ProfilePageMain/ProfilePageMain.tsx` | ✅ ルートは `src/app/profile/page.tsx` |
-| `ServiceDetailPage` | `qiFnK` | — | ❌ |
+| `ServiceDetailPage` | `qiFnK` | `src/features/service/components/ServiceDetailMain/ServiceDetailMain.tsx` | ✅ ルートは `src/app/service/[id]/page.tsx` |
 | `Tags`（group `j9tOQT`・reusable ではない） | `wJS3A` | `src/features/tags/components/TagsPageMain/TagsPageMain.tsx` | ✅ ルートは `src/app/tags/page.tsx` |
 
 参考: ページ全体のデザインは reusable ではなくトップレベルの group にもある
@@ -48,20 +48,21 @@
 | `Footer` | `VMThv` | `src/features/layout/components/Footer/Footer.tsx` | ✅ |
 | `GlobalNav` | `JuCgU` | `src/features/layout/components/GlobalNav/GlobalNav.tsx` | ✅ |
 | `Logo` | `VD5vy` | — | ❌ |
-| `PageHeader` | `XEUvq` | `src/commons/other/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` / `wide` のみ |
+| `PageHeader` | `XEUvq` | `src/commons/other/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` / `wide` / `hero` のみ |
 | `ScrollNav` | `qXMlW` | `src/commons/navigation/components/ScrollNav/ScrollNav.tsx` | ✅ |
 | `ScrollTopButton` | `YJxBa` | — | ❌ |
 
 - `src/features/layout/components/LayoutMain/LayoutMain.tsx` は pen に対応物なし（実装都合の骨組み）
 - `PageHeader` の未対応バリアント（pen 側インスタンスの上書き）:
-  - `Hero`（`sHYtM`）— gap 14
+  - ~~`Hero`（`sHYtM`）— gap 14~~ → `hero` prop で実装済み
   - `PageHead`（`TzqGY`）— gap `$space-8` / Sub の `lineHeight` 1.6
   - ~~`PageHead`（`nrspz`）— Sub が `$text-base` / 幅 560~~ → `wide` prop で実装済み
   - `Intro`（`UmjU2`）— gap 18 / padding 付き / Kicker が `$font-mono` `letterSpacing` 2 /
     Title は `letterSpacing` -0.3（`tracking-snug`）
   - 実装済みは標準形（gap-4・`text-4xl`・`tracking-tighter`）、
     `compact`（`MyXLm` 相当: gap-3・`text-3xl`・`tracking-tight`）、
-    `wide`（`nrspz` 相当: Sub が `text-base`・幅 560）の3種類
+    `wide`（`nrspz` 相当: Sub が `text-base`・幅 560）、
+    `hero`（`sHYtM` 相当: gap-3.5）の4種類
 
 ## 記事一覧・記事メタ
 
@@ -121,7 +122,7 @@
 | `SearchInput` | `Jh09L` | `src/features/search/components/SearchInput/SearchInput.tsx` | ✅ |
 | `IconButton` | `aGtFB` | `src/commons/button/components/IconBtn/IconBtn.tsx` | ✅ |
 | `SearchIconButton` | `k2xlJ` | `src/commons/button/components/SearchIconButton/SearchIconButton.tsx` | ✅ |
-| `LinkButton` | `Rl2z4` | — | ❌ |
+| `LinkButton` | `Rl2z4` | `src/commons/button/components/LinkButton/LinkButton.tsx` | ✅ アイコンは `icon` prop で `external-link` / `github` |
 | `BackLink` | `r2KGU` | `src/commons/other/components/BackLink/BackLink.tsx` | ✅ |
 | `PrimaryButton` | `N3GA43` | `src/commons/button/components/PrimaryButton/PrimaryButton.tsx` | ✅ |
 
@@ -166,8 +167,8 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 依存の少ないものから。上ほど先。
 
 1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` ~~`InfoLabel`~~（実装済み） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
-2. **ボタン類** — `LinkButton` `BackLink` ~~`SearchIconButton`~~（実装済み）
+2. **ボタン類** — ~~`LinkButton`~~（実装済み） ~~`BackLink`~~（実装済み） ~~`SearchIconButton`~~（実装済み）
 3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（`ImagePlaceholder` に統合） ~~`ArticleSectionHeading`~~（実装済み）
 4. ~~**記事本文**~~ — 全て実装済み（`ArticleH1`〜`H3` / `Callout` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` / `Bookmark`）
-5. **ページ組み立て** — ~~`ArticleListPage`~~（実装済み） ~~`Service`~~（実装済み） ~~`Profile`~~（実装済み）→ `ServiceDetailPage`
+5. ~~**ページ組み立て**~~ — 全て実装済み（`ArticleListPage` / `Service` / `Profile` / `ServiceDetailPage`）
 6. **Shelf 一式**（他から独立しているのでいつでも可）

@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import ImagePlaceholder from "@/commons/other/components/ImagePlaceholder/ImagePlaceholder";
 
@@ -15,6 +16,11 @@ export type ServiceCardProps = {
   thumbnailUrl?: string;
   url?: string;
   githubUrl?: string;
+  /**
+   * 詳細ページのパス。microCMS の `hasDetailPage` が false の項目は
+   * 詳細ページを持たないので、その場合は渡さない（外部リンクのみになる）
+   */
+  detailPath?: string;
 };
 
 const ServiceCard = ({
@@ -24,6 +30,7 @@ const ServiceCard = ({
   thumbnailUrl,
   url,
   githubUrl,
+  detailPath,
 }: ServiceCardProps) => {
   const hasLink = Boolean(url || githubUrl);
 
@@ -57,7 +64,9 @@ const ServiceCard = ({
               h3 だと h1 から 1 段飛んで heading-order (axe) 違反になる。
               他の階層でも使うようになったら headingLevel prop を検討する */}
           <h2 className="px-0.75 font-sans text-lg leading-[1.4] font-bold tracking-snug text-primary">
-            {title}
+            {/* pen (jhtzh) に詳細ページへの導線は無いため、見た目を足さずに
+                タイトル自体をリンクにする。detailPath 未指定なら素のテキスト */}
+            {detailPath ? <Link href={detailPath}>{title}</Link> : title}
           </h2>
           <div className="flex flex-col gap-3 px-0.75">
             <p className="w-full font-mono text-[12px] wrap-break-word text-secondary">
