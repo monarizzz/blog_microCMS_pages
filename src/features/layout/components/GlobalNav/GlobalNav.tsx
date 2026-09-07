@@ -2,11 +2,7 @@ import Link from "next/link";
 import SearchIconButton from "@/commons/button/components/SearchIconButton/SearchIconButton";
 import { pageList } from "../../constants/pageList";
 
-type Props = {
-  pageList: typeof pageList;
-};
-
-const GlobalNav = ({ pageList }: Props) => {
+const GlobalNav = () => {
   return (
     <div className="flex items-center gap-md">
       {pageList.map((page) => (
