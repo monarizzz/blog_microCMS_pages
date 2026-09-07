@@ -6,15 +6,17 @@ import { MIN_QUERY_LENGTH } from "../../constants/searchQuery";
 
 //TODO:仮置き
 type Props = {
+  /** URL の `?q=` から渡される現在の検索クエリ */
+  query?: string;
   article?: boolean;
   num?: number;
 };
 
-const SearchPageMain = ({ article, num }: Props) => {
+const SearchPageMain = ({ query, article, num }: Props) => {
   return (
     <div className="mx-auto flex w-full max-w-275 flex-col gap-6 pt-37.5 pr-10 pb-24 pl-11.75">
       <h1 className="text-sm tracking-[0.5px]">記事を検索</h1>
-      <SearchInput />
+      <SearchInput query={query} />
       <div className="flex items-center gap-2">
         <AlertCircle size={14} />
         <p>{MIN_QUERY_LENGTH}文字以上で検索されます。</p>
