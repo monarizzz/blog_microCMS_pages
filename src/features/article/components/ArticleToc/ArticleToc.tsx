@@ -10,17 +10,19 @@ type Props = {
 };
 
 /**
- * 見出しを「読んでいる」と見なす帯。
- * 上端は Header の高さぶん外し、下端は 60% 削って
- * 画面上部に来た見出しだけが候補になるようにしている。
+ * 「ここを読んでいる」と見なす画面上の高さ。
+ * Header (176px) の下端に合わせてある。
  */
-const ACTIVE_ZONE_MARGIN = "-176px 0px -60% 0px";
+const ACTIVE_LINE = 176;
+
+/** ページ下端に着いたと見なす許容差。小数の丸めで 1px 足りないことがある */
+const BOTTOM_TOLERANCE = 2;
 
 const ArticleToc = ({ items }: Props) => {
   const [activeId, setActiveId] = useState<string | undefined>(items[0]?.id);
 
   // items をそのまま依存にすると、親の再レンダーで配列の参照が変わるたびに
-  // observer を張り直してしまう。中身が同じなら再実行しないよう文字列に畳む
+  // 購読を張り直してしまう。中身が同じなら再実行しないよう文字列に畳む
   const idsKey = items.map(({ id }) => id).join(",");
 
   useEffect(() => {
@@ -33,33 +35,47 @@ const ArticleToc = ({ items }: Props) => {
       return;
     }
 
-    // IntersectionObserver のコールバックは変化した要素しか渡さないため、
-    // 現在交差している見出しはこちらで持ち続ける必要がある
-    const visibleIds = new Set<string>();
+    let frame = 0;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            visibleIds.add(entry.target.id);
-          } else {
-            visibleIds.delete(entry.target.id);
-          }
-        });
+    const update = () => {
+      frame = 0;
 
-        // 帯に複数入ることがあるので、本文の並びで最も先頭のものを採る
-        const currentId = ids.find((id) => visibleIds.has(id));
+      // 最後の節は、本文が短いと基準線まで上がりきらないまま
+      // ページ下端に着いてしまう。読み終えている以上そこを差したい
+      const isAtPageBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - BOTTOM_TOLERANCE;
 
-        if (currentId) {
-          setActiveId(currentId);
-        }
-      },
-      { rootMargin: ACTIVE_ZONE_MARGIN },
-    );
+      if (isAtPageBottom) {
+        setActiveId(targets[targets.length - 1].id);
+        return;
+      }
 
-    targets.forEach((target) => observer.observe(target));
+      // 基準線を通り過ぎた最後の見出しが現在位置。
+      // 1 つも通っていない（本文の先頭にいる）ときは先頭の見出しを差す
+      const passed = targets.filter(
+        (target) => target.getBoundingClientRect().top <= ACTIVE_LINE,
+      );
 
-    return () => observer.disconnect();
+      setActiveId((passed.at(-1) ?? targets[0]).id);
+    };
+
+    const handleScroll = () => {
+      // スクロール中に毎回測ると重いので 1 フレームにまとめる
+      if (frame === 0) {
+        frame = requestAnimationFrame(update);
+      }
+    };
+
+    update();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, [idsKey]);
 
   if (items.length === 0) {
