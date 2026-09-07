@@ -139,7 +139,7 @@
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
 | `ShelfBook` | `AXiNC` | — | ❌ |
-| `ShelfNote` | `mqZTV` | — | ❌ |
+| `ShelfNote` | `mqZTV` | `src/features/shelf/components/ShelfNote/ShelfNote.tsx` | ✅ 寸法は `size` 3 段に畳んだ |
 | `ShelfLabel` | `C0GFq` | — | ❌ |
 | `ShelfPlank` | `T42nPd` | — | ❌ |
 
