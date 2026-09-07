@@ -50,7 +50,7 @@
 | `Logo` | `VD5vy` | — | ❌ |
 | `PageHeader` | `XEUvq` | `src/commons/other/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` / `wide` / `hero` のみ |
 | `ScrollNav` | `qXMlW` | `src/commons/navigation/components/ScrollNav/ScrollNav.tsx` | ✅ |
-| `ScrollTopButton` | `YJxBa` | — | ❌ |
+| `ScrollTopButton` | `YJxBa` | `src/commons/navigation/components/ScrollTopButton/ScrollTopButton.tsx` | ✅ |
 
 - `src/features/layout/components/LayoutMain/LayoutMain.tsx` は pen に対応物なし（実装都合の骨組み）
 - `PageHeader` の未対応バリアント（pen 側インスタンスの上書き）:
