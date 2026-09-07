@@ -1,0 +1,41 @@
+import type { Metadata } from "next";
+import { siteLocale, siteName } from "@/commons/constants/site";
+
+type Args = {
+  /** ページ固有のタイトル。`%s | Monelog` のテンプレートに流し込まれる */
+  title: string;
+  description: string;
+  /** サイトルートからの相対パス。canonical と og:url に使う */
+  path: string;
+  /** 記事詳細のみ article を渡す。既定は website */
+  type?: "website" | "article";
+};
+
+/**
+ * ページ固有の metadata を組み立てる。
+ *
+ * Next.js の metadata はフィールド単位の浅いマージで、子が `openGraph` を
+ * 持つと親の `openGraph` は丸ごと置き換わる。`siteName` / `locale` /
+ * `type` を各ページで書き漏らすとそこだけ欠落するため、ここで必ず埋める。
+ * `twitter` はルートの summary_large_image をそのまま継承させたいので触らない。
+ */
+export const buildPageMetadata = ({
+  title,
+  description,
+  path,
+  type = "website",
+}: Args): Metadata => ({
+  title,
+  description,
+  openGraph: {
+    type,
+    siteName,
+    locale: siteLocale,
+    title: `${title} | ${siteName}`,
+    description,
+    url: path,
+  },
+  alternates: {
+    canonical: path,
+  },
+});
