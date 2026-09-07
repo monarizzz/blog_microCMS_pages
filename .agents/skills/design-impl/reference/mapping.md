@@ -89,8 +89,8 @@
 | pen | ID | 実装 | 状態 |
 | --- | --- | --- | --- |
 | `SectionLabel` | `TbTSl` | `src/commons/other/components/SectionLabel/SectionLabel.tsx` | ✅ |
-| `InfoLabel` | `PHZV0` | `src/commons/other/components/InfoLabel/InfoLabel.tsx` | ✅ |
-| `MetaText` | `E2rKp` | `src/commons/other/components/MetaText/MetaText.tsx` | ✅ |
+| `InfoLabel` | `PHZV0` | `src/commons/other/components/MetaText/MetaText.tsx`（`size="xs"`） | ✅ `MetaText` に統合済み（専用ファイルは無い） |
+| `MetaText` | `E2rKp` | `src/commons/other/components/MetaText/MetaText.tsx` | ✅ `size` prop で `sm`(既定) / `xs`(旧 `InfoLabel`) を出し分け |
 | `Paragraph` | `g5WYtH` | `src/commons/contentsDetail/components/Paragraph/Paragraph.tsx` | ✅ |
 
 ## 記事本文（リッチエディタ由来の要素）
@@ -166,7 +166,7 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 
 依存の少ないものから。上ほど先。
 
-1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） `MetaText` ~~`InfoLabel`~~（実装済み） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
+1. **葉のパーツ** — ~~`SectionLabel`~~（実装済み） ~~`MetaText`~~（実装済み） ~~`InfoLabel`~~（`MetaText` の `size="xs"` に統合） ~~`Divider`~~（実装済み） ~~`ImagePlaceholder`~~（実装済み）
 2. **ボタン類** — ~~`LinkButton`~~（実装済み） ~~`BackLink`~~（実装済み） ~~`SearchIconButton`~~（実装済み）
 3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（`ImagePlaceholder` に統合） ~~`ArticleSectionHeading`~~（実装済み）
 4. ~~**記事本文**~~ — 全て実装済み（`ArticleH1`〜`H3` / `Callout` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` / `Bookmark`）
