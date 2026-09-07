@@ -4,6 +4,7 @@ import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
 import ServiceDetailMain, {
   type ServiceDetail,
 } from "@/features/service/components/ServiceDetailMain/ServiceDetailMain";
+import { getSiteUrl } from "@/infra/site/siteUrl";
 
 //TODO:仮置き。microCMS の experiences から引くのは別フェーズ
 const services: Record<string, ServiceDetail> = {
@@ -34,10 +35,6 @@ const services: Record<string, ServiceDetail> = {
   },
 };
 
-//TODO:仮置き。ShareBar は絶対 URL を要求するが、サイトの基底 URL を持つ
-// 設定がまだ無い。microCMS 接続と合わせて環境変数から組み立てる
-const SITE_URL = "https://example.com";
-
 type Props = {
   params: Promise<{ id: string }>;
 };
@@ -56,7 +53,7 @@ const ServiceDetailPage = async ({ params }: Props) => {
     <LayoutMain>
       <ServiceDetailMain
         service={service}
-        shareUrl={`${SITE_URL}/service/${id}`}
+        shareUrl={`${getSiteUrl()}/service/${id}`}
       />
     </LayoutMain>
   );
