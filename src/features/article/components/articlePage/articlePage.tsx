@@ -1,0 +1,54 @@
+import ContentsRow from "@/commons/contents/components/ContentsRow/ContentsRow";
+import BackLink from "@/commons/other/components/BackLink/BackLink";
+import FilterBtn from "@/commons/button/components/FilterBtn/FilterBtn";
+import MetaText from "@/commons/other/components/MetaText/MetaText";
+import PageHeader from "@/commons/other/components/PageHeader/PageHeader";
+import PageNavNum from "@/commons/navigation/components/PageNumNav/PageNumNav";
+import {
+  resolveArticleListPage,
+  totalCount,
+  totalPages,
+} from "@/features/article/articleListPagination";
+
+//TODO:仮置き
+const tag = "Next.js";
+
+type Props = {
+  currentPage?: number;
+  sort?: "new" | "old";
+};
+
+const ArticlePage = ({ currentPage = 1, sort = "new" }: Props) => {
+  const { page, start, end, rowCount } = resolveArticleListPage(currentPage);
+
+  return (
+    <div className="mx-auto flex w-full max-w-275 flex-col gap-10 pt-28.25 pr-10 pb-24 pl-11.75">
+      <BackLink text="Tags へ" link="/tags" />
+      <PageHeader compact title={`#${tag}`} count={`${totalCount} 記事`} />
+      <div className="flex items-center justify-between border-b border-outline-variant pb-4">
+        <div className="flex items-center gap-2">
+          <FilterBtn text="新着順" link="?sort=new" active={sort === "new"} />
+          <FilterBtn text="古い順" link="?sort=old" active={sort === "old"} />
+        </div>
+        <MetaText>
+          {start}–{end} / {totalCount}
+        </MetaText>
+      </div>
+      <div className="flex w-full flex-col">
+        {Array.from({ length: rowCount }, (_, i) => (
+          <ContentsRow key={i} compact />
+        ))}
+      </div>
+      <div className="flex items-center justify-center gap-2 pt-6">
+        <PageNavNum
+          currentPage={page}
+          totalPages={totalPages}
+          basePath="/article"
+          query={{ sort }}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default ArticlePage;

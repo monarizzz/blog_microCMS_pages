@@ -1,0 +1,127 @@
+@import "./tokens.css" layer(base);
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-*: initial;
+  --font-sans: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
+
+  --text-*: initial;
+  --text-2xs: var(--font-size-2xs);
+  --text-sm: var(--font-size-sm);
+  --text-base: var(--font-size-base);
+  --text-md: var(--font-size-md);
+  --text-lg: var(--font-size-lg);
+  --text-xl: var(--font-size-xl);
+  --text-2xl: var(--font-size-2xl);
+  --text-3xl: var(--font-size-3xl);
+  --text-4xl: var(--font-size-4xl);
+
+  --leading-*: initial;
+  --leading-tight: var(--line-height-tight);
+  --leading-normal: var(--line-height-normal);
+  --leading-relaxed: var(--line-height-relaxed);
+
+  --tracking-*: initial;
+  --tracking-tighter: var(--letter-spacing-tighter);
+  --tracking-tight: var(--letter-spacing-tight);
+  --tracking-snug: var(--letter-spacing-snug);
+  --tracking-normal: var(--letter-spacing-normal);
+  --tracking-wide: var(--letter-spacing-wide);
+  --tracking-wider: var(--letter-spacing-wider);
+  --tracking-widest: var(--letter-spacing-widest);
+
+  --radius-*: initial;
+  --radius-none: var(--token-radius-none);
+  --radius-xs: var(--token-radius-xs);
+  --radius-sm: var(--token-radius-sm);
+  --radius-md: var(--token-radius-md);
+  --radius-lg: var(--token-radius-lg);
+  --radius-full: var(--token-radius-full);
+  --radius-button: var(--token-radius-button);
+  --radius-card: var(--token-radius-card);
+  --radius-input: var(--token-radius-input);
+  --radius-badge: var(--token-radius-badge);
+
+  --color-surface: var(--token-color-surface);
+  --color-surface-container-low: var(--token-color-surface-container-low);
+  --color-surface-container: var(--token-color-surface-container);
+
+  --color-primary: var(--token-color-primary);
+  --color-secondary: var(--token-color-secondary);
+  --color-on-primary: var(--token-color-on-primary);
+
+  --color-on-surface: var(--token-color-on-surface);
+  --color-on-surface-variant: var(--token-color-on-surface-variant);
+
+  --color-outline: var(--token-color-outline);
+  --color-outline-variant: var(--token-color-outline-variant);
+
+  --color-ac-success: var(--token-color-ac-success);
+  --color-ac-warning: var(--token-color-ac-warning);
+  --color-ac-danger: var(--token-color-ac-danger);
+  --color-ac-info: var(--token-color-ac-info);
+
+  --color-ac-success-bg: var(--token-color-ac-success-bg);
+  --color-ac-warning-bg: var(--token-color-ac-warning-bg);
+  --color-ac-danger-bg: var(--token-color-ac-danger-bg);
+  --color-ac-info-bg: var(--token-color-ac-info-bg);
+
+  --spacing-2xs: var(--space-2xs);
+  --spacing-xs: var(--space-xs);
+  --spacing-sm: var(--space-sm);
+  --spacing-md: var(--space-md);
+  --spacing-lg: var(--space-lg);
+  --spacing-xl: var(--space-xl);
+  --spacing-2xl: var(--space-2xl);
+  --spacing-3xl: var(--space-3xl);
+  --spacing-4xl: var(--space-4xl);
+  --spacing-5xl: var(--space-5xl);
+}
+
+/* ページ本文の左右インセット。
+   他ページの *PageMain は `mx-auto max-w-275` でコンテンツを中央に置いており、
+   広い画面ではその左右に等しい余白ができる。この余白と同じ量を padding として
+   持たせることで、中央寄せコンテナを使わないページ（Home の本棚）でも
+   左端を他ページと揃えられる。
+
+   狭い画面では `--spacing(16)`（= px-16）で下げ止まる。本棚はこの状態で
+   右方向にだけ溢れ、横スクロールになる */
+@utility content-gutter {
+  padding-inline: max(--spacing(16), calc((100% - --spacing(275)) / 2));
+}
+
+/* 横スクロールする行（本棚）用。左だけコンテンツ幅に合わせ、右は `px-16` に留める。
+   右にも同じ量を取ると、中身が画面に収まっているときでも padding の分だけ
+   スクロール領域が伸びて、動かす必要のない横スクロールが出てしまう */
+@utility content-gutter-scroll {
+  padding-inline: max(--spacing(16), calc((100% - --spacing(275)) / 2))
+    --spacing(16);
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer base {
+  /* トークンをページに適用する唯一の場所。
+     ここで指定した値が全要素の既定になるので、
+     コンポーネント側は既定から外れるものだけを宣言すればよい */
+  body {
+    background-color: var(--token-color-surface);
+    color: var(--token-color-on-surface);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-wide);
+    -webkit-font-smoothing: antialiased;
+  }
+}
