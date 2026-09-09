@@ -29,7 +29,7 @@ const ShelfRow = ({ children, label }: Props) => {
       role="group"
       aria-label={label}
       tabIndex={0}
-      className="flex w-full items-end gap-5.5 overflow-x-auto px-16"
+      className="flex w-full items-end gap-5.5 overflow-x-auto content-gutter-scroll"
     >
       {children}
     </div>
