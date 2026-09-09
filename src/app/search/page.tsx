@@ -6,6 +6,9 @@ export const metadata = buildPageMetadata({
   title: "検索",
   description: "キーワードから記事を検索できます。",
   path: "/search",
+  // クエリ次第で URL が無限に生えるためインデックスさせない。
+  // ページ内のリンク (記事詳細など) は辿ってほしいので follow は残す
+  robots: { index: false, follow: true },
 });
 
 type Props = {

@@ -24,6 +24,11 @@ type Args = {
   path: string;
   /** 記事詳細のみ article を渡す。既定は website */
   type?: "website" | "article";
+  /**
+   * インデックスさせたくないページのみ渡す。既定は未指定 =
+   * ルートの metadata (= 全ページ index 可) をそのまま継承する。
+   */
+  robots?: Metadata["robots"];
 };
 
 /**
@@ -39,6 +44,7 @@ export const buildPageMetadata = ({
   description,
   path,
   type = "website",
+  robots,
 }: Args): Metadata => ({
   title,
   description,
@@ -54,4 +60,7 @@ export const buildPageMetadata = ({
   alternates: {
     canonical: path,
   },
+  // 未指定のページに `robots: undefined` を残すと、Next.js が
+  // 「明示的に空を指定した」と解釈しうるためキー自体を生やさない
+  ...(robots ? { robots } : {}),
 });
