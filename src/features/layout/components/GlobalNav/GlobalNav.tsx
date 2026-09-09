@@ -6,7 +6,12 @@ import SearchIconButton from "@/commons/button/components/SearchIconButton/Searc
 import { cn } from "@/infra/Tailwind/cn";
 import { pageList } from "../../constants/pageList";
 
-const GlobalNav = () => {
+type Props = {
+  /** navigation ランドマークの名前。同一ページに複数並ぶため呼び出し側で出し分ける */
+  label: string;
+};
+
+const GlobalNav = ({ label }: Props) => {
   const pathname = usePathname();
 
   // /tags は /tags/xxx のような下層でも現在ページ扱いにする。
@@ -16,7 +21,7 @@ const GlobalNav = () => {
     pathname === path || (pathname?.startsWith(`${path}/`) ?? false);
 
   return (
-    <div className="flex items-center gap-md">
+    <nav aria-label={label} className="flex items-center gap-md">
       {pageList.map((page) => {
         const current = isCurrent(page.path);
 
@@ -35,7 +40,7 @@ const GlobalNav = () => {
         );
       })}
       <SearchIconButton link="/search" />
-    </div>
+    </nav>
   );
 };
 
