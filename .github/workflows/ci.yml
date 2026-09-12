@@ -105,6 +105,10 @@ jobs:
           MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           DEPLOYMENT_ENVIRONMENTS: ${{ secrets.DEPLOYMENT_ENVIRONMENTS }}
+          # 本番ビルド相当では未設定だと siteUrl の解決で落ちるため必須。
+          # CI は成果物を捨てるので値の中身は問わない。Actions variables に
+          # 置いてあればそれを使い、無ければダミーで通す
+          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL || 'https://example.com' }}
 
   # Playwright の Chromium を落とす必要があり実行時間が伸びるため、他のチェックとは
   # 別ジョブに分離している。paths フィルタで src/** 変更時のみに絞る案は採らない。
