@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { siteUrl } from "@/commons/constants/site";
+import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
 import ServiceDetailMain, {
   type ServiceDetail,
@@ -34,12 +37,33 @@ const services: Record<string, ServiceDetail> = {
   },
 };
 
-//TODO:仮置き。ShareBar は絶対 URL を要求するが、サイトの基底 URL を持つ
-// 設定がまだ無い。microCMS 接続と合わせて環境変数から組み立てる
-const SITE_URL = "https://example.com";
-
 type Props = {
   params: Promise<{ id: string }>;
+};
+
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const { id } = await params;
+  const service = services[id];
+
+  // 参照先はローカルの Record なので、記事詳細のように取得が失敗して
+  // 500 になることはない。「無い ID は 404」というページ本体の判断と
+  // 揃えて、既定値へ退避せず notFound() に倒す
+  if (!service) {
+    notFound();
+  }
+
+  return buildPageMetadata({
+    title: service.title,
+    // ServiceDetail の description / overview はどちらも optional。
+    // Hero のサマリー → 概要本文 → サービス名だけの定型文の順に落とす
+    description:
+      service.description ??
+      service.overview ??
+      `${service.title} の紹介ページです。`,
+    path: `/service/${id}`,
+  });
 };
 
 const ServiceDetailPage = async ({ params }: Props) => {
@@ -54,7 +78,7 @@ const ServiceDetailPage = async ({ params }: Props) => {
     <LayoutMain>
       <ServiceDetailMain
         service={service}
-        shareUrl={`${SITE_URL}/service/${id}`}
+        shareUrl={`${siteUrl}/service/${id}`}
       />
     </LayoutMain>
   );
