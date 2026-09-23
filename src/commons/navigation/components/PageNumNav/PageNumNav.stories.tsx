@@ -15,6 +15,7 @@ export const Default: Story = {
   args: {
     currentPage: 1,
     totalPages: 10,
+    basePath: "/article",
   },
 };
 
@@ -23,6 +24,7 @@ export const Middle: Story = {
   args: {
     currentPage: 5,
     totalPages: 10,
+    basePath: "/article",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -37,6 +39,7 @@ export const MiddleFar: Story = {
   args: {
     currentPage: 7,
     totalPages: 10,
+    basePath: "/article",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -50,6 +53,7 @@ export const Last: Story = {
   args: {
     currentPage: 10,
     totalPages: 10,
+    basePath: "/article",
   },
 };
 
@@ -57,6 +61,7 @@ export const Few: Story = {
   args: {
     currentPage: 2,
     totalPages: 3,
+    basePath: "/article",
   },
 };
 
