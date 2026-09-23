@@ -94,16 +94,17 @@ const ServiceCard = ({
               {techStack}
             </p>
             {hasLink && (
-              // カード全面に広がる Link の ::after より手前に出さないと
-              // 外部リンクがクリックできなくなるため relative z-10 で退避させる
-              <div className="relative z-10 flex w-31 items-center justify-center border border-outline-variant pt-1">
+              // 退避は枠ではなく各 <a> 側に付ける。枠ごと ::after より手前に
+              // 出すと、枠内のリンク文字以外（余白・上パディング・枠線）が
+              // ::after を遮り、カード全面のリンクとして反応しなくなるため
+              <div className="flex w-31 items-center justify-center border border-outline-variant pt-1">
                 <div className="flex items-center gap-4">
                   {url && (
                     <a
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                      className="relative z-10 flex items-center gap-1 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                     >
                       <span className="font-sans text-[12.5px] font-medium text-primary">
                         URL
@@ -116,7 +117,7 @@ const ServiceCard = ({
                       href={githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                      className="relative z-10 flex items-center gap-1 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                     >
                       <span className="font-sans text-[12.5px] font-medium text-primary">
                         GitHub
