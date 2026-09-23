@@ -13,6 +13,41 @@ import {
 //TODO:仮置き
 const tag = "Next.js";
 
+//TODO:仮置き。microCMS の articles から引くのは #282 の範囲。
+// 行数 (rowCount) はページネーションから決まるので、この配列を順に使い回す
+const sampleArticles = [
+  {
+    id: "nextjs-app-router",
+    title: "Next.js 14 App Router 移行の勘所",
+    publishedAt: "2024-03-18",
+    tags: ["Next.js", "設計"],
+  },
+  {
+    id: "server-components-boundary",
+    title: "Server Components の境界をどこに引くか",
+    publishedAt: "2024-02-06",
+    tags: ["Next.js", "設計"],
+  },
+  {
+    id: "typescript-using",
+    title: "TypeScript 5.2 の using 宣言によるリソース管理",
+    publishedAt: "2024-01-22",
+    tags: ["TypeScript"],
+  },
+  {
+    id: "tailwind-v4",
+    title: "Tailwind CSS v4 への期待と課題",
+    publishedAt: "2023-12-11",
+    tags: ["設計"],
+  },
+  {
+    id: "testing-library-pitfalls",
+    title: "Testing Library で壊れにくいテストを書く",
+    publishedAt: "2023-11-24",
+    tags: ["テスト", "TypeScript"],
+  },
+];
+
 type Props = {
   currentPage?: number;
   sort?: "new" | "old";
@@ -35,9 +70,20 @@ const ArticlePage = ({ currentPage = 1, sort = "new" }: Props) => {
         </MetaText>
       </div>
       <div className="flex w-full flex-col">
-        {Array.from({ length: rowCount }, (_, i) => (
-          <ContentsRow key={i} compact />
-        ))}
+        {Array.from({ length: rowCount }, (_, i) => {
+          const article = sampleArticles[i % sampleArticles.length];
+
+          return (
+            <ContentsRow
+              key={i}
+              compact
+              title={article.title}
+              publishedAt={article.publishedAt}
+              tags={article.tags}
+              href={`/article/${article.id}`}
+            />
+          );
+        })}
       </div>
       <div className="flex items-center justify-center gap-2 pt-6">
         <PageNavNum
