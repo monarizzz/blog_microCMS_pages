@@ -144,15 +144,21 @@ git branch backup/$(git branch --show-current)-$(git rev-parse --short HEAD)
 **バックアップを作る前に、履歴を書き換える操作は一切行わない。**
 復旧は `git switch <バックアップブランチ>` で行う。
 
-### 3. 組み直しは `reset --soft` + ファイル単位の add
+### 3. 組み直しは `reset --soft` + unstage + ファイル単位の add
 
 ```bash
 git fetch origin
-git reset --soft $(git merge-base HEAD origin/desgin-renewal)   # PR の宛先ブランチとの分岐点まで戻す
+base=$(gh pr view --json baseRefName --jq .baseRefName)   # PR の宛先。PR が無ければ宛先ブランチ名を直接書く
+git reset --soft $(git merge-base HEAD origin/$base)      # 宛先との分岐点まで戻す
+git restore --staged .    # reset --soft は変更を index に残すので、一度すべて unstage する
 git add <path>            # ファイル単位。git add -A / git add . は使わない
 git commit
 ```
 
+- **戻す先は PR の実際の宛先ブランチにする。**宛先は `desgin-renewal` とは限らない（`dev` 宛ての PR もある）。
+  別のブランチとの分岐点まで戻すと、宛先側にある既存のコミットまで組み直しに取り込んでしまう
+- **`reset --soft` の直後に unstage する。**`--soft` は HEAD しか戻さないため、
+  そのまま `git add <path>` しても最初の `git commit` にすべての変更が入る
 - **`git add -A` / `git add .` を使わない。**無関係なファイルが黙って混入する
 - 1 ファイルの中をハンク単位で分ける必要がある場合は、どのハンクをどのコミットに入れるかを
   先にユーザーに示して合意を取る
