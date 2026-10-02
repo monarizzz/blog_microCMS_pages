@@ -12,13 +12,13 @@ const Footer = () => {
       : `${SITE_LAUNCH_YEAR}`;
 
   return (
-    <div className="h-full bg-surface px-8 py-24">
+    <footer className="h-full bg-surface px-8 py-24">
       <div className="flex flex-col gap-4">
-        <GlobalNav />
+        <GlobalNav label="フッターナビゲーション" />
         <Logo weight="medium" />
         <span className="text-sm">© {copyrightYears} Monelog</span>
       </div>
-    </div>
+    </footer>
   );
 };
 

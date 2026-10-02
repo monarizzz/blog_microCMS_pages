@@ -35,6 +35,22 @@
 | `Profile`（トップレベル group・reusable ではない） | `t9pvP` | `src/features/profile/components/ProfilePageMain/ProfilePageMain.tsx` | ✅ ルートは `src/app/profile/page.tsx` |
 | `ServiceDetailPage` | `qiFnK` | `src/features/service/components/ServiceDetailMain/ServiceDetailMain.tsx` | ✅ ルートは `src/app/service/[id]/page.tsx` |
 | `Tags`（group `j9tOQT`・reusable ではない） | `wJS3A` | `src/features/tags/components/TagsPageMain/TagsPageMain.tsx` | ✅ ルートは `src/app/tags/page.tsx` |
+| `Home Page — Shelf (案)`（frame・reusable ではない） | `hdLAj` | `src/features/home/components/HomePageMain/HomePageMain.tsx` | ✅ ルートは `src/app/page.tsx`。もう一つの `Home Page`（group `ezIQH`）は採らなかった |
+| `Article Detail`（group `hLVQl` の frame・reusable ではない） | `y2xbA` | `src/features/article/components/ArticleDetailMain/ArticleDetailMain.tsx` | ✅ ルートは `src/app/article/[id]/page.tsx` |
+
+`Article Detail` のページ内パーツは reusable ではないため個別の行を持たない。
+実装は `src/features/article/components/` に置いてある。
+
+| pen（ページ内 frame） | ID | 実装 |
+| --- | --- | --- |
+| `ArticleBody` | `cZjgo` | `ArticleBody/ArticleBody.tsx`（ブロック配列を各要素へ振り分ける） |
+| `TocCard` / `TocList` | `y19hdB` / `kxgXf` | `ArticleToc/ArticleToc.tsx` |
+| `TocItem` | `FdgCE` | `ArticleTocItem/ArticleTocItem.tsx` |
+| `PaginationWrap` / `Pagination` | `CI1Qw` / `l1okcz` | `PostNav/PostNav.tsx` |
+| `PrevLink` / `NextLink` | `nAaaH` / `O4vmc` | `PostNavLink/PostNavLink.tsx` |
+| `InfoCard` | `q6phow` | `ArticleBody/ArticleBody.tsx` に内包（単体の再利用先が無いため） |
+
+`Blocks Catalog Page`（frame `ZnbhV`）は記事装飾のカタログで、ページとしては実装しない。
 
 参考: ページ全体のデザインは reusable ではなくトップレベルの group にもある
 （`Home Page` `Article Page` `Article Detail` `Tags` `Profile` `Service` `Search` `404 Page`）。
@@ -48,21 +64,24 @@
 | `Footer` | `VMThv` | `src/features/layout/components/Footer/Footer.tsx` | ✅ |
 | `GlobalNav` | `JuCgU` | `src/features/layout/components/GlobalNav/GlobalNav.tsx` | ✅ |
 | `Logo` | `VD5vy` | `src/features/layout/components/Logo/Logo.tsx` | ✅ `weight` prop で light(300) / medium(500)、`href` 有無でリンク切替 |
-| `PageHeader` | `XEUvq` | `src/commons/other/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` / `wide` / `hero` のみ |
+| `PageHeader` | `XEUvq` | `src/commons/other/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` / `wide` / `hero` / `intro` のみ |
 | `ScrollNav` | `qXMlW` | `src/commons/navigation/components/ScrollNav/ScrollNav.tsx` | ✅ |
-| `ScrollTopButton` | `YJxBa` | — | ❌ |
+| `ScrollTopButton` | `YJxBa` | `src/commons/navigation/components/ScrollTopButton/ScrollTopButton.tsx` | ✅ |
 
 - `src/features/layout/components/LayoutMain/LayoutMain.tsx` は pen に対応物なし（実装都合の骨組み）
 - `PageHeader` の未対応バリアント（pen 側インスタンスの上書き）:
   - ~~`Hero`（`sHYtM`）— gap 14~~ → `hero` prop で実装済み
   - `PageHead`（`TzqGY`）— gap `$space-8` / Sub の `lineHeight` 1.6
   - ~~`PageHead`（`nrspz`）— Sub が `$text-base` / 幅 560~~ → `wide` prop で実装済み
-  - `Intro`（`UmjU2`）— gap 18 / padding 付き / Kicker が `$font-mono` `letterSpacing` 2 /
-    Title は `letterSpacing` -0.3（`tracking-snug`）
+  - ~~`Intro`（`UmjU2`）— gap 18 / padding 付き / Kicker が `$font-mono` `letterSpacing` 2 /
+    Title は `letterSpacing` -0.3（`tracking-snug`）~~ → `intro` prop で実装済み
+    （padding は付けていない。余白は他ページと同じくページ側の責務）
   - 実装済みは標準形（gap-4・`text-4xl`・`tracking-tighter`）、
     `compact`（`MyXLm` 相当: gap-3・`text-3xl`・`tracking-tight`）、
     `wide`（`nrspz` 相当: Sub が `text-base`・幅 560）、
-    `hero`（`sHYtM` 相当: gap-3.5）の4種類
+    `hero`（`sHYtM` 相当: gap-3.5）、
+    `intro`（`UmjU2` 相当: gap-4.5・Kicker が `font-mono tracking-[2px]`・
+    Title が `tracking-snug leading-tight`）の5種類
 
 ## 記事一覧・記事メタ
 
@@ -145,8 +164,11 @@
 | `ShelfNote` | `mqZTV` | `src/features/shelf/components/ShelfNote/ShelfNote.tsx` | ✅ 寸法は `size` 3 段に畳んだ |
 | `ShelfLabel` | `C0GFq` | `src/features/shelf/components/ShelfLabel/ShelfLabel.tsx` | ✅ 見出しは `h2` 固定 |
 | `ShelfPlank` | `T42nPd` | `src/features/shelf/components/ShelfPlank/ShelfPlank.tsx` | ✅ 装飾のみなので `aria-hidden` |
+| （reusable なし。`hdLAj` の Row フレーム `VVE3R` / `p1b4u`） | — | `src/features/shelf/components/ShelfRow/ShelfRow.tsx` | ✅ 横スクロール領域。`tabIndex=0` + `role="group"` |
 
 Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `hdLAj`）が配置の参考。
+横スクロール領域は `ShelfRow` に切り出し済み。マウス以外でも送れるよう
+`tabIndex=0` でフォーカス可能にし、見出しは `ShelfLabel` 側にあるので `role` は `group` に留めた。
 
 ## メディア・スケルトン
 
@@ -170,5 +192,5 @@ Shelf は横スクロールする仕様。`Home Page — Shelf (案)`（frame `h
 2. **ボタン類** — ~~`LinkButton`~~（実装済み） ~~`BackLink`~~（実装済み） ~~`SearchIconButton`~~（実装済み）
 3. **記事一覧の残り** — ~~`ArticleThumbnail`~~（`ImagePlaceholder` に統合） ~~`ArticleSectionHeading`~~（実装済み）
 4. ~~**記事本文**~~ — 全て実装済み（`ArticleH1`〜`H3` / `Callout` / `Quote` / `BulletItem` / `NumberItem` / `CodeBlock` / `Table` / `Bookmark`）
-5. ~~**ページ組み立て**~~ — 全て実装済み（`ArticleListPage` / `Service` / `Profile` / `ServiceDetailPage`）
-6. **Shelf 一式**（他から独立しているのでいつでも可）
+5. ~~**ページ組み立て**~~ — 全て実装済み（`ArticleListPage` / `Service` / `Profile` / `ServiceDetailPage` / `Home Page` / `Article Detail`）
+6. ~~**Shelf 一式**~~ — 全て実装済み（`ShelfBook` / `ShelfNote` / `ShelfLabel` / `ShelfPlank` / `ShelfRow`）

@@ -4,7 +4,11 @@ import Link from "next/link";
 type Props = {
   currentPage: number;
   totalPages: number;
-  basePath?: string;
+  /**
+   * ページ番号リンクの遷移先パス（例: `/article`）。
+   * 省略を許すと `href=""`（現在 URL への自己リンク）が出てしまうため必須にしている
+   */
+  basePath: string;
   /**
    * ページ遷移時に引き継ぐクエリ（sort など）。undefined の値は付けない。
    * `page` はこのコンポーネントが組み立てるため、渡されても無視する
@@ -72,7 +76,7 @@ const pageHref = (
 const PageNavNum = ({
   currentPage,
   totalPages,
-  basePath = "",
+  basePath,
   query = {},
 }: Props) => {
   const hasPrev = currentPage > 1;

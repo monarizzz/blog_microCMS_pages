@@ -1,10 +1,45 @@
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
+import ArticleDetailMain from "@/features/article/components/ArticleDetailMain/ArticleDetailMain";
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
+import { getArticle } from "@/infra/microCMS/api/getArticle";
 import { getArticleDetail } from "@/infra/microCMS/api/getArticleDetail";
 
 type Props = {
   params: Promise<{ id: string }>;
+};
+
+/** microCMS の 1 リクエストあたりの上限 */
+const MICROCMS_MAX_LIMIT = 100;
+
+/**
+ * ビルド時に生成する記事の id を全件辿って集める。
+ *
+ * 取得に失敗しても空配列を返す。ここで throw すると記事ページが
+ * 1 枚も生成できずビルドが落ちるため、生成をリクエスト時へ委ねる。
+ * 未知の id はリクエスト時に生成される（`dynamicParams` の既定は true）。
+ */
+export const generateStaticParams = async () => {
+  try {
+    const ids: { id: string }[] = [];
+
+    for (let offset = 0; ; offset += MICROCMS_MAX_LIMIT) {
+      const { contents, totalCount } = await getArticle({
+        limit: MICROCMS_MAX_LIMIT,
+        offset,
+        fields: "id",
+        orders: "-publishedAt",
+      });
+
+      ids.push(...contents.map(({ id }) => ({ id })));
+
+      if (ids.length >= totalCount || contents.length === 0) {
+        return ids;
+      }
+    }
+  } catch {
+    return [];
+  }
 };
 
 /** description の最大長。OGP の実効表示長からこちらで決めた値 */
@@ -105,10 +140,12 @@ export const generateMetadata = async ({
   });
 };
 
-const ArticleDetailPage = () => {
+const ArticleDetailPage = async ({ params }: Props) => {
+  const { id } = await params;
+
   return (
     <LayoutMain>
-      <>[id]</>
+      <ArticleDetailMain id={id} />
     </LayoutMain>
   );
 };

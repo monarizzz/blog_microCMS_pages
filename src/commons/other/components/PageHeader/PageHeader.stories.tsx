@@ -58,3 +58,12 @@ export const Compact: Story = {
     compact: true,
   },
 };
+
+// Home の Intro (UmjU2)。Kicker が等幅・字間 2px になる
+export const Intro: Story = {
+  args: {
+    kicker: "Home",
+    title: "Portfolio",
+    intro: true,
+  },
+};

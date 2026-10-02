@@ -81,6 +81,26 @@
   --spacing-5xl: var(--space-5xl);
 }
 
+/* ページ本文の左右インセット。
+   他ページの *PageMain は `mx-auto max-w-275` でコンテンツを中央に置いており、
+   広い画面ではその左右に等しい余白ができる。この余白と同じ量を padding として
+   持たせることで、中央寄せコンテナを使わないページ（Home の本棚）でも
+   左端を他ページと揃えられる。
+
+   狭い画面では `--spacing(16)`（= px-16）で下げ止まる。本棚はこの状態で
+   右方向にだけ溢れ、横スクロールになる */
+@utility content-gutter {
+  padding-inline: max(--spacing(16), calc((100% - --spacing(275)) / 2));
+}
+
+/* 横スクロールする行（本棚）用。左だけコンテンツ幅に合わせ、右は `px-16` に留める。
+   右にも同じ量を取ると、中身が画面に収まっているときでも padding の分だけ
+   スクロール領域が伸びて、動かす必要のない横スクロールが出てしまう */
+@utility content-gutter-scroll {
+  padding-inline: max(--spacing(16), calc((100% - --spacing(275)) / 2))
+    --spacing(16);
+}
+
 @layer base {
   *,
   ::after,

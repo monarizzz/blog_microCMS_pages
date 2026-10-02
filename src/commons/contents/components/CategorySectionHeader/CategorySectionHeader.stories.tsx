@@ -17,10 +17,10 @@ export const Default: Story = {
   },
 };
 
-export const WithAnchor: Story = {
+export const WithoutAnchor: Story = {
   args: {
     name: "Next.js",
     count: "12 記事",
-    anchor: true,
+    anchor: false,
   },
 };
