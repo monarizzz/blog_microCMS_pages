@@ -45,6 +45,27 @@ const eslintConfig = [
         "error",
         { rootFontSize: 16 },
       ],
+      // @theme が --spacing-md 等「サイズ名の spacing キー」を定義しているため、
+      // max-w-md は 448px ではなく --spacing-md (24px) に解決される。
+      // Tailwind v4 のサイジング系ユーティリティは
+      // --max-width → --spacing → --container の順で名前を引き、
+      // --spacing が --container より先に当たるので、
+      // --container-* を定義しても上書きできない (実測で確認済み)。
+      // 値が消えず別の値になるだけなので型も lint も通り、見た目でしか気づけない。
+      // サイジング用途でサイズ名を使うこと自体を機械的に止める。
+      "better-tailwindcss/no-restricted-classes": [
+        "error",
+        {
+          restrict: [
+            {
+              message:
+                'サイジングに "$3" を使うと spacing スケール (--spacing-$3) に解決されます。max-w-112 のように数値スケールか、任意値で指定してください。',
+              pattern:
+                "(^|:)-?(max-w|min-w|w|max-h|min-h|h|size|basis)-(2xs|xs|sm|md|lg|2xl|3xl|4xl|5xl|xl)$",
+            },
+          ],
+        },
+      ],
     },
   },
 ];
