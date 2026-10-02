@@ -1,4 +1,4 @@
-import { cn } from "@/infra/Tailwind/cn";
+import { cn } from "@/libs/Tailwind/cn";
 
 import type { PostNavigation } from "../../types/postNavigation";
 import PostNavLink from "../PostNavLink/PostNavLink";
