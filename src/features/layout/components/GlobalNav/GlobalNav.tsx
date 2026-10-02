@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SearchIconButton from "@/commons/button/components/SearchIconButton/SearchIconButton";
-import { cn } from "@/infra/Tailwind/cn";
+import { cn } from "@/libs/Tailwind/cn";
 import { pageList } from "../../constants/pageList";
 
 type Props = {
