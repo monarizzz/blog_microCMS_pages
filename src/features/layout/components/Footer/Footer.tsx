@@ -1,4 +1,5 @@
 import GlobalNav from "../GlobalNav/GlobalNav";
+import Logo from "../Logo/Logo";
 
 /** サイト公開年。著作権表記の開始年として使う */
 const SITE_LAUNCH_YEAR = 2024;
@@ -14,7 +15,7 @@ const Footer = () => {
     <footer className="h-full bg-surface px-8 py-24">
       <div className="flex flex-col gap-4">
         <GlobalNav label="フッターナビゲーション" />
-        <span className="text-[24px] tracking-[-0.5px]">Monelog</span>
+        <Logo weight="medium" />
         <span className="text-sm">© {copyrightYears} Monelog</span>
       </div>
     </footer>
