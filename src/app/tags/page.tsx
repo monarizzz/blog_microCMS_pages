@@ -1,23 +1,21 @@
-import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
 import TagsPageMain from "@/features/tags/components/TagsPageMain/TagsPageMain";
+import { getArticle } from "@/infra/microCMS/api/getArticle";
+import { getTags } from "@/infra/microCMS/api/getTags";
 
-export const metadata = buildPageMetadata({
-  title: "タグ",
-  description: "タグごとに記事を絞り込んで探せます。",
-  path: "/tags",
-});
+const TagsPage = async () => {
+  const tags = (await getTags()).contents;
+  const articleList = tags.map((tag) => {
+    const queries = `categories[contains]${tag.id}`;
+    getArticle({ filters: queries });
+  });
 
-type Props = {
-  searchParams: Promise<{ tag?: string }>;
-};
-
-const TagsPage = async ({ searchParams }: Props) => {
-  const { tag } = await searchParams;
+  console.log(articleList);
+  // const activeTag = useSearchParams().get("tag");
 
   return (
     <LayoutMain>
-      <TagsPageMain activeTag={tag} />
+      <TagsPageMain tags={tags} articleList={articleList} activeTag={null} />
     </LayoutMain>
   );
 };
