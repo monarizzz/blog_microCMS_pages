@@ -4,44 +4,46 @@ import Link from "next/link";
 
 import ImagePlaceholder from "@/commons/other/components/ImagePlaceholder/ImagePlaceholder";
 
-export type ServiceCardProps = {
-  title: string;
-  techStack: string;
-  developmentType: string;
-  /**
-   * サムネイル画像の URL。未指定時は NO IMAGE のフォールバックを表示する。
-   * next/image で最適化するため、`next.config.ts` の images.remotePatterns に
-   * 登録されたホスト (microCMS) か、public 配下のパスのみ渡せる
-   */
-  thumbnailUrl?: string;
-  url?: string;
-  githubUrl?: string;
-  /**
-   * 詳細ページのパス。microCMS の `hasDetailPage` が false の項目は
-   * 詳細ページを持たないので、その場合は渡さない（外部リンクのみになる）
-   */
-  detailPath?: string;
+import type { ServiceList } from "../../types/ServiceCard";
+
+type Props = {
+  service: ServiceList;
 };
 
-const ServiceCard = ({
-  title,
-  techStack,
-  developmentType,
-  thumbnailUrl,
-  url,
-  githubUrl,
-  detailPath,
-}: ServiceCardProps) => {
-  const hasLink = Boolean(url || githubUrl);
+/**
+ * microCMS の url フィールドは種別を持たないため、ホストで GitHub かどうかを判別する。
+ * URL として解釈できない値は通常のリンク扱いにする
+ */
+const linkLabel = (href: string) => {
+  try {
+    return new URL(href).hostname === "github.com" ? "GitHub" : "URL";
+  } catch {
+    return "URL";
+  }
+};
+
+const ServiceCard = ({ service }: Props) => {
+  const { id, title, kind, hasDetailPage, heroImage, tags, url } = service;
+  // サムネイルは先頭の 1 枚だけを使う
+  const thumbnail = heroImage?.[0];
+  const links = (url ?? []).filter((link) => link.url);
+  // 実績カードには技術系のタグだけを出す（トピックは記事用の分類）
+  const techStack = (tags ?? [])
+    .filter((tag) => !tag.type.includes("トピック"))
+    .map((tag) => tag.name)
+    .join(" / ");
+  const detailPath = hasDetailPage ? `/service/${id}` : undefined;
 
   return (
     <div className="flex w-full flex-1 flex-col items-center gap-7 border border-outline-variant bg-surface">
       <div className="relative h-45 w-full overflow-hidden border-b border-outline-variant bg-surface-container-low">
-        {thumbnailUrl ? (
+        {thumbnail ? (
           // カード見出し (h2) に title があり、サムネイル自体は装飾なので alt は空。
           // sizes は 1 行 2 カラム (max-w-275 = 1100px 内) のカード幅に合わせた概算。
+          // next/image で最適化するため、next.config.ts の images.remotePatterns に
+          // 登録されたホスト (microCMS) か、public 配下のパスのみ渡せる
           <Image
-            src={thumbnailUrl}
+            src={thumbnail.url}
             alt=""
             fill
             sizes="(max-width: 1100px) 50vw, 520px"
@@ -56,7 +58,7 @@ const ServiceCard = ({
       <div className="flex min-h-37.25 w-full flex-col gap-3 px-4 pb-4">
         <div className="flex w-full items-center justify-between px-0.75">
           <span className="text-center font-mono text-2xs text-secondary">
-            {developmentType}
+            {kind.join(" / ")}
           </span>
         </div>
         <div className="flex w-full flex-col justify-center gap-3">
@@ -65,42 +67,30 @@ const ServiceCard = ({
               他の階層でも使うようになったら headingLevel prop を検討する */}
           <h2 className="px-0.75 font-sans text-lg leading-[1.4] font-bold tracking-snug text-primary">
             {/* pen (jhtzh) に詳細ページへの導線は無いため、見た目を足さずに
-                タイトル自体をリンクにする。detailPath 未指定なら素のテキスト */}
+                タイトル自体をリンクにする。hasDetailPage が false なら素のテキスト */}
             {detailPath ? <Link href={detailPath}>{title}</Link> : title}
           </h2>
           <div className="flex flex-col gap-3 px-0.75">
             <p className="w-full font-mono text-[12px] wrap-break-word text-secondary">
               {techStack}
             </p>
-            {hasLink && (
+            {links.length > 0 && (
               <div className="flex w-31 items-center justify-center border border-outline-variant pt-1">
                 <div className="flex items-center gap-4">
-                  {url && (
+                  {links.map((link) => (
                     <a
-                      href={url}
+                      key={link.url}
+                      href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-1"
                     >
                       <span className="font-sans text-[12.5px] font-medium text-primary">
-                        URL
+                        {linkLabel(link.url)}
                       </span>
                       <ExternalLink size={13} className="text-secondary" />
                     </a>
-                  )}
-                  {githubUrl && (
-                    <a
-                      href={githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1"
-                    >
-                      <span className="font-sans text-[12.5px] font-medium text-primary">
-                        GitHub
-                      </span>
-                      <ExternalLink size={13} className="text-secondary" />
-                    </a>
-                  )}
+                  ))}
                 </div>
               </div>
             )}
