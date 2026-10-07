@@ -27,7 +27,11 @@ const ServiceCard = ({ service }: Props) => {
   // サムネイルは先頭の 1 枚だけを使う
   const thumbnail = heroImage?.[0];
   const links = (url ?? []).filter((link) => link.url);
-  const techStack = (tags ?? []).map((tag) => tag.name).join(" / ");
+  // 実績カードには技術系のタグだけを出す（トピックは記事用の分類）
+  const techStack = (tags ?? [])
+    .filter((tag) => !tag.type.includes("トピック"))
+    .map((tag) => tag.name)
+    .join(" / ");
   const detailPath = hasDetailPage ? `/service/${id}` : undefined;
 
   return (
