@@ -2,6 +2,7 @@ import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
 import ScrollNav from "@/commons/navigation/components/ScrollNav/ScrollNav";
 import ServicePageMain from "@/features/service/components/ServicePageMain/ServicePageMain";
+import { getExperiences } from "@/infra/microCMS/api/getExperiences";
 
 export const metadata = buildPageMetadata({
   title: "サービス",
@@ -9,11 +10,13 @@ export const metadata = buildPageMetadata({
   path: "/service",
 });
 
-const Service = () => {
+const Service = async () => {
+  const services = (await getExperiences()).contents;
+
   return (
     <>
       <LayoutMain>
-        <ServicePageMain />
+        <ServicePageMain services={services} />
       </LayoutMain>
       <ScrollNav />
     </>

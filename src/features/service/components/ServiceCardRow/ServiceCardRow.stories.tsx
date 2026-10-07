@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
+import { mockService } from "../../mocks/services";
 import ServiceCardRow from "./ServiceCardRow";
 
 const meta = {
@@ -10,39 +11,28 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+const weatherApp = mockService("weather-app", {
+  url: [
+    { fieldId: "url", url: "https://example.com" },
+    { fieldId: "url", url: "https://github.com/example/weather-app" },
+  ],
+});
+
 export const Single: Story = {
   args: {
-    services: [
-      {
-        id: "weather-app",
-        title: "天気予報アプリ",
-        techStack: "Next.js / TypeScript / microCMS",
-        developmentType: "Solo development",
-        url: "https://example.com",
-        githubUrl: "https://github.com/example/weather-app",
-      },
-    ],
+    services: [weatherApp],
   },
 };
 
 export const Double: Story = {
   args: {
     services: [
-      {
-        id: "weather-app",
-        title: "天気予報アプリ",
-        techStack: "Next.js / TypeScript / microCMS",
-        developmentType: "Solo development",
-        url: "https://example.com",
-        githubUrl: "https://github.com/example/weather-app",
-      },
-      {
-        id: "ec-site",
+      weatherApp,
+      mockService("ec-site", {
         title: "ECサイト",
-        techStack: "Next.js / TypeScript / microCMS",
-        developmentType: "Team development",
-        url: "https://example.com",
-      },
+        kind: ["チーム開発"],
+        url: [{ fieldId: "url", url: "https://example.com" }],
+      }),
     ],
   },
 };
