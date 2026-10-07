@@ -24,10 +24,10 @@ const linkLabel = (href: string) => {
 
 const ServiceCard = ({ service }: Props) => {
   const { id, title, kind, hasDetailPage, heroImage, tags, url } = service;
-  // サムネイルは先頭の 1 枚だけを使う
+  /* サムネイルは1枚目を使用 */
   const thumbnail = heroImage?.[0];
   const links = (url ?? []).filter((link) => link.url);
-  // 実績カードには技術系のタグだけを出す（トピックは記事用の分類）
+  /* 実績カードには技術系のタグだけを出す（トピックは記事用の分類）*/
   const techStack = (tags ?? [])
     .filter((tag) => !tag.type.includes("トピック"))
     .map((tag) => tag.name)
