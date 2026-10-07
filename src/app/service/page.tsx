@@ -11,7 +11,6 @@ export const metadata = buildPageMetadata({
 });
 
 const Service = async () => {
-  // 並び替えの基準は startDate（docs/architecture/data-model.md）。新しいものを先頭にする
   const services = await getAllExperiences({ orders: "-startDate" });
 
   return (
