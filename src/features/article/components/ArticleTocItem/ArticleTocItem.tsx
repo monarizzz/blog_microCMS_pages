@@ -1,4 +1,4 @@
-import { cn } from "@/infra/Tailwind/cn";
+import { cn } from "@/libs/Tailwind/cn";
 
 type Props = {
   text: string;
