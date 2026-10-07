@@ -14,12 +14,10 @@ const Service = async () => {
   const services = await getAllExperiences({ orders: "-startDate" });
 
   return (
-    <>
-      <LayoutMain>
-        <ServicePageMain services={services} />
-      </LayoutMain>
+    <LayoutMain>
+      <ServicePageMain services={services} />
       <ScrollNav />
-    </>
+    </LayoutMain>
   );
 };
 
