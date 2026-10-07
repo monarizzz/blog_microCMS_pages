@@ -7,13 +7,15 @@ export type Experiences = {
   hasDetailPage: boolean;
   summary: string;
   description: string;
-  heroImage: MicroCMSImage[];
-  tags: (Tags & MicroCMSListContent)[];
+  // 任意の配列系フィールドは、未入力やフィールド追加前のコンテンツで
+  // [] ではなく null やキー自体の欠落になりうるため、利用側で ?? [] に寄せる
+  heroImage?: MicroCMSImage[] | null;
+  tags?: (Tags & MicroCMSListContent)[] | null;
   startDate: string;
   endDate?: string;
   periodLabel?: string;
   role?: string;
-  url: CustomField[];
+  url?: CustomField[] | null;
 };
 
 type CustomField = {

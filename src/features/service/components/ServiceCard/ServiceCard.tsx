@@ -25,8 +25,9 @@ const linkLabel = (href: string) => {
 const ServiceCard = ({ service }: Props) => {
   const { id, title, kind, hasDetailPage, heroImage, tags, url } = service;
   // サムネイルは先頭の 1 枚だけを使う
-  const thumbnail = heroImage[0];
-  const links = url.filter((link) => link.url);
+  const thumbnail = heroImage?.[0];
+  const links = (url ?? []).filter((link) => link.url);
+  const techStack = (tags ?? []).map((tag) => tag.name).join(" / ");
   const detailPath = hasDetailPage ? `/service/${id}` : undefined;
 
   return (
@@ -67,7 +68,7 @@ const ServiceCard = ({ service }: Props) => {
           </h2>
           <div className="flex flex-col gap-3 px-0.75">
             <p className="w-full font-mono text-[12px] wrap-break-word text-secondary">
-              {tags.map((tag) => tag.name).join(" / ")}
+              {techStack}
             </p>
             {links.length > 0 && (
               <div className="flex w-31 items-center justify-center border border-outline-variant pt-1">
