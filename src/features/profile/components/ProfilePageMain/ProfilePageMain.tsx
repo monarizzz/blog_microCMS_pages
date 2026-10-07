@@ -98,7 +98,7 @@ const ProfilePageMain = () => {
           </ul>
         </div>
       </section>
-
+      {/* TimeLine */}
       <section className="flex flex-col">
         <ArticleSectionHeading
           title="Timeline"
