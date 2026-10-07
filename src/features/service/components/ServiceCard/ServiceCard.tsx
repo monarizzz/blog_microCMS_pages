@@ -35,8 +35,8 @@ const ServiceCard = ({ service }: Props) => {
   const detailPath = hasDetailPage ? `/service/${id}` : undefined;
 
   return (
-    <div className="flex w-full flex-1 flex-col items-center gap-7 border border-outline-variant bg-surface">
-      <div className="relative h-45 w-full overflow-hidden border-b border-outline-variant bg-surface-container-low">
+    <div className="flex w-full flex-1 flex-col items-center gap-7 bg-surface">
+      <div className="relative h-45 w-full overflow-hidden bg-surface-container-low">
         {thumbnail ? (
           // カード見出し (h2) に title があり、サムネイル自体は装飾なので alt は空。
           // sizes は 1 行 2 カラム (max-w-275 = 1100px 内) のカード幅に合わせた概算。
@@ -52,7 +52,7 @@ const ServiceCard = ({ service }: Props) => {
         ) : (
           // 枠と高さは親の div が持つため、ImagePlaceholder 既定の
           // h-55 / border を打ち消して親いっぱいに広げる
-          <ImagePlaceholder className="size-full border-0" />
+          <ImagePlaceholder className="size-full" />
         )}
       </div>
       <div className="flex min-h-37.25 w-full flex-col gap-3 px-4 pb-4">
