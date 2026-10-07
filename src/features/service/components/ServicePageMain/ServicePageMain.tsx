@@ -29,7 +29,7 @@ const ServicePageMain = ({ services }: Props) => {
     <div className="mx-auto flex w-full max-w-275 flex-col gap-9.5 pt-37.5 pr-10 pb-24 pl-11.75">
       <PageHeader
         title="Service"
-        sub="これまでに開発したプロダクトと制作物のまとめ。"
+        sub="これまでに開発したものまとめ"
         count={`${services.length} プロジェクト`}
         wide
       />
