@@ -75,7 +75,7 @@ const ServiceCard = ({ service }: Props) => {
               {techStack}
             </p>
             {links.length > 0 && (
-              <div className="flex w-31 items-center justify-center pt-1">
+              <div className="flex w-31 items-center pt-1">
                 <div className="flex items-center gap-4">
                   {links.map((link) => (
                     <a
