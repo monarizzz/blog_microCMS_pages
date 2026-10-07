@@ -35,7 +35,7 @@ const ServiceCard = ({ service }: Props) => {
   const detailPath = hasDetailPage ? `/service/${id}` : undefined;
 
   return (
-    <div className="flex w-full flex-1 flex-col items-center gap-7 bg-surface">
+    <div className="relative flex w-full flex-1 flex-col items-center gap-7 bg-surface">
       <div className="relative h-45 w-full overflow-hidden bg-surface-container-low">
         {thumbnail ? (
           // カード見出し (h2) に title があり、サムネイル自体は装飾なので alt は空。
@@ -66,9 +66,19 @@ const ServiceCard = ({ service }: Props) => {
               h3 だと h1 から 1 段飛んで heading-order (axe) 違反になる。
               他の階層でも使うようになったら headingLevel prop を検討する */}
           <h2 className="px-0.75 font-sans text-lg leading-[1.4] font-bold tracking-snug text-primary">
-            {/* pen (jhtzh) に詳細ページへの導線は無いため、見た目を足さずに
-                タイトル自体をリンクにする。hasDetailPage が false なら素のテキスト */}
-            {detailPath ? <Link href={detailPath}>{title}</Link> : title}
+            {/* カード全体を Link で包むと、中の外部リンクと <a> が入れ子になり不正な
+                HTML になる。リンクはタイトルに置いたまま ::after をカード全面に
+                広げてクリック領域にする。hasDetailPage が false なら素のテキスト */}
+            {detailPath ? (
+              <Link
+                href={detailPath}
+                className="after:absolute after:inset-0 hover:underline focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-primary"
+              >
+                {title}
+              </Link>
+            ) : (
+              title
+            )}
           </h2>
           <div className="flex flex-col gap-3 px-0.75">
             <p className="w-full font-mono text-[12px] wrap-break-word text-secondary">
@@ -83,7 +93,8 @@ const ServiceCard = ({ service }: Props) => {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1"
+                      // 詳細ページリンクの ::after より前面に出して個別に押せるようにする
+                      className="relative z-10 flex items-center gap-1"
                     >
                       <span className="font-sans text-[12.5px] font-medium text-primary">
                         {linkLabel(link.url)}
