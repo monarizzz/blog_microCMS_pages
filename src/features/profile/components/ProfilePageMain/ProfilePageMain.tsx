@@ -1,54 +1,14 @@
 import ArticleSectionHeading from "@/commons/contents/components/ArticleSectionHeading/ArticleSectionHeading";
 import ImagePlaceholder from "@/commons/other/components/ImagePlaceholder/ImagePlaceholder";
 import SectionLabel from "@/commons/other/components/SectionLabel/SectionLabel";
-import Timeline, {
-  TimelineItem,
-} from "@/commons/profile/components/Timeline/Timeline";
+import Timeline from "@/commons/profile/components/Timeline/Timeline";
+import { Profile } from "@/infra/microCMS/schema/profile";
 
-//TODO:仮置き
-const profile = {
-  name: "Ccc",
-  bio: "情報系の大学生 フロント中心に開発してます",
-  stacks: [
-    "TypeScript",
-    "Next.js(App・Pages) / React",
-    "GitHub / Vercel / Clip Studio Paint / Live2D Cubism / Blender",
-  ],
+type Props = {
+  profile: Profile;
 };
 
-//TODO:仮置き
-const timeline: TimelineItem[] = [
-  { id: "clip-studio-paint", year: "2020", title: "Clip Studio Paint" },
-  { id: "blender", year: "2021", title: "Blender" },
-  { id: "live2d-cubism", year: "2022", title: "Live2D Cubism" },
-  { id: "nextjs", year: "2024", title: "Next.js / TypeScript", size: "lg" },
-  {
-    id: "blog",
-    year: "2025.09",
-    project: {
-      index: "01",
-      title: "ブログサイト",
-      category: "個人開発",
-      description:
-        "コラボレーション、スピード感、柔軟性、そしてイノベーティブな発想を、品質・コスト・スケジュール・スコープに意識を集中し、ストーリーのある活動的なビジュアルを表現します。",
-      techStack: "Next.js / TypeScript / microCMS",
-    },
-  },
-  {
-    id: "teamlab",
-    year: "2025.09",
-    project: {
-      index: "02",
-      title: "チームラボ",
-      category: "インターン",
-      description:
-        "コラボレーション、スピード感、柔軟性、そしてイノベーティブな発想を、品質・コスト・スケジュール・スコープに意識を集中し、ストーリーのある活動的なビジュアルを表現します。",
-      techStack: "Next.js / TypeScript / SCSS / StoryBook",
-    },
-  },
-];
-
-const ProfilePageMain = () => {
+const ProfilePageMain = ({ profile, timeline }: Props) => {
   return (
     <div className="mx-auto flex w-full max-w-275 flex-col gap-26.5 pt-37.5 pr-10 pb-24 pl-11.75">
       <section className="flex flex-col gap-16">
@@ -69,12 +29,12 @@ const ProfilePageMain = () => {
         <div className="flex w-119.75 flex-col gap-4">
           <SectionLabel>技術スタック</SectionLabel>
           <ul className="flex flex-col gap-2 px-0.5">
-            {profile.stacks.map((stack) => (
+            {profile.tags.map((stack, i) => (
               <li
-                key={stack}
+                key={i}
                 className="font-mono text-[10px] text-on-surface-variant"
               >
-                {stack}
+                {stack.name}
               </li>
             ))}
           </ul>

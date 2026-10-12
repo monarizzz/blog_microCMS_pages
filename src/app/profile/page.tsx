@@ -2,17 +2,20 @@ import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
 import ScrollNav from "@/commons/navigation/components/ScrollNav/ScrollNav";
 import ProfilePageMain from "@/features/profile/components/ProfilePageMain/ProfilePageMain";
+import { getProfile } from "@/infra/microCMS/api/getProfile";
 
 export const metadata = buildPageMetadata({
   title: "プロフィール",
-  description: "運営者のプロフィールと経歴です。",
+  description: "プロフィールと経歴",
   path: "/profile",
 });
 
-const Profile = () => {
+const Profile = async () => {
+  const profile = await getProfile();
+
   return (
     <LayoutMain>
-      <ProfilePageMain />
+      <ProfilePageMain profile={profile} />
       <ScrollNav />
     </LayoutMain>
   );
