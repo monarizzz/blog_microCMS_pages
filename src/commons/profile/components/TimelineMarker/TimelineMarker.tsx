@@ -47,7 +47,7 @@ const TimelineMarker = ({
         見た目の間隔が 14px → 19.5px になるので、マージンで動かしている。
         負のマージンならブロックの左端も同量だけ右へ動くため、年号ラベルとの
         間隔は 14px のまま保たれる。
-        置く側は縦軸の中心と右端を揃えるだけでよい。ProfilePageMain では w-43.75 = 175px。
+        置く側は縦軸の中心と右端を揃えるだけでよい。Timeline では w-43.75 = 175px。
       */}
       <div className="mr-[-5.5px] flex shrink-0 items-center">
         <div className="h-0.5 w-7 bg-outline" />
