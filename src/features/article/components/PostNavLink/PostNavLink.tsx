@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-import { cn } from "@/infra/Tailwind/cn";
+import { cn } from "@/libs/Tailwind/cn";
 
 type Props = {
   direction: "prev" | "next";

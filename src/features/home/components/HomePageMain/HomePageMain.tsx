@@ -160,12 +160,16 @@ const renderShelfItems = (items: ShelfItem[]) =>
  *
  * 他ページの *PageMain と違い、中央寄せの `max-w-275` コンテナは持たない。
  * 本棚が画面端まで伸びて横スクロールする構成で、pen 側も Shelf の Row と
- * ShelfLabel が左右 `$space-64` の padding を自分で持っているため
+ * ShelfLabel が左右 `$space-64` の padding を自分で持っているため。
+ *
+ * ただし素の `px-16` だと、画面が本棚の中身より広いときに余りが全部
+ * 右側の空白になり、左詰めに見える（#347）。そのため各ブロックの左右は
+ * `content-gutter` で取り、他ページの `max-w-275` と左端を揃えている（#349）
  */
 const HomePageMain = () => {
   return (
     <div className="flex w-full flex-col">
-      <div className="px-16 pt-22 pb-10">
+      <div className="content-gutter pt-22 pb-10">
         <PageHeader kicker="Home" title="Portfolio" intro />
       </div>
 

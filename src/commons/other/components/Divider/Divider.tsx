@@ -8,6 +8,7 @@ const ORIENTATION_CLASS_NAME = {
   vertical: "h-full w-px",
 } as const;
 
+/* 区切り線 */
 const Divider = ({ orientation = "horizontal", className }: Props) => {
   return (
     <div

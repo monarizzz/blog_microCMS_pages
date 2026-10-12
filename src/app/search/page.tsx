@@ -1,6 +1,7 @@
 import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
 import SearchPageMain from "@/features/search/components/SearchPageMain/SearchPageMain";
+import { resolveSearchResults } from "@/features/search/searchResults";
 
 export const metadata = buildPageMetadata({
   title: "検索",
@@ -20,7 +21,7 @@ const SearchPage = async ({ searchParams }: Props) => {
 
   return (
     <LayoutMain>
-      <SearchPageMain query={query} />
+      <SearchPageMain query={query} articles={resolveSearchResults(query)} />
     </LayoutMain>
   );
 };

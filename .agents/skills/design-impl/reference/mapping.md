@@ -63,7 +63,7 @@
 | `Header` | `K2xrvp` | `src/features/layout/components/Header/Header.tsx` | ✅ |
 | `Footer` | `VMThv` | `src/features/layout/components/Footer/Footer.tsx` | ✅ |
 | `GlobalNav` | `JuCgU` | `src/features/layout/components/GlobalNav/GlobalNav.tsx` | ✅ |
-| `Logo` | `VD5vy` | — | ❌ |
+| `Logo` | `VD5vy` | `src/features/layout/components/Logo/Logo.tsx` | ✅ `weight` prop で light(300) / medium(500)、`href` 有無でリンク切替 |
 | `PageHeader` | `XEUvq` | `src/commons/other/components/PageHeader/PageHeader.tsx` | 🟡 標準形と `compact` / `wide` / `hero` / `intro` のみ |
 | `ScrollNav` | `qXMlW` | `src/commons/navigation/components/ScrollNav/ScrollNav.tsx` | ✅ |
 | `ScrollTopButton` | `YJxBa` | `src/commons/navigation/components/ScrollTopButton/ScrollTopButton.tsx` | ✅ |

@@ -11,12 +11,10 @@ export const metadata = buildPageMetadata({
 
 const Profile = () => {
   return (
-    <>
-      <LayoutMain>
-        <ProfilePageMain />
-      </LayoutMain>
+    <LayoutMain>
+      <ProfilePageMain />
       <ScrollNav />
-    </>
+    </LayoutMain>
   );
 };
 

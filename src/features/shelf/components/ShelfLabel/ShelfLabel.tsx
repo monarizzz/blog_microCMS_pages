@@ -10,7 +10,7 @@ type Props = {
  */
 const ShelfLabel = ({ children }: Props) => {
   return (
-    <div className="flex w-full items-center gap-3 px-16 pb-5">
+    <div className="flex w-full items-center gap-3 content-gutter pb-5">
       <h2 className="font-sans text-[30px] font-medium tracking-[2px] text-primary">
         {children}
       </h2>

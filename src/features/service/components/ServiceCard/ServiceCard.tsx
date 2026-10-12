@@ -3,54 +3,48 @@ import Image from "next/image";
 import Link from "next/link";
 
 import ImagePlaceholder from "@/commons/other/components/ImagePlaceholder/ImagePlaceholder";
-import { cn } from "@/infra/Tailwind/cn";
 
-export type ServiceCardProps = {
-  title: string;
-  techStack: string;
-  developmentType: string;
-  /**
-   * サムネイル画像の URL。未指定時は NO IMAGE のフォールバックを表示する。
-   * next/image で最適化するため、`next.config.ts` の images.remotePatterns に
-   * 登録されたホスト (microCMS) か、public 配下のパスのみ渡せる
-   */
-  thumbnailUrl?: string;
-  url?: string;
-  githubUrl?: string;
-  /**
-   * 詳細ページのパス。microCMS の `hasDetailPage` が false の項目は
-   * 詳細ページを持たないので、その場合は渡さない（外部リンクのみになる）
-   */
-  detailPath?: string;
+import type { ServiceList } from "../../types/ServiceCard";
+
+type Props = {
+  service: ServiceList;
 };
 
-const ServiceCard = ({
-  title,
-  techStack,
-  developmentType,
-  thumbnailUrl,
-  url,
-  githubUrl,
-  detailPath,
-}: ServiceCardProps) => {
-  const hasLink = Boolean(url || githubUrl);
+/**
+ * microCMS の url フィールドは種別を持たないため、ホストで GitHub かどうかを判別する。
+ * URL として解釈できない値は通常のリンク扱いにする
+ */
+const linkLabel = (href: string) => {
+  try {
+    return new URL(href).hostname === "github.com" ? "GitHub" : "URL";
+  } catch {
+    return "URL";
+  }
+};
+
+const ServiceCard = ({ service }: Props) => {
+  const { id, title, kind, hasDetailPage, heroImage, tags, url } = service;
+  /* サムネイルは1枚目を使用 */
+  const thumbnail = heroImage?.[0];
+  const links = (url ?? []).filter((link) => link.url);
+  /* 実績カードには技術系のタグだけを出す（トピックは記事用の分類）*/
+  const techStack = (tags ?? [])
+    .filter((tag) => !tag.type.includes("トピック"))
+    .map((tag) => tag.name)
+    .join(" / ");
+  const detailPath = hasDetailPage ? `/service/${id}` : undefined;
 
   return (
-    // detailPath がある場合のみカード全体をリンク領域として扱う。
-    // relative は Link の ::after (after:inset-0) の基準、group は
-    // カードのどこをホバーしてもタイトルに下線を出すために付ける
-    <div
-      className={cn(
-        "flex w-full flex-1 flex-col items-center gap-7 border border-outline-variant bg-surface",
-        detailPath && "group relative transition-colors hover:border-outline",
-      )}
-    >
-      <div className="relative h-45 w-full overflow-hidden border-b border-outline-variant bg-surface-container-low">
-        {thumbnailUrl ? (
+    // group は、カードのどこをホバーしてもタイトルに下線を出すために付ける
+    <div className="group relative flex w-full flex-1 flex-col items-center gap-7 bg-surface">
+      <div className="relative h-45 w-full overflow-hidden bg-surface-container-low">
+        {thumbnail ? (
           // カード見出し (h2) に title があり、サムネイル自体は装飾なので alt は空。
           // sizes は 1 行 2 カラム (max-w-275 = 1100px 内) のカード幅に合わせた概算。
+          // next/image で最適化するため、next.config.ts の images.remotePatterns に
+          // 登録されたホスト (microCMS) か、public 配下のパスのみ渡せる
           <Image
-            src={thumbnailUrl}
+            src={thumbnail.url}
             alt=""
             fill
             sizes="(max-width: 1100px) 50vw, 520px"
@@ -59,13 +53,13 @@ const ServiceCard = ({
         ) : (
           // 枠と高さは親の div が持つため、ImagePlaceholder 既定の
           // h-55 / border を打ち消して親いっぱいに広げる
-          <ImagePlaceholder className="size-full border-0" />
+          <ImagePlaceholder className="size-full" />
         )}
       </div>
       <div className="flex min-h-37.25 w-full flex-col gap-3 px-4 pb-4">
         <div className="flex w-full items-center justify-between px-0.75">
           <span className="text-center font-mono text-2xs text-secondary">
-            {developmentType}
+            {kind.join(" / ")}
           </span>
         </div>
         <div className="flex w-full flex-col justify-center gap-3">
@@ -73,11 +67,9 @@ const ServiceCard = ({
               h3 だと h1 から 1 段飛んで heading-order (axe) 違反になる。
               他の階層でも使うようになったら headingLevel prop を検討する */}
           <h2 className="px-0.75 font-sans text-lg leading-[1.4] font-bold tracking-snug text-primary">
-            {/* ::after でカード全面をクリック領域にする。カード全体を <a> で
-                包むと下の外部リンクが入れ子の <a> になり不正な HTML になるため。
-                フォーカスリングもこの ::after に出すことで、リンク自体は
-                文字幅しか無くてもカード外周にリングが出る。
-                detailPath 未指定なら素のテキスト */}
+            {/* カード全体を Link で包むと、中の外部リンクと <a> が入れ子になり不正な
+                HTML になる。リンクはタイトルに置いたまま ::after をカード全面に
+                広げてクリック領域にする。hasDetailPage が false なら素のテキスト */}
             {detailPath ? (
               <Link
                 href={detailPath}
@@ -93,38 +85,24 @@ const ServiceCard = ({
             <p className="w-full font-mono text-[12px] wrap-break-word text-secondary">
               {techStack}
             </p>
-            {hasLink && (
-              // 退避は枠ではなく各 <a> 側に付ける。枠ごと ::after より手前に
-              // 出すと、枠内のリンク文字以外（余白・上パディング・枠線）が
-              // ::after を遮り、カード全面のリンクとして反応しなくなるため
-              <div className="flex w-31 items-center justify-center border border-outline-variant pt-1">
+            {links.length > 0 && (
+              <div className="flex w-31 items-center pt-1">
                 <div className="flex items-center gap-4">
-                  {url && (
+                  {links.map((link) => (
                     <a
-                      href={url}
+                      key={link.url}
+                      href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      // 詳細ページリンクの ::after より前面に出して個別に押せるようにする
                       className="relative z-10 flex items-center gap-1 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                     >
                       <span className="font-sans text-[12.5px] font-medium text-primary">
-                        URL
+                        {linkLabel(link.url)}
                       </span>
                       <ExternalLink size={13} className="text-secondary" />
                     </a>
-                  )}
-                  {githubUrl && (
-                    <a
-                      href={githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative z-10 flex items-center gap-1 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                    >
-                      <span className="font-sans text-[12.5px] font-medium text-primary">
-                        GitHub
-                      </span>
-                      <ExternalLink size={13} className="text-secondary" />
-                    </a>
-                  )}
+                  ))}
                 </div>
               </div>
             )}
