@@ -1,9 +1,7 @@
 import Link from "next/link";
 
-/* pen の Logo (VD5vy) は fontWeight 300。@theme が --font-*: initial で
-   ウェイトの名前空間を潰しているため font-light が無く、任意値で書いている */
 const WEIGHT_CLASS_NAME = {
-  light: "font-[300]",
+  light: "font-light",
   medium: "font-medium",
 } as const;
 
