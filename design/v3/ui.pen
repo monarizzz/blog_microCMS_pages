@@ -1919,7 +1919,12 @@
                               "type": "ref",
                               "ref": "T2ai0",
                               "name": "GalleryRow 2",
-                              "width": "fill_container"
+                              "width": "fill_container",
+                              "descendants": {
+                                "Cflc9/b5TI7M": {
+                                  "content": "天気予報アプリ"
+                                }
+                              }
                             },
                             {
                               "type": "frame",
@@ -1950,7 +1955,12 @@
                               "type": "ref",
                               "ref": "T2ai0",
                               "name": "GalleryRow 3",
-                              "width": "fill_container"
+                              "width": "fill_container",
+                              "descendants": {
+                                "Cflc9/b5TI7M": {
+                                  "content": "ECサイト"
+                                }
+                              }
                             }
                           ]
                         }
