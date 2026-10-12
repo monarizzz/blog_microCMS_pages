@@ -35,7 +35,8 @@ const ServiceCard = ({ service }: Props) => {
   const detailPath = hasDetailPage ? `/service/${id}` : undefined;
 
   return (
-    <div className="relative flex w-full flex-1 flex-col items-center gap-7 bg-surface">
+    // group は、カードのどこをホバーしてもタイトルに下線を出すために付ける
+    <div className="group relative flex w-full flex-1 flex-col items-center gap-7 bg-surface">
       <div className="relative h-45 w-full overflow-hidden bg-surface-container-low">
         {thumbnail ? (
           // カード見出し (h2) に title があり、サムネイル自体は装飾なので alt は空。
@@ -72,7 +73,7 @@ const ServiceCard = ({ service }: Props) => {
             {detailPath ? (
               <Link
                 href={detailPath}
-                className="after:absolute after:inset-0 hover:underline focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-primary"
+                className="group-hover:underline after:absolute after:inset-0 focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2 focus-visible:after:outline-primary"
               >
                 {title}
               </Link>
@@ -94,7 +95,7 @@ const ServiceCard = ({ service }: Props) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       // 詳細ページリンクの ::after より前面に出して個別に押せるようにする
-                      className="relative z-10 flex items-center gap-1"
+                      className="relative z-10 flex items-center gap-1 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                     >
                       <span className="font-sans text-[12.5px] font-medium text-primary">
                         {linkLabel(link.url)}

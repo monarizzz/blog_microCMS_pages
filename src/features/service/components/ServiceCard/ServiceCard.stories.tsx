@@ -11,12 +11,16 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+// hasDetailPage なし。カード全体がリンクにならず、
+// hover / focus の見た目も出ないことを確認するケース
 export const Default: Story = {
   args: {
     service: mockService("weather-app"),
   },
 };
 
+// hasDetailPage なし・外部リンクあり。外部リンクだけが押せる状態で、
+// カードの余白がクリックできないままであることを確認するケース
 export const WithLinks: Story = {
   args: {
     service: mockService("ec-site", {
@@ -47,6 +51,8 @@ export const WithThumbnail: Story = {
   },
 };
 
+// hasDetailPage あり・外部リンクあり。カード全面がクリックでき、かつ
+// URL / GitHub が飲まれずに個別に押せることを確認するケース
 export const WithDetailPage: Story = {
   args: {
     service: mockService("monelogue", {
@@ -56,6 +62,16 @@ export const WithDetailPage: Story = {
         { fieldId: "url", url: "https://example.com" },
         { fieldId: "url", url: "https://github.com/example/monelogue" },
       ],
+    }),
+  },
+};
+
+// hasDetailPage あり・外部リンクなし。カード全面のリンクだけがある状態
+export const WithDetailPageOnly: Story = {
+  args: {
+    service: mockService("monelogue", {
+      title: "MoneLogue",
+      hasDetailPage: true,
     }),
   },
 };
