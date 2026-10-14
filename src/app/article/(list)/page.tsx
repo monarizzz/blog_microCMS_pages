@@ -9,7 +9,7 @@ import {
 import ArticlePage from "@/features/article/components/articlePage/articlePage";
 import ArticlePageSkeleton from "@/features/article/components/articlePageSkeleton/articlePageSkeleton";
 import { getArticle } from "@/infra/microCMS/api/getArticle";
-import { getTags } from "@/infra/microCMS/api/getTags";
+import { getAllTags } from "@/infra/microCMS/api/getAllTags";
 
 type SearchParams = { page?: string; sort?: string; tag?: string };
 
@@ -35,15 +35,15 @@ export const generateMetadata = async ({
 
 /**
  * Tags ページは `?tag=<タグ名>` でリンクしてくる。microCMS の絞り込みは
- * 参照先の id で行うため、名前から id を引く。見つからなければ undefined
+ * 参照先の id で行うため、名前から id を引く。見つからなければ undefined。
+ *
+ * `name[equals]${name}` で引かないのは、microCMS の filters が値をエスケープ
+ * できないため。利用者が `?tag=x[or]name[exists]` のように式を混ぜると
+ * 任意のタグが当たってしまう。タグは数が少ないので全件取得して完全一致させる
  */
 const findTagId = async (name: string) => {
-  const { contents } = await getTags({
-    filters: `name[equals]${name}`,
-    fields: "id",
-    limit: 1,
-  });
-  return contents[0]?.id;
+  const tags = await getAllTags({ fields: "id,name" });
+  return tags.find((tag) => tag.name === name)?.id;
 };
 
 type ArticleListProps = {
