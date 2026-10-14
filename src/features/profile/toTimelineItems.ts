@@ -6,29 +6,7 @@ import type {
 } from "@/commons/profile/components/Timeline/Timeline";
 import type { Experiences } from "@/infra/microCMS/schema/experiences";
 import type { Milestone } from "@/infra/microCMS/schema/profile";
-
-// microCMS の日付は JST 0 時を UTC で返す（例: 2024-10-05 → "2024-10-04T15:00:00.000Z"）。
-// 文字列を slice すると月初の実績が前月にずれるため、JST に直してから年月を取る
-const yearMonthFormat = new Intl.DateTimeFormat("ja-JP", {
-  timeZone: "Asia/Tokyo",
-  year: "numeric",
-  month: "2-digit",
-});
-
-const toJstParts = (iso: string) => {
-  const parts = yearMonthFormat.formatToParts(new Date(iso));
-  return {
-    year: parts.find((part) => part.type === "year")?.value,
-    month: parts.find((part) => part.type === "month")?.value,
-  };
-};
-
-const toYearMonth = (iso: string) => {
-  const { year, month } = toJstParts(iso);
-  return `${year}.${month}`;
-};
-
-const toYear = (iso: string) => toJstParts(iso).year ?? "";
+import { toJstYear, toJstYearMonth } from "@/commons/date/jstDate";
 
 type Entry =
   | { date: string; milestone: Milestone; key: number }
@@ -47,9 +25,8 @@ const toProject = (
     .filter((tag) => !tag.type.includes("トピック"))
     .map((tag) => tag.name)
     .join(" / "),
-  // TODO(#385): /service/[id] が microCMS に接続されたら、hasDetailPage の
-  // 実績を `/service/${experience.id}` へリンクする。今の詳細ルートは仮置きの
-  // id しか解決せず、実データの id へリンクすると必ず 404 になるため出さない
+  // /service/[id] は hasDetailPage が偽の実績を 404 にするので、真のときだけリンクする
+  link: experience.hasDetailPage ? `/service/${experience.id}` : undefined,
 });
 
 /**
@@ -80,7 +57,7 @@ export const toTimelineItems = (
         // 繰り返しフィールドの要素は id を持たない。
         // microCMS のコンテンツ ID に使えない ":" を挟み、experiences の id と衝突させない
         id: `milestone:${entry.key}`,
-        year: toYear(entry.date),
+        year: toJstYear(entry.date),
         title: entry.milestone.title,
         size: entry.milestone.emphasized ? "lg" : "sm",
       };
@@ -88,7 +65,7 @@ export const toTimelineItems = (
     projectCount += 1;
     return {
       id: entry.experience.id,
-      year: toYearMonth(entry.date),
+      year: toJstYearMonth(entry.date),
       project: toProject(entry.experience, projectCount),
     };
   });

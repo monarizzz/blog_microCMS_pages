@@ -33,6 +33,11 @@ export default defineConfig({
         },
       },
       {
+        // tsconfig の paths は vitest に引き継がれない。テスト対象が値として
+        // `@/` を import すると解決できずに落ちるため、同じ対応をここに書く
+        resolve: {
+          alias: { "@": path.join(dirname, "src") },
+        },
         test: {
           name: "node",
           include: ["src/**/*.test.ts"],

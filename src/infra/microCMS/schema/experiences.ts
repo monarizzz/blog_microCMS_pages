@@ -6,6 +6,7 @@ export type Experiences = {
   kind: string[];
   hasDetailPage: boolean;
   summary: string;
+  // リッチエディタの HTML（<p> 区切り）。表示前に richTextToPlainText で平文にする
   description: string;
   // 任意の配列系フィールドは、未入力やフィールド追加前のコンテンツで
   // [] ではなく null やキー自体の欠落になりうるため、利用側で ?? [] に寄せる

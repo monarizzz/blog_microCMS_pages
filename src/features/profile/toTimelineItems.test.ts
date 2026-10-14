@@ -107,4 +107,22 @@ describe("toTimelineItems", () => {
     const ids = items.map((item) => item.id);
     expect(new Set(ids).size).toBe(ids.length);
   });
+
+  it("詳細ページを持つ実績だけ /service/{id} にリンクする", () => {
+    const items = toTimelineItems([
+      mockService("with-detail", {
+        hasDetailPage: true,
+        startDate: "2024-03-31T15:00:00.000Z",
+      }),
+      mockService("without-detail", {
+        hasDetailPage: false,
+        startDate: "2025-03-31T15:00:00.000Z",
+      }),
+    ]);
+
+    expect(items.map((item) => item.project?.link)).toEqual([
+      "/service/with-detail",
+      undefined,
+    ]);
+  });
 });

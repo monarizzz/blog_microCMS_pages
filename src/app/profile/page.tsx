@@ -19,7 +19,8 @@ const Profile = async () => {
     // toTimelineItems で項目を増やすときはここにも足すこと
     getAllExperiences({
       orders: "startDate",
-      fields: "id,title,kind,summary,startDate,tags.name,tags.type",
+      fields:
+        "id,title,kind,hasDetailPage,summary,startDate,tags.name,tags.type",
     }),
   ]);
 
