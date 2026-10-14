@@ -33,11 +33,13 @@ const ProfilePageMain = ({ profile, timeline }: Props) => {
                   画像の中身は伝わらないため、装飾扱いで alt は空にする。
                   枠は固定幅 (w-96.5 = 386px) なので sizes もその値。
                   next/image で最適化するため、next.config.ts の images.remotePatterns に
-                  登録されたホスト (microCMS) か、public 配下のパスのみ渡せる */}
+                  登録されたホスト (microCMS) か、public 配下のパスのみ渡せる。
+                  ファーストビューの LCP 要素になるため、既定の遅延読み込みにせず preload する */}
               <Image
                 src={profile.image.url}
                 alt=""
                 fill
+                preload
                 sizes="386px"
                 className="object-cover"
               />
