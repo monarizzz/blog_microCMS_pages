@@ -1,58 +1,68 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { cache } from "react";
 
 import { siteUrl } from "@/commons/constants/site";
 import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
-import ServiceDetailMain, {
-  type ServiceDetail,
-} from "@/features/service/components/ServiceDetailMain/ServiceDetailMain";
-
-//TODO:仮置き。microCMS の experiences から引くのは別フェーズ
-const services: Record<string, ServiceDetail> = {
-  monelogue: {
-    title: "MoneLogue",
-    meta: "個人開発 · 2024 · フルスタック",
-    description:
-      "収支を記録し、資産の推移をグラフで可視化する家計簿アプリ。日々の入力から月次・年次の資産推移までを一元管理できます。",
-    features: [
-      "収支の記録とカテゴリ別の分類",
-      "月次・年次レポートの自動生成",
-      "資産推移のグラフ可視化",
-      "データのCSVエクスポート",
-    ],
-    overview:
-      "日々の収支入力から月次・年次の資産推移までを一元管理できる家計簿アプリです。microCMSをヘッドレスCMSとして採用し、カテゴリ管理を柔軟に行えるように設計しました。Rechartsによるグラフで資産の推移を直感的に把握できます。",
-    techStack: [
-      "Next.js",
-      "TypeScript",
-      "microCMS",
-      "Tailwind CSS",
-      "Recharts",
-    ],
-    periodLabel: "2024.01 - 2024.04",
-    role: "設計 / 開発 / デザイン",
-    url: "https://example.com",
-    githubUrl: "https://github.com/example/monelogue",
-  },
-};
+import ServiceDetailMain from "@/features/service/components/ServiceDetailMain/ServiceDetailMain";
+import { toServiceDetail } from "@/features/service/toServiceDetail";
+import { getAllExperiences } from "@/infra/microCMS/api/getAllExperiences";
+import { getExperienceDetail } from "@/infra/microCMS/api/getExperienceDetail";
+import { isNotFoundError } from "@/infra/microCMS/isNotFoundError";
 
 type Props = {
   params: Promise<{ id: string }>;
+};
+
+/**
+ * 詳細ページを持つ実績を 1 件取得する。無ければ notFound() に倒す。
+ *
+ * microCMS に無い id に加えて、hasDetailPage が偽の実績も 404 にする。
+ * 一覧カードがリンクしない実績の URL を直接開かれても、本文を用意していない
+ * 空の詳細ページを出さないため（data-model.md の hasDetailPage の定義）。
+ * 404 以外の失敗は握り潰さず error.tsx に任せる。障害をページ不在に見せないため。
+ *
+ * generateMetadata とページ本体で同じ id を引くので、cache で 1 リクエストにまとめる。
+ */
+const getService = cache(async (id: string) => {
+  const experience = await getExperienceDetail(id).catch((error: unknown) => {
+    if (isNotFoundError(error)) {
+      notFound();
+    }
+    throw error;
+  });
+
+  if (!experience.hasDetailPage) {
+    notFound();
+  }
+
+  return toServiceDetail(experience);
+});
+
+/**
+ * ビルド時に生成する詳細ページの id を集める。
+ *
+ * 取得に失敗しても空配列を返す。ここで throw するとビルドが落ちるため、
+ * 生成をリクエスト時へ委ねる（`dynamicParams` の既定は true）。
+ */
+export const generateStaticParams = async () => {
+  try {
+    const experiences = await getAllExperiences({
+      fields: "id",
+      filters: "hasDetailPage[equals]true",
+    });
+    return experiences.map(({ id }) => ({ id }));
+  } catch {
+    return [];
+  }
 };
 
 export const generateMetadata = async ({
   params,
 }: Props): Promise<Metadata> => {
   const { id } = await params;
-  const service = services[id];
-
-  // 参照先はローカルの Record なので、記事詳細のように取得が失敗して
-  // 500 になることはない。「無い ID は 404」というページ本体の判断と
-  // 揃えて、既定値へ退避せず notFound() に倒す
-  if (!service) {
-    notFound();
-  }
+  const service = await getService(id);
 
   return buildPageMetadata({
     title: service.title,
@@ -68,11 +78,7 @@ export const generateMetadata = async ({
 
 const ServiceDetailPage = async ({ params }: Props) => {
   const { id } = await params;
-  const service = services[id];
-
-  if (!service) {
-    notFound();
-  }
+  const service = await getService(id);
 
   return (
     <LayoutMain>
