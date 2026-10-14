@@ -35,10 +35,10 @@ const ProfilePageMain = ({ profile, timeline }: Props) => {
           <ul className="flex flex-col gap-2 px-0.5">
             {toStackRows(profile.tags).map((row) => (
               <li
-                key={row}
+                key={row.id}
                 className="font-mono text-[10px] text-on-surface-variant"
               >
-                {row}
+                {row.label}
               </li>
             ))}
           </ul>

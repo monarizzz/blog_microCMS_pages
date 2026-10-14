@@ -4,6 +4,9 @@ import type { Tags } from "@/infra/microCMS/schema/tags";
 
 import { toStackRows } from "./toStackRows";
 
+const labelsOf = (rows: ReturnType<typeof toStackRows>) =>
+  rows.map((row) => row.label);
+
 const tag = (id: string, name: string, type: Tags["type"]) => ({
   id,
   name,
@@ -22,7 +25,11 @@ describe("toStackRows", () => {
       tag("github", "GitHub", ["その他・ツール類"]),
     ]);
 
-    expect(rows).toEqual(["TypeScript", "React / Next.js", "Blender / GitHub"]);
+    expect(labelsOf(rows)).toEqual([
+      "TypeScript",
+      "React / Next.js",
+      "Blender / GitHub",
+    ]);
   });
 
   it("行内は入力の順を保つ", () => {
@@ -31,7 +38,7 @@ describe("toStackRows", () => {
       tag("vercel", "Vercel", ["その他・ツール類"]),
     ]);
 
-    expect(rows).toEqual(["GitHub / Vercel"]);
+    expect(labelsOf(rows)).toEqual(["GitHub / Vercel"]);
   });
 
   it("トピックだけのタグは出さず、空になった行も出さない", () => {
@@ -40,7 +47,7 @@ describe("toStackRows", () => {
       tag("typescript", "TypeScript", ["言語"]),
     ]);
 
-    expect(rows).toEqual(["TypeScript"]);
+    expect(labelsOf(rows)).toEqual(["TypeScript"]);
   });
 
   it("複数の種別を持つタグは、トピック以外の最初の種別の行に入れる", () => {
@@ -48,7 +55,7 @@ describe("toStackRows", () => {
       tag("nextjs", "Next.js", ["トピック", "フレームワーク", "言語"]),
     ]);
 
-    expect(rows).toEqual(["Next.js"]);
+    expect(labelsOf(rows)).toEqual(["Next.js"]);
   });
 
   it("同じ id のタグが重複していても 1 回だけ並べる", () => {
@@ -59,7 +66,19 @@ describe("toStackRows", () => {
       tag("react", "React", ["ライブラリ"]),
     ]);
 
-    expect(rows).toEqual(["TypeScript", "Next.js / React"]);
+    expect(labelsOf(rows)).toEqual(["TypeScript", "Next.js / React"]);
+  });
+
+  it("別 id の同名タグで表示が同じ行になっても、行の id は種別ごとに異なる", () => {
+    const rows = toStackRows([
+      tag("swift-lang", "Swift", ["言語"]),
+      tag("swift-ui", "Swift", ["フレームワーク"]),
+    ]);
+
+    expect(rows).toEqual([
+      { id: "language", label: "Swift" },
+      { id: "framework", label: "Swift" },
+    ]);
   });
 
   it("タグが無ければ行も無い", () => {
