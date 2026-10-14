@@ -9,7 +9,7 @@
 | `articles` | リスト | ブログ記事 | Article List / Search / 記事詳細 |
 | `tags` | リスト | トピック・技術の共通マスタ（`type`で区別） | 記事のタグ、実績の技術スタック、Profileの技術 |
 | `experiences` | リスト | 制作物・インターン・ハッカソン等の実績 | Service Detail / ServiceCard / Profile のTimeline |
-| `profile` | **単一オブジェクト** | Profile上部（名前・Bio・技術スタック） | Profile Page |
+| `profile` | **単一オブジェクト** | Profile上部（名前・Bio・プロフィール画像・技術スタック）とTimelineの目盛り | Profile Page |
 
 ## 設計思想
 
@@ -25,7 +25,7 @@
 制作物・インターン・ハッカソンなど各種の実績を1つのAPIにまとめ、`kind`（種別）で区別する。
 
 - `kind`（セレクト） … それが何か（`制作物` / `インターン` / `ハッカソン` …）。ラベルや詳細表示に使う。
-- **Profile** … 公開済みの `experiences` を全件、`startDate` 昇順でTimeline表示（`hasDetailPage` は問わない）
+- **Profile** … 公開済みの `experiences` を全件、`startDate` 昇順でTimeline表示（`hasDetailPage` は問わない）。`profile.milestones` の目盛りと日付順に混ぜる
 - **Service一覧・Home本棚** … `experiences` を並べる
 - **詳細ページ** … `hasDetailPage = true` のものだけ生成する
 
@@ -77,7 +77,7 @@ erDiagram
         boolean  hasDetailPage
         image    heroImage
         text     summary
-        text     description
+        richtext description
         ref      tags
         date     startDate
         date     endDate
@@ -91,8 +91,18 @@ erDiagram
         string name
         text   bio
         ref    tags
+        image  image
+        custom milestones
+    }
+
+    milestone {
+        date    date
+        string  title
+        boolean emphasized
     }
 ```
+
+`milestone` は API ではなく、`profile.milestones`（繰り返しフィールド）の中身になるカスタムフィールド。
 
 ## フィールド定義
 
@@ -103,8 +113,8 @@ erDiagram
 | フィールド | 型 | 必須 | 説明 |
 |---|---|---|---|
 | `title` | text | ✓ | 記事タイトル |
-| `content` | richtext | ✓ | 本文 |
 | `tags` | 複数参照(tags) | ✓ | トピック＋技術。`#` 表示 |
+| `content` | richtext | ✓ | 本文 |
 
 ※ microCMS標準の `id` / `publishedAt` / `updatedAt` は自動付与のため上表には含めない。並び順や「新着」表示は `publishedAt` を利用。
 ※ 一覧カード・検索・SEO用に **`eyecatch`（image）/ `description`（text 抜粋）/ `slug`（text）** の追加を要検討（デザインの一覧・検索画面で必要になる想定）。
@@ -113,7 +123,7 @@ erDiagram
 | フィールド | 型 | 必須 | 説明 |
 |---|---|:---:|---|
 | `name` | text | ✓ | 使用する名称 |
-| `type` | select(`技術` / `トピック`) | ✓ | 仕分け用。未設定だと横断検索から漏れるため必須 |
+| `type` | select(`トピック` / `言語` / `フレームワーク` / `ライブラリ` / `その他・ツール類`) | ✓ | 仕分け用。未設定だと横断検索から漏れるため必須 |
 
 ### experiences
 | フィールド | 型 | 必須 | 説明 |
@@ -122,14 +132,14 @@ erDiagram
 | `kind` | select(`制作物` / `インターン` / `ハッカソン` …) | ✓ | 経験の種類。ラベル・詳細表示に使う。表示制御には使わない |
 | `hasDetailPage` | boolean | | 詳細ページ（Service Detail）を生成するか。初期値OFF。一覧表示はMicroCMS標準の下書き/公開で制御するため本フラグとは無関係 |
 | `summary` | text | | 一言解説（カード・冒頭に出す短い説明）。`description`とは別 |
-| `description` | text | | 開発の詳細（本文） |
-| `heroImage` | image | | 詳細ページ上部のメインビジュアル画像 |
+| `description` | richtext | | 開発の詳細（本文）。Service 詳細の「概要」に、段落を改行で区切った平文にして出す |
+| `heroImage` | list | | 詳細ページ上部のメインビジュアル画像（複数可能） |
 | `tags` | 複数参照(tags) | | 技術スタック |
 | `startDate` | date | ✓ | 開始日。並び替えの基準 |
 | `endDate` | date | | 終了日。期間表示に使う |
 | `periodLabel` | text | | 上記の日付の隣に添える一言（`約2週間` / `（現在開発中）` など・空欄可） |
 | `role` | text | | 役割 |
-| `url` | text | | 外部リンク |
+| `url` | 繰り返し(カスタムフィールド`url`) | | 外部リンク。複数登録可 |
 
 ### profile（単一オブジェクト・1件のみ）
 | フィールド | 型 | 必須 | 説明 |
@@ -137,6 +147,15 @@ erDiagram
 | `name` | text | ✓ | |
 | `bio` | text | ✓ | |
 | `tags` | 複数参照(tags) | | 技術スタック |
+| `image` | 画像 | | プロフィール画像。未設定ならプレースホルダーを表示 |
+| `milestones` | 繰り返し(カスタムフィールド`milestone`) | | Timelineの目盛り（年＋名前だけの行。使い始めたツールなど）。複数登録可 |
+
+#### カスタムフィールド `milestone`
+| フィールド | 型 | 必須 | 説明 |
+|---|---|:---:|---|
+| `date` | date | ✓ | 目盛りの日付。表示は年だけ（JST）。`experiences.startDate` と混ぜて昇順に並べ、同日は目盛りを先にする |
+| `title` | text | ✓ | 目盛りの名前（`Blender` / `Next.js / TypeScript` など） |
+| `emphasized` | boolean | | 大きい目盛りで出すか。初期値OFF |
 
 ## microCMS実装メモ
 - 多対多はすべて**複数参照フィールド**で表現（`articles→tags`、`experiences→tags`、`profile→tags`）。中間テーブルは作らない。
@@ -150,3 +169,4 @@ erDiagram
 - 詳細ページ生成は `experiences.hasDetailPage`（boolean・初期値OFF）で制御。
 - `experiences` の日付は `startDate`（date・必須／並び替え基準）と `endDate`（date・任意／空でも進行中の意味ではない）で期間を表し、`periodLabel`（text・任意）はその隣に添える一言の補足（進行中は `〜現在` などと記す）。
 - `profile` は「オブジェクト形式」で作成（リストにしない）。
+- Timelineの年＋名前だけの目盛りは `profile.milestones`（繰り返しフィールド）に持つ。`experiences` に混ぜると `kind` などの必須項目を埋められず、Service一覧にも出てしまうため。

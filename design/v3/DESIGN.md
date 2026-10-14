@@ -19,7 +19,6 @@ colors:
   ac-info: "#61859f"
 roles:
   surface: "{colors.neutral-50}"
-  surface-raised: "#ffffff"
   surface-container-low: "{colors.neutral-100}"
   surface-container: "{colors.neutral-200}"
   primary: "{colors.neutral-900}"
@@ -117,7 +116,7 @@ There is no separate `primary` ramp: a monochrome system makes it identical to `
 
 `colors` holds raw material; `roles` names what each is for. **Implementation code references roles, never the numbered scale** — that keeps intent readable and lets a future dark mode swap role targets instead of rewriting every call site. The `roles` block maps 1:1 onto the variables in `ui.pen`, so a design can be transcribed directly.
 
-Note that `surface` is the page background (neutral-50) and `surface-raised` is the lifted plane (pure white). `surface-raised` has no consumers yet — the current design is a single-plane layout.
+Note that `surface` is the page background (neutral-50). The current design is a single-plane layout, so there is no lifted-plane role; if one is ever needed, define it together with the dark-mode role mapping rather than as a bare white.
 
 ### Interaction states (derived rules)
 
