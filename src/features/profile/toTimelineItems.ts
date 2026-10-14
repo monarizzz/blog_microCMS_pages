@@ -47,7 +47,9 @@ const toProject = (
     .filter((tag) => !tag.type.includes("トピック"))
     .map((tag) => tag.name)
     .join(" / "),
-  link: experience.hasDetailPage ? `/service/${experience.id}` : undefined,
+  // TODO(#385): /service/[id] が microCMS に接続されたら、hasDetailPage の
+  // 実績を `/service/${experience.id}` へリンクする。今の詳細ルートは仮置きの
+  // id しか解決せず、実データの id へリンクすると必ず 404 になるため出さない
 });
 
 /**

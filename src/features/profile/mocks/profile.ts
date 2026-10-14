@@ -12,9 +12,16 @@ export const mockProfile: Profile = {
   revisedAt: "2026-07-25T17:39:25.055Z",
   name: "Ccc",
   bio: "情報系の大学生 フロント中心に開発してます",
+  // ui.pen の StackList (WCc4s) の 3 行を再現する。実データと同じく Next.js を重複参照させている
   tags: [
+    mockTag("Next.js(App・Pages)", ["フレームワーク"]),
     mockTag("TypeScript", ["言語"]),
-    mockTag("Next.js", ["フレームワーク"]),
+    mockTag("Next.js(App・Pages)", ["フレームワーク"]),
+    mockTag("React", ["ライブラリ"]),
+    mockTag("GitHub", ["その他・ツール類"]),
+    mockTag("Vercel", ["その他・ツール類"]),
+    mockTag("Clip Studio Paint", ["その他・ツール類"]),
+    mockTag("Live2D Cubism", ["その他・ツール類"]),
     mockTag("Blender", ["その他・ツール類"]),
   ],
   // pen の ToolList (j2ccOZ) と YBl0K の目盛り。日付は JST の 4/1 を UTC で表したもの
