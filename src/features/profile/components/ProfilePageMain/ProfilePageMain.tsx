@@ -6,6 +6,7 @@ import SectionLabel from "@/commons/other/components/SectionLabel/SectionLabel";
 import Timeline, {
   TimelineItem,
 } from "@/commons/profile/components/Timeline/Timeline";
+import { toStackRows } from "@/features/profile/toStackRows";
 import { Profile } from "@/infra/microCMS/schema/profile";
 
 type Props = {
@@ -54,12 +55,12 @@ const ProfilePageMain = ({ profile, timeline }: Props) => {
         <div className="flex w-119.75 flex-col gap-4">
           <SectionLabel>技術スタック</SectionLabel>
           <ul className="flex flex-col gap-2 px-0.5">
-            {profile.tags.map((stack, i) => (
+            {toStackRows(profile.tags).map((row) => (
               <li
-                key={i}
+                key={row.id}
                 className="font-mono text-[10px] text-on-surface-variant"
               >
-                {stack.name}
+                {row.label}
               </li>
             ))}
           </ul>
