@@ -27,7 +27,7 @@ const Profile = async () => {
     <LayoutMain>
       <ProfilePageMain
         profile={profile}
-        timeline={toTimelineItems(experiences)}
+        timeline={toTimelineItems(experiences, profile.milestones)}
       />
       <ScrollNav />
     </LayoutMain>
