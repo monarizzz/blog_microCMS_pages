@@ -120,10 +120,12 @@ const ShelfBook = ({
           />
         ) : (
           // 表紙文字も帯の title と同じ内容を装飾として見せるだけなので、
-          // 読み上げからは除外する。画像表紙の alt="" と揃える
+          // 読み上げからは除外する。画像表紙の alt="" と揃える。
+          // 最小の段でも収まらない長さは折り返すしかないため、text-balance で
+          // 行の長さを揃え、末尾の 1 文字だけが次の行に落ちるのを防ぐ
           <span
             aria-hidden="true"
-            className={`text-center font-sans font-bold tracking-[1px] ${COVER_TEXT_SIZE_CLASS_NAME[coverTextSize]}`}
+            className={`text-center font-sans font-bold tracking-[1px] text-balance ${COVER_TEXT_SIZE_CLASS_NAME[coverTextSize]}`}
           >
             {coverText ?? title}
           </span>
