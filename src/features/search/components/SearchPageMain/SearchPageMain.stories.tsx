@@ -42,7 +42,25 @@ export const Default: Story = {
   },
 };
 
+/** 一致した件数が取得の上限を超え、一部だけを並べている状態 */
+export const Truncated: Story = {
+  args: {
+    query: "Next.js",
+    articles,
+    totalCount: 25,
+  },
+};
+
 export const NoResult: Story = {
+  args: {
+    query: "該当なし",
+    articles: [],
+    suggestedTags: ["Next.js", "設計", "TypeScript", "テスト"],
+  },
+};
+
+/** 提示できるタグが無い（記事が 1 件も無い / タグの取得に失敗した）状態 */
+export const NoResultWithoutTags: Story = {
   args: {
     query: "該当なし",
     articles: [],
