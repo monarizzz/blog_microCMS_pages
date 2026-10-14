@@ -26,7 +26,10 @@ const ArticleListPage = async ({ searchParams }: Props) => {
       key={`${currentPage}-${sort}`}
       fallback={<ArticlePageSkeleton rowCount={rowCount} />}
     >
+      {/* 仮置きの記事データは ArticlePage から外した。microCMS の取得は次のコミットで繋ぐ */}
       <ArticlePage
+        articles={[]}
+        totalCount={0}
         currentPage={currentPage}
         sort={sort === "old" ? "old" : "new"}
       />
