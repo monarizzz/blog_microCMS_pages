@@ -20,7 +20,6 @@ export const mockProfile: Profile = {
 const projectDescription =
   "コラボレーション、スピード感、柔軟性、そしてイノベーティブな発想を、品質・コスト・スケジュール・スコープに意識を集中し、ストーリーのある活動的なビジュアルを表現します。";
 
-// TODO: microCMS にタイムラインの API ができるまでは、ページ本体もこの仮データを使う
 export const mockTimeline: TimelineItem[] = [
   { id: "clip-studio-paint", year: "2020", title: "Clip Studio Paint" },
   { id: "blender", year: "2021", title: "Blender" },
