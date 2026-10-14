@@ -15,7 +15,12 @@ export const metadata = buildPageMetadata({
 const Profile = async () => {
   const [profile, experiences] = await Promise.all([
     getProfile(),
-    getAllExperiences({ orders: "startDate" }),
+    // 全件取得なので、本文 (description) や画像などタイムラインで使わない項目は落とす。
+    // toTimelineItems で項目を増やすときはここにも足すこと
+    getAllExperiences({
+      orders: "startDate",
+      fields: "id,title,kind,summary,startDate,tags.name,tags.type",
+    }),
   ]);
 
   return (
