@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import ArticleSectionHeading from "@/commons/contents/components/ArticleSectionHeading/ArticleSectionHeading";
 import ImagePlaceholder from "@/commons/other/components/ImagePlaceholder/ImagePlaceholder";
 import SectionLabel from "@/commons/other/components/SectionLabel/SectionLabel";
@@ -24,10 +26,30 @@ const ProfilePageMain = ({ profile, timeline }: Props) => {
               {profile.bio}
             </p>
           </div>
-          <ImagePlaceholder
-            label="PROFILE"
-            className="h-74.5 w-96.5 shrink-0"
-          />
+          {profile.image ? (
+            <div className="relative h-74.5 w-96.5 shrink-0 overflow-hidden">
+              {/* 直前の h1 に名前があり、microCMS の画像フィールドは代替テキストを
+                  持たない。「〇〇のプロフィール画像」と機械的に付けても h1 の繰り返しで
+                  画像の中身は伝わらないため、装飾扱いで alt は空にする。
+                  枠は固定幅 (w-96.5 = 386px) なので sizes もその値。
+                  next/image で最適化するため、next.config.ts の images.remotePatterns に
+                  登録されたホスト (microCMS) か、public 配下のパスのみ渡せる。
+                  ファーストビューの LCP 要素になるため、既定の遅延読み込みにせず preload する */}
+              <Image
+                src={profile.image.url}
+                alt=""
+                fill
+                preload
+                sizes="386px"
+                className="object-cover"
+              />
+            </div>
+          ) : (
+            <ImagePlaceholder
+              label="PROFILE"
+              className="h-74.5 w-96.5 shrink-0"
+            />
+          )}
         </div>
         <div className="flex w-119.75 flex-col gap-4">
           <SectionLabel>技術スタック</SectionLabel>
