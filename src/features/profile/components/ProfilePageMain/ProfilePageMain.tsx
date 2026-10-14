@@ -1,11 +1,14 @@
 import ArticleSectionHeading from "@/commons/contents/components/ArticleSectionHeading/ArticleSectionHeading";
 import ImagePlaceholder from "@/commons/other/components/ImagePlaceholder/ImagePlaceholder";
 import SectionLabel from "@/commons/other/components/SectionLabel/SectionLabel";
-import Timeline from "@/commons/profile/components/Timeline/Timeline";
+import Timeline, {
+  TimelineItem,
+} from "@/commons/profile/components/Timeline/Timeline";
 import { Profile } from "@/infra/microCMS/schema/profile";
 
 type Props = {
   profile: Profile;
+  timeline: TimelineItem[];
 };
 
 const ProfilePageMain = ({ profile, timeline }: Props) => {

@@ -2,6 +2,7 @@ import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
 import ScrollNav from "@/commons/navigation/components/ScrollNav/ScrollNav";
 import ProfilePageMain from "@/features/profile/components/ProfilePageMain/ProfilePageMain";
+import { mockTimeline } from "@/features/profile/mocks/profile";
 import { getProfile } from "@/infra/microCMS/api/getProfile";
 
 export const metadata = buildPageMetadata({
@@ -15,7 +16,7 @@ const Profile = async () => {
 
   return (
     <LayoutMain>
-      <ProfilePageMain profile={profile} />
+      <ProfilePageMain profile={profile} timeline={mockTimeline} />
       <ScrollNav />
     </LayoutMain>
   );
