@@ -155,6 +155,7 @@
 | `InfoRow` | `Nle6p` | `src/commons/service/components/InfoRow/InfoRow.tsx` | ✅ 内部の `InfoLabel`(`PHZV0`)は `MetaText size="xs"` を利用 |
 | `ShareBar` | `VyBtl` | `src/commons/contentsDetail/components/ShareBar/ShareBar.tsx` | ✅ |
 | （reusable なし。`Profile` group のタイムライン目盛り `YBl0K` / `knPPs` / `O3yfbV`） | — | `src/commons/profile/components/TimelineMarker/TimelineMarker.tsx` | ✅ |
+| （reusable なし。`Profile` group のタイムライン全体（縦軸 + 目盛り + `ProjectItem` の行）） | — | `src/commons/profile/components/Timeline/Timeline.tsx` | ✅ |
 
 ## Shelf（本棚）
 
