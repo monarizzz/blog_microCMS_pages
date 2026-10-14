@@ -77,7 +77,7 @@ erDiagram
         boolean  hasDetailPage
         image    heroImage
         text     summary
-        text     description
+        richtext description
         ref      tags
         date     startDate
         date     endDate
@@ -132,7 +132,7 @@ erDiagram
 | `kind` | select(`制作物` / `インターン` / `ハッカソン` …) | ✓ | 経験の種類。ラベル・詳細表示に使う。表示制御には使わない |
 | `hasDetailPage` | boolean | | 詳細ページ（Service Detail）を生成するか。初期値OFF。一覧表示はMicroCMS標準の下書き/公開で制御するため本フラグとは無関係 |
 | `summary` | text | | 一言解説（カード・冒頭に出す短い説明）。`description`とは別 |
-| `description` | text | | 開発の詳細（本文） |
+| `description` | richtext | | 開発の詳細（本文）。Service 詳細の「概要」に、段落を改行で区切った平文にして出す |
 | `heroImage` | list | | 詳細ページ上部のメインビジュアル画像（複数可能） |
 | `tags` | 複数参照(tags) | | 技術スタック |
 | `startDate` | date | ✓ | 開始日。並び替えの基準 |
