@@ -87,6 +87,82 @@ export const Empty: Story = {
   },
 };
 
+/** 外部への通信を起こさないよう、画像は data URI の矩形で代用する */
+const SAMPLE_IMAGE_SRC = `data:image/svg+xml,${encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" width="500" height="280"><rect width="500" height="280" fill="#d9dde3"/></svg>',
+)}`;
+
+/** リッチエディタから変換されうる残りのブロック（小見出し・入れ子リスト・番号リスト・引用・画像・区切り線・見出し行の無い表） */
+export const RichEditorBlocks: Story = {
+  args: {
+    blocks: [
+      { type: "heading2", id: "h-background", text: "背景" },
+      { type: "heading3", id: "h-overview", text: "インターン概要" },
+      {
+        type: "bulletList",
+        items: [
+          { content: [{ text: "企業：CARTA HOLDINGS" }] },
+          {
+            content: [{ text: "内容：講義＋チーム開発" }],
+            children: [
+              {
+                type: "bulletList",
+                items: [
+                  { content: [{ text: "前半は講義" }] },
+                  { content: [{ text: "後半はチーム開発" }] },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "numberedList",
+        items: [
+          { content: [{ text: "Node.js を入れる" }] },
+          {
+            content: [{ text: "正しく入ったか確認する" }],
+            children: [
+              {
+                type: "code",
+                language: "bash",
+                code: "$ node -v\nv22.11.0",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "code",
+        language: "ini",
+        filename: ".git/config",
+        code: '[branch "dev"]\n      remote = origin\n      merge = refs/heads/main',
+      },
+      {
+        type: "quote",
+        content: [{ text: "1 行目の引用\n2 行目の引用" }],
+      },
+      {
+        type: "image",
+        src: SAMPLE_IMAGE_SRC,
+        alt: "チームキックオフの様子",
+        width: 500,
+        height: 280,
+        caption: "チームキックオフの様子",
+      },
+      { type: "divider" },
+      {
+        type: "table",
+        headers: [],
+        rows: [
+          [[{ text: "home" }], [{ text: "文頭に飛ぶ" }], [{ text: "⌘ ←" }]],
+          [[{ text: "end" }], [{ text: "文末に飛ぶ" }], [{ text: "⌘ →" }]],
+        ],
+      },
+    ],
+  },
+};
+
 /** 段落・リスト・表・InfoCard の中に装飾とリンクを含む */
 export const WithInlineMarks: Story = {
   args: {
