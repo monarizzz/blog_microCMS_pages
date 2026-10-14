@@ -22,3 +22,18 @@ export const toJstYearMonth = (iso: string) => {
 
 /** ISO 日時を JST の `YYYY` にする */
 export const toJstYear = (iso: string) => toJstParts(iso).year;
+
+const dateFormat = new Intl.DateTimeFormat("ja-JP", {
+  timeZone: "Asia/Tokyo",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
+/** ISO 日時を JST の `YYYY.MM.DD` にする */
+export const toJstDate = (iso: string) => {
+  const parts = dateFormat.formatToParts(new Date(iso));
+  const get = (type: Intl.DateTimeFormatPartTypes) =>
+    parts.find((part) => part.type === type)?.value ?? "";
+  return `${get("year")}.${get("month")}.${get("day")}`;
+};
