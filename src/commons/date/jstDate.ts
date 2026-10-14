@@ -37,3 +37,7 @@ export const toJstDate = (iso: string) => {
     parts.find((part) => part.type === type)?.value ?? "";
   return `${get("year")}.${get("month")}.${get("day")}`;
 };
+
+/** ISO 日時を JST の `YYYY-MM-DD` にする。`<time dateTime>` に入れる HTML の日付形式 */
+export const toJstDateAttr = (iso: string) =>
+  toJstDate(iso).replace(/\./g, "-");
