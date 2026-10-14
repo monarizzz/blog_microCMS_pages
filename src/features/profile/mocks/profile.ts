@@ -1,6 +1,8 @@
 import type { TimelineItem } from "@/commons/profile/components/Timeline/Timeline";
 import type { Profile } from "@/infra/microCMS/schema/profile";
-import { mockTag } from "@/features/service/mocks/services";
+import { mockService, mockTag } from "@/features/service/mocks/services";
+
+import { toTimelineItems } from "../toTimelineItems";
 
 /** ストーリー用のモック。microCMS のオブジェクト形式レスポンスと同じ形にしている */
 export const mockProfile: Profile = {
@@ -15,36 +17,59 @@ export const mockProfile: Profile = {
     mockTag("Next.js", ["フレームワーク"]),
     mockTag("Blender", ["その他・ツール類"]),
   ],
+  // pen の ToolList (j2ccOZ) と YBl0K の目盛り。日付は JST の 4/1 を UTC で表したもの
+  milestones: [
+    {
+      fieldId: "milestone",
+      date: "2020-03-31T15:00:00.000Z",
+      title: "Clip Studio Paint",
+    },
+    {
+      fieldId: "milestone",
+      date: "2021-03-31T15:00:00.000Z",
+      title: "Blender",
+    },
+    {
+      fieldId: "milestone",
+      date: "2022-03-31T15:00:00.000Z",
+      title: "Live2D Cubism",
+    },
+    {
+      fieldId: "milestone",
+      date: "2024-03-31T15:00:00.000Z",
+      title: "Next.js / TypeScript",
+      emphasized: true,
+    },
+  ],
 };
 
 const projectDescription =
   "コラボレーション、スピード感、柔軟性、そしてイノベーティブな発想を、品質・コスト・スケジュール・スコープに意識を集中し、ストーリーのある活動的なビジュアルを表現します。";
 
-export const mockTimeline: TimelineItem[] = [
-  { id: "clip-studio-paint", year: "2020", title: "Clip Studio Paint" },
-  { id: "blender", year: "2021", title: "Blender" },
-  { id: "live2d-cubism", year: "2022", title: "Live2D Cubism" },
-  { id: "nextjs", year: "2024", title: "Next.js / TypeScript", size: "lg" },
-  {
-    id: "blog",
-    year: "2025.09",
-    project: {
-      index: "01",
-      title: "ブログサイト",
-      category: "個人開発",
-      description: projectDescription,
-      techStack: "Next.js / TypeScript / microCMS",
-    },
-  },
-  {
-    id: "teamlab",
-    year: "2025.09",
-    project: {
-      index: "02",
-      title: "チームラボ",
-      category: "インターン",
-      description: projectDescription,
-      techStack: "Next.js / TypeScript / SCSS / StoryBook",
-    },
-  },
+/** startDate 昇順の experiences 一覧レスポンス（page.tsx の取得条件と同じ並び） */
+export const mockExperiences = [
+  mockService("blog", {
+    title: "ブログサイト",
+    kind: ["個人開発"],
+    summary: projectDescription,
+    startDate: "2025-08-31T15:00:00.000Z",
+  }),
+  mockService("teamlab", {
+    title: "チームラボ",
+    kind: ["インターン"],
+    summary: projectDescription,
+    tags: [
+      mockTag("Next.js", ["フレームワーク"]),
+      mockTag("TypeScript", ["言語"]),
+      mockTag("SCSS", ["言語"]),
+      mockTag("StoryBook", ["その他・ツール類"]),
+    ],
+    startDate: "2025-08-31T15:00:00.000Z",
+  }),
 ];
+
+// 手書きせず page.tsx と同じ変換を通し、ストーリーで目盛りと実績の混ぜ方も確認できるようにする
+export const mockTimeline: TimelineItem[] = toTimelineItems(
+  mockExperiences,
+  mockProfile.milestones,
+);
