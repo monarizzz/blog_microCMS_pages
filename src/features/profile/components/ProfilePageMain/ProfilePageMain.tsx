@@ -55,7 +55,7 @@ const ProfilePageMain = ({ profile, timeline }: Props) => {
         <div className="flex w-119.75 flex-col gap-4">
           <SectionLabel>技術スタック</SectionLabel>
           <ul className="flex flex-col gap-2 px-0.5">
-            {toStackRows(profile.tags).map((row) => (
+            {toStackRows(profile.tags ?? []).map((row) => (
               <li
                 key={row.id}
                 className="font-mono text-[10px] text-on-surface-variant"
