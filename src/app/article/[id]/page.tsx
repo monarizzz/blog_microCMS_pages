@@ -1,14 +1,39 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { cache } from "react";
+
 import { siteUrl } from "@/commons/constants/site";
 import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
+import {
+  newerArticleQuery,
+  olderArticleQuery,
+} from "@/features/article/adjacentArticleQueries";
 import ArticleDetailMain from "@/features/article/components/ArticleDetailMain/ArticleDetailMain";
+import { toArticleDetail } from "@/features/article/toArticleDetail";
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
 import { getArticle } from "@/infra/microCMS/api/getArticle";
 import { getArticleDetail } from "@/infra/microCMS/api/getArticleDetail";
+import { isNotFoundError } from "@/infra/microCMS/isNotFoundError";
 
 type Props = {
   params: Promise<{ id: string }>;
 };
+
+/**
+ * 記事を 1 件取得する。microCMS に無い id は notFound() に倒す。
+ *
+ * 404 以外の失敗（認証エラー・5xx など）は握り潰さず error.tsx に任せる。
+ * 障害を記事の不在に見せないため。
+ * generateMetadata とページ本体で同じ id を引くので、cache で 1 リクエストにまとめる。
+ */
+const findArticle = cache(async (id: string) =>
+  getArticleDetail(id).catch((error: unknown) => {
+    if (isNotFoundError(error)) {
+      notFound();
+    }
+    throw error;
+  }),
+);
 
 /** microCMS の 1 リクエストあたりの上限 */
 const MICROCMS_MAX_LIMIT = 100;
@@ -119,19 +144,7 @@ export const generateMetadata = async ({
   params,
 }: Props): Promise<Metadata> => {
   const { id } = await params;
-
-  // 存在しない ID では microCMS が 404 を投げる。ここで落とすと
-  // ページ本体より先にメタデータ生成で 500 になるため、既定値に退避する
-  const article = await getArticleDetail(id).catch(() => null);
-
-  if (!article) {
-    return buildPageMetadata({
-      title: "記事",
-      description: "記事ページです。",
-      path: `/article/${id}`,
-      type: "article",
-    });
-  }
+  const article = await findArticle(id);
 
   return buildPageMetadata({
     title: article.title,
@@ -143,19 +156,26 @@ export const generateMetadata = async ({
 
 const ArticleDetailPage = async ({ params }: Props) => {
   const { id } = await params;
+  const article = await findArticle(id);
+
+  // 前後の記事は記事一覧と同じ並び順（publishedAt、同値なら createdAt）で隣にあるもの
+  const orderKey = {
+    publishedAt: article.publishedAt ?? article.createdAt,
+    createdAt: article.createdAt,
+  };
+  const [older, newer] = await Promise.all([
+    getArticle(olderArticleQuery(orderKey)),
+    getArticle(newerArticleQuery(orderKey)),
+  ]);
 
   return (
     <LayoutMain>
-      {/* 仮置きの記事データは ArticleDetailMain から外した。microCMS の取得は次のコミットで繋ぐ */}
       <ArticleDetailMain
-        article={{
-          title: "",
-          tags: [],
-          publishedAt: "",
-          publishedDate: "",
-          blocks: [],
+        article={toArticleDetail(article)}
+        postNavigation={{
+          prev: older.contents[0],
+          next: newer.contents[0],
         }}
-        postNavigation={{}}
         shareUrl={`${siteUrl}/article/${id}`}
       />
     </LayoutMain>
