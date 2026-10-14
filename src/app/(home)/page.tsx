@@ -43,7 +43,6 @@ const fetchArticleShelf = async () => {
   }
 };
 
-/** 詳細ページのある実績だけを、開始日の新しい順に取得する */
 const fetchServiceShelf = async () => {
   const { contents } = await getExperiences({
     limit: SHELF_BOOK_LIMIT,
