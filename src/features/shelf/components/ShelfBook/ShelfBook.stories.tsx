@@ -102,3 +102,14 @@ export const WithImage: Story = {
     size: "lg",
   },
 };
+
+/** 空白の無い長い英数字の表紙文字。最小の本でも語の途中で折り返して欠けない */
+export const LongUnbrokenCoverText: Story = {
+  args: {
+    title: "Accessibility Testing",
+    meta: "2024.03.18 · Blog",
+    coverText: "AccessibilityTesting",
+    coverHeight: "sm",
+    size: "sm",
+  },
+};
