@@ -120,10 +120,15 @@ const ShelfBook = ({
           />
         ) : (
           // 表紙文字も帯の title と同じ内容を装飾として見せるだけなので、
-          // 読み上げからは除外する。画像表紙の alt="" と揃える
+          // 読み上げからは除外する。画像表紙の alt="" と揃える。
+          // 最小の段でも収まらない長さは折り返すしかないため、text-balance で
+          // 行の長さを揃え、末尾の 1 文字だけが次の行に落ちるのを防ぐ。
+          // 空白の無い長い英数字（タグ名など）は単語内で改行できず overflow-hidden で
+          // 欠けるので、wrap-anywhere で語の途中でも折り返す。break-word では
+          // min-content の幅が縮まず、狭い本ではやはりはみ出す
           <span
             aria-hidden="true"
-            className={`text-center font-sans font-bold tracking-[1px] ${COVER_TEXT_SIZE_CLASS_NAME[coverTextSize]}`}
+            className={`text-center font-sans font-bold tracking-[1px] text-balance wrap-anywhere ${COVER_TEXT_SIZE_CLASS_NAME[coverTextSize]}`}
           >
             {coverText ?? title}
           </span>
