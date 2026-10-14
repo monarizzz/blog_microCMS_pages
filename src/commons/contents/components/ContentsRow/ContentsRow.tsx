@@ -1,20 +1,17 @@
 import Link from "next/link";
 
 import TagBtn from "@/commons/button/components/TagBtn/TagBtn";
+import { toJstDate, toJstDateAttr } from "@/commons/date/jstDate";
 
 /** タグ絞り込み一覧への遷移先。既存の TagsPageMain のフィルタと同じ形式に揃える */
 const tagHref = (tag: string) => `/tags?tag=${encodeURIComponent(tag)}`;
 
-/**
- * ISO 8601 の日付を表示用の `2024.03.18` 形式にする。
- * `Date` を通すとタイムゾーンで 1 日ずれるため、日付部分を文字列として置換するだけに留める
- */
-const formatPublishedAt = (publishedAt: string) =>
-  publishedAt.slice(0, 10).replace(/-/g, ".");
-
 type Props = {
   title: string;
-  /** ISO 8601 の日時文字列。`<time dateTime>` には日付部分をそのまま入れる */
+  /**
+   * ISO 8601 の日時文字列。表示・`<time dateTime>` とも JST の日付にする。
+   * 文字列の先頭 10 文字は UTC の日付で、JST 0〜9 時の公開日が前日になるため使わない
+   */
   publishedAt: string;
   /** 記事詳細への遷移先 */
   href: string;
@@ -61,10 +58,10 @@ const ContentsRow = ({
   return (
     <article className="relative flex w-full gap-8 border-b border-outline-variant py-6">
       <time
-        dateTime={publishedAt.slice(0, 10)}
+        dateTime={toJstDateAttr(publishedAt)}
         className="my-auto text-sm tracking-[0.5px] text-secondary"
       >
-        {formatPublishedAt(publishedAt)}
+        {toJstDate(publishedAt)}
       </time>
       {compact ? (
         <div className="flex w-full justify-between">

@@ -37,6 +37,15 @@ export const HeadingLevel3: Story = {
   },
 };
 
+/**
+ * JST 0〜9 時に公開した記事。UTC では前日になる日時でも JST の日付 (2024.03.18) を出す
+ */
+export const PublishedEarlyMorningJst: Story = {
+  args: {
+    publishedAt: "2024-03-17T15:30:00.000Z",
+  },
+};
+
 /** タグが 1 件も無い記事 */
 export const NoTags: Story = {
   args: {
