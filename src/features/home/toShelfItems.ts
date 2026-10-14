@@ -126,7 +126,9 @@ export const toArticleShelf = (
       // publishedAt は一度も公開していない記事には付かない。
       // 一覧に出るのは公開済みだけなので実際には来ないが、型の上では任意
       meta: `${toJstDate(article.publishedAt ?? article.createdAt)} · Blog`,
-      href: `/article/${article.id}`,
+      // TODO(#275): /article/[id] が microCMS に接続されたら `/article/${article.id}` へ
+      // リンクする。今の記事詳細は id を使わず固定の本文を出すので、リンクすると
+      // 選んだ記事と別の内容に着地する
       // articles は表紙画像を持たない。タイトルは長く表紙に収まらないため、
       // 先頭のタグ名（「開発」「備忘録」など短い分類）を表紙文字にする
       coverText: article.tags[0]?.name ?? article.title,

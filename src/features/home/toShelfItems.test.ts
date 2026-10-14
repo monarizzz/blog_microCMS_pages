@@ -43,7 +43,7 @@ describe("toArticleShelf", () => {
     expect(toArticleShelf([])).toEqual([]);
   });
 
-  it("タイトル・JST の公開日・記事詳細へのリンクを本に写す", () => {
+  it("タイトルと JST の公開日を本に写し、記事詳細の接続まではリンクしない", () => {
     const [book] = toArticleShelf([
       mockArticle("app-router", {
         title: "App Router 移行",
@@ -56,8 +56,8 @@ describe("toArticleShelf", () => {
       kind: "book",
       title: "App Router 移行",
       meta: "2024.04.01 · Blog",
-      href: "/article/app-router",
     });
+    expect(book).not.toHaveProperty("href");
   });
 
   it("publishedAt が無ければ createdAt を公開日にする", () => {
