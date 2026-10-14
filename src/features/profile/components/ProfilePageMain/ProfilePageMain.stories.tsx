@@ -17,3 +17,15 @@ export const Default: Story = {
     timeline: mockTimeline,
   },
 };
+
+export const WithImage: Story = {
+  args: {
+    profile: {
+      ...mockProfile,
+      // next/image は remotePatterns 未登録のホストを弾き、Storybook から
+      // microCMS の実画像にも依存したくないため、public 配下の画像を使う
+      image: { url: "/github-mark.svg", width: 98, height: 96 },
+    },
+    timeline: mockTimeline,
+  },
+};
