@@ -62,7 +62,11 @@ const ArticleList = async ({
   const { contents, totalCount } = await getArticle({
     limit: ARTICLES_PER_PAGE,
     offset: articleListOffset(currentPage),
-    orders: sort === "old" ? "publishedAt" : "-publishedAt",
+    // ページごとに独立した offset で取るので、同じ publishedAt の記事の順序が
+    // 揺れると境界で重複・欠落する。microCMS は同値の順序を保証しないため
+    // createdAt を第 2 キーにする（id は orders の対象として文書化されていない）
+    orders:
+      sort === "old" ? "publishedAt,createdAt" : "-publishedAt,-createdAt",
     fields: "id,title,publishedAt,createdAt,tags.name",
     filters: tagId ? `tags[contains]${tagId}` : undefined,
   });
