@@ -1,6 +1,7 @@
 import type { MicroCMSListContent } from "microcms-js-sdk";
 
 import { toJstYear, toJstYearMonth } from "@/commons/date/jstDate";
+import { richTextToPlainText } from "@/infra/microCMS/richTextToPlainText";
 import type { Experiences } from "@/infra/microCMS/schema/experiences";
 
 import type { ServiceDetail } from "./components/ServiceDetailMain/ServiceDetailMain";
@@ -41,7 +42,8 @@ export const toServiceDetail = (
     heroImageUrl: experience.heroImage?.[0]?.url,
     // experiences に「主な機能」に当たるフィールドが無い。空なら節ごと出さない
     features: [],
-    overview: experience.description || undefined,
+    // description はリッチエディタの HTML。ServiceDetailMain は平文を改行込みで出す
+    overview: richTextToPlainText(experience.description ?? "") || undefined,
     // ServiceCard と同じく、トピック (記事用の分類) は技術スタックに出さない
     techStack: (experience.tags ?? [])
       .filter((tag) => {

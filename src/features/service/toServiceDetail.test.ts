@@ -30,6 +30,16 @@ describe("toServiceDetail", () => {
     });
   });
 
+  it("リッチテキストの description は段落を空行で区切った平文にする", () => {
+    const detail = toServiceDetail(
+      mockService("weather", {
+        description: "<p>一段目 &amp; 補足</p><p>二段目</p>",
+      }),
+    );
+
+    expect(detail.overview).toBe("一段目 & 補足\n\n二段目");
+  });
+
   it("空文字の summary / description / role は undefined にして節を出さない", () => {
     const detail = toServiceDetail(mockService("weather", { role: "" }));
 
