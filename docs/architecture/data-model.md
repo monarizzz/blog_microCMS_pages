@@ -9,7 +9,7 @@
 | `articles` | リスト | ブログ記事 | Article List / Search / 記事詳細 |
 | `tags` | リスト | トピック・技術の共通マスタ（`type`で区別） | 記事のタグ、実績の技術スタック、Profileの技術 |
 | `experiences` | リスト | 制作物・インターン・ハッカソン等の実績 | Service Detail / ServiceCard / Profile のTimeline |
-| `profile` | **単一オブジェクト** | Profile上部（名前・Bio・技術スタック） | Profile Page |
+| `profile` | **単一オブジェクト** | Profile上部（名前・Bio・プロフィール画像・技術スタック） | Profile Page |
 
 ## 設計思想
 
@@ -91,6 +91,7 @@ erDiagram
         string name
         text   bio
         ref    tags
+        image  image
     }
 ```
 
@@ -137,6 +138,7 @@ erDiagram
 | `name` | text | ✓ | |
 | `bio` | text | ✓ | |
 | `tags` | 複数参照(tags) | | 技術スタック |
+| `image` | 画像 | | プロフィール画像。未設定ならプレースホルダーを表示 |
 
 ## microCMS実装メモ
 - 多対多はすべて**複数参照フィールド**で表現（`articles→tags`、`experiences→tags`、`profile→tags`）。中間テーブルは作らない。
