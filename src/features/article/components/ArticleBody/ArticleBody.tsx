@@ -5,6 +5,7 @@ import Paragraph from "@/commons/contentsDetail/components/Paragraph/Paragraph";
 import Table from "@/commons/contentsDetail/components/Table/Table";
 
 import type { ArticleBlock } from "../../types/articleBlock";
+import ArticleInlineText from "../ArticleInlineText/ArticleInlineText";
 
 type Props = {
   blocks: ArticleBlock[];
@@ -16,7 +17,11 @@ const ArticleBody = ({ blocks }: Props) => {
       {blocks.map((block, index) => {
         switch (block.type) {
           case "paragraph":
-            return <Paragraph key={index}>{block.text}</Paragraph>;
+            return (
+              <Paragraph key={index}>
+                <ArticleInlineText inlines={block.content} />
+              </Paragraph>
+            );
 
           case "heading2":
             // 目次からのアンカー先。Header の下に隠れないよう
@@ -30,9 +35,11 @@ const ArticleBody = ({ blocks }: Props) => {
           case "bulletList":
             return (
               <ul key={index} className="flex w-full flex-col gap-4">
-                {block.items.map((item) => (
-                  <li key={item}>
-                    <BulletItem>{item}</BulletItem>
+                {block.items.map((item, itemIndex) => (
+                  <li key={itemIndex}>
+                    <BulletItem>
+                      <ArticleInlineText inlines={item.content} />
+                    </BulletItem>
                   </li>
                 ))}
               </ul>
@@ -50,8 +57,10 @@ const ArticleBody = ({ blocks }: Props) => {
               <Table key={index}>
                 <thead>
                   <tr>
-                    {block.headers.map((header) => (
-                      <th key={header}>{header}</th>
+                    {block.headers.map((header, headerIndex) => (
+                      <th key={headerIndex}>
+                        <ArticleInlineText inlines={header} />
+                      </th>
                     ))}
                   </tr>
                 </thead>
@@ -59,7 +68,9 @@ const ArticleBody = ({ blocks }: Props) => {
                   {block.rows.map((row, rowIndex) => (
                     <tr key={rowIndex}>
                       {row.map((cell, cellIndex) => (
-                        <td key={cellIndex}>{cell}</td>
+                        <td key={cellIndex}>
+                          <ArticleInlineText inlines={cell} />
+                        </td>
                       ))}
                     </tr>
                   ))}
@@ -73,7 +84,9 @@ const ArticleBody = ({ blocks }: Props) => {
                 key={index}
                 className="w-full border border-outline-variant bg-on-primary p-8"
               >
-                <p className="text-md/relaxed">{block.text}</p>
+                <p className="text-md/relaxed">
+                  <ArticleInlineText inlines={block.content} />
+                </p>
               </div>
             );
         }

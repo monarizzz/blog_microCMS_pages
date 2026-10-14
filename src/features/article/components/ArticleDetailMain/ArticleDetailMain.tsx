@@ -22,7 +22,11 @@ const TAG_LINK = "/tags";
 const blocks: ArticleBlock[] = [
   {
     type: "paragraph",
-    text: "Next.js 13から導入され、14でさらに洗練されたApp Router。Pages Routerからの移行を検討しているプロジェクトも多いことでしょう。最大のパラダイムシフトは、React Server Components (RSC) をデフォルトとする設計思想にあります。",
+    content: [
+      {
+        text: "Next.js 13から導入され、14でさらに洗練されたApp Router。Pages Routerからの移行を検討しているプロジェクトも多いことでしょう。最大のパラダイムシフトは、React Server Components (RSC) をデフォルトとする設計思想にあります。",
+      },
+    ],
   },
   {
     type: "heading2",
@@ -31,14 +35,18 @@ const blocks: ArticleBlock[] = [
   },
   {
     type: "paragraph",
-    text: "Server Componentsはサーバー側でレンダリングされ、クライアントにはHTMLとシリアライズ可能なデータのみが送信されます。これにより、JavaScriptのバンドルサイズを大幅に削減できます。",
+    content: [
+      {
+        text: "Server Componentsはサーバー側でレンダリングされ、クライアントにはHTMLとシリアライズ可能なデータのみが送信されます。これにより、JavaScriptのバンドルサイズを大幅に削減できます。",
+      },
+    ],
   },
   {
     type: "bulletList",
     items: [
-      "データベースへの直接アクセスが可能",
-      "機密情報（APIキーなど）を安全に扱える",
-      "大きな依存関係をクライアントに送らずに済む",
+      { content: [{ text: "データベースへの直接アクセスが可能" }] },
+      { content: [{ text: "機密情報（APIキーなど）を安全に扱える" }] },
+      { content: [{ text: "大きな依存関係をクライアントに送らずに済む" }] },
     ],
   },
   {
@@ -48,7 +56,11 @@ const blocks: ArticleBlock[] = [
   },
   {
     type: "paragraph",
-    text: "インタラクティブな要素（useState, onClickなど）が必要な場合のみ、ファイルの先頭で use client ディレクティブを宣言し、Client Componentとします。",
+    content: [
+      {
+        text: "インタラクティブな要素（useState, onClickなど）が必要な場合のみ、ファイルの先頭で use client ディレクティブを宣言し、Client Componentとします。",
+      },
+    ],
   },
   {
     type: "code",
@@ -60,19 +72,31 @@ const blocks: ArticleBlock[] = [
   },
   {
     type: "paragraph",
-    text: "重要なのは、「ツリーの葉」に向かってのみClient Componentsを配置することです。Server ComponentsをClient Componentsの直接の子としてインポートすることはできませんが、children propとして渡すことは可能です。",
+    content: [
+      {
+        text: "重要なのは、「ツリーの葉」に向かってのみClient Componentsを配置することです。Server ComponentsをClient Componentsの直接の子としてインポートすることはできませんが、children propとして渡すことは可能です。",
+      },
+    ],
   },
   {
     type: "table",
-    headers: ["プロパティ", "型", "説明"],
+    headers: [[{ text: "プロパティ" }], [{ text: "型" }], [{ text: "説明" }]],
     rows: [
-      ["title", "string", "記事のタイトル"],
-      ["publishedAt", "string", "公開日時 (ISO 8601)"],
+      [[{ text: "title" }], [{ text: "string" }], [{ text: "記事のタイトル" }]],
+      [
+        [{ text: "publishedAt" }],
+        [{ text: "string" }],
+        [{ text: "公開日時 (ISO 8601)" }],
+      ],
     ],
   },
   {
     type: "infoCard",
-    text: "データフェッチは可能な限り親のServer Componentで行い、結果をpropsとしてClient Componentに渡す設計を心がけましょう。これにより不要なクライアントサイドのウォーターフォールリクエストを防ぐことができます。",
+    content: [
+      {
+        text: "データフェッチは可能な限り親のServer Componentで行い、結果をpropsとしてClient Componentに渡す設計を心がけましょう。これにより不要なクライアントサイドのウォーターフォールリクエストを防ぐことができます。",
+      },
+    ],
   },
   {
     type: "heading2",
@@ -81,7 +105,11 @@ const blocks: ArticleBlock[] = [
   },
   {
     type: "paragraph",
-    text: "App Routerへの移行は単なるディレクトリ構造の変更ではなく、コンポーネントの設計思想そのものの見直しを要求します。しかし、適切に境界を引くことで、パフォーマンスと開発体験の両方を大きく向上させることが可能です。",
+    content: [
+      {
+        text: "App Routerへの移行は単なるディレクトリ構造の変更ではなく、コンポーネントの設計思想そのものの見直しを要求します。しかし、適切に境界を引くことで、パフォーマンスと開発体験の両方を大きく向上させることが可能です。",
+      },
+    ],
   },
 ];
 
