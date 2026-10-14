@@ -97,7 +97,9 @@ const ServiceDetailMain = ({ service, shareUrl }: Props) => {
             {overview && (
               <section className="flex w-full flex-col gap-4">
                 <SectionHeading>概要</SectionHeading>
-                <p className="w-full text-[16px] leading-[1.85] text-on-surface">
+                {/* microCMS のリッチテキストは段落を改行で区切った平文にして渡すので、
+                    段落ごとの <p> に組み直さず改行をそのまま表示する */}
+                <p className="w-full text-[16px] leading-[1.85] whitespace-pre-line text-on-surface">
                   {overview}
                 </p>
               </section>
