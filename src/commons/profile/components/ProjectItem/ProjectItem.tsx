@@ -20,7 +20,7 @@ const ProjectItem = ({
   return (
     <div className="flex w-full items-center gap-18">
       <div className="flex w-full flex-col gap-2.25 py-10">
-        <span className="p-0.5 text-[12px] font-bold tracking-widest text-primary">
+        <span className="px-0.5 text-[12px] font-bold tracking-widest text-primary">
           {index}
         </span>
         <div className="flex w-full items-center gap-10 pt-3 pb-1">
@@ -46,7 +46,7 @@ const ProjectItem = ({
           {description}
         </p>
         <div className="flex w-full justify-between gap-7">
-          <div className="flex flex-col items-end gap-1">
+          <div className="flex flex-col items-end gap-1 px-0.5">
             <span className="text-center font-mono text-[10px] whitespace-nowrap text-on-surface-variant">
               {techStack}
             </span>
