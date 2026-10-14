@@ -37,7 +37,12 @@ const ProjectItem = ({
           </div>
           <div className="h-[1.5px] flex-1 bg-primary" />
         </div>
-        <p className="w-full text-[12px] leading-[2] tracking-[0.3px] text-on-surface-variant">
+        {/*
+          pen のコンポーネント定義 (Fm4SS) は 12px 固定だが、唯一の利用先である
+          Profile の両インスタンスが $text-sm に上書きしているので、定義ではなく
+          実際の見え方に合わせた。12px を使う箇所が無いため size prop も設けていない。
+        */}
+        <p className="w-full text-sm leading-[2] tracking-[0.3px] text-on-surface-variant">
           {description}
         </p>
         <div className="flex w-full justify-between gap-7">
