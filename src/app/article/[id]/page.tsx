@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteUrl } from "@/commons/constants/site";
 import { buildPageMetadata } from "@/commons/metadata/pageMetadata";
 import ArticleDetailMain from "@/features/article/components/ArticleDetailMain/ArticleDetailMain";
 import LayoutMain from "@/features/layout/components/LayoutMain/LayoutMain";
@@ -145,7 +146,18 @@ const ArticleDetailPage = async ({ params }: Props) => {
 
   return (
     <LayoutMain>
-      <ArticleDetailMain id={id} />
+      {/* 仮置きの記事データは ArticleDetailMain から外した。microCMS の取得は次のコミットで繋ぐ */}
+      <ArticleDetailMain
+        article={{
+          title: "",
+          tags: [],
+          publishedAt: "",
+          publishedDate: "",
+          blocks: [],
+        }}
+        postNavigation={{}}
+        shareUrl={`${siteUrl}/article/${id}`}
+      />
     </LayoutMain>
   );
 };
