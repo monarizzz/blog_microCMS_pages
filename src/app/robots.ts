@@ -5,8 +5,11 @@ const robots = (): MetadataRoute.Robots => ({
   rules: {
     userAgent: "*",
     allow: "/",
-    // 検索結果はクエリ次第で無限に URL が生えるためクロール対象から外す
-    disallow: "/search",
+    // `/search` の除外は disallow ではなくページ側の noindex
+    // (src/app/search/page.tsx) で行う。robots.txt で Disallow すると
+    // クローラがページを取得できず meta robots の noindex を読めないため、
+    // 外部リンク経由で URL だけがインデックスされうる
+    // (Google の "Indexed, though blocked by robots.txt")
   },
   sitemap: new URL("/sitemap.xml", siteUrl).toString(),
   host: siteUrl,
