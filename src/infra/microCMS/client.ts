@@ -1,5 +1,6 @@
-import { createClient } from "microcms-js-sdk";
+import "server-only";
 
+import { createClient } from "microcms-js-sdk";
 import { microCMSEnv } from "./env";
 
 let cachedClient: ReturnType<typeof createClient> | undefined;
