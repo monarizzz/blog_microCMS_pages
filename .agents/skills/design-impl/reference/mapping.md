@@ -51,6 +51,11 @@
 | `InfoCard` | `q6phow` | `ArticleBody/ArticleBody.tsx` に内包（単体の再利用先が無いため） |
 
 `Blocks Catalog Page`（frame `ZnbhV`）は記事装飾のカタログで、ページとしては実装しない。
+ただし本文の文字装飾だけは、カタログの frame から実装を起こしている。
+
+| pen（Blocks Catalog 内 frame） | ID | 実装 |
+| --- | --- | --- |
+| `InlineRow`（太字・斜体・取り消し線・下線・リンク・`CodeChip`） | `Hveyn` | `src/features/article/components/ArticleInlineText/ArticleInlineText.tsx`。`HighlightChip` (`QP1Rl`) はリッチエディタに対応する装飾が無いため未実装 |
 
 参考: ページ全体のデザインは reusable ではなくトップレベルの group にもある
 （`Home Page` `Article Page` `Article Detail` `Tags` `Profile` `Service` `Search` `404 Page`）。
