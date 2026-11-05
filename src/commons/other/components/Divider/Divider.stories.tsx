@@ -19,7 +19,7 @@ export const Horizontal: Story = {
   args: {},
   decorators: [
     (Story) => (
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-112">
         <p className="py-3 text-sm text-on-surface">上のコンテンツ</p>
         <Story />
         <p className="py-3 text-sm text-on-surface">下のコンテンツ</p>
@@ -51,7 +51,7 @@ export const OnBackgrounds: Story = {
   args: {},
   decorators: [
     (Story) => (
-      <div className="flex w-full max-w-md flex-col gap-6">
+      <div className="flex w-full max-w-112 flex-col gap-6">
         <div className="bg-surface p-4">
           <p className="pb-3 text-sm text-on-surface">bg-surface</p>
           <Story />
